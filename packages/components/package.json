@@ -1,0 +1,12 @@
+{
+  "name": "@cwds/components",
+  "version": "0.1.0",
+  "description": "React components for CWDS",
+  "main": "dist/index.js",
+  "author": "Danny Eck <danny.eck@osi.ca.gov>",
+  "license": "AGPL-3.0",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^4.1.0"
+  }
+}
