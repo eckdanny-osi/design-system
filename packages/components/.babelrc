@@ -1,14 +1,11 @@
 {
-  "presets": ["es2015", "stage-2", "react"],
   "env": {
     "development": {
-      "plugins": []
+      "presets": ["es2015", "stage-2", "react"]
     },
-    // "test": {
-    //   "presets": ["es2015", "stage-2", "react"]
-    // },
     "production": {
-      "plugins": [["import-rename", { "^(.*)\\.scss$": "$1.module.css" }]]
+      "presets": [["es2015", { "modules": false }], "stage-2", "react"],
+      "plugins": ["external-helpers"]
     }
   }
 }
