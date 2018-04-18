@@ -1,0 +1,23 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
+import styles from './{{Component}}.scss'
+
+const propTypes = {
+
+};
+
+const defaultProps = {
+
+};
+
+const {{Component}} = props => {
+  return (
+    <div className={cn(styles.{{Component}})}>Hello World</div>
+  );
+}
+
+{{Component}}.propTypes = propTypes;
+{{Component}}.defaultProps = defaultProps;
+
+export default {{Component}};
