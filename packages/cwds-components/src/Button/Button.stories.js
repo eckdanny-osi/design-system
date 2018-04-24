@@ -23,6 +23,7 @@ storiesOf('Buttons', module)
         outline={boolean('outline', false)}
         block={boolean('block', false)}
         onClick={action('button-click')}
+        className="btn-outline-warning shit btn-block"
       />
     ))
   );

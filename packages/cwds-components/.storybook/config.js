@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { setDefaults, withInfo } from '@storybook/addon-info';
+import './style.scss';
 
 const req = require.context('../src', true, /\.stories\.jsx?$/);
 
