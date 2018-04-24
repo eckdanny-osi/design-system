@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { Button as RSButton } from 'reactstrap';
 import { withPropAdapter, withCssModule } from '../utils';
-import styles from './Button.scss';
+import styles from './Button.module.scss';
 
 const adapterFn = props => {
   const {

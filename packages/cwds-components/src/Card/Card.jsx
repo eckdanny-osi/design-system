@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withCssModule } from '../utils';
-import styles from './Card.scss';
+import styles from './Card.module.scss';
 
 import Card from 'reactstrap/lib/Card';
 

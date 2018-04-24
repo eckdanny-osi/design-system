@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './App.scss';
-import { Button } from '@cwds/components';
+// import { Button } from '@cwds/components';
+import Button from '@cwds/components/lib/Button';
 import { Card } from '@cwds/components';
 
 const propTypes = {};

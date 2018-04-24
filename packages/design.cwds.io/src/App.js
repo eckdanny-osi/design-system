@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
+// import Alert from '@cwds/components/lib/Alert';
+// import Button from '@cwds/components/lib/Button';
 import {
   Alert,
   Button,
