@@ -4,6 +4,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url';
+import uglify from 'rollup-plugin-uglify';
 
 import pkg from './package.json';
 
@@ -34,6 +35,8 @@ export default {
     postcss({
       modules: true,
       //   inject: false,
+      extract: true,
+      sourceMap: true,
     }),
     url(),
     babel({
@@ -43,5 +46,6 @@ export default {
       extensions: ['.js', '.jsx'],
     }),
     commonjs(),
+    // uglify(),
   ],
 };

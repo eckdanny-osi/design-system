@@ -4,6 +4,7 @@
   "description": "React components for CWDS",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "style": "dist/index.css",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "AGPL-3.0",
   "private": false,
@@ -17,11 +18,15 @@
     "test": "NODE_ENV=development jest --env=jsdom"
   },
   "dependencies": {
+    "@cwds/core": "^0.1.0",
     "bootstrap": "^4.1.0",
     "classnames": "^2.2.5",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "reactstrap": "^5.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.1",
@@ -60,6 +65,7 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.1.0",
     "rollup-plugin-postcss": "^1.6.1",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-url": "^1.4.0"
   },
   "peerDependencies": {

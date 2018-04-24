@@ -1,31 +1,10 @@
-@import '../core';
+@import '~@cwds/core/core';
 @import '~bootstrap/scss/buttons';
+
+//
+// Overrides
+//
 
 .btn {
   text-transform: uppercase;
-  padding: 7.5px;
-  background-color: greenyellow;
-  color: black;
-
-  &:hover:disabled {
-    cursor: not-allowed;
-  }
-
-  &:hover:enabled {
-    cursor: pointer;
-    background-color: rebeccapurple;
-  }
-}
-
-.primary {
-  background-color: blue;
-}
-
-.danger {
-  background-color: red;
-}
-
-.outline {
-  background-color: transparent;
-  border: 3px solid red;
 }

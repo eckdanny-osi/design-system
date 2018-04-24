@@ -14,8 +14,10 @@ storiesOf('Buttons', module)
     'Button',
     withInfo()(() => (
       <Button
-        children={text('text', 'Hello')}
+        children={text('text', 'Submit')}
+        href={text('href')}
         primary={boolean('primary', false)}
+        warning={boolean('warning', false)}
         disabled={boolean('disabled', false)}
         onClick={action('clicked')}
         outline={boolean('outline', false)}

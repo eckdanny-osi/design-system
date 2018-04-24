@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@cwds/components": "^0.1.0",
+    "@cwds/core": "^0.1.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts-cssmodules": "1.1.10"
