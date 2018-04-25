@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+// import FontAwesome from 'react-fontawesome';
 // import logo from './logo.svg';
 // import './App.css';
 // import Alert from '@cwds/components/lib/Alert';
+import Icon from '@cwds/components/lib/Icon';
 // import Button from '@cwds/components/lib/Button';
 import {
   Alert,
@@ -110,6 +112,8 @@ class App extends Component {
           <Card>alksdjfalksdjf</Card>
           <h1>Logo</h1>
           <Logo />
+          <h1>Icon</h1>
+          <Icon />
         </Container>
       </div>
     );
