@@ -113,7 +113,7 @@ class App extends Component {
           <h1>Logo</h1>
           <Logo />
           <h1>Icon</h1>
-          <Icon />
+          <Icon icon="poo" transform={{ rotate: 42 }} spin />
         </Container>
       </div>
     );
