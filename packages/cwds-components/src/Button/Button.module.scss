@@ -1,4 +1,4 @@
-@import '~@cwds/core/core';
+@import '../core';
 // @import '~bootstrap/scss/buttons';
 
 // stylelint-disable selector-no-qualifying-type
@@ -16,10 +16,10 @@
   user-select: none;
   border: $btn-border-width solid transparent;
   @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
+    $input-btn-padding-y,
+    $input-btn-padding-x,
     $font-size-base,
-    $btn-line-height,
+    $input-btn-line-height,
     $btn-border-radius
   );
   @include transition($btn-transition);
@@ -32,7 +32,7 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    box-shadow: $input-btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle

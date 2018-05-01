@@ -1,21 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.scss';
-// import { Button } from '@cwds/components';
+import foo from './App.scss';
+import Alert from '@cwds/components/lib/Alert';
 import Button from '@cwds/components/lib/Button';
 import Icon from '@cwds/components/lib/Icon';
-import { Card } from '@cwds/components';
+import Container from '@cwds/components/lib/Container';
+import Row from '@cwds/components/lib/Row';
+import Col from '@cwds/components/lib/Col';
+
+// import { Card } from '@cwds/components';
 
 const propTypes = {};
 const defaultProps = {};
 
 const App = ({ name }) => (
   <div>
-    <h1>alskdjfasdkf</h1>
-    <Button primary>Hello!</Button> <Button>Default Button</Button>{' '}
-    <Button warning>Be Careful</Button>
-    {/* <Icon /> */}
-    <Icon icon="poo" transform={{ rotate: 42 }} spin />
+    <Container>
+      <h1>alskdjfasdkf</h1>
+      <Alert color="primary">alskdfj</Alert>
+      <Button primary>Hello!</Button> <Button>Default Button</Button>{' '}
+      <Button warning>Be Careful</Button>
+      <p>asdf</p>
+      <Button primary disabled>
+        <Icon icon="circleNotch" transform={{ rotate: 42 }} spin /> Save
+      </Button>{' '}
+      <Button primary>
+        <Icon icon="check" /> Save
+      </Button>
+    </Container>
   </div>
 );
 

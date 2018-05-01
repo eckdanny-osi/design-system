@@ -14,7 +14,7 @@ const banner = `/**
  */`;
 
 export default {
-  input: 'src/index.js',
+  input: 'src/main.js',
   output: [
     {
       file: pkg.main,
@@ -31,14 +31,13 @@ export default {
     },
   ],
   plugins: [
-    external(),
     postcss({
       modules: true,
       //   inject: false,
       extract: true,
       sourceMap: true,
     }),
-    url(),
+    // url(),
     babel({
       exclude: 'node_modules/**',
     }),
@@ -46,6 +45,7 @@ export default {
       extensions: ['.js', '.jsx'],
     }),
     commonjs(),
+    external(),
     // uglify(),
   ],
 };

@@ -5,34 +5,66 @@ import cn from 'classnames';
 // import styles from 'font-awesome/scss/font-awesome.scss';
 // import FontAwesome from 'react-fontawesome';
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import coffee from '@fortawesome/fontawesome-free-solid/faCoffee';
-import poo from '@fortawesome/fontawesome-free-solid/faPoo';
+import { default as FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import check from '@fortawesome/fontawesome-free-solid/faCheck';
+import times from '@fortawesome/fontawesome-free-solid/faTimes';
+import user from '@fortawesome/fontawesome-free-solid/faUser';
+import search from '@fortawesome/fontawesome-free-solid/faSearch';
 import spinner from '@fortawesome/fontawesome-free-solid/faSpinner';
 import upload from '@fortawesome/fontawesome-free-solid/faUpload';
 import circleNotch from '@fortawesome/fontawesome-free-solid/faCircleNotch';
-upload;
+import checkCircle from '@fortawesome/fontawesome-free-solid/faCheckCircle';
+import infoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';
+import exclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
+import chevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
 
-const ICONS = {
-  coffee: coffee,
-  poo: poo,
-  spinner: spinner,
-  upload: upload,
-  circleNotch: circleNotch,
+export const ICON_NAMES = {
+  check: 'check',
+  times: 'times',
+  spinner: 'spinner',
+  upload: 'upload',
+  circleNotch: 'circleNotch',
+  checkCircle: 'checkCircle',
+  infoCircle: 'infoCircle',
+  error: 'error',
+  user: 'user',
+  search: 'search',
+  chevronDown: 'chevronDown',
 };
 
-const propTypes = {};
+const ICONS = {
+  [ICON_NAMES.check]: check,
+  [ICON_NAMES.times]: times,
+  [ICON_NAMES.spinner]: spinner,
+  [ICON_NAMES.upload]: upload,
+  [ICON_NAMES.circleNotch]: circleNotch,
+  [ICON_NAMES.checkCircle]: checkCircle,
+  [ICON_NAMES.infoCircle]: infoCircle,
+  [ICON_NAMES.error]: exclamationTriangle,
+  [ICON_NAMES.user]: user,
+  [ICON_NAMES.search]: search,
+  [ICON_NAMES.chevronDown]: chevronDown,
+};
 
-const defaultProps = {};
+const {
+  icon: __icon,
+  fixedWidth: __fixedWidth,
+  border: __border,
+  listItem: __listItem,
+  pulse: __pulse,
+  ...fontAwesomeIconPropTypes
+} = FontAwesomeIcon.propTypes;
 
-const Icon = props => {
+const propTypes = Object.assign({}, fontAwesomeIconPropTypes, {
+  icon: PropTypes.string.isRequired,
+});
+
+export const Icon = props => {
   const { icon: name, ...otherProps } = props;
-  console.log(name);
-  console.log(ICONS[name]);
   return <FontAwesomeIcon icon={ICONS[name]} {...otherProps} />;
 };
 
 Icon.propTypes = propTypes;
-Icon.defaultProps = defaultProps;
+// Icon.defaultProps = defaultProps;
 
 export default Icon;

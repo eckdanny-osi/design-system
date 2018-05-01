@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withCssModule } from '../utils';
-import styles from './Card.module.scss';
+// import styles from './Card.module.scss';
 
 import Card from 'reactstrap/lib/Card';
 
-export default withCssModule(Card, styles);
+// export default withCssModule(Card, styles);
 
 // const propTypes = {
 
@@ -25,3 +25,5 @@ export default withCssModule(Card, styles);
 // Card.defaultProps = defaultProps;
 
 // export default Card;
+
+export default {};

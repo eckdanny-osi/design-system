@@ -37,8 +37,10 @@ const buttonDefaultProps = parentDefaultProps => {
   };
 };
 
+export const Button = withCssModule(RSButton, styles);
+
 export default withPropAdapter(
-  withCssModule(RSButton, styles),
+  Button,
   adapterFn,
   buttonPropTypes,
   buttonDefaultProps,

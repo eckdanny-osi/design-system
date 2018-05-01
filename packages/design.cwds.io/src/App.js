@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import FontAwesome from 'react-fontawesome';
-// import logo from './logo.svg';
-// import './App.css';
-// import Alert from '@cwds/components/lib/Alert';
-import Icon from '@cwds/components/lib/Icon';
+import Icon, { ICON_NAMES } from '@cwds/components/lib/Icon';
 // import Button from '@cwds/components/lib/Button';
 import {
   Alert,
@@ -106,14 +102,49 @@ class App extends Component {
           <Alert color="danger">Danger</Alert>
           <Alert color="success">alksdjf</Alert>
           <h1>Buttons</h1>
-          <Button>Hello World</Button> <Button primary>Hello World</Button>{' '}
-          <Button warning>Hello World</Button>
+          <Button>Default</Button> <Button primary>Primary</Button>{' '}
+          <Button warning>Warning</Button>
           <h1>Cards</h1>
           <Card>alksdjfalksdjf</Card>
           <h1>Logo</h1>
           <Logo />
-          <h1>Icon</h1>
-          <Icon icon="poo" transform={{ rotate: 42 }} spin />
+          <h1>Icons</h1>
+          <ul
+            style={{
+              listStyleType: 'none',
+              paddingLeft: 0,
+              clear: 'left',
+            }}
+          >
+            {Object.keys(ICON_NAMES).map(d => (
+              <li
+                key={d}
+                style={{
+                  backgroundColor: '#EEE',
+                  textAlign: 'center',
+                  padding: '10px',
+                  marginBottom: '12px',
+                  marginRight: '12px',
+                  width: '12%',
+                  float: 'left',
+                }}
+              >
+                <Icon icon={d} size="3x" />
+                <code
+                  style={{
+                    marginTop: '10px',
+                    display: 'block',
+                    fontSize: '10px',
+                  }}
+                >
+                  {d}
+                </code>
+              </li>
+            ))}
+          </ul>
+          <br style={{ clear: 'left' }} />
+          <h2>Animated</h2>
+          <Icon icon="circleNotch" spin />
         </Container>
       </div>
     );
