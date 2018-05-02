@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import foo from './App.scss';
 import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
 import Alert from '@cwds/components/lib/Alert';
 import Button from '@cwds/components/lib/Button';
 import Icon from '@cwds/components/lib/Icon';
@@ -16,6 +17,7 @@ const defaultProps = {};
 const App = ({ name }) => (
   <div>
     <AppBar />
+    <PageHeader>alskdfjalsdkfj</PageHeader>
     <Container>
       <h1>alskdjfasdkf</h1>
       <Alert color="primary">alskdfj</Alert>

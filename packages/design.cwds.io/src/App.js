@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import '@cwds/components/lib/global/global.css';
 import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
 import Icon, { ICON_NAMES } from '@cwds/components/lib/Icon';
 import Alert from '@cwds/components/lib/Alert';
 import Button from '@cwds/components/lib/Button';
 import Card from '@cwds/components/lib/Card';
-import Col from '@cwds/components/lib/Col';
 import Container from '@cwds/components/lib/Container';
 import Logo from '@cwds/components/lib/Logo';
-import Row from '@cwds/components/lib/Row';
 
 class App extends Component {
   render() {
     return (
       <div>
         <AppBar />
-        <div style={{ backgroundColor: 'red' }}>
-          <Container>
-            <Row>
-              <Col>Subhead</Col>
-            </Row>
-          </Container>
-        </div>
+        <PageHeader>THE PAGE HEADER</PageHeader>
         <Container>
           <h1>Typography</h1>
           <h2>Headers</h2>
@@ -90,6 +83,7 @@ class App extends Component {
             </ul>
           </Card>
           <h1>Alerts</h1>
+          <Alert color="primary">alskdfj</Alert>
           <Alert color="info">alskdfjlaskdjf</Alert>
           <Alert color="danger">Danger</Alert>
           <Alert color="success">alksdjf</Alert>
