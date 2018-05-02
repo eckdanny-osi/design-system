@@ -1,3 +1,7 @@
+@import '../core';
+
 .AppBar {
-  background-color: blue;
+  background-color: $primary;
+  color: $white;
+  padding: 0.25rem 0;
 }

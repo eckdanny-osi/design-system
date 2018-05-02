@@ -9,7 +9,7 @@ import Icon from '@cwds/components/lib/Icon';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
-import Card from '@cwds/components/lib/Card';
+import { Card, CardBody } from '@cwds/components/lib/Cards';
 
 const propTypes = {};
 const defaultProps = {};
@@ -30,7 +30,9 @@ const App = ({ name }) => (
       <Button primary>
         <Icon icon="check" /> Save
       </Button>
-      <Card>alskdfjalsdkfj</Card>
+      <Card>
+        <CardBody>Hello World</CardBody>
+      </Card>
       <div
         style={{
           border: '3px solid #EEEEEE',

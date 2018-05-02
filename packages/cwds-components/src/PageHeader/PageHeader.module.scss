@@ -1,3 +1,7 @@
+@import '../core';
+
 .PageHeader {
-  background-color: aqua;
+  color: $white;
+  @include gradient-x($spruce, $aspen);
+  height: 8rem;
 }

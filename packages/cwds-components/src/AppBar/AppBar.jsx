@@ -5,17 +5,23 @@ import styles from './AppBar.module.scss';
 import Container from '../Container';
 import Row from '../Row';
 import Col from '../Col';
+import Logo from '../Logo';
 
-const propTypes = {};
+const propTypes = {
+  rhs: PropTypes.func,
+};
 
 const defaultProps = {};
 
-const AppBar = props => {
+const AppBar = ({ rhs, ...props }) => {
   return (
     <div className={cn(styles.AppBar)}>
       <Container>
-        <Row>
-          <Col>AppBar</Col>
+        <Row style={{ alignItems: 'center' }}>
+          <Col>
+            <Logo />
+          </Col>
+          {rhs && <Col style={{ textAlign: 'right' }}>{rhs(props)}</Col>}
         </Row>
       </Container>
     </div>

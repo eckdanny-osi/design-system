@@ -1,21 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './CardBody.module.scss'
+import styles from './Card.module.scss';
 
-const propTypes = {
+const propTypes = {};
 
-};
-
-const defaultProps = {
-
-};
+const defaultProps = {};
 
 const CardBody = props => {
-  return (
-    <div className={cn(styles.CardBody)}>Hello World</div>
-  );
-}
+  return <div className={cn(styles['card-body'])} {...props} />;
+};
 
 CardBody.propTypes = propTypes;
 CardBody.defaultProps = defaultProps;

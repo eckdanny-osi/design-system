@@ -1,21 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './CardFooter.module.scss'
+import styles from './Card.module.scss';
 
-const propTypes = {
+const propTypes = {};
 
-};
-
-const defaultProps = {
-
-};
+const defaultProps = {};
 
 const CardFooter = props => {
-  return (
-    <div className={cn(styles.CardFooter)}>Hello World</div>
-  );
-}
+  return <div className={cn(styles['card-footer'])}>Hello World</div>;
+};
 
 CardFooter.propTypes = propTypes;
 CardFooter.defaultProps = defaultProps;
