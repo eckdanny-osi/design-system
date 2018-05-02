@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
+import '@cwds/components/lib/global/global.css';
+import AppBar from '@cwds/components/lib/AppBar';
 import Icon, { ICON_NAMES } from '@cwds/components/lib/Icon';
-// import Button from '@cwds/components/lib/Button';
-import {
-  Alert,
-  Button,
-  Card,
-  Col,
-  Container,
-  Logo,
-  Row,
-} from '@cwds/components';
-import '@cwds/components/dist/index.css';
+import Alert from '@cwds/components/lib/Alert';
+import Button from '@cwds/components/lib/Button';
+import Card from '@cwds/components/lib/Card';
+import Col from '@cwds/components/lib/Col';
+import Container from '@cwds/components/lib/Container';
+import Logo from '@cwds/components/lib/Logo';
+import Row from '@cwds/components/lib/Row';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundColor: 'blue' }}>
-          <Container>
-            <Row>
-              <Col>alskdfj</Col>
-            </Row>
-          </Container>
-        </div>
+        <AppBar />
         <div style={{ backgroundColor: 'red' }}>
           <Container>
             <Row>

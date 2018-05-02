@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import foo from './App.scss';
+import AppBar from '@cwds/components/lib/AppBar';
 import Alert from '@cwds/components/lib/Alert';
 import Button from '@cwds/components/lib/Button';
 import Icon from '@cwds/components/lib/Icon';
@@ -9,13 +10,12 @@ import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import Card from '@cwds/components/lib/Card';
 
-// import { Card } from '@cwds/components';
-
 const propTypes = {};
 const defaultProps = {};
 
 const App = ({ name }) => (
   <div>
+    <AppBar />
     <Container>
       <h1>alskdjfasdkf</h1>
       <Alert color="primary">alskdfj</Alert>
