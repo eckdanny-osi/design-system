@@ -21,7 +21,11 @@ const FILES_CSS = ['./src/*.scss', './src/**/*.scss'];
 gulp.task('js', function() {
   return gulp
     .src([...FILES_JS])
-    .pipe(babel())
+    .pipe(
+      babel({
+        plugins: [['import-rename', { '^(.*)\\.scss$': '$1.css' }]],
+      })
+    )
     .pipe(gulp.dest('./lib'));
 });
 
@@ -82,7 +86,7 @@ gulp.task('dumbcss', () => {
 
 // // gulp.task('default', ['js', 'css', 'tsd']);
 
-gulp.task('watch', done => {
+gulp.task('build:watch', done => {
   const watcher = gulp.watch([...FILES_JS, ...FILES_CSS], ['js', 'dumbcss']);
   done();
 });

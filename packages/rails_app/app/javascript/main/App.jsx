@@ -7,6 +7,7 @@ import Icon from '@cwds/components/lib/Icon';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
+import Card from '@cwds/components/lib/Card';
 
 // import { Card } from '@cwds/components';
 
@@ -27,6 +28,17 @@ const App = ({ name }) => (
       <Button primary>
         <Icon icon="check" /> Save
       </Button>
+      <Card>alskdfjalsdkfj</Card>
+      <div
+        style={{
+          border: '3px solid #EEEEEE',
+          backgroundColor: 'white',
+          padding: '10px',
+          textAlign: 'right',
+        }}
+      >
+        <Button>Cancel</Button> <Button primary>Save</Button>
+      </div>
     </Container>
   </div>
 );

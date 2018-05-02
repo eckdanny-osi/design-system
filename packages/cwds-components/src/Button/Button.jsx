@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Button as RSButton } from 'reactstrap';
+import RSButton from 'reactstrap/lib/Button';
 import { withPropAdapter, withCssModule } from '../utils';
 import styles from './Button.module.scss';
 
