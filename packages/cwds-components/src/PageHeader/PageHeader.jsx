@@ -10,14 +10,10 @@ const propTypes = {};
 
 const defaultProps = {};
 
-const PageHeader = props => {
+const PageHeader = ({ children }) => {
   return (
     <div className={cn(styles.PageHeader)}>
-      <Container>
-        <Row>
-          <Col>HELLO WORLD</Col>
-        </Row>
-      </Container>
+      <Container>{children}</Container>
     </div>
   );
 };

@@ -13,14 +13,12 @@ const propTypes = {
 
 const defaultProps = {};
 
-const AppBar = ({ rhs, ...props }) => {
+const AppBar = ({ rhs, brand, ...props }) => {
   return (
     <div className={cn(styles.AppBar)}>
       <Container>
         <Row style={{ alignItems: 'center' }}>
-          <Col>
-            <Logo />
-          </Col>
+          <Col>{brand && brand()}</Col>
           {rhs && <Col style={{ textAlign: 'right' }}>{rhs(props)}</Col>}
         </Row>
       </Container>
