@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import ComponentsPage from './Components';
+import PageLayouts from './PageLayouts';
 import '@cwds/components/lib/global/global.css';
 
 const About = () => <div>About</div>;
@@ -16,6 +17,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/topics" component={Topics} />
+          <Route path="/page-layouts" component={PageLayouts} />
           <Route path="/components" component={ComponentsPage} />
         </div>
       </Router>

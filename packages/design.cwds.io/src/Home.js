@@ -34,6 +34,9 @@ export default () => (
       <p>
         For <tt>Components</tt>, go <Link to="/components">here</Link>.
       </p>
+      <p>
+        For <tt>Page Layouts</tt>, go <Link to="/page-layouts">here</Link>.
+      </p>
       <h1>Typography</h1>
       <h2>Headers</h2>
       <Card>

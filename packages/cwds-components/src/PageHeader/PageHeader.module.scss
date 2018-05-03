@@ -1,7 +1,11 @@
 @import '../core';
 
 .PageHeader {
-  color: $white;
   @include gradient-x($spruce, $aspen);
+
+  color: $white;
   height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
