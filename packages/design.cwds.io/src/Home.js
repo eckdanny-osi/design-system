@@ -2,19 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
-import Icon, { ICON_NAMES } from '@cwds/components/lib/Icon';
-import Alert from '@cwds/components/lib/Alert';
-import Button from '@cwds/components/lib/Button';
 import Container from '@cwds/components/lib/Container';
 import Logo from '@cwds/components/lib/Logo';
+import { Card, CardBody } from '@cwds/components/lib/Cards';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-} from '@cwds/components/lib/Cards';
 
 export default () => (
   <div>
@@ -31,102 +23,110 @@ export default () => (
       <h1>Design Guide</h1>
     </PageHeader>
     <Container>
-      <p>
-        For <tt>Components</tt>, go <Link to="/components">here</Link>.
-      </p>
-      <p>
-        For <tt>Page Layouts</tt>, go <Link to="/page-layouts">here</Link>.
-      </p>
-      <h1>Typography</h1>
-      <h2>Headers</h2>
-      <Card>
-        <CardBody>
-          <h1>alsdkfj</h1>
-          <h2>alksdjf</h2>
-          <h3>alskdfj</h3>
-          <h4>alskdfj</h4>
-          <h5>alskdfj</h5>
-        </CardBody>
-      </Card>
-      <h2>Inline Text Elements</h2>
-      <Card>
-        <CardBody>
-          <p>
-            You can use the mark tag to <mark>highlight</mark> text.
-          </p>
-          <p>
-            <del>This line of text is meant to be treated as deleted text.</del>
-          </p>
-          <p>
-            <s>
-              This line of text is meant to be treated as no longer accurate.
-            </s>
-          </p>
-          <p>
-            <ins>
-              This line of text is meant to be treated as an addition to the
-              document.
-            </ins>
-          </p>
-          <p>
-            <u>This line of text will render as underlined</u>
-          </p>
-          <p>
-            <small>
-              This line of text is meant to be treated as fine print.
-            </small>
-          </p>
-          <p>
-            <strong>This line rendered as bold text.</strong>
-          </p>
-          <p>
-            <em>This line rendered as italicized text.</em>
-          </p>
-        </CardBody>
-      </Card>
-      <h2>Lists</h2>
-      <Card>
-        <CardBody>
-          <ul className="list-unstyled">
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Integer molestie lorem at massa</li>
-            <li>Facilisis in pretium nisl aliquet</li>
-            <li>
-              Nulla volutpat aliquam velit
+      <Row>
+        <Col sm="3">
+          <Card>
+            <CardBody>
+              <p>
+                For <tt>Components</tt>, go <Link to="/components">here</Link>.
+              </p>
+              <p>
+                For <tt>Page Layouts</tt>, go{' '}
+                <Link to="/page-layouts">here</Link>.
+              </p>
+              <p>
+                For <tt>Core</tt> stuff, go <Link to="/core">here</Link>.
+              </p>
+              <p>
+                For <tt>Operating Principles</tt> stuff, go{' '}
+                <Link to="/principles">here</Link>.
+              </p>
+            </CardBody>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <CardBody>
+              <h2>Background</h2>
+              <p>
+                The people working in the state, county, and tribal areas of CA
+                are the people we entrust to respond to, protect, and maintain
+                the safety, well being, and home permanency of CA's at risk
+                children. At Child Welfare Digital Services (CWDS) we are
+                redesigning the tools that help these case workers, social
+                workers, home approval and licensing workers, and administrative
+                staff who do this work. When we increase the time social workers
+                and other professionals interact with the children in the child
+                welfare system, it leads to better outcomes for children. We aim
+                to do that by designing more efficient tools.
+              </p>
+              <p>
+                CWS-CARES will replace multiple, disjointed state and county
+                systems currently in use, including the statewide CWS/Case
+                Management System that was created in 1997.
+              </p>
+              <h2>Vision</h2>
+              <p>We will design solutions that that:</p>
               <ul>
-                <li>Phasellus iaculis neque</li>
-                <li>Purus sodales ultricies</li>
-                <li>Vestibulum laoreet porttitor sem</li>
-                <li>Ac tristique libero volutpat at</li>
+                <li>
+                  Meet user needs based on primary user research and feedback
+                  from county and tribal workers
+                </li>
+                <li>Address changing policy requirements</li>
+                <li>Improve the quality of data entered into the system</li>
               </ul>
-            </li>
-            <li>Faucibus porta lacus fringilla vel</li>
-            <li>Aenean sit amet erat nunc</li>
-            <li>Eget porttitor lorem</li>
-          </ul>
-        </CardBody>
-      </Card>
-      <h1>Alerts</h1>
-      <Alert color="primary">alskdfj</Alert>
-      <Alert color="info">alskdfjlaskdjf</Alert>
-      <Alert color="danger">Danger</Alert>
-      <Alert color="success">alksdjf</Alert>
-      <h1>Buttons</h1>
-      <Button>Default</Button> <Button primary>Primary</Button>{' '}
-      <Button warning>Warning</Button>
-      <h1>Cards</h1>
-      <Card>
-        <CardBody>alsdkfjalsdkfj</CardBody>
-      </Card>
-      <br />
-      <Card>
-        <CardHeader>Card Header</CardHeader>
-        <CardBody>alsdkfjalsdkfj</CardBody>
-        <CardFooter>CardFooter</CardFooter>
-      </Card>
-      <h1>Logo</h1>
-      <Logo />
+
+              <p>
+                CWS-CARES will be reliable, responsive, and intuitive to use.
+                Workers will be able to better monitor the safety, well being
+                and home permanency of children touched by the CA child welfare
+                system.
+              </p>
+
+              <p>
+                The design will encourage workers to identify and capture
+                valuable information. It will allow both workers and policy
+                makers to pull actionable insights from the data.
+              </p>
+
+              <p>
+                The design will keep simple things simple and make complex
+                things understandable.
+              </p>
+
+              <p>
+                CWS-CARES will be one of the best child welfare decision-making
+                tools in the nation. We will share the research insights that
+                lead to our design decisions as well as resulting the
+                principles, design system, and solutions. We invite other states
+                to use and build on our work.
+              </p>
+
+              <p>
+                We believe that government can build excellent user-centered
+                digital services.
+              </p>
+
+              <h2>Goals</h2>
+              <ul>
+                <li>Efficiency</li>
+                <li>Consistency</li>
+                <li>Foster Design System thinking</li>
+                <li>Continue to establish what’s there and what’s missing</li>
+                <li>Determine areas to contribute to the living framework</li>
+                where decisions live
+                <li>Collect and document decisions in living framework</li>
+                <li>Provide priority of needs across design system</li>
+                (components, patterns, visual language, etc)
+                <li>Establish a governance model</li>
+                <li>Include a voice from all service teams</li>
+                <li>Support Digital Service Teams</li>
+                <li>Maintain and foster growth of the design system</li>
+              </ul>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   </div>
 );

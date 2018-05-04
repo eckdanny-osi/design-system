@@ -6,7 +6,12 @@ import Logo from '@cwds/components/lib/Logo';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+} from '@cwds/components/lib/Cards';
 
 export default () => {
   return (
@@ -29,41 +34,79 @@ export default () => {
             <Card>
               <CardBody>alksdjflkasdjf</CardBody>
             </Card>
-          </Col>
-          <Col sm="8">
             <Card>
               <CardBody>alksdjflkasdjf</CardBody>
             </Card>
+            <Card>
+              <CardBody>alksdjflkasdjf</CardBody>
+            </Card>
+            <Card>
+              <CardBody>alksdjflkasdjf</CardBody>
+            </Card>
+          </Col>
+          <Col sm="8">
+            <Card>
+              <CardHeader>Some Header</CardHeader>
+              <CardBody>alksdjflkasdjf</CardBody>
+              <CardFooter>Footer</CardFooter>
+            </Card>
+            <br />
             <Row>
               <Col sm="12">
                 <Card>
+                  <CardHeader>Some Header</CardHeader>
                   <CardBody>alksdjflkasdjf</CardBody>
+                  <CardFooter>Footer</CardFooter>
                 </Card>
+                <br />
               </Col>
               <Col sm="6">
                 <Card>
                   <CardBody>alksdjflkasdjf</CardBody>
                 </Card>
+                <br />
               </Col>
               <Col sm="6">
                 <Card>
                   <CardBody>alksdjflkasdjf</CardBody>
                 </Card>
+                <br />
               </Col>
               <Col sm="6">
                 <Card>
                   <CardBody>alksdjflkasdjf</CardBody>
                 </Card>
+                <br />
               </Col>
               <Col sm="6">
                 <Card>
                   <CardBody>alksdjflkasdjf</CardBody>
                 </Card>
+                <br />
               </Col>
             </Row>
             <Card>
               <CardBody>alksdjflkasdjf</CardBody>
             </Card>
+            <br />
+            <Card>
+              <CardHeader>Some Header</CardHeader>
+              <CardBody>alksdjflkasdjf</CardBody>
+              <CardFooter>Footer</CardFooter>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader>Some Header</CardHeader>
+              <CardBody>alksdjflkasdjf</CardBody>
+              <CardFooter>Footer</CardFooter>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader>Some Header</CardHeader>
+              <CardBody>alksdjflkasdjf</CardBody>
+              <CardFooter>Footer</CardFooter>
+            </Card>
+            <br />
           </Col>
         </Row>
       </Container>

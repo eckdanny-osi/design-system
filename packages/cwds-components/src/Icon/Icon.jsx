@@ -14,6 +14,7 @@ import spinner from '@fortawesome/fontawesome-free-solid/faSpinner';
 import upload from '@fortawesome/fontawesome-free-solid/faUpload';
 import circleNotch from '@fortawesome/fontawesome-free-solid/faCircleNotch';
 import checkCircle from '@fortawesome/fontawesome-free-solid/faCheckCircle';
+import plusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
 import infoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';
 import exclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
 import chevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
@@ -30,6 +31,7 @@ export const ICON_NAMES = {
   user: 'user',
   search: 'search',
   chevronDown: 'chevronDown',
+  plusCircle: 'plusCircle',
 };
 
 const ICONS = {
@@ -44,6 +46,7 @@ const ICONS = {
   [ICON_NAMES.user]: user,
   [ICON_NAMES.search]: search,
   [ICON_NAMES.chevronDown]: chevronDown,
+  [ICON_NAMES.plusCircle]: plusCircle,
 };
 
 const {

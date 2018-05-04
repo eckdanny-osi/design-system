@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import Home from './Home';
 import ComponentsPage from './Components';
 import PageLayouts from './PageLayouts';
 import '@cwds/components/lib/global/global.css';
-
-const About = () => <div>About</div>;
-
-const Topics = () => <div>Topics</div>;
+import CorePage from './CorePage';
+import PrinciplesPage from './PrinciplesPage';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
-          <Route path="/page-layouts" component={PageLayouts} />
-          <Route path="/components" component={ComponentsPage} />
-        </div>
+        <ScrollToTop>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/page-layouts" component={PageLayouts} />
+            <Route path="/components" component={ComponentsPage} />
+            <Route path="/core" component={CorePage} />
+            <Route path="/principles" component={PrinciplesPage} />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }

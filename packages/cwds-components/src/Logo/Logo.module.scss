@@ -1,4 +1,17 @@
+@import '../core';
+
 .Logo {
+  color: $white;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: gray('500');
+  &:hover {
+    color: gray('200');
+  }
+}
+
+.LogoSVG {
   width: 30px;
   height: 30px;
   display: block;

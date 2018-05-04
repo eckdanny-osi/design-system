@@ -4,8 +4,19 @@
   @include gradient-x($spruce, $aspen);
 
   color: $white;
-  height: 8rem;
+  height: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  position: fixed;
+  top: 38px;
+  left: 0;
+  right: 0;
+  z-index: 3000;
+}
+
+.title,
+.cta-wrapper {
+  flex: 1;
 }
