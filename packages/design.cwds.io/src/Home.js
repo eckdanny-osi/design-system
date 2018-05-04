@@ -4,9 +4,16 @@ import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Container from '@cwds/components/lib/Container';
 import Logo from '@cwds/components/lib/Logo';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardDeck,
+} from '@cwds/components/lib/Cards';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
+import Button from '@cwds/components/lib/Button';
 
 export default () => (
   <div>
@@ -21,26 +28,44 @@ export default () => (
     />
     <PageHeader title="Design Guide" />
     <Container>
-      <Card>
-        <CardBody>
-          <p>
-            For <tt>Components</tt>, go <Link to="/components">here</Link>.
-          </p>
-          <p>
-            For <tt>Page Layouts</tt>, go <Link to="/page-layouts">here</Link>.
-          </p>
-          <p>
-            For <tt>Core</tt> stuff, go <Link to="/core">here</Link>.
-          </p>
-          <p>
-            For <tt>Operating Principles</tt> stuff, go{' '}
-            <Link to="/principles">here</Link>.
-          </p>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody>alksdfj</CardBody>
-      </Card>
+      <CardDeck>
+        <Card>
+          <CardHeader>Components</CardHeader>
+          <CardBody>alskdfj</CardBody>
+          <CardFooter>
+            <Link to="/components">
+              <Button primary>Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>Layouts</CardHeader>
+          <CardBody>aslkdjfalksdfjl</CardBody>
+          <CardFooter>
+            <Link to="/page-layouts">
+              <Button primary>Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>Core</CardHeader>
+          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
+          <CardFooter>
+            <Link to="/core">
+              <Button primary>Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>Principles</CardHeader>
+          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
+          <CardFooter>
+            <Link to="/principles">
+              <Button primary>Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+      </CardDeck>
     </Container>
   </div>
 );

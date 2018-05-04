@@ -8,7 +8,7 @@ const propTypes = {};
 const defaultProps = {};
 
 const CardFooter = props => {
-  return <div className={cn(styles['card-footer'])}>Hello World</div>;
+  return <div className={cn(styles['card-footer'])} {...props} />;
 };
 
 CardFooter.propTypes = propTypes;
