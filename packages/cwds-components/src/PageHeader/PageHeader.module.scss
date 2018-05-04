@@ -16,7 +16,17 @@
   z-index: 3000;
 }
 
-.title,
-.cta-wrapper {
-  flex: 1;
+.PageTitle,
+.ActionsContainer {
+}
+
+.PageTitle {
+  margin-bottom: 0;
+}
+
+.ActionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: $spacer;
 }

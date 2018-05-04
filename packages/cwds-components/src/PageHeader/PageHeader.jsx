@@ -17,10 +17,10 @@ const PageHeader = ({ title = 'Page Header', cta }) => {
       <Container>
         <Row>
           <Col>
-            <h1 style={{ marginBottom: 0 }}>{title}</h1>
+            <h1 className={cn(styles.PageTitle)}>{title}</h1>
           </Col>
-          <Col xs="3" style={{ textAlign: 'right' }}>
-            <Icon icon="plusCircle" size="2x" style={{ marginTop: '6px' }} />
+          <Col xs="3" className={cn(styles.ActionsContainer)}>
+            <Icon icon="plusCircle" size="2x" />
           </Col>
         </Row>
       </Container>

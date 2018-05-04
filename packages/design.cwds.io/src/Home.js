@@ -19,12 +19,10 @@ export default () => (
         );
       }}
     />
-    <PageHeader>
-      <h1>Design Guide</h1>
-    </PageHeader>
+    <PageHeader title="Design Guide" />
     <Container>
       <Row>
-        <Col sm="3">
+        <Col md="4" lg="3">
           <Card>
             <CardBody>
               <p>
@@ -44,7 +42,7 @@ export default () => (
             </CardBody>
           </Card>
         </Col>
-        <Col>
+        <Col md="8" lg="9">
           <Card>
             <CardBody>
               <h2>Background</h2>

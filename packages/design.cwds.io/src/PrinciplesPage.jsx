@@ -20,9 +20,7 @@ export default () => {
           );
         }}
       />
-      <PageHeader>
-        <h1>Design Principles</h1>
-      </PageHeader>
+      <PageHeader title="Design Principles" />
       <Container>
         <p>
           <em>Oooooohhhhh....</em> Wouldn't you like to know?

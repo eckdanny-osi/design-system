@@ -4,13 +4,14 @@ import PageHeader from '../PageHeader';
 import Container from '../Container';
 import Col from '../Col';
 import Row from '../Row';
+import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 export default ({ appbar, appBar, header, sidebar, render, ...props }) => {
   return (
     <div>
       <header>
         {appBar ? appBar(props) : <AppBar />}
-        {header && <PageHeader>{header(props)}</PageHeader>}
+        {header ? header(props) : <PageHeader />}
       </header>
       <main>
         <Container>

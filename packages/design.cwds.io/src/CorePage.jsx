@@ -20,9 +20,7 @@ export default () => {
           );
         }}
       />
-      <PageHeader>
-        <h1>Core Style</h1>
-      </PageHeader>
+      <PageHeader title="Core Style" />
       <Container>
         <Card>
           <CardHeader>

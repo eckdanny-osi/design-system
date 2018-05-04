@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import slugify from 'slugify';
 import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
 import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
 import Logo from '@cwds/components/lib/Logo';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
@@ -13,23 +14,25 @@ const toSlug = str => slugify(str, { lower: true });
 
 const ButtonsPage = () => <div>Buttons Page</div>;
 
+const renderAppBar = props => (
+  <AppBar
+    brand={() => {
+      return (
+        <Link to="/">
+          <Logo />
+        </Link>
+      );
+    }}
+  />
+);
+
+const renderPageHeader = props => <PageHeader title="Components" />;
+
 export default ({ match }) => {
   return (
     <LayoutJumpNav
-      appBar={props => {
-        return (
-          <AppBar
-            brand={() => {
-              return (
-                <Link to="/">
-                  <Logo />
-                </Link>
-              );
-            }}
-          />
-        );
-      }}
-      header={() => <h1>Components</h1>}
+      appBar={renderAppBar}
+      header={renderPageHeader}
       sidebar={() => {
         return (
           <ul>
