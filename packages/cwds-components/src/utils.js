@@ -19,6 +19,9 @@ export function withPropAdapter(
 }
 
 export function withCssModule(WrappedComponent, style) {
+  if (!WrappedComponent.propTypes) {
+    return props => <WrappedComponent {...props} cssModule={style} />;
+  }
   const {
     cssModule: __cssModulePropType,
     ...parentPropTypes

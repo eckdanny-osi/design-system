@@ -9,14 +9,14 @@ import React, { Component } from 'react';
 // }
 
 function withCssModule(WrappedComponent, style) {
-  const {
-    cssModule: __cssModulePropType,
-    ...parentPropTypes
-  } = WrappedComponent.propTypes;
+  debugger;
+  const propTypes = WrappedComponent.propTypes || {};
+  const defaultProps = WrappedComponent.defaultProps || {};
+  const { cssModule: __cssModulePropType, ...parentPropTypes } = propTypes;
   const {
     cssModule: __cssModuleDefaultProp,
     ...parentDefaultProps
-  } = WrappedComponent.defaultProps;
+  } = defaultProps;
   class WithCssModule extends React.Component {
     render() {
       return <WrappedComponent {...this.props} cssModule={style} />;

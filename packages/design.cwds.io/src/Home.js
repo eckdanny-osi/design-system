@@ -14,12 +14,40 @@ import {
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import Button from '@cwds/components/lib/Button';
+import Icon, { ICON_NAMES } from '@cwds/components/lib/Icon';
+
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from '@cwds/components/lib/Dropdown';
 
 import Popover, {
   PopoverBody,
   PopoverHeader,
 } from '@cwds/components/lib/Popover';
 // import { Popover, PopoverBody } from 'reactstrap';
+
+const DropdownExample = () => {
+  return (
+    <UncontrolledDropdown>
+      <DropdownToggle
+        tag="button"
+        style={{ border: 'none', backgroundColor: 'transparent' }}
+      >
+        <Icon icon="ellipsis" />
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem header>Header</DropdownItem>
+        <DropdownItem disabled>Action</DropdownItem>
+        <DropdownItem>Another Action</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>Another Action</DropdownItem>
+      </DropdownMenu>
+    </UncontrolledDropdown>
+  );
+};
 
 class Example extends React.Component {
   constructor(props) {
@@ -45,6 +73,7 @@ class Example extends React.Component {
         </Button>
         <Popover
           placement="bottom"
+          hideArrow={false}
           isOpen={this.state.popoverOpen}
           target="Popover1"
           toggle={this.toggle}
@@ -112,6 +141,8 @@ export default () => (
         </Card>
       </CardDeck>
       <Example />
+      <br />
+      <DropdownExample />
     </Container>
   </div>
 );
