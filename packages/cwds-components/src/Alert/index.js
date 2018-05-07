@@ -1,1 +1,2 @@
-export { default } from './Alert';
+export { default } from 'reactstrap/lib/Alert';
+// export { Alert as default } from 'reactstrap';

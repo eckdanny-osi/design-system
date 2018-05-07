@@ -108,7 +108,7 @@ export default () => (
           <CardBody>alskdfj</CardBody>
           <CardFooter>
             <Link to="/components">
-              <Button primary>Go!</Button>
+              <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>
@@ -117,7 +117,7 @@ export default () => (
           <CardBody>aslkdjfalksdfjl</CardBody>
           <CardFooter>
             <Link to="/page-layouts">
-              <Button primary>Go!</Button>
+              <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>
@@ -126,7 +126,7 @@ export default () => (
           <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
           <CardFooter>
             <Link to="/core">
-              <Button primary>Go!</Button>
+              <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>
@@ -135,7 +135,7 @@ export default () => (
           <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
           <CardFooter>
             <Link to="/principles">
-              <Button primary>Go!</Button>
+              <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>

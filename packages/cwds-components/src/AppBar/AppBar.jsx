@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './AppBar.module.scss';
+// import styles from './AppBar.module.scss';
+import styles from '../global/styles.module.scss';
 import Container from '../Container';
 import Row from '../Row';
 import Col from '../Col';

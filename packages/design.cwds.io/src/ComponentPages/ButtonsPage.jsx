@@ -4,8 +4,11 @@ import Button from '@cwds/components/lib/Button';
 const Buttons = () => (
   <div>
     <h1>Buttons</h1>
-    <Button>Default</Button> <Button primary>Primary</Button>{' '}
-    <Button warning>Warning</Button>
+    <Button color="primary">primary</Button>{' '}
+    <Button color="secondary">secondary</Button>{' '}
+    <Button color="success">success</Button> <Button color="info">info</Button>{' '}
+    <Button color="warning">warning</Button>{' '}
+    <Button color="danger">danger</Button> <Button color="link">link</Button>
   </div>
 );
 

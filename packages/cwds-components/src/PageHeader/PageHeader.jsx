@@ -5,7 +5,8 @@ import Container from '../Container';
 import Row from '../Row';
 import Col from '../Col';
 import Icon from '../Icon';
-import styles from './PageHeader.module.scss';
+// import styles from './PageHeader.module.scss';
+import styles from '../global/styles.module.scss';
 
 const propTypes = {};
 

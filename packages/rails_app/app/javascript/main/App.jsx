@@ -10,25 +10,34 @@ import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import { Card, CardBody } from '@cwds/components/lib/Cards';
+import Logo from '@cwds/components/lib/Logo';
 
 const propTypes = {};
 const defaultProps = {};
 
 const App = ({ name }) => (
   <div>
-    <AppBar />
+    <AppBar
+      brand={props => {
+        return (
+          <a>
+            <Logo />
+          </a>
+        );
+      }}
+    />
     <PageHeader>alskdfjalsdkfj</PageHeader>
     <Container>
       <h1>alskdjfasdkf</h1>
       <Alert color="primary">alskdfj</Alert>
-      <Button primary>Hello!</Button> <Button>Default Button</Button>{' '}
-      <Button warning>Be Careful</Button>
+      <Button color="primary">Hello!</Button> <Button>Default Button</Button>{' '}
+      <Button color="warning">Be Careful</Button>
       <p>asdf</p>
-      <Button primary disabled>
+      <Button color="primary" disabled>
         <Icon icon="circleNotch" transform={{ rotate: 42 }} spin /> Save
       </Button>{' '}
-      <Button primary>
-        <Icon icon="check" /> Save
+      <Button color="success">
+        <Icon style={{ marginRight: '5px' }} icon="check" /> Save
       </Button>
       <Card>
         <CardBody>Hello World</CardBody>
@@ -41,7 +50,7 @@ const App = ({ name }) => (
           textAlign: 'right',
         }}
       >
-        <Button>Cancel</Button> <Button primary>Save</Button>
+        <Button>Cancel</Button> <Button color="primary">Save</Button>
       </div>
     </Container>
   </div>

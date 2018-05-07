@@ -4,7 +4,7 @@ import ScrollToTop from './ScrollToTop';
 import Home from './Home';
 import ComponentsPage from './Components';
 import PageLayouts from './PageLayouts';
-import '@cwds/components/lib/global/global.css';
+// import '@cwds/components/lib/global/global.css';
 import CorePage from './CorePage';
 import PrinciplesPage from './PrinciplesPage';
 // import 'bootstrap/scss/bootstrap.scss';
