@@ -15,7 +15,10 @@ import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import Button from '@cwds/components/lib/Button';
 
-import Popover, { PopoverBody } from '@cwds/components/lib/Popover';
+import Popover, {
+  PopoverBody,
+  PopoverHeader,
+} from '@cwds/components/lib/Popover';
 // import { Popover, PopoverBody } from 'reactstrap';
 
 class Example extends React.Component {
@@ -46,7 +49,7 @@ class Example extends React.Component {
           target="Popover1"
           toggle={this.toggle}
         >
-          {/* <PopoverHeader>Popover Title</PopoverHeader> */}
+          <PopoverHeader>Popover Title</PopoverHeader>
           <PopoverBody>
             Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.

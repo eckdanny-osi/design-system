@@ -7,7 +7,7 @@ import PageLayouts from './PageLayouts';
 import '@cwds/components/lib/global/global.css';
 import CorePage from './CorePage';
 import PrinciplesPage from './PrinciplesPage';
-import 'bootstrap/scss/bootstrap.scss';
+// import 'bootstrap/scss/bootstrap.scss';
 
 class App extends Component {
   render() {
