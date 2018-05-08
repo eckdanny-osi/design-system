@@ -1,8 +1,9 @@
 // Required
-@import '~bootstrap/scss/functions';
-@import '../custom';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/_mixins.scss';
+// @import '~bootstrap/scss/functions';
+// @import '../custom';
+// @import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/_mixins.scss';
+@import '../core';
 
 // Optional
 @import '~bootstrap/scss/reboot';
@@ -30,17 +31,17 @@
 @import '~bootstrap/scss/alert';
 // @import "~bootstrap/scss/progress";
 // @import "~bootstrap/scss/media";
-// @import "~bootstrap/scss/list-group";
+@import '~bootstrap/scss/list-group';
 // @import "~bootstrap/scss/close";
 // @import "~bootstrap/scss/modal";
 // @import "~bootstrap/scss/tooltip";
-// @import "~bootstrap/scss/popover";
+@import '~bootstrap/scss/popover';
 // @import "~bootstrap/scss/carousel";
 // @import "~bootstrap/scss/utilities";
 // @import "~bootstrap/scss/print";
 
 @import '../AppBar/AppBar.module.scss';
-@import '../Button/_button.module.scss';
+@import '../Button/Button.module.scss';
 @import '../PageHeader/PageHeader.module.scss';
 
 body {

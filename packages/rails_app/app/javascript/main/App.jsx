@@ -34,7 +34,7 @@ const App = ({ name }) => (
       <Button color="warning">Be Careful</Button>
       <p>asdf</p>
       <Button color="primary" disabled>
-        <Icon icon="circleNotch" transform={{ rotate: 42 }} spin /> Save
+        <Icon icon="circleNotch" transform={{ rotate: 42 }} spin /> Saving...
       </Button>{' '}
       <Button color="success">
         <Icon style={{ marginRight: '5px' }} icon="check" /> Save

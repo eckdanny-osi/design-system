@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import slugify from 'slugify';
 import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
 import AppBar from '@cwds/components/lib/AppBar';
@@ -8,11 +8,33 @@ import Logo from '@cwds/components/lib/Logo';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import { Card, CardBody } from '@cwds/components/lib/Cards';
+import { ListGroup, ListGroupItem } from '@cwds/components/lib/ListGroups';
 import ComponentPages from './ComponentPages';
 
-const toSlug = str => slugify(str, { lower: true });
+function withPageWrapper(Component) {
+  return props => (
+    <Card>
+      <CardBody>
+        <Component {...props} />
+      </CardBody>
+    </Card>
+  );
+}
 
-const ButtonsPage = () => <div>Buttons Page</div>;
+const Box = ({ children }) => (
+  <Card>
+    <CardBody>{children()}</CardBody>
+  </Card>
+);
+
+const DefaultView = () => (
+  <div>
+    <h3>Welcome!</h3>
+    Select a <tt>component</tt> from the list to the left to learn more.
+  </div>
+);
+
+const toSlug = str => slugify(str, { lower: true });
 
 const renderAppBar = props => (
   <AppBar
@@ -26,6 +48,19 @@ const renderAppBar = props => (
   />
 );
 
+const ListGroupItemLink = withRouter(
+  ({ history, location, match, staticContext: _, to, ...props }) => {
+    return (
+      <ListGroupItem
+        {...props}
+        onClick={() => history.push(to)}
+        action
+        active={to === location.pathname}
+      />
+    );
+  }
+);
+
 const renderPageHeader = props => <PageHeader title="Components" />;
 
 export default ({ match }) => {
@@ -35,20 +70,62 @@ export default ({ match }) => {
       header={renderPageHeader}
       sidebar={() => {
         return (
-          <ul>
-            <li>
+          //   <ListGroup>
+          //     <ListGroupItem active tag="a" href="#" action>
+          //       Cras justo odio
+          //     </ListGroupItem>
+          //     <ListGroupItem tag="a" href="#" action>
+          //       Dapibus ac facilisis in
+          //     </ListGroupItem>
+          //     <ListGroupItem tag="a" href="#" action>
+          //       Morbi leo risus
+          //     </ListGroupItem>
+          //     <ListGroupItem tag="a" href="#" action>
+          //       Porta ac consectetur ac
+          //     </ListGroupItem>
+          //     <ListGroupItem disabled tag="a" href="#" action>
+          //       Vestibulum at eros
+          //     </ListGroupItem>
+          //   </ListGroup>
+          // );
+
+          <ListGroup>
+            {/* <ListGroupItem>
               <Link to="/components">Welcome</Link>
-            </li>
-            {ComponentPages.map(({ name, slug }) => {
-              slug = slug || toSlug(name);
-              return (
-                <li key={name}>
-                  <Link to={`${match.url}/${slug}`}>{name}</Link>
-                </li>
-              );
-            })}
-          </ul>
+            </ListGroupItem> */}
+            {/* {ComponentPages.map(({ name, slug }) => (
+              <ListGroupItem key={name}>
+                <Link to={`${match.url}/${slug || toSlug(name)}`}>{name}</Link>
+              </ListGroupItem>
+            ))} */}
+            {ComponentPages.map(({ name, slug }) => (
+              <ListGroupItemLink
+                key={name}
+                to={`${match.url}/${slug || toSlug(name)}`}
+                action
+                style={{ cursor: 'pointer' }}
+              >
+                {name}
+              </ListGroupItemLink>
+            ))}
+          </ListGroup>
         );
+
+        // return (
+        //   <ul>
+        //     <li>
+        //       <Link to="/components">Welcome</Link>
+        //     </li>
+        //     {ComponentPages.map(({ name, slug }) => {
+        //       slug = slug || toSlug(name);
+        //       return (
+        //         <li key={name}>
+        //           <Link to={`${match.url}/${slug}`}>{name}</Link>
+        //         </li>
+        //       );
+        //     })}
+        //   </ul>
+        // );
       }}
       render={props => {
         return (
@@ -66,7 +143,7 @@ export default ({ match }) => {
             <Route
               exact
               path={match.url}
-              render={() => <div>Select a component to learn more...</div>}
+              render={() => <Box>{props => <DefaultView />}</Box>}
             />
           </div>
         );

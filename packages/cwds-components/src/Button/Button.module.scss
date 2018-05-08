@@ -1,5 +1,4 @@
-// @import '../core';
-@import '~bootstrap/scss/buttons';
+@import '../core';
 
 //
 // Base styles
@@ -68,15 +67,15 @@ fieldset:disabled a.btn {
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    @include button-variant($value, $value);
+    @include button-variant($value, transparent);
   }
 }
 
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-  }
-}
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//   }
+// }
 
 //
 // Link buttons
@@ -115,25 +114,25 @@ fieldset:disabled a.btn {
 // Button Sizes
 //
 
-.btn-lg {
-  @include button-size(
-    $btn-padding-y-lg,
-    $btn-padding-x-lg,
-    $font-size-lg,
-    $btn-line-height-lg,
-    $btn-border-radius-lg
-  );
-}
+// .btn-lg {
+//   @include button-size(
+//     $btn-padding-y-lg,
+//     $btn-padding-x-lg,
+//     $font-size-lg,
+//     $btn-line-height-lg,
+//     $btn-border-radius-lg
+//   );
+// }
 
-.btn-sm {
-  @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-x-sm,
-    $font-size-sm,
-    $btn-line-height-sm,
-    $btn-border-radius-sm
-  );
-}
+// .btn-sm {
+//   @include button-size(
+//     $btn-padding-y-sm,
+//     $btn-padding-x-sm,
+//     $font-size-sm,
+//     $btn-line-height-sm,
+//     $btn-border-radius-sm
+//   );
+// }
 
 //
 // Block button
@@ -164,4 +163,10 @@ input[type='button'] {
 
 .btn {
   text-transform: uppercase;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    box-shadow: $btn-box-shadow;
+  }
 }
