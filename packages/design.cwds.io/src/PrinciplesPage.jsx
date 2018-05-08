@@ -8,6 +8,7 @@ import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import { Card, CardBody } from '@cwds/components/lib/Cards';
+import { Nav, NavItem, NavLink } from '@cwds/components/lib/Nav';
 
 export default () => {
   return (
@@ -34,6 +35,22 @@ export default () => {
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">
+            <Nav className="flex-column" vertical={true}>
+              <NavItem>
+                <NavLink href="#">asdf</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Link</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Another Link</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink disabled href="#">
+                  Disabled Link
+                </NavLink>
+              </NavItem>
+            </Nav>
             <Card>
               <CardBody>
                 <p>

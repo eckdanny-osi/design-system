@@ -90,14 +90,6 @@ export default ({ match }) => {
           // );
 
           <ListGroup>
-            {/* <ListGroupItem>
-              <Link to="/components">Welcome</Link>
-            </ListGroupItem> */}
-            {/* {ComponentPages.map(({ name, slug }) => (
-              <ListGroupItem key={name}>
-                <Link to={`${match.url}/${slug || toSlug(name)}`}>{name}</Link>
-              </ListGroupItem>
-            ))} */}
             {ComponentPages.map(({ name, slug }) => (
               <ListGroupItemLink
                 key={name}
@@ -108,6 +100,13 @@ export default ({ match }) => {
                 {name}
               </ListGroupItemLink>
             ))}
+            {new Array(10).fill(1).map((_, i) => {
+              return (
+                <ListGroupItem key={`fake-${i}`}>
+                  <Link to="/components">Welcome</Link>
+                </ListGroupItem>
+              );
+            })}
           </ListGroup>
         );
 
