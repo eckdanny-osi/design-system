@@ -5,7 +5,7 @@ import { Card, CardBody } from '@cwds/components/lib/Cards';
 const Buttons = () => (
   <Card>
     <CardBody>
-      <h1>Buttons</h1>
+      <h2>Buttons</h2>
       <Button color="secondary">secondary</Button>{' '}
       <Button color="primary">primary</Button>
       <br />

@@ -9,9 +9,11 @@ import {
 const CardsPage = () => {
   return (
     <div>
-      <h1>Cards</h1>
       <Card>
-        <CardBody>alsdkfjalsdkfj</CardBody>
+        <CardBody>
+          <h3>Cards</h3>
+          <p>Cards are just white boxes...</p>
+        </CardBody>
       </Card>
       <br />
       <Card>

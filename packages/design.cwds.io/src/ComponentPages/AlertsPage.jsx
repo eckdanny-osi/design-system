@@ -1,31 +1,35 @@
 import React from 'react';
 import Alert from '@cwds/components/lib/Alert';
-
-// import { Alert } from 'reactstrap';
-
-const Example = props => {
-  return (
-    <div>
-      <Alert color="primary">This is a primary alert — check it out!</Alert>
-      <Alert color="secondary">This is a secondary alert — check it out!</Alert>
-      <Alert color="success">This is a success alert — check it out!</Alert>
-      <Alert color="danger">This is a danger alert — check it out!</Alert>
-      <Alert color="warning">This is a warning alert — check it out!</Alert>
-      <Alert color="info">This is a info alert — check it out!</Alert>
-      <Alert color="light">This is a light alert — check it out!</Alert>
-      <Alert color="dark">This is a dark alert — check it out!</Alert>
-    </div>
-  );
-};
+import { Card, CardBody } from '@cwds/components/lib/Cards';
 
 const AlertsPage = () => (
   <div>
-    <h1>Alerts</h1>
-    {/* <Alert color="primary">alskdfj</Alert>
-    <Alert color="info">alskdfjlaskdjf</Alert>
-    <Alert color="danger">Danger</Alert>
-    <Alert color="success">alksdjf</Alert> */}
-    <Example />
+    <Card>
+      <CardBody>
+        <h2>Alerts</h2>
+        <Alert color="primary">This is a primary alert — check it out!</Alert>
+        <Alert color="secondary">
+          This is a secondary alert — check it out!
+        </Alert>
+        <Alert color="success">This is a success alert — check it out!</Alert>
+        <Alert color="danger">This is a danger alert — check it out!</Alert>
+        <Alert color="warning">This is a warning alert — check it out!</Alert>
+        <Alert color="info">This is a info alert — check it out!</Alert>
+        <Alert color="light">This is a light alert — check it out!</Alert>
+        <Alert color="dark">This is a dark alert — check it out!</Alert>
+      </CardBody>
+    </Card>
+    <br />
+    <Card>
+      <CardBody>
+        <p>
+          <tt>Alert</tt>s are one of the few components that can exist{' '}
+          <em>outside</em> of a <tt>Card</tt>!
+        </p>
+      </CardBody>
+    </Card>
+    <br />
+    <Alert color="secondary">I'm an alert. Just chillin' out here.</Alert>
   </div>
 );
 
