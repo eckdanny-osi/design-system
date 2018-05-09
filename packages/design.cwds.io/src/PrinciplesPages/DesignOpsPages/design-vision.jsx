@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h3 id="cwds-cws-cares-design-vision">CWDS / CWS-CARES Design Vision</h3>
+    <h3 id="cwds-cws-cares-design-vision">Design Vision</h3>
     <h4 id="background">Background</h4>
     <p>
       The people working in the state, county, and tribal areas of CA are the
@@ -54,7 +54,7 @@ export default () => (
       We believe that government can build excellent user-centered digital
       services.
     </p>
-    <h3 id="goals">Goals</h3>
+    <h4 id="goals">Goals</h4>
     <ul>
       <li>Efficiency</li>
       <li>Consistency</li>

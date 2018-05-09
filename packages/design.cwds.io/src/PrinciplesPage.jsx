@@ -7,12 +7,16 @@ import Logo from '@cwds/components/lib/Logo';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
+import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 import IntraNav from '@cwds/components/lib/IntraNav';
 
-import DesignVision from './PrinciplesPages/design-vision';
-import ExperienceValues from './PrinciplesPages/experience-values';
-import HumanCenteredDesign from './PrinciplesPages/human-centered-design';
+import {
+  DesignVision,
+  ExperienceValues,
+  HumanCenteredDesign,
+  AboutChildWelfare,
+} from './PrinciplesPages/DesignOpsPages';
+import { Scrumban, HowWeWork } from './PrinciplesPages/Scrumban';
 
 export default () => {
   return (
@@ -43,27 +47,24 @@ export default () => {
           </Col>
           <Col md="8" lg="9">
             <Card>
-              <CardBody>
-                <em>Oooooohhhhh....</em> Wouldn't you like to know?
-              </CardBody>
-            </Card>
-            <br />
-
-            <Card>
+              <CardHeader>
+                <h2>Design Ops</h2>
+              </CardHeader>
               <CardBody>
                 <DesignVision />
-              </CardBody>
-            </Card>
-            <br />
-            <Card>
-              <CardBody>
                 <ExperienceValues />
+                <HumanCenteredDesign />
+                <AboutChildWelfare />
               </CardBody>
             </Card>
             <br />
             <Card>
+              <CardHeader>
+                <h2 id="scrumban">Scrumban</h2>
+              </CardHeader>
               <CardBody>
-                <HumanCenteredDesign />
+                <Scrumban />
+                <HowWeWork />
               </CardBody>
             </Card>
           </Col>

@@ -21,7 +21,7 @@ const IntraNav = props => {
             <NavLink href="#">asdf</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link</NavLink>
+            <NavLink href="#scrumban">Scrumban</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">Another Link</NavLink>

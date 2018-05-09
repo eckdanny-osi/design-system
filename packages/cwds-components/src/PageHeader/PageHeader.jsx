@@ -20,9 +20,9 @@ const PageHeader = ({ title = 'Page Header', cta }) => {
           <Col>
             <h1 className={cn(styles.PageTitle)}>{title}</h1>
           </Col>
-          <Col xs="3" className={cn(styles.ActionsContainer)}>
+          {/* <Col xs="3" className={cn(styles.ActionsContainer)}>
             <Icon icon="plusCircle" size="2x" />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </div>
