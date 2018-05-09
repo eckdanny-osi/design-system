@@ -39,7 +39,7 @@ export default () => {
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">
-            <IntraNav />
+            <IntraNav style={{ position: 'fixed' }} />
           </Col>
           <Col md="8" lg="9">
             <Card>
