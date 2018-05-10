@@ -45,8 +45,13 @@
 }
 
 .card-subtitle {
-  margin-top: -($card-spacer-y / 2);
-  margin-bottom: 0;
+  // margin-top: -($card-spacer-y / 2);
+  // margin-bottom: 0;
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+
+  font-weight: 700;
+  border-bottom: 1px solid $card-border-color;
 }
 
 .card-text:last-child {

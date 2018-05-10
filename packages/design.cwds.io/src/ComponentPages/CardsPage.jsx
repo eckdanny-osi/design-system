@@ -4,7 +4,21 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
+  CardSubtitle,
 } from '@cwds/components/lib/Cards';
+import Row from '@cwds/components/lib/Row';
+import Col from '@cwds/components/lib/Col';
+
+const CardSectionTitle = props => (
+  <h3
+    style={{
+      fontWeight: 700,
+      fontSize: '16px',
+      borderBottom: '1px solid grey',
+    }}
+    {...props}
+  />
+);
 
 const CardsPage = () => {
   return (
@@ -18,7 +32,43 @@ const CardsPage = () => {
       <br />
       <Card>
         <CardHeader>Card Header</CardHeader>
-        <CardBody>alsdkfjalsdkfj</CardBody>
+        <CardBody>
+          <Row>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+          </Row>
+          <CardSubtitle>Hello</CardSubtitle>
+          <Row>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+          </Row>
+          <CardSubtitle>World</CardSubtitle>
+          <Row>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+            <Col sm="4">
+              Label<br />Value
+            </Col>
+          </Row>
+        </CardBody>
         <CardFooter>CardFooter</CardFooter>
       </Card>
     </div>

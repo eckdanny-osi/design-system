@@ -15,4 +15,5 @@ export { CardFooter };
 // export { default as CardFooter } from './CardFooter';
 export { default as CardBody } from './CardBody';
 export { default as CardDeck } from './CardDeck';
+export { default as CardSubtitle } from 'reactstrap/lib/CardSubtitle';
 export default Card;
