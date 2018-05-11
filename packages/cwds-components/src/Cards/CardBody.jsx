@@ -1,17 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Card.module.scss';
+import React, { Component } from 'react';
+import CardBodyUnstyled from 'reactstrap/lib/CardBody';
+import styles from './Cards.module.scss';
 
-const propTypes = {};
+export { CardBodyUnstyled };
 
-const defaultProps = {};
-
-const CardBody = props => {
-  return <div className={cn(styles['card-body'])} {...props} />;
-};
-
-CardBody.propTypes = propTypes;
-CardBody.defaultProps = defaultProps;
+export class CardBody extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <CardBodyUnstyled cssModule={styles} {...props} />;
+  }
+}
 
 export default CardBody;

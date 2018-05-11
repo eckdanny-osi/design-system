@@ -1,17 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Card.module.scss';
+import React, { Component } from 'react';
+import CardFooterUnstyled from 'reactstrap/lib/CardFooter';
+import styles from './Cards.module.scss';
 
-const propTypes = {};
+export { CardFooterUnstyled };
 
-const defaultProps = {};
-
-const CardFooter = props => {
-  return <div className={cn(styles['card-footer'])} {...props} />;
-};
-
-CardFooter.propTypes = propTypes;
-CardFooter.defaultProps = defaultProps;
+export class CardFooter extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <CardFooterUnstyled cssModule={styles} {...props} />;
+  }
+}
 
 export default CardFooter;

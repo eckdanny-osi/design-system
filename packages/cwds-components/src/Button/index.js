@@ -1,10 +1,14 @@
-// export { default } from './Button';
+import React, { Component } from 'react';
+import ButtonUnstyled from './Button';
+import styles from './Button.module.scss';
 
-export { default } from 'reactstrap/lib/Button';
+export class Button extends Component {
+  render() {
+    const { cssModule = {}, ...props } = this.props;
+    return <ButtonUnstyled cssModule={styles} {...props} />;
+  }
+}
 
-// import React from 'react';
-// import RSButton from 'reactstrap/lib/Button';
+export { ButtonUnstyled };
 
-// export default ({ color, ...props }) => {
-//   return <RSButton color="primary" {...props} />;
-// };
+export default Button;

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { mapToCssModules } from 'reactstrap/lib/utils';
 import Fade from 'reactstrap/lib/Fade';
 import Icon, { ICON_NAMES } from '../Icon';
-import { getMilliseconds } from 'date-fns';
+import styles from './Alert.module.scss';
 
 const propTypes = {
   children: PropTypes.node,
@@ -50,7 +50,7 @@ function Alert(props) {
     className,
     closeClassName,
     closeAriaLabel,
-    cssModule,
+    cssModule = styles,
     tag: Tag,
     color,
     isOpen,
@@ -69,7 +69,7 @@ function Alert(props) {
 
   const closeClasses = mapToCssModules(
     classNames('close', closeClassName),
-    cssModule
+    styles
   );
 
   return (
@@ -81,10 +81,18 @@ function Alert(props) {
       in={isOpen}
       role="alert"
     >
-      <div className={mapToCssModules('alert-icon-container')}>
+      {/* mapToCssModules('alert-icon-container') styles) */}
+      <div
+        className={mapToCssModules(
+          classNames('alert-icon-container', {
+            'alert-dismissible': !!toggle,
+          }),
+          styles
+        )}
+      >
         <Icon icon={getIcon(color)} style={{ color: 'white' }} />
       </div>
-      <div className={mapToCssModules(classNames('alert-body'))}>
+      <div className={mapToCssModules(classNames('alert-body'), styles)}>
         {toggle ? (
           <button
             type="button"

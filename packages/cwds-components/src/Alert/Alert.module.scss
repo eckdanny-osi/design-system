@@ -1,4 +1,5 @@
 @import '../core';
+@import '~bootstrap/scss/close';
 
 //
 // Base styles
@@ -43,8 +44,9 @@
 //
 // Expand the right padding and account for the close button's positioning.
 
-.alert-dismissible {
+.alert-dismissible .alert-body {
   // padding-right: ($close-font-size + $alert-padding-x * 2);
+  padding-right: 36px;
 
   // Adjust close link position
   .close {
@@ -64,9 +66,6 @@
 // }
 
 .alert-icon-container {
-  width: 40px;
-  // background-color: pink;
-
   width: 40px;
   padding: 0;
   display: flex;

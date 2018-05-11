@@ -9503,7 +9503,7 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scripts-cssmodules@1.1.10:
+react-scripts-cssmodules@^1.1.10:
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/react-scripts-cssmodules/-/react-scripts-cssmodules-1.1.10.tgz#f4a080800997296f7b5d309330f12ce76fb05092"
   dependencies:

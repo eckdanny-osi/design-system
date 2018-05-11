@@ -18,7 +18,8 @@ const AlertsPage = () => (
         {/* <Alert color="light">This is a light alert — check it out!</Alert> */}
         {/* <Alert color="dark">This is a dark alert — check it out!</Alert> */}
         <AlertUncontrolled color="warning">
-          This is a warning alert — check it out!
+          This is a warning alert — check it out! You may also be interested to
+          see how the overflow conditions work here...
         </AlertUncontrolled>
       </CardBody>
     </Card>

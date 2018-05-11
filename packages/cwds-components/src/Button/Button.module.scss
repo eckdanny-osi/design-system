@@ -89,7 +89,9 @@ fieldset:disabled a.btn {
 
   @include hover {
     color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    // TODO: fix me the right way
+    // text-decoration: $link-hover-decoration;
+    text-decoration: underline;
     background-color: transparent;
     border-color: transparent;
   }
@@ -165,8 +167,8 @@ input[type='button'] {
   text-transform: uppercase;
 }
 
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
-    box-shadow: $btn-box-shadow;
-  }
-}
+// @each $color, $value in $theme-colors {
+//   .btn-#{$color} {
+//     box-shadow: $btn-box-shadow;
+//   }
+// }

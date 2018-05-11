@@ -1,17 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Card.module.scss';
+import React, { Component } from 'react';
+import CardDeckUnstyled from 'reactstrap/lib/CardDeck';
+import styles from './Cards.module.scss';
 
-const propTypes = {};
+export { CardDeckUnstyled };
 
-const defaultProps = {};
-
-const CardDeck = props => {
-  return <div className={cn(styles['card-deck'])} {...props} />;
-};
-
-CardDeck.propTypes = propTypes;
-CardDeck.defaultProps = defaultProps;
+export class CardDeck extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <CardDeckUnstyled cssModule={styles} {...props} />;
+  }
+}
 
 export default CardDeck;

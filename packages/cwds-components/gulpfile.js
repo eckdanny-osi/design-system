@@ -87,6 +87,7 @@ gulp.task('dumbcss', () => {
 // // gulp.task('default', ['js', 'css', 'tsd']);
 
 gulp.task('build:watch', done => {
+  gulp.start('default');
   const watcher = gulp.watch([...FILES_JS, ...FILES_CSS], ['js', 'dumbcss']);
   done();
 });

@@ -1,17 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Card.module.scss';
+import React, { Component } from 'react';
+import CardHeaderUnstyled from 'reactstrap/lib/CardHeader';
+import styles from './Cards.module.scss';
 
-const propTypes = {};
+export { CardHeaderUnstyled };
 
-const defaultProps = {};
-
-const CardHeader = props => {
-  return <div className={cn(styles['card-header'])}>Hello World</div>;
-};
-
-CardHeader.propTypes = propTypes;
-CardHeader.defaultProps = defaultProps;
+export class CardHeader extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <CardHeaderUnstyled cssModule={styles} {...props} />;
+  }
+}
 
 export default CardHeader;
