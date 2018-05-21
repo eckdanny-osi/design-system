@@ -5,10 +5,11 @@ import Container from '../Container';
 import Row from '../Row';
 import Col from '../Col';
 import Icon from '../Icon';
-// import styles from './PageHeader.module.scss';
-import styles from '../global/styles.module.scss';
+import styles from './PageHeader.module.scss';
 
-const propTypes = {};
+const propTypes = {
+  title: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+};
 
 const defaultProps = {};
 
@@ -18,11 +19,15 @@ const PageHeader = ({ title = 'Page Header', cta }) => {
       <Container>
         <Row>
           <Col>
-            <h1 className={cn(styles.PageTitle)}>{title}</h1>
+            <h1 className={cn(styles.PageTitle)}>
+              {'function' === typeof title ? title() : title}
+            </h1>
           </Col>
-          {/* <Col xs="3" className={cn(styles.ActionsContainer)}>
-            <Icon icon="plusCircle" size="2x" />
-          </Col> */}
+          {cta && (
+            <Col xs="3" className={cn(styles.ActionsContainer)}>
+              {cta()}
+            </Col>
+          )}
         </Row>
       </Container>
     </div>

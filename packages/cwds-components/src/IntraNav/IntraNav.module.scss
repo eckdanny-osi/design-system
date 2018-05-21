@@ -1,3 +1,7 @@
+@import '../core';
+
 .IntraNav {
-  // styles
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

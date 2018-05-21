@@ -14,26 +14,28 @@ const IntraNav = props => {
   //   <div className={cn(styles.IntraNav)}>Hello World</div>
   // );
   return (
-    <Nav className="flex-column" vertical={true}>
-      <Affix viewportOffsetTop={118}>
-        <div>
-          <NavItem>
-            <NavLink href="#">asdf</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#scrumban">Scrumban</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">Another Link</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink disabled href="#">
-              Disabled Link
-            </NavLink>
-          </NavItem>
-        </div>
-      </Affix>
-    </Nav>
+    <div className={cn(styles.IntraNav)}>
+      <Nav className={cn('flex-column')} vertical={true}>
+        <Affix viewportOffsetTop={118}>
+          <div style={{ width: '100%' }}>
+            <NavItem>
+              <NavLink href="#">asdf</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#scrumban">Scrumban</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">Another Link</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink disabled href="#">
+                Disabled Link
+              </NavLink>
+            </NavItem>
+          </div>
+        </Affix>
+      </Nav>
+    </div>
   );
 };
 

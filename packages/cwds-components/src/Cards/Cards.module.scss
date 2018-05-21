@@ -305,3 +305,9 @@
     border-top-right-radius: 0;
   }
 }
+
+.card-body {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,11 +1,13 @@
 import React from 'react';
 import Badge from '@cwds/components/lib/Badge';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
+import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 
 const Buttons = () => (
   <Card>
-    <CardBody>
+    <CardHeader>
       <h2>Badges</h2>
+    </CardHeader>
+    <CardBody>
       <Badge color="primary">Primary</Badge>
       <Badge color="secondary">Secondary</Badge>
       <Badge color="success">Success</Badge>

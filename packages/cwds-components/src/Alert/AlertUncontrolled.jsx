@@ -4,7 +4,6 @@ import Alert from './Alert';
 export default class UncontrolledAlert extends Component {
   constructor(props) {
     super(props);
-
     this.state = { isOpen: true };
     this.toggle = this.toggle.bind(this);
   }

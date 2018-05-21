@@ -8,9 +8,16 @@ import Icon from '@cwds/components/lib/Icon';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
 import Logo from '@cwds/components/lib/Logo';
-import Alert from '@cwds/components/lib/Alert';
+import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
+import Badge from '@cwds/components/lib/Badge';
+import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+} from '@cwds/components/lib/Cards';
 
 const propTypes = {};
 const defaultProps = {};
@@ -26,8 +33,43 @@ const App = ({ name }) => (
         );
       }}
     />
-    <PageHeader>alskdfjalsdkfj</PageHeader>
+    <PageHeader title={() => 'Rails App'} />
     <Container>
+      <section id="alerts">
+        <h3>Alerts</h3>
+        <Alert color="success">
+          Do <tt>Alert</tt>s work? <em>Awesome!</em>
+        </Alert>
+        <AlertUncontrolled color="warning">
+          Do <tt>AlertUncontrolled</tt>s work? <em>Awesome!</em>
+        </AlertUncontrolled>
+      </section>
+      <section>
+        <h3>Avatars</h3>
+        <pre>
+          <code>@todo</code>
+        </pre>
+      </section>
+      <section>
+        <h3>Badges</h3>
+        <Badge color="success">
+          Awesome!
+        </Badge> <Badge color="info">OK!</Badge>{' '}
+        <Badge color="warning">Careful!</Badge>{' '}
+        <Badge color="danger">Enough!</Badge>
+      </section>
+      <section>
+        <h3>BreadCrumbs</h3>
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="#">Foo</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="#">Bar</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>Quo</BreadcrumbItem>
+        </Breadcrumb>
+      </section>
       <h1>alskdjfasdkf</h1>
       <Alert color="primary">alskdfj</Alert>
       <Button color="primary">Hello!</Button> <Button>Default Button</Button>{' '}
@@ -53,6 +95,23 @@ const App = ({ name }) => (
       >
         <Button>Cancel</Button> <Button color="primary">Save</Button>
       </div>
+      <h3>Question about button states...</h3>
+      <Button color="primary">Save</Button>
+      <p>
+        <em>begets...</em>
+      </p>
+      <Button color="primary" disabled>
+        <Icon style={{ marginRight: '5px' }} icon="circleNotch" spin />{' '}
+        Saving...
+      </Button>
+      <p>
+        <em>begets...</em>
+      </p>
+      <Button color="primary">
+        <Icon style={{ marginRight: '5px' }} icon="check" /> Saved
+      </Button>
+      <br />
+      <br />
     </Container>
   </div>
 );

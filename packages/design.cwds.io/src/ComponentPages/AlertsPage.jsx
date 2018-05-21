@@ -1,12 +1,14 @@
 import React from 'react';
 import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
+import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 
 const AlertsPage = () => (
   <div>
     <Card>
-      <CardBody>
+      <CardHeader>
         <h2>Alerts</h2>
+      </CardHeader>
+      <CardBody>
         {/* <Alert color="primary">This is a primary alert — check it out!</Alert> */}
         {/* <Alert color="secondary">
           This is a secondary alert — check it out!
