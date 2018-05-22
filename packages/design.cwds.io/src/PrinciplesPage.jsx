@@ -34,10 +34,10 @@ export default () => {
       <Container>
         <Breadcrumb>
           <BreadcrumbItem>
-            <a href="#">Guide</a>
+            <a href="#void">Guide</a>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <a href="#">Principles</a>
+            <a href="#void">Principles</a>
           </BreadcrumbItem>
           <BreadcrumbItem active>Whatever</BreadcrumbItem>
         </Breadcrumb>

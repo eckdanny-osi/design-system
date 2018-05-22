@@ -9,17 +9,6 @@ import {
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 
-const CardSectionTitle = props => (
-  <h3
-    style={{
-      fontWeight: 700,
-      fontSize: '16px',
-      borderBottom: '1px solid grey',
-    }}
-    {...props}
-  />
-);
-
 const CardsPage = () => {
   return (
     <div>

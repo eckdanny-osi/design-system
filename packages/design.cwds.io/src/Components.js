@@ -5,21 +5,9 @@ import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Logo from '@cwds/components/lib/Logo';
-import Row from '@cwds/components/lib/Row';
-import Col from '@cwds/components/lib/Col';
 import { Card, CardBody } from '@cwds/components/lib/Cards';
 import { ListGroup, ListGroupItem } from '@cwds/components/lib/ListGroups';
 import ComponentPages from './ComponentPages';
-
-function withPageWrapper(Component) {
-  return props => (
-    <Card>
-      <CardBody>
-        <Component {...props} />
-      </CardBody>
-    </Card>
-  );
-}
 
 const Box = ({ children }) => (
   <Card>

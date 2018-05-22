@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import propTypes from 'prop-types';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Logo from '@cwds/components/lib/Logo';
@@ -19,7 +18,7 @@ import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
 // import Card from '@cwds/components/lib/Card';
 // import CardHeader from '@cwds/components/lib/CardHeader';
 // import CardBody from '@cwds/components/lib/CardBody';
-import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
+// import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 
 import IntraNav from '@cwds/components/lib/IntraNav';
 
@@ -41,10 +40,10 @@ export default () => {
       <Container>
         <Breadcrumb>
           <BreadcrumbItem>
-            <a href="#">Guide</a>
+            <a href="#void">Guide</a>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <a href="#">Principles</a>
+            <a href="#void">Principles</a>
           </BreadcrumbItem>
           <BreadcrumbItem active>Whatever</BreadcrumbItem>
         </Breadcrumb>

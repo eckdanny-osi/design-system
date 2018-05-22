@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import propTypes from 'prop-types';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Logo from '@cwds/components/lib/Logo';
