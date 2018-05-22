@@ -123,20 +123,20 @@ export default () => (
         </Card>
         <div className="w-100 d-none d-sm-block d-md-none mb-3" />
         <Card>
-          <CardHeader>Layouts</CardHeader>
-          <CardBody>Common page layouts for CARES</CardBody>
+          <CardHeader>Core</CardHeader>
+          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
           <CardFooter>
-            <Link to="/page-layouts">
+            <Link to="/core">
               <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>
         <div className="w-100 d-none d-md-block d-lg-none mb-3" />
         <Card>
-          <CardHeader>Core</CardHeader>
-          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
+          <CardHeader>Layouts</CardHeader>
+          <CardBody>Common page layouts for CARES</CardBody>
           <CardFooter>
-            <Link to="/core">
+            <Link to="/page-layouts">
               <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
@@ -146,10 +146,20 @@ export default () => (
           <CardHeader>Labs</CardHeader>
           <CardBody>
             Not everything in here is ready for general use, but it should be
-            showcased for the purpose of soliciting feedback!
+            showcased for the purposes of design critique and soliciting general
+            feedback!
           </CardBody>
           <CardFooter>
             <Link to="/labs">
+              <Button color="primary">Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>ComponentBrowser</CardHeader>
+          <CardBody>You want Components?</CardBody>
+          <CardFooter>
+            <Link to="/component-browser">
               <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>

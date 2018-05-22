@@ -9,6 +9,7 @@ import PageLayouts from './PageLayouts';
 import CorePage from './CorePage';
 import PrinciplesPage from './PrinciplesPage';
 import LabsPage from './modules/labs';
+import ComponentBrowser from './modules/component-browser';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/core" component={CorePage} />
             <Route path="/principles" component={PrinciplesPage} />
             <Route path="/labs" component={LabsPage} />
+            <Route path="/component-browser" component={ComponentBrowser} />
           </div>
         </ScrollToTop>
       </Router>
