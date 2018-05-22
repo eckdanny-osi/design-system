@@ -106,7 +106,6 @@ export default () => {
               <CardBody>alksdjflkasdjf</CardBody>
               <CardFooter>Footer</CardFooter>
             </Card>
-            <br />
           </Col>
         </Row>
       </Container>

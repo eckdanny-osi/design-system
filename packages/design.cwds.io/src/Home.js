@@ -104,34 +104,6 @@ export default () => (
     <Container>
       <CardDeck>
         <Card>
-          <CardHeader>Components</CardHeader>
-          <CardBody>alskdfj</CardBody>
-          <CardFooter>
-            <Link to="/components">
-              <Button color="primary">Go!</Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>Layouts</CardHeader>
-          <CardBody>Common page layouts for CARES</CardBody>
-          <CardFooter>
-            <Link to="/page-layouts">
-              <Button color="primary">Go!</Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>Core</CardHeader>
-          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
-          <CardFooter>
-            <Link to="/core">
-              <Button color="primary">Go!</Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <div className="w-100 d-none d-md-block d-lg-none" />
-        <Card>
           <CardHeader>Principles</CardHeader>
           <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
           <CardFooter>
@@ -141,10 +113,40 @@ export default () => (
           </CardFooter>
         </Card>
         <Card>
+          <CardHeader>Components</CardHeader>
+          <CardBody>alskdfj</CardBody>
+          <CardFooter>
+            <Link to="/components">
+              <Button color="primary">Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <div className="w-100 d-none d-sm-block d-md-none mb-3" />
+        <Card>
+          <CardHeader>Layouts</CardHeader>
+          <CardBody>Common page layouts for CARES</CardBody>
+          <CardFooter>
+            <Link to="/page-layouts">
+              <Button color="primary">Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <div className="w-100 d-none d-md-block d-lg-none mb-3" />
+        <Card>
+          <CardHeader>Core</CardHeader>
+          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
+          <CardFooter>
+            <Link to="/core">
+              <Button color="primary">Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <div className="w-100 d-none d-sm-block d-md-none mb-3" />
+        <Card>
           <CardHeader>Labs</CardHeader>
           <CardBody>
-            Stuff that is not quite ready for general use, but should be
-            showcased for soliciting feedback
+            Not everything in here is ready for general use, but it should be
+            showcased for the purpose of soliciting feedback!
           </CardBody>
           <CardFooter>
             <Link to="/labs">

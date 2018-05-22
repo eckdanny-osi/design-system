@@ -34,12 +34,12 @@ export default () => {
       <Container>
         <Breadcrumb>
           <BreadcrumbItem>
-            <a href="#">Home</a>
+            <a href="#">Guide</a>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <a href="#">Library</a>
+            <a href="#">Principles</a>
           </BreadcrumbItem>
-          <BreadcrumbItem active>Data</BreadcrumbItem>
+          <BreadcrumbItem active>Whatever</BreadcrumbItem>
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">

@@ -25,7 +25,7 @@ const AlertsPage = () => (
         </AlertUncontrolled>
       </CardBody>
     </Card>
-    <br />
+    <hr className="my-4" />
     <Card>
       <CardBody>
         <p>

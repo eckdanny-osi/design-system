@@ -16,7 +16,7 @@ const IntraNav = props => {
   return (
     <div className={cn(styles.IntraNav)}>
       <Nav className={cn('flex-column')} vertical={true}>
-        <Affix viewportOffsetTop={118}>
+        <Affix viewportOffsetTop={128}>
           <div style={{ width: '100%' }}>
             <NavItem>
               <NavLink href="#">asdf</NavLink>
