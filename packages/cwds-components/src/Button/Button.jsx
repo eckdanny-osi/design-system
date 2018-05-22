@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 
 export class Button extends Component {
   render() {
-    const { cssModule = {}, ...props } = this.props;
+    const { cssModule, className, size, ...props } = this.props;
     return <ButtonUnstyled cssModule={styles} {...props} />;
   }
 }
