@@ -19,11 +19,11 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
             <Route path="/page-layouts" component={PageLayouts} />
-            <Route path="/components" component={ComponentsPage} />
+            <Route path="/components-old" component={ComponentsPage} />
             <Route path="/core" component={CorePage} />
             <Route path="/principles" component={PrinciplesPage} />
             <Route path="/labs" component={LabsPage} />
-            <Route path="/component-browser" component={ComponentBrowser} />
+            <Route path="/components" component={ComponentBrowser} />
           </div>
         </ScrollToTop>
       </Router>

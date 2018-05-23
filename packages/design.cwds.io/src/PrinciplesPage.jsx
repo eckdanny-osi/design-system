@@ -8,7 +8,8 @@ import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
-import IntraNav from '@cwds/components/lib/IntraNav';
+import AnchorNav from '@cwds/components/lib/AnchorNav';
+import { NavItem, NavLink } from '@cwds/components/lib/Nav';
 
 import {
   DesignVision,
@@ -43,7 +44,36 @@ export default () => {
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">
-            <IntraNav style={{ position: 'fixed' }} />
+            {/* <AnchorNav style={{ position: 'fixed' }} /> */}
+            <AnchorNav
+              style={{ position: 'fixed' }}
+              items={[]}
+              renderItem={d => (
+                <NavItem key={d.slug}>
+                  <NavLink
+                    href={`#${d.slug}`}
+                    onClick={e => {
+                      e.preventDefault();
+                      // const $el = document.getElementById(d.slug);
+                      // $el.scrollIntoView({
+                      //   behavior: 'smooth',
+                      //   block: 'start',
+                      // });
+                      const $el = document.getElementById(d.slug);
+                      // const posn = $el.getBoundingClientRect().top - 132;
+                      const posn = $el.offsetTop + 118 - 60; //  - 132;
+                      // console.log(posn);
+                      window.scrollTo({
+                        top: posn,
+                        behavior: 'smooth',
+                      });
+                    }}
+                  >
+                    {d.title}
+                  </NavLink>
+                </NavItem>
+              )}
+            />
           </Col>
           <Col md="8" lg="9">
             <Card>

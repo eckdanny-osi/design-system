@@ -20,7 +20,7 @@ import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
 // import CardBody from '@cwds/components/lib/CardBody';
 // import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 
-import IntraNav from '@cwds/components/lib/IntraNav';
+import AnchorNav from '@cwds/components/lib/AnchorNav';
 
 import ComponentRoutes from './ComponentRouteManager';
 
@@ -49,12 +49,32 @@ export default () => {
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">
-            <IntraNav
+            <AnchorNav
               style={{ position: 'fixed' }}
               items={ComponentRoutes}
               renderItem={d => (
                 <NavItem key={d.slug}>
-                  <NavLink href={`#${d.slug}`}>{d.title}</NavLink>
+                  <NavLink
+                    href={`#${d.slug}`}
+                    onClick={e => {
+                      e.preventDefault();
+                      // const $el = document.getElementById(d.slug);
+                      // $el.scrollIntoView({
+                      //   behavior: 'smooth',
+                      //   block: 'start',
+                      // });
+                      const $el = document.getElementById(d.slug);
+                      // const posn = $el.getBoundingClientRect().top - 132;
+                      const posn = $el.offsetTop + 118 - 60; //  - 132;
+                      // console.log(posn);
+                      window.scrollTo({
+                        top: posn,
+                        behavior: 'smooth',
+                      });
+                    }}
+                  >
+                    {d.title}
+                  </NavLink>
                 </NavItem>
               )}
             />

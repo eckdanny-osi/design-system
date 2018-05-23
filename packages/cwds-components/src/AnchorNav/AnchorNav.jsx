@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Nav, NavItem, NavLink } from '../Nav';
-import styles from './IntraNav.module.scss';
+import styles from './AnchorNav.module.scss';
 import Affix from 'react-overlays/lib/AutoAffix';
 
 const propTypes = {

@@ -38,13 +38,22 @@ export default () => (
         </Card>
         <Card>
           <CardHeader>Components</CardHeader>
-          <CardBody>alskdfj</CardBody>
+          <CardBody>You want Components?</CardBody>
           <CardFooter>
             <Link to="/components">
               <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
         </Card>
+        {/* <Card>
+          <CardHeader>Components</CardHeader>
+          <CardBody>alskdfj</CardBody>
+          <CardFooter>
+            <Link to="/components-old">
+              <Button color="primary">Go!</Button>
+            </Link>
+          </CardFooter>
+        </Card> */}
         <div className="w-100 d-none d-sm-block d-md-none mb-3" />
         <Card>
           <CardHeader>Core</CardHeader>
@@ -75,15 +84,6 @@ export default () => (
           </CardBody>
           <CardFooter>
             <Link to="/labs">
-              <Button color="primary">Go!</Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>ComponentBrowser</CardHeader>
-          <CardBody>You want Components?</CardBody>
-          <CardFooter>
-            <Link to="/component-browser">
               <Button color="primary">Go!</Button>
             </Link>
           </CardFooter>
