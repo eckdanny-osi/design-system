@@ -1,7 +1,17 @@
 @import '../core';
 
-.IntraNav {
+.AnchorNav {
   @include media-breakpoint-down(sm) {
     display: none;
+  }
+}
+
+// Offset anchor links to account for fixed header
+:global {
+  :target:before {
+    content: '';
+    display: block;
+    height: 132px;
+    margin: -132px 0 0;
   }
 }

@@ -22,7 +22,7 @@ import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
 
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 
-import ComponentRoutes from './ComponentRouteManager';
+import IntraPageRoutes from './ComponentRouteManager';
 
 export default () => {
   return (
@@ -47,49 +47,38 @@ export default () => {
           </BreadcrumbItem>
           <BreadcrumbItem active>Whatever</BreadcrumbItem>
         </Breadcrumb>
-        <Row>
-          <Col md="4" lg="3">
+      </Container>
+      <Container>
+        <AnchorNav.Container
+          renderNav={() => (
             <AnchorNav
-              style={{ position: 'fixed' }}
-              items={ComponentRoutes}
-              renderItem={d => (
-                <NavItem key={d.slug}>
-                  <NavLink
-                    href={`#${d.slug}`}
-                    onClick={e => {
-                      e.preventDefault();
-                      // const $el = document.getElementById(d.slug);
-                      // $el.scrollIntoView({
-                      //   behavior: 'smooth',
-                      //   block: 'start',
-                      // });
-                      const $el = document.getElementById(d.slug);
-                      // const posn = $el.getBoundingClientRect().top - 132;
-                      const posn = $el.offsetTop + 118 - 60; //  - 132;
-                      // console.log(posn);
-                      window.scrollTo({
-                        top: posn,
-                        behavior: 'smooth',
-                      });
-                    }}
-                  >
-                    {d.title}
-                  </NavLink>
+              items={IntraPageRoutes}
+              renderItem={({ slug, title }) => (
+                <NavItem key={slug}>
+                  <NavLink href={`#${slug}`}>{title}</NavLink>
                 </NavItem>
               )}
             />
-          </Col>
-          <Col md="8" lg="9">
-            {ComponentRoutes.map(({ slug, component: Component }) => {
-              return (
-                <div key={slug} id={slug}>
-                  <Component />
-                  <hr className="my-4" />
-                </div>
-              );
-            })}
-          </Col>
-        </Row>
+          )}
+          renderMain={() => {
+            return (
+              <div>
+                {IntraPageRoutes.map(({ slug, component: Component }) => {
+                  return (
+                    <AnchorNav.Section
+                      key={slug}
+                      id={slug}
+                      registerRef={() => {}}
+                    >
+                      <Component />
+                      <hr className="my-4" />
+                    </AnchorNav.Section>
+                  );
+                })}
+              </div>
+            );
+          }}
+        />
       </Container>
     </div>
   );

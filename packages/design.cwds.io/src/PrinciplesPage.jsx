@@ -44,7 +44,6 @@ export default () => {
         </Breadcrumb>
         <Row>
           <Col md="4" lg="3">
-            {/* <AnchorNav style={{ position: 'fixed' }} /> */}
             <AnchorNav
               style={{ position: 'fixed' }}
               items={[]}
@@ -54,15 +53,8 @@ export default () => {
                     href={`#${d.slug}`}
                     onClick={e => {
                       e.preventDefault();
-                      // const $el = document.getElementById(d.slug);
-                      // $el.scrollIntoView({
-                      //   behavior: 'smooth',
-                      //   block: 'start',
-                      // });
                       const $el = document.getElementById(d.slug);
-                      // const posn = $el.getBoundingClientRect().top - 132;
                       const posn = $el.offsetTop + 118 - 60; //  - 132;
-                      // console.log(posn);
                       window.scrollTo({
                         top: posn,
                         behavior: 'smooth',
@@ -81,13 +73,19 @@ export default () => {
                 <h2>Design Ops</h2>
               </CardHeader>
               <CardBody>
-                <DesignVision />
-                <ExperienceValues />
+                <AnchorNav.Section
+                  registerRef={node => {
+                    debugger;
+                  }}
+                >
+                  <DesignVision />
+                </AnchorNav.Section>
+                {/* <ExperienceValues />
                 <HumanCenteredDesign />
-                <AboutChildWelfare />
+                <AboutChildWelfare /> */}
               </CardBody>
             </Card>
-            <br />
+            {/* <br />
             <Card>
               <CardHeader>
                 <h2 id="scrumban">Scrumban</h2>
@@ -96,7 +94,7 @@ export default () => {
                 <Scrumban />
                 <HowWeWork />
               </CardBody>
-            </Card>
+            </Card> */}
           </Col>
         </Row>
       </Container>
