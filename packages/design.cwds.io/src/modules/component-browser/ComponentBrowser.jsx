@@ -13,7 +13,8 @@ import { NavItem, NavLink } from '@cwds/components/lib/Nav';
 
 // import Breadcrumb from '@cwds/components/lib/Breadcrumb';
 // import BreadcrumbItem from '@cwds/components/lib/BreadcrumbItem';
-import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
+// import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 
 // import Card from '@cwds/components/lib/Card';
 // import CardHeader from '@cwds/components/lib/CardHeader';
@@ -39,13 +40,13 @@ export default () => {
       <PageHeader title="Components" />
       <Container>
         <Breadcrumb>
-          <BreadcrumbItem>
-            <a href="#void">Guide</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="#void">Principles</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>Whatever</BreadcrumbItem>
+          <Breadcrumb.Item>
+            <a href>Guide</a>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <a href>Principles</a>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Whatever</Breadcrumb.Item>
         </Breadcrumb>
       </Container>
       <Container>

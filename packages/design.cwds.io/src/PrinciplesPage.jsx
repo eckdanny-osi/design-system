@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
-import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 import Logo from '@cwds/components/lib/Logo';
 import Container from '@cwds/components/lib/Container';
 import Row from '@cwds/components/lib/Row';
@@ -34,14 +34,16 @@ export default () => {
       <PageHeader title="Design Principles" />
       <Container>
         <Breadcrumb>
-          <BreadcrumbItem>
+          <Breadcrumb.Item>
             <a href="#void">Guide</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
             <a href="#void">Principles</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>Whatever</BreadcrumbItem>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Whatever</Breadcrumb.Item>
         </Breadcrumb>
+      </Container>
+      <Container>
         <Row>
           <Col md="4" lg="3">
             <AnchorNav
@@ -51,15 +53,15 @@ export default () => {
                 <NavItem key={d.slug}>
                   <NavLink
                     href={`#${d.slug}`}
-                    onClick={e => {
-                      e.preventDefault();
-                      const $el = document.getElementById(d.slug);
-                      const posn = $el.offsetTop + 118 - 60; //  - 132;
-                      window.scrollTo({
-                        top: posn,
-                        behavior: 'smooth',
-                      });
-                    }}
+                    // onClick={e => {
+                    //   e.preventDefault();
+                    //   const $el = document.getElementById(d.slug);
+                    //   const posn = $el.offsetTop + 118 - 60; //  - 132;
+                    //   window.scrollTo({
+                    //     top: posn,
+                    //     behavior: 'smooth',
+                    //   });
+                    // }}
                   >
                     {d.title}
                   </NavLink>
@@ -74,9 +76,10 @@ export default () => {
               </CardHeader>
               <CardBody>
                 <AnchorNav.Section
-                  registerRef={node => {
-                    debugger;
-                  }}
+                  registerRef={() => {}}
+                  // registerRef={node => {
+                  //   debugger;
+                  // }}
                 >
                   <DesignVision />
                 </AnchorNav.Section>
