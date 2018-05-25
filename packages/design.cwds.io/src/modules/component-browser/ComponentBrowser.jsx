@@ -8,21 +8,8 @@ import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 
 import { NavItem, NavLink } from '@cwds/components/lib/Nav';
-
-// TODO: this non-uniform import thing kinda sucks
-
-// import Breadcrumb from '@cwds/components/lib/Breadcrumb';
-// import BreadcrumbItem from '@cwds/components/lib/BreadcrumbItem';
-// import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
-
-// import Card from '@cwds/components/lib/Card';
-// import CardHeader from '@cwds/components/lib/CardHeader';
-// import CardBody from '@cwds/components/lib/CardBody';
-// import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
-
 import AnchorNav from '@cwds/components/lib/AnchorNav';
-
 import IntraPageRoutes from './ComponentRouteManager';
 
 export default () => {
@@ -54,11 +41,7 @@ export default () => {
           renderNav={() => (
             <AnchorNav
               items={IntraPageRoutes}
-              renderItem={({ slug, title }) => (
-                <NavItem key={slug}>
-                  <NavLink href={`#${slug}`}>{title}</NavLink>
-                </NavItem>
-              )}
+              renderItem={({ slug, title }) => <a href={`#${slug}`}>{title}</a>}
             />
           )}
           renderMain={() => {

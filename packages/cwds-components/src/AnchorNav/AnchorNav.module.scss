@@ -1,9 +1,14 @@
 @import '../core';
+@import '~bootstrap/scss/nav';
 
 .AnchorNav {
   @include media-breakpoint-down(sm) {
     display: none;
   }
+}
+
+.active {
+  font-weight: bold;
 }
 
 // Offset anchor links to account for fixed header

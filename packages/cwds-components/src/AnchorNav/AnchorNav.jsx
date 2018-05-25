@@ -8,26 +8,23 @@ import AnchorManager from './AnchorManager';
 import AnchorNavContainer from './AnchorNavContainer';
 
 class Section extends Component {
-  ref = React.createRef();
-  static propTypes = {
-    registerRef: PropTypes.func,
-  };
+  // ref = React.createRef();
+  // static propTypes = {
+  //   registerRef: PropTypes.func,
+  // };
   componentDidMount() {
-    this.props.registerRef(this.ref.current);
+    // this.props.registerRef(this.ref.current);
   }
   componentWillUnmount() {
-    console.debug('section unmounted');
+    // console.debug('section unmounted');
   }
   render() {
-    return (
-      <div ref={this.ref} id={this.props.id}>
-        {this.props.children}
-      </div>
-    );
+    return <div id={this.props.id}>{this.props.children}</div>;
   }
 }
 
 const propTypes = {
+  offset: PropTypes.number,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,
@@ -38,7 +35,15 @@ const propTypes = {
   renderItem: PropTypes.func.isRequired,
 };
 
-const defaultProps = {};
+const defaultProps = {
+  offset: 133,
+};
+
+function getListItemClassNames({ disabled }) {
+  return cn(styles['nav-link'], {
+    [styles.disabled]: disabled,
+  });
+}
 
 class AnchorNav extends PureComponent {
   OFFSET = 133;
@@ -47,17 +52,40 @@ class AnchorNav extends PureComponent {
     return;
   }
 
-  constructor(props) {
-    super(props);
-    this.manager = new AnchorManager();
-    this.manager.items = props.items;
+  renderItems(items, topLevel) {
+    return (
+      <ul className={cn(styles.nav, 'flex-column')}>
+        {items.map(
+          item =>
+            item.children ? (
+              <li key={item.title} className={getListItemClassNames(item)}>
+                {this.props.renderItem(item)}
+                {this.renderItems(item.children)}
+              </li>
+            ) : (
+              <li key={item.title} className={getListItemClassNames(item)}>
+                {this.props.renderItem(item)}
+              </li>
+            )
+        )}
+      </ul>
+    );
   }
 
   render() {
+    const { offset, items } = this.props;
+    return (
+      <div className={cn(styles.AnchorNav)}>
+        <Affix viewportOffsetTop={offset}>{this.renderItems(items)}</Affix>
+      </div>
+    );
+  }
+
+  render1() {
     const props = this.props;
     return (
       <div className={cn(styles.AnchorNav)}>
-        <Nav className={cn('flex-column')} vertical={true}>
+        <Nav vertical>
           <Affix viewportOffsetTop={this.OFFSET}>
             <div style={{ width: '100%' }}>
               {this.manager.items.map(d => (

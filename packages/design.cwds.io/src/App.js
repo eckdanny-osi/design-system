@@ -5,7 +5,7 @@ import '@cwds/components/lib/global/styles.css';
 import ScrollToTop from './ScrollToTop';
 import Home from './Home';
 import ComponentsPage from './Components';
-import PageLayouts from './PageLayouts';
+import PageLayouts from './modules/layouts';
 import CorePage from './CorePage';
 import PrinciplesPage from './PrinciplesPage';
 import LabsPage from './modules/labs';

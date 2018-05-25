@@ -16,8 +16,12 @@ export default ({ appbar, appBar, header, sidebar, render, ...props }) => {
       <main>
         <Container>
           <Row>
-            <Col sm="4">{sidebar(props)}</Col>
-            <Col sm="8">{render(props)}</Col>
+            <Col md="4" lg="3">
+              {sidebar(props)}
+            </Col>
+            <Col md="8" lg="9">
+              {render(props)}
+            </Col>
           </Row>
         </Container>
       </main>
