@@ -38,6 +38,7 @@ class CardSection extends Component {
             float: 'right',
             marginRight: '9px',
             marginTop: '4px',
+            color: this.state.collapsed ? 'inherit' : '#CCC',
           }}
           rotation={this.state.collapsed ? 0 : 180}
         />

@@ -328,6 +328,7 @@
     // color: green;
     border-top: 1px solid $card-border-color;
     padding: $spacer * 0.75 0;
+    font-weight: 600;
   }
   &:last-child .CardSectionTitle {
     border-bottom: 1px solid $card-border-color;
