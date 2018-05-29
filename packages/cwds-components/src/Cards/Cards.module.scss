@@ -311,3 +311,38 @@
     margin-bottom: 0;
   }
 }
+
+.CardSectionGroup {
+  margin-top: $spacer;
+  // background-color: antiquewhite;
+}
+
+// .CardSectionGroupTitle {
+//   color: red;
+
+// }
+
+.CardSection {
+  // border: 1px solid red;
+  .CardSectionTitle {
+    color: green;
+    border-top: 1px solid blue;
+    padding: $spacer * 0.75 0;
+  }
+  &:last-child .CardSectionTitle {
+    border-bottom: 1px solid blue;
+  }
+}
+
+.CardSubsectionGroup {
+  // background-color: pink;
+  padding-left: 1rem;
+  margin-left: 5px;
+  border-left: 5px solid green;
+}
+
+.CardSubsection {
+  // border: 1px solid blue;
+  // border-left: 1px solid blue;
+  // padding-left: 1rem;
+}

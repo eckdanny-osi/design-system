@@ -62,35 +62,43 @@ const CardsPage = () => {
         <Card.Header>Add CANS</Card.Header>
         <Card.Body>
           <Row>
-            <Col sm="5">asldkfj</Col>
-            <Col sm="5">asldkfj</Col>
-            <Col sm="2">OK</Col>
+            <Col sm="5">
+              <label>
+                alskdjf<br />
+                <input type="text" />
+              </label>
+            </Col>
+            <Col sm="5">
+              <label>
+                alskdjf<br />
+                <input type="text" />
+              </label>
+            </Col>
+            <Col sm="2">
+              <br />
+              <button>on</button>
+              <button>off</button>
+            </Col>
           </Row>
-          <hr />
-          <section>
-            <Card.Subtitle>
-              My Domain 1
-              <span
-                style={{ float: 'right', clear: 'both', marginRight: '5px' }}
-              >
-                <Icon icon="chevronDown" />
-              </span>
-            </Card.Subtitle>
-            <div>My Item 1.1</div>
-            <div>My Item 1.2</div>
-            <div>My Item 1.3</div>
-            <div>My Item 1.4</div>
-          </section>
-          <section>
-            <Card.Subtitle>
-              My Domain 2
-              <span
-                style={{ float: 'right', clear: 'both', marginRight: '5px' }}
-              >
-                <Icon icon="chevronDown" />
-              </span>
-            </Card.Subtitle>
-          </section>
+          <Card.SectionGroup>
+            <Card.Section title="Child Behavioral/Emotional Needs" collapsible>
+              <Card.SubsectionGroup>
+                <Card.Subsection>My Item 1.1</Card.Subsection>
+                <Card.Subsection>My Item 1.2</Card.Subsection>
+                <Card.Subsection>My Item 1.3</Card.Subsection>
+                <Card.Subsection>My Item 1.4</Card.Subsection>
+              </Card.SubsectionGroup>
+            </Card.Section>
+            <Card.Section title="Foo" collapsible>
+              Just content here...
+            </Card.Section>
+            <Card.Section title="Foo" collapsible>
+              Just content here...
+            </Card.Section>
+            <Card.Section title="Foo" collapsible>
+              Just content here...
+            </Card.Section>
+          </Card.SectionGroup>
         </Card.Body>
       </Card>
     </div>

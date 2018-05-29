@@ -7,6 +7,11 @@ import Header from './CardHeader';
 import Footer from './CardFooter';
 import Subtitle from './CardSubtitle';
 
+import Section from './CardSection';
+import Subsection from './CardSubsection';
+import SectionGroup from './CardSectionGroup';
+import SubsectionGroup from './CardSubsectionGroup';
+
 export { CardUnstyled };
 
 export class Card extends Component {
@@ -20,5 +25,9 @@ Card.Body = Body;
 Card.Header = Header;
 Card.Footer = Footer;
 Card.Subtitle = Subtitle;
+Card.Section = Section;
+Card.Subsection = Subsection;
+Card.SectionGroup = SectionGroup;
+Card.SubsectionGroup = SubsectionGroup;
 
 export default Card;
