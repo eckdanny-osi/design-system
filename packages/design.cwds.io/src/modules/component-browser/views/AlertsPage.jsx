@@ -1,14 +1,15 @@
 import React from 'react';
 import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
-import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
+// import { Card, Card.Body, Card.Header } from '@cwds/components/lib/Cards';
+import Card from '@cwds/components/lib/Cards';
 
 export default () => (
   <div>
     <Card>
-      <CardHeader>
+      <Card.Header>
         <h2>Alerts</h2>
-      </CardHeader>
-      <CardBody>
+      </Card.Header>
+      <Card.Body>
         {/* <Alert color="primary">This is a primary alert — check it out!</Alert> */}
         {/* <Alert color="secondary">
           This is a secondary alert — check it out!
@@ -23,15 +24,15 @@ export default () => (
           This is a warning alert — check it out! You may also be interested to
           see how the overflow conditions work here...
         </AlertUncontrolled>
-      </CardBody>
+      </Card.Body>
     </Card>
     <Card>
-      <CardBody>
+      <Card.Body>
         <p>
           <tt>Alert</tt>s are one of the few components that can exist{' '}
           <em>outside</em> of a <tt>Card</tt>!
         </p>
-      </CardBody>
+      </Card.Body>
     </Card>
     <br />
     <Alert color="info">I'm an alert. Just chillin' out here.</Alert>
