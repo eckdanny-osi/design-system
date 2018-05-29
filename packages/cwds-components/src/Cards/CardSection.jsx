@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Collapsible, { Collapse } from '../Collapse';
+import Icon from '../Icon';
 import CardSubtitle from './CardSubtitle';
 import Subtitle from './CardSubtitle';
 import Styles from './Cards.module.scss';
@@ -18,9 +19,30 @@ class CardSection extends Component {
       this.state.collapsed = true;
     }
   }
+  toggleCollapse() {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   renderSectionTitle() {
     const { title } = this.props;
-    return <div className={Styles.CardSectionTitle}>{title}</div>;
+    return (
+      <div
+        className={Styles.CardSectionTitle}
+        onClick={() => this.toggleCollapse()}
+      >
+        {title}
+        <Icon
+          icon="chevronDown"
+          style={{
+            float: 'right',
+            marginRight: '9px',
+            marginTop: '4px',
+          }}
+          rotation={this.state.collapsed ? 0 : 180}
+        />
+      </div>
+    );
   }
   renderSectionBody() {
     if (!this.props.collapsible) {

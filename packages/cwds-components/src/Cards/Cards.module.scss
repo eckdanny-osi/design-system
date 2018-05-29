@@ -325,12 +325,12 @@
 .CardSection {
   // border: 1px solid red;
   .CardSectionTitle {
-    color: green;
-    border-top: 1px solid blue;
+    // color: green;
+    border-top: 1px solid $card-border-color;
     padding: $spacer * 0.75 0;
   }
   &:last-child .CardSectionTitle {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid $card-border-color;
   }
 }
 
