@@ -5,6 +5,7 @@ import ButtonsPage from './ButtonsPage';
 import ActionCardsPage from './ActionCardsPage';
 import CardsPage from './CardsPage';
 import IconsPage from './IconsPage';
+import CollapsiblePage from './CollapsiblePage';
 
 export default [
   AlertsPage,
@@ -14,4 +15,5 @@ export default [
   CardsPage,
   IconsPage,
   ActionCardsPage,
+  CollapsiblePage,
 ];
