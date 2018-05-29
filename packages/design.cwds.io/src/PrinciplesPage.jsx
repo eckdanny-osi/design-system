@@ -13,11 +13,8 @@ import { NavItem, NavLink } from '@cwds/components/lib/Nav';
 
 import {
   DesignVision,
-  ExperienceValues,
-  HumanCenteredDesign,
   AboutChildWelfare,
 } from './PrinciplesPages/DesignOpsPages';
-import { Scrumban, HowWeWork } from './PrinciplesPages/Scrumban';
 
 export default () => {
   return (
@@ -51,20 +48,7 @@ export default () => {
               items={[]}
               renderItem={d => (
                 <NavItem key={d.slug}>
-                  <NavLink
-                    href={`#${d.slug}`}
-                    // onClick={e => {
-                    //   e.preventDefault();
-                    //   const $el = document.getElementById(d.slug);
-                    //   const posn = $el.offsetTop + 118 - 60; //  - 132;
-                    //   window.scrollTo({
-                    //     top: posn,
-                    //     behavior: 'smooth',
-                    //   });
-                    // }}
-                  >
-                    {d.title}
-                  </NavLink>
+                  <NavLink href={`#${d.slug}`}>{d.title}</NavLink>
                 </NavItem>
               )}
             />
@@ -75,29 +59,12 @@ export default () => {
                 <h2>Design Ops</h2>
               </CardHeader>
               <CardBody>
-                <AnchorNav.Section
-                  registerRef={() => {}}
-                  // registerRef={node => {
-                  //   debugger;
-                  // }}
-                >
+                <AnchorNav.Section registerRef={() => {}}>
                   <DesignVision />
                 </AnchorNav.Section>
-                {/* <ExperienceValues />
-                <HumanCenteredDesign />
                 <AboutChildWelfare /> */}
               </CardBody>
             </Card>
-            {/* <br />
-            <Card>
-              <CardHeader>
-                <h2 id="scrumban">Scrumban</h2>
-              </CardHeader>
-              <CardBody>
-                <Scrumban />
-                <HowWeWork />
-              </CardBody>
-            </Card> */}
           </Col>
         </Row>
       </Container>

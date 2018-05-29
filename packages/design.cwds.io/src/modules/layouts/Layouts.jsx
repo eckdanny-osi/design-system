@@ -2,13 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 import AppBar from '@cwds/components/lib/AppBar';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
-import Col from '@cwds/components/lib/Col';
 import Container from '@cwds/components/lib/Container';
 import Logo from '@cwds/components/lib/Logo';
 import PageHeader from '@cwds/components/lib/PageHeader';
-import { NavItem, NavLink } from '@cwds/components/lib/Nav';
-import Row from '@cwds/components/lib/Row';
 
 import AboutSection from './views/About';
 import BasicContentSection from './views/BasicContent';

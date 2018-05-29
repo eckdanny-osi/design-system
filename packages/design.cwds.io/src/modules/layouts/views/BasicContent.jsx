@@ -9,6 +9,7 @@ export default () => (
     <h3>Basic Content</h3>
     <figure style={{ display: 'inline-block' }}>
       <img
+        alt="layout"
         src={imgCenter}
         height="250px"
         style={{ border: '1px solid #dee2e6', padding: '4px' }}
@@ -18,6 +19,7 @@ export default () => (
     <p>alksdjflkasjdf</p>
     <figure style={{ display: 'inline-block' }}>
       <img
+        alt="layout"
         src={imgHeaderElems}
         height="250px"
         style={{ border: '1px solid #dee2e6', padding: '4px' }}
@@ -26,6 +28,7 @@ export default () => (
     </figure>
     <figure style={{ display: 'inline-block' }}>
       <img
+        alt="layout"
         src={imgLayout13}
         height="250px"
         style={{ border: '1px solid #dee2e6', padding: '4px' }}
@@ -34,6 +37,7 @@ export default () => (
     </figure>
     <figure style={{ display: 'inline-block' }}>
       <img
+        alt="layout"
         src={imgLayout31}
         height="250px"
         style={{ border: '1px solid #dee2e6', padding: '4px' }}

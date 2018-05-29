@@ -1,5 +1,4 @@
 import React from 'react';
-import Badge from '@cwds/components/lib/Breadcrumbs';
 import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 
@@ -11,10 +10,10 @@ export default () => (
     <CardBody>
       <Breadcrumb>
         <Breadcrumb.Item>
-          <a href>Foo</a>
+          <a>Foo</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href>Bar</a>
+          <a>Bar</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item active>Quo</Breadcrumb.Item>
       </Breadcrumb>

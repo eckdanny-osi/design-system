@@ -4,10 +4,6 @@ import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Logo from '@cwds/components/lib/Logo';
 import Container from '@cwds/components/lib/Container';
-import Row from '@cwds/components/lib/Row';
-import Col from '@cwds/components/lib/Col';
-
-import { NavItem, NavLink } from '@cwds/components/lib/Nav';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 import IntraPageRoutes from './ComponentRouteManager';
@@ -28,10 +24,10 @@ export default () => {
       <Container>
         <Breadcrumb>
           <Breadcrumb.Item>
-            <a href>Guide</a>
+            <a>Guide</a>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <a href>Principles</a>
+            <a>Principles</a>
           </Breadcrumb.Item>
           <Breadcrumb.Item active>Whatever</Breadcrumb.Item>
         </Breadcrumb>
