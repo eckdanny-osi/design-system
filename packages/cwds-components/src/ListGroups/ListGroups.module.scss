@@ -1,2 +1,21 @@
 @import '../core';
 @import '~bootstrap/scss/list-group';
+
+.list-group-item {
+  &.active {
+    color: $gray-700;
+    color: theme-color-level('primary');
+    font-weight: 600;
+    // background-color: $list-group-active-bg;
+    // border-color: $list-group-active-border-color;
+    &::before {
+      content: '';
+      width: 5px;
+      background-color: theme-color-level('primary', -2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
