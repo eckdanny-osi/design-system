@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import Collapsible, { Collapse } from '../Collapse';
 import Icon from '../Icon';
 import CardSubtitle from './CardSubtitle';
@@ -56,7 +57,11 @@ class CardSection extends Component {
   render() {
     const { children, title, collapsible } = this.props;
     return (
-      <div className={Styles.CardSection}>
+      <div
+        className={cn(Styles.CardSection, {
+          [Styles.CardSectionActive]: !this.state.collapsed,
+        })}
+      >
         {this.renderSectionTitle()}
         {this.renderSectionBody()}
       </div>

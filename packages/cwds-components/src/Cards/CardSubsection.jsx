@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import Collapsible, { Collapse } from '../Collapse';
 import Icon from '../Icon';
 import CardSubtitle from './CardSubtitle';
@@ -28,14 +29,18 @@ class CardSubsection extends Component {
   renderSectionTitle() {
     const { title } = this.props;
     return (
-      <div className={Styles.CardSubsectionTitle}>
+      <div
+        className={cn(Styles.CardSubsectionTitle, {
+          [Styles.CardSubsectionTitleActive]: !this.state.collapsed,
+        })}
+      >
         <a onClick={this.toggleCollapse} href="#section">
           <Icon
             className={Styles.CardSubsectionToggle}
             icon={this.state.collapsed ? 'plus' : 'minus'}
             style={{
-              color: this.state.collapsed ? 'inherit' : '#CCC',
               marginRight: '5px',
+              width: '0.75em',
             }}
           />
           {title}

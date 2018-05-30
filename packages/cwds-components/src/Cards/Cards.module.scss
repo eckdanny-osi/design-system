@@ -333,13 +333,30 @@
       display: block;
     }
   }
-  &:last-child .CardSectionTitle {
-    border-bottom: 1px solid $card-border-color;
+  &:last-child {
+    .CardSectionTitle {
+      // border-bottom: 1px solid $card-border-color;
+      // &:last-child {
+      //   border-bottom: 1px solid green;
+      // }
+    }
+  }
+}
+
+.CardSection:last-child.CardSectionActive {
+  border-bottom: 1px solid $card-border-color;
+  .CardSectionTitle {
+    border-bottom: none;
   }
 }
 
 .CardSubsectionToggle {
   margin-right: $spacer * 0.5;
+  // color: theme-color-level('primary', -6);
+  color: theme-color-level('primary', -7);
+  .CardSubsectionTitleActive & {
+    color: theme-color-level('primary', -7);
+  }
 }
 
 .CardSubsection {
