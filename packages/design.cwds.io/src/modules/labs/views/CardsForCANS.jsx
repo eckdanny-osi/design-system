@@ -35,8 +35,23 @@ const CardsForCANS = () => {
             <Card.Section title="Child Behavioral/Emotional Needs" collapsible>
               <Card.SubsectionGroup>
                 <Card.Subsection
-                  renderTitle={() => `Psychosis (Thought Disorder) ${Math.PI}`}
+                  renderTitle={() => (
+                    <div>
+                      Psychosis (Thought Disorder)
+                      <select
+                        style={{ float: 'right' }}
+                        onClick={e => e.stopPropagation()}
+                      >
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </div>
+                  )}
                   collapsible
+                  initialOpen
                 >
                   <div>Foo Body</div>
                 </Card.Subsection>

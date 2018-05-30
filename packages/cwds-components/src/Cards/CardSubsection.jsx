@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Collapsible, { Collapse } from '../Collapse';
@@ -11,14 +11,15 @@ const propTypes = {
   title: PropTypes.string,
   renderTitle: PropTypes.func,
   collapsible: PropTypes.bool,
+  initialOpen: PropTypes.bool,
 };
 
-class CardSubsection extends Component {
+class CardSubsection extends PureComponent {
   state = {};
   constructor(props) {
     super(props);
     if (props.collapsible) {
-      this.state.collapsed = true;
+      this.state.collapsed = !this.props.initialOpen;
     }
   }
   toggleCollapse = e => {
@@ -35,16 +36,14 @@ class CardSubsection extends Component {
           [Styles.CardSubsectionTitleActive]: !this.state.collapsed,
         })}
       >
-        <a onClick={this.toggleCollapse} href="#section">
+        <a onClick={this.toggleCollapse}>
           <Icon
             className={Styles.CardSubsectionToggle}
             icon={this.state.collapsed ? 'plus' : 'minus'}
-            style={{
-              marginRight: '5px',
-              width: '0.75em',
-            }}
           />
-          {(renderTitle && renderTitle()) || title}
+          <div className={Styles.CardSubsectionTitleContent}>
+            {(renderTitle && renderTitle()) || title}
+          </div>
         </a>
       </div>
     );

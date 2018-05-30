@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Collapsible, { Collapse } from '../Collapse';
@@ -12,7 +12,7 @@ const propTypes = {
   collapsible: PropTypes.bool,
 };
 
-class CardSection extends Component {
+class CardSection extends PureComponent {
   state = {};
   constructor(props) {
     super(props);
@@ -38,7 +38,6 @@ class CardSection extends Component {
               float: 'right',
               marginRight: '9px',
               marginTop: '4px',
-              color: this.state.collapsed ? 'inherit' : '#CCC',
             }}
             rotation={this.state.collapsed ? null : 180}
           />

@@ -350,8 +350,15 @@
   }
 }
 
+.CardSubsectionTitleContent {
+  flex: 1;
+}
+
 .CardSubsectionToggle {
   margin-right: $spacer * 0.5;
+  width: 0.75em;
+  position: relative;
+  top: 3px;
   // color: theme-color-level('primary', -6);
   color: theme-color-level('primary', -7);
   .CardSubsectionTitleActive & {
@@ -369,7 +376,9 @@
       // padding-left: 7px;
       padding: $spacer * 0.75 0;
       padding-left: $spacer * 0.5; //  + 5px;
-      display: block;
+      display: flex;
+      flex-wrap: nowrap;
+      cursor: pointer;
     }
   }
   &:last-child .CardSubsectionTitle {

@@ -5,6 +5,7 @@ import Col from '@cwds/components/lib/Col';
 import Icon from '@cwds/components/lib/Icon';
 
 import CardsForCANS from './CardsForCANS';
+import CardWithSections from './CardsWithSections';
 
 const CardsPage = () => {
   return (
@@ -15,6 +16,15 @@ const CardsPage = () => {
           <p>Cards are just white boxes...</p>
         </Card.Body>
       </Card>
+      <br />
+      <p>alskdfjalksdjfasldkfj...</p>
+      <Card>
+        <Card.Header>Card.Header</Card.Header>
+        <Card.Body>Card.Body</Card.Body>
+        <Card.Footer>Card.Footer</Card.Footer>
+      </Card>
+      <br />
+      <CardWithSections />
       <br />
       <CardsForCANS />
       <br />
