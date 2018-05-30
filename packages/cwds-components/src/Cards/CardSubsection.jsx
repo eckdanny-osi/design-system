@@ -8,7 +8,8 @@ import Subtitle from './CardSubtitle';
 import Styles from './Cards.module.scss';
 
 const propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  title: PropTypes.string,
+  renderTitle: PropTypes.func,
   collapsible: PropTypes.bool,
 };
 
@@ -27,7 +28,7 @@ class CardSubsection extends Component {
     });
   };
   renderSectionTitle() {
-    const { title } = this.props;
+    const { title, renderTitle } = this.props;
     return (
       <div
         className={cn(Styles.CardSubsectionTitle, {
@@ -43,7 +44,7 @@ class CardSubsection extends Component {
               width: '0.75em',
             }}
           />
-          {title}
+          {(renderTitle && renderTitle()) || title}
         </a>
       </div>
     );

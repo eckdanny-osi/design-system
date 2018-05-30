@@ -31,7 +31,7 @@ class CardSection extends Component {
     return (
       <div className={Styles.CardSectionTitle}>
         <a onClick={this.toggleCollapse} href="#section">
-          {title}
+          {'function' === typeof title ? title() : title}
           <Icon
             icon="chevronDown"
             style={{

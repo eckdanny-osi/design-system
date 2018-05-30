@@ -35,7 +35,7 @@ const CardsForCANS = () => {
             <Card.Section title="Child Behavioral/Emotional Needs" collapsible>
               <Card.SubsectionGroup>
                 <Card.Subsection
-                  title="Psychosis (Thought Disorder)"
+                  renderTitle={() => `Psychosis (Thought Disorder) ${Math.PI}`}
                   collapsible
                 >
                   <div>Foo Body</div>
