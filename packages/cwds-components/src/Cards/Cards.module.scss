@@ -327,23 +327,56 @@
   .CardSectionTitle {
     // color: green;
     border-top: 1px solid $card-border-color;
-    padding: $spacer * 0.75 0;
     font-weight: 600;
+    a {
+      padding: $spacer * 0.75 0;
+      display: block;
+    }
   }
   &:last-child .CardSectionTitle {
     border-bottom: 1px solid $card-border-color;
   }
 }
 
+.CardSubsectionToggle {
+  margin-right: $spacer * 0.5;
+}
+
+.CardSubsection {
+  // border: 1px solid red;
+  .CardSubsectionTitle {
+    // color: green;
+    border-top: 1px solid $card-border-color;
+    font-weight: 600;
+    a {
+      // padding-left: 7px;
+      padding: $spacer * 0.75 0;
+      padding-left: $spacer * 0.5; //  + 5px;
+      display: block;
+    }
+  }
+  &:last-child .CardSubsectionTitle {
+    // border-bottom: 1px solid $card-border-color;
+  }
+}
+
 .CardSubsectionGroup {
   // background-color: pink;
-  padding-left: 1rem;
-  margin-left: 5px;
-  border-left: 5px solid green;
+  // padding-left: 1rem;
+  // padding-left: 10px;
+  // margin-left: 5px;
+  border-left: 5px solid theme-color-level('primary', -2);
+}
+
+.CardSubsectionBody {
+  padding-left: 27px;
+  padding-bottom: 12px;
 }
 
 .CardSubsection {
   // border: 1px solid blue;
   // border-left: 1px solid blue;
   // padding-left: 1rem;
+  // padding: 10px 0;
+  // padding-left: 15px;
 }

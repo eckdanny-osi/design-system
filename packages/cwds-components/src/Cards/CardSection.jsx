@@ -19,29 +19,29 @@ class CardSection extends Component {
       this.state.collapsed = true;
     }
   }
-  toggleCollapse() {
+  toggleCollapse = e => {
+    e.preventDefault();
     this.setState({
       collapsed: !this.state.collapsed,
     });
-  }
+  };
   renderSectionTitle() {
     const { title } = this.props;
     return (
-      <div
-        className={Styles.CardSectionTitle}
-        onClick={() => this.toggleCollapse()}
-      >
-        {title}
-        <Icon
-          icon="chevronDown"
-          style={{
-            float: 'right',
-            marginRight: '9px',
-            marginTop: '4px',
-            color: this.state.collapsed ? 'inherit' : '#CCC',
-          }}
-          rotation={this.state.collapsed ? 0 : 180}
-        />
+      <div className={Styles.CardSectionTitle}>
+        <a onClick={this.toggleCollapse} href="#section">
+          {title}
+          <Icon
+            icon="chevronDown"
+            style={{
+              float: 'right',
+              marginRight: '9px',
+              marginTop: '4px',
+              color: this.state.collapsed ? 'inherit' : '#CCC',
+            }}
+            rotation={this.state.collapsed ? null : 180}
+          />
+        </a>
       </div>
     );
   }

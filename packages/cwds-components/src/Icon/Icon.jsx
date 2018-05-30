@@ -19,6 +19,8 @@ import infoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';
 import exclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
 import chevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
 import ellipsis from '@fortawesome/fontawesome-free-solid/faEllipsisV';
+import plus from '@fortawesome/fontawesome-free-solid/faPlus';
+import minus from '@fortawesome/fontawesome-free-solid/faMinus';
 
 export const ICON_NAMES = {
   check: 'check',
@@ -32,6 +34,8 @@ export const ICON_NAMES = {
   user: 'user',
   search: 'search',
   chevronDown: 'chevronDown',
+  plus: 'plus',
+  minus: 'minus',
   plusCircle: 'plusCircle',
   ellipsis: 'ellipsis',
 };
@@ -48,6 +52,8 @@ const ICONS = {
   [ICON_NAMES.user]: user,
   [ICON_NAMES.search]: search,
   [ICON_NAMES.chevronDown]: chevronDown,
+  [ICON_NAMES.plus]: plus,
+  [ICON_NAMES.minus]: minus,
   [ICON_NAMES.plusCircle]: plusCircle,
   [ICON_NAMES.ellipsis]: ellipsis,
 };
