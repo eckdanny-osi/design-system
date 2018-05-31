@@ -1,0 +1,75 @@
+/* eslint-disable */
+
+const React = require('react').default || require('react')
+const { createElement, createFactory } = require('react')
+
+module.exports = function({ factories={} }) {
+  const {
+    h1 = createFactory('h1'),
+    li = createFactory('li'),
+    p = createFactory('p'),
+    strong = createFactory('strong'),
+    ul = createFactory('ul'),
+    wrapper = createFactory('div'),
+  } = factories
+
+  return wrapper({},
+
+h1({"id": "Research"},
+  "Research",
+),
+ul({},
+  li({},
+    strong({},
+      "Optimal Workshop:",
+    ),
+    " for user research",
+  ),
+  li({},
+    strong({},
+      "Stories on board",
+    ),
+    " for roadmaps and research synthesis combo",
+  ),
+  li({},
+    strong({},
+      "Foam Core boards",
+    ),
+    ": 3x5 foot white foam core boards available from CWDS supply closet. Wooden feet to support boards are in Jesse’s office.",
+  ),
+  li({},
+    strong({},
+      "Sticky notes and markers",
+    ),
+    ": Two “grab and go” bags with supplies are hanging on the wall by Jans desk. Further supplies in stations throughout the office and more in the supply room",
+  ),
+),
+h1({"id": "Wireframing"},
+  "Wireframing",
+),
+p({},
+  "Currently each service team is using the tools that work best for them.",
+),
+ul({},
+  li({},
+    "Intake: Sketch, and Balsamiq",
+  ),
+  li({},
+    "CALS: Axure",
+  ),
+),
+h1({"id": "Design"},
+  "Design",
+),
+p({},
+  "Adobe Illustrator for mocks and html, css mockups",
+),
+h1({"id": "General"},
+  "General",
+),
+p({},
+  "Microsoft Office",
+)
+
+  )
+}

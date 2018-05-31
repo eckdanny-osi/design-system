@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const slugify = require('slugify');
+const MDXC = require('mdxc');
+
+const INPUT_DIR = '../wiki';
+const OUTPUT_DIR =
+  '../packages/design.cwds.io/src/modules/design-principles/wiki';
+const RE_MARKDOWN = /\.md$/;
+
+const md = new MDXC({
+  commonJS: true,
+  linkify: true,
+  typographer: true,
+});
+
+fs.readdir(path.resolve(__dirname, INPUT_DIR), (err, files) => {
+  files.filter(f => RE_MARKDOWN.test(f)).map(d => {
+    const outFile = slugify(d)
+      .replace(/\.md$/, '.js')
+      .replace(/-(.)/g, d => d.slice(1).toUpperCase())
+      .replace(/^\w/, l => l.toUpperCase());
+    const content = fs
+      .readFileSync(path.resolve(__dirname, INPUT_DIR, d))
+      .toString('utf8');
+    const rendered = '/* eslint-disable */\n\n' + md.render(content, {});
+    fs.writeFileSync(path.resolve(__dirname, OUTPUT_DIR, outFile), rendered);
+  });
+});

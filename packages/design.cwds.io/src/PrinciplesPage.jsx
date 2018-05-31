@@ -10,6 +10,8 @@ import Col from '@cwds/components/lib/Col';
 import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 import { NavItem, NavLink } from '@cwds/components/lib/Nav';
+// import Foo from './modules/design-principles/wiki/AboutChildWelfare';
+import ExperienceValues from './modules/design-principles/wiki/ExperienceValues';
 
 import {
   DesignVision,
@@ -55,6 +57,11 @@ export default () => {
           </Col>
           <Col md="8" lg="9">
             <Card>
+              <Card.Body>
+                <ExperienceValues />
+              </Card.Body>
+            </Card>
+            {/* <Card>
               <CardHeader>
                 <h2>Design Ops</h2>
               </CardHeader>
@@ -62,9 +69,9 @@ export default () => {
                 <AnchorNav.Section registerRef={() => {}}>
                   <DesignVision />
                 </AnchorNav.Section>
-                <AboutChildWelfare /> */}
+                <AboutChildWelfare />}
               </CardBody>
-            </Card>
+            </Card> */}
           </Col>
         </Row>
       </Container>

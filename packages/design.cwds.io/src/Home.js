@@ -4,13 +4,7 @@ import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Container from '@cwds/components/lib/Container';
 import Logo from '@cwds/components/lib/Logo';
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardDeck,
-} from '@cwds/components/lib/Cards';
+import { Card, CardDeck } from '@cwds/components/lib/Cards';
 import Button from '@cwds/components/lib/Button';
 
 export default () => (
@@ -28,65 +22,56 @@ export default () => (
     <Container>
       <CardDeck>
         <Card>
-          <CardHeader>Principles</CardHeader>
-          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
-          <CardFooter>
+          <Card.Header>Principles</Card.Header>
+          <Card.Body>asdflkjasdlkfjasdlfkj</Card.Body>
+          <Card.Footer>
             <Link to="/principles">
               <Button color="primary">Go!</Button>
             </Link>
-          </CardFooter>
+          </Card.Footer>
         </Card>
         <Card>
-          <CardHeader>Components</CardHeader>
-          <CardBody>You want Components?</CardBody>
-          <CardFooter>
+          <Card.Header>Components</Card.Header>
+          <Card.Body>You want Components?</Card.Body>
+          <Card.Footer>
             <Link to="/components">
               <Button color="primary">Go!</Button>
             </Link>
-          </CardFooter>
+          </Card.Footer>
         </Card>
-        {/* <Card>
-          <CardHeader>Components</CardHeader>
-          <CardBody>alskdfj</CardBody>
-          <CardFooter>
-            <Link to="/components-old">
-              <Button color="primary">Go!</Button>
-            </Link>
-          </CardFooter>
-        </Card> */}
         <div className="w-100 d-none d-sm-block d-md-none mb-3" />
         <Card>
-          <CardHeader>Core</CardHeader>
-          <CardBody>asdflkjasdlkfjasdlfkj</CardBody>
-          <CardFooter>
+          <Card.Header>Core</Card.Header>
+          <Card.Body>asdflkjasdlkfjasdlfkj</Card.Body>
+          <Card.Footer>
             <Link to="/core">
               <Button color="primary">Go!</Button>
             </Link>
-          </CardFooter>
+          </Card.Footer>
         </Card>
         <div className="w-100 d-none d-md-block d-lg-none mb-3" />
         <Card>
-          <CardHeader>Layouts</CardHeader>
-          <CardBody>Common page layouts for CARES</CardBody>
-          <CardFooter>
+          <Card.Header>Layouts</Card.Header>
+          <Card.Body>Common page layouts for CARES</Card.Body>
+          <Card.Footer>
             <Link to="/page-layouts">
               <Button color="primary">Go!</Button>
             </Link>
-          </CardFooter>
+          </Card.Footer>
         </Card>
         <div className="w-100 d-none d-sm-block d-md-none mb-3" />
         <Card>
-          <CardHeader>Labs</CardHeader>
-          <CardBody>
+          <Card.Header>Labs</Card.Header>
+          <Card.Body>
             Not everything in here is ready for general use, but it should be
             showcased for the purposes of design critique and soliciting general
             feedback!
-          </CardBody>
-          <CardFooter>
+          </Card.Body>
+          <Card.Footer>
             <Link to="/labs">
               <Button color="primary">Go!</Button>
             </Link>
-          </CardFooter>
+          </Card.Footer>
         </Card>
       </CardDeck>
     </Container>

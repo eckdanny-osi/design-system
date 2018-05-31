@@ -4,6 +4,8 @@ import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 import Icon from '@cwds/components/lib/Icon';
 
+// import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';
+
 import CardsForCANS from './CardsForCANS';
 import CardWithSections from './CardsWithSections';
 
