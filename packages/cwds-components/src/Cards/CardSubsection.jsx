@@ -7,20 +7,25 @@ import CardSubtitle from './CardSubtitle';
 import Subtitle from './CardSubtitle';
 import Styles from './Cards.module.scss';
 
-const propTypes = {
-  title: PropTypes.string,
-  renderTitle: PropTypes.func,
-  collapsible: PropTypes.bool,
-  initialOpen: PropTypes.bool,
-};
-
 class CardSubsection extends PureComponent {
+  static propTypes = {
+    title: PropTypes.string,
+    renderTitle: PropTypes.func,
+    collapsible: PropTypes.bool,
+    initialOpen: PropTypes.bool,
+  };
   state = {};
   constructor(props) {
     super(props);
     if (props.collapsible) {
       this.state.collapsed = !this.props.initialOpen;
     }
+    if (props.renderTitle) {
+      this._renderTitle = props.renderTitle;
+    }
+  }
+  renderTitle() {
+    return (this._renderTitle && this._renderTitle()) || this.props.title;
   }
   toggleCollapse = e => {
     e.preventDefault();
@@ -30,19 +35,24 @@ class CardSubsection extends PureComponent {
   };
   renderSectionTitle() {
     const { title, renderTitle } = this.props;
+    console.log('renderSectionTitle()');
     return (
       <div
         className={cn(Styles.CardSubsectionTitle, {
           [Styles.CardSubsectionTitleActive]: !this.state.collapsed,
         })}
       >
-        <a onClick={this.toggleCollapse}>
+        <a
+          onClick={this.toggleCollapse}
+          href="javascript:void(0)"
+          aria-expanded={!this.state.collapsed}
+        >
           <Icon
             className={Styles.CardSubsectionToggle}
             icon={this.state.collapsed ? 'plus' : 'minus'}
           />
           <div className={Styles.CardSubsectionTitleContent}>
-            {(renderTitle && renderTitle()) || title}
+            {this.renderTitle()}
           </div>
         </a>
       </div>
@@ -68,7 +78,5 @@ class CardSubsection extends PureComponent {
     );
   }
 }
-
-CardSubsection.propTypes = propTypes;
 
 export default CardSubsection;

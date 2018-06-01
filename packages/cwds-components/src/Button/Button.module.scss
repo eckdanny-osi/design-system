@@ -5,6 +5,7 @@
 //
 
 .btn {
+  text-transform: uppercase;
   display: inline-block;
   font-weight: $btn-font-weight;
   text-align: center;
@@ -158,17 +159,3 @@ input[type='button'] {
     width: 100%;
   }
 }
-
-//
-// Overrides
-//
-
-.btn {
-  text-transform: uppercase;
-}
-
-// @each $color, $value in $theme-colors {
-//   .btn-#{$color} {
-//     box-shadow: $btn-box-shadow;
-//   }
-// }

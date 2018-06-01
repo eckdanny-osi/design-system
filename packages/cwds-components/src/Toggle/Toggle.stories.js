@@ -6,20 +6,21 @@ import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 
-import Button from '../Button';
-import ButtonGroup from './';
+import Toggle from './';
 
-storiesOf('ButtonGroups', module)
+storiesOf('Toggles', module)
   .addDecorator(withKnobs)
   .add(
-    'ButtonGroup',
+    'Toggle',
     withInfo()(() => (
       <div style={{ padding: '5px' }}>
-        <ButtonGroup>
-          <Button>Left</Button>
-          <Button>Middle</Button>
-          <Button>Right</Button>
-        </ButtonGroup>
+        <Toggle onChange={() => alert('hi')}>
+          <Toggle.Option value="on">On</Toggle.Option>
+          <Toggle.Option active value="off">
+            Off
+          </Toggle.Option>
+          <Toggle.Option value="whatever">Whatever</Toggle.Option>
+        </Toggle>
       </div>
     ))
   );

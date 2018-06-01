@@ -7,12 +7,11 @@ import CardSubtitle from './CardSubtitle';
 import Subtitle from './CardSubtitle';
 import Styles from './Cards.module.scss';
 
-const propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  collapsible: PropTypes.bool,
-};
-
 class CardSection extends PureComponent {
+  static propTypes = {
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    collapsible: PropTypes.bool,
+  };
   state = {};
   constructor(props) {
     super(props);
@@ -67,7 +66,5 @@ class CardSection extends PureComponent {
     );
   }
 }
-
-CardSection.propTypes = propTypes;
 
 export default CardSection;
