@@ -5,19 +5,20 @@ import cn from 'classnames';
 import Styles from './Toggle.module.scss';
 
 const propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func,
 };
 
 const Option = props => {
+  const { onClick, ...attrs } = props;
   return (
     <Button
       className={cn(Styles.Option, {
         [Styles.ActiveOption]: props.active,
       })}
-      onClick={e => props.onClick(props.value)}
-    >
-      {props.children}
-    </Button>
+      onClick={e => onClick(props.value)}
+      {...attrs}
+    />
   );
 };
 

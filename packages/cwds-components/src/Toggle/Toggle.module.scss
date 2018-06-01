@@ -3,10 +3,7 @@
 @import '~bootstrap/scss/button-group';
 
 .Toggle {
-  // @extend .btn-group;
-  // display: inline-block;
-  // border: $btn-border-width solid $border-color;
-  // border-radius: $btn-border-radius;
+  @extend .btn-group;
 
   .Option {
     @extend .btn;
@@ -16,13 +13,24 @@
     border-radius: 0;
     border: $btn-border-width solid $border-color;
 
-    position: relative;
-    z-index: 0;
+    // position: relative;
+    // z-index: 0;
+
+    // Override
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: inset $btn-focus-box-shadow;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus,
+    &:not(:disabled):not(.disabled).active:focus {
+      box-shadow: inset 0 0 0 $input-btn-focus-width $input-btn-focus-color !important;
+    }
 
     &:first-child {
       border-top-left-radius: $btn-border-radius;
       border-bottom-left-radius: $btn-border-radius;
-      // border-right: $btn-border-width solid transparent;
     }
 
     &:last-child {
@@ -35,26 +43,17 @@
       margin-left: -$btn-border-width;
     }
 
-    &:focus,
-    &.focus {
-      position: relative;
-      z-index: 1;
-
-      // box-shadow: none !important;
-    }
-
-    &:not(:last-child) {
-      // border-right: $btn-border-width solid $border-color !important;
-      // border-top-right-radius: 0;
-      // border-bottom-right-radius: 0;
-    }
-    &:not(:first-child) {
-      // border-top-left-radius: 0;
-      // border-bottom-left-radius: 0;
-    }
     &.ActiveOption {
       @extend .btn-primary;
+
       border-left-color: $primary;
+
+      // Override
+      &:focus,
+      &.focus {
+        outline: 0;
+        box-shadow: inset $btn-focus-box-shadow !important;
+      }
     }
   }
 }

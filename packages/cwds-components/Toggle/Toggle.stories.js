@@ -13,15 +13,8 @@ storiesOf('Toggles', module)
   .add(
     'Toggle',
     withInfo()(() => (
-      <div style={{ padding: '5px' }}>
-        <Toggle onChange={() => alert('hi')}>
-          <Toggle.Option value="on">On</Toggle.Option>
-          <Toggle.Option value="foo">Foo</Toggle.Option>
-          <Toggle.Option active value="off">
-            Off
-          </Toggle.Option>
-          <Toggle.Option value="whatever">Whatever</Toggle.Option>
-        </Toggle>
-      </div>
+      <Toggle
+
+      />
     ))
   );

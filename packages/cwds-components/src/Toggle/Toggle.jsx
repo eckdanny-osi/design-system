@@ -35,7 +35,15 @@ class Toggle extends PureComponent {
     });
   }
   render() {
-    return <div className={cn(Styles.Toggle)}>{this.renderChildren()}</div>;
+    return (
+      <div
+        className={cn(Styles.Toggle)}
+        role="group"
+        aria-label="Toggle Group"
+      >
+        {this.renderChildren()}
+      </div>
+    );
   }
 }
 
