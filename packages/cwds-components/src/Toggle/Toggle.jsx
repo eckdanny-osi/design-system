@@ -24,7 +24,6 @@ class Toggle extends PureComponent {
   }
   handleChange(value) {
     this.setState({ value });
-    // this._onChange('asdf');
   }
   renderChildren() {
     return React.Children.map(this.props.children, child => {
@@ -36,11 +35,7 @@ class Toggle extends PureComponent {
   }
   render() {
     return (
-      <div
-        className={cn(Styles.Toggle)}
-        role="group"
-        aria-label="Toggle Group"
-      >
+      <div className={cn(Styles.Toggle)} role="group" aria-label="Toggle Group">
         {this.renderChildren()}
       </div>
     );
