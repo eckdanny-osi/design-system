@@ -6,7 +6,6 @@ import TogglesPage from './views/TogglesPage';
 import BreadcrumbsPage from './views/BreadcrumbsPage';
 import CardsPage from './views/CardsPage';
 import IconsPage from './views/IconsPage';
-import ModalsPage from './views/ModalsPage';
 
 export default [
   { title: 'Alerts', slug: 'AlertsPage', component: AlertsPage },
@@ -17,5 +16,4 @@ export default [
   { title: 'Breadcrumbs', slug: 'breadcrumbs', component: BreadcrumbsPage },
   { title: 'Cards', slug: 'CardsPage', component: CardsPage },
   { title: 'Icons', slug: 'IconsPage', component: IconsPage },
-  { title: 'Modals', slug: 'modals', component: ModalsPage },
 ];
