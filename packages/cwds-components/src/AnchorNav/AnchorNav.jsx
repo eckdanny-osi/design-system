@@ -54,7 +54,11 @@ class AnchorNav extends PureComponent {
 
   renderItems(items, topLevel) {
     return (
-      <ul className={cn(styles.nav, 'flex-column')}>
+      // <ul className={cn(styles.nav, 'flex-column')}>
+      <ul
+        className={cn(styles.nav)}
+        style={{ display: 'block', bottom: 0, overflowY: 'scroll' }}
+      >
         {items.map(
           item =>
             item.children ? (

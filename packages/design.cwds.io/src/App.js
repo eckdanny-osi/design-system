@@ -6,7 +6,8 @@ import ScrollToTop from './ScrollToTop';
 import Home from './Home';
 import PageLayouts from './modules/layouts';
 import CorePage from './CorePage';
-import PrinciplesPage from './PrinciplesPage';
+// import PrinciplesPage from './PrinciplesPage';
+import PrinciplesPage from './modules/design-principles';
 import LabsPage from './modules/labs';
 import ComponentBrowser from './modules/component-browser';
 
