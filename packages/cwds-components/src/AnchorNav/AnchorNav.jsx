@@ -6,22 +6,7 @@ import styles from './AnchorNav.module.scss';
 import Affix from 'react-overlays/lib/AutoAffix';
 import AnchorManager from './AnchorManager';
 import AnchorNavContainer from './AnchorNavContainer';
-
-class Section extends Component {
-  // ref = React.createRef();
-  // static propTypes = {
-  //   registerRef: PropTypes.func,
-  // };
-  componentDidMount() {
-    // this.props.registerRef(this.ref.current);
-  }
-  componentWillUnmount() {
-    // console.debug('section unmounted');
-  }
-  render() {
-    return <div id={this.props.id}>{this.props.children}</div>;
-  }
-}
+import Section from './AnchorSection';
 
 const propTypes = {
   offset: PropTypes.number,
