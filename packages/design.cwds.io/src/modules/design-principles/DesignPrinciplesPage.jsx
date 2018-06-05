@@ -27,7 +27,7 @@ export default () => {
           );
         }}
       />
-      <PageHeader title="Components" />
+      <PageHeader title="Principles" />
       <Container>
         <Breadcrumb>
           <Breadcrumb.Item>

@@ -29,8 +29,8 @@ $active-link-focus-bar-offset: 5px;
       background-color: theme-color-level('primary', -8);
       width: 5px;
       display: inline-block;
-      position: relative;
-      left: -16px;
+      position: absolute;
+      left: 0;
     }
   }
   .nav-link &.active > a::before {
