@@ -15,7 +15,7 @@ export default [
     slug: 'about',
     component: () => (
       <div>
-        <h3>Some Title</h3>
+        <h3>About</h3>
         <p>alsdkfjalksdfj</p>About
       </div>
     ),
@@ -27,7 +27,7 @@ export default [
         active: true,
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Experience Values</h3>
             <p>alsdkfjalksdfj</p>experience-values
           </div>
         ),
@@ -37,7 +37,7 @@ export default [
         slug: 'human-centered-design',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Human-Centered Design</h3>
             <p>alsdkfjalksdfj</p>human-centered-design
           </div>
         ),
@@ -47,7 +47,7 @@ export default [
         slug: 'about-child-welfare',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>About Child Welfare</h3>
             <p>alsdkfjalksdfj</p>about-child-welfare
           </div>
         ),
@@ -59,7 +59,7 @@ export default [
     slug: 'scrumban',
     component: () => (
       <div>
-        <h3>Some Title</h3>
+        <h3>ScrumBan</h3>
         <p>alsdkfjalksdfj</p>ScrumBan
       </div>
     ),
@@ -69,7 +69,7 @@ export default [
         slug: 'design-ops-scrumban',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>DesignOps ScrumBan</h3>
             <p>alsdkfjalksdfj</p>Scrumband stuff
           </div>
         ),
@@ -79,7 +79,7 @@ export default [
         slug: 'definition-of-ready-done',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Definition of Ready/Done</h3>
             <p>alsdkfjalksdfj</p>DoD
           </div>
         ),
@@ -89,8 +89,8 @@ export default [
         slug: 'c-a-and-cc',
         component: () => (
           <div>
-            <h3>Some Title</h3>
-            <p>alsdkfjalksdfj</p>C A and CCs
+            <h3>Ceremonies, Sessions, and Communication Channels</h3>
+            <p>C A and CCs</p>
           </div>
         ),
       },
@@ -99,7 +99,7 @@ export default [
         slug: 'reviews',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Reviews</h3>
             <p>alsdkfjalksdfj</p>Reviews...
           </div>
         ),
@@ -111,7 +111,7 @@ export default [
     slug: 'component-library',
     component: () => (
       <div>
-        <h3>Some Title</h3>
+        <h3>Component Library</h3>
         <p>alsdkfjalksdfj</p>asdlkfj
       </div>
     ),
@@ -121,7 +121,7 @@ export default [
         slug: 'components',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>components</h3>
             <p>alsdkfjalksdfj</p>components
           </div>
         ),
@@ -131,7 +131,7 @@ export default [
         slug: 'contributing',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Contributing...</h3>
             <p>alsdkfjalksdfj</p>Contributing...
           </div>
         ),
@@ -141,7 +141,7 @@ export default [
         slug: 'technical-design-brief',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Technical Design Brief</h3>
             <p>alsdkfjalksdfj</p>technical design brief
           </div>
         ),
@@ -151,8 +151,8 @@ export default [
         slug: 'uxui-principles',
         component: () => (
           <div>
-            <h3>Some Title</h3>
-            <p>alsdkfjalksdfj</p>design principles
+            <h3>ux/ui principles</h3>
+            <p>alsdkfjalksdfj</p>
           </div>
         ),
       },
@@ -161,7 +161,7 @@ export default [
         slug: 'accessible-design',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>accessible design</h3>
             <p>alsdkfjalksdfj</p>Accessible Design stuff here...
           </div>
         ),
@@ -171,17 +171,17 @@ export default [
         slug: 'content-strategy',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Content Strategy</h3>
             <p>alsdkfjalksdfj</p>Content Strategy
           </div>
         ),
       },
       {
         title: 'Technical Approach',
-        slug: 'technical approach',
+        slug: 'technical-approach',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Technical Approach</h3>
             <p>alsdkfjalksdfj</p>Technical Approach
           </div>
         ),
@@ -193,7 +193,7 @@ export default [
     slug: 'research',
     component: () => (
       <div>
-        <h3>Some Title</h3>
+        <h3>Research</h3>
         <p>alsdkfjalksdfj</p>Research
       </div>
     ),
@@ -203,7 +203,7 @@ export default [
         slug: 'discovery-research',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Discovery</h3>
             <p>alsdkfjalksdfj</p>Discovery Research...
           </div>
         ),
@@ -215,7 +215,7 @@ export default [
     slug: 'team',
     component: () => (
       <div>
-        <h3>Some Title</h3>
+        <h3>The Team</h3>
         <p>alsdkfjalksdfj</p>The Team
       </div>
     ),
@@ -225,7 +225,7 @@ export default [
         slug: 'purpose',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Purpose</h3>
             <p>alsdkfjalksdfj</p>Purpose
           </div>
         ),
@@ -235,7 +235,7 @@ export default [
         slug: 'focus',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Focus</h3>
             <p>alsdkfjalksdfj</p>Focus...
           </div>
         ),
@@ -245,7 +245,7 @@ export default [
         slug: 'perception',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Perception</h3>
             <p>alsdkfjalksdfj</p>Perceptions...
           </div>
         ),
@@ -255,7 +255,7 @@ export default [
         slug: 'how-we-work',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>How we Work</h3>
             <p>alsdkfjalksdfj</p>How we Work...
           </div>
         ),
@@ -265,7 +265,7 @@ export default [
         slug: 'working-with-us',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Working with Us</h3>
             <p>alsdkfjalksdfj</p>Working with Design Ops
           </div>
         ),
@@ -275,7 +275,7 @@ export default [
         slug: 'tools',
         component: () => (
           <div>
-            <h3>Some Title</h3>
+            <h3>Tools</h3>
             <p>alsdkfjalksdfj</p>Tools...
           </div>
         ),

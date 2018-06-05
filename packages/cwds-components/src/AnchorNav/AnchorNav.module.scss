@@ -9,10 +9,24 @@ $active-link-focus-bar-offset: 5px;
   }
 }
 
+.AnchorNavList {
+  display: block !important;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.SubTree {
+  display: block;
+}
+
 .nav-link {
   position: relative;
   display: block;
   // background-color: aqua;
+
+  &:not(.active) li {
+    display: none;
+  }
 
   .nav-link {
     // background-color: blueviolet;

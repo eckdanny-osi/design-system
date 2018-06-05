@@ -38,22 +38,75 @@ class AnchorNav extends PureComponent {
     return;
   }
 
+  state = {
+    items: [],
+    currentSlug: null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state.items = this.props.items;
+    // Bind methods
+    this.handleHashChange = this.handleHashChange.bind(this);
+  }
+
+  // componentWillMount() {
+  //   if ('onhashchange' in window) {
+  //     window.addEventListener('hashchange', this.handleHashChange);
+  //   } else {
+  //     console.warn('Browser does not support hashchange!');
+  //   }
+  // }
+
+  componentWillUnmount() {}
+
+  handleHashChange() {
+    this.setState({ currentSlug: location.hash.slice(1) });
+  }
+
+  isActive() {}
+
+  setActiveSlug() {}
+
   renderItems(items, topLevel) {
+    const currentSlug = location.hash.slice(1);
     const style =
       (topLevel && { display: 'block', bottom: 0, overflowY: 'scroll' }) ||
       null;
     return (
       // <ul className={cn(styles.nav, 'flex-column')}>
-      <ul className={cn(styles.nav)} style={{ display: 'block', ...style }}>
+      // <ul className={cn(styles.nav)} style={{ display: 'block', ...style }}>
+      <ul
+        className={cn(
+          styles.nav,
+          topLevel ? [styles.AnchorNavList] : [styles.SubTree]
+        )}
+      >
         {items.map(
           item =>
             item.children ? (
-              <li key={item.title} className={getListItemClassNames(item)}>
+              <li
+                key={item.title}
+                className={cn(styles['nav-link'], {
+                  // [styles.disabled]: disabled,
+                  [styles.active]:
+                    currentSlug === item.slug ||
+                    item.children
+                      .map(child => child.slug)
+                      .includes(currentSlug),
+                })}
+              >
                 {this.props.renderItem(item)}
                 {this.renderItems(item.children)}
               </li>
             ) : (
-              <li key={item.title} className={getListItemClassNames(item)}>
+              <li
+                key={item.title}
+                className={cn(styles['nav-link'], {
+                  // [styles.disabled]: disabled,
+                  [styles.active]: currentSlug === item.slug,
+                })}
+              >
                 {this.props.renderItem(item)}
               </li>
             )
@@ -67,7 +120,7 @@ class AnchorNav extends PureComponent {
     return (
       <div className={cn(styles.AnchorNav)}>
         <Affix viewportOffsetTop={offset}>
-          {this.renderItems(items, true)}
+          {this.renderItems(this.state.items, true)}
         </Affix>
       </div>
     );
