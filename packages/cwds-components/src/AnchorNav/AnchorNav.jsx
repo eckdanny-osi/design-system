@@ -39,9 +39,10 @@ const defaultProps = {
   offset: 133,
 };
 
-function getListItemClassNames({ disabled }) {
+function getListItemClassNames({ disabled, active }) {
   return cn(styles['nav-link'], {
     [styles.disabled]: disabled,
+    [styles.active]: active, //  Math.random() > 0.5,
   });
 }
 
@@ -53,12 +54,12 @@ class AnchorNav extends PureComponent {
   }
 
   renderItems(items, topLevel) {
+    const style =
+      (topLevel && { display: 'block', bottom: 0, overflowY: 'scroll' }) ||
+      null;
     return (
       // <ul className={cn(styles.nav, 'flex-column')}>
-      <ul
-        className={cn(styles.nav)}
-        style={{ display: 'block', bottom: 0, overflowY: 'scroll' }}
-      >
+      <ul className={cn(styles.nav)} style={{ display: 'block', ...style }}>
         {items.map(
           item =>
             item.children ? (
@@ -80,7 +81,9 @@ class AnchorNav extends PureComponent {
     const { offset, items } = this.props;
     return (
       <div className={cn(styles.AnchorNav)}>
-        <Affix viewportOffsetTop={offset}>{this.renderItems(items)}</Affix>
+        <Affix viewportOffsetTop={offset}>
+          {this.renderItems(items, true)}
+        </Affix>
       </div>
     );
   }

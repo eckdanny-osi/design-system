@@ -19,10 +19,12 @@ export default [
         <p>alsdkfjalksdfj</p>About
       </div>
     ),
+    active: true,
     children: [
       {
         title: 'Experience Values',
         slug: 'experience-values',
+        active: true,
         component: () => (
           <div>
             <h3>Some Title</h3>
