@@ -72,7 +72,7 @@ class AnchorNav extends PureComponent {
           isRoot ? [styles.AnchorNavList] : [styles.SubTree]
         )}
       >
-        {/* {items.map(
+        {items.map(
           item =>
             item.children ? (
               <li
@@ -100,8 +100,8 @@ class AnchorNav extends PureComponent {
                 {this.props.renderItem(item)}
               </li>
             )
-        )} */}
-        {items.map(this.renderListItem)}
+        )}
+        {/* {items.map(this.renderListItem)} */}
       </ul>
     );
   }

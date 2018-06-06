@@ -12,19 +12,27 @@ export const AppBarConfig = {
 };
 
 class AppBar extends PureComponent {
+  static options = {
+    brand: _ => 'asdfasdf',
+  };
   static propTypes = {
     brand: PropTypes.func,
     rhs: PropTypes.func,
   };
+  static config(opts) {
+    AppBar.options = {
+      ...AppBar.options,
+      ...opts,
+    };
+  }
   constructor(props) {
     super(props);
     this.renderBrand = this.renderBrand.bind(this);
   }
   renderBrand() {
-    if (this.props.brand) {
-      return this.props.brand();
-    }
-    return AppBarConfig.brand();
+    const { brand } = this.props;
+    console.log(AppBar.options.brand);
+    return brand ? brand() : AppBar.options.brand();
   }
   render() {
     const { rhs, ...props } = this.props;
