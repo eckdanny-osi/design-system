@@ -29,6 +29,10 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./lib'));
 });
 
+gulp.task('ts', () => {
+  return gulp.src('./src/**/*.ts').pipe(gulp.dest('./lib'));
+});
+
 // gulp.task('css', function() {
 //   const plugins = [
 //     require('postcss-import')({

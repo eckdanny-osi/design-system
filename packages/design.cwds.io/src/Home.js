@@ -9,15 +9,7 @@ import Button from '@cwds/components/lib/Button';
 
 export default () => (
   <div>
-    <AppBar
-      brand={props => {
-        return (
-          <Link to="/">
-            <Logo />
-          </Link>
-        );
-      }}
-    />
+    <AppBar />
     <PageHeader title="Design Guide" />
     <Container>
       <CardDeck>

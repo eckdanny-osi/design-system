@@ -11,15 +11,7 @@ import IntraPageRoutes from './ComponentRouteManager';
 export default () => {
   return (
     <div>
-      <AppBar
-        brand={props => {
-          return (
-            <Link to="/">
-              <Logo />
-            </Link>
-          );
-        }}
-      />
+      <AppBar />
       <PageHeader title="Components" />
       <Container>
         <Breadcrumb>

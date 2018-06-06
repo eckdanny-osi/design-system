@@ -21,15 +21,7 @@ import {
 export default () => {
   return (
     <div>
-      <AppBar
-        brand={props => {
-          return (
-            <Link to="/">
-              <Logo />
-            </Link>
-          );
-        }}
-      />
+      <AppBar />
       <PageHeader title="Design Principles" />
       <Container>
         <Breadcrumb>

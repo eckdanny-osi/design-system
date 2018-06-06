@@ -9,15 +9,7 @@ import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 export default () => {
   return (
     <div>
-      <AppBar
-        brand={props => {
-          return (
-            <Link to="/">
-              <Logo />
-            </Link>
-          );
-        }}
-      />
+      <AppBar />
       <PageHeader title="Core Style" />
       <Container>
         <Card>

@@ -3,10 +3,14 @@
 
 $active-link-focus-bar-offset: 5px;
 
+.AnchorNavContainer {
+}
+
 .AnchorNav {
   @include media-breakpoint-down(sm) {
     display: none;
   }
+  // background-color: red;
 }
 
 .AnchorNavList {

@@ -62,15 +62,7 @@ const routes = [
 export default () => {
   return (
     <div>
-      <AppBar
-        brand={props => {
-          return (
-            <Link to="/">
-              <Logo />
-            </Link>
-          );
-        }}
-      />
+      <AppBar />
       <PageHeader title="Layouts" />
       <Container>
         <AnchorNav.Container

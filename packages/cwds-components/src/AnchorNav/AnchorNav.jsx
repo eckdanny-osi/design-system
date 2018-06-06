@@ -44,10 +44,6 @@ class AnchorNav extends PureComponent {
     offset: 133,
   };
 
-  static createManager() {
-    return;
-  }
-
   state = {
     items: [],
     currentSlug: null,
@@ -58,41 +54,25 @@ class AnchorNav extends PureComponent {
     this.state.items = this.props.items;
     // Bind methods
     this.handleHashChange = this.handleHashChange.bind(this);
+    this.renderListItem = this.renderListItem.bind(this);
   }
-
-  // componentWillMount() {
-  //   if ('onhashchange' in window) {
-  //     window.addEventListener('hashchange', this.handleHashChange);
-  //   } else {
-  //     console.warn('Browser does not support hashchange!');
-  //   }
-  // }
-
-  componentWillUnmount() {}
 
   handleHashChange() {
     this.setState({ currentSlug: location.hash.slice(1) });
   }
 
-  isActive() {}
-
-  setActiveSlug() {}
-
-  renderItems(items, topLevel) {
+  renderItems(items, isRoot) {
     const currentSlug = location.hash.slice(1);
     const style =
-      (topLevel && { display: 'block', bottom: 0, overflowY: 'scroll' }) ||
-      null;
+      (isRoot && { display: 'block', bottom: 0, overflowY: 'scroll' }) || null;
     return (
-      // <ul className={cn(styles.nav, 'flex-column')}>
-      // <ul className={cn(styles.nav)} style={{ display: 'block', ...style }}>
       <ul
         className={cn(
           styles.nav,
-          topLevel ? [styles.AnchorNavList] : [styles.SubTree]
+          isRoot ? [styles.AnchorNavList] : [styles.SubTree]
         )}
       >
-        {items.map(
+        {/* {items.map(
           item =>
             item.children ? (
               <li
@@ -120,8 +100,23 @@ class AnchorNav extends PureComponent {
                 {this.props.renderItem(item)}
               </li>
             )
-        )}
+        )} */}
+        {items.map(this.renderListItem)}
       </ul>
+    );
+  }
+
+  renderListItem(item) {
+    const { title, active, slug, children } = item;
+    return (
+      <li
+        key={item.slug}
+        className={cn(styles['nav-link'], {
+          [styles.active]: active,
+        })}
+      >
+        {this.props.renderItem(item)}
+      </li>
     );
   }
 
@@ -132,23 +127,6 @@ class AnchorNav extends PureComponent {
         <Affix viewportOffsetTop={offset}>
           {this.renderItems(this.state.items, true)}
         </Affix>
-      </div>
-    );
-  }
-
-  render1() {
-    const props = this.props;
-    return (
-      <div className={cn(styles.AnchorNav)}>
-        <Nav vertical>
-          <Affix viewportOffsetTop={this.props.offset}>
-            <div style={{ width: '100%' }}>
-              {this.manager.items.map(d => (
-                <div key={d.slug}>{props.renderItem(d)}</div>
-              ))}
-            </div>
-          </Affix>
-        </Nav>
       </div>
     );
   }

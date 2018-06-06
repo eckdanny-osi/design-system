@@ -24,18 +24,6 @@ const DefaultView = () => (
 
 const toSlug = str => slugify(str, { lower: true });
 
-const renderAppBar = props => (
-  <AppBar
-    brand={() => {
-      return (
-        <Link to="/">
-          <Logo />
-        </Link>
-      );
-    }}
-  />
-);
-
 const ListGroupItemLink = withRouter(
   ({ history, location, match, staticContext: _, to, ...props }) => {
     return (
@@ -52,7 +40,7 @@ const ListGroupItemLink = withRouter(
 export default ({ match }) => {
   return (
     <LayoutJumpNav
-      appBar={renderAppBar}
+      appBar={_ => <AppBar />}
       header={() => <PageHeader title="Labs" />}
       sidebar={() => {
         return (
