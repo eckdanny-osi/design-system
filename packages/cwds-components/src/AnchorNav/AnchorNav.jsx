@@ -20,10 +20,6 @@ const propTypes = {
   renderItem: PropTypes.func.isRequired,
 };
 
-const defaultProps = {
-  offset: 133,
-};
-
 function getListItemClassNames({ disabled, active }) {
   return cn(styles['nav-link'], {
     [styles.disabled]: disabled,
@@ -32,7 +28,21 @@ function getListItemClassNames({ disabled, active }) {
 }
 
 class AnchorNav extends PureComponent {
-  OFFSET = 133;
+  static propTypes = {
+    offset: PropTypes.number,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        href: PropTypes.string,
+        disabled: PropTypes.bool,
+        label: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+      })
+    ).isRequired,
+    renderItem: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    offset: 133,
+  };
 
   static createManager() {
     return;
@@ -131,7 +141,7 @@ class AnchorNav extends PureComponent {
     return (
       <div className={cn(styles.AnchorNav)}>
         <Nav vertical>
-          <Affix viewportOffsetTop={this.OFFSET}>
+          <Affix viewportOffsetTop={this.props.offset}>
             <div style={{ width: '100%' }}>
               {this.manager.items.map(d => (
                 <div key={d.slug}>{props.renderItem(d)}</div>
@@ -143,9 +153,6 @@ class AnchorNav extends PureComponent {
     );
   }
 }
-
-AnchorNav.propTypes = propTypes;
-AnchorNav.defaultProps = defaultProps;
 
 AnchorNav.Section = Section;
 AnchorNav.Container = AnchorNavContainer;
