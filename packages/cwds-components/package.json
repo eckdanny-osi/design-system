@@ -1,6 +1,6 @@
 {
   "name": "@cwds/components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components for CWDS",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -22,7 +22,6 @@
     "test": "NODE_ENV=development jest --env=jsdom"
   },
   "dependencies": {
-    "@cwds/core": "^0.1.0",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
