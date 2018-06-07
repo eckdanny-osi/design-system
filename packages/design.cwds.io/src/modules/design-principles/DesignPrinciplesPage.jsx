@@ -25,17 +25,6 @@ function renderSection({ title, slug, children, component: Component }) {
     return (
       <AnchorNav.Section key={slug} id={slug}>
         <Component />
-        <small className="pull-right">
-          <a
-            target="_blank"
-            href={`https://github.com/eckdanny-osi/design-system/wiki/${title.replace(
-              ' ',
-              '-'
-            )}`}
-          >
-            Edit on GitHub
-          </a>
-        </small>
         <hr className="my-4" />
       </AnchorNav.Section>
     );

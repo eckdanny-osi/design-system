@@ -1,0 +1,9 @@
+/* @import '../core'; */
+
+.ExtEditLink {
+  font-size: x-small;
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  color: blueviolet;
+}
