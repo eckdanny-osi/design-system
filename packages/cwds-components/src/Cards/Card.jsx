@@ -11,6 +11,7 @@ import Section from './CardSection';
 import Subsection from './CardSubsection';
 import SectionGroup from './CardSectionGroup';
 import SubsectionGroup from './CardSubsectionGroup';
+import Title from './CardTitle';
 
 export { CardUnstyled };
 
@@ -29,5 +30,6 @@ Card.Section = Section;
 Card.Subsection = Subsection;
 Card.SectionGroup = SectionGroup;
 Card.SubsectionGroup = SubsectionGroup;
+Card.Title = Title;
 
 export default Card;

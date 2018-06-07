@@ -7,13 +7,9 @@ import Row from '../Row';
 import Col from '../Col';
 import Logo from '../Logo';
 
-export const AppBarConfig = {
-  brand: _ => <Logo />,
-};
-
 class AppBar extends PureComponent {
   static options = {
-    brand: _ => 'asdfasdf',
+    brand: _ => <a>CWDS-CARES</a>,
   };
   static propTypes = {
     brand: PropTypes.func,
@@ -31,7 +27,6 @@ class AppBar extends PureComponent {
   }
   renderBrand() {
     const { brand } = this.props;
-    console.log(AppBar.options.brand);
     return brand ? brand() : AppBar.options.brand();
   }
   render() {

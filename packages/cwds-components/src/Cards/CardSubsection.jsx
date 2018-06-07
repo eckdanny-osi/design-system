@@ -35,7 +35,6 @@ class CardSubsection extends PureComponent {
   };
   renderSectionTitle() {
     const { title, renderTitle } = this.props;
-    console.log('renderSectionTitle()');
     return (
       <div
         className={cn(Styles.CardSubsectionTitle, {
