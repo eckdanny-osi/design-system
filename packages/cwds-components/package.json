@@ -1,6 +1,6 @@
 {
   "name": "@cwds/components",
-  "version": "0.1.1-alpha",
+  "version": "0.1.2-alpha",
   "description": "React components for CWDS",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
