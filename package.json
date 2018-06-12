@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "wiki": "./bin/wiki"
+  },
   "devDependencies": {
     "lerna": "^2.10.1",
     "slugify": "^1.3.0"

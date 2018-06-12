@@ -6,6 +6,7 @@ const readline = require('readline');
 const stream = require('stream');
 const slugify = require('slugify');
 const MDXC = require('mdxc');
+const mkdirp = require('mkdirp');
 
 const INPUT_DIR = '../wiki';
 const OUTPUT_DIR =
@@ -17,6 +18,8 @@ const md = new MDXC({
   linkify: true,
   typographer: true,
 });
+
+mkdirp.sync(path.resolve(__dirname, OUTPUT_DIR));
 
 function main() {
   fs.readdir(path.resolve(__dirname, INPUT_DIR), (err, files) => {

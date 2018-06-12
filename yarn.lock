@@ -16,6 +16,24 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@cwds/components@0.1.2-alpha":
+  version "0.1.2-alpha"
+  resolved "https://registry.yarnpkg.com/@cwds/components/-/components-0.1.2-alpha.tgz#db0b19a6829e593aa5ba6905f9c84344025d14ba"
+  dependencies:
+    "@fortawesome/fontawesome" "^1.1.5"
+    "@fortawesome/fontawesome-free-solid" "^5.0.10"
+    "@fortawesome/react-fontawesome" "^0.0.18"
+    bootstrap "^4.1.0"
+    classnames "^2.2.5"
+    lodash.omit "^4.5.0"
+    lodash.pick "^4.4.0"
+    prop-types "^15.6.1"
+    react "^16.3.2"
+    react-dom "^16.3.2"
+    react-overlays "^0.8.3"
+    react-sticky "^6.0.2"
+    reactstrap "^5.0.0"
+
 "@cwds/components@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@cwds/components/-/components-0.1.1.tgz#cfc2055962cb32492f8385d0cb4bef9de8e7a93e"
