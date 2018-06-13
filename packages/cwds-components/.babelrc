@@ -4,10 +4,9 @@
       "presets": ["es2015", "stage-2", "react"]
     },
     "production": {
+      "ignore": ["*.test.js", "*.stories.js"],
       "presets": [["es2015", { "modules": false }], "stage-2", "react"],
-      "plugins": [
-        ["external-helpers", ["import-rename", { "^(.*)\\.scss$": "$1.css" }]]
-      ]
+      "plugins": [["import-rename", { "^(.*)\\.scss$": "$1.css" }]]
     }
   }
 }

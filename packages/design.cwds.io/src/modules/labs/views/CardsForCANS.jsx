@@ -1,8 +1,5 @@
 import React from 'react';
-import Card from '@cwds/components/lib/Cards';
-import Row from '@cwds/components/lib/Row';
-import Col from '@cwds/components/lib/Col';
-import Icon from '@cwds/components/lib/Icon';
+import { Card, Row, Col } from '@cwds/components';
 
 const CardsForCANS = () => {
   return (

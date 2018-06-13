@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '@cwds/components/lib/global/styles.css';
 
 import ScrollToTop from './ScrollToTop';
-import Home from './Home';
+import Home from './modules/home';
 import PageLayouts from './modules/layouts';
-import CorePage from './CorePage';
-// import PrinciplesPage from './PrinciplesPage';
+import CorePage from './modules/core-styles';
 import PrinciplesPage from './modules/design-principles';
 import LabsPage from './modules/labs';
 import ComponentBrowser from './modules/component-browser';

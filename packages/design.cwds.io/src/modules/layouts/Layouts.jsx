@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
-import AppBar from '@cwds/components/lib/AppBar';
-import Container from '@cwds/components/lib/Container';
-import Logo from '@cwds/components/lib/Logo';
-import PageHeader from '@cwds/components/lib/PageHeader';
+import { AppBar, Container, PageHeader } from '@cwds/components';
 
 import AboutSection from './views/About';
 import BasicContentSection from './views/BasicContent';

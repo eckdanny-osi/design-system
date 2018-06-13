@@ -5,7 +5,8 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "project.sublime-*": true
+    "project.sublime-*": true,
+    "packages/design.cwds.io/build": true
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -13,7 +14,9 @@
     "/public": true,
     "/tmp": true,
     "**/*.lock": true,
-    "/.vscode": true
+    "/.vscode": true,
+    "packages/cwds-components/lib": true,
+    "packages/design.cwds.io/src/modules/design-principles/wiki": true
   },
   "files.insertFinalNewline": true,
   "editor.formatOnSave": true,

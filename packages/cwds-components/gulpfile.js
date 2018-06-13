@@ -90,6 +90,17 @@ gulp.task('dumbcss', () => {
 
 // // gulp.task('default', ['js', 'css', 'tsd']);
 
+gulp.task('js:best', () => {
+  return gulp
+    .src([...FILES_JS])
+    .pipe(
+      babel({
+        plugins: [['import-rename', { '^(.*)\\.scss$': '$1.css' }]],
+      })
+    )
+    .pipe(gulp.dest('./lib'));
+});
+
 gulp.task('build:watch', done => {
   gulp.start('default');
   const watcher = gulp.watch([...FILES_JS, ...FILES_CSS], ['js', 'dumbcss']);
@@ -97,3 +108,5 @@ gulp.task('build:watch', done => {
 });
 
 gulp.task('default', ['js', 'dumbcss']);
+
+gulp.task('build:best', ['js:best', 'dumbcss', 'ts']);

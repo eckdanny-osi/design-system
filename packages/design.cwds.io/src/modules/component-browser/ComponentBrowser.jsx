@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
-import Logo from '@cwds/components/lib/Logo';
 import Container from '@cwds/components/lib/Container';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
