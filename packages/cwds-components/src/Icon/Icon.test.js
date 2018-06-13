@@ -4,7 +4,7 @@ import Icon from './';
 
 describe('Icon', () => {
   it('renders', () => {
-    const wrapper = shallow(<Icon />);
+    const wrapper = shallow(<Icon icon="check" />);
     expect(!!wrapper).toBe(true);
   });
 });
