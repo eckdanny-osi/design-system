@@ -25,8 +25,7 @@ storiesOf('Avatars', module)
           lg: 'lg',
           xl: 'xl',
         },
-        'md',
-        'IMG_URL'
+        'md'
       );
       return (
         <Avatar

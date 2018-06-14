@@ -6,7 +6,7 @@ import styles from './Avatar.module.scss';
 
 const propTypes = {
   imgUrl: PropTypes.string,
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   text: PropTypes.string,
   invert: PropTypes.bool,
 };
@@ -16,7 +16,7 @@ const defaultProps = {
 };
 
 const Avatar = ({ imgUrl, size, text, invert }) => {
-  const classes = cn(styles.avatar, styles[`size-${size}`], {
+  const classes = cn(styles.wrapper, styles[`size-${size}`], {
     [styles.inverted]: invert,
   });
   if (imgUrl) {
@@ -25,13 +25,13 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
   if (text) {
     return (
       <div className={classes}>
-        <div className={cn(styles.avatarInitials)}>{text}</div>
+        <div className={cn(styles.inner)}>{text}</div>
       </div>
     );
   }
   return (
     <div className={classes}>
-      <Icon icon="user" size="2x" className={cn(styles.avatarInitials)} />
+      <Icon icon="user" className={cn(styles.inner)} />
     </div>
   );
 };

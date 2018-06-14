@@ -1,14 +1,6 @@
 @import '../core';
 
-$sizes: (
-  xs: 20px,
-  sm: 24px,
-  md: 32px,
-  lg: 48px,
-  xl: 96px
-);
-
-.avatar {
+.wrapper {
   background-color: $spruce;
   color: $white;
   display: inline-flex;
@@ -21,7 +13,7 @@ $sizes: (
   color: $spruce;
 }
 
-@each $size, $value in $sizes {
+@each $size, $value in $avatar-sizes {
   .size-#{$size} {
     height: $value;
     width: $value;
@@ -31,6 +23,6 @@ $sizes: (
   }
 }
 
-.avatarInitials {
+.inner {
   margin: auto;
 }
