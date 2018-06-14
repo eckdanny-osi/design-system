@@ -11,7 +11,10 @@ export default () => (
       <CardDeck>
         <Card>
           <Card.Header>Principles</Card.Header>
-          <Card.Body>asdflkjasdlkfjasdlfkj</Card.Body>
+          <Card.Body>
+            Guiding principles for CARES including tone, goals and methods for
+            building a great product!
+          </Card.Body>
           <Card.Footer>
             <Link to="/principles">
               <Button color="primary">Go!</Button>
