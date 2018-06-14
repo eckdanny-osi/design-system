@@ -6,7 +6,8 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "project.sublime-*": true,
-    "packages/design.cwds.io/build": true
+    "packages/design.cwds.io/build": true,
+    "packages/cwds-components/lib": true
   },
   "search.exclude": {
     "**/node_modules": true,
