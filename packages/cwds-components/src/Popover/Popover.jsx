@@ -1,11 +1,14 @@
-// import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import cn from 'classnames';
-// import RSPopover from 'reactstrap/lib/Popover';
-// import Popover from 'reactstrap/lib/Popover';
-// import { withCssModule } from '../utils';
-// import styles from './Popover.module.scss';
+import React, { Component } from 'react';
+import PopoverUnstyled from 'reactstrap/lib/Popover';
+import Styles from './Popover.module.scss';
 
-// export default withCssModule(RSPopover, styles);
+export class Popover extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <PopoverUnstyled cssModule={Styles} {...props} />;
+  }
+}
 
-export { default } from 'reactstrap/lib/Popover';
+export { PopoverUnstyled };
+
+export default Popover;

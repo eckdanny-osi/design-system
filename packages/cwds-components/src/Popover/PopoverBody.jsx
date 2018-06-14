@@ -1,8 +1,14 @@
-// import react from 'react';
-// import RSPopoverBody from 'reactstrap/lib/PopoverBody';
-// import { withCssModule } from '../utils';
-// import styles from './Popover.module.scss';
+import React, { Component } from 'react';
+import PopoverBodyUnstyled from 'reactstrap/lib/PopoverBody';
+import Styles from './Popover.module.scss';
 
-// export default withCssModule(RSPopoverBody, styles);
+export class PopoverBody extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <PopoverBodyUnstyled cssModule={Styles} {...props} />;
+  }
+}
 
-export { default } from 'reactstrap/lib/PopoverBody';
+export { PopoverBodyUnstyled };
+
+export default PopoverBody;

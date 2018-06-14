@@ -1,8 +1,14 @@
-// import react from 'react';
-// import RSPopoverHeader from 'reactstrap/lib/PopoverHeader';
-// import { withCssModule } from '../utils';
-// import styles from './Popover.module.scss';
+import React, { Component } from 'react';
+import PopoverHeaderUnstyled from 'reactstrap/lib/PopoverHeader';
+import Styles from './Popover.module.scss';
 
-// export default withCssModule(RSPopoverHeader, styles);
+export class PopoverHeader extends Component {
+  render() {
+    const { cssModule, ...props } = this.props;
+    return <PopoverHeaderUnstyled cssModule={Styles} {...props} />;
+  }
+}
 
-export { default } from 'reactstrap/lib/PopoverHeader';
+export { PopoverHeaderUnstyled };
+
+export default PopoverHeader;

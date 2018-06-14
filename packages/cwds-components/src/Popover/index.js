@@ -1,3 +1,8 @@
-export { default } from './Popover';
-export { default as PopoverBody } from './PopoverBody';
-export { default as PopoverHeader } from './PopoverHeader';
+import Popover from './Popover';
+import Header from './PopoverHeader';
+import Body from './PopoverBody';
+
+Popover.Header = Header;
+Popover.Body = Body;
+
+export default Popover;

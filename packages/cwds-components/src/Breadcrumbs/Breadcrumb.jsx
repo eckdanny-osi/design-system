@@ -10,6 +10,4 @@ export const Breadcrumb = ({ cssModule, ...props }) => (
   <BreadcrumbUnstyled cssModule={styles} {...props} />
 );
 
-Breadcrumb.Item = BreadcrumbItem;
-
 export default Breadcrumb;
