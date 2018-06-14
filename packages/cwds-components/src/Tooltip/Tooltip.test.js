@@ -4,7 +4,7 @@ import Tooltip from './';
 
 describe('Tooltip', () => {
   it('renders', () => {
-    const wrapper = shallow(<Tooltip />);
+    const wrapper = shallow(<Tooltip target="dne" />);
     expect(!!wrapper).toBe(true);
   });
 });
