@@ -95,7 +95,7 @@
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
   background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
+  border-top: none; // $card-border-width solid $card-border-color;
   text-align: right;
 
   &:last-child {

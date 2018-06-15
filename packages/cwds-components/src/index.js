@@ -12,4 +12,4 @@ export { default as Icon } from './Icon';
 export { default as Logo } from './Logo';
 export { default as PageHeader } from './PageHeader';
 export { default as Row } from './Row';
-export { default as Tooltip } from './Tooltip';
+export { default as Tooltip, TooltipUncontrolled } from './Tooltip';

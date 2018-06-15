@@ -18,10 +18,6 @@ class Example extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ tooltipOpen: true });
-  }
-
   toggle() {
     this.setState({
       tooltipOpen: !this.state.tooltipOpen,
@@ -52,11 +48,7 @@ class Example extends React.Component {
             textAlign: 'left',
           }}
         >
-          Hello world! Hello world! Hello world! Hello world! Hello world! Hello
-          world! Hello world! Hello world! Hello world! Hello world! Hello
-          world! Hello world! Hello world! Hello world! Hello world! Hello
-          world! Hello world! Hello world! Hello world! Hello world! Hello
-          world!
+          Hello world!
         </Tooltip>
       </div>
     );
