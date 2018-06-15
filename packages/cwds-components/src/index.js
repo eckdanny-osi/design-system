@@ -13,3 +13,4 @@ export { default as Logo } from './Logo';
 export { default as PageHeader } from './PageHeader';
 export { default as Row } from './Row';
 export { default as Tooltip, TooltipUncontrolled } from './Tooltip';
+export { default as InfoTip } from './InfoTip';

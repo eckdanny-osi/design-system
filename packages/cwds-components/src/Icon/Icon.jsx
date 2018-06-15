@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-// import styles from './Icon.scss';
+import styles from './Icon.module.scss';
 // import styles from 'font-awesome/scss/font-awesome.scss';
 // import FontAwesome from 'react-fontawesome';
 
@@ -72,8 +72,16 @@ const propTypes = Object.assign({}, fontAwesomeIconPropTypes, {
 });
 
 export const Icon = props => {
-  const { icon: name, ...otherProps } = props;
-  return <FontAwesomeIcon icon={ICONS[name]} {...otherProps} />;
+  const { icon: name, color, ...otherProps } = props;
+  return (
+    <FontAwesomeIcon
+      icon={ICONS[name]}
+      className={cn({
+        [styles['color-primary']]: color === 'primary',
+      })}
+      {...otherProps}
+    />
+  );
 };
 
 Icon.propTypes = propTypes;
