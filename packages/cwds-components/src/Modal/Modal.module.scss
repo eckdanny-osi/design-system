@@ -10,3 +10,7 @@
   border: none;
   color: inherit;
 }
+
+.modal-footer {
+  border-top: none; // OVERRIDE
+}

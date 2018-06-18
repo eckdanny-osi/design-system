@@ -20,7 +20,9 @@ const CardsPage = () => {
       <br />
       <p>alskdfjalksdjfasldkfj...</p>
       <Card>
-        <Card.Header>Card.Header</Card.Header>
+        <Card.Header>
+          <Card.Title>Card Title</Card.Title>
+        </Card.Header>
         <Card.Body>Card.Body</Card.Body>
         <Card.Footer>Card.Footer</Card.Footer>
       </Card>

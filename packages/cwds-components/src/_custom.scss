@@ -133,15 +133,18 @@ $enable-transitions: true !default;
 
 // // stylelint-disable
 $spacer: 1rem !default;
-// $spacers: () !default;
-// $spacers: map-merge((
-//   0: 0,
-//   1: ($spacer * .25),
-//   2: ($spacer * .5),
-//   3: $spacer,
-//   4: ($spacer * 1.5),
-//   5: ($spacer * 3)
-// ), $spacers);
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 0.25),
+    2: ($spacer * 0.5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
 
 // // This variable affects the `.h-*` and `.w-*` classes.
 // $sizes: () !default;
@@ -677,6 +680,7 @@ $nav-divider-margin-y: ($spacer / 2) !default;
 
 // // Cards
 
+$card-spacer-y: map-get($spacers, 3);
 $card-spacer-y: 0.75rem !default;
 $card-spacer-x: $card-spacer-y;
 // $card-spacer-x: 1.25rem !default;
@@ -755,6 +759,7 @@ $popover-arrow-outer-color: fade-in($popover-border-color, 0.05) !default;
 // Modals
 
 // Padding applied to the modal body
+$modal-inner-padding: map-get($spacers, 3);
 $modal-inner-padding: 1rem !default;
 
 $modal-dialog-margin: 0.5rem !default;

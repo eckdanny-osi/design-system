@@ -49,11 +49,11 @@ class ModalExample extends React.Component {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Modal.Body>
             <Modal.Footer>
-              <Button color="primary" onClick={this.toggle}>
-                Do Something
-              </Button>{' '}
               <Button color="secondary" onClick={this.toggle}>
                 Cancel
+              </Button>{' '}
+              <Button color="primary" onClick={this.toggle}>
+                Do Something
               </Button>
             </Modal.Footer>
           </Modal>

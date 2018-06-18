@@ -9,6 +9,7 @@ import Logo from '../Logo';
 import Button from '../Button';
 import Popover from '../Popover';
 import Avatar from '../Avatar';
+import { ListGroup, ListGroupItem } from '../ListGroups';
 
 class Example extends React.Component {
   constructor(props) {
@@ -43,18 +44,23 @@ class Example extends React.Component {
           toggle={this.toggle}
         >
           <Popover.Body>
-            <p>
-              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-              Pellentesque ornare sem lacinia quam venenatis vestibulum.
-            </p>
-            <p>
-              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-              Pellentesque ornare sem lacinia quam venenatis vestibulum.
-            </p>
-            <p>
-              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-              Pellentesque ornare sem lacinia quam venenatis vestibulum.
-            </p>
+            <ListGroup>
+              <ListGroupItem active tag="a" href="#" action>
+                Cras justo odio
+              </ListGroupItem>
+              <ListGroupItem tag="a" href="#" action>
+                Dapibus ac facilisis in
+              </ListGroupItem>
+              <ListGroupItem tag="a" href="#" action>
+                Morbi leo risus
+              </ListGroupItem>
+              <ListGroupItem tag="a" href="#" action>
+                Porta ac consectetur ac
+              </ListGroupItem>
+              <ListGroupItem disabled tag="a" href="#" action>
+                Vestibulum at eros
+              </ListGroupItem>
+            </ListGroup>
           </Popover.Body>
         </Popover>
       </div>
