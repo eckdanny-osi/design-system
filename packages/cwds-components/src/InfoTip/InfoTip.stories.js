@@ -13,8 +13,16 @@ storiesOf('InfoTips', module)
   .add(
     'InfoTip',
     withInfo()(() => (
-      <InfoTip
-
-      />
+      <div>
+        <p>
+          Need some inline help regarding a partiular item?
+          <br />
+          Consider using an <tt>InfoTip</tt>.
+        </p>
+        <p>
+          There is an <tt>InfoTip</tt> following this statement
+          <InfoTip text="Hello from the InfoTip again!" />
+        </p>
+      </div>
     ))
   );
