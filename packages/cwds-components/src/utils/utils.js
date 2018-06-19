@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import omit from 'lodash.omit';
+import getDisplayName from 'react-display-name';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 
 export function withPropAdapter(
   WrappedComponent,
@@ -18,31 +21,32 @@ export function withPropAdapter(
   return WithPropAdapter;
 }
 
-export function withCssModule(WrappedComponent, style) {
-  if (!WrappedComponent.propTypes) {
-    return props => <WrappedComponent {...props} cssModule={style} />;
-  }
-  const {
-    cssModule: __cssModulePropType,
-    ...parentPropTypes
-  } = WrappedComponent.propTypes;
-  const {
-    cssModule: __cssModuleDefaultProp,
-    ...parentDefaultProps
-  } = WrappedComponent.defaultProps;
-  class WithCssModule extends React.Component {
-    render() {
-      return <WrappedComponent {...this.props} cssModule={style} />;
-    }
-  }
-  WithCssModule.displayName = `WithCssModule(${getDisplayName(
-    WrappedComponent
-  )})`;
-  WithCssModule.propTypes = parentPropTypes;
-  WithCssModule.defaultProps = parentDefaultProps;
-  return WithCssModule;
+function getProps(props, ...omits) {
+  return omit(props, omits);
 }
 
-export function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+export function withCssModule(Wrapped, cssModule, ...omittedProps) {
+  class WithCssModule extends Component {
+    render() {
+      return (
+        <Wrapped
+          {...getProps(this.props, 'cssModule', ...omittedProps)}
+          cssModule={cssModule}
+        />
+      );
+    }
+  }
+  WithCssModule.propTypes = omit(
+    Wrapped.propTypes,
+    'cssModule',
+    ...omittedProps
+  );
+  WithCssModule.defaultProps = omit(
+    Wrapped.defaultProps,
+    'cssModule',
+    ...omittedProps
+  );
+  hoistNonReactStatics(WithCssModule, Wrapped);
+  WithCssModule.displayName = `withCssModule(${getDisplayName(Wrapped)})`;
+  return WithCssModule;
 }

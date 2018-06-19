@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import BadgeUnstyled from 'reactstrap/lib/Badge';
 import Styles from './Badge.module.scss';
+import { withCssModule } from '../utils';
 
-export { BadgeUnstyled };
+const Badge = withCssModule(BadgeUnstyled, Styles);
 
-export class Badge extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <BadgeUnstyled cssModule={Styles} {...props} />;
-  }
-}
+export { Badge, BadgeUnstyled };
 
 export default Badge;

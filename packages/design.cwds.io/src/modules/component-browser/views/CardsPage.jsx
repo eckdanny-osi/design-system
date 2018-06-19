@@ -1,27 +1,24 @@
 import React from 'react';
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  CardSubtitle,
-} from '@cwds/components/lib/Cards';
+import Card from '@cwds/components/lib/Cards';
 import Row from '@cwds/components/lib/Row';
 import Col from '@cwds/components/lib/Col';
 
 export default () => {
   return (
     <div>
+      <h2>Cards</h2>
       <Card>
-        <CardBody>
-          <h3>Cards</h3>
+        <Card.Body>
           <p>Cards are just white boxes...</p>
-        </CardBody>
+        </Card.Body>
       </Card>
       <br />
       <Card>
-        <CardHeader>Card Header</CardHeader>
-        <CardBody>
+        <Card.Header>
+          <Card.Title>Some Title</Card.Title>
+        </Card.Header>
+        <Card.Body>
+          <Card.Subtitle>Hello</Card.Subtitle>
           <Row>
             <Col sm="4">
               Label<br />Value
@@ -33,7 +30,7 @@ export default () => {
               Label<br />Value
             </Col>
           </Row>
-          <CardSubtitle>Hello</CardSubtitle>
+          <Card.Subtitle>World</Card.Subtitle>
           <Row>
             <Col sm="4">
               Label<br />Value
@@ -45,20 +42,8 @@ export default () => {
               Label<br />Value
             </Col>
           </Row>
-          <CardSubtitle>World</CardSubtitle>
-          <Row>
-            <Col sm="4">
-              Label<br />Value
-            </Col>
-            <Col sm="4">
-              Label<br />Value
-            </Col>
-            <Col sm="4">
-              Label<br />Value
-            </Col>
-          </Row>
-        </CardBody>
-        <CardFooter>CardFooter</CardFooter>
+        </Card.Body>
+        <Card.Footer>CardFooter</Card.Footer>
       </Card>
     </div>
   );

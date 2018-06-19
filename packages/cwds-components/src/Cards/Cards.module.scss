@@ -41,8 +41,8 @@
 }
 
 .card-title {
-  // margin-bottom: $card-spacer-y;
   margin-bottom: 0;
+  font-weight: $font-weight-bold;
 }
 
 .card-subtitle {
@@ -52,7 +52,14 @@
   margin-bottom: $spacer;
 
   font-weight: 700;
-  border-bottom: 1px solid $card-border-color;
+  // border-bottom: 1px solid $card-border-color;
+  &:not(:first-child)::before {
+    // TODO: clean up
+    content: '';
+    border-bottom: $card-border-width solid $card-border-color;
+    display: block;
+    margin-bottom: map-get($spacers, 3);
+  }
 }
 
 .card-text:last-child {
