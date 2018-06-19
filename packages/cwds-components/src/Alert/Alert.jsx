@@ -27,6 +27,8 @@ const defaultProps = {
   transition: {
     ...Fade.defaultProps,
     unmountOnExit: true,
+    appear: false,
+    enter: false,
   },
 };
 
