@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import ButtonUnstyled from 'reactstrap/lib/Button';
-import styles from './Button.module.scss';
+import Styles from './Button.module.scss';
+import { withCssModule } from '../utils';
 
-export class Button extends Component {
-  render() {
-    const { cssModule, className, size, ...props } = this.props;
-    return <ButtonUnstyled cssModule={styles} {...props} />;
-  }
-}
+const Button = withCssModule(ButtonUnstyled, Styles, 'size');
 
-export { ButtonUnstyled };
+export { Button, ButtonUnstyled };
 
 export default Button;

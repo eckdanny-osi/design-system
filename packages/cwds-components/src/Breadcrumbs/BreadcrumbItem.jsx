@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BreadcrumbItemUnstyled from 'reactstrap/lib/BreadcrumbItem';
-import styles from './Breadcrumbs.module.scss';
+import { withCssModule } from '../utils';
+import Styles from './Breadcrumbs.module.scss';
 
-export class BreadcrumbItem extends Component {
-  render() {
-    const { cssModule = {}, ...props } = this.props;
-    return <BreadcrumbItemUnstyled cssModule={styles} {...props} />;
-  }
-}
+const BreadcrumbItem = withCssModule(BreadcrumbItemUnstyled, Styles);
 
-export { BreadcrumbItemUnstyled };
-
+export { BreadcrumbItem, BreadcrumbItemUnstyled };
 export default BreadcrumbItem;

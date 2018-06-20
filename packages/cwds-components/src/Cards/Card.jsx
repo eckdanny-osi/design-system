@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
 import CardUnstyled from 'reactstrap/lib/Card';
-import styles from './Cards.module.scss';
+import { withCssModule } from '../utils';
+import Styles from './Cards.module.scss';
 
 import Body from './CardBody';
-import Header from './CardHeader';
 import Footer from './CardFooter';
-import Subtitle from './CardSubtitle';
-
+import Header from './CardHeader';
 import Section from './CardSection';
-import Subsection from './CardSubsection';
 import SectionGroup from './CardSectionGroup';
+import Subsection from './CardSubsection';
 import SubsectionGroup from './CardSubsectionGroup';
+import Subtitle from './CardSubtitle';
 import Title from './CardTitle';
 
-export { CardUnstyled };
-
-export class Card extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <CardUnstyled cssModule={styles} {...props} />;
-  }
-}
+const Card = withCssModule(CardUnstyled, Styles);
 
 Card.Body = Body;
 Card.Header = Header;
@@ -32,4 +25,5 @@ Card.SectionGroup = SectionGroup;
 Card.SubsectionGroup = SubsectionGroup;
 Card.Title = Title;
 
+export { Card, CardUnstyled };
 export default Card;

@@ -5,5 +5,4 @@ import { withCssModule } from '../utils';
 const Badge = withCssModule(BadgeUnstyled, Styles);
 
 export { Badge, BadgeUnstyled };
-
 export default Badge;

@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import ColUnstyled from 'reactstrap/lib/Col';
-import styles from './Col.module.scss';
+import { withCssModule } from '../utils';
+import Styles from './Col.module.scss';
 
-export { ColUnstyled };
+const Col = withCssModule(ColUnstyled, Styles);
 
-export class Col extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <ColUnstyled cssModule={styles} {...props} />;
-  }
-}
-
+export { Col, ColUnstyled };
 export default Col;
