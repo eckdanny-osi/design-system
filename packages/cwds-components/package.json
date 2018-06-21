@@ -20,6 +20,7 @@
     "build:css": "NODE_ENV=production gulp dumbcss",
     "build:best": "gulp build:best",
     "build:watch": "gulp build:watch",
+    "//prepublishOnly": "TODO: clean up the package.json file",
     "//prepare": "yarn run build",
     "clean:lib": "mkdir -p lib && rimraf lib*",
     "clean:dist": "mkdir -p dist && rimraf dist*",
