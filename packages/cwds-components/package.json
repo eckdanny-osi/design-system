@@ -1,6 +1,6 @@
 {
   "name": "@cwds/components",
-  "version": "0.2.0-alpha.9",
+  "version": "0.2.0-alpha.10",
   "description": "React components for CWDS",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -13,10 +13,8 @@
     "//build": "NODE_ENV=production rollup -c",
     "//build:watch": "NODE_ENV=production rollup -c -w",
     "build": "yarn clean && yarn build:es && yarn build:esm && yarn build:css",
-    "build:esm":
-      "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
-    "build:es":
-      "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
+    "build:esm": "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
+    "build:es": "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
     "build:css": "NODE_ENV=production gulp dumbcss",
     "build:best": "gulp build:best",
     "build:watch": "gulp build:watch",
