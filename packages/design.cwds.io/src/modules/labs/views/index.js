@@ -6,6 +6,7 @@ import ActionCardsPage from './ActionCardsPage';
 import CardsPage from './CardsPage';
 import IconsPage from './IconsPage';
 import CollapsiblePage from './CollapsiblePage';
+import FormsPage from './Forms';
 
 export default [
   AlertsPage,
@@ -16,4 +17,5 @@ export default [
   IconsPage,
   ActionCardsPage,
   CollapsiblePage,
+  FormsPage,
 ];
