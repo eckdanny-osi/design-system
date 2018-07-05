@@ -20,27 +20,38 @@ import MultiSelectExample from './FormsMultiSelectExample';
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
 
 class SelectExample extends Component {
-  state = { selectedOption: '' };
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    // selectedOption can be null when the `x` (close) button is clicked
-    if (selectedOption) {
-      console.log(`Selected: ${selectedOption.label}`);
+  options = [
+    { value: 'angular', label: 'Angular' },
+    { value: 'ember', label: 'Ember' },
+    { value: 'vue', label: 'Vue' },
+    { value: 'elm', label: 'Elm' },
+    { value: 'react', label: 'React' },
+  ];
+  handleChange = option => {
+    if (Array.isArray(option)) {
+      this.props.onChange(
+        this.props.name,
+        null === option ? [] : option.map(d => d.value)
+      );
+    } else {
+      this.props.onChange(this.props.name, null === option ? '' : option.value);
     }
   };
+  handleBlur = () => {
+    this.props.onBlur(this.props.name, true);
+  };
   render() {
-    const { selectedOption } = this.state;
-
     return (
-      <Select
-        name="form-field-name"
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={[
-          { value: 'one', label: 'One' },
-          { value: 'two', label: 'Two' },
-        ]}
-      />
+      <Fragment>
+        <Select
+          name="framework"
+          value={this.props.value}
+          multi={false}
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+          options={this.options}
+        />
+      </Fragment>
     );
   }
 }
@@ -67,6 +78,7 @@ export class FormsExample extends Component {
     lastName: '',
     isCool: false,
     associations: getAssocitionsInitialValues(),
+    framework: '',
     favoriteColor: '',
     dob: '',
   };
@@ -293,7 +305,14 @@ export class FormsExample extends Component {
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Select Example</Label>
-                          <SelectExample />
+                          <SelectExample
+                            value={values.framework}
+                            onChange={props.setFieldValue}
+                            onBlur={props.setFieldTouched}
+                            error={props.errors.framework}
+                            touched={props.touched.framework}
+                            name="framework"
+                          />
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Combobox Example</Label>
