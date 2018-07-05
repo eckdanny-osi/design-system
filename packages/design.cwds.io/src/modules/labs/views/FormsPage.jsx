@@ -1,14 +1,49 @@
 import React, { Component, Fragment } from 'react';
+import 'react-select/dist/react-select.css';
 import PropTypes from 'prop-types';
 import { Formik, Field, FieldArray } from 'formik';
 import { Card, Button, Row, Col } from '@cwds/components';
 import { REQUIRED } from './validations';
 import { FormText } from 'reactstrap';
-import { Form, FormGroup, FormFeedback, Input, Label } from '@cwds/components';
+import {
+  Form,
+  FormGroup,
+  FormFeedback,
+  Input,
+  Label,
+  Select,
+} from '@cwds/components';
 import cn from 'classnames';
 import FormsSupplement from './FormsSupplement';
+import MultiSelectExample from './FormsMultiSelectExample';
 
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
+
+class SelectExample extends Component {
+  state = { selectedOption: '' };
+  handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    // selectedOption can be null when the `x` (close) button is clicked
+    if (selectedOption) {
+      console.log(`Selected: ${selectedOption.label}`);
+    }
+  };
+  render() {
+    const { selectedOption } = this.state;
+
+    return (
+      <Select
+        name="form-field-name"
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={[
+          { value: 'one', label: 'One' },
+          { value: 'two', label: 'Two' },
+        ]}
+      />
+    );
+  }
+}
 
 const ASSOCIATIONS = [
   ['isFriend', 'Friend'],
@@ -255,6 +290,14 @@ export class FormsExample extends Component {
                             name="dob"
                             onChange={handleChange}
                           />
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Select Example</Label>
+                          <SelectExample />
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Combobox Example</Label>
+                          <MultiSelectExample />
                         </FormCardGrid>
                       </Row>
                     </form>

@@ -40,6 +40,7 @@
     "react-display-name": "^0.2.4",
     "react-dom": "^16.3.2",
     "react-overlays": "^0.8.3",
+    "react-select": "^1.2.1",
     "react-sticky": "^6.0.2",
     "reactstrap": "^6.2.0"
   },

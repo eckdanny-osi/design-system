@@ -15,3 +15,4 @@ export { default as Row } from './Row';
 export { Tooltip, TooltipUncontrolled } from './Tooltip';
 export { default as InfoTip } from './InfoTip';
 export { Form, FormGroup, FormFeedback, Input, Label } from './Forms';
+export { default as Select } from './Select';
