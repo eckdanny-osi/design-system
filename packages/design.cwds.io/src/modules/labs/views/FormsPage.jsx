@@ -1,30 +1,36 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Field } from 'formik';
+import { Formik, Field, FieldArray } from 'formik';
 import { Card, Button, Row, Col } from '@cwds/components';
 import { REQUIRED } from './validations';
-import {
-  // Form,
-  // FormGroup,
-  Label,
-  // Input,
-  // FormFeedback,
-  FormText,
-} from 'reactstrap';
-import { Form, FormGroup, FormFeedback, Input } from '@cwds/components';
+import { FormText } from 'reactstrap';
+import { Form, FormGroup, FormFeedback, Input, Label } from '@cwds/components';
 import cn from 'classnames';
 
-const FormControl = ({ children }) => (
-  <Col md={6}>
-    <div className="form-control">{children}</div>
-  </Col>
-);
+const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
+
+const ASSOCIATIONS = [
+  ['isFriend', 'Friend'],
+  ['isCoWorker', 'CoWorker', true],
+  ['isCarPool', 'Car Pool'],
+  ['isBarBuddy', 'Bar Buddy'],
+];
+
+const getAssocitionsInitialValues = () =>
+  ASSOCIATIONS.reduce(
+    (acc, [key, label, initialValue]) => ({
+      ...acc,
+      [key]: initialValue || false,
+    }),
+    {}
+  );
 
 export class FormsExample extends Component {
   static INITIAL_VALUES = {
-    firstName: 'Danny',
+    firstName: '',
     lastName: '',
     isCool: false,
+    associations: getAssocitionsInitialValues(),
     favoriteColor: '',
     dob: '',
   };
@@ -33,6 +39,7 @@ export class FormsExample extends Component {
       firstName: '',
       lastName: '',
       isCool: false,
+      associations: {},
       favoriteColor: '',
       dob: '',
     },
@@ -51,8 +58,9 @@ export class FormsExample extends Component {
   validate(values) {
     console.log('validation...');
     const errors = {};
-    if (REQUIRED(values.firstName)) return { firstName: 'Required!' };
-    if ('Danny' === values.firstName) return { firstName: 'Noo! Not Danny' };
+    if (REQUIRED(values.firstName)) errors.firstName = 'Required!';
+    if ('Danny' === values.firstName) errors.firstName = 'Noo! Not Danny';
+    if (REQUIRED(values.lastName)) errors.lastName = 'Required!';
 
     return errors;
   }
@@ -125,125 +133,179 @@ export class FormsExample extends Component {
           initialValues={this.state.initialValues}
           onSubmit={this.handleSubmit}
           validate={this.validate}
-          render={({ values, handleSubmit, handleChange, ...props }) => (
-            <Fragment>
-              <Card>
-                <Card.Header>
-                  <Card.Title>Add Friend</Card.Title>
-                </Card.Header>
-                <Card.Body>
-                  <form id="my-form" onSubmit={handleSubmit}>
-                    <Row>
-                      <FormControl>
-                        <FormGroup>
-                          <Label htmlFor="firstName">First Name</Label>
+          render={({ values, handleSubmit, handleChange, ...props }) => {
+            const mkChangeHandler = field => (...args) => {
+              props.setFieldTouched(field);
+              return handleChange(...args);
+            };
+            return (
+              <Fragment>
+                <Card>
+                  <Card.Header>
+                    <Card.Title>Add Friend</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <form id="my-form" onSubmit={handleSubmit}>
+                      <Row>
+                        <FormCardGrid>
+                          <FormGroup>
+                            <Label htmlFor="firstName">First Name*</Label>
+                            <Input
+                              type="text"
+                              invalid={
+                                props.touched.firstName &&
+                                !!props.errors.firstName
+                              }
+                              onChange={mkChangeHandler('firstName')}
+                              onBlur={props.handleBlur}
+                              value={values.firstName}
+                              name="firstName"
+                              id="firstName"
+                            />
+                            {props.touched.firstName &&
+                              props.errors.firstName && (
+                                <FormFeedback valid={false}>
+                                  {props.errors.firstName}
+                                </FormFeedback>
+                              )}
+                          </FormGroup>
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <FormGroup>
+                            <Label htmlFor="lastName">Last Name*</Label>
+                            <Input
+                              type="text"
+                              invalid={
+                                props.touched.lastName &&
+                                !!props.errors.lastName
+                              }
+                              onChange={handleChange}
+                              onBlur={props.handleBlur}
+                              value={values.lastName}
+                              name="lastName"
+                              id="lastName"
+                            />
+                            {props.touched.lastName &&
+                              props.errors.lastName && (
+                                <FormFeedback valid={false}>
+                                  {props.errors.lastName}
+                                </FormFeedback>
+                              )}
+                          </FormGroup>
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Coolness</Label>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="isCool"
+                              type="checkbox"
+                              name="isCool"
+                              value={values.isCool}
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="isCool">Is a cool peson</Label>
+                          </FormGroup>
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Association(s)</Label>
+                          <FieldArray
+                            name="associations"
+                            render={({
+                              move,
+                              swap,
+                              push,
+                              insert,
+                              unshift,
+                              pop,
+                            }) => {
+                              return ASSOCIATIONS.map(([key, label]) => {
+                                // console.log(`values.associations[${key}]`);
+                                // debugger;
+                                return (
+                                  <FormGroup key={key} check className="ml-2">
+                                    <Input
+                                      id={key}
+                                      type="checkbox"
+                                      name={`associations[${key}]`}
+                                      value={`values.associations[${key}]`}
+                                      checked={values.associations[key]}
+                                      onChange={handleChange}
+                                    />
+                                    <span>{values.associations[key]}</span>
+                                    <Label htmlFor={key}>{label}</Label>
+                                  </FormGroup>
+                                );
+                              });
+                            }}
+                          />
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          {/* <fieldset> */}
+                          {/* <legend>Favorite Color</legend> */}
+                          <Label>Something</Label>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="favoriteColor1"
+                              type="radio"
+                              value="yellow"
+                              name="favoriteColor"
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="favoriteColor1">Yellow</Label>
+                          </FormGroup>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="favoriteColor2"
+                              type="radio"
+                              value="red"
+                              name="favoriteColor"
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="favoriteColor2">Red</Label>
+                          </FormGroup>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="favoriteColor3"
+                              type="radio"
+                              value="blue"
+                              name="favoriteColor"
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="favoriteColor3">Blue</Label>
+                          </FormGroup>
+                          {/* <label htmlFor="favoriteColor3">Blue</label> */}
+                          {/* </fieldset> */}
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label htmlFor="dob">Birthdate</Label>
                           <Input
-                            type="text"
-                            invalid={!!props.errors.firstName}
-                            onChange={handleChange}
-                            onBlur={props.handleBlur}
-                            value={values.firstName}
-                            name="firstName"
-                            id="firstName"
-                          />
-
-                          {props.errors.firstName && (
-                            <FormFeedback valid={false}>
-                              {props.errors.firstName}
-                            </FormFeedback>
-                          )}
-                        </FormGroup>
-                      </FormControl>
-                      <FormControl>
-                        <FormGroup>
-                          <Label for="exampleEmail">Valid input</Label>
-                          <Input valid />
-                          <FormFeedback valid>
-                            Sweet! that name is available
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
-                        </FormGroup>
-                      </FormControl>
-                      <FormControl>
-                        <label htmlFor="lastName">Last Name</label>
-                        <input
-                          id="lastName"
-                          type="text"
-                          name="lastName"
-                          value={values.lastName}
-                          onChange={handleChange}
-                        />
-                      </FormControl>
-                      <FormControl>
-                        <label htmlFor="isCool">Cool</label>
-                        <input
-                          id="isCool"
-                          type="checkbox"
-                          name="isCool"
-                          value={values.isCool}
-                          onChange={handleChange}
-                        />
-                      </FormControl>
-                      <FormControl>
-                        <fieldset>
-                          <legend>Favorite Color</legend>
-                          <input
-                            id="favoriteColor1"
-                            type="radio"
-                            value="yellow"
-                            name="favoriteColor"
+                            type="date"
+                            value={values.dob}
+                            id="dob"
+                            name="dob"
                             onChange={handleChange}
                           />
-                          <label htmlFor="favoriteColor1">Yellow</label>
-                          <input
-                            id="favoriteColor2"
-                            type="radio"
-                            value="red"
-                            name="favoriteColor"
-                            onChange={handleChange}
-                          />
-                          <label htmlFor="favoriteColor2">Red</label>
-                          <input
-                            id="favoriteColor3"
-                            type="radio"
-                            value="blue"
-                            name="favoriteColor"
-                            onChange={handleChange}
-                          />
-                          <label htmlFor="favoriteColor3">Blue</label>
-                        </fieldset>
-                      </FormControl>
-                      <FormControl>
-                        <label htmlFor="dob">Birthdate</label>
-                        <input
-                          type="date"
-                          value={values.dob}
-                          id="dob"
-                          name="dob"
-                          onChange={handleChange}
-                        />
-                      </FormControl>
-                    </Row>
-                  </form>
-                </Card.Body>
-                <Card.Footer>
-                  <Button
-                    type="submit"
-                    form="my-form"
-                    color="primary"
-                    disabled={
-                      !(props.dirty && props.isValid) || props.isSubmitting
-                    }
-                  >
-                    {props.isSubmitting ? 'Saving...' : 'Save'}
-                  </Button>
-                </Card.Footer>
-              </Card>
-              <pre>{JSON.stringify({ values, props }, null, 2)}</pre>
-            </Fragment>
-          )}
+                        </FormCardGrid>
+                      </Row>
+                    </form>
+                  </Card.Body>
+                  <Card.Footer>
+                    <Button
+                      type="submit"
+                      form="my-form"
+                      color="primary"
+                      disabled={
+                        !(props.dirty && props.isValid) || props.isSubmitting
+                      }
+                    >
+                      {props.isSubmitting ? 'Saving...' : 'Save'}
+                    </Button>
+                  </Card.Footer>
+                </Card>
+                <pre>{JSON.stringify({ values, props }, null, 2)}</pre>
+              </Fragment>
+            );
+          }}
         />
       </div>
     );

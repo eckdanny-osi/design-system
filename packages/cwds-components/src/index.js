@@ -12,6 +12,6 @@ export { default as Icon } from './Icon';
 export { default as Logo } from './Logo';
 export { default as PageHeader } from './PageHeader';
 export { default as Row } from './Row';
-export { default as Tooltip, TooltipUncontrolled } from './Tooltip';
+export { Tooltip, TooltipUncontrolled } from './Tooltip';
 export { default as InfoTip } from './InfoTip';
-export { Form, FormGroup, FormFeedback, Input } from './Forms';
+export { Form, FormGroup, FormFeedback, Input, Label } from './Forms';
