@@ -6,6 +6,7 @@ import { REQUIRED } from './validations';
 import { FormText } from 'reactstrap';
 import { Form, FormGroup, FormFeedback, Input, Label } from '@cwds/components';
 import cn from 'classnames';
+import FormsSupplement from './FormsSupplement';
 
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
 
@@ -83,39 +84,6 @@ export class FormsExample extends Component {
     console.log(actions);
     setTimeout(() => actions.resetForm(values), 1000);
   }
-  renderDemo() {
-    return (
-      <Formik
-        initialValues={{ name: 'jared' }}
-        onSubmit={(values, actions) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }, 1000);
-        }}
-        render={props => (
-          <Fragment>
-            <form onSubmit={props.handleSubmit} id="my-form">
-              <Input
-                type="text"
-                onChange={props.handleChange}
-                onBlur={props.handleBlur}
-                value={props.values.name}
-                is-valid={false}
-                name="name"
-              />
-              {props.errors.name && (
-                <div id="feedback">{props.errors.name}</div>
-              )}
-            </form>
-            <button type="submit" form="my-form">
-              Submit
-            </button>
-          </Fragment>
-        )}
-      />
-    );
-  }
   render() {
     const { formData } = this.state;
     return (
@@ -128,12 +96,14 @@ export class FormsExample extends Component {
           <p>
             Talk about <em>Resource Updates</em> vs <em>Set Membership</em>
           </p>
+          <FormsSupplement />
         </div>
         <Formik
           initialValues={this.state.initialValues}
           onSubmit={this.handleSubmit}
           validate={this.validate}
           render={({ values, handleSubmit, handleChange, ...props }) => {
+            // Submitted PR to fix https://github.com/jaredpalmer/formik/pull/737
             const mkChangeHandler = field => (...args) => {
               props.setFieldTouched(field);
               return handleChange(...args);
@@ -179,7 +149,7 @@ export class FormsExample extends Component {
                                 props.touched.lastName &&
                                 !!props.errors.lastName
                               }
-                              onChange={handleChange}
+                              onChange={mkChangeHandler('lastName')}
                               onBlur={props.handleBlur}
                               value={values.lastName}
                               name="lastName"
