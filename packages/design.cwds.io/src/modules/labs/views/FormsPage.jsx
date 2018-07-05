@@ -77,6 +77,7 @@ export class FormsExample extends Component {
     firstName: '',
     lastName: '',
     isCool: false,
+    isCoolAgain: null,
     associations: getAssocitionsInitialValues(),
     framework: '',
     favoriteColor: '',
@@ -211,17 +212,14 @@ export class FormsExample extends Component {
                           </FormGroup>
                         </FormCardGrid>
                         <FormCardGrid>
-                          <Label>Coolness</Label>
-                          <FormGroup check className="ml-2">
-                            <Input
-                              id="isCool"
-                              type="checkbox"
-                              name="isCool"
-                              value={values.isCool}
-                              onChange={handleChange}
-                            />
-                            <Label htmlFor="isCool">Is a cool peson</Label>
-                          </FormGroup>
+                          <Label htmlFor="dob">Birthdate</Label>
+                          <Input
+                            type="date"
+                            value={values.dob}
+                            id="dob"
+                            name="dob"
+                            onChange={handleChange}
+                          />
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Association(s)</Label>
@@ -257,9 +255,45 @@ export class FormsExample extends Component {
                           />
                         </FormCardGrid>
                         <FormCardGrid>
-                          {/* <fieldset> */}
-                          {/* <legend>Favorite Color</legend> */}
-                          <Label>Something</Label>
+                          <Label>Coolness</Label>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="isCool"
+                              type="checkbox"
+                              name="isCool"
+                              value={values.isCool}
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="isCool">Is a cool peson</Label>
+                          </FormGroup>
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>More Coolness*</Label>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="isCoolAgain1"
+                              type="radio"
+                              value={true}
+                              name="isCoolAgain"
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="isCoolAgain1">Yep</Label>
+                          </FormGroup>
+                          <FormGroup check className="ml-2">
+                            <Input
+                              id="isCoolAgain2"
+                              type="radio"
+                              value={false}
+                              name="isCoolAgain"
+                              onChange={handleChange}
+                            />
+                            <Label htmlFor="isCoolAgain2">Nope</Label>
+                          </FormGroup>
+                          {/* <label htmlFor="favoriteColor3">Blue</label> */}
+                          {/* </fieldset> */}
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Favorite Color</Label>
                           <FormGroup check className="ml-2">
                             <Input
                               id="favoriteColor1"
@@ -294,17 +328,7 @@ export class FormsExample extends Component {
                           {/* </fieldset> */}
                         </FormCardGrid>
                         <FormCardGrid>
-                          <Label htmlFor="dob">Birthdate</Label>
-                          <Input
-                            type="date"
-                            value={values.dob}
-                            id="dob"
-                            name="dob"
-                            onChange={handleChange}
-                          />
-                        </FormCardGrid>
-                        <FormCardGrid>
-                          <Label>Select Example</Label>
+                          <Label>Favorite Framework</Label>
                           <SelectExample
                             value={values.framework}
                             onChange={props.setFieldValue}
