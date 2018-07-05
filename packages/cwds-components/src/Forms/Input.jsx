@@ -1,0 +1,10 @@
+import React, { Component } from 'react';
+import InputUnstyled from 'reactstrap/lib/Input';
+import Styles from './Forms.module.scss';
+import { withCssModule } from '../utils';
+
+const Input = withCssModule(InputUnstyled, Styles);
+
+export { Input, InputUnstyled };
+
+export default Input;
