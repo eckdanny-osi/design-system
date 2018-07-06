@@ -229,59 +229,16 @@ export class FormsExample extends Component {
                           </FormGroup>
                         </FormCardGrid>
                         <FormCardGrid>
-                          <Label htmlFor="dob">Birthdate</Label>
-                          <Input
-                            type="date"
-                            value={values.dob}
-                            id="dob"
-                            name="dob"
-                            onChange={handleChange}
-                          />
-                        </FormCardGrid>
-                      </Row>
-                      <br />
-                      <br />
-                      <Row>
-                        <FormCardGrid>
-                          <Label>Association(s)</Label>
-                          <CheckboxBank
-                            name="associations"
-                            options={ASSOCIATIONS}
-                            value={values.associations}
-                            onChange={props.setFieldValue}
-                            error={props.errors.associations}
-                            touched={props.touched.associations}
-                          />
-                          {/* <FieldArray
-                            name="associations"
-                            render={({
-                              move,
-                              swap,
-                              push,
-                              insert,
-                              unshift,
-                              pop,
-                            }) => {
-                              return ASSOCIATIONS.map(([key, label]) => {
-                                // console.log(`values.associations[${key}]`);
-                                // debugger;
-                                return (
-                                  <FormGroup key={key} check className="ml-2">
-                                    <Input
-                                      id={key}
-                                      type="checkbox"
-                                      name={`associations[${key}]`}
-                                      value={`values.associations[${key}]`}
-                                      checked={values.associations[key]}
-                                      onChange={handleChange}
-                                    />
-                                    <span>{values.associations[key]}</span>
-                                    <Label htmlFor={key}>{label}</Label>
-                                  </FormGroup>
-                                );
-                              });
-                            }}
-                          /> */}
+                          <FormGroup>
+                            <Label htmlFor="dob">Birthdate</Label>
+                            <Input
+                              type="date"
+                              value={values.dob}
+                              id="dob"
+                              name="dob"
+                              onChange={handleChange}
+                            />
+                          </FormGroup>
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Coolness</Label>
@@ -295,6 +252,17 @@ export class FormsExample extends Component {
                             />
                             <Label htmlFor="isCool">Is a cool peson</Label>
                           </FormGroup>
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Association(s)</Label>
+                          <CheckboxBank
+                            name="associations"
+                            options={ASSOCIATIONS}
+                            value={values.associations}
+                            onChange={props.setFieldValue}
+                            error={props.errors.associations}
+                            touched={props.touched.associations}
+                          />
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>More Coolness*</Label>
