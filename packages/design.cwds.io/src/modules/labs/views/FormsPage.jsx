@@ -27,16 +27,17 @@ const FLAVOURS = [
   { label: 'Peppermint', value: 'peppermint' },
 ];
 
+const FRAMEWORKS = [
+  { value: 'angular', label: 'Angular' },
+  { value: 'ember', label: 'Ember' },
+  { value: 'vue', label: 'Vue' },
+  { value: 'elm', label: 'Elm' },
+  { value: 'react', label: 'React' },
+];
+
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
 
 class SelectExample extends Component {
-  options = [
-    { value: 'angular', label: 'Angular' },
-    { value: 'ember', label: 'Ember' },
-    { value: 'vue', label: 'Vue' },
-    { value: 'elm', label: 'Elm' },
-    { value: 'react', label: 'React' },
-  ];
   handleChange = option => {
     if (Array.isArray(option)) {
       this.props.onChange(
@@ -56,10 +57,10 @@ class SelectExample extends Component {
         <Select
           name="framework"
           value={this.props.value}
-          multi={false}
+          multi={this.props.multi}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
-          options={this.options}
+          options={this.props.options}
         />
       </Fragment>
     );
@@ -255,13 +256,23 @@ export class FormsExample extends Component {
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Association(s)</Label>
-                          <CheckboxBank
-                            name="associations"
-                            options={ASSOCIATIONS}
-                            value={values.associations}
-                            onChange={props.setFieldValue}
+                          <SelectExample
                             error={props.errors.associations}
+                            name="associations"
+                            onBlur={props.setFieldTouched}
+                            onChange={props.setFieldValue}
+                            options={ASSOCIATIONS}
                             touched={props.touched.associations}
+                            value={values.associations}
+                            multi={true}
+                          />
+                          <CheckboxBank
+                            error={props.errors.associations}
+                            name="associations"
+                            onChange={props.setFieldValue}
+                            options={ASSOCIATIONS}
+                            touched={props.touched.associations}
+                            value={values.associations}
                           />
                         </FormCardGrid>
                         <FormCardGrid>
@@ -330,6 +341,7 @@ export class FormsExample extends Component {
                             value={values.framework}
                             onChange={props.setFieldValue}
                             onBlur={props.setFieldTouched}
+                            options={FRAMEWORKS}
                             error={props.errors.framework}
                             touched={props.touched.framework}
                             name="framework"
