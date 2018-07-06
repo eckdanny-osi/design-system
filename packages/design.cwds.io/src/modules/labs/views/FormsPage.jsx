@@ -16,6 +16,16 @@ import {
 import cn from 'classnames';
 import FormsSupplement from './FormsSupplement';
 import MultiSelectExample from './FormsMultiSelectExample';
+import CheckboxBank from './CheckboxBank';
+
+const FLAVOURS = [
+  { label: 'Chocolate', value: 'chocolate' },
+  { label: 'Vanilla', value: 'vanilla' },
+  { label: 'Strawberry', value: 'strawberry' },
+  { label: 'Caramel', value: 'caramel' },
+  { label: 'Cookies and Cream', value: 'cookiescream' },
+  { label: 'Peppermint', value: 'peppermint' },
+];
 
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
 
@@ -79,6 +89,7 @@ export class FormsExample extends Component {
     isCool: false,
     isCoolAgain: null,
     associations: getAssocitionsInitialValues(),
+    flavors: [],
     framework: '',
     favoriteColor: '',
     dob: '',
@@ -221,9 +232,22 @@ export class FormsExample extends Component {
                             onChange={handleChange}
                           />
                         </FormCardGrid>
+                      </Row>
+                      <br />
+                      <br />
+                      <Row>
                         <FormCardGrid>
                           <Label>Association(s)</Label>
-                          <FieldArray
+                          <CheckboxBank
+                            options={FLAVOURS}
+                            value={values.flavors}
+                            onChange={props.setFieldValue}
+                            // onBlur={props.setFieldTouched}
+                            // error={props.errors.flavors}
+                            // touched={props.touched.flavors}
+                            name="flavors"
+                          />
+                          {/* <FieldArray
                             name="associations"
                             render={({
                               move,
@@ -252,7 +276,7 @@ export class FormsExample extends Component {
                                 );
                               });
                             }}
-                          />
+                          /> */}
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Coolness</Label>

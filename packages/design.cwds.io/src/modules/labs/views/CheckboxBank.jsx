@@ -1,0 +1,52 @@
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Input, FormGroup, Label } from '@cwds/components';
+
+class CheckboxBank extends PureComponent {
+  static propTypes = {
+    disabled: PropTypes.bool,
+    labelKey: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.any.isRequired,
+      })
+    ),
+    render: PropTypes.func,
+    value: PropTypes.arrayOf(PropTypes.string).isRequired,
+    valueKey: PropTypes.string,
+  };
+  static defaultProps = {
+    labelKey: 'label',
+    valueKey: 'value',
+  };
+  handleChange = e => {
+    const { value, checked } = e.target;
+    const newValues = checked
+      ? [...this.props.value, value]
+      : this.props.value.filter(item => item !== value);
+    this.props.onChange(this.props.name, newValues);
+  };
+  render() {
+    const { options, name, labelKey, valueKey, value: values } = this.props;
+    return options.map(options => {
+      const [label, value] = [options[labelKey], options[valueKey]];
+      return (
+        <FormGroup key={value} check className="ml-2">
+          <Input
+            id={value}
+            type="checkbox"
+            value={value}
+            checked={values.includes(value)}
+            onChange={this.handleChange}
+          />
+          <Label htmlFor={value}>{label}</Label>
+        </FormGroup>
+      );
+    });
+  }
+}
+
+export default CheckboxBank;
