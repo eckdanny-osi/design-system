@@ -67,20 +67,20 @@ class SelectExample extends Component {
 }
 
 const ASSOCIATIONS = [
-  ['isFriend', 'Friend'],
-  ['isCoWorker', 'CoWorker', true],
-  ['isCarPool', 'Car Pool'],
-  ['isBarBuddy', 'Bar Buddy'],
+  { value: 'isFriend', label: 'Friend' },
+  { value: 'isCoWorker', label: 'CoWorker' },
+  { value: 'isCarPool', label: 'Car Pool' },
+  { value: 'isBarBuddy', label: 'Bar Buddy' },
 ];
 
-const getAssocitionsInitialValues = () =>
-  ASSOCIATIONS.reduce(
-    (acc, [key, label, initialValue]) => ({
-      ...acc,
-      [key]: initialValue || false,
-    }),
-    {}
-  );
+// const getAssocitionsInitialValues = () =>
+//   ASSOCIATIONS.reduce(
+//     (acc, [key, label, initialValue]) => ({
+//       ...acc,
+//       [key]: initialValue || false,
+//     }),
+//     {}
+//   );
 
 export class FormsExample extends Component {
   static INITIAL_VALUES = {
@@ -88,7 +88,7 @@ export class FormsExample extends Component {
     lastName: '',
     isCool: false,
     isCoolAgain: null,
-    associations: getAssocitionsInitialValues(),
+    associations: [],
     flavors: [],
     framework: '',
     favoriteColor: '',
@@ -121,6 +121,12 @@ export class FormsExample extends Component {
     if (REQUIRED(values.firstName)) errors.firstName = 'Required!';
     if ('Danny' === values.firstName) errors.firstName = 'Noo! Not Danny';
     if (REQUIRED(values.lastName)) errors.lastName = 'Required!';
+    if (
+      values.associations.includes('isBarBuddy') &&
+      values.associations.includes('isCarPool')
+    ) {
+      errors.associations = 'Dont drink and drive!';
+    }
 
     return errors;
   }
@@ -163,9 +169,9 @@ export class FormsExample extends Component {
           validate={this.validate}
           render={({ values, handleSubmit, handleChange, ...props }) => {
             // Submitted PR to fix https://github.com/jaredpalmer/formik/pull/737
-            const mkChangeHandler = field => (...args) => {
-              props.setFieldTouched(field);
-              return handleChange(...args);
+            const mkChangeHandler = e => {
+              props.setFieldTouched(e.target.name, true, false);
+              return handleChange(e);
             };
             return (
               <Fragment>
@@ -185,7 +191,7 @@ export class FormsExample extends Component {
                                 props.touched.firstName &&
                                 !!props.errors.firstName
                               }
-                              onChange={mkChangeHandler('firstName')}
+                              onChange={mkChangeHandler}
                               onBlur={props.handleBlur}
                               value={values.firstName}
                               name="firstName"
@@ -208,7 +214,7 @@ export class FormsExample extends Component {
                                 props.touched.lastName &&
                                 !!props.errors.lastName
                               }
-                              onChange={mkChangeHandler('lastName')}
+                              onChange={mkChangeHandler}
                               onBlur={props.handleBlur}
                               value={values.lastName}
                               name="lastName"
@@ -239,13 +245,12 @@ export class FormsExample extends Component {
                         <FormCardGrid>
                           <Label>Association(s)</Label>
                           <CheckboxBank
-                            options={FLAVOURS}
-                            value={values.flavors}
+                            name="associations"
+                            options={ASSOCIATIONS}
+                            value={values.associations}
                             onChange={props.setFieldValue}
-                            // onBlur={props.setFieldTouched}
-                            // error={props.errors.flavors}
-                            // touched={props.touched.flavors}
-                            name="flavors"
+                            error={props.errors.associations}
+                            touched={props.touched.associations}
                           />
                           {/* <FieldArray
                             name="associations"

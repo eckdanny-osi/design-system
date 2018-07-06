@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Input, FormGroup, Label } from '@cwds/components';
 
@@ -17,6 +17,8 @@ class CheckboxBank extends PureComponent {
     render: PropTypes.func,
     value: PropTypes.arrayOf(PropTypes.string).isRequired,
     valueKey: PropTypes.string,
+    error: PropTypes.string, // PropTypes.object,
+    touched: PropTypes.bool, //  PropTypes.object,
   };
   static defaultProps = {
     labelKey: 'label',
@@ -30,22 +32,34 @@ class CheckboxBank extends PureComponent {
     this.props.onChange(this.props.name, newValues);
   };
   render() {
-    const { options, name, labelKey, valueKey, value: values } = this.props;
-    return options.map(options => {
-      const [label, value] = [options[labelKey], options[valueKey]];
-      return (
-        <FormGroup key={value} check className="ml-2">
-          <Input
-            id={value}
-            type="checkbox"
-            value={value}
-            checked={values.includes(value)}
-            onChange={this.handleChange}
-          />
-          <Label htmlFor={value}>{label}</Label>
-        </FormGroup>
-      );
-    });
+    const {
+      options,
+      name,
+      labelKey,
+      valueKey,
+      value: values,
+      error,
+    } = this.props;
+    return (
+      <Fragment>
+        {options.map(options => {
+          const [label, value] = [options[labelKey], options[valueKey]];
+          return (
+            <FormGroup key={value} check className="ml-2">
+              <Input
+                id={value}
+                type="checkbox"
+                value={value}
+                checked={values.includes(value)}
+                onChange={this.handleChange}
+              />
+              <Label htmlFor={value}>{label}</Label>
+            </FormGroup>
+          );
+        })}
+        <div>{error}</div>
+      </Fragment>
+    );
   }
 }
 
