@@ -17,6 +17,7 @@ import cn from 'classnames';
 import FormsSupplement from './FormsSupplement';
 import MultiSelectExample from './FormsMultiSelectExample';
 import CheckboxBank from './CheckboxBank';
+import { RadioGroup } from '../components/MyRadioGroup';
 
 const FLAVOURS = [
   { label: 'Chocolate', value: 'chocolate' },
@@ -266,6 +267,9 @@ export class FormsExample extends Component {
                             value={values.associations}
                             multi={true}
                           />
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Association(s) (again)</Label>
                           <CheckboxBank
                             error={props.errors.associations}
                             name="associations"
@@ -340,11 +344,56 @@ export class FormsExample extends Component {
                           <SelectExample
                             value={values.framework}
                             onChange={props.setFieldValue}
-                            onBlur={props.setFieldTouched}
+                            onBlur={_ => {}}
                             options={FRAMEWORKS}
                             error={props.errors.framework}
                             touched={props.touched.framework}
                             name="framework"
+                          />
+                        </FormCardGrid>
+                        <FormCardGrid>
+                          <Label>Favorite Framework*</Label>
+                          <RadioGroup
+                            value={values.framework}
+                            name="framework"
+                            // onChange={e => {
+                            //   props.setFieldValue(
+                            //     'framework',
+                            //     e.target.value,
+                            //     false
+                            //   );
+                            //   handleChange(e);
+                            // }}
+                            onChange={e => {
+                              props.setFieldValue(
+                                e.target.name,
+                                e.target.value,
+                                false
+                              );
+                              handleChange(e);
+                            }}
+                            options={FRAMEWORKS}
+                            renderOption={props => {
+                              return (
+                                <FormGroup
+                                  check
+                                  className="ml-2"
+                                  key={props.option.value}
+                                >
+                                  <Input
+                                    id={props.option.value}
+                                    type="radio"
+                                    name={props.name}
+                                    checked={props.value === props.option.value}
+                                    value={props.option.value}
+                                    onChange={props.onChange}
+                                  />
+                                  <Label htmlFor={props.option.value}>
+                                    {props.option.label}
+                                  </Label>
+                                </FormGroup>
+                              );
+                            }}
                           />
                         </FormCardGrid>
                         <FormCardGrid>

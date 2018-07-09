@@ -360,6 +360,12 @@
   version "9.6.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.6.tgz#439b91f9caf3983cad2eef1e11f6bedcbf9431d2"
 
+"@types/react@^16.4.6":
+  version "16.4.6"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.6.tgz#5024957c6bcef4f02823accf5974faba2e54fada"
+  dependencies:
+    csstype "^2.2.0"
+
 "@vue/component-compiler-utils@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-1.1.0.tgz#e3ca46ebbe3ebb1f7716da4602b06735fb8c9e97"
