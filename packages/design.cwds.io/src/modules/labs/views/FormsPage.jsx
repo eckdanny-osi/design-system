@@ -31,10 +31,10 @@ const FLAVOURS = [
 
 const FRAMEWORKS = [
   { value: 'angular', label: 'Angular' },
-  { value: 'ember', label: 'Ember' },
-  { value: 'vue', label: 'Vue' },
   { value: 'elm', label: 'Elm' },
+  { value: 'ember', label: 'Ember' },
   { value: 'react', label: 'React' },
+  { value: 'vue', label: 'Vue' },
 ];
 
 const FormCardGrid = ({ children }) => <Col md={6} children={children} />;
