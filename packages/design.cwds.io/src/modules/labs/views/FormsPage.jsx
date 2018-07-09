@@ -18,6 +18,7 @@ import FormsSupplement from './FormsSupplement';
 import MultiSelectExample from './FormsMultiSelectExample';
 import CheckboxBank from './CheckboxBank';
 import { RadioGroup } from '../components/MyRadioGroup';
+import FormsPageTesting from './FormsPageTesting';
 
 const FLAVOURS = [
   { label: 'Chocolate', value: 'chocolate' },
@@ -157,6 +158,7 @@ export class FormsExample extends Component {
       <div>
         <div>
           <h3>Forms</h3>
+          <FormsPageTesting />
           <p>
             Demonstrate the <em>Look before you Leap</em> principle!
           </p>
@@ -201,7 +203,7 @@ export class FormsExample extends Component {
                             />
                             {props.touched.firstName &&
                               props.errors.firstName && (
-                                <FormFeedback valid={false}>
+                                <FormFeedback>
                                   {props.errors.firstName}
                                 </FormFeedback>
                               )}

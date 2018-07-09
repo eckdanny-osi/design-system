@@ -32,6 +32,7 @@ class CheckboxBank extends PureComponent {
     this.props.onChange(this.props.name, newValues);
   };
   render() {
+    console.log(this.props.touched);
     const {
       options,
       name,

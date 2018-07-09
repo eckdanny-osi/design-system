@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 
 export default () => (
   <Fragment>
-    <h4>asdlfkj</h4>
-    <p>alsdjflkasjdf</p>
+    <h4>The Supplement</h4>
+    <p>Perhaps some text here...</p>
     <h4>
       When to use <tt>X</tt> vs <tt>Y</tt>?
     </h4>
     <h5>
-      <tt>Select</tt> vs <tt>CheckboxBank</tt>
+      <tt>Select (multi)</tt> vs <tt>CheckboxBank</tt>
     </h5>
     <p>
       Determination of whether to use a <tt>Select</tt> or a{' '}
@@ -23,6 +23,10 @@ export default () => (
       arbitrary bucketing, specialized jargon, highly dynamic content), the{' '}
       <tt>CheckboxBank</tt> is a better option.
     </p>
+    <h5>
+      <tt>Select</tt> vs <tt>Radio</tt>
+    </h5>
+    <p>???</p>
     <h5>
       <tt>Checkbox</tt> vs <tt>RadioGroup</tt>
     </h5>
