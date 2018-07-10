@@ -19,8 +19,8 @@ var defaultRenderOption = function (_a) {
     // onBlur: handleBlur,
     handleChange = _a.onChange, option = _a.option, value = _a.value;
     var id = "uniq__" + name + "--" + option.label;
-    return (React.createElement(React.Fragment, { key: id },
-        React.createElement("input", { id: id, name: name, type: "radio", checked: option.value === value, 
+    return (React.createElement(components_1.FormGroup, { key: id, check: true, className: "ml-2" },
+        React.createElement(components_1.Input, { id: id, name: name, type: "radio", checked: option.value === value, 
             // onBlur={handleBlur}
             onChange: handleChange, value: option.value }),
         React.createElement("label", { htmlFor: id }, option.label)));

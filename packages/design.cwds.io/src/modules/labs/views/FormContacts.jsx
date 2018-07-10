@@ -29,8 +29,6 @@ const initialValues = {
   date: new Date().toISOString().slice(0, 10),
   classification: '',
   methodOfContact: '',
-  location: '',
-  notice: '',
   inPersonDetail: {
     location: '',
     notice: '',
@@ -55,8 +53,30 @@ const validate = values => {
   if (
     values.inPersonDetail.location === LOCATION.HOME_FACILITY &&
     '' === values.inPersonDetail.notice
-  )
+  ) {
     errors.notice = 'Required!';
+  }
+
+  if ('' === values.classification) {
+    errors.classification = 'Required!';
+  }
+
+  if ('' === values.title) {
+    errors.title = 'Required!';
+  }
+
+  if (CONTACT_METHOD.IN_PERSON === values.methodOfContact) {
+    let inPersonDetailErrors = {};
+    if ('' === values.inPersonDetail.notice) {
+      inPersonDetailErrors.notice = 'Required!';
+    }
+    if ('' === values.inPersonDetail.collateralVisit) {
+      inPersonDetailErrors.notice = 'Required!';
+    }
+    if (Object.keys(inPersonDetailErrors).length) {
+      errors.inPersonDetail = inPersonDetailErrors;
+    }
+  }
 
   return errors;
 };
@@ -64,9 +84,7 @@ const validate = values => {
 export const ContactForm = () => {
   return (
     <Formik
-      onSubmit={({ values }) => {
-        console.log(values);
-      }}
+      onSubmit={values => alert(JSON.stringify(values, null, 2))}
       initialValues={initialValues}
       validate={validate}
       render={props => {
@@ -257,10 +275,13 @@ export const ContactForm = () => {
                       <Input
                         type="text"
                         name="title"
+                        invalid={props.touched.title && !!props.errors.title}
                         maxLength={200}
                         value={props.values.title}
                         onChange={props.handleChange}
+                        onBlur={props.handleBlur}
                       />
+                      <FormFeedback>{props.errors.title}</FormFeedback>
                     </FormGroup>
                   </Col>
                   <Col md={12}>
@@ -278,12 +299,9 @@ export const ContactForm = () => {
                 </Row>
               </form>
             </Card.Body>
-            {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
             <Card.Footer>
               <Button
-                onClick={() => {
-                  alert("d'oh!");
-                }}
+                onClick={() => alert(JSON.stringify(props.values, null, 2))}
                 type="button"
               >
                 Cancel

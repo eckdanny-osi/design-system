@@ -3,7 +3,7 @@ import { FormikProps, FormikHandlers } from 'formik';
 import * as PropTypes from 'prop-types';
 import { IOption } from './types';
 import { noop } from './utils';
-import { Legend } from '@cwds/components';
+import { Legend, Input, FormGroup } from '@cwds/components';
 
 interface RadioGroupProps {
   error: string;
@@ -38,8 +38,8 @@ const defaultRenderOption: React.SFC<renderProps> = ({
 }) => {
   const id = `uniq__${name}--${option.label}`;
   return (
-    <React.Fragment key={id}>
-      <input
+    <FormGroup key={id} check className="ml-2">
+      <Input
         id={id}
         name={name}
         type="radio"
@@ -49,7 +49,7 @@ const defaultRenderOption: React.SFC<renderProps> = ({
         value={option.value}
       />
       <label htmlFor={id}>{option.label}</label>
-    </React.Fragment>
+    </FormGroup>
   );
 };
 
