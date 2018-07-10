@@ -71,7 +71,7 @@ var RadioGroup = /** @class */ (function (_super) {
     RadioGroup.prototype.render = function () {
         return (React.createElement(React.Fragment, null,
             React.createElement("fieldset", null,
-                React.createElement(components_1.Legend, { required: true }, this.props.legend),
+                this.props.legend && React.createElement(components_1.Legend, { required: true }, this.props.legend),
                 this.props.options.map(this.renderOption)),
             this.props.error && this.props.renderError(this.props.error)));
     };

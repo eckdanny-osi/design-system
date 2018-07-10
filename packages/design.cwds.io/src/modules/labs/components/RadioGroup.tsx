@@ -116,7 +116,7 @@ export default class RadioGroup extends React.Component<RadioGroupProps> {
     return (
       <React.Fragment>
         <fieldset>
-          <Legend required>{this.props.legend}</Legend>
+          {this.props.legend && <Legend required>{this.props.legend}</Legend>}
           {this.props.options.map(this.renderOption)}
         </fieldset>
         {this.props.error && this.props.renderError(this.props.error)}
