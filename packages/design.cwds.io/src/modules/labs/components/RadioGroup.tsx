@@ -8,6 +8,7 @@ import { Legend, Input, FormGroup } from '@cwds/components';
 interface RadioGroupProps {
   error: string;
   name: string;
+  inline: boolean;
   onBlur: FormikHandlers['handleBlur'];
   legend: string | React.ReactNode;
   onChange: (e: React.ChangeEvent) => void;
@@ -22,6 +23,7 @@ interface RadioGroupProps {
 interface renderProps {
   option: IOption;
   index: number;
+  inline: boolean;
   name: string;
   value: any;
   touched: boolean;
@@ -31,6 +33,7 @@ interface renderProps {
 
 const defaultRenderOption: React.SFC<renderProps> = ({
   name,
+  inline,
   // onBlur: handleBlur,
   onChange: handleChange,
   option,
@@ -38,7 +41,13 @@ const defaultRenderOption: React.SFC<renderProps> = ({
 }) => {
   const id = `uniq__${name}--${option.label}`;
   return (
-    <FormGroup key={id} check className="ml-2">
+    <FormGroup
+      key={id}
+      check
+      className="ml-2"
+      inline={inline}
+      disabled={option.disabled}
+    >
       <Input
         id={id}
         name={name}
@@ -86,6 +95,7 @@ export default class RadioGroup extends React.Component<RadioGroupProps> {
     return this.props.renderOption({
       option,
       index,
+      inline: this.props.inline,
       name: this.props.name,
       value: this.props.value,
       onChange: this.handleChange,

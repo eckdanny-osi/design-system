@@ -15,11 +15,11 @@ var PropTypes = require("prop-types");
 var utils_1 = require("./utils");
 var components_1 = require("@cwds/components");
 var defaultRenderOption = function (_a) {
-    var name = _a.name, 
+    var name = _a.name, inline = _a.inline, 
     // onBlur: handleBlur,
     handleChange = _a.onChange, option = _a.option, value = _a.value;
     var id = "uniq__" + name + "--" + option.label;
-    return (React.createElement(components_1.FormGroup, { key: id, check: true, className: "ml-2" },
+    return (React.createElement(components_1.FormGroup, { key: id, check: true, className: "ml-2", inline: inline, disabled: option.disabled },
         React.createElement(components_1.Input, { id: id, name: name, type: "radio", checked: option.value === value, 
             // onBlur={handleBlur}
             onChange: handleChange, value: option.value }),
@@ -49,6 +49,7 @@ var RadioGroup = /** @class */ (function (_super) {
             return _this.props.renderOption({
                 option: option,
                 index: index,
+                inline: _this.props.inline,
                 name: _this.props.name,
                 value: _this.props.value,
                 onChange: _this.handleChange,

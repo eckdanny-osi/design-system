@@ -121,8 +121,9 @@ export const ContactForm = () => {
                   <Col md={6}>
                     <FormGroup>
                       <RadioGroup
-                        legend="Classification"
                         name="classification"
+                        legend="Classification"
+                        inline
                         value={props.values.classification}
                         options={CLASSIFICATION_OPTIONS}
                         onChange={props.handleChange}
