@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '@cwds/components/lib/global/styles.css';
+import 'react-select/dist/react-select.css';
 
 import ScrollToTop from './ScrollToTop';
 import Home from './modules/home';

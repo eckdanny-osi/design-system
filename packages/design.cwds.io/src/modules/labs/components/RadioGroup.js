@@ -13,14 +13,16 @@ exports.__esModule = true;
 var React = require("react");
 var PropTypes = require("prop-types");
 var utils_1 = require("./utils");
+var components_1 = require("@cwds/components");
 var defaultRenderOption = function (_a) {
     var name = _a.name, 
     // onBlur: handleBlur,
-    // onChange: handleChange,
-    option = _a.option, value = _a.value;
-    var id = "uniq__" + name;
-    return (React.createElement(React.Fragment, null,
-        React.createElement("input", { id: id, name: name, type: "radio", checked: option.value === value }),
+    handleChange = _a.onChange, option = _a.option, value = _a.value;
+    var id = "uniq__" + name + "--" + option.label;
+    return (React.createElement(React.Fragment, { key: id },
+        React.createElement("input", { id: id, name: name, type: "radio", checked: option.value === value, 
+            // onBlur={handleBlur}
+            onChange: handleChange, value: option.value }),
         React.createElement("label", { htmlFor: id }, option.label)));
 };
 /**
@@ -68,7 +70,7 @@ var RadioGroup = /** @class */ (function (_super) {
     RadioGroup.prototype.render = function () {
         return (React.createElement(React.Fragment, null,
             React.createElement("fieldset", null,
-                React.createElement("legend", null, "Options"),
+                React.createElement(components_1.Legend, { required: true }, this.props.legend),
                 this.props.options.map(this.renderOption)),
             this.props.error && this.props.renderError(this.props.error)));
     };

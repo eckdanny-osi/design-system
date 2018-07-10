@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import 'react-select/dist/react-select.css';
 import PropTypes from 'prop-types';
 import { Formik, Field, FieldArray } from 'formik';
 import { Card, Button, Row, Col } from '@cwds/components';
@@ -19,6 +18,8 @@ import MultiSelectExample from './FormsMultiSelectExample';
 import CheckboxBank from './CheckboxBank';
 import { RadioGroup } from '../components/MyRadioGroup';
 import FormsPageTesting from './FormsPageTesting';
+import FormsProgressiveDisclosure from './FormsProgressiveDisclosure';
+import { ContactForm } from './FormContacts';
 
 const FLAVOURS = [
   { label: 'Chocolate', value: 'chocolate' },
@@ -158,7 +159,12 @@ export class FormsExample extends Component {
       <div>
         <div>
           <h3>Forms</h3>
+          <ContactForm />
+          <br />
+          <br />
+          <br />
           <FormsPageTesting />
+          <FormsProgressiveDisclosure />
           <p>
             Demonstrate the <em>Look before you Leap</em> principle!
           </p>

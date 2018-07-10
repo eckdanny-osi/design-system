@@ -3,3 +3,14 @@
 @import '~bootstrap/scss/forms';
 // @import "~bootstrap/scss/input-group";
 // @import "~bootstrap/scss/custom-forms";
+
+.legend {
+  font-size: inherit;
+}
+
+.required {
+  &::after {
+    content: '*';
+    color: theme-color('warning');
+  }
+}

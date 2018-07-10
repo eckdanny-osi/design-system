@@ -3,11 +3,13 @@ import { FormikProps, FormikHandlers } from 'formik';
 import * as PropTypes from 'prop-types';
 import { IOption } from './types';
 import { noop } from './utils';
+import { Legend } from '@cwds/components';
 
 interface RadioGroupProps {
   error: string;
   name: string;
   onBlur: FormikHandlers['handleBlur'];
+  legend: string | React.ReactNode;
   onChange: (e: React.ChangeEvent) => void;
   options: Array<IOption>;
   value: any;
@@ -30,20 +32,21 @@ interface renderProps {
 const defaultRenderOption: React.SFC<renderProps> = ({
   name,
   // onBlur: handleBlur,
-  // onChange: handleChange,
+  onChange: handleChange,
   option,
   value,
 }) => {
-  const id = `uniq__${name}`;
+  const id = `uniq__${name}--${option.label}`;
   return (
-    <React.Fragment>
+    <React.Fragment key={id}>
       <input
         id={id}
         name={name}
         type="radio"
         checked={option.value === value} // @todo(dce): Fix this!
         // onBlur={handleBlur}
-        // onChange={handleChange}
+        onChange={handleChange}
+        value={option.value}
       />
       <label htmlFor={id}>{option.label}</label>
     </React.Fragment>
@@ -103,7 +106,7 @@ export default class RadioGroup extends React.Component<RadioGroupProps> {
     return (
       <React.Fragment>
         <fieldset>
-          <legend>Options</legend>
+          <Legend required>{this.props.legend}</Legend>
           {this.props.options.map(this.renderOption)}
         </fieldset>
         {this.props.error && this.props.renderError(this.props.error)}
