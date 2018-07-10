@@ -15,8 +15,8 @@ import {
 import cn from 'classnames';
 import FormsSupplement from './FormsSupplement';
 import MultiSelectExample from './FormsMultiSelectExample';
-import CheckboxBank from './CheckboxBank';
-import { RadioGroup } from '../components/MyRadioGroup';
+import CheckboxBank from '../../components/CheckboxBank';
+import { RadioGroup } from '../../components/MyRadioGroup';
 import FormsPageTesting from './FormsPageTesting';
 import FormsProgressiveDisclosure from './FormsProgressiveDisclosure';
 import { ContactForm } from './FormContacts';
@@ -178,7 +178,6 @@ export class FormsExample extends Component {
           onSubmit={this.handleSubmit}
           validate={this.validate}
           render={({ values, handleSubmit, handleChange, ...props }) => {
-            // Submitted PR to fix https://github.com/jaredpalmer/formik/pull/737
             const mkChangeHandler = e => {
               props.setFieldTouched(e.target.name, true, false);
               return handleChange(e);
@@ -309,8 +308,6 @@ export class FormsExample extends Component {
                             />
                             <Label htmlFor="isCoolAgain2">Nope</Label>
                           </FormGroup>
-                          {/* <label htmlFor="favoriteColor3">Blue</label> */}
-                          {/* </fieldset> */}
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Favorite Color</Label>
@@ -344,8 +341,6 @@ export class FormsExample extends Component {
                             />
                             <Label htmlFor="favoriteColor3">Blue</Label>
                           </FormGroup>
-                          {/* <label htmlFor="favoriteColor3">Blue</label> */}
-                          {/* </fieldset> */}
                         </FormCardGrid>
                         <FormCardGrid>
                           <Label>Favorite Framework</Label>
@@ -364,14 +359,6 @@ export class FormsExample extends Component {
                           <RadioGroup
                             value={values.framework}
                             name="framework"
-                            // onChange={e => {
-                            //   props.setFieldValue(
-                            //     'framework',
-                            //     e.target.value,
-                            //     false
-                            //   );
-                            //   handleChange(e);
-                            // }}
                             onChange={e => {
                               props.setFieldValue(
                                 e.target.name,
@@ -434,7 +421,4 @@ export class FormsExample extends Component {
   }
 }
 
-export default {
-  name: 'Form Examples',
-  component: FormsExample,
-};
+export default FormsExample;

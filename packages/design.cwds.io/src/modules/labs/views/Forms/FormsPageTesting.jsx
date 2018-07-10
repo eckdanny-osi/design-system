@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Formik, Field, FieldArray } from 'formik';
-import RadioGroup from '../components/RadioGroup';
+import RadioGroup from '../../components/RadioGroup';
 import { FormGroup, Input, Label, FormFeedback } from '@cwds/components';
 
 const COLORS = [
