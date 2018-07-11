@@ -1,13 +1,13 @@
-import { REQUIRED, MESSAGE } from '../';
+import { required, MESSAGE } from '../';
 
 describe('REQUIRED', () => {
   it('returns a default errMsg', () => {
-    expect(REQUIRED()('')).toEqual(MESSAGE.REQUIRED);
+    expect(required()('')).toEqual(MESSAGE.REQUIRED);
   });
   it('accepts a custom errMsg', () => {
-    expect(REQUIRED()('', 'MY_MSG')).toEqual('MY_MSG');
+    expect(required()('', 'MY_MSG')).toEqual('MY_MSG');
   });
   it('returns falsey for valid values', () => {
-    expect(REQUIRED()('OKAY')).toBeFalsy();
+    expect(required()('OKAY')).toBeFalsy();
   });
 });

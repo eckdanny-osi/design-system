@@ -1,6 +1,6 @@
 import * as MESSAGE from './messages';
 
-export { REQUIRED } from './required';
-export { MIN_LENGTH } from './min-length';
-export { MAX_LENGTH } from './max-length';
+export { required } from './required';
+export { minLength } from './min-length';
+export { maxLength } from './max-length';
 export { MESSAGE };

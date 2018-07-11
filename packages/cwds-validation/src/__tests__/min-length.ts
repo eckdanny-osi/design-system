@@ -1,13 +1,13 @@
-import { MIN_LENGTH, MESSAGE } from '../';
+import { minLength, MESSAGE } from '../';
 import { IValidationFn } from '../types';
 
 describe('MIN_LENGTH', () => {
   it('returns a callback function', () => {
-    expect(typeof MIN_LENGTH(3)).toEqual('function');
+    expect(typeof minLength(3)).toEqual('function');
   });
   describe('callbackFn', () => {
     let cb: IValidationFn;
-    beforeEach(() => (cb = MIN_LENGTH(3)));
+    beforeEach(() => (cb = minLength(3)));
     it('returns falsey when valid', () => {
       expect(cb('123')).toBeFalsy();
     });

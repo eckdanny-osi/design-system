@@ -1,13 +1,13 @@
-import { MAX_LENGTH, MESSAGE } from '../';
+import { maxLength, MESSAGE } from '../';
 import { IValidationFn } from '../types';
 
 describe('MAX_LENGTH', () => {
   it('returns a callback function', () => {
-    expect(typeof MAX_LENGTH(3)).toEqual('function');
+    expect(typeof maxLength(3)).toEqual('function');
   });
   describe('callbackFn', () => {
     let cb: IValidationFn;
-    beforeEach(() => (cb = MAX_LENGTH(3)));
+    beforeEach(() => (cb = maxLength(3)));
     it('returns falsey when valid', () => {
       expect(cb('123')).toBeFalsy();
       expect(cb('1234')).not.toBeFalsy();

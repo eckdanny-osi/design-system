@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Validations for CWDS",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "AGPL-3.0",
   "private": false,
