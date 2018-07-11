@@ -27,6 +27,7 @@
     "test": "NODE_ENV=development jest --env=jsdom"
   },
   "dependencies": {
+    "@cwds/validation": "^0.0.1",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
