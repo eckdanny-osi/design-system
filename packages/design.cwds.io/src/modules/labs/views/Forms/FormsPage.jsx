@@ -1,6 +1,7 @@
 import React from 'react';
 import UseageChoices from './UseageChoices';
 import { ContactForm } from './FormContacts';
+import FormElementStates from './FormElementStates';
 
 export default () => (
   <div>
@@ -11,9 +12,8 @@ export default () => (
     <p>alskdjfalsdfj</p>
     <h5>asldkfj</h5>
     <p>alsdjfk</p>
-    {/* <hr className="my-3" />
-    <h4>Rules</h4>
-    <p>Some rules for forms...</p> */}
+    <hr className="my-3" />
+    <FormElementStates />
     <hr className="my-3" />
     <h4>Using the Most Appropriate FormElement</h4>
     <p>alsdfjasdf</p>
