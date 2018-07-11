@@ -6,7 +6,21 @@ import FormElementStates from './FormElementStates';
 export default () => (
   <div>
     <h3>Forms</h3>
-    <p>Forms are a big part of CARES. Check out the examples below</p>
+    <p>Forms are a big part of CARES. Check out the examples below:</p>
+    <ul>
+      <li>
+        <a href="asdf">alskdfj</a>
+      </li>
+      <li>
+        <a href="asdf">alskdfj</a>
+      </li>
+      <li>
+        <a href="asdf">alskdfj</a>
+      </li>
+      <li>
+        <a href="asdf">alskdfj</a>
+      </li>
+    </ul>
     <hr className="my-3" />
     <h4>Introducting the CWDS FormElements...</h4>
     <p>alskdjfalsdfj</p>
@@ -15,8 +29,6 @@ export default () => (
     <hr className="my-3" />
     <FormElementStates />
     <hr className="my-3" />
-    <h4>Using the Most Appropriate FormElement</h4>
-    <p>alsdfjasdf</p>
     <UseageChoices />
     <hr className="my-3" />
     <h4>Validation</h4>

@@ -1,0 +1,21 @@
+{
+  "name": "@cwds/validation",
+  "version": "0.0.1",
+  "description": "Validations for CWDS",
+  "main": "dist/index.js",
+  "author": "Danny Eck <danny.eck@osi.ca.gov>",
+  "license": "AGPL-3.0",
+  "private": false,
+  "scripts": {
+    "test": "jest --env=jsdom",
+    "clean": "rimraf dist",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.5",
+    "jest": "^23.4.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.0.0",
+    "typescript": "^2.9.2"
+  }
+}
