@@ -13,11 +13,16 @@
     "//build": "NODE_ENV=production rollup -c",
     "//build:watch": "NODE_ENV=production rollup -c -w",
     "build": "yarn clean && yarn build:es && yarn build:esm && yarn build:css",
-    "build:esm": "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
-    "build:es": "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
+    "build:esm":
+      "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
+    "build:es":
+      "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
     "build:css": "NODE_ENV=production gulp dumbcss",
+    "build:css:watch": "NODE_ENV=production gulp build:css:watch",
     "build:best": "gulp build:best",
-    "build:watch": "gulp build:watch",
+    "//build:watch:doh": "gulp build:watch",
+    "build:watch":
+      "run-p \"build:es --watch\" \"build:esm --watch\" \"build:css:watch\"",
     "//prepublishOnly": "TODO: clean up the package.json file",
     "//prepare": "yarn run build",
     "clean:lib": "mkdir -p lib && rimraf lib*",
@@ -78,6 +83,7 @@
     "lint-staged": "^7.0.4",
     "mkdirp": "^0.5.1",
     "node-sass-tilde-importer": "^1.0.2",
+    "npm-run-all": "^4.1.3",
     "prettier": "^1.12.0",
     "rollup": "^0.58.0",
     "rollup-plugin-babel": "^3.0.3",

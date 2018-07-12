@@ -107,6 +107,11 @@ gulp.task('build:watch', done => {
   done();
 });
 
+gulp.task('build:css:watch', done => {
+  gulp.watch([...FILES_CSS], ['dumbcss']);
+  done();
+});
+
 gulp.task('default', ['js', 'dumbcss']);
 
 gulp.task('build:best', ['js:best', 'dumbcss', 'ts']);
