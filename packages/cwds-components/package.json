@@ -10,19 +10,14 @@
   "private": false,
   "scripts": {
     "start": "yarn storybook -p 3002",
-    "//build": "NODE_ENV=production rollup -c",
-    "//build:watch": "NODE_ENV=production rollup -c -w",
     "build": "yarn clean && yarn build:es && yarn build:esm && yarn build:css",
-    "build:esm":
-      "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
-    "build:es":
-      "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
+    "build:esm": "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
+    "build:es": "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
     "build:css": "NODE_ENV=production gulp dumbcss",
     "build:css:watch": "NODE_ENV=production gulp build:css:watch",
     "build:best": "gulp build:best",
     "//build:watch:doh": "gulp build:watch",
-    "build:watch":
-      "run-p \"build:es --watch\" \"build:esm --watch\" \"build:css:watch\"",
+    "build:watch": "run-p \"build:es --watch\" \"build:esm --watch\" \"build:css:watch\"",
     "//prepublishOnly": "TODO: clean up the package.json file",
     "//prepare": "yarn run build",
     "clean:lib": "mkdir -p lib && rimraf lib*",
