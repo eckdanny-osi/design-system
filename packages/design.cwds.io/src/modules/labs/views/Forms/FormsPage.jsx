@@ -9,16 +9,18 @@ export default () => (
     <p>Forms are a big part of CARES. Check out the examples below:</p>
     <ul>
       <li>
-        <a href="asdf">alskdfj</a>
+        <a href="#form-element-states">FormControl Elements and State</a>
       </li>
       <li>
-        <a href="asdf">alskdfj</a>
+        <a href="#appropriate-use-cases-of-formelements">
+          Appropriate Use Cases of FormElements
+        </a>
       </li>
       <li>
-        <a href="asdf">alskdfj</a>
+        <a href="#validation">Validation</a>
       </li>
       <li>
-        <a href="asdf">alskdfj</a>
+        <a href="#implementing-a-contacts-form">Implementing a Contacts Form</a>
       </li>
     </ul>
     <hr className="my-3" />
@@ -27,16 +29,24 @@ export default () => (
     <h5>asldkfj</h5>
     <p>alsdjfk</p>
     <hr className="my-3" />
-    <FormElementStates />
+    <div id="form-element-states">
+      <FormElementStates />
+    </div>
     <hr className="my-3" />
-    <UseageChoices />
+    <div id="appropriate-use-cases-of-formelements">
+      <UseageChoices />
+    </div>
     <hr className="my-3" />
-    <h4>Validation</h4>
-    <p>...</p>
+    <div id="validation">
+      <h4>Validation</h4>
+      <p>...</p>
+    </div>
     <hr className="my-3" />
-    <h4>Implementing a Contacts Form</h4>
-    <p>alsdfjasdf</p>
-    <ContactForm />
+    <div id="implementing-a-contacts-form">
+      <h4>Implementing a Contacts Form</h4>
+      <p>alsdfjasdf</p>
+      <ContactForm />
+    </div>
     <hr className="my-3" />
     <p>alskdfj</p>
     <hr className="my-3" />

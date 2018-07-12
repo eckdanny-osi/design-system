@@ -12,6 +12,7 @@ import {
   Label,
   Select,
   FormFeedback,
+  Icon,
 } from '@cwds/components';
 import RadioGroup from '../../components/RadioGroup';
 import {
@@ -314,7 +315,14 @@ export const ContactForm = () => {
                 color="primary"
                 disabled={!(props.dirty && props.isValid) || props.isSubmitting}
               >
-                {props.isSubmitting ? 'Saving...' : 'Save'}
+                {props.isSubmitting ? (
+                  <Fragment>
+                    <Icon className="mr-2" icon="circleNotch" spin />
+                    Saving...
+                  </Fragment>
+                ) : (
+                  'Save'
+                )}
               </Button>
             </Card.Footer>
           </Card>
