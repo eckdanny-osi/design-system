@@ -2,116 +2,33 @@ const path = require('path');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const tilde = require('node-sass-tilde-importer');
-const postcss = require('gulp-postcss');
 
-const FILES_JS = [
-  './src/**/*.js',
-  './src/**/*.jsx',
-  '!./src/**/*.stories.js',
-  '!./src/**/*.spec.js',
-  '!./src/**/*.test.js',
-  '!./src/**/__test__',
-  '!./src/__mocks__/**/*.js',
-];
+const FILES_CSS = './src/**/*.scss';
+const FILES_TSD = './src/**/*.d.ts';
+const OUT_DIR = './lib';
 
-const FILES_CSS = ['./src/*.scss', './src/**/*.scss'];
-
-gulp.task('js', function() {
-  return gulp
-    .src([...FILES_JS])
-    .pipe(
-      babel({
-        plugins: [['import-rename', { '^(.*)\\.scss$': '$1.css' }]],
-      })
-    )
-    .pipe(gulp.dest('./lib'));
-});
-
-gulp.task('ts', () => {
-  return gulp.src('./src/**/*.ts').pipe(gulp.dest('./lib'));
-});
-
-// gulp.task('css', function() {
-//   const plugins = [
-//     require('postcss-import')({
-//       root: __dirname,
-//       path: [path.join(__dirname, './src')],
-//     }),
-//     // require('postcss-mixins')(),
-//     // require('postcss-each')(),
-//     // require('postcss-apply')(),
-//     // require('postcss-nesting')(),
-//     // require('postcss-reporter')({ clearMessages: true })
-//   ];
-
-//   return (
-//     gulp
-//       .src(FILES_CSS)
-//       .pipe(
-//         sass({
-//           // includePaths: [ path.join(__dirname, '/node_modules') ],
-//           importer: tilde,
-//         }).on('error', sass.logError)
-//       )
-//       // .pipe(postcss(plugins))
-//       .pipe(
-//         rename({
-//           extname: '.module.css',
-//         })
-//       )
-//       .pipe(gulp.dest('./lib'))
-//   );
-// });
-
-gulp.task('dumbcss', () => {
-  // gulp.src(FILES_CSS).pipe(gulp.dest('./lib'));
+gulp.task('build:make:css', () => {
   gulp
     .src(FILES_CSS)
-    .pipe(
-      sass({
-        // includePaths: [ path.join(__dirname, '/node_modules') ],
-        importer: tilde,
-      }).on('error', sass.logError)
-    )
-    .pipe(
-      rename({
-        extname: '.css',
-      })
-    )
-    .pipe(gulp.dest('./lib'));
+    .pipe(sourcemaps.init())
+    .pipe(sass({ importer: tilde }).on('error', sass.logError))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(OUT_DIR));
 });
 
-// // gulp.task('tsd', function () {
-// //   gulp.src('./components/**/*.d.ts')
-// //     .pipe(gulp.dest('./lib'));
-// // });
-
-// // gulp.task('default', ['js', 'css', 'tsd']);
-
-gulp.task('js:best', () => {
-  return gulp
-    .src([...FILES_JS])
-    .pipe(
-      babel({
-        plugins: [['import-rename', { '^(.*)\\.scss$': '$1.css' }]],
-      })
-    )
-    .pipe(gulp.dest('./lib'));
-});
-
-gulp.task('build:watch', done => {
-  gulp.start('default');
-  const watcher = gulp.watch([...FILES_JS, ...FILES_CSS], ['js', 'dumbcss']);
+gulp.task('build:watch:css', done => {
+  gulp.watch([...FILES_CSS], ['build:make:css']);
   done();
 });
 
-gulp.task('build:css:watch', done => {
-  gulp.watch([...FILES_CSS], ['dumbcss']);
-  done();
+gulp.task('build:make:tsd', () => {
+  gulp.src(FILES_TSD).pipe(gulp.dest(OUT_DIR));
 });
 
-gulp.task('default', ['js', 'dumbcss']);
-
-gulp.task('build:best', ['js:best', 'dumbcss', 'ts']);
+gulp.task('build:watch:tsd', done => {
+  gulp.watch(FILES_TSD, ['build:make:tsd']);
+  done();
+});
