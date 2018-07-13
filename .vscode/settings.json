@@ -8,6 +8,7 @@
     "project.sublime-*": true,
     "packages/design.cwds.io/build": true,
     "packages/cwds-components/lib": true,
+    "packages/cwds-components/coverage": true,
     "packages/cwds-validation/dist": true
   },
   "search.exclude": {
