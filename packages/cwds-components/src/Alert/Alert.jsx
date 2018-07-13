@@ -83,7 +83,6 @@ function Alert(props) {
       in={isOpen}
       role="alert"
     >
-      {/* mapToCssModules('alert-icon-container') styles) */}
       <div
         className={mapToCssModules(
           classNames('alert-icon-container', {
