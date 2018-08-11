@@ -415,3 +415,7 @@
   // padding: 10px 0;
   // padding-left: 15px;
 }
+
+.card {
+  margin-bottom: map-get($map: $spacers, $key: 3);
+}

@@ -1,150 +1,107 @@
 import React from 'react';
-import { AppBar, Container, Button, PageHeader, Card } from '@cwds/components';
+import {
+  AppBar,
+  Avatar,
+  Breadcrumb,
+  Button,
+  Card,
+  Grid,
+  PageHeader,
+} from '@cwds/components';
 import '@cwds/components/lib/global/styles';
-// import PropTypes from 'prop-types';
-// import foo from './App.scss';
-// import AppBar from '@cwds/components/lib/AppBar';
-// import PageHeader from '@cwds/components/lib/PageHeader';
-// import Button from '@cwds/components/lib/Button';
-// import Icon from '@cwds/components/lib/Icon';
-// import Container from '@cwds/components/lib/Container';
-// import Row from '@cwds/components/lib/Row';
-// import Col from '@cwds/components/lib/Col';
-// import Logo from '@cwds/components/lib/Logo';
-// import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
-// import Badge from '@cwds/components/lib/Badge';
-// import { Breadcrumb, BreadcrumbItem } from '@cwds/components/lib/Breadcrumbs';
-// import {
-//   Card,
-//   CardHeader,
-//   CardBody,
-//   CardFooter,
-// } from '@cwds/components/lib/Cards';
-
-const propTypes = {};
-const defaultProps = {};
 
 export const App = ({}) => (
   <div>
     <AppBar />
     <PageHeader title="Sample Rails App" />
-    <Container>
+    <Grid.Container>
       <main>
         <section>
           <h2>About</h2>
           <Card className="mb-3">
-            <Button>Foo</Button>
-            <Button>Foo</Button>
-            <div>
-              <Button>Foo</Button>
-            </div>
+            <p>
+              This is a sample app build with <tt>@cwds/components</tt> and{' '}
+              <tt>rails + webpacker</tt>. The app demonstrates integration and
+              may be used for automated test routines as well. This is{' '}
+              <strong>not</strong> a source of documentation! (Refer to the
+              guide site at design.cwds.io if that is what you're looking for.)
+            </p>
           </Card>
-          <p>alskdfjasdlkfj</p>
         </section>
+
         <section>
-          <h2>Another Section</h2>
-          <Card>Hello World</Card>
+          <h2>Components</h2>
+          <section>
+            <h3>Avatar</h3>
+            <Avatar />
+          </section>
+          <section>
+            <h3>Breadcrumb</h3>
+            <Breadcrumb />
+          </section>
+          <section>
+            <h3>Button</h3>
+            <Button>Hello</Button>
+            <br />
+            <Button color="success">Hello</Button>
+          </section>
+          <section>
+            <h3>Card</h3>
+            <section>
+              <h4>Simple Card</h4>
+              <Card>Just a simple Card</Card>
+            </section>
+            <section>
+              <h4>Structured Card</h4>
+              <Card>
+                <Card.Header>Header</Card.Header>
+                <Card.Body>Body</Card.Body>
+                <Card.Footer>Footer</Card.Footer>
+              </Card>
+            </section>
+            <section>
+              <h4 className="text-danger">Multi-Context Card</h4>
+              <p>TODO</p>
+            </section>
+          </section>
+          <section>
+            <h3>Collapse</h3>
+            {/* <Collapse /> */}
+          </section>
+          <section>
+            <h3>Grid</h3>
+            <Grid.Row>
+              <Grid.Col sm="6">alksdjf</Grid.Col>
+              <Grid.Col sm="6">alksdjf</Grid.Col>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Col sm="6">alksdjf</Grid.Col>
+              <Grid.Col sm="6">alksdjf</Grid.Col>
+            </Grid.Row>
+          </section>
+          <section>
+            <h3>Icon</h3>
+            {/* <Icon /> */}
+          </section>
+          <section>
+            <h3>Logo</h3>
+            {/* <Logo /> */}
+          </section>
+          <section>
+            <h3>PageHeader</h3>
+            {/* <PageHeader /> */}
+          </section>
+          <section>
+            <h3>Tooltip</h3>
+            {/* <Tooltip /> */}
+          </section>
+          <section>
+            <h3>InfoTip</h3>
+            {/* <InfoTip /> */}
+          </section>
         </section>
       </main>
-    </Container>
+    </Grid.Container>
   </div>
 );
-
-// const App = ({ name }) => (
-//   <div>
-//     <AppBar
-//       brand={props => {
-//         return (
-//           <a>
-//             <Logo />
-//           </a>
-//         );
-//       }}
-//     />
-//     <PageHeader title={() => 'Rails App'} />
-//     <Container>
-//       <section id="alerts">
-//         <h3>Alerts</h3>
-//         <Alert color="success">
-//           Do <tt>Alert</tt>s work? <em>Awesome!</em>
-//         </Alert>
-//         <AlertUncontrolled color="warning">
-//           Do <tt>AlertUncontrolled</tt>s work? <em>Awesome!</em>
-//         </AlertUncontrolled>
-//       </section>
-//       <section>
-//         <h3>Avatars</h3>
-//         <pre>
-//           <code>@todo</code>
-//         </pre>
-//       </section>
-//       <section>
-//         <h3>Badges</h3>
-//         <Badge color="success">
-//           Awesome!
-//         </Badge> <Badge color="info">OK!</Badge>{' '}
-//         <Badge color="warning">Careful!</Badge>{' '}
-//         <Badge color="danger">Enough!</Badge>
-//       </section>
-//       <section>
-//         <h3>BreadCrumbs</h3>
-//         <Breadcrumb>
-//           <BreadcrumbItem>
-//             <a href="#">Foo</a>
-//           </BreadcrumbItem>
-//           <BreadcrumbItem>
-//             <a href="#">Bar</a>
-//           </BreadcrumbItem>
-//           <BreadcrumbItem active>Quo</BreadcrumbItem>
-//         </Breadcrumb>
-//       </section>
-//       <h1>alskdjfasdkf</h1>
-//       <Alert color="primary">alskdfj</Alert>
-//       <Button color="primary">Hello!</Button> <Button>Default Button</Button>{' '}
-//       <Button color="warning">Be Careful</Button>
-//       <p>asdf</p>
-//       <Button color="primary" disabled>
-//         <Icon icon="circleNotch" transform={{ rotate: 42 }} spin /> Saving...
-//       </Button>{' '}
-//       <Button color="success">
-//         <Icon style={{ marginRight: '5px' }} icon="check" /> Save
-//       </Button>
-//       <Card>
-//         <CardBody>Hello World</CardBody>
-//       </Card>
-//       <Alert color="info">I'm an alert. Just chillin' out here.</Alert>
-//       <div
-//         style={{
-//           border: '3px solid #EEEEEE',
-//           backgroundColor: 'white',
-//           padding: '10px',
-//           textAlign: 'right',
-//         }}
-//       >
-//         <Button>Cancel</Button> <Button color="primary">Save</Button>
-//       </div>
-//       <h3>Question about button states...</h3>
-//       <Button color="primary">Save</Button>
-//       <p>
-//         <em>begets...</em>
-//       </p>
-//       <Button color="primary" disabled>
-//         <Icon style={{ marginRight: '5px' }} icon="circleNotch" spin />{' '}
-//         Saving...
-//       </Button>
-//       <p>
-//         <em>begets...</em>
-//       </p>
-//       <Button color="primary">
-//         <Icon style={{ marginRight: '5px' }} icon="check" /> Saved
-//       </Button>
-//       <br />
-//       <br />
-//     </Container>
-//   </div>
-// );
-
-App.propTypes = propTypes;
-App.defaultProps = defaultProps;
-
 export default App;

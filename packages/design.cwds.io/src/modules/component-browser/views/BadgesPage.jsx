@@ -1,12 +1,16 @@
 import React from 'react';
 import Badge from '@cwds/components/lib/Badge';
-import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
+import { Card } from '@cwds/components';
 
 export default () => (
   <div>
     <h2>Badges</h2>
+
     <Card>
-      <CardBody>
+      <Card.Header>
+        <Card.Title>alksdjf</Card.Title>
+      </Card.Header>
+      <Card.Body>
         <Badge color="primary">Primary</Badge>
         <Badge color="secondary">Secondary</Badge>
         <Badge color="success">Success</Badge>
@@ -15,7 +19,7 @@ export default () => (
         <Badge color="info">Info</Badge>
         <Badge color="light">Light</Badge>
         <Badge color="dark">Dark</Badge>
-      </CardBody>
+      </Card.Body>
     </Card>
   </div>
 );

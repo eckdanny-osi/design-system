@@ -20,7 +20,8 @@ gulp.task('build:make:css', () => {
 });
 
 gulp.task('build:watch:css', done => {
-  gulp.watch([...FILES_CSS], ['build:make:css']);
+  gulp.start('build:make:css'); // <= gulp.start to be deprecated in v4
+  gulp.watch(FILES_CSS, ['build:make:css']);
   done();
 });
 

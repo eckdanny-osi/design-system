@@ -9,6 +9,7 @@ export { default as Card } from './Cards';
 export { default as Col } from './Col';
 export { default as Collapse } from './Collapse';
 export { default as Container } from './Container';
+export { default as Grid } from './Grid';
 export { default as Icon } from './Icon';
 export { default as Logo } from './Logo';
 export { default as PageHeader } from './PageHeader';
