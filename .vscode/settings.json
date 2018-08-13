@@ -9,15 +9,14 @@
     "packages/design.cwds.io/build": true,
     "packages/cwds-components/lib": true,
     "packages/cwds-components/coverage": true,
-    "packages/cwds-validation/dist": true
+    "packages/cwds-validation/dist": true,
+    ".vscode": true
   },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
-    "/public": true,
     "/tmp": true,
     "**/*.lock": true,
-    "/.vscode": true,
     "packages/cwds-components/lib": true,
     "packages/design.cwds.io/src/modules/design-principles/wiki": true
   },
