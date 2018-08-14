@@ -25,7 +25,7 @@ The `rails_app` package is a `rails5 webpacker` setup that immitates the common 
 
 _or_
 
-The `cwds.design.io` package is a static front-end build with `create-react-app`. This is [**the guide site**](distracted-dijkstra-a44525.netlify.com) for the component library. Spin up the devserver with `yarn start` from the `design.cwds.io` package directory.
+The `cwds.design.io` package is a static front-end build with `create-react-app`. This is [**the guide site**](https://distracted-dijkstra-a44525.netlify.com/) for the component library. Spin up the devserver with `yarn start` from the `design.cwds.io` package directory.
 
 Both work. My pref is to use the guide site.
 
