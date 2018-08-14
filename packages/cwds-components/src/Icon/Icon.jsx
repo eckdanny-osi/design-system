@@ -21,6 +21,7 @@ import chevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
 import ellipsis from '@fortawesome/fontawesome-free-solid/faEllipsisV';
 import plus from '@fortawesome/fontawesome-free-solid/faPlus';
 import minus from '@fortawesome/fontawesome-free-solid/faMinus';
+import lightbulb from '@fortawesome/fontawesome-free-solid/faLightbulb';
 
 export const ICON_NAMES = {
   check: 'check',
@@ -38,6 +39,7 @@ export const ICON_NAMES = {
   minus: 'minus',
   plusCircle: 'plusCircle',
   ellipsis: 'ellipsis',
+  lightbulb: 'lightbulb',
 };
 
 const ICONS = {
@@ -56,6 +58,7 @@ const ICONS = {
   [ICON_NAMES.minus]: minus,
   [ICON_NAMES.plusCircle]: plusCircle,
   [ICON_NAMES.ellipsis]: ellipsis,
+  [ICON_NAMES.lightbulb]: lightbulb,
 };
 
 const {

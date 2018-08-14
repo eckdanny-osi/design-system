@@ -1,9 +1,7 @@
 import React from 'react';
 import AppBar from '../AppBar';
 import PageHeader from '../PageHeader';
-import Container from '../Container';
-import Col from '../Col';
-import Row from '../Row';
+import { Container, Col, Row } from '../Grid';
 import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 export default ({ appbar, appBar, header, sidebar, render, ...props }) => {

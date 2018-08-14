@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBar from '../AppBar';
 import PageHeader from '../PageHeader';
-import Container from '../Container';
+import { Container } from '../Grid';
 
 export default ({ appbar, header, render }) => {
   return (

@@ -8,9 +8,7 @@ export default () => {
     <div>
       <h2>Cards</h2>
       <Card>
-        <Card.Body>
-          <p>Cards are just white boxes...</p>
-        </Card.Body>
+        <p>Cards are just white boxes...</p>
       </Card>
       <br />
       <Card>

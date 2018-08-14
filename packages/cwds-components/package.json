@@ -37,6 +37,7 @@
   "dependencies": {
     "@cwds/validation": "^0.0.1",
     "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "bootstrap": "^4.1.0",
@@ -51,7 +52,8 @@
     "react-overlays": "^0.8.3",
     "react-select": "^1.2.1",
     "react-sticky": "^6.0.2",
-    "reactstrap": "^6.2.0"
+    "reactstrap": "^6.2.0",
+    "recompose": "^0.28.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.1",

@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
+import { defaultProps } from 'recompose';
 import ContainerUnstyled from 'reactstrap/lib/Container';
 import styles from './Container.module.scss';
 
 export { ContainerUnstyled };
-
-export class Container extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <ContainerUnstyled cssModule={styles} {...props} />;
-  }
-}
-
+export const Container = defaultProps({ cssModule: styles })(ContainerUnstyled);
 export default Container;

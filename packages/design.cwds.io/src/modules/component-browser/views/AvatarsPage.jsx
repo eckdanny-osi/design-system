@@ -1,19 +1,11 @@
 import React from 'react';
-import Avatar from '@cwds/components/lib/Avatar';
-import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
+import { Avatar, Card } from '@cwds/components';
 
 export default () => (
   <div>
     <h2>Avatars</h2>
     <Card>
-      <CardBody>
-        <Avatar />
-      </CardBody>
+      <Avatar />
     </Card>
   </div>
 );
-
-// export default {
-//   component: AvatarsPage,
-//   name: 'Avatars',
-// };

@@ -1,3 +1,2 @@
-"use strict";
 exports.__esModule = true;
-exports.noop = function (_) { };
+exports.noop = function(_) {};

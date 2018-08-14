@@ -30,4 +30,5 @@ setDefaults({
   maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
   maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
   maxPropStringLength: 100, // Displays the first 100 characters in the default prop string
+  addonPanelInRight: true,
 });

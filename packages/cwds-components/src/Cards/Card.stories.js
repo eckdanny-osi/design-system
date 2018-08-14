@@ -11,10 +11,23 @@ import Card from './';
 storiesOf('Cards', module)
   .addDecorator(withKnobs)
   .add(
-    'Card',
+    'Basic Card',
+    withInfo()(() => <Card>Cards are just white boxes really...</Card>)
+  )
+  .add(
+    'Card Structure',
     withInfo()(() => (
-      <Card
-
-      />
+      <div>
+        <Card>
+          <Card.Header>Header</Card.Header>
+          <Card.Body>Body</Card.Body>
+          <Card.Footer>Footer</Card.Footer>
+        </Card>
+      </div>
     ))
-  );
+  )
+  .add('MultiContext Card', () => (
+    <div>
+      <h3>TODO</h3>
+    </div>
+  ));

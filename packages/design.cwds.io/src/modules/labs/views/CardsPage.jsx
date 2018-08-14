@@ -13,7 +13,6 @@ const CardsPage = () => {
     <div>
       <Card>
         <Card.Body>
-          <h3>Cards</h3>
           <p>Cards are just white boxes...</p>
         </Card.Body>
       </Card>

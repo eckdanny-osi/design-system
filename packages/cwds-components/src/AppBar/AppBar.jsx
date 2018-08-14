@@ -1,10 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './AppBar.module.scss';
-import Container from '../Container';
-import Row from '../Row';
-import Col from '../Col';
+import { Row, Col, Container } from '../Grid';
 import Logo from '../Logo';
 import Button from '../Button';
 import Popover from '../Popover';
@@ -29,7 +27,7 @@ class Example extends React.Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <button
           id="Popover1"
           onClick={this.toggle}
@@ -63,7 +61,7 @@ class Example extends React.Component {
             </ListGroup>
           </Popover.Body>
         </Popover>
-      </div>
+      </Fragment>
     );
   }
 }

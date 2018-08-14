@@ -3,7 +3,6 @@ import React from 'react';
 // import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
 // import { Card, Card.Body, Card.Header } from '@cwds/components/lib/Cards';
 import { Alert, AlertUncontrolled, Card } from '@cwds/components';
-import { CardBody } from 'reactstrap';
 
 import MyDocPage from '!babel-loader!mdx-loader!./MyDocPage.md';
 

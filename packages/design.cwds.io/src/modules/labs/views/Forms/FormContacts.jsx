@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Formik } from 'formik';
-import cn from 'classnames';
 import {
   Card,
   Collapse,
@@ -137,13 +136,6 @@ export const ContactForm = () => {
                       {/* @TODO: How to get cssModule className in here? */}
                       <Select
                         name="methodOfContact"
-                        // className={cn(
-                        //   '_-cwds-components-lib-Forms-__Forms-module___form-control',
-                        //   {
-                        //     '_-cwds-components-lib-Forms-__Forms-module___is-invalid':
-                        //       props.errors.methodOfContact,
-                        //   }
-                        // )}
                         options={CONCTACT_METHOD_OPTIONS}
                         onChange={option => {
                           props.setFieldValue(

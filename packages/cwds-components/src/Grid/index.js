@@ -1,12 +1,4 @@
-import React, { Component } from 'react';
-import Row from '../Row';
-import Col from '../Col';
-import Container from '../Container';
-
-class Grid extends Component {
-  static Row = Row;
-  static Col = Col;
-  static Container = Container;
-}
-
-export default Grid;
+export { default as Container } from './Container';
+export { default as Row } from './Row';
+export { default as Col } from './Col';
+export { default, default as Grid } from './Grid';
