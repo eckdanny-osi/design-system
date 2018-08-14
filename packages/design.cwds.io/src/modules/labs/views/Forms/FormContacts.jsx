@@ -106,12 +106,12 @@ export const ContactForm = () => {
                 <Row>
                   <Col md={6}>
                     <FormGroup>
-                      <Label htmlFor="date">Date*</Label>
+                      <Label htmlFor="contact__date">Date*</Label>
                       <Input
+                        id="contact__date"
                         type="date"
                         value={props.values.date}
                         invalid={!!props.errors.date}
-                        id="date"
                         name="date"
                         onChange={props.handleChange}
                       />
@@ -132,9 +132,12 @@ export const ContactForm = () => {
                   </Col>
                   <Col md={6}>
                     <FormGroup>
-                      <Label>Method of Contact*</Label>
+                      <Label htmlFor="contact__methodOfContact">
+                        Method of Contact*
+                      </Label>
                       {/* @TODO: How to get cssModule className in here? */}
                       <Select
+                        id="contact__methodOfContact"
                         name="methodOfContact"
                         options={CONCTACT_METHOD_OPTIONS}
                         onChange={option => {
@@ -161,8 +164,11 @@ export const ContactForm = () => {
                   <Row>
                     <Col md={6}>
                       <FormGroup>
-                        <Label>Location</Label>
+                        <Label htmlFor="contact__inPersonDetail.location">
+                          Location
+                        </Label>
                         <Select
+                          id="contact__inPersonDetail.location"
                           name="inPersonDetail.location"
                           value={props.values.inPersonDetail.location}
                           options={LOCATION_OPTIONS}
@@ -247,8 +253,11 @@ export const ContactForm = () => {
                     </Col>
                     <Col>
                       <FormGroup>
-                        <Label>Type</Label>
+                        <Label htmlFor="contact__inPersonDetail.visitType">
+                          Type
+                        </Label>
                         <Select
+                          id="contact__inPersonDetail.visitType"
                           name="inPersonDetail.visitType"
                           value={props.values.inPersonDetail.visitType}
                           options={VISIT_TYPE_OPTIONS}
@@ -266,8 +275,9 @@ export const ContactForm = () => {
                 <Row>
                   <Col md={12}>
                     <FormGroup>
-                      <Label>Title*</Label>
+                      <Label htmlFor="contact__title">Title*</Label>
                       <Input
+                        id="contact__title"
                         type="text"
                         name="title"
                         invalid={props.touched.title && !!props.errors.title}
@@ -281,8 +291,9 @@ export const ContactForm = () => {
                   </Col>
                   <Col md={12}>
                     <FormGroup>
-                      <Label>Notes</Label>
+                      <Label htmlFor="contact__notes">Notes</Label>
                       <Input
+                        id="contact__notes"
                         type="textarea"
                         name="notes"
                         value={props.values.notes}
