@@ -1,8 +1,6 @@
 import React from 'react';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Container from '@cwds/components/lib/Container';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import { Link } from 'react-router-dom';
+import { AppBar, PageHeader, Container, Breadcrumb } from '@cwds/components';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 
 import routes from './routes';
@@ -33,9 +31,9 @@ export default () => {
       <Container>
         <Breadcrumb>
           <Breadcrumb.Item>
-            <a>Principles</a>
+            <Link to="/">Home</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item active>Home</Breadcrumb.Item>
+          <Breadcrumb.Item active>Principles</Breadcrumb.Item>
         </Breadcrumb>
       </Container>
       <Container>

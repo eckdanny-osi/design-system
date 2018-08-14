@@ -8,59 +8,79 @@ import imgChange from './media/change.png';
 import imgInvalidFocus from './media/invalid.focus.png';
 import imgInvalidBlur from './media/invalid.blur.png';
 
+const FormControlEventStateInfo = ({
+  header,
+  description,
+  img,
+  caption,
+  alt,
+}) => (
+  <section>
+    {header}
+    <Row>
+      <Col xs={{ size: 12, order: 2 }} md={{ size: 7, order: 1 }}>
+        {description}
+      </Col>
+      <Col xs={{ size: 12, order: 1 }} md={{ size: 5, order: 2 }}>
+        <Figure src={img} caption={caption} alt={alt} />
+      </Col>
+    </Row>
+  </section>
+);
+
 export default () => (
   <Fragment>
-    <h3>Form Control Events and State</h3>
+    <h4>Form Control Events and State</h4>
     <p className="mb-4">
       Here's a quick rundown of the relevant states and events in the lifecycle
       of a form element:
     </p>
-    {[
-      {
-        img: imgPristine,
-        caption: 'Untouched (pristine)',
-        alt: '',
-        header: <h5>Pristine</h5>,
-        description: <div>alksdfj</div>,
-      },
-      {
-        img: imgFocused,
-        caption: 'Focused',
-        alt: '',
-        header: <h5>Focused</h5>,
-        description: <div>lskdfj</div>,
-      },
-      {
-        img: imgChange,
-        caption: 'After a change event',
-        alt: '',
-        header: <h5>Changed</h5>,
-        description: <div>alksdjf</div>,
-      },
-      {
-        img: imgInvalidFocus,
-        caption: 'Invalid (focused)',
-        alt: '',
-        header: <h5>Invalid (Focus)</h5>,
-        description: <div>alksdfj</div>,
-      },
-      {
-        img: imgInvalidBlur,
-        caption: 'Invalid (blurred)',
-        alt: '',
-        header: <h5>Invalid (Blurred)</h5>,
-        description: <div>alksdfj</div>,
-      },
-    ].map(({ img, caption, alt, header, description }, i) => (
-      <Row key={i}>
-        <Col md={7}>
-          {header}
-          {description}
-        </Col>
-        <Col md={5}>
-          <Figure src={img} caption={caption} alt={alt} />
-        </Col>
-      </Row>
+    {getContent().map((infoProps, i) => (
+      <FormControlEventStateInfo {...infoProps} key={i} />
     ))}
   </Fragment>
 );
+
+//
+//
+//
+
+function getContent() {
+  return [
+    {
+      img: imgPristine,
+      caption: 'Untouched (pristine)',
+      alt: '',
+      header: <h5>Pristine</h5>,
+      description: <div>alksdfj</div>,
+    },
+    {
+      img: imgFocused,
+      caption: 'Focused',
+      alt: '',
+      header: <h5>Focused</h5>,
+      description: <div>lskdfj</div>,
+    },
+    {
+      img: imgChange,
+      caption: 'After a change event',
+      alt: '',
+      header: <h5>Changed</h5>,
+      description: <div>alksdjf</div>,
+    },
+    {
+      img: imgInvalidFocus,
+      caption: 'Invalid (focused)',
+      alt: '',
+      header: <h5>Invalid (Focus)</h5>,
+      description: <div>alksdfj</div>,
+    },
+    {
+      img: imgInvalidBlur,
+      caption: 'Invalid (blurred)',
+      alt: '',
+      header: <h5>Invalid (Blurred)</h5>,
+      description: <div>alksdfj</div>,
+    },
+  ];
+}

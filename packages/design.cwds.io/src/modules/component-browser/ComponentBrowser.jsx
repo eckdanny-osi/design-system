@@ -1,8 +1,6 @@
 import React from 'react';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Container from '@cwds/components/lib/Container';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import { Link } from 'react-router-dom';
+import { AppBar, PageHeader, Container, Breadcrumb } from '@cwds/components';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 import IntraPageRoutes from './ComponentRouteManager';
 
@@ -14,12 +12,9 @@ export default () => {
       <Container>
         <Breadcrumb>
           <Breadcrumb.Item>
-            <a>Guide</a>
+            <Link to="/">Home</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a>Principles</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>Whatever</Breadcrumb.Item>
+          <Breadcrumb.Item active>Components</Breadcrumb.Item>
         </Breadcrumb>
       </Container>
       <Container>

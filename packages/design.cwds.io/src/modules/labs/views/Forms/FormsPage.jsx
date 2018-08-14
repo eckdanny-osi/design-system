@@ -24,7 +24,7 @@ export default () => (
       </li>
     </ul>
     <hr className="my-3" />
-    <h4>Introducting the CWDS FormElements...</h4>
+    <h4>Introducing the CWDS FormElements...</h4>
     <p>alskdjfalsdfj</p>
     <h5>asldkfj</h5>
     <p>alsdjfk</p>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
-import { AppBar, Container, PageHeader } from '@cwds/components';
+import { AppBar, Container, PageHeader, Breadcrumb } from '@cwds/components';
 
 import AboutSection from './views/About';
 import BasicContentSection from './views/BasicContent';
@@ -60,6 +61,14 @@ export default () => {
     <div>
       <AppBar />
       <PageHeader title="Layouts" />
+      <Container>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <Link to="/">Home</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Layouts</Breadcrumb.Item>
+        </Breadcrumb>
+      </Container>
       <Container>
         <AnchorNav.Container
           renderNav={() => (

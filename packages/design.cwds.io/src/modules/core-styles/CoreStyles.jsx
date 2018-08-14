@@ -1,7 +1,6 @@
 import React from 'react';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Container from '@cwds/components/lib/Container';
+import { Link } from 'react-router-dom';
+import { AppBar, PageHeader, Container, Breadcrumb } from '@cwds/components';
 import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
 
 export default () => {
@@ -9,6 +8,14 @@ export default () => {
     <div>
       <AppBar />
       <PageHeader title="Core Style" />
+      <Container>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <Link to="/">Home</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Core Style</Breadcrumb.Item>
+        </Breadcrumb>
+      </Container>
       <Container>
         <Card>
           <CardHeader>
