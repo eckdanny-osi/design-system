@@ -1,18 +1,19 @@
 import React from 'react';
-import Button from '@cwds/components/lib/Button';
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardSubtitle,
-} from '@cwds/components/lib/Cards';
+// import Button from '@cwds/components/lib/Button';
+// import {
+//   Card,
+//   CardBody,
+//   CardHeader,
+//   CardSubtitle,
+// } from '@cwds/components/lib/Cards';
+import { Button, Card } from '@cwds/components';
 
 const Buttons = () => (
   <Card>
-    <CardHeader>
+    <Card.Header>
       <h2>Buttons</h2>
-    </CardHeader>
-    <CardBody>
+    </Card.Header>
+    <Card.Body>
       <p>
         The typical instance(s) of the <tt>Button</tt> component:
       </p>
@@ -35,8 +36,8 @@ const Buttons = () => (
         When possible, the number of contextual user interactions should be
         limited to two.
       </blockquote>
-      <CardSubtitle>Placement</CardSubtitle>
-    </CardBody>
+      <Card.Subtitle>Placement</Card.Subtitle>
+    </Card.Body>
   </Card>
 );
 

@@ -1,5 +1,7 @@
 export { default as Alert, AlertUncontrolled } from './Alert';
 // AnchorNav ?
+export { default as AnchorNav } from './AnchorNav';
+
 export { default as AppBar } from './AppBar';
 export { default as Avatar } from './Avatar';
 export { default as Breadcrumb } from './Breadcrumbs';

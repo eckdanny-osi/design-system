@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@cwds/components/lib/Button';
-import { Card, CardBody } from '@cwds/components/lib/Cards';
-import Collapse from '@cwds/components/lib/Collapse';
+import { Button, Card, Collapse } from '@cwds/components';
 
 class Example extends Component {
   constructor(props) {
@@ -26,12 +24,9 @@ class Example extends Component {
         </Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
-            <CardBody>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
-            </CardBody>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+            labore wes anderson cred nesciunt sapiente ea proident.
           </Card>
         </Collapse>
       </div>
