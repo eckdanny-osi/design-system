@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import uniqueId from 'lodash.uniqueid';
 import { Input, FormGroup, Label } from '@cwds/components';
 
 class CheckboxBank extends PureComponent {
@@ -44,16 +45,22 @@ class CheckboxBank extends PureComponent {
       <Fragment>
         {options.map(options => {
           const [label, value] = [options[labelKey], options[valueKey]];
+          const id = uniqueId();
           return (
-            <FormGroup key={value} check className="ml-2">
+            <FormGroup
+              key={value}
+              check
+              className="ml-2"
+              style={{ cursor: 'pointer' }}
+            >
               <Input
-                id={value}
+                id={id}
                 type="checkbox"
                 value={value}
                 checked={values.includes(value)}
                 onChange={this.handleChange}
               />
-              <Label htmlFor={value}>{label}</Label>
+              <Label htmlFor={id}>{label}</Label>
             </FormGroup>
           );
         })}

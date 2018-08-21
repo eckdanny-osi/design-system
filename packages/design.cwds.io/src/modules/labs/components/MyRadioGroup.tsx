@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 const noop = () => {};
 
-interface IOption {
+export interface IOption {
   value: string | number;
   label?: string;
   disabled?: boolean;
 }
 
-interface ICheckboxBankProps {
+export interface ICheckboxBankProps {
   options: IOption[];
   onChange?: (e: React.ChangeEvent<any>) => void;
   renderOption?: (props: any) => React.ReactNode;
