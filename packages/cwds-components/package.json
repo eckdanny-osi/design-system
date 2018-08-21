@@ -18,7 +18,7 @@
     "build:make:js:es": "NODE_ENV=production babel ./src --out-dir ./lib --ignore *.test.js,*.stories.js",
     "build:make:js:esm": "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./lib/index.esm.js",
     "build:make:js": "run-p build:make:js:*",
-    "build:make:md": "",
+    "//build:make:md": "",
     "build:make:tsd": "gulp build:make:tsd",
     "build:watch": "run-p build:watch:*",
     "build:watch:css": "gulp build:watch:css",
