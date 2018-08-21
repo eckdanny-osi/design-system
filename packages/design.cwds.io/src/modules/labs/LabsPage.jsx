@@ -9,7 +9,6 @@ import {
   Card,
 } from '@cwds/components';
 import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
-import { CardBody } from '@cwds/components/lib/Cards';
 import { ListGroup, ListGroupItem } from '@cwds/components/lib/ListGroups';
 import ComponentPages from './views';
 

@@ -47,12 +47,7 @@ class CheckboxBank extends PureComponent {
           const [label, value] = [options[labelKey], options[valueKey]];
           const id = uniqueId();
           return (
-            <FormGroup
-              key={value}
-              check
-              className="ml-2"
-              style={{ cursor: 'pointer' }}
-            >
+            <FormGroup key={value} check className="ml-2" name={name}>
               <Input
                 id={id}
                 type="checkbox"

@@ -13,36 +13,6 @@ import RadioGroup from '../../components/RadioGroup';
 import CheckboxBank from '../../components/CheckboxBank';
 import { REQUIRED } from './validations';
 
-const FRAMEWORKS = [
-  { value: 'angular', label: 'Angular' },
-  { value: 'elm', label: 'Elm' },
-  { value: 'ember', label: 'Ember' },
-  { value: 'react', label: 'React' },
-  { value: 'vue', label: 'Vue' },
-];
-
-const ASSOCIATIONS = [
-  { value: 'isFriend', label: 'Friend' },
-  { value: 'isCoWorker', label: 'CoWorker' },
-  { value: 'isCarPool', label: 'Car Pool' },
-  { value: 'isBarBuddy', label: 'Bar Buddy' },
-];
-
-const validate = values => {
-  console.log('validation...');
-  const errors = {};
-  if (REQUIRED(values.firstName)) errors.firstName = 'Required!';
-  if ('Danny' === values.firstName) errors.firstName = 'Noo! Not Danny';
-  if (REQUIRED(values.lastName)) errors.lastName = 'Required!';
-  if (
-    values.associations.includes('isBarBuddy') &&
-    values.associations.includes('isCarPool')
-  ) {
-    errors.associations = 'Dont drink and drive!';
-  }
-  return errors;
-};
-
 export default () => (
   <Fragment>
     <h4>Appropriate Use Cases of FormElements</h4>
