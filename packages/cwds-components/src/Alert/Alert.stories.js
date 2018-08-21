@@ -10,4 +10,11 @@ import Alert from './';
 
 storiesOf('Alerts', module)
   .addDecorator(withKnobs)
-  .add('Alert', withInfo()(() => <Alert>alskdjfalsdkfj</Alert>));
+  .add(
+    'Alert',
+    withInfo()(() => (
+      <Alert>
+        <strong>Success!</strong> Your edits have been saved.
+      </Alert>
+    ))
+  );
