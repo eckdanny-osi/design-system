@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Row from '@cwds/components/lib/Row';
-import Col from '@cwds/components/lib/Col';
+import { Row, Col } from '../';
 
 export default ({ renderNav, renderMain }) => {
   return (
