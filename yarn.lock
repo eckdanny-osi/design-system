@@ -10515,9 +10515,9 @@ reactstrap@^5.0.0:
     react-popper "^0.8.3"
     react-transition-group "^2.2.1"
 
-reactstrap@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-6.2.0.tgz#02d51fb4164863148eda950e818468205516f166"
+reactstrap@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-6.4.0.tgz#891252a284710180cd3d746dd236ee61d28a1c66"
   dependencies:
     classnames "^2.2.3"
     lodash.isfunction "^3.0.9"
