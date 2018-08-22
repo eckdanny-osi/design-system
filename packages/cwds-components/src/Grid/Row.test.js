@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Col, ColUnstyled } from './Col';
+import Row from './Row';
 
-describe('Col', () => {
+describe('Row', () => {
   it('renders', () => {
-    const wrapper = shallow(<Col />);
-    expect(!!wrapper).toBe(true);
+    const wrapper = shallow(<Row />);
+    expect(wrapper.prop('cssModule')).not.toBeUndefined();
   });
 
   it('has a default cssModule', () => {
-    const wrapper = shallow(<Col />);
+    const wrapper = shallow(<Row />);
     expect(wrapper.prop('cssModule')).not.toBeUndefined();
   });
 });

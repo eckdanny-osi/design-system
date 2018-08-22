@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { defaultProps } from 'recompose';
 import ColUnstyled from 'reactstrap/lib/Col';
-import styles from './Col.module.scss';
+import Styles from './Col.module.scss';
 
 export { ColUnstyled };
-export const Col = defaultProps({ cssModule: styles })(ColUnstyled);
+export const Col = defaultProps({ cssModule: Styles })(ColUnstyled);
 export default Col;
