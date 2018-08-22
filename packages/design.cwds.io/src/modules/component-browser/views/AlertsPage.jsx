@@ -15,6 +15,7 @@ export default () => (
     <Alert color="info">This is a info alert — check it out!</Alert>
     {/* <Alert color="light">This is a light alert — check it out!</Alert> */}
     {/* <Alert color="dark">This is a dark alert — check it out!</Alert> */}
+    <p>Uncontrolled Alerts</p>
     <AlertUncontrolled color="warning" className="mb-0">
       This is a warning alert — check it out! You may also be interested to see
       how the overflow conditions work here...

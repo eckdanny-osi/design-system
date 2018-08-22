@@ -32,7 +32,8 @@ const defaultProps = {
   },
 };
 
-function getIcon(context) {
+// TODO: Generalize this and move to utils or something
+export function getIcon(context) {
   switch (context) {
     case 'success':
       return ICON_NAMES.checkCircle;
@@ -42,7 +43,7 @@ function getIcon(context) {
     case 'danger':
       return ICON_NAMES.error;
     default:
-      // TODO: should this be the default?
+      // TODO: should this really be the default?
       return ICON_NAMES.check;
   }
 }
