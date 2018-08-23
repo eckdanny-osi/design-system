@@ -9,6 +9,7 @@
   "preferGlobal": true,
   "bin": "./index.js",
   "dependencies": {
+    "@cwds/core": "^0.1.0",
     "commander": "^2.15.1",
     "mustache": "^2.3.0"
   }

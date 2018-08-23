@@ -1,0 +1,16 @@
+@import '../core';
+@import '~bootstrap/scss/modal';
+
+.modal {
+  top: 172px;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+.modal-footer {
+  border-top: none; // OVERRIDE
+}

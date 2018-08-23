@@ -1,0 +1,36 @@
+.IconList {
+  list-style-type: none;
+  padding-left: 0px;
+  clear: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0;
+  margin-top: -5px;
+}
+
+.IconListItem {
+  text-align: center;
+  width: 18.5%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  background-color: #eeeeee;
+}
+
+@media screen and (min-width: 900px) {
+  .IconListItem {
+    width: 12%;
+  }
+}
+
+.Label {
+  margin-top: 5px;
+  display: block;
+  font-size: x-small;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

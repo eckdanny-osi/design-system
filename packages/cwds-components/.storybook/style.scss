@@ -1,10 +1,6 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
+// @import '../src/global/global';
+@import '../src/global/styles.scss';
 
-// Optional
-@import '~bootstrap/scss/reboot';
-@import '~bootstrap/scss/type';
-@import '~bootstrap/scss/images';
-@import '~bootstrap/scss/code';
-@import '~bootstrap/scss/grid';
+body {
+  padding-top: 0;
+}

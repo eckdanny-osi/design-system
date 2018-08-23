@@ -4,9 +4,14 @@
   "private": true,
   "dependencies": {
     "@cwds/components": "^0.1.0",
+    "@cwds/core": "^0.1.0",
+    "formik": "^0.11.11",
+    "prop-types": "^15.6.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts-cssmodules": "1.1.10"
+    "react-router-dom": "^4.2.2",
+    "react-scripts-cssmodules": "^1.1.10",
+    "slugify": "^1.2.9"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
@@ -15,8 +20,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@types/react": "^16.4.6",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
-    "prettier": "^1.12.0"
+    "mdx-loader": "^1.1.1",
+    "mdxc": "^1.1.2",
+    "prettier": "^1.12.0",
+    "typescript": "^2.9.2"
   }
 }

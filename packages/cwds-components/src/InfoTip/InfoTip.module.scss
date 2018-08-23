@@ -1,0 +1,7 @@
+@import '../core';
+
+.InfoTipContainer {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: map-get($spacers, 1);
+}

@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import '@cwds/components/lib/global/styles.css';
+import 'react-select/dist/react-select.css';
+
+import ScrollToTop from './ScrollToTop';
+import Home from './modules/home';
+import PageLayouts from './modules/layouts';
+import CorePage from './modules/core-styles';
+import PrinciplesPage from './modules/design-principles';
+import LabsPage from './modules/labs';
+import ComponentBrowser from './modules/component-browser';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <ScrollToTop>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/page-layouts" component={PageLayouts} />
+            <Route path="/core" component={CorePage} />
+            <Route path="/principles" component={PrinciplesPage} />
+            <Route path="/labs" component={LabsPage} />
+            <Route path="/components" component={ComponentBrowser} />
+          </div>
+        </ScrollToTop>
+      </Router>
     );
   }
 }

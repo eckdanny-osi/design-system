@@ -1,0 +1,14 @@
+.FigureContainer {
+  text-align: center;
+}
+.Figure {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+}
+.FigureCaption {
+  margin-top: 10px;
+  font-style: italic;
+  color: purple;
+}
