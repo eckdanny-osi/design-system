@@ -17,3 +17,10 @@ export const SIZES_SHORT = {
   MD,
   LG,
 };
+
+export const CONTEXT = {
+  SUCCESS: 'success',
+  INFO: 'info',
+  WARNING: 'warning',
+  DANGER: 'danger',
+};

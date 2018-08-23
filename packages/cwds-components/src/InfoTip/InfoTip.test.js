@@ -4,7 +4,7 @@ import InfoTip from './';
 
 describe('InfoTip', () => {
   it('renders', () => {
-    const wrapper = shallow(<InfoTip />);
+    const wrapper = shallow(<InfoTip>Hello</InfoTip>);
     expect(!!wrapper).toBe(true);
   });
 });

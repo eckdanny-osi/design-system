@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { mapToCssModules } from 'reactstrap/lib/utils';
 import Fade from 'reactstrap/lib/Fade';
-import Icon, { ICON_NAMES } from '../Icon';
+import Icon, { ICON_NAMES, getIcon } from '../Icon';
 import styles from './Alert.module.scss';
 
 const propTypes = {
@@ -31,22 +31,6 @@ const defaultProps = {
     enter: false,
   },
 };
-
-// TODO: Generalize this and move to utils or something
-export function getIcon(context) {
-  switch (context) {
-    case 'success':
-      return ICON_NAMES.checkCircle;
-    case 'info':
-      return ICON_NAMES.infoCircle;
-    case 'warning':
-    case 'danger':
-      return ICON_NAMES.error;
-    default:
-      // TODO: should this really be the default?
-      return ICON_NAMES.check;
-  }
-}
 
 function Alert(props) {
   const {

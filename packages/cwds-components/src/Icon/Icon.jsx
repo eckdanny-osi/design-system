@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './Icon.module.scss';
-// import styles from 'font-awesome/scss/font-awesome.scss';
-// import FontAwesome from 'react-fontawesome';
 
 import { default as FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import check from '@fortawesome/fontawesome-free-solid/faCheck';
@@ -70,9 +68,10 @@ const {
   ...fontAwesomeIconPropTypes
 } = FontAwesomeIcon.propTypes;
 
-const propTypes = Object.assign({}, fontAwesomeIconPropTypes, {
+const propTypes = {
+  ...fontAwesomeIconPropTypes,
   icon: PropTypes.string.isRequired,
-});
+};
 
 export const Icon = props => {
   const { icon: name, color, ...otherProps } = props;
