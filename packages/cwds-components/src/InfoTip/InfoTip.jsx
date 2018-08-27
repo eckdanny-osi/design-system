@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { TooltipUncontrolled } from '../Tooltip';
+// import { TooltipUncontrolled } from '../Tooltip';
+import TooltipUncontrolled from 'reactstrap/lib/UncontrolledTooltip';
 import { default as Icon } from '../Icon';
 import styles from './InfoTip.module.scss';
 import uuid from 'lodash.uniqueid';

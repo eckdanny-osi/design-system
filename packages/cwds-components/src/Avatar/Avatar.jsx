@@ -5,14 +5,19 @@ import Icon from '../Icon';
 import styles from './Avatar.module.scss';
 
 const propTypes = {
+  /** Image URL (eg; img[src]) */
   imgUrl: PropTypes.string,
+  /** DS size enum */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  /** Text fallback (e.g. initials) */
   text: PropTypes.string,
+  /** Invert the color scheme? */
   invert: PropTypes.bool,
 };
 
 const defaultProps = {
   size: 'md',
+  invert: false,
 };
 
 const Avatar = ({ imgUrl, size, text, invert }) => {
