@@ -11,7 +11,7 @@ import {
 } from '@cwds/components';
 import RadioGroup from '../../components/RadioGroup';
 import CheckboxBank from '../../components/CheckboxBank';
-import { REQUIRED } from './validations';
+// import { REQUIRED } from './validations';
 
 export default () => (
   <Fragment>

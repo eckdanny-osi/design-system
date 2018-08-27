@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import UseageChoices from './UseageChoices';
 import { ContactForm } from './FormContacts';
 import FormElementStates from './FormElementStates';
@@ -8,13 +7,13 @@ import slugify from 'slugify';
 
 // const withToC = WrappedComponent => ()
 
-const LINKS = {
-  CWDS_FORM_ELEMENTS: 'Introducing the CWDS FormElements',
-  FORM_CONTROL_ELEMENTS_AND_STATE: 'Form Control Events and State',
-  USE_CASES_OF_FORM_ELEMENTS: 'Appropriate Use Cases',
-  VALIDATION: 'Validation',
-  CONTACTS_FORM_IMPLEMENTATION: 'Implementing a Contacts Form',
-};
+// const LINKS = {
+//   CWDS_FORM_ELEMENTS: 'Introducing the CWDS FormElements',
+//   FORM_CONTROL_ELEMENTS_AND_STATE: 'Form Control Events and State',
+//   USE_CASES_OF_FORM_ELEMENTS: 'Appropriate Use Cases',
+//   VALIDATION: 'Validation',
+//   CONTACTS_FORM_IMPLEMENTATION: 'Implementing a Contacts Form',
+// };
 
 const TOC = ({ links }) => {
   return (
@@ -38,9 +37,9 @@ const TOC = ({ links }) => {
   );
 };
 
-const withTOC = WrappedComponent => props => {
-  return <div>alsdkfj</div>;
-};
+// const withTOC = WrappedComponent => props => {
+//   return <div>alsdkfj</div>;
+// };
 
 const Section = ({ id, title, ...props }) => <section id={id} {...props} />;
 
@@ -55,7 +54,6 @@ class MyTOC extends React.PureComponent {
     const toc = React.Children.toArray(this.props.children)
       .filter(({ type }) => type === Section)
       .map(({ props }) => ({ title: props.title, id: props.id }));
-    console.log(toc);
     return (
       <div>
         {this.props.renderTOC(toc)}

@@ -1,11 +1,9 @@
 import React from 'react';
-import Card from '@cwds/components/lib/Cards';
+import { Card } from '@cwds/components';
 
 const CardsWithSections = () => {
   return (
     <div>
-      <h3>CANS proposal</h3>
-      <p>What about an implementation like this for CANS?</p>
       <Card>
         <Card.Header>Add CANS</Card.Header>
         <Card.Body>

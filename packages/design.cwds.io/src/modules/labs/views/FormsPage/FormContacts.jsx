@@ -123,7 +123,6 @@ export const ContactForm = () => {
                       <RadioGroup
                         name="classification"
                         legend="Classification"
-                        inline
                         value={props.values.classification}
                         options={CLASSIFICATION_OPTIONS}
                         onChange={props.handleChange}

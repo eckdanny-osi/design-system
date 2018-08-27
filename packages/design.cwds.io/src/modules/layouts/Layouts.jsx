@@ -9,11 +9,15 @@ import DashboardSection from './views/Dashboard';
 import LongJumpSection from './views/LongJump';
 import RouteNestSection from './views/RouteNest';
 
+/* eslint-disable import/no-webpack-loader-syntax */
+import Test from '!babel-loader!mdx-loader!./views/About.mdx';
+/* eslint-enable import/no-webpack-loader-syntax */
+
 const routes = [
   {
     title: 'About',
     slug: 'about',
-    component: AboutSection,
+    component: Test,
   },
   {
     title: 'Page Elements',
@@ -78,33 +82,27 @@ export default () => {
               renderItem={({ slug, title }) => <a href={`#${slug}`}>{title}</a>}
             />
           )}
-          renderMain={() => {
-            function renderSection({
-              title,
-              slug,
-              children,
-              component: Component,
-            }) {
-              if (children) {
-                return (
-                  <AnchorNav.Section key={slug} id={slug}>
-                    <Component />
-                    {children.map(renderSection)}
-                  </AnchorNav.Section>
-                );
-              } else {
-                return (
-                  <AnchorNav.Section key={slug} id={slug}>
-                    <Component />
-                    <hr className="my-4" />
-                  </AnchorNav.Section>
-                );
-              }
-            }
-            return <div>{routes.map(renderSection)}</div>;
-          }}
+          renderMain={() => <div>{routes.map(renderSection)}</div>}
         />
       </Container>
     </div>
   );
 };
+
+function renderSection({ title, slug, children, component: Component }) {
+  if (children) {
+    return (
+      <AnchorNav.Section key={slug} id={slug}>
+        <Component />
+        {children.map(renderSection)}
+      </AnchorNav.Section>
+    );
+  } else {
+    return (
+      <AnchorNav.Section key={slug} id={slug}>
+        <Component />
+        <hr className="my-4" />
+      </AnchorNav.Section>
+    );
+  }
+}

@@ -28,7 +28,7 @@ const CardsForCANS = () => {
               <button>off</button>
             </Col>
           </Row>
-          <Card.SectionGroup>
+          {/* <Card.SectionGroup>
             <Card.Section title="Child Behavioral/Emotional Needs" collapsible>
               <Card.SubsectionGroup>
                 <Card.Subsection
@@ -95,7 +95,7 @@ const CardsForCANS = () => {
                 </Card.Subsection>
               </Card.SubsectionGroup>
             </Card.Section>
-          </Card.SectionGroup>
+          </Card.SectionGroup> */}
         </Card.Body>
       </Card>
     </div>

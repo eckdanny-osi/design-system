@@ -7,9 +7,10 @@ import {
   Breadcrumb,
   Container,
   Card,
+  ListGroup,
+  ListGroupItem,
 } from '@cwds/components';
 import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
-import { ListGroup, ListGroupItem } from '@cwds/components/lib/ListGroups';
 import ComponentPages from './views';
 
 const toSlug = str => slugify(str, { lower: true });
@@ -74,13 +75,11 @@ export default ({ match }) => {
             exact
             path={match.url}
             render={() => (
-              <Card>
-                <div>
-                  <h3>Welcome!</h3>
-                  Select a <tt>component</tt> from the list to the left to learn
-                  more.
-                </div>
-              </Card>
+              <div>
+                <h3>Welcome to our Labs Area!</h3>
+                Select a <tt>component</tt> from the list to the left to learn
+                more.
+              </div>
             )}
           />
         </Fragment>

@@ -1,6 +1,6 @@
 import FormsExample from './FormsPage';
 
 export default {
-  name: 'Form Examples',
+  name: 'Forms',
   component: FormsExample,
 };
