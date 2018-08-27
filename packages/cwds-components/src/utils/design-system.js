@@ -19,8 +19,12 @@ export const SIZES_SHORT = {
 };
 
 export const CONTEXT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
   SUCCESS: 'success',
-  INFO: 'info',
-  WARNING: 'warning',
   DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info',
+  LIGHT: 'light',
+  DARK: 'dark',
 };

@@ -66,7 +66,7 @@ class Example extends React.Component {
   }
 }
 
-const defaultActionsRenderer = () => <Example />;
+const defaultActionsRenderer = () => {}; // <Example />;
 
 class AppBar extends PureComponent {
   static options = {

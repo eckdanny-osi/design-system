@@ -44,8 +44,8 @@ class BaseCard extends PureComponent {
 const Card = hoistNonReactStatics(
   compose(
     setDisplayName('Card'),
-    setStatic('propTypes', CardUnstyled.propTypes),
-    setStatic('defaultProps', CardUnstyled.defaultProps),
+    setPropTypes(CardUnstyled.propTypes),
+    defaultProps(CardUnstyled.defaultProps),
     branch(
       ({ children }) => !hasCardComponentStructure(children),
       createWithCardStructure

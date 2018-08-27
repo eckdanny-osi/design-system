@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import Collapsible, { Collapse } from '../Collapse';
+import Collapse from '../Collapse';
 import Icon from '../Icon';
 import CardSubtitle from './CardSubtitle';
 import Subtitle from './CardSubtitle';
@@ -11,6 +11,9 @@ class CardSection extends PureComponent {
   static propTypes = {
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     collapsible: PropTypes.bool,
+  };
+  static defaultProps = {
+    collapsible: false,
   };
   state = {};
   constructor(props) {
