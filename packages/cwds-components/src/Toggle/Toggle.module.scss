@@ -44,9 +44,9 @@
     }
 
     &.ActiveOption {
-      @extend .btn-primary;
+      @extend .btn-info;
 
-      border-left-color: $primary;
+      border-left-color: $info;
 
       // Override
       &:focus,
