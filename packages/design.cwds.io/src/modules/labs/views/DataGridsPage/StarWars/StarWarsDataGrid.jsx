@@ -11,15 +11,6 @@ import Icon from '@cwds/components/lib/Icon';
 // TODO border radius
 // TODO pagination
 
-// const LoadingComponent = ({ loading, loadingText, ...loadingProps }) => {
-//   debugger;
-//   return (
-//     loading && (
-//       <div {...loadingProps}>I am the motherfucking loading component, yo!</div>
-//     )
-//   );
-// };
-
 const columnConfig = [
   {
     Header: 'Name',
@@ -61,13 +52,18 @@ export default class DataGridsExample extends Component {
   constructor(props) {
     super(props);
     this._service = PeopleService.create();
+    this.fetchData = this.fetchData.bind(this);
   }
   fetchData(tableState) {
     this.setState({
       status: 'loading',
     });
     this._service
-      .get()
+      .get('/people', {
+        params: {
+          page: 1 + tableState.page,
+        },
+      })
       .then(res => res.data)
       .then(({ results, ...meta }) => {
         this.setState({
@@ -93,11 +89,10 @@ export default class DataGridsExample extends Component {
             data={data}
             pages={this.state.pages}
             columns={columnConfig}
-            onFetchData={(state, instance) => this.fetchData(state)}
+            onFetchData={this.fetchData}
             defaultSorted={columnSort}
             defaultPageSize={10}
             loading={this.state.status === 'loading'}
-            // loading={true}
             loadingText={
               <div
                 style={{
@@ -121,7 +116,6 @@ export default class DataGridsExample extends Component {
             }
             className="-highlight"
             manual
-            // LoadingComponent={LoadingComponent}
           />
         </Card.Body>
       </Card>
