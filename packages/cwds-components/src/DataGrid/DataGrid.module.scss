@@ -1,0 +1,37 @@
+@import '../core';
+
+:global {
+  @import '~react-table/react-table';
+  .ReactTable {
+    border: none;
+    .-pagination,
+    .rt-thead.-header {
+      box-shadow: none;
+    }
+    .rt-thead.-header {
+      border-bottom: 1px solid $grouper;
+    }
+    .rt-thead {
+      .rt-tr {
+        text-align: left;
+        font-weight: 600;
+      }
+      .rt-th,
+      .rt-td {
+        padding: 10px 5px;
+        border-right: none;
+        &.-sort-asc {
+          box-shadow: inset 0 3px 0 0 $aspen;
+        }
+        &.-sort-desc {
+          box-shadow: inset 0 -3px 0 0 $aspen;
+        }
+      }
+    }
+    .rt-tbody {
+      .rt-td {
+        border-right: none;
+      }
+    }
+  }
+}
