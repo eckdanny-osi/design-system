@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Forms.module.scss';
+import styles from '../Forms/Forms.module.scss';
 
 const propTypes = {};
 

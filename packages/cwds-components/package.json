@@ -103,7 +103,8 @@
     "rollup-plugin-postcss": "^1.6.1",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-url": "^1.4.0",
-    "serve": "^9.2.0"
+    "serve": "^9.2.0",
+    "typescript": "^3.0.3"
   },
   "peerDependencies": {
     "classnames": "^2.2.5",

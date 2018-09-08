@@ -1,59 +1,18 @@
-'use strict';
-var __extends =
-  (this && this.__extends) ||
-  (function() {
-    var extendStatics =
-      Object.setPrototypeOf ||
-      ({ __proto__: [] } instanceof Array &&
-        function(d, b) {
-          d.__proto__ = b;
-        }) ||
-      function(d, b) {
-        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-      };
-    return function(d, b) {
-      extendStatics(d, b);
-      function __() {
-        this.constructor = d;
-      }
-      d.prototype =
-        b === null
-          ? Object.create(b)
-          : ((__.prototype = b.prototype), new __());
-    };
-  })();
-exports.__esModule = true;
-var React = require('react');
-var PropTypes = require('prop-types');
-var components_1 = require('@cwds/components');
-var defaultRenderOption = function(_a) {
-  var name = _a.name,
-    inline = _a.inline,
-    // onBlur: handleBlur,
-    handleChange = _a.onChange,
-    option = _a.option,
-    value = _a.value;
-  var id = 'uniq__' + name + '--' + option.label;
-  return React.createElement(
-    components_1.FormGroup,
-    {
-      key: id,
-      check: true,
-      className: 'ml-2',
-      inline: inline,
-      disabled: option.disabled,
-    },
-    React.createElement(components_1.Input, {
-      id: id,
-      name: name,
-      type: 'radio',
-      checked: option.value === value,
-      // onBlur={handleBlur}
-      onChange: handleChange,
-      value: option.value,
-    }),
-    React.createElement('label', { htmlFor: id }, option.label)
-  );
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import Legend from '../Legend';
+import Input from '../Input';
+import FormGroup from '../FormGroup';
+const noop = () => { };
+const defaultRenderOption = ({ name, inline, 
+// onBlur: handleBlur,
+onChange: handleChange, option, value, }) => {
+    const id = `uniq__${name}--${option.label}`;
+    return (React.createElement(FormGroup, { key: id, check: true, className: "ml-2", inline: inline, disabled: option.disabled },
+        React.createElement(Input, { id: id, name: name, type: "radio", checked: option.value === value, 
+            // onBlur={handleBlur}
+            onChange: handleChange, value: option.value }),
+        React.createElement("label", { htmlFor: id }, option.label)));
 };
 /**
  * MyRadioGroup
@@ -70,68 +29,49 @@ var defaultRenderOption = function(_a) {
  *   )}
  * />
  */
-var RadioGroup = /** @class */ (function(_super) {
-  __extends(RadioGroup, _super);
-  function RadioGroup() {
-    var _this = (_super !== null && _super.apply(this, arguments)) || this;
-    _this.renderOption = function(option, index) {
-      // TODO: generate uuid here?
-      return _this.props.renderOption({
-        option: option,
-        index: index,
-        inline: _this.props.inline,
-        name: _this.props.name,
-        value: _this.props.value,
-        onChange: _this.handleChange,
-        touched: _this.props.touched,
-        error: _this.props.error,
-      });
-    };
-    _this.renderError = function() {};
-    _this.handleBlur = function(e) {
-      console.debug('RadioGroup#handleBlur()');
-      _this.props.onBlur(e);
-    };
-    _this.handleChange = function(e) {
-      console.debug('RadioGroup#handleChange()');
-      _this.props.onChange(e);
-    };
-    return _this;
-  }
-  RadioGroup.prototype.render = function() {
-    return React.createElement(
-      React.Fragment,
-      null,
-      React.createElement(
-        'fieldset',
-        null,
-        this.props.legend &&
-          React.createElement(
-            components_1.Legend,
-            { required: true },
-            this.props.legend
-          ),
-        this.props.options.map(this.renderOption)
-      ),
-      this.props.error && this.props.renderError(this.props.error)
-    );
-  };
-  RadioGroup.propTypes = {
+export default class RadioGroup extends React.Component {
+    constructor() {
+        super(...arguments);
+        this.renderOption = (option, index) => {
+            // TODO: generate uuid here?
+            return this.props.renderOption({
+                option,
+                index,
+                inline: this.props.inline,
+                name: this.props.name,
+                value: this.props.value,
+                onChange: this.handleChange,
+                touched: this.props.touched,
+                error: this.props.error,
+            });
+        };
+        this.renderError = () => { };
+        this.handleBlur = (e) => {
+            console.debug('RadioGroup#handleBlur()');
+            this.props.onBlur(e);
+        };
+        this.handleChange = (e) => {
+            console.debug('RadioGroup#handleChange()');
+            this.props.onChange(e);
+        };
+    }
+    render() {
+        return (React.createElement(React.Fragment, null,
+            React.createElement("fieldset", null,
+                this.props.legend && React.createElement(Legend, { required: true }, this.props.legend),
+                this.props.options.map(this.renderOption)),
+            this.props.error && this.props.renderError(this.props.error)));
+    }
+}
+RadioGroup.propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.any.isRequired,
-  };
-  RadioGroup.defaultProps = {
+};
+RadioGroup.defaultProps = {
     error: '',
-    onChange: function() {},
+    onChange: noop,
     options: [],
-    valueAccessor: function(option) {
-      return option.value;
-    },
+    valueAccessor: (option) => option.value,
     renderOption: defaultRenderOption,
-    renderError: function(errMsg) {
-      return null;
-    },
-  };
-  return RadioGroup;
-})(React.Component);
-exports['default'] = RadioGroup;
+    renderError: errMsg => null,
+};
