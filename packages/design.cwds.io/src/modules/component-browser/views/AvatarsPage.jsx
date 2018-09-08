@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, Card } from '@cwds/components';
+import Avatar from '@cwds/components/lib/Avatar';
+import Card from '@cwds/components/lib/Cards';
 
 export default () => (
   <div>

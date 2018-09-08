@@ -1,7 +1,9 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import uniqueId from 'lodash.uniqueid';
-import { Input, FormGroup, Label } from '@cwds/components';
+import Input from '../Input';
+import FormGroup from '../FormGroup';
+import Label from '../Label';
 
 class CheckboxBank extends PureComponent {
   static propTypes = {
@@ -18,8 +20,8 @@ class CheckboxBank extends PureComponent {
     render: PropTypes.func,
     value: PropTypes.arrayOf(PropTypes.string).isRequired,
     valueKey: PropTypes.string,
-    error: PropTypes.string, // PropTypes.object,
-    touched: PropTypes.bool, //  PropTypes.object,
+    error: PropTypes.string,
+    touched: PropTypes.bool,
   };
   static defaultProps = {
     labelKey: 'label',

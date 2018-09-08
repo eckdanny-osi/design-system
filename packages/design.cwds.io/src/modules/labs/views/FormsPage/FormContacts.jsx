@@ -1,19 +1,16 @@
 import React, { Fragment } from 'react';
 import { Formik } from 'formik';
-import {
-  Card,
-  Collapse,
-  FormGroup,
-  Button,
-  Row,
-  Col,
-  Input,
-  Label,
-  Select,
-  FormFeedback,
-  Icon,
-} from '@cwds/components';
-import RadioGroup from '../../components/RadioGroup';
+import Button from '@cwds/components/lib/Button';
+import Card from '@cwds/components/lib/Cards';
+import Collapse from '@cwds/components/lib/Collapse';
+import FormGroup from '@cwds/components/lib/FormGroup';
+import { Row, Col } from '@cwds/components/lib/Grid';
+import Input from '@cwds/components/lib/Input';
+import Label from '@cwds/components/lib/Label';
+import Select from '@cwds/components/lib/Select';
+import Icon from '@cwds/components/lib/Icon';
+import FormFeedback from '@cwds/components/lib/FormFeedback';
+import RadioGroup from '@cwds/components/lib/RadioGroup';
 import {
   LOCATION,
   CLASSIFICATION_OPTIONS,

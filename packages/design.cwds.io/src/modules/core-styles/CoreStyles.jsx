@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, PageHeader, Container, Breadcrumb } from '@cwds/components';
-import { Card, CardBody, CardHeader } from '@cwds/components/lib/Cards';
+
+import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import Card from '@cwds/components/lib/Cards';
+import { Container } from '@cwds/components/lib/Grid';
 
 export default () => {
   return (
@@ -18,24 +22,24 @@ export default () => {
       </Container>
       <Container>
         <Card>
-          <CardHeader>
+          <Card.Header>
             <h2>Typography</h2>
-          </CardHeader>
-          <CardBody>
+          </Card.Header>
+          <Card.Body>
             <h3>Headers</h3>
             <h1>alsdkfj</h1>
             <h2>alksdjf</h2>
             <h3>alskdfj</h3>
             <h4>alskdfj</h4>
             <h5>alskdfj</h5>
-          </CardBody>
+          </Card.Body>
         </Card>
 
         <Card>
-          <CardHeader>
+          <Card.Header>
             <h3>Inline Text Elements</h3>
-          </CardHeader>
-          <CardBody>
+          </Card.Header>
+          <Card.Body>
             <p>
               You can use the mark tag to <mark>highlight</mark> text.
             </p>
@@ -69,14 +73,14 @@ export default () => {
             <p>
               <em>This line rendered as italicized text.</em>
             </p>
-          </CardBody>
+          </Card.Body>
         </Card>
 
         <Card>
-          <CardHeader>
+          <Card.Header>
             <h3>Lists</h3>
-          </CardHeader>
-          <CardBody>
+          </Card.Header>
+          <Card.Body>
             <ul className="list-unstyled">
               <li>Lorem ipsum dolor sit amet</li>
               <li>Consectetur adipiscing elit</li>
@@ -95,7 +99,7 @@ export default () => {
               <li>Aenean sit amet erat nunc</li>
               <li>Eget porttitor lorem</li>
             </ul>
-          </CardBody>
+          </Card.Body>
         </Card>
 
         <p>alskdjfalksdjf....</p>

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Row, Col } from '@cwds/components';
+import { Row, Col } from '@cwds/components/lib/Grid';
 import Figure from '../../../../components/Figure';
 
 import imgPristine from './media/pristine.png';

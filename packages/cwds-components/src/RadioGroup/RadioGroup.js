@@ -1,3 +1,4 @@
+'use strict';
 var __extends =
   (this && this.__extends) ||
   (function() {
@@ -24,7 +25,6 @@ var __extends =
 exports.__esModule = true;
 var React = require('react');
 var PropTypes = require('prop-types');
-var utils_1 = require('./utils');
 var components_1 = require('@cwds/components');
 var defaultRenderOption = function(_a) {
   var name = _a.name,
@@ -122,7 +122,7 @@ var RadioGroup = /** @class */ (function(_super) {
   };
   RadioGroup.defaultProps = {
     error: '',
-    onChange: utils_1.noop,
+    onChange: function() {},
     options: [],
     valueAccessor: function(option) {
       return option.value;

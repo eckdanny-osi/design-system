@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  AppBar,
-  PageHeader,
-  Container,
-  Button,
-  Card,
-  CardDeck,
-} from '@cwds/components';
+import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
+import Button from '@cwds/components/lib/Button';
+import Card, { CardDeck } from '@cwds/components/lib/Cards';
+import { Container } from '@cwds/components/lib/Grid';
 
 export default () => (
   <div>

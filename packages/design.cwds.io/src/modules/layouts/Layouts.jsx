@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
-import { AppBar, Container, PageHeader, Breadcrumb } from '@cwds/components';
+import AppBar from '@cwds/components/lib/AppBar';
+import { Container } from '@cwds/components/lib/Grid';
+import PageHeader from '@cwds/components/lib/PageHeader';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 
-import AboutSection from './views/About';
 import BasicContentSection from './views/BasicContent';
 import DashboardSection from './views/Dashboard';
 import LongJumpSection from './views/LongJump';

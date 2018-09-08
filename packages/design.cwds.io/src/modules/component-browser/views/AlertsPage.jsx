@@ -1,9 +1,7 @@
-/* eslint-disable import/no-webpack-loader-syntax */
 import React from 'react';
-// import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
-// import { Card, Card.Body, Card.Header } from '@cwds/components/lib/Cards';
-import { Alert, AlertUncontrolled, Card } from '@cwds/components';
-
+import Alert, { AlertUncontrolled } from '@cwds/components/lib/Alert';
+import Card from '@cwds/components/lib/Cards';
+/* eslint-disable import/no-webpack-loader-syntax */
 import MyDocPage from '!babel-loader!mdx-loader!./MyDocPage.md';
 
 export default () => (
@@ -13,9 +11,7 @@ export default () => (
     <Alert color="danger">This is a danger alert — check it out!</Alert>
     <Alert color="warning">This is a warning alert — check it out!</Alert>
     <Alert color="info">This is a info alert — check it out!</Alert>
-    {/* <Alert color="light">This is a light alert — check it out!</Alert> */}
-    {/* <Alert color="dark">This is a dark alert — check it out!</Alert> */}
-    <p>Uncontrolled Alerts</p>
+    <h3>Uncontrolled Alerts</h3>
     <AlertUncontrolled color="warning" className="mb-0">
       This is a warning alert — check it out! You may also be interested to see
       how the overflow conditions work here...

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '@cwds/components';
+import Card from '@cwds/components/lib/Cards';
 
 const CardsWithSections = () => {
   return (

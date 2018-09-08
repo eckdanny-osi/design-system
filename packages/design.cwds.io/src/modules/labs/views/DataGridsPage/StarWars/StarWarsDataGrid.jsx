@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react';
 import DataGrid from '@cwds/components/lib/DataGrid';
 import Card from '@cwds/components/lib/Cards';
 import PeopleService from './people-service';

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Card, Collapse } from '@cwds/components';
+import Button from '@cwds/components/lib/Button';
+import Card from '@cwds/components/lib/Cards';
+import Collapse from '@cwds/components/lib/Collapse';
 
-class Example extends Component {
+export default class CollapsiblePage extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -15,6 +17,7 @@ class Example extends Component {
   render() {
     return (
       <div>
+        <h2>Collapsibles</h2>
         <Button
           color="primary"
           onClick={this.toggle}
@@ -33,16 +36,3 @@ class Example extends Component {
     );
   }
 }
-
-const CollapsiblePage = () => {
-  return (
-    <div>
-      <Example />
-    </div>
-  );
-};
-
-export default {
-  name: 'Collapsible',
-  component: CollapsiblePage,
-};

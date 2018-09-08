@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Logo } from '@cwds/components';
+import AppBar from '@cwds/components/lib/AppBar';
+import Logo from '@cwds/components/lib/Logo';
 
 //
 // Configure Components

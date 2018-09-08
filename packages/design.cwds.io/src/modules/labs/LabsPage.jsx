@@ -1,15 +1,11 @@
 import React, { Fragment } from 'react';
 import { Route, withRouter, Link } from 'react-router-dom';
 import slugify from 'slugify';
-import {
-  AppBar,
-  PageHeader,
-  Breadcrumb,
-  Container,
-  Card,
-  ListGroup,
-  ListGroupItem,
-} from '@cwds/components';
+import { Container } from '@cwds/components/lib/Grid';
+import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import ListGroup from '@cwds/components/lib/ListGroups';
 import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
 import ComponentPages from './views';
 
@@ -18,7 +14,7 @@ const toSlug = str => slugify(str, { lower: true });
 const ListGroupItemLink = withRouter(
   ({ history, location, match, staticContext: _, to, ...props }) => {
     return (
-      <ListGroupItem
+      <ListGroup.Item
         {...props}
         onClick={() => history.push(to)}
         action

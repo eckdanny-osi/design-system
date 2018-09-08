@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, PageHeader, Container, Breadcrumb } from '@cwds/components';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
+
+import AppBar from '@cwds/components/lib/AppBar';
+import PageHeader from '@cwds/components/lib/PageHeader';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import { Container } from '@cwds/components/lib/Grid';
+
 import IntraPageRoutes from './ComponentRouteManager';
 
 export default () => {

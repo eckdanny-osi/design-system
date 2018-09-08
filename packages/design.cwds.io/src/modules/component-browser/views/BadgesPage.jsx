@@ -1,5 +1,6 @@
 import React from 'react';
-import { Badge, Card } from '@cwds/components';
+import Badge from '@cwds/components/lib/Badge';
+import Card from '@cwds/components/lib/Cards';
 import { CONTEXT } from '@cwds/components/lib/utils';
 
 export default () => (

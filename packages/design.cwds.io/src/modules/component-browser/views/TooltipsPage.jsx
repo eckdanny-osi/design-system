@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tooltip } from '@cwds/components';
+import Tooltip from '@cwds/components/lib/Tooltip';
 
 class TooltipExample extends Component {
   constructor(props) {
@@ -22,10 +22,7 @@ class TooltipExample extends Component {
       <section>
         <h3>Tooltip</h3>
         <p>
-          Somewhere in here is a{' '}
-          <a href="#" id="TooltipExample">
-            tooltip
-          </a>.
+          Somewhere in here is a <a id="TooltipExample">tooltip</a>.
         </p>
         <Tooltip
           placement="top"

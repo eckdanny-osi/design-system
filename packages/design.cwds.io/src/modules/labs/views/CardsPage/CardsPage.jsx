@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Row, Col } from '@cwds/components';
+import Card from '@cwds/components/lib/Cards';
+import { Row, Col } from '@cwds/components/lib/Grid';
 
 // import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';
 
-import CardsForCANS from './CardsForCANS';
 import CardWithSections from './CardsWithSections';
 
 const CardsPage = () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputUnstyled from 'reactstrap/lib/Input';
-import Styles from './Forms.module.scss';
+import Styles from '../Forms/Forms.module.scss';
 import { withCssModule } from '../utils';
 
 const Input = withCssModule(InputUnstyled, Styles);

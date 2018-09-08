@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { FormGroup, Input, Label } from '@cwds/components';
+import Label from '@cwds/components/lib/Label';
+import Input from '@cwds/components/lib/Input';
+import FormGroup from '@cwds/components/lib/FormGroup';
 
 const PRIMARY_COLORS = [
   { value: 'red', label: 'Red' },

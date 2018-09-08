@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
-import { Select } from '@cwds/components';
+import Select from '@cwds/components/lib/Select';
 
 const FLAVOURS = [
   { label: 'Chocolate', value: 'chocolate' },

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LabelUnstyled from 'reactstrap/lib/Label';
-import Styles from './Forms.module.scss';
+import Styles from '../Forms//Forms.module.scss';
 import { withCssModule } from '../utils';
 
 const Label = withCssModule(LabelUnstyled, Styles);

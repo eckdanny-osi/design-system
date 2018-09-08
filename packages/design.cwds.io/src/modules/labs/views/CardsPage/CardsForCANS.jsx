@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Row, Col } from '@cwds/components';
+import Card from '@cwds/components/lib/Cards';
+import { Row, Col } from '@cwds/components/lib/Grid';
 
 const CardsForCANS = () => {
   return (
