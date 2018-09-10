@@ -33,5 +33,25 @@
         border-right: none;
       }
     }
+    .-pagination {
+      .-previous,
+      .-next {
+        margin-top: 2.5px;
+      }
+      .-previous {
+        text-align: right;
+      }
+      .-next {
+        text-align: left;
+      }
+      .-center {
+        .select-wrap {
+          flex: 1 0;
+        }
+      }
+
+      .-pageInfo {
+      }
+    }
   }
 }
