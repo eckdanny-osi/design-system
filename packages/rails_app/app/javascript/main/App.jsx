@@ -1,30 +1,37 @@
 import React from 'react';
-import {
-  AppBar,
-  Avatar,
-  Breadcrumb,
-  Button,
-  Card,
-  Grid,
-  PageHeader,
-} from '@cwds/components';
+import { AlertUncontrolled } from '@cwds/components/lib/Alert';
+import AppBar from '@cwds/components/lib/AppBar';
+import Avatar from '@cwds/components/lib/Avatar';
+import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import Button from '@cwds/components/lib/Button';
+import Card from '@cwds/components/lib/Cards';
+import { Container, Row, Col } from '@cwds/components/lib/Grid';
+import PageHeader from '@cwds/components/lib/PageHeader';
 import '@cwds/components/lib/global/styles';
 
 export const App = ({}) => (
   <div>
     <AppBar />
     <PageHeader title="Sample Rails App" />
-    <Grid.Container>
-      <main>
+    <main>
+      <Container>
+        <AlertUncontrolled color="warning">
+          <strong>Attention!</strong> This is not the guide site you're looking
+          for.
+        </AlertUncontrolled>
+
         <section>
           <h2>About</h2>
-          <Card className="mb-3">
+          <Card className="my-3">
             <p>
               This is a sample app build with <tt>@cwds/components</tt> and{' '}
               <tt>rails + webpacker</tt>. The app demonstrates integration and
-              may be used for automated test routines as well. This is{' '}
-              <strong>not</strong> a source of documentation! (Refer to the
-              guide site at design.cwds.io if that is what you're looking for.)
+              may be used for automated test routines as well.
+            </p>
+            <p>
+              This is <strong>not</strong> a source of documentation! For that,
+              please refer to the{' '}
+              <a href="http://design.eckdanny.com">guide site</a>.
             </p>
           </Card>
         </section>
@@ -70,14 +77,14 @@ export const App = ({}) => (
           </section>
           <section>
             <h3>Grid</h3>
-            <Grid.Row>
-              <Grid.Col sm="6">alksdjf</Grid.Col>
-              <Grid.Col sm="6">alksdjf</Grid.Col>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Col sm="6">alksdjf</Grid.Col>
-              <Grid.Col sm="6">alksdjf</Grid.Col>
-            </Grid.Row>
+            <Row>
+              <Col sm="6">alksdjf</Col>
+              <Col sm="6">alksdjf</Col>
+            </Row>
+            <Row>
+              <Col sm="6">alksdjf</Col>
+              <Col sm="6">alksdjf</Col>
+            </Row>
           </section>
           <section>
             <h3>Icon</h3>
@@ -100,8 +107,8 @@ export const App = ({}) => (
             {/* <InfoTip /> */}
           </section>
         </section>
-      </main>
-    </Grid.Container>
+      </Container>
+    </main>
   </div>
 );
 export default App;
