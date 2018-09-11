@@ -9,7 +9,7 @@ import { Container } from '@cwds/components/lib/Grid';
 export default () => (
   <div>
     <AppBar />
-    <PageHeader title="Design Guide" />
+    <PageHeader title="Design System" />
     <Container>
       <CardDeck>
         <Card>
