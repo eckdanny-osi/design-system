@@ -686,7 +686,7 @@ $card-spacer-x: $card-spacer-y;
 // $card-spacer-x: 1.25rem !default;
 $card-border-width: $border-width !default;
 $card-border-radius: $border-radius !default;
-$card-border-color: rgba($black, 0.125) !default;
+$card-border-color: #dfdfdf; // rgba($black, 0.125) !default;
 $card-inner-border-radius: calc(
   #{$card-border-radius} - #{$card-border-width}
 ) !default;

@@ -3,7 +3,11 @@
 :global {
   @import '~react-table/react-table';
   .ReactTable {
-    border: none;
+    margin-top: -$card-border-width;
+    border: $card-border-width solid $card-border-color;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
     .-pagination,
     .rt-thead.-header {
       box-shadow: none;

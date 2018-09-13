@@ -90,7 +90,7 @@
     @include border-radius(
       $card-inner-border-radius $card-inner-border-radius 0 0
     );
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom: $card-border-width solid $card-border-color;
   }
 
   + .list-group {
