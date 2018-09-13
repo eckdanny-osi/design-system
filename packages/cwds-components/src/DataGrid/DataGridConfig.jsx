@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ReactTableDefaults } from 'react-table';
 import Pagination from './Pagination';
 import Button from '../Button';
 import Icon from '../Icon';
 
-const PagerButton = props => <Button {...props} color="info" />;
+const PagerButtonFactory = ({ rotation }) => props => {
+  const { children, ...passProps } = props;
+  return (
+    <Fragment>
+      <span className="sr-only">{children}</span>
+      <Button {...passProps} color="info" aria-label={children}>
+        <Icon aria-hidden="true" icon="chevronDown" rotation={rotation} />
+      </Button>
+    </Fragment>
+  );
+};
 
 const DataGridDefaults = {
-  NextComponent: PagerButton,
+  NextComponent: PagerButtonFactory({ rotation: 270 }),
   PaginationComponent: Pagination,
-  PreviousComponent: PagerButton,
+  PreviousComponent: PagerButtonFactory({ rotation: 90 }),
   defaultPageSize: 10,
-  nextText: <Icon icon="chevronDown" rotation={270} />,
   pageSizeOptions: [5, 10, 25, 50],
-  previousText: <Icon icon="chevronDown" rotation={90} />,
 };
 
 export const config = config =>

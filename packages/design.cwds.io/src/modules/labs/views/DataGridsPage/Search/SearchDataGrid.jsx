@@ -50,6 +50,8 @@ const SearchForm = ({ onChange, onSubmit, disabled, value }) => (
             style={{
               borderTopLeftRadius: 0,
               borderBottomLeftRadius: 0,
+              // TODO: better for box-shadow clipping fix?
+              position: 'relative',
             }}
             disabled={Boolean(value) && Boolean(disabled)}
           >

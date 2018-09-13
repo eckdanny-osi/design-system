@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PaginationRT from 'react-table/es/pagination';
+import Input from '../Input';
 import Select from '../Select';
+import uniqueId from 'lodash.uniqueid';
 
 // From react-table@6.8.6
 // See https://github.com/react-tools/react-table/blob/f55ce620411c619855a2fe2f081407e4f82727b9/src/pagination.js
 
 class Pagination extends PaginationRT {
+  uniqueId = uniqueId('datagrid_pagination_');
   render() {
     const {
       // Computed
@@ -46,7 +49,14 @@ class Pagination extends PaginationRT {
             {this.props.pageText}{' '}
             {showPageJump ? (
               <div className="-pageJump">
-                <input
+                <label
+                  className="sr-only"
+                  htmlFor={`${this.uniqueId}_pageJump`}
+                >
+                  Page Jump
+                </label>
+                <Input
+                  id={`${this.uniqueId}_pageJump`}
                   type={this.state.page === '' ? 'text' : 'number'}
                   onChange={e => {
                     const val = e.target.value;
