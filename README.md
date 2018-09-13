@@ -7,6 +7,73 @@
 
 Monorepo for CWDS design system
 
+### Consuming the Component Library
+
+_STOP!_ If you're just looking to start using `@cwds/components`, install from npm:
+
+```sh
+yarn add @cwds/components@alpha
+```
+
+Start using components in your application:
+
+```jsx
+import React from 'react';
+import Button from '@cwds/components/lib/Button';
+
+const App = () => (
+  <div>
+    <Button>Hello World!<Button>
+  </div>
+);
+```
+
+### Getting Started
+
+Clone the repository
+
+```sh
+git clone https://github.com/ca-cwds/design-system.git && cd $_
+lerna bootstrap
+```
+
+Run the component library build process:
+
+```sh
+cd packages/cwds-components
+yarn build:watch
+```
+
+To run the _Guide Site_:
+
+```sh
+cd packages/design.cwds.io
+yarn start
+```
+
+To run _Storybook_:
+
+```sh
+cd packages/cwds-components
+yarn storybook
+```
+
+To run the \*rails app\*\*:
+
+first start webpack:
+
+```sh
+cd rails_app
+./bin/webpack-dev-server
+```
+
+then start the rails server:
+
+```sh
+cd rails_app
+rails s
+```
+
 ### TODOs
 
 - [ ] globalize the functional css
