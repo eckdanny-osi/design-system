@@ -23,7 +23,7 @@ import Button from '@cwds/components/lib/Button';
 
 const App = () => (
   <div>
-    <Button>Hello World!<Button>
+    <Button>Hello World!</Button>
   </div>
 );
 ```
