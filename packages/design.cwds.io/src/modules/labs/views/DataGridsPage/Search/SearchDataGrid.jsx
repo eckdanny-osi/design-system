@@ -75,8 +75,9 @@ class CarsDataGrid extends Component {
   };
   handleSubmit = e => {
     const { value } = this.state;
+    const re = new RegExp(value, 'i');
     const filteredData = this.state.data.filter(({ name }) =>
-      `${name.first} ${name.last}`.includes(value)
+      re.test(`${name.first} ${name.last}`)
     );
     this.setState({ filteredData, filterValue: value });
   };
