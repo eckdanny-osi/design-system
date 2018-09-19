@@ -13,7 +13,7 @@ import Badge from '!babel-loader!mdx-loader!./modules/Badge/Badge.mdx';
 const DefaultComponent = () => <div>@TODO</div>;
 
 const routes = {
-  title: 'Components',
+  title: 'Component Library',
   path: '/components',
   component: Components,
   children: [

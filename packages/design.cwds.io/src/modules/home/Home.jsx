@@ -34,7 +34,7 @@ export default () => (
             <Col sm={6}>
               <Card>
                 <Card.Header>
-                  <Card.Title>Components</Card.Title>
+                  <Card.Title>Component Library</Card.Title>
                 </Card.Header>
                 <Card.Body>
                   Component documentation and visual showcase for developers and
