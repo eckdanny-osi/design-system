@@ -58,12 +58,19 @@
           width: 55px;
         }
       }
-      .-pageInfo {
-      }
+      // .-pageInfo {
+      // }
     }
     .rt-resizer {
       width: 4px;
       right: -2px;
     }
   }
+}
+
+.Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
 }

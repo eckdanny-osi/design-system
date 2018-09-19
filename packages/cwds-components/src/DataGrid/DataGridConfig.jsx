@@ -4,17 +4,9 @@ import Pagination from './Pagination';
 import Button from '../Button';
 import Icon from '../Icon';
 
-const PagerButtonFactory = ({ rotation }) => props => {
-  const { children, ...passProps } = props;
-  return (
-    <Fragment>
-      <span className="sr-only">{children}</span>
-      <Button {...passProps} color="info" aria-label={children}>
-        <Icon aria-hidden="true" icon="chevronDown" rotation={rotation} />
-      </Button>
-    </Fragment>
-  );
-};
+import LoadingText from './LoadingText';
+import NoDataText from './NoDataText';
+import PagerButtonFactory from './PagerButtonFactory';
 
 const DataGridDefaults = {
   NextComponent: PagerButtonFactory({ rotation: 270 }),
@@ -22,6 +14,9 @@ const DataGridDefaults = {
   PreviousComponent: PagerButtonFactory({ rotation: 90 }),
   defaultPageSize: 10,
   pageSizeOptions: [5, 10, 25, 50],
+  // LoadingComponent: LoadingIndicator,
+  loadingText: <LoadingText />,
+  noDataText: <NoDataText />,
 };
 
 export const config = config =>

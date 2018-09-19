@@ -1,0 +1,17 @@
+import React, { Fragment } from 'react';
+import Button from '../Button';
+import Icon from '../Icon';
+
+const PagerButtonFactory = ({ rotation }) => props => {
+  const { children, ...rest } = props;
+  return (
+    <Fragment>
+      <span className="sr-only">{children}</span>
+      <Button {...rest} color="info" aria-label={children}>
+        <Icon aria-hidden="true" icon="chevronDown" rotation={rotation} />
+      </Button>
+    </Fragment>
+  );
+};
+
+export default PagerButtonFactory;
