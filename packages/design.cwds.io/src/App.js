@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '@cwds/components/lib/global/styles.css';
 import 'react-select/dist/react-select.css';
 
+import JumpToTop from '@cwds/components/lib/JumpToTop';
+
 import ScrollToTop from './ScrollToTop';
 import Home from './modules/home';
 import PageLayouts from './modules/layouts';
@@ -23,6 +25,7 @@ class App extends Component {
             <Route path="/principles" component={PrinciplesPage} />
             <Route path="/labs" component={LabsPage} />
             <Route path="/components" component={ComponentBrowser} />
+            <JumpToTop />
           </div>
         </ScrollToTop>
       </Router>

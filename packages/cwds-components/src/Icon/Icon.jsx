@@ -20,6 +20,7 @@ import ellipsis from '@fortawesome/fontawesome-free-solid/faEllipsisV';
 import plus from '@fortawesome/fontawesome-free-solid/faPlus';
 import minus from '@fortawesome/fontawesome-free-solid/faMinus';
 import lightbulb from '@fortawesome/fontawesome-free-solid/faLightbulb';
+import arrowUp from '@fortawesome/fontawesome-free-solid/faArrowUp';
 
 export const ICON_NAMES = {
   check: 'check',
@@ -38,6 +39,7 @@ export const ICON_NAMES = {
   plusCircle: 'plusCircle',
   ellipsis: 'ellipsis',
   lightbulb: 'lightbulb',
+  arrowUp: 'arrowUp',
 };
 
 const ICONS = {
@@ -57,6 +59,7 @@ const ICONS = {
   [ICON_NAMES.plusCircle]: plusCircle,
   [ICON_NAMES.ellipsis]: ellipsis,
   [ICON_NAMES.lightbulb]: lightbulb,
+  [ICON_NAMES.arrowUp]: arrowUp,
 };
 
 const {

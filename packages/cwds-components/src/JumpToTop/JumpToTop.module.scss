@@ -1,0 +1,30 @@
+@import '../core';
+
+.JumpToTop {
+  border: 3px solid $aspen;
+  color: $aspen;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  opacity: 0.65;
+  display: flex;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  @include media-breakpoint-up(sm) {
+    width: 45px;
+    height: 45px;
+    background-color: none;
+  }
+
+  .Icon {
+    display: inline;
+    flex: 1 0;
+  }
+}
