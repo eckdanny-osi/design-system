@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import uniqueId from 'lodash.uniqueid';
 import Input from '../Input';
 import FormGroup from '../FormGroup';
@@ -22,6 +23,7 @@ class CheckboxBank extends PureComponent {
     valueKey: PropTypes.string,
     error: PropTypes.string,
     touched: PropTypes.bool,
+    inline: PropTypes.bool,
   };
   static defaultProps = {
     labelKey: 'label',
@@ -42,6 +44,7 @@ class CheckboxBank extends PureComponent {
       valueKey,
       value: values,
       error,
+      inline,
     } = this.props;
     return (
       <Fragment>
@@ -49,7 +52,14 @@ class CheckboxBank extends PureComponent {
           const [label, value] = [options[labelKey], options[valueKey]];
           const id = uniqueId();
           return (
-            <FormGroup key={value} check className="ml-2" name={name}>
+            <FormGroup
+              check
+              key={value}
+              name={name}
+              className={cn('ml-2', {
+                'd-inline-block mr-4': inline,
+              })}
+            >
               <Input
                 id={id}
                 type="checkbox"

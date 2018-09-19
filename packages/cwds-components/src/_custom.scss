@@ -421,6 +421,7 @@ $label-margin-bottom: 0.5rem !default;
 
 // $input-bg:                              $white !default;
 // $input-disabled-bg:                     $gray-200 !default;
+$input-disabled-bg: $white; // $input-bg;
 
 // $input-color:                           $gray-700 !default;
 // $input-border-color:                    $gray-400 !default;
