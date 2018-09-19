@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Card from '@cwds/components/lib/Cards';
+import MultiCard from '@cwds/components/lib/Cards/CardMultiContext';
+import Button from '@cwds/components/lib/Button';
 import { Row, Col } from '@cwds/components/lib/Grid';
+import FormGroup from '@cwds/components/lib/FormGroup';
+import Label from '@cwds/components/lib/Label';
+import Input from '@cwds/components/lib/Input';
+import Icon from '@cwds/components/lib/Icon';
+import { Formik } from 'formik';
+import MultiScopeCardExample from './MultiScopeCards';
 
 // import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';
 
 import CardWithSections from './CardsWithSections';
+
+import AsyncCardExample from './AsyncCardExample';
 
 const CardsPage = () => {
   return (
@@ -18,8 +28,10 @@ const CardsPage = () => {
           <p>Cards are just white boxes...</p>
         </Card>
       </section>
+
       <section>
-        <h3>Structured</h3>
+        <h3>Structure</h3>
+        <p>There are </p>
         <Card>
           <Card.Header>
             <Card.Title>Card Title</Card.Title>
@@ -30,11 +42,21 @@ const CardsPage = () => {
       </section>
 
       <section>
+        <h3>Loading State</h3>
+        <AsyncCardExample />
+      </section>
+
+      <section>
+        <h3>Multiscope</h3>
+        <MultiScopeCardExample />
+      </section>
+
+      <section>
         <h3>Card With Sections</h3>
         <CardWithSections />
       </section>
 
-      <section>
+      {/* <section>
         <h3>Something Else I dunno</h3>
         <Card>
           <Card.Header>
@@ -84,7 +106,7 @@ const CardsPage = () => {
             </Card.Section>
           </Card.Body>
         </Card>
-      </section>
+      </section> */}
     </div>
   );
 };

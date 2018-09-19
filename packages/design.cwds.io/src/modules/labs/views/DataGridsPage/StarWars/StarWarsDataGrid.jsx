@@ -53,6 +53,12 @@ export default class DataGridsExample extends Component {
     this._service = PeopleService.create();
     this.fetchData = this.fetchData.bind(this);
   }
+  componentDidMount() {
+    this._mounted = true;
+  }
+  componentWillUnmount() {
+    this._mounted = false;
+  }
   fetchData(tableState) {
     this.setState({
       status: 'loading',
@@ -65,12 +71,13 @@ export default class DataGridsExample extends Component {
       })
       .then(res => res.data)
       .then(({ results, ...meta }) => {
-        this.setState({
-          data: results,
-          status: 'idle',
-          pageSize: tableState.pageSize,
-          pages: Math.ceil(meta.count / tableState.pageSize),
-        });
+        this._mounted &&
+          this.setState({
+            data: results,
+            status: 'idle',
+            pageSize: tableState.pageSize,
+            pages: Math.ceil(meta.count / tableState.pageSize),
+          });
       })
       .catch(err => {
         debugger;
@@ -81,7 +88,7 @@ export default class DataGridsExample extends Component {
     return (
       <Card>
         <Card.Header>
-          <Card.Title>StarWars People</Card.Title>
+          <Card.Title>StarWars</Card.Title>
         </Card.Header>
         <Card.Body className="pt-0">
           <DataGrid
@@ -92,27 +99,6 @@ export default class DataGridsExample extends Component {
             defaultSorted={columnSort}
             defaultPageSize={10}
             loading={this.state.status === 'loading'}
-            loadingText={
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginTop: '-20px',
-                }}
-              >
-                <Icon
-                  icon="circleNotch"
-                  spin
-                  size="2x"
-                  style={{
-                    color: '#09798e',
-                    marginRight: '8px',
-                  }}
-                />
-                <span>Loading...</span>
-              </div>
-            }
             className="-highlight"
             manual
           />

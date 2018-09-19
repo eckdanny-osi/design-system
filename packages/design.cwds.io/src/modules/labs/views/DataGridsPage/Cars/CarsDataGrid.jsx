@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '@cwds/components/lib/Cards';
 import DataGrid from '@cwds/components/lib/DataGrid';
-import mtcars from './mtcars.json';
+import mtcars from '../data/mtcars.json';
 
 const columns = [
   { Header: 'Model', accessor: '_row', width: 150 },
@@ -23,7 +23,7 @@ class CarsDataGrid extends Component {
     return (
       <Card>
         <Card.Header>
-          <Card.Title>MTCars Data Set</Card.Title>
+          <Card.Title>Cars</Card.Title>
         </Card.Header>
         <Card.Body className="pt-0">
           <DataGrid

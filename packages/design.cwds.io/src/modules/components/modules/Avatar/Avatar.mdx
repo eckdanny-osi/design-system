@@ -1,0 +1,75 @@
+import Avatar from '@cwds/components/lib/Avatar';
+import DemoCard from '../../../../components/DemoCard';
+
+## Synopsis
+
+Use an `Avatar` to represent a user or entity.
+
+<DemoCard className="mt-2 mb-4 p-3">
+  <div style={{ position: 'relative' }}>
+    <Avatar size="lg" />
+  </div>
+</DemoCard>
+
+<pre>
+  <code style={{ backgroundColor: 'black', color: '#f0ebb4', display: 'block', padding: '10px' }}>
+    import Avatar from '@cwds/components/lib/Avatar';
+  </code>
+</pre>
+
+## Usage Guidelines
+
+* Display a default image if no custom image has been uploaded.
+
+## Examples
+
+<Avatar />
+
+### Adjusting the `size` value
+
+<Avatar size="xs" />
+<Avatar size="sm" />
+<Avatar size="md" />
+<Avatar size="lg" />
+<Avatar size="xl" />
+
+### Inverting
+
+<Avatar size="xs" invert />
+<Avatar size="sm" invert />
+<Avatar size="md" invert />
+<Avatar size="lg" invert />
+<Avatar size="xl" invert />
+
+### Using Initials
+
+<Avatar size="xs" text="DE" />
+<Avatar size="sm" text="DE" />
+<Avatar size="md" text="DE" />
+<Avatar size="lg" text="DE" />
+<Avatar size="xl" text="DE" />
+
+### Using images
+
+<Avatar
+  imgUrl="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg"
+  size="lg"
+  text="DE"
+  invert={true}
+/>
+
+## Props
+
+@todo
+
+## Related
+
+@todo
+
+### Patterns
+
+@todo
+
+### Components
+
+@todo

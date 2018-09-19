@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Card from '@cwds/components/lib/Cards';
 import Button from '@cwds/components/lib/Button';
 import DataGrid from '@cwds/components/lib/DataGrid';
@@ -6,9 +6,8 @@ import Input from '@cwds/components/lib/Input';
 import InputGroup from '@cwds/components/lib/InputGroup';
 import InputGroupAddon from '@cwds/components/lib/InputGroupAddon';
 import Icon from '@cwds/components/lib/Icon';
-import data from './data.json';
-
-const toCapitalCase = str => str.charAt(0).toUpperCase() + str.slice(1);
+import data from '../data/people.json';
+import { toCapitalCase } from '../utils';
 
 const columns = [
   { Header: 'Last', accessor: 'name.last' },
@@ -80,6 +79,7 @@ class CarsDataGrid extends Component {
       re.test(`${name.first} ${name.last}`)
     );
     this.setState({ filteredData, filterValue: value });
+    // console.log(this.datagrid);
   };
   render() {
     const { data, filteredData } = this.state;
@@ -89,19 +89,28 @@ class CarsDataGrid extends Component {
           <Card.Title>People</Card.Title>
         </Card.Header>
         <Card.Body>
-          <SearchForm
-            value={this.state.value}
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            disabled={this.state.value === this.state.filterValue}
-          />
           <DataGrid
+            ref={el => (this.datagrid = el)}
             data={filteredData || data}
             columns={columns}
             defaultPageSize={10}
             className="-highlight"
             filterable={false}
-          />
+          >
+            {(state, makeTable, instance) => {
+              return (
+                <Fragment>
+                  <SearchForm
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    onSubmit={this.handleSubmit}
+                    disabled={this.state.value === this.state.filterValue}
+                  />
+                  {makeTable()}
+                </Fragment>
+              );
+            }}
+          </DataGrid>
         </Card.Body>
       </Card>
     );
