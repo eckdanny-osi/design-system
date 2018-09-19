@@ -23,21 +23,20 @@ export default () => {
       <Container>
         <Card>
           <Card.Header>
-            <h2>Typography</h2>
+            <Card.Title>Type</Card.Title>
           </Card.Header>
           <Card.Body>
-            <h3>Headers</h3>
-            <h1>alsdkfj</h1>
-            <h2>alksdjf</h2>
-            <h3>alskdfj</h3>
-            <h4>alskdfj</h4>
-            <h5>alskdfj</h5>
+            <h1>Heading 1 (Page Title)</h1>
+            <h2>Heading 2 (Header)</h2>
+            <h3>Heading 3 (Title)</h3>
+            <h4>Heading 4 (Subheader)</h4>
+            <div>Regular</div>
           </Card.Body>
         </Card>
 
         <Card>
           <Card.Header>
-            <h3>Inline Text Elements</h3>
+            <Card.Title>Inline Text Elements</Card.Title>
           </Card.Header>
           <Card.Body>
             <p>
@@ -78,7 +77,7 @@ export default () => {
 
         <Card>
           <Card.Header>
-            <h3>Lists</h3>
+            <Card.Title>Lists</Card.Title>
           </Card.Header>
           <Card.Body>
             <ul className="list-unstyled">

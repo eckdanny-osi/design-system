@@ -8,7 +8,7 @@ export { CardTitleUnstyled };
 export class CardTitle extends Component {
   render() {
     const { cssModule, ...props } = this.props;
-    return <CardTitleUnstyled cssModule={Styles} {...props} />;
+    return <CardTitleUnstyled cssModule={Styles} tag="h3" {...props} />;
   }
 }
 
