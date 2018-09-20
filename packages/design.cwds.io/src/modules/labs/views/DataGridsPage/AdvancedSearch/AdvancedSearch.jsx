@@ -147,10 +147,8 @@ class AdvancedPeopleSearchDataGrid extends Component {
             onSearchFormToggle={this.onSearchFormToggle}
           />
           <div className="text-right my-3">
-            <Toggle onChange={() => alert('hi')}>
-              <Toggle.Option active={true} value="on">
-                Table
-              </Toggle.Option>
+            <Toggle value="table">
+              <Toggle.Option value="table">Table</Toggle.Option>
               <Toggle.Option value="foo">Grid</Toggle.Option>
               <Toggle.Option value="whatever">Map</Toggle.Option>
             </Toggle>

@@ -9,6 +9,8 @@ import AdvancedSearchDataGrid from '!babel-loader!mdx-loader!./modules/DataGrid/
 import Avatar from '!babel-loader!mdx-loader!./modules/Avatar/Avatar.mdx';
 import Alert from '!babel-loader!mdx-loader!./modules/Alert/Alert.mdx';
 import Badge from '!babel-loader!mdx-loader!./modules/Badge/Badge.mdx';
+import Card from '!babel-loader!mdx-loader!./modules/Card/Card.mdx';
+import CardStructure from '!babel-loader!mdx-loader!./modules/Card/CardStructure.mdx';
 
 const DefaultComponent = () => <div>@TODO</div>;
 
@@ -27,12 +29,12 @@ const routes = {
     {
       title: 'Cards',
       path: '/cards',
-      component: () => <div>TODO</div>,
+      component: Card,
       children: [
         {
           title: 'Structure',
           path: '/structure',
-          component: () => <div>TODO</div>,
+          component: CardStructure,
         },
         {
           title: 'Loading State',
@@ -60,7 +62,7 @@ const routes = {
           component: BasicSearchDataGrid,
         },
         {
-          title: 'Advanced Search',
+          title: 'Advanced Search (WiP)',
           path: '/advanced-search',
           component: AdvancedSearchDataGrid,
         },
