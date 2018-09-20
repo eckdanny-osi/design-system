@@ -58,7 +58,7 @@ cd packages/cwds-components
 yarn storybook
 ```
 
-To run the \*rails app\*\*:
+To run the _rails app_:
 
 first start webpack:
 
