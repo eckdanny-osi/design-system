@@ -18,6 +18,9 @@ class Toggle extends PureComponent {
   };
   constructor(props) {
     super(props);
+    this.state = {
+      value: props.value,
+    };
     this.renderChildren = this.renderChildren.bind(this);
     this._onChange = this.props.onChange;
     this.handleChange = this.handleChange.bind(this);
