@@ -19,6 +19,18 @@ class Example extends Component {
       verbPast: 'dedicated',
       animal: 'men',
     },
+    isSaved: false,
+  };
+
+  handleSubmit = () => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve(), 1000);
+    });
+    return promise;
+  };
+
+  handleCancel = () => {
+    alert('are you sure?');
   };
 
   render() {
@@ -59,11 +71,13 @@ class Example extends Component {
           <Formik
             initialValues={this.state.values}
             onSubmit={(values, actions) => {
-              setTimeout(() => {
+              this.handleSubmit().then(() => {
                 actions.resetForm(values);
-                this.setState({ values });
-                toggleScope();
-              }, 1000);
+                this.setState({
+                  values,
+                  isSaved: true,
+                });
+              });
             }}
             render={props => {
               const onChange = e =>
@@ -73,6 +87,9 @@ class Example extends Component {
                   <Card>
                     {renderHeader({ scope })}
                     <Card.Body>
+                      {this.state.isSaved && (
+                        <Alert color="success">Yay! It worked.</Alert>
+                      )}
                       <Row>
                         <Col md={4}>
                           <FormGroup>
@@ -133,7 +150,28 @@ class Example extends Component {
                       </Row>
                     </Card.Body>
                     <Card.Footer>
-                      <Button onClick={toggleScope}>Cancel</Button>{' '}
+                      <Button
+                        disabled={props.isSubmitting}
+                        onClick={() => {
+                          const { initialValues, values, dirty } = props;
+                          if (dirty) {
+                            const discardChanges = window.confirm(
+                              'Oh No! You may lose work. Discard changes?'
+                            );
+                            if (discardChanges) {
+                              props.resetForm();
+                              toggleScope();
+                            } else {
+                              // do nothing
+                            }
+                          } else {
+                            this.setState({ isSaved: false });
+                            toggleScope();
+                          }
+                        }}
+                      >
+                        Go Back
+                      </Button>{' '}
                       <Button
                         type="submit"
                         color="primary"
