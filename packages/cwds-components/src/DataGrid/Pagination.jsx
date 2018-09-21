@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import PaginationRT from 'react-table/es/pagination';
+import PaginationRT from 'react-table/lib/pagination';
 import Input from '../Input';
 import Select from '../Select';
 import uniqueId from 'lodash.uniqueid';
