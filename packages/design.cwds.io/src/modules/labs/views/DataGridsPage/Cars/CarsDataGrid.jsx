@@ -18,24 +18,15 @@ const columns = [
   { Header: 'carb', accessor: 'carb' },
 ];
 
-class CarsDataGrid extends Component {
-  render() {
-    return (
-      <Card>
-        <Card.Header>
-          <Card.Title>Cars</Card.Title>
-        </Card.Header>
-        <Card.Body className="pt-0">
-          <DataGrid
-            data={mtcars}
-            columns={columns}
-            defaultPageSize={10}
-            className="-highlight"
-          />
-        </Card.Body>
-      </Card>
-    );
-  }
-}
+const CarsDataGrid = () => (
+  <Card>
+    <Card.Header>
+      <Card.Title>Cars</Card.Title>
+    </Card.Header>
+    <Card.Body className="pt-0">
+      <DataGrid data={mtcars} columns={columns} className="-highlight" />
+    </Card.Body>
+  </Card>
+);
 
 export default CarsDataGrid;

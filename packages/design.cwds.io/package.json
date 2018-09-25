@@ -6,12 +6,14 @@
     "@cwds/components": "^0.1.0",
     "@cwds/core": "^0.1.0",
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
     "formik": "^0.11.11",
     "prop-types": "^15.6.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
     "react-scripts-cssmodules": "1.1.50",
+    "react-syntax-highlighter": "^8.0.1",
     "slugify": "^1.2.9"
   },
   "scripts": {
@@ -27,6 +29,7 @@
     "mdx-loader": "^1.1.1",
     "mdxc": "^1.1.2",
     "prettier": "^1.12.0",
+    "raw-loader": "^0.5.1",
     "typescript": "^2.9.2"
   }
 }

@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import DataGrid from '@cwds/components/lib/DataGrid';
 import Card from '@cwds/components/lib/Cards';
 import PeopleService from './people-service';
-import Icon from '@cwds/components/lib/Icon';
-
-// TODO left justify
-// TODO bold
-// TODO no shadows
-// TODO border radius
-// TODO pagination
 
 const columnConfig = [
   {
@@ -42,6 +35,8 @@ const columnSort = [
 ];
 
 export default class DataGridsExample extends Component {
+  // Guard against promise resolution after unmount
+  _mounted = false;
   state = {
     data: undefined,
     status: 'idle',
@@ -97,7 +92,6 @@ export default class DataGridsExample extends Component {
             columns={columnConfig}
             onFetchData={this.fetchData}
             defaultSorted={columnSort}
-            defaultPageSize={10}
             loading={this.state.status === 'loading'}
             className="-highlight"
             manual

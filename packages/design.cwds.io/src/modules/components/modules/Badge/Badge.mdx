@@ -1,8 +1,22 @@
 import Badge from '@cwds/components/lib/Badge';
+import DemoCard from '../../../../components/DemoCard';
 
 ## Synopsis
 
-Badges are cool
+Use `Badge`s to enumerate the common classifications of a type of thing.
+
+<DemoCard>
+  <Badge color="primary">Badge</Badge>
+</DemoCard>
+
+## Usage
+
+MUST
+* asdfalksdjf
+* aslkdfjasdf
+
+MUST NOT
+* alskdfjjj
 
 ## Examples
 
@@ -10,22 +24,36 @@ Alerts should not be used for field level validation - see invalid fields for th
 
 ### Typical
 
-\asdfasdfasdf
-
-<Badge>
-  I am Badge!
+<Badge color="info" className="mb-3">
+  active
 </Badge>
 
-Alerts should be placed at the top of a card or at the top of the page.
+### Colors
 
-Error alerts should never be dismissible, so that a user always knows what they need to do to progress.
+<div className="mb-3">
+  {
+    [
+      'info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'
+    ].map(d => <Badge className="mr-1" key={d} color={d}>{d}</Badge>)
+  }
+</div>
 
-Use Error Alerts to denote when an error exists that prevents a user from progressing (Ex: internet offline, 500 error when submitting).
+### Pills
 
-Warning, Info & Success alerts can be dismissible as it does not prevent a user from doing their work.
+<div className="mb-3">
+  {
+    [
+      'info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'
+    ].map(d => <Badge className="mr-1" pill key={d} color={d}>{d}</Badge>)
+  }
+</div>
 
-Use Warning Alerts for when something important occurs, but does not prevent a user from progressing (Ex: Medium risk or safety levels)
+### Links
 
-Use Info Alerts for giving users a heads up about something new or a change (Ex: new feature, notification)
-
-Use Success Alerts for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
+<div className="mb-3">
+  {
+    [
+      'info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'
+    ].map(d => <Badge className="mr-1" href="badge" key={d} color={d}>{d}</Badge>)
+  }
+</div>

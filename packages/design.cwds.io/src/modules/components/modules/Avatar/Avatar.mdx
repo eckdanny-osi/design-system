@@ -1,75 +1,132 @@
+import { Link } from 'react-router-dom';
 import Avatar from '@cwds/components/lib/Avatar';
+import Alert from '@cwds/components/lib/Alert';
+import Card from '@cwds/components/lib/Cards';
+import { Row, Col } from '@cwds/components/lib/Grid';
 import DemoCard from '../../../../components/DemoCard';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { xonokai, dark } from 'react-syntax-highlighter/styles/prism';
 
-## Synopsis
+## <a href="#Synopsis">Synopsis</a>
 
-Use an `Avatar` to represent a user or entity.
+<p className="lead">Use an <tt>Avatar</tt> to represent an indentifiable logical entity.</p>
 
-<DemoCard className="mt-2 mb-4 p-3">
-  <div style={{ position: 'relative' }}>
-    <Avatar size="lg" />
-  </div>
+* [Usage Guidelines](#Usage-Guidelines)
+* [Examples](#Examples)
+  * [Size](#Adjusting-the-size-value)
+  * [Inverting](#Inverting)
+  * [Text](#Using-Initials)
+  * [Images](#Using-Images)
+* [Props](#Props)
+* [Related](#Related)
+
+<DemoCard>
+  <Avatar />
 </DemoCard>
 
-<pre>
-  <code style={{ backgroundColor: 'black', color: '#f0ebb4', display: 'block', padding: '10px' }}>
-    import Avatar from '@cwds/components/lib/Avatar';
-  </code>
-</pre>
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {`import Avatar from '@cwds/components/lib/Avatar';`}
+</SyntaxHighlighter>
 
-## Usage Guidelines
+## <a href="#Usage-Guidelines">Usage Guidelines</a>
+
+Observe the following when using `Avatar`s:
 
 * Display a default image if no custom image has been uploaded.
+* `imgUrl` takes precedence over `text` display
+* `text` takes precendence over the default icon
 
-## Examples
+## <a href="#Examples">Examples</a>
 
-<Avatar />
+The default `Avatar` uses an <Link style={{ fontStyle: 'underline'}} to="icon">`Icon`</Link> to represent an ambiguous identity:
 
-### Adjusting the `size` value
+<div className="mb-3">
+  <Avatar />
+</div>
 
-<Avatar size="xs" />
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {`<Avatar />`}
+</SyntaxHighlighter>
+
+### <a href="#Adjusting-the-size-value">Adjusting the `size` value</a>
+
+The `size` can be specified using one of the <Link to="/core-style#Sizing">DS_SIZES</Link>:
+
+<div className="mb-3">
+  <Avatar size="xs" />{' '}
+  <Avatar size="sm" />{' '}
+  <Avatar size="md" />{' '}
+  <Avatar size="lg" />{' '}
+  <Avatar size="xl" />
+</div>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+{`<Avatar size="xs" />
 <Avatar size="sm" />
 <Avatar size="md" />
 <Avatar size="lg" />
-<Avatar size="xl" />
+<Avatar size="xl" />`}
+</SyntaxHighlighter>
 
-### Inverting
+### <a href="#Inverting">Inverting</a>
 
-<Avatar size="xs" invert />
-<Avatar size="sm" invert />
-<Avatar size="md" invert />
-<Avatar size="lg" invert />
-<Avatar size="xl" invert />
+Inverting is easy, yo!
 
-### Using Initials
+<div className="mb-3">
+  <Avatar invert />
+</div>
 
-<Avatar size="xs" text="DE" />
-<Avatar size="sm" text="DE" />
-<Avatar size="md" text="DE" />
-<Avatar size="lg" text="DE" />
-<Avatar size="xl" text="DE" />
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {`<Avatar invert />`}
+</SyntaxHighlighter>
 
-### Using images
+### <a href="#Using-Initials">Using Initials</a>
 
-<Avatar
-  imgUrl="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg"
+When user or identifiable entity does not have an `imgUrl` (path to a raster graphic), use the `text` prop instead:
+
+<div className="mb-3">
+  <Avatar text="DE" />
+</div>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {`<Avatar size="lg" text="DE" />`}
+</SyntaxHighlighter>
+
+### <a href="#Using-Images">Using Images</a>
+
+asdfasdf
+
+<div className="mb-3">
+  <Avatar
+    imgUrl="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg"
+    size="lg"
+  />
+</div>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+{`<Avatar
+  imgUrl="//images.com/some-face.jpg"
   size="lg"
-  text="DE"
-  invert={true}
-/>
+/>`}
+</SyntaxHighlighter>
 
-## Props
+<Alert color="warning">
+  <strong>DO NOT</strong>{' '}
+  use <tt>Alert</tt> with an <tt>imgUrl</tt> for <tt>size</tt> less than <tt>lg</tt>!
+</Alert>
 
-@todo
-
-## Related
-
-@todo
-
-### Patterns
+## <a href="#Props">Props</a>
 
 @todo
 
-### Components
+## <a href="#Related">Related</a>
+
+@todo
+
+### <a href="#Patterns">Patterns</a>
+
+@todo
+
+### <a href="#Components">Components</a>
 
 @todo

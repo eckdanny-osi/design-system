@@ -22,7 +22,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
             <Route path="/page-layouts" component={PageLayouts} />
-            <Route path="/core" component={CorePage} />
+            <Route path="/core-style" component={CorePage} />
             <Route path="/principles" component={PrinciplesPage} />
             <Route path="/labs" component={LabsPage} />
             <Route path="/components-prev" component={ComponentBrowser} />

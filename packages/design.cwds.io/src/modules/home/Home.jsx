@@ -51,14 +51,14 @@ export default () => (
             <Col sm={6}>
               <Card>
                 <Card.Header>
-                  <Card.Title>Core</Card.Title>
+                  <Card.Title>Core Style</Card.Title>
                 </Card.Header>
                 <Card.Body>
                   Overarching design decisions including colors, type system,
                   global styles, Iconography, etc.
                 </Card.Body>
                 <Card.Footer>
-                  <Link to="/core">
+                  <Link to="/core-style">
                     <Button color="primary">Go!</Button>
                   </Link>
                 </Card.Footer>

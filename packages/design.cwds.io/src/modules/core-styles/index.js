@@ -1,1 +1,1 @@
-export { default } from './CoreStyles';
+export { default } from './CoreStyle';
