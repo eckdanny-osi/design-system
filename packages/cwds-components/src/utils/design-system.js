@@ -18,6 +18,11 @@ export const SIZES_SHORT = {
   LG,
 };
 
+const ALLOWED_SIZES = Object.keys(SIZES_ALL).map(key => SIZES_ALL[key]);
+
+export const isValidSize = (size, defaultValue) =>
+  ALLOWED_SIZES.includes(size) ? size : defaultValue;
+
 export const CONTEXT = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',

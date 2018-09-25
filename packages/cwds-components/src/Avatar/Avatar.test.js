@@ -37,6 +37,16 @@ describe('Avatar', () => {
     expect(wrapper.hasClass('size-xl')).toBe(true);
   });
 
+  it('only lets valid size props through', () => {
+    const spy = jest
+      .spyOn(global.console, 'error')
+      .mockImplementationOnce(() => {});
+    const wrapper = shallow(<Avatar size="nope" />);
+    expect(wrapper.hasClass('size-md')).toBe(true);
+    expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockRestore();
+  });
+
   it('inverts color scheme', () => {
     const wrapper = shallow(<Avatar />);
     expect(wrapper.hasClass('inverted')).not.toBe(true);

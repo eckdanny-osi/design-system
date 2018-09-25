@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Icon from '../Icon';
 import styles from './Avatar.module.scss';
+import { SIZES_ALL, isValidSize } from '../utils/design-system';
 
 const propTypes = {
   /** Image URL (eg; img[src]) */
@@ -21,9 +22,13 @@ const defaultProps = {
 };
 
 const Avatar = ({ imgUrl, size, text, invert }) => {
-  const classes = cn(styles.wrapper, styles[`size-${size}`], {
-    [styles.inverted]: invert,
-  });
+  const classes = cn(
+    styles.wrapper,
+    styles[`size-${isValidSize(size, SIZES_ALL.MD)}`],
+    {
+      [styles.inverted]: invert,
+    }
+  );
   if (imgUrl) {
     return <img src={imgUrl} className={classes} />;
   }
