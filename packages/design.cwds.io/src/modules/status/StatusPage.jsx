@@ -24,12 +24,18 @@ export default () => (
                     <tt>{status.buildDate}</tt>
                   </td>
                 </tr>
-                <tr>
-                  <td>Component Library Version</td>
-                  <td>
-                    <tt>{status.version}</tt>
-                  </td>
-                </tr>
+                {status.lerna.map(({ name, version }) => {
+                  return (
+                    <tr key={name}>
+                      <td>
+                        <tt>{name}</tt>
+                      </td>
+                      <td>
+                        <tt>{version}</tt>
+                      </td>
+                    </tr>
+                  );
+                })}
                 <tr>
                   <td>Branch</td>
                   <td>

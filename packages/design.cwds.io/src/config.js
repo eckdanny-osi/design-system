@@ -5,6 +5,9 @@ import Logo from '@cwds/components/lib/Logo';
 import Badge from '@cwds/components/lib/Badge';
 import status from './modules/status/status';
 
+const libVersion = status.lerna.find(d => d.name === '@cwds/components')
+  .version;
+
 //
 // Configure Components
 //
@@ -15,7 +18,7 @@ AppBar.config({
         <Logo />
       </Link>
       <Badge color="info" className="ml-2">
-        {status.version}
+        {libVersion}
       </Badge>
     </React.Fragment>
   ),
