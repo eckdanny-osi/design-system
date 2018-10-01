@@ -57,13 +57,13 @@ class Pagination extends PaginationRT {
                 </label>
                 <Input
                   id={`${this.uniqueId}_pageJump`}
-                  type={this.state.page === '' ? 'text' : 'number'}
+                  type={'number'}
                   onChange={e => {
-                    const val = e.target.value;
-                    const page = val - 1;
-                    if (val === '') {
+                    const val = e.target.valueAsNumber;
+                    if (isNaN(val)) {
                       return this.setState({ page: val });
                     }
+                    const page = val - 1;
                     this.setState({ page: this.getSafePage(page) });
                   }}
                   value={this.state.page === '' ? '' : this.state.page + 1}
