@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cwds/components": "^0.1.0",
+    "@cwds/components": "alpha",
     "@cwds/core": "^0.1.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
@@ -30,6 +30,7 @@
     "mdxc": "^1.1.2",
     "prettier": "^1.12.0",
     "raw-loader": "^0.5.1",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "val-loader": "^1.1.1"
   }
 }

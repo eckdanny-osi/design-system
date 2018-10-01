@@ -6,6 +6,7 @@ import 'react-select/dist/react-select.css';
 import JumpToTop from '@cwds/components/lib/JumpToTop';
 
 import ScrollToTop from './ScrollToTop';
+import Status from './modules/status';
 import Home from './modules/home';
 import PageLayouts from './modules/layouts';
 import CorePage from './modules/core-styles';
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/labs" component={LabsPage} />
             <Route path="/components-prev" component={ComponentBrowser} />
             <Route path="/components" component={Components} />
+            <Route path="/status" component={Status} />
             <JumpToTop />
           </div>
         </ScrollToTop>

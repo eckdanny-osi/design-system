@@ -22,24 +22,32 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@cwds/components@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@cwds/components/-/components-0.1.1.tgz#cfc2055962cb32492f8385d0cb4bef9de8e7a93e"
+"@cwds/components@alpha":
+  version "0.2.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@cwds/components/-/components-0.2.0-alpha.20.tgz#72eb661ccab30a42adda00da1db0ef992bf15101"
   dependencies:
-    "@cwds/core" "^0.1.0"
+    "@cwds/validation" "^0.0.1"
     "@fortawesome/fontawesome" "^1.1.5"
+    "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-free-solid" "^5.0.10"
     "@fortawesome/react-fontawesome" "^0.0.18"
+    babel-polyfill "^6.26.0"
     bootstrap "^4.1.0"
     classnames "^2.2.5"
+    hoist-non-react-statics "^2.5.5"
     lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
+    lodash.uniqueid "^4.0.1"
     prop-types "^15.6.1"
     react "^16.3.2"
+    react-display-name "^0.2.4"
     react-dom "^16.3.2"
     react-overlays "^0.8.3"
+    react-select "^1.2.1"
     react-sticky "^6.0.2"
-    reactstrap "^5.0.0"
+    react-table "^6.8.6"
+    reactstrap "^6.4.0"
+    recompose "^0.28.2"
 
 "@fortawesome/fontawesome-common-types@^0.1.3", "@fortawesome/fontawesome-common-types@^0.1.4":
   version "0.1.4"
@@ -7691,7 +7699,7 @@ loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@^1.0.0, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
@@ -9353,7 +9361,7 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-popper.js@^1.12.9, popper.js@^1.14.1:
+popper.js@^1.14.1:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
 
@@ -10434,13 +10442,6 @@ react-popper@^0.10.4:
     popper.js "^1.14.1"
     prop-types "^15.6.1"
 
-react-popper@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.8.3.tgz#0f73333137c9fb0af6ec4074d2d0585a0a0461e1"
-  dependencies:
-    popper.js "^1.12.9"
-    prop-types "^15.6.0"
-
 react-reconciler@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.7.0.tgz#9614894103e5f138deeeb5eabaf3ee80eb1d026d"
@@ -10578,7 +10579,7 @@ react-textarea-autosize@^5.2.1:
   dependencies:
     prop-types "^15.6.0"
 
-react-transition-group@^2.0.0, react-transition-group@^2.2.0, react-transition-group@^2.2.1, react-transition-group@^2.3.1:
+react-transition-group@^2.0.0, react-transition-group@^2.2.0, react-transition-group@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:
@@ -10611,18 +10612,6 @@ reactcss@^1.2.0:
   resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
   dependencies:
     lodash "^4.0.1"
-
-reactstrap@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-5.0.0.tgz#d8948534df4816eddfb162a51643a499388e9228"
-  dependencies:
-    classnames "^2.2.3"
-    lodash.isfunction "^3.0.9"
-    lodash.isobject "^3.0.2"
-    lodash.tonumber "^4.0.3"
-    prop-types "^15.5.8"
-    react-popper "^0.8.3"
-    react-transition-group "^2.2.1"
 
 reactstrap@^6.4.0:
   version "6.4.0"
@@ -12732,6 +12721,13 @@ v8flags@^2.0.2, v8flags@^2.1.1:
   resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
   dependencies:
     user-home "^1.1.1"
+
+val-loader@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/val-loader/-/val-loader-1.1.1.tgz#32ba8ed5c3607504134977251db2966499e15ef7"
+  dependencies:
+    loader-utils "^1.0.0"
+    schema-utils "^0.4.5"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.3"
