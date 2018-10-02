@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Route, Link, withRouter } from 'react-router-dom';
 import ListGroup from '@cwds/components/lib/ListGroups';
 
-import Banner from '@cwds/components/lib/Banner';
-import Body from '@cwds/components/lib/Body';
 import Page from '@cwds/components/lib/Layouts/Page';
 import Icon from '@cwds/components/lib/Icon';
 import Button from '@cwds/components/lib/Button';
