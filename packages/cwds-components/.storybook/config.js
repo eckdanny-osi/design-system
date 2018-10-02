@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { setDefaults, withInfo } from '@storybook/addon-info';
+import { checkA11y } from '@storybook/addon-a11y';
 import './style.scss';
 
 const req = require.context('../src', true, /\.stories\.jsx?$/);
@@ -13,6 +14,7 @@ const loadStoriesDynamic = () => {
 const MyDecorator = storyFn => <div style={{}}>{storyFn()}</div>;
 
 addDecorator(MyDecorator);
+addDecorator(checkA11y);
 
 configure(loadStoriesDynamic, module);
 
