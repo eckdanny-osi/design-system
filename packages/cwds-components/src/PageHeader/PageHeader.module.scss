@@ -1,35 +1,8 @@
 @import '../core';
 
-.PageHeader {
-  @include gradient-x($spruce, $aspen);
-
-  color: $white;
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  position: fixed;
-  top: 38px;
-  left: 0;
-  right: 0;
-  z-index: 3000;
-}
-
-.PageTitle,
-.ActionsContainer {
-}
-
 .PageTitle {
-  margin-bottom: 0;
+  color: $white;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-}
-
-.ActionsContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: $spacer;
 }

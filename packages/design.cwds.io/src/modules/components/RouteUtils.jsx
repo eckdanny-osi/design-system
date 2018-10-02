@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import { Route, Link, withRouter } from 'react-router-dom';
 import ListGroup from '@cwds/components/lib/ListGroups';
 
-import Banner from '../../components/Layout/Banner';
-import Body from '../../components/Layout/Body';
-import Page from '../../components/Layout/Page';
+import Banner from '@cwds/components/lib/Banner';
+import Body from '@cwds/components/lib/Body';
+import Page from '@cwds/components/lib/Layouts/Page';
+import Icon from '@cwds/components/lib/Icon';
+import Button from '@cwds/components/lib/Button';
+import Modal from '@cwds/components/lib/Modal';
+
+// Demo some CTA usage
+import SearchWizard from './SearchWizard';
+const ContextualActions = () => <SearchWizard />;
 
 const SideNav = withRouter(({ match, routes = [] }) => {
   if (!routes.length) return null;
@@ -51,6 +58,8 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
             <Page
               title={title}
               breadcrumb={trail}
+              cta={ContextualActions}
+              layout="subroutes"
               sidenav={() => (
                 <SideNav
                   routes={children.map(child => ({
@@ -85,8 +94,10 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
         render={() => {
           return (
             <Page
+              layout="subroutes"
               title={title}
               breadcrumb={trail}
+              cta={ContextualActions}
               sidenav={() => (
                 <SideNav
                   routes={getSiblingRoutes(parentContext).map(child => ({
@@ -117,7 +128,7 @@ export function getSiblingRoutes(parentContexts) {
 }
 
 export function getTrail(partialRoutes) {
-  const pathsAndTitles = [];
+  const pathsAndTitles = [{ path: '/', title: 'Home' }];
   let prefix = '';
   for (let partial of partialRoutes) {
     prefix += partial.path;

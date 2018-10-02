@@ -17,8 +17,8 @@ AppBar.config({
       <Link to="/">
         <Logo />
       </Link>
-      <Link to="/status">
-        <Badge color="info" className="ml-2">
+      <Link to="/status" className="d-none d-sm-inline-block">
+        <Badge color="primary" className="ml-2">
           {libVersion}
         </Badge>
       </Link>

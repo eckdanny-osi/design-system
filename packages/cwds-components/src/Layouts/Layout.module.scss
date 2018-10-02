@@ -1,3 +1,45 @@
-.Layout {
-  // styles
+@import '../core';
+
+$banner-height: 8.5rem;
+
+:export {
+  banner-height: $banner-height;
+}
+
+.Banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: $banner-height;
+  box-shadow: 0 2px 5px rgba(2, 2, 2, 0.25);
+
+  .AppBarContainer {
+    background-color: $info;
+    color: $white;
+    padding: 0.25rem 0;
+    height: 2.5rem;
+  }
+
+  .PageHeaderContainer {
+    @include gradient-x($spruce, $aspen);
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .BreadcrumbContainer {
+    background-color: $body-bg;
+    height: 2rem;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.Body {
+  margin-top: $banner-height;
 }

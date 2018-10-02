@@ -16,21 +16,14 @@ class PageHeader extends PureComponent {
   render() {
     const { title, cta } = this.props;
     return (
-      <div className={cn(styles.PageHeader)}>
-        <Container>
-          <Row>
-            <Col>
-              <h1 className={cn(styles.PageTitle)}>
-                {'function' === typeof title ? title() : title}
-              </h1>
-            </Col>
-            {cta && (
-              <Col xs="3" className={cn(styles.ActionsContainer)}>
-                {cta()}
-              </Col>
-            )}
-          </Row>
-        </Container>
+      <div className={cn(styles.PageHeader, 'd-flex', 'align-items-center')}>
+        <div className={cn('flex-grow-1')}>
+          <h1 className={cn(styles.PageTitle, 'm-0')}>
+            {'function' === typeof title ? title() : title}
+          </h1>
+        </div>
+
+        {cta && <div className={cn('pr-2')}>{cta()}</div>}
       </div>
     );
   }

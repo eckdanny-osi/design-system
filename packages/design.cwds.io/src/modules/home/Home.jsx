@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Page from '@cwds/components/lib/Layouts/Page';
 import AppBar from '@cwds/components/lib/AppBar';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Button from '@cwds/components/lib/Button';
 import Card, { CardDeck } from '@cwds/components/lib/Cards';
 import { Container, Row, Col } from '@cwds/components/lib/Grid';
+import Icon from '@cwds/components/lib/Icon';
 
 export default () => (
-  <div>
-    <AppBar />
-    <PageHeader title="Design System" />
-    <Container>
+  <Page
+    layout="dashboard"
+    title="Design System"
+    breadcrumb={props => <em>Welcome to your dashboard!</em>}
+    main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
           <Row>
@@ -115,6 +118,6 @@ export default () => (
           </Row>
         </Col>
       </Row>
-    </Container>
-  </div>
+    )}
+  />
 );

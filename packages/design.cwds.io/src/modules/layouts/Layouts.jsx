@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Page from '@cwds/components/lib/Layouts/Page';
 import AnchorNav from '@cwds/components/lib/AnchorNav';
 import AppBar from '@cwds/components/lib/AppBar';
 import { Container } from '@cwds/components/lib/Grid';
@@ -7,62 +8,67 @@ import PageHeader from '@cwds/components/lib/PageHeader';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 
 import BasicContentSection from './views/BasicContent';
-import DashboardSection from './views/Dashboard';
+// import DashboardSection from './views/Dashboard';
 import LongJumpSection from './views/LongJump';
 import RouteNestSection from './views/RouteNest';
 
 /* eslint-disable import/no-webpack-loader-syntax */
-import Test from '!babel-loader!mdx-loader!./views/About.mdx';
-/* eslint-enable import/no-webpack-loader-syntax */
+import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx';
+import Dashboard from '!babel-loader!@mdx-js/loader!./views/Dashboard.mdx';
+import JumpNav from '!babel-loader!@mdx-js/loader!./views/JumpNav.mdx';
+import SubRoutes from '!babel-loader!@mdx-js/loader!./views/SubRoutes.mdx';
 
 const routes = [
   {
-    title: 'About',
-    slug: 'about',
-    component: Test,
-  },
-  {
-    title: 'Page Elements',
-    slug: 'page-elements',
-    component: () => <div>Page Elements</div>,
-    children: [
-      {
-        title: 'Something',
-        slug: 'something',
-        component: () => <div>Something</div>,
-      },
-    ],
+    title: 'Page Composition',
+    slug: 'page-composition',
+    component: PageComposition,
   },
   {
     title: 'The Templates',
     slug: 'templates',
-    component: () => <h4>The Templates</h4>,
+    component: () => <h2>The Templates</h2>,
     children: [
-      {
-        title: 'Basic Content',
-        slug: 'basic-content',
-        component: BasicContentSection,
-      },
+      // {
+      //   title: 'Basic Content',
+      //   slug: 'basic-content',
+      //   component: BasicContentSection,
+      // },
       {
         title: 'Dashboard',
         slug: 'dashboard',
-        component: DashboardSection,
+        component: Dashboard,
       },
       {
-        title: 'Long Jump',
-        slug: 'long-jump',
-        component: LongJumpSection,
+        title: 'JumpNav',
+        slug: 'jumpnav',
+        component: JumpNav,
       },
       {
-        title: 'Route Nest',
-        slug: 'route-nest',
-        component: RouteNestSection,
+        title: 'SubRoutes',
+        slug: 'subroutes',
+        component: SubRoutes,
       },
     ],
   },
 ];
 
 export default () => {
+  return (
+    <Page
+      title="Layouts"
+      breadcrumb={[
+        { path: '/', title: 'Home' },
+        { path: '/page-layouts', title: 'Layouts' },
+      ]}
+      layout="jumpnav"
+      sidenav={() => <div />}
+      main={() => <div>{routes.map(renderSection)}</div>}
+    />
+  );
+};
+
+export const _default = () => {
   return (
     <div>
       <AppBar />

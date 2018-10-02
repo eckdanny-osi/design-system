@@ -77,10 +77,10 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $spruce;
+$primary: $aspen;
 $secondary: $wahoo;
 $success: $elm;
-$info: $aspen;
+$info: $spruce;
 $warning: $hickory;
 $danger: $maple;
 $light: $gray-100 !default;
@@ -683,7 +683,6 @@ $nav-divider-margin-y: ($spacer / 2) !default;
 // // Cards
 
 $card-spacer-y: map-get($spacers, 3);
-$card-spacer-y: 0.75rem !default;
 $card-spacer-x: $card-spacer-y;
 // $card-spacer-x: 1.25rem !default;
 $card-border-width: $border-width !default;
@@ -859,7 +858,7 @@ $list-group-action-active-color: $body-color !default;
 
 // Breadcrumbs
 
-$breadcrumb-padding-y: 0.75rem !default;
+$breadcrumb-padding-y: 0.25rem !default;
 $breadcrumb-padding-x: 1rem !default;
 $breadcrumb-item-padding: 0.5rem !default;
 
@@ -868,6 +867,7 @@ $breadcrumb-margin-bottom: 1rem !default;
 $breadcrumb-bg: $gray-200 !default;
 $breadcrumb-divider-color: $gray-600 !default;
 $breadcrumb-active-color: $gray-600 !default;
+$breadcrumb-active-color: $trout;
 $breadcrumb-divider: quote('/') !default;
 
 $breadcrumb-border-radius: $border-radius !default;

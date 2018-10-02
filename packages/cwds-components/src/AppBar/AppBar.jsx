@@ -9,64 +9,7 @@ import Popover from '../Popover';
 import Avatar from '../Avatar';
 import { ListGroup, ListGroupItem } from '../ListGroups';
 
-class Example extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      popoverOpen: false,
-    };
-  }
-
-  toggle() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    });
-  }
-
-  render() {
-    return (
-      <Fragment>
-        <button
-          id="Popover1"
-          onClick={this.toggle}
-          style={{ backgroundColor: 'transparent', border: 'none' }}
-        >
-          <Avatar invert size="sm" text="DE" />
-        </button>
-        <Popover
-          placement="bottom-end"
-          isOpen={this.state.popoverOpen}
-          target="Popover1"
-          toggle={this.toggle}
-        >
-          <Popover.Body>
-            <ListGroup>
-              <ListGroupItem active tag="a" href="#" action>
-                Cras justo odio
-              </ListGroupItem>
-              <ListGroupItem tag="a" href="#" action>
-                Dapibus ac facilisis in
-              </ListGroupItem>
-              <ListGroupItem tag="a" href="#" action>
-                Morbi leo risus
-              </ListGroupItem>
-              <ListGroupItem tag="a" href="#" action>
-                Porta ac consectetur ac
-              </ListGroupItem>
-              <ListGroupItem disabled tag="a" href="#" action>
-                Vestibulum at eros
-              </ListGroupItem>
-            </ListGroup>
-          </Popover.Body>
-        </Popover>
-      </Fragment>
-    );
-  }
-}
-
-const defaultActionsRenderer = () => {}; // <Example />;
+const defaultActionsRenderer = () => {};
 
 class AppBar extends PureComponent {
   static options = {
@@ -98,14 +41,10 @@ class AppBar extends PureComponent {
   render() {
     const { actions, ...props } = this.props;
     return (
-      <div className={cn(styles.AppBar)}>
-        <Container>
-          <Row style={{ alignItems: 'center' }}>
-            <Col>{this.renderBrand()}</Col>
-            <Col className="text-right">{this.renderActions()}</Col>
-          </Row>
-        </Container>
-      </div>
+      <Row style={{ alignItems: 'center' }}>
+        <Col>{this.renderBrand()}</Col>
+        <Col className="text-right">{this.renderActions()}</Col>
+      </Row>
     );
   }
 }
