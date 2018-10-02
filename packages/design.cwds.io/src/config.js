@@ -17,9 +17,11 @@ AppBar.config({
       <Link to="/">
         <Logo />
       </Link>
-      <Badge color="info" className="ml-2">
-        {libVersion}
-      </Badge>
+      <Link to="/status">
+        <Badge color="info" className="ml-2">
+          {libVersion}
+        </Badge>
+      </Link>
     </React.Fragment>
   ),
 });
