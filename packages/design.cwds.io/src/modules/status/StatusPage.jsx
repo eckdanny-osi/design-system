@@ -1,9 +1,12 @@
 import React from 'react';
 import { Row, Col } from '@cwds/components/lib/Grid';
 import Card from '@cwds/components/lib/Cards';
-// import Page from '../../components/Layout/Page';
 import Page from '@cwds/components/lib/Layouts/Page';
+import Button from '@cwds/components/lib/Button';
+import slackLogo from './Slack_Mark_White_Web.png';
+import githubLogo from './GitHub-Mark-Light-64px.png';
 import status from './status';
+import Style from './StatusButton.module.css';
 
 export default () => (
   <Page
@@ -18,7 +21,7 @@ export default () => (
         <Col>
           <Card>
             <Card.Header>
-              <Card.Title>Info</Card.Title>
+              <Card.Title>Build Info</Card.Title>
             </Card.Header>
             <Card.Body>
               <table style={{ width: '100%' }}>
@@ -49,6 +52,30 @@ export default () => (
                   </tr>
                 </tbody>
               </table>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Header>
+              <Card.Title>Issues</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <Button
+                color="primary"
+                href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
+                className={Style.StatusButton}
+              >
+                <img src={slackLogo} className={Style.BlockLogo} />
+                #design-ops
+              </Button>{' '}
+              <Button
+                color="primary"
+                href={status.pkg.bugs.url}
+                className={Style.StatusButton}
+                target="_blank"
+              >
+                <img src={githubLogo} className={Style.BlockLogo} />
+                Issues
+              </Button>{' '}
             </Card.Body>
           </Card>
         </Col>

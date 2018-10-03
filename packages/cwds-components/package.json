@@ -9,6 +9,9 @@
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "AGPL-3.0",
   "private": false,
+  "bugs": {
+    "url": "https://github.com/ca-cwds/design-system/issues"
+  },
   "scripts": {
     "//prepare": "yarn run build",
     "//prepublishOnly": "TODO: clean up the package.json file",

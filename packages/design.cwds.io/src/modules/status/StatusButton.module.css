@@ -1,0 +1,13 @@
+.StatusButton {
+  height: 36px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.BlockLogo {
+  /* display: none; */
+  display: block;
+  max-height: 22px;
+  margin-right: 0.5rem;
+}
