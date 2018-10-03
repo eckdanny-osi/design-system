@@ -12,7 +12,6 @@ import Icon from '@cwds/components/lib/Icon';
 import FormFeedback from '@cwds/components/lib/FormFeedback';
 import RadioGroup from '@cwds/components/lib/RadioGroup';
 import {
-  LOCATION,
   CLASSIFICATION_OPTIONS,
   CONCTACT_METHOD_OPTIONS,
   CONTACT_METHOD,

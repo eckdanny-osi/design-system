@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Card from '@cwds/components/lib/Cards';
-import { SIZES_ALL, CONTEXT } from '@cwds/components/lib/utils/design-system';
+import { CONTEXT } from '@cwds/components/lib/utils/design-system';
 
 export default () => (
   <Card>

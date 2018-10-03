@@ -8,7 +8,6 @@ import FormGroup from '@cwds/components/lib/FormGroup';
 import Label from '@cwds/components/lib/Label';
 import Input from '@cwds/components/lib/Input';
 import Icon from '@cwds/components/lib/Icon';
-import Alert from '@cwds/components/lib/Alert';
 
 class Example extends Component {
   state = {

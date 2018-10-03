@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import { Row, Col } from '@cwds/components/lib/Grid';
 import Card from '@cwds/components/lib/Cards';
@@ -6,9 +6,7 @@ import FormFeedback from '@cwds/components/lib/FormFeedback';
 import FormGroup from '@cwds/components/lib/FormGroup';
 import Label from '@cwds/components/lib/Label';
 import Select from '@cwds/components/lib/Select';
-
 import CheckboxBank from '@cwds/components/lib/CheckboxBank';
-import RadioGroup from '@cwds/components/lib/RadioGroup';
 
 export default () => (
   <Formik

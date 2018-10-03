@@ -1,13 +1,4 @@
-import {
-  LOCATION,
-  CLASSIFICATION_OPTIONS,
-  CONCTACT_METHOD_OPTIONS,
-  CONTACT_METHOD,
-  LOCATION_OPTIONS,
-  NOTICE_OPTIONS,
-  COLLATERAL_VISIT_OPTIONS,
-  VISIT_TYPE_OPTIONS,
-} from './contactsFormEnums';
+import { LOCATION, CONTACT_METHOD } from './contactsFormEnums';
 export default values => {
   let errors = {};
 

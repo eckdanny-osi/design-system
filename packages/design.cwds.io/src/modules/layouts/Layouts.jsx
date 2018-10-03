@@ -7,11 +7,6 @@ import { Container } from '@cwds/components/lib/Grid';
 import PageHeader from '@cwds/components/lib/PageHeader';
 import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 
-import BasicContentSection from './views/BasicContent';
-// import DashboardSection from './views/Dashboard';
-import LongJumpSection from './views/LongJump';
-import RouteNestSection from './views/RouteNest';
-
 /* eslint-disable import/no-webpack-loader-syntax */
 import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx';
 import Dashboard from '!babel-loader!@mdx-js/loader!./views/Dashboard.mdx';

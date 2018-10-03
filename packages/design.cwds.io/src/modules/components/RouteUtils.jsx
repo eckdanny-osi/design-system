@@ -1,12 +1,7 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Route, Link, withRouter } from 'react-router-dom';
 import ListGroup from '@cwds/components/lib/ListGroups';
-
 import Page from '@cwds/components/lib/Layouts/Page';
-import Icon from '@cwds/components/lib/Icon';
-import Button from '@cwds/components/lib/Button';
-import Modal from '@cwds/components/lib/Modal';
 
 // Demo some CTA usage
 import SearchWizard from './SearchWizard';

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 /* eslint-disable import/no-webpack-loader-syntax */
 import Components from '!babel-loader!mdx-loader!./modules/Components.mdx';
 import DataGridsPage from '!babel-loader!mdx-loader!./modules/DataGrid/DataGrid.mdx';
@@ -11,8 +10,6 @@ import Alert from '!babel-loader!mdx-loader!./modules/Alert/Alert.mdx';
 import Badge from '!babel-loader!mdx-loader!./modules/Badge/Badge.mdx';
 import Card from '!babel-loader!mdx-loader!./modules/Card/Card.mdx';
 import CardStructure from '!babel-loader!mdx-loader!./modules/Card/CardStructure.mdx';
-
-const DefaultComponent = () => <div>@TODO</div>;
 
 const routes = {
   title: 'Component Library',

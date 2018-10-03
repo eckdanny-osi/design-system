@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from '@cwds/components/lib/Cards';
 import DataGrid from '@cwds/components/lib/DataGrid';
 import mtcars from '../data/mtcars.json';

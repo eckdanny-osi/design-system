@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import { Container, Row, Col } from '@cwds/components/lib/Grid';
+import React from 'react';
 import Page from '@cwds/components/lib/Layouts/Page';
 /* eslint-disable import/no-webpack-loader-syntax */
 import CoreStyle from '!babel-loader!@mdx-js/loader!./CoreStyle.mdx';
