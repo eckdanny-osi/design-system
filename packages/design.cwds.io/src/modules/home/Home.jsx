@@ -17,33 +17,17 @@ export default () => (
             <Col sm={6}>
               <Card>
                 <Card.Header>
-                  <Card.Title>Principles</Card.Title>
-                </Card.Header>
-                <Card.Body>
-                  Guiding principles for CARES including tone, goals and methods
-                  for building a great product!
-                </Card.Body>
-                <Card.Footer>
-                  <Link to="/principles">
-                    <Button color="primary">Go!</Button>
-                  </Link>
-                </Card.Footer>
-              </Card>
-            </Col>
-
-            <Col sm={6}>
-              <Card>
-                <Card.Header>
                   <Card.Title>Component Library</Card.Title>
                 </Card.Header>
                 <Card.Body>
                   Component documentation and visual showcase for developers and
-                  designers with usage guidelines and examples
+                  designers with usage guidelines and reference implementation
+                  examples
                 </Card.Body>
                 <Card.Footer>
-                  <Link to="/components">
-                    <Button color="primary">Go!</Button>
-                  </Link>
+                  <Button color="primary" tag={Link} to="/components">
+                    Go!
+                  </Button>
                 </Card.Footer>
               </Card>
             </Col>
@@ -54,13 +38,14 @@ export default () => (
                   <Card.Title>Core Style</Card.Title>
                 </Card.Header>
                 <Card.Body>
-                  Overarching design decisions including colors, type system,
-                  global styles, Iconography, etc.
+                  Foundational UX principles and overarching design decisions
+                  including color system, typography, grid system, tone,
+                  iconography, and accessibility
                 </Card.Body>
                 <Card.Footer>
-                  <Link to="/core-style">
-                    <Button color="primary">Go!</Button>
-                  </Link>
+                  <Button color="primary" tag={Link} to="/core-style">
+                    Go!
+                  </Button>
                 </Card.Footer>
               </Card>
             </Col>
@@ -68,15 +53,16 @@ export default () => (
             <Col sm={6}>
               <Card>
                 <Card.Header>
-                  <Card.Title>Layouts</Card.Title>
+                  <Card.Title>
+                    UX Guidelines / Patterns{' '}
+                    <small className="text-muted">(TODO)</small>
+                  </Card.Title>
                 </Card.Header>
-                <Card.Body>
-                  The layout system and typical page layouts found in CARES.
-                </Card.Body>
+                <Card.Body>@TODO</Card.Body>
                 <Card.Footer>
-                  <Link to="/page-layouts">
-                    <Button color="primary">Go!</Button>
-                  </Link>
+                  <Button color="primary" tag={Link} to="/">
+                    Go!
+                  </Button>
                 </Card.Footer>
               </Card>
             </Col>
@@ -88,13 +74,33 @@ export default () => (
                 </Card.Header>
                 <Card.Body>
                   Not everything in here is ready for general use, but it should
-                  be showcased for the purposes of design critique and
-                  soliciting general feedback!
+                  be showcased for the purpose of design critique and
+                  solicitation of general feedback
                 </Card.Body>
                 <Card.Footer>
-                  <Link to="/labs">
-                    <Button color="primary">Go!</Button>
-                  </Link>
+                  <Button color="primary" tag={Link} to="/labs">
+                    Go!
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+
+            <Col sm={6}>
+              <Card>
+                <Card.Header>
+                  <Card.Title>
+                    About <small className="text-muted">(TODO)</small>
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  Defines key terms and identifies the business value of the
+                  Design System, a manual for designers, developers, and
+                  stakeholders to get the most out of this site
+                </Card.Body>
+                <Card.Footer>
+                  <Button color="primary" tag={Link} to="/">
+                    Go!
+                  </Button>
                 </Card.Footer>
               </Card>
             </Col>
