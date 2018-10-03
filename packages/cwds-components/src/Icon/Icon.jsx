@@ -84,6 +84,7 @@ export const Icon = props => {
       className={cn({
         [styles['color-primary']]: color === 'primary',
       })}
+      focusable="false"
       {...otherProps}
     />
   );

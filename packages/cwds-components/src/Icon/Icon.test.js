@@ -1,10 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Icon from './';
 
 describe('Icon', () => {
   it('renders', () => {
     const wrapper = shallow(<Icon icon="check" />);
     expect(!!wrapper).toBe(true);
+  });
+
+  it('has attr `focusable` set to false', () => {
+    const wrapper = mount(<Icon icon="check" />);
+    expect(wrapper.find('svg').prop('focusable')).toBe('false');
   });
 });
