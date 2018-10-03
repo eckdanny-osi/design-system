@@ -15,7 +15,7 @@ export default () => (
     ]}
     main={() => (
       <Row>
-        <Col md={{ size: 6, offset: 3 }}>
+        <Col>
           <Card>
             <Card.Header>
               <Card.Title>Info</Card.Title>

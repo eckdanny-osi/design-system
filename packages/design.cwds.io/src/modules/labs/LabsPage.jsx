@@ -1,85 +1,59 @@
 import React, { Fragment } from 'react';
 import { Route, withRouter, Link } from 'react-router-dom';
-import slugify from 'slugify';
-import { Container } from '@cwds/components/lib/Grid';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
 import ListGroup from '@cwds/components/lib/ListGroups';
-import { LayoutJumpNav } from '@cwds/components/lib/Layouts';
-import ComponentPages from './views';
+import Page from '@cwds/components/lib/Layouts/Page';
+/* eslint-disable import/no-webpack-loader-syntax */
+import DefaultPage from '!babel-loader!@mdx-js/loader!./views/DefaultView.mdx';
+import CardsPage from '!babel-loader!@mdx-js/loader!./views/CardsPage/Cards.mdx';
+// import DataGridsPage from '!babel-loader!@mdx-js/loader!./views/DataGridsPage/DataGridsPage.mdx';
+import FormsPage from '!babel-loader!@mdx-js/loader!./views/FormsPage/FormsPage.mdx';
 
-const toSlug = str => slugify(str, { lower: true });
+const TITLE = 'Labs';
+const HOME_ROUTE = { title: TITLE, path: '/labs' };
 
-const ListGroupItemLink = withRouter(
-  ({ history, location, match, staticContext: _, to, ...props }) => {
-    return (
-      <ListGroup.Item
-        {...props}
-        onClick={() => history.push(to)}
-        action
-        active={to === location.pathname}
-      />
-    );
-  }
-);
+const routes = [
+  { title: 'Cards', path: '/cards', component: CardsPage },
+  { title: 'Forms', path: '/forms', component: FormsPage },
+  // { title: 'DataGrids', path: '/datagrids', component: DataGridsPage },
+].map(d => ({ ...d, path: [HOME_ROUTE.path, d.path].join('') }));
 
-export default ({ match }) => {
-  return (
-    <LayoutJumpNav
-      appBar={() => <AppBar />}
-      header={() => (
-        <Fragment>
-          <PageHeader title="Labs" />
-          <Container>
-            <Breadcrumb>
-              <Breadcrumb.Item>
-                <Link to="/">Home</Link>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Labs</Breadcrumb.Item>
-            </Breadcrumb>
-          </Container>
-        </Fragment>
-      )}
-      sidebar={() => (
-        <ListGroup>
-          {ComponentPages.map(({ name, slug }) => (
-            <ListGroupItemLink
-              key={name}
-              to={`${match.url}/${slug || toSlug(name)}`}
-              action
-              style={{ cursor: 'pointer' }}
-            >
-              {name}
-            </ListGroupItemLink>
-          ))}
-        </ListGroup>
-      )}
-      render={props => (
-        <Fragment>
-          {ComponentPages.map(({ name, slug, component: Component }) => {
-            slug = slug || toSlug(name);
-            return (
-              <Route
-                key={slug}
-                path={`${match.url}/${slug}`}
-                component={Component}
-              />
-            );
-          })}
-          <Route
-            exact
-            path={match.url}
-            render={() => (
-              <div>
-                <h3>Welcome to our Labs Area!</h3>
-                Select a <tt>component</tt> from the list to the left to learn
-                more.
-              </div>
-            )}
-          />
-        </Fragment>
-      )}
-    />
-  );
+const makeBreadcrumb = location => {
+  return [
+    { path: '/', title: 'Home' },
+    HOME_ROUTE,
+    routes.find(({ path }) => path === location.pathname),
+  ].filter(Boolean);
 };
+
+export default withRouter(({ match, location }) => (
+  <Page
+    title="Labs"
+    breadcrumb={makeBreadcrumb(location)}
+    layout="subroutes"
+    main={() => (
+      <Fragment>
+        {routes.map(({ title, path, component: Component }) => (
+          <Route key={path} path={path} component={Component} />
+        ))}
+        <Route exact path={match.url} render={DefaultPage} />
+      </Fragment>
+    )}
+    sidenav={() => (
+      <ListGroup>
+        {routes.map(({ path, title }) => {
+          return (
+            <ListGroup.Item
+              action
+              key={path}
+              active={location.pathname === path}
+              tag={Link}
+              to={path}
+            >
+              {title}
+            </ListGroup.Item>
+          );
+        })}
+      </ListGroup>
+    )}
+  />
+));
