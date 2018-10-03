@@ -420,3 +420,10 @@
 .card {
   margin-bottom: map-get($map: $spacers, $key: 3);
 }
+
+.card {
+  :global(.pagination-bottom .-pagination) {
+    padding-top: map-get($spacers, 3);
+    padding-bottom: 0;
+  }
+}
