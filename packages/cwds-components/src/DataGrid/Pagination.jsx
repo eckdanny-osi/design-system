@@ -45,8 +45,8 @@ class Pagination extends PaginationRT {
           </PreviousComponent>
         </div>
         <div className="-center">
-          <span className="-pageInfo d-none d-md-inline">
-            {this.props.pageText}{' '}
+          <div className="-pageInfo d-none d-md-inline-flex align-items-center">
+            <span className="mr-1">{this.props.pageText}</span>
             {showPageJump ? (
               <div className="-pageJump">
                 <label
@@ -78,9 +78,9 @@ class Pagination extends PaginationRT {
             ) : (
               <span className="-currentPage">{page + 1}</span>
             )}{' '}
-            {this.props.ofText}{' '}
+            <span className="mx-1">{this.props.ofText}</span>
             <span className="-totalPages">{pages || 1}</span>
-          </span>
+          </div>
           {showPageSizeOptions && (
             <div className="select-wrap -pageSizeOptions">
               <Select
