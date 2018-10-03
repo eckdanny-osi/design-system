@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { Container, Row, Col } from '../../Grid';
 import Styles from '../Layout.module.scss';
 
-const Body = ({ layout, sidenav: SideNav, main: Main }) => {
+const Body = ({ layout, sidenav: SideNav = () => null, main: Main }) => {
   return (
     <div role="main" className={cn('pt-3', Styles['Body'])}>
       <Container>
