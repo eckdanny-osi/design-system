@@ -4,6 +4,7 @@ import Breadcrumb from '../Breadcrumbs';
 import { Container } from '../Grid';
 import Styles from './BreadcrumbTrail.module.scss';
 
+// @TODO: this should break!!! Only works because of lerna!
 import { NavLink } from 'react-router-dom';
 
 const BreadcrumbTrail = ({ items = [], renderItem }) => {

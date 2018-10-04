@@ -64,7 +64,11 @@ export default () => (
                 href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
                 className={Style.StatusButton}
               >
-                <img src={slackLogo} className={Style.BlockLogo} />
+                <img
+                  src={slackLogo}
+                  className={Style.BlockLogo}
+                  alt="slack logo"
+                />
                 #design-ops
               </Button>{' '}
               <Button
@@ -73,7 +77,11 @@ export default () => (
                 className={Style.StatusButton}
                 target="_blank"
               >
-                <img src={githubLogo} className={Style.BlockLogo} />
+                <img
+                  src={githubLogo}
+                  className={Style.BlockLogo}
+                  alt="github logo"
+                />
                 Issues
               </Button>{' '}
             </Card.Body>
