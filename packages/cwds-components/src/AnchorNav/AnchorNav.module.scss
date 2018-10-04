@@ -1,0 +1,91 @@
+@import '../core';
+@import '~bootstrap/scss/nav';
+
+$active-link-focus-bar-offset: 5px;
+
+.AnchorNavContainer {
+}
+
+.AnchorNav {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+  // background-color: red;
+}
+
+.AnchorNavList {
+  display: block !important;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.SubTree {
+  display: block;
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  // background-color: aqua;
+
+  &:not(.active) li {
+    display: none;
+  }
+
+  .nav-link {
+    // background-color: blueviolet;
+  }
+  a {
+    // background-color: pink;
+  }
+
+  &.active > a {
+    font-weight: 600;
+    &::before {
+      content: 'INDENT';
+      text-indent: -99999em;
+      background-color: theme-color-level('primary', -8);
+      width: 5px;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+    }
+  }
+  .nav-link &.active > a::before {
+    background-color: theme-color-level('primary', -2);
+  }
+  // &.active {
+  //   > a::before {
+  //     content: '';
+  //     width: 5px;
+  //     background-color: theme-color-level('primary', -2);
+  //     position: absolute;
+  //     top: $active-link-focus-bar-offset;
+  //     left: 0;
+  //     bottom: $active-link-focus-bar-offset;
+  //   }
+  // }
+}
+
+// .active {
+//   font-weight: bold;
+//   &::before {
+//     content: '';
+//     width: 5px;
+//     background-color: theme-color-level('primary', -2);
+//     position: absolute;
+//     top: $active-link-focus-bar-offset;
+//     left: 0;
+//     bottom: $active-link-focus-bar-offset;
+//   }
+// }
+
+// Offset anchor links to account for fixed header
+:global {
+  :target:before {
+    content: '';
+    display: block;
+    height: 132px;
+    margin: -132px 0 0;
+  }
+}
