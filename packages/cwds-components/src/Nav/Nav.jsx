@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import getDisplayName from 'recompose/getDisplayName';
 import NavUnstyled from 'reactstrap/lib/Nav';
-import styles from './Nav.module.scss';
+import Styles from './Nav.module.scss';
 
-export class Nav extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <NavUnstyled cssModule={styles} {...props} />;
-  }
-}
-
-export { NavUnstyled };
+const Nav = props => <NavUnstyled {...props} />;
+Nav.displayName = `cares(${getDisplayName(NavUnstyled)})`;
+Nav.propTypes = { ...NavUnstyled.propTypes };
+Nav.defaultProps = { ...NavUnstyled.defaultProps, cssModule: Styles };
 
 export default Nav;
