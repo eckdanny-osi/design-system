@@ -929,3 +929,9 @@ $avatar-sizes: (
   lg: 48px,
   xl: 96px
 );
+
+$banner-height: 8.5rem;
+
+:export {
+  banner-height: $banner-height;
+}

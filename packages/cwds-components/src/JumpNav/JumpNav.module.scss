@@ -1,0 +1,7 @@
+@import '../core';
+
+.JumpNav {
+  @include media-breakpoint-up(sm) {
+    position: fixed;
+  }
+}
