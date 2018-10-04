@@ -1,15 +1,15 @@
 import React from 'react';
 /* eslint-disable import/no-webpack-loader-syntax */
-import Components from '!babel-loader!mdx-loader!./modules/Components.mdx';
-import DataGridsPage from '!babel-loader!mdx-loader!./modules/DataGrid/DataGrid.mdx';
-import SimpleDataGrid from '!babel-loader!mdx-loader!./modules/DataGrid/SimpleDataGrid.mdx';
-import BasicSearchDataGrid from '!babel-loader!mdx-loader!./modules/DataGrid/BasicSearchDataGrid.mdx';
-import AdvancedSearchDataGrid from '!babel-loader!mdx-loader!./modules/DataGrid/AdvancedSearchDataGrid.mdx';
+import Components from '!babel-loader!@mdx-js/loader!./modules/Components.mdx';
+import DataGridsPage from '!babel-loader!@mdx-js/loader!./modules/DataGrid/DataGrid.mdx';
+import SimpleDataGrid from '!babel-loader!@mdx-js/loader!./modules/DataGrid/SimpleDataGrid.mdx';
+import BasicSearchDataGrid from '!babel-loader!@mdx-js/loader!./modules/DataGrid/BasicSearchDataGrid.mdx';
+import AdvancedSearchDataGrid from '!babel-loader!@mdx-js/loader!./modules/DataGrid/AdvancedSearchDataGrid.mdx';
 import Avatar from '!babel-loader!mdx-loader!./modules/Avatar/Avatar.mdx';
-import Alert from '!babel-loader!mdx-loader!./modules/Alert/Alert.mdx';
-import Badge from '!babel-loader!mdx-loader!./modules/Badge/Badge.mdx';
-import Card from '!babel-loader!mdx-loader!./modules/Card/Card.mdx';
-import CardStructure from '!babel-loader!mdx-loader!./modules/Card/CardStructure.mdx';
+import Alert from '!babel-loader!@mdx-js/loader!./modules/Alert/Alert.mdx';
+import Badge from '!babel-loader!@mdx-js/loader!./modules/Badge/Badge.mdx';
+import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx';
+import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 
 const routes = {
   title: 'Component Library',
@@ -17,7 +17,6 @@ const routes = {
   component: Components,
   children: [
     { title: 'Alert', path: '/alert', component: Alert },
-    // { title: 'AppBar', path: '/appbar' },
     { title: 'Avatar', path: '/avatar', component: Avatar },
     { title: 'Badge', path: '/badge', component: Badge },
     { title: 'Breadcrumbs', path: '/breadcrumbs' },
