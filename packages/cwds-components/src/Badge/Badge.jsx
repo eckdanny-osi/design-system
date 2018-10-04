@@ -1,23 +1,11 @@
+import React from 'react';
 import BadgeUnstyled from 'reactstrap/lib/Badge';
-import PropTypes from 'prop-types';
-import {
-  compose,
-  defaultProps,
-  hoistStatics,
-  setDisplayName,
-  setPropTypes,
-  getDisplayName,
-  wrapDisplayName,
-} from 'recompose';
+import getDisplayName from 'recompose/getDisplayName';
 import Styles from './Badge.module.scss';
-const Badge = compose(
-  setDisplayName(getDisplayName(BadgeUnstyled)),
-  setPropTypes(BadgeUnstyled.propTypes),
-  defaultProps({
-    ...BadgeUnstyled.defaultProps,
-    cssModule: Styles,
-  })
-)(BadgeUnstyled);
 
-export { Badge, BadgeUnstyled };
+const Badge = props => <BadgeUnstyled {...props} />;
+Badge.displayName = `cares(${getDisplayName(BadgeUnstyled)})`;
+Badge.propTypes = { ...BadgeUnstyled.propTypes };
+Badge.defaultProps = { ...BadgeUnstyled.defaultProps, cssModule: Styles };
+
 export default Badge;

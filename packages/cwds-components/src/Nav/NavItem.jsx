@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import getDisplayName from 'recompose/getDisplayName';
 import NavItemUnstyled from 'reactstrap/lib/NavItem';
-import styles from './Nav.module.scss';
+import Styles from './Nav.module.scss';
 
-export class NavItem extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <NavItemUnstyled cssModule={styles} {...props} />;
-  }
-}
-
-export { NavItemUnstyled };
+const NavItem = props => <NavItemUnstyled {...props} />;
+NavItem.displayName = `cares(${getDisplayName(NavItemUnstyled)})`;
+NavItem.propTypes = { ...NavItemUnstyled.propTypes };
+NavItem.defaultProps = { ...NavItemUnstyled.defaultProps, cssModule: Styles };
 
 export default NavItem;

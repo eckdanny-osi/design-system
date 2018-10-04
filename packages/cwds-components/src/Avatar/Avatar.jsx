@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Icon from '../Icon';
-import styles from './Avatar.module.scss';
+import Styles from './Avatar.module.scss';
 import { SIZES_ALL, isValidSize } from '../utils/design-system';
 
 const propTypes = {
@@ -23,10 +23,10 @@ const defaultProps = {
 
 const Avatar = ({ imgUrl, size, text, invert }) => {
   const classes = cn(
-    styles.wrapper,
-    styles[`size-${isValidSize(size, SIZES_ALL.MD)}`],
+    Styles['wrapper'],
+    Styles[`size-${isValidSize(size, SIZES_ALL.MD)}`],
     {
-      [styles.inverted]: invert,
+      [Styles.inverted]: invert,
     }
   );
   if (imgUrl) {
@@ -35,13 +35,13 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
   if (text) {
     return (
       <div className={classes}>
-        <div className={cn(styles.inner)}>{text}</div>
+        <div className={cn(Styles.inner)}>{text}</div>
       </div>
     );
   }
   return (
     <div className={classes}>
-      <Icon icon="user" className={cn(styles.inner)} />
+      <Icon icon="user" className={cn(Styles.inner)} />
     </div>
   );
 };

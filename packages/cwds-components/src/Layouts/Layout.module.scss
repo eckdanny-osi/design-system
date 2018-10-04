@@ -1,9 +1,14 @@
 @import '../core';
 
-$banner-height: 8.5rem;
-
-:export {
-  banner-height: $banner-height;
+// Anchor link fix
+:global {
+  :target:before {
+    display: block;
+    content: ' ';
+    margin-top: -($banner-height + map-get($spacers, 3));
+    padding-top: $banner-height + map-get($spacers, 3);
+    visibility: hidden;
+  }
 }
 
 .Banner {
