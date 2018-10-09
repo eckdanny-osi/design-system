@@ -6,7 +6,7 @@ import Styles from './Container.module.scss';
 const Container = props => <ContainerUnstyled {...props} />;
 Container.displayName = `cares(${getDisplayName(ContainerUnstyled)})`;
 Container.propTypes = { ...ContainerUnstyled.propTypes };
-Container.defaultPropts = {
+Container.defaultProps = {
   ...ContainerUnstyled.defaultProps,
   cssModule: Styles,
 };

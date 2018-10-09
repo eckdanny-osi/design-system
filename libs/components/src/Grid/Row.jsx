@@ -6,4 +6,6 @@ import Styles from './Row.module.scss';
 const Row = props => <RowUnstyled {...props} />;
 Row.displayName = `cares(${getDisplayName(RowUnstyled)})`;
 Row.propTypes = { ...RowUnstyled.propTypes };
-Row.defaultProps = { ...RowUnstyled.propTypes, cssModule: Styles };
+Row.defaultProps = { ...RowUnstyled.defaultProps, cssModule: Styles };
+
+export default Row;

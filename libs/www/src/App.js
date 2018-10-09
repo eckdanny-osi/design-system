@@ -10,7 +10,7 @@ import '@cwds/core/dist/styles.css';
 
 import ScrollToTop from './ScrollToTop';
 // import Status from './modules/status';
-// import Home from './modules/home';
+import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
 // import CorePage from './modules/core-styles';
 // import PrinciplesPage from './modules/design-principles';
@@ -25,8 +25,7 @@ class App extends Component {
       <Router>
         <ScrollToTop>
           <Fragment>
-            {/* <Route exact path="/" component={Home} /> */}
-            <Route exact path="/" render={() => <div>HELLO</div>} />
+            <Route exact path="/" component={Home} />
             {/* <Route path="/page-layouts" component={PageLayouts} />
               <Route path="/core-style" component={CorePage} />
               <Route path="/principles" component={PrinciplesPage} />

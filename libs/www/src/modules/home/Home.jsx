@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Page from '@test/components/dist/Layouts/Page';
-import Button from '@test/components/dist/Button';
-import Card from '@test/components/dist/Cards';
-import { Row, Col } from '@test/components/dist/Grid';
+import Page from '@cwds/components/dist/Layouts/Page';
+import Button from '@cwds/components/dist/Button';
+import Card from '@cwds/components/dist/Cards';
+import { Row, Col } from '@cwds/components/dist/Grid';
 
 export default () => (
   <Page

@@ -4,7 +4,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React from 'react';
 import BadgeUnstyled from 'reactstrap/lib/Badge';
-import getDisplayName from 'recompose/getDisplayName';
+import getDisplayName from 'react-display-name';
 import Styles from "./Badge.module.css";
 
 const Badge = props => React.createElement(BadgeUnstyled, props);

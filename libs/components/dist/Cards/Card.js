@@ -2,60 +2,59 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { compose, defaultProps, branch, setPropTypes, setDisplayName, setStatic } from 'recompose';
+import getDisplayName from 'react-display-name';
 import CardUnstyled from 'reactstrap/lib/Card';
-import { withCssModule } from '../utils';
-import Styles from "./Cards.module.css";
+import { hasCardComponentStructure, findChildCardStructure } from './card-utils';
+import Styles from "./Cards.module.css"; // @todo(dce): this shouldn't depend on DataGrid for anything
+
 import LoadingText from '../DataGrid/LoadingText';
 import Body from './CardBody';
 import Footer from './CardFooter';
 import Header from './CardHeader';
 import Section from './CardSection';
-import SectionGroup from './CardSectionGroup'; // import Subsection from './CardSubsection';
-// import SubsectionGroup from './CardSubsectionGroup';
-
+import SectionGroup from './CardSectionGroup';
 import Subtitle from './CardSubtitle';
 import Title from './CardTitle';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Row, Col } from '../Grid';
-const StyledCard = defaultProps({
+
+const StyledCard = props => React.createElement(CardUnstyled, props);
+
+StyledCard.propTypes = _objectSpread({}, CardUnstyled.propTypes);
+StyledCard.defaultProps = _objectSpread({}, CardUnstyled.defaultProps, {
   cssModule: Styles
-})(CardUnstyled);
-
-class BaseCard extends PureComponent {
-  // Attach SubComponents
-  // static Subsection = Subsection;
-  // static SectionGroup = SectionGroup;
-  // static SubsectionGroup = SubsectionGroup;
-  render() {
-    return React.createElement(StyledCard, this.props);
-  }
-
-}
-
-_defineProperty(BaseCard, "Body", Body);
-
-_defineProperty(BaseCard, "Header", Header);
-
-_defineProperty(BaseCard, "Footer", Footer);
-
-_defineProperty(BaseCard, "Subtitle", Subtitle);
-
-_defineProperty(BaseCard, "Section", Section);
-
-_defineProperty(BaseCard, "Title", Title);
-
-const Card = hoistNonReactStatics(compose(setDisplayName('Card'), setPropTypes(CardUnstyled.propTypes), defaultProps(CardUnstyled.defaultProps), branch(({
-  loading
-}) => !!loading, mkLoadingCard), branch(({
-  children
-}) => !hasCardComponentStructure(children), createWithCardStructure))(BaseCard), BaseCard);
-export { Card, CardUnstyled };
-export default Card; //
+});
+StyledCard.displayName = `cares(${getDisplayName(CardUnstyled)})`;
+StyledCard.Body = Body;
+StyledCard.Header = Header;
+StyledCard.Footer = Footer;
+StyledCard.Subtitle = Subtitle;
+StyledCard.Section = Section;
+StyledCard.Title = Title;
+export default StyledCard; // const Card = hoistNonReactStatics(
+//   compose(
+//     branch(({ loading }) => !!loading, mkLoadingCard),
+//     branch(
+//       ({ children }) => !hasCardComponentStructure(children),
+//       createWithCardStructure
+//     )
+//   )(BaseCard),
+//   BaseCard
+// );
+// const Card = ({ loading, children, ...props }) => {
+//   if (loading) {
+//     return <div>TODO</div>;
+//   }
+//   if ()
+// }
+// export { Card, CardUnstyled };
+// export default Card;
+//
 // Helpers
 //
 
@@ -82,16 +81,11 @@ function mkLoadingCard(Wrapped) {
     } = _ref2,
         props = _objectWithoutProperties(_ref2, ["children"]);
 
-    const cardHeader = React.Children.toArray(children).find(child => child.type === Card.Header);
+    const cardHeader = findChildCardStructure(children, Card.Header);
     return React.createElement(Card, null, cardHeader, React.createElement(Card.Body, {
       style: {
         overflow: 'auto',
-        position: 'relative' // height: '250px',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // paddingTop: '20px',
-
+        position: 'relative'
       }
     }, React.createElement(Row, null, React.createElement(Col, {
       lg: 6
@@ -131,10 +125,4 @@ function mkLoadingCard(Wrapped) {
       }
     })));
   };
-} // is using the Card.Body, Card.Header subcomponents?
-
-
-function hasCardComponentStructure(children) {
-  const CardStructureComponents = [Header, Body, Footer];
-  return React.Children.toArray(children).every(child => CardStructureComponents.includes(child.type));
 }
