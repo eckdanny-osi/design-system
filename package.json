@@ -1,13 +1,43 @@
 {
+  "name": "@test/design-system",
   "private": true,
+  "workspaces": {
+    "nohoist": [
+      "**/react-scripts",
+      "**/react-scripts/**",
+      "libs/www/**",
+      "**/libs/www"
+    ],
+    "packages": [
+      "libs/*"
+    ]
+  },
   "scripts": {
-    "wiki": "./bin/wiki"
+    "test": "jest --projects ./libs/*",
+    "guide": "cd libs/www && SKIP_PREFLIGHT_CHECK=true yarn react-scripts start",
+    "build:libs": "lerna run --ignore \"www\" build",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
-    "lerna": "^2.10.1",
-    "slugify": "^1.3.0"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "babel-runtime": "^6.26.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "jest": "^23.6.0",
+    "lerna": "^3.1.4",
+    "node-sass": "^4.9.3",
+    "node-sass-tilde-importer": "^1.0.2",
+    "react": "^16.4",
+    "react-dom": "^16.4",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0"
+  }
 }

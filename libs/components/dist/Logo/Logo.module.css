@@ -1,0 +1,15 @@
+.Logo {
+  color: #ffffff;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  color: #adb5bd; }
+  .Logo:hover {
+    color: #e9ecef; }
+
+.LogoSVG {
+  width: 30px;
+  height: 30px;
+  display: block; }
+
+/*# sourceMappingURL=Logo.module.css.map */

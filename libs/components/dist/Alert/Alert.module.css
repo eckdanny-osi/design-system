@@ -1,0 +1,95 @@
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: .5; }
+  .close:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+    .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+      color: #000;
+      text-decoration: none;
+      opacity: .75; }
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none; }
+
+.alert {
+  position: relative;
+  padding: 0;
+  margin-bottom: 1rem;
+  border-radius: 0.175rem;
+  overflow: hidden;
+  display: flex;
+  background-color: #ffffff; }
+
+.alert-body {
+  padding: 0.5rem;
+  border: 1px solid #dfdfdf;
+  border-left: none;
+  width: 100%;
+  border-radius: 0.175rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.alert-heading {
+  color: inherit; }
+
+.alert-link {
+  font-weight: 600; }
+
+.alert-dismissible .alert-body {
+  padding-right: 36px; }
+  .alert-dismissible .alert-body .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit; }
+
+.alert-icon-container {
+  width: 40px;
+  min-width: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.alert-primary .alert-icon-container {
+  background-color: #09798e;
+  border: 1px solid #09798e; }
+
+.alert-secondary .alert-icon-container {
+  background-color: #ffffff;
+  border: 1px solid #ffffff; }
+
+.alert-success .alert-icon-container {
+  background-color: #068347;
+  border: 1px solid #068347; }
+
+.alert-info .alert-icon-container {
+  background-color: #0d4f78;
+  border: 1px solid #0d4f78; }
+
+.alert-warning .alert-icon-container {
+  background-color: #e7740b;
+  border: 1px solid #e7740b; }
+
+.alert-danger .alert-icon-container {
+  background-color: #bb3709;
+  border: 1px solid #bb3709; }
+
+.alert-light .alert-icon-container {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa; }
+
+.alert-dark .alert-icon-container {
+  background-color: #343a40;
+  border: 1px solid #343a40; }
+
+/*# sourceMappingURL=Alert.module.css.map */
