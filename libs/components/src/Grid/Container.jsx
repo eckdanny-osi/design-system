@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { defaultProps } from 'recompose';
+import getDisplayName from 'react-display-name';
 import ContainerUnstyled from 'reactstrap/lib/Container';
-import styles from './Container.module.scss';
+import Styles from './Container.module.scss';
 
-export { ContainerUnstyled };
-export const Container = defaultProps({ cssModule: styles })(ContainerUnstyled);
+const Container = props => <ContainerUnstyled {...props} />;
+Container.displayName = `cares(${getDisplayName(ContainerUnstyled)})`;
+Container.propTypes = { ...ContainerUnstyled.propTypes };
+Container.defaultPropts = {
+  ...ContainerUnstyled.defaultProps,
+  cssModule: Styles,
+};
+
 export default Container;

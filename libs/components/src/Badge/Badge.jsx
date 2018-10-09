@@ -1,6 +1,6 @@
 import React from 'react';
 import BadgeUnstyled from 'reactstrap/lib/Badge';
-import getDisplayName from 'recompose/getDisplayName';
+import getDisplayName from 'react-display-name';
 import Styles from './Badge.module.scss';
 
 const Badge = props => <BadgeUnstyled {...props} />;

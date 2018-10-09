@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { defaultProps } from 'recompose';
+import React from 'react';
+import getDisplayName from 'react-display-name';
 import RowUnstyled from 'reactstrap/lib/Row';
-import styles from './Row.module.scss';
+import Styles from './Row.module.scss';
 
-export { RowUnstyled };
-export const Row = defaultProps({ cssModule: styles })(RowUnstyled);
-export default Row;
+const Row = props => <RowUnstyled {...props} />;
+Row.displayName = `cares(${getDisplayName(RowUnstyled)})`;
+Row.propTypes = { ...RowUnstyled.propTypes };
+Row.defaultProps = { ...RowUnstyled.propTypes, cssModule: Styles };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './Icon.module.scss';
 
-import { default as FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import check from '@fortawesome/free-solid-svg-icons/faCheck';
 import times from '@fortawesome/free-solid-svg-icons/faTimes';
 import user from '@fortawesome/free-solid-svg-icons/faUser';
