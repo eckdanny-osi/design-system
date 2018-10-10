@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import getDisplayName from 'react-display-name';
 import ContainerUnstyled from 'reactstrap/lib/Container';
 import Styles from "./Container.module.css";
-console.log(Styles);
 
 const Container = props => React.createElement(ContainerUnstyled, props);
 

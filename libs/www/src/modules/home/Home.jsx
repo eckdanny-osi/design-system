@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Page from '@cwds/components/dist/Layouts/Page';
 import Button from '@cwds/components/dist/Button';
+import Badge from '@cwds/components/dist/Badge';
 import Card from '@cwds/components/dist/Cards';
 import { Row, Col } from '@cwds/components/dist/Grid';
 
@@ -54,8 +55,12 @@ export default () => (
               <Card>
                 <Card.Header>
                   <Card.Title>
-                    UX Guidelines / Patterns{' '}
-                    <small className="text-muted">(TODO)</small>
+                    UX Guidelines / Patterns
+                    <small>
+                      <Badge color="warning" className="ml-1">
+                        TODO
+                      </Badge>
+                    </small>
                   </Card.Title>
                 </Card.Header>
                 <Card.Body>@TODO</Card.Body>
@@ -89,7 +94,12 @@ export default () => (
               <Card>
                 <Card.Header>
                   <Card.Title>
-                    About <small className="text-muted">(TODO)</small>
+                    About
+                    <small>
+                      <Badge color="warning" className="ml-1">
+                        TODO
+                      </Badge>
+                    </small>
                   </Card.Title>
                 </Card.Header>
                 <Card.Body>
