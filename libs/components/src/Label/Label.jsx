@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import LabelUnstyled from 'reactstrap/lib/Label';
+import { Label as LabelUnstyled } from 'reactstrap';
 import Styles from '../Forms//Forms.module.scss';
-import { withCssModule } from '../utils';
 
-const Label = withCssModule(LabelUnstyled, Styles);
-
-export { Label, LabelUnstyled };
+const Label = props => <LabelUnstyled {...props} />;
+Label.propTypes = { ...LabelUnstyled.propTypes };
+Label.defaultProps = { ...LabelUnstyled.defaultProps, cssModule: Styles };
 
 export default Label;

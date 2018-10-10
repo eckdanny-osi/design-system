@@ -1,8 +1,9 @@
-import TooltipUnstyled from 'reactstrap/lib/Tooltip';
+import React from 'react';
+import { Tooltip as TooltipUnstyled } from 'reactstrap';
 import Styles from './Tooltip.module.scss';
-import { withCssModule } from '../utils';
 
-const Tooltip = withCssModule(TooltipUnstyled, Styles);
+const Tooltip = props => <TooltipUnstyled {...props} />;
+Tooltip.propTypes = { ...TooltipUnstyled.propTypes };
+Tooltip.defaultProps = { ...TooltipUnstyled.defaultProps, cssModule: Styles };
 
-export { Tooltip, TooltipUnstyled };
 export default Tooltip;

@@ -1,8 +1,12 @@
-import BreadcrumbUnstyled from 'reactstrap/lib/Breadcrumb';
-import { withCssModule } from '../utils';
+import React from 'react';
+import { Breadcrumb as BreadcrumbUnstyled } from 'reactstrap';
 import Styles from './Breadcrumbs.module.scss';
 
-const Breadcrumb = withCssModule(BreadcrumbUnstyled, Styles);
+const Breadcrumb = props => <BreadcrumbUnstyled {...props} />;
+Breadcrumb.propTypes = { ...BreadcrumbUnstyled.propTypes };
+Breadcrumb.defaultProps = {
+  ...BreadcrumbUnstyled.defaultProps,
+  cssModule: Styles,
+};
 
-export { Breadcrumb, BreadcrumbUnstyled };
 export default Breadcrumb;

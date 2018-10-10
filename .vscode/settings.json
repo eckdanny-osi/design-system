@@ -7,7 +7,7 @@
     "**/.DS_Store": true,
     "project.sublime-*": true,
     "libs/www/build": true,
-    // "libs/*/dist": true,
+    "libs/*/dist": true,
     "libs/*/coverage": true,
     ".vscode": true
   },
@@ -15,8 +15,8 @@
     "**/node_modules": true,
     "**/bower_components": true,
     "/tmp": true,
-    "**/*.lock": true
-    // "libs/*/dist": true
+    "**/*.lock": true,
+    "libs/*/dist": true
   },
   "files.insertFinalNewline": true,
   "editor.formatOnSave": true,

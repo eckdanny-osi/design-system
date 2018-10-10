@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import FormUnstyled from 'reactstrap/lib/Form';
+import React from 'react';
+import { Form as FormUnstyled } from 'reactstrap';
 import Styles from './Forms.module.scss';
-import { withCssModule } from '../utils';
 
-const Form = withCssModule(FormUnstyled, Styles);
-
-export { Form, FormUnstyled };
+const Form = props => <FormUnstyled {...props} />;
+Form.propTypes = { ...FormUnstyled.propTypes };
+Form.defaultProps = { ...FormUnstyled.defaultProps, cssModule: Styles };
 
 export default Form;

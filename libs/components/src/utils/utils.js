@@ -24,29 +24,3 @@ export function withPropAdapter(
 function getProps(props, ...omits) {
   return omit(props, omits);
 }
-
-export function withCssModule(Wrapped, cssModule, ...omittedProps) {
-  class WithCssModule extends Component {
-    render() {
-      return (
-        <Wrapped
-          {...getProps(this.props, 'cssModule', ...omittedProps)}
-          cssModule={cssModule}
-        />
-      );
-    }
-  }
-  WithCssModule.propTypes = omit(
-    Wrapped.propTypes,
-    'cssModule',
-    ...omittedProps
-  );
-  WithCssModule.defaultProps = omit(
-    Wrapped.defaultProps,
-    'cssModule',
-    ...omittedProps
-  );
-  hoistNonReactStatics(WithCssModule, Wrapped);
-  WithCssModule.displayName = `withCssModule(${getDisplayName(Wrapped)})`;
-  return WithCssModule;
-}

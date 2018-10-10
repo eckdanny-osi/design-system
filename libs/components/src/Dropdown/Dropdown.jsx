@@ -1,23 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Dropdown.module.scss'
+import { Dropdown as DropdownUnstyled } from 'reactstrap';
+import Styles from './Dropdown.module.scss';
 
-const propTypes = {
-
-};
-
-const defaultProps = {
-
-};
-
-const Dropdown = props => {
-  return (
-    <div className={cn(styles.Dropdown)}>Hello World</div>
-  );
-}
-
-Dropdown.propTypes = propTypes;
-Dropdown.defaultProps = defaultProps;
+const Dropdown = props => <DropdownUnstyled {...props} />;
+Dropdown.propTypes = { ...DropdownUnstyled.propTypes };
+Dropdown.defaultProps = { ...DropdownUnstyled.defaultProps, cssModule: Styles };
 
 export default Dropdown;
