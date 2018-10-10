@@ -1,6 +1,6 @@
 import React from 'react';
 import { BreadcrumbItem as BreadcrumbItemUnstyled } from 'reactstrap';
-import Styles from './BreadcrumbItems.module.scss';
+import Styles from './Breadcrumbs.module.scss';
 
 const BreadcrumbItem = props => <BreadcrumbItemUnstyled {...props} />;
 BreadcrumbItem.propTypes = { ...BreadcrumbItemUnstyled.propTypes };

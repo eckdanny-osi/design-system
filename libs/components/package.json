@@ -22,7 +22,8 @@
     "prebuild": "rimraf dist",
     "build": "npm run build:es && npm run build:css",
     "build:es": "babel ./src --out-dir ./dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
-    "build:css": "../../scripts/build-css"
+    "build:css": "../../scripts/build-css",
+    "build:watch": "../../scripts/build-watch"
   },
   "dependencies": {
     "@cwds/core": "^0.0.0",
