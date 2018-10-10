@@ -33,7 +33,6 @@ describe('DataGrdi', () => {
           className="-striped -highlight"
         />
       );
-      console.log(wrapper);
     }).not.toThrow();
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Col, ColUnstyled } from './Col';
+import Col from './Col';
 
 describe('Col', () => {
   it('renders', () => {

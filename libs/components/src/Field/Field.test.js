@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Field from './Field';
 
-describe('Field', () => {
+describe.skip('Field', () => {
   it('exists', () => {
     expect(() => mount(<Field />)).not.toThrow();
   });

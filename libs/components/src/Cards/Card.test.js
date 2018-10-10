@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Card, { CardUnstyled } from './Card';
+import { shallow, mount } from 'enzyme';
+import Card from './Card';
 
 describe('Card', () => {
   it('renders', () => {
@@ -21,7 +21,7 @@ describe('Card', () => {
   });
 
   it('attaches style to the unstyled component', () => {
-    const wrapper = mount(<Card>Hello</Card>);
-    expect(wrapper.find(CardUnstyled).prop('cssModule')).toBeDefined();
+    const wrapper = shallow(<Card>Hello</Card>);
+    expect(wrapper.prop('cssModule')).toBeDefined();
   });
 });

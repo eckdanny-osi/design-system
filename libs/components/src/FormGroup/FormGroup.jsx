@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { withProps } from 'recompose';
-import FormGroupUnstyled from 'reactstrap/lib/FormGroup';
+import { FormGroup as FormGroupUnstyled } from 'reactstrap';
 import Styles from '../Forms/Forms.module.scss';
 
-const FormGroup = withProps({ cssModule: Styles })(FormGroupUnstyled);
-
-export { FormGroup, FormGroupUnstyled };
+const FormGroup = props => <FormGroupUnstyled {...props} />;
+FormGroup.propTypes = { ...FormGroupUnstyled.propTypes };
+FormGroup.defaultProps = {
+  ...FormGroupUnstyled.defaultProps,
+  cssModule: Styles,
+};
 
 export default FormGroup;

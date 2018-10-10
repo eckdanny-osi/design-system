@@ -1,7 +1,7 @@
 import Button from './Button';
 
 describe('Button', () => {
-    it('is awesome', () => {
-        expect(true).not.toBeFalsy();
-    });
+  it('exists', () => {
+    expect(Button).toBeDefined();
+  });
 });

@@ -8,7 +8,7 @@ describe('Icon', () => {
     expect(!!wrapper).toBe(true);
   });
 
-  it('has attr `focusable` set to false', () => {
+  it.skip('has attr `focusable` set to false', () => {
     const wrapper = mount(<Icon icon="check" />);
     expect(wrapper.find('svg').prop('focusable')).toBe('false');
   });
