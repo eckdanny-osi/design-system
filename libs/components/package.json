@@ -18,13 +18,13 @@
     "access": "public"
   },
   "scripts": {
-    "test": "jest --config ../../jest.config.js libs/components/src",
+    "test": "jest",
     "prebuild": "rimraf dist",
     "build": "npm run build:es && npm run build:css",
     "build:es": "babel ./src --out-dir ./dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
     "build:esm": "echo TODO",
     "build:css": "../../scripts/build-css",
-    "dev": "../../scripts/build-watch"
+    "build:watch": "../../scripts/build-watch"
   },
   "dependencies": {
     "@cwds/core": "^0.0.0",

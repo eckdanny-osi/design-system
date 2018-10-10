@@ -13,28 +13,20 @@ const FILES_CSS = './src/**/*.scss';
 
 const argv = require('yargs').argv;
 
-gulp.task('css', () => {
+gulp.watch('./src/**/*.scss').on('change', file => {
   gulp
-    .src('./src/**/*.scss')
+    .src(file.path, { base: 'src' })
     .pipe(sourceMaps.init())
     .pipe(sass({ importer: tildeImporter }))
     .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('js', () => {
-  gulp
-    .src('./src/**/*.@(js|jsx)')
-    .pipe(babel())
-    .pipe(gulp.dest('./dist'));
-});
-
-//
-//
-//
-
-gulp.watch('./src/**/*.scss', ['css']);
-
-// FIXME glob too greedy
-// gulp.watch('./src/**/*.{js,jsx}', ['js']);
-gulp.watch(['./src/**/*.{js,jsx}', '!*.{stories,test}.js'], ['js']);
+gulp
+  .watch(['./src/**/*.{js,jsx}', '!./src/**/*.{stories,test}.js'])
+  .on('change', file => {
+    gulp
+      .src(file.path, { base: 'src' })
+      .pipe(babel())
+      .pipe(gulp.dest('./dist'));
+  });
