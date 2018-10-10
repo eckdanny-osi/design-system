@@ -7,7 +7,7 @@
     "**/.DS_Store": true,
     "project.sublime-*": true,
     "libs/www/build": true,
-    // "libs/*/dist": true,
+    "libs/*/dist": true,
     "libs/*/coverage": true,
     ".vscode": true
   },
