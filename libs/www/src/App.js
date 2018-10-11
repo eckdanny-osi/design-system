@@ -13,7 +13,6 @@ import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
 import CoreStyles from './modules/core-styles';
 // import LabsPage from './modules/labs';
-// import ComponentBrowser from './modules/component-browser';
 import Components from './modules/components';
 
 class App extends Component {
@@ -27,7 +26,6 @@ class App extends Component {
               {/* <Route path="/page-layouts" component={PageLayouts} /> */}
               <Route path="/core-style" component={CoreStyles} />
               {/* <Route path="/labs" component={LabsPage} /> */}
-              {/* <Route path="/components-prev" component={ComponentBrowser} /> */}
               <Route path="/components" component={Components} />
               <Route path="/status" component={Status} />
               <JumpToTop />
