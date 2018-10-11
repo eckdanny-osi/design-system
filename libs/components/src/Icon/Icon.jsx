@@ -44,17 +44,13 @@ library.add(
   faArrowUp
 );
 
-// @TODO map colors
+// TODO: map colors
+// TODO: fix default color
 const Icon = props => (
-  <FontAwesomeIcon
-    className="text-primary"
-    color="#00517a"
-    focusable="false"
-    {...props}
-  />
+  <FontAwesomeIcon className="text-primary" focusable="false" {...props} />
 );
 Icon.propTypes = { ...FontAwesomeIcon.propTypes };
-Icon.defaultProps = { ...FontAwesomeIcon.defaultProps };
+Icon.defaultProps = { ...FontAwesomeIcon.defaultProps, color: '#00517a' };
 
 export default Icon;
 
