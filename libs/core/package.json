@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "//test": "echo \"Error: run tests from root\" && exit 1",
+    "test": "echo \"No tests in @cwds/core\" && exit 0",
     "build": "../../scripts/build-css"
   },
   "dependencies": {
