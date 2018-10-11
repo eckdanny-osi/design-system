@@ -12,7 +12,7 @@ import Status from './modules/status';
 import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
 import CoreStyles from './modules/core-styles';
-// import LabsPage from './modules/labs';
+import LabsPage from './modules/labs';
 import Components from './modules/components';
 
 class App extends Component {
@@ -25,7 +25,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               {/* <Route path="/page-layouts" component={PageLayouts} /> */}
               <Route path="/core-style" component={CoreStyles} />
-              {/* <Route path="/labs" component={LabsPage} /> */}
+              <Route path="/labs" component={LabsPage} />
               <Route path="/components" component={Components} />
               <Route path="/status" component={Status} />
               <JumpToTop />
