@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "guide": "cd libs/www && SKIP_PREFLIGHT_CHECK=true yarn react-scripts start",
     "build:libs": "lerna run --ignore \"www\" build",
     "storybook": "start-storybook -p 9001 -c .storybook"
