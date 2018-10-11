@@ -1,0 +1,121 @@
+import { Link } from 'react-router-dom';
+import Avatar from '@cwds/components/dist/Avatar';
+import Alert from '@cwds/components/dist/Alert';
+import Card from '@cwds/components/dist/Cards';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import DemoCard from '../../../../components/DemoCard';
+
+## Synopsis
+
+Use an `Avatar` to represent an indentifiable logical entity.
+
+<DemoCard>
+  <Avatar />
+</DemoCard>
+
+```jsx
+import Avatar from '@cwds/components/dist/Avatar';
+```
+
+## Usage Guidelines
+
+Observe the following when using `Avatar`s:
+
+* Display a default image if no custom image has been uploaded.
+* `imgUrl` takes precedence over `text` display
+* `text` takes precendence over the default icon
+
+## Examples
+
+The default `Avatar` uses an [`Icon`](icon) to represent an ambiguous identity:
+
+<div className="mb-3">
+  <Avatar />
+</div>
+
+```jsx
+<Avatar />
+```
+
+### Adjusting the size value
+
+The `size` can be specified using one of the <Link to="/core-style#Sizing">DS_SIZES</Link>:
+
+<div className="mb-3">
+  <Avatar size="xs" />{' '}
+  <Avatar size="sm" />{' '}
+  <Avatar size="md" />{' '}
+  <Avatar size="lg" />{' '}
+  <Avatar size="xl" />
+</div>
+
+```jsx
+<Avatar size="xs" />
+<Avatar size="sm" />
+<Avatar size="md" />
+<Avatar size="lg" />
+<Avatar size="xl" />
+```
+
+### Inverting
+
+Inverting is easy, yo!
+
+<div className="mb-3">
+  <Avatar invert />
+</div>
+
+```jsx
+<Avatar invert />
+```
+
+### Using Initials
+
+When user or identifiable entity does not have an `imgUrl` (path to a raster graphic), use the `text` prop instead:
+
+<div className="mb-3">
+  <Avatar text="DE" />
+</div>
+
+```jsx
+<Avatar size="lg" text="DE" />
+```
+
+### Using Images
+
+asdfasdf
+
+<div className="mb-3">
+  <Avatar
+    imgUrl="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg"
+    size="lg"
+  />
+</div>
+
+```jsx
+<Avatar
+  imgUrl="//images.com/some-face.jpg"
+  size="lg"
+/>
+```
+
+<Alert color="warning">
+  <strong>DO NOT</strong>{' '}
+  use <tt>Alert</tt> with an <tt>imgUrl</tt> for <tt>size</tt> less than <tt>lg</tt>!
+</Alert>
+
+## Props
+
+@todo
+
+## Related
+
+@todo
+
+### Patterns
+
+@todo
+
+### Components
+
+@todo
