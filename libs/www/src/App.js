@@ -23,7 +23,6 @@ class App extends Component {
           <ScrollToTop>
             <Fragment>
               <Route exact path="/" component={Home} />
-              {/* <Route path="/page-layouts" component={PageLayouts} /> */}
               <Route path="/core-style" component={CoreStyles} />
               <Route path="/labs" component={LabsPage} />
               <Route path="/components" component={Components} />
