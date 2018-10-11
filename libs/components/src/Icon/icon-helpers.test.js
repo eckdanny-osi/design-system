@@ -3,8 +3,8 @@ import { getIcon } from './icon-helpers';
 describe('getIcon', () => {
   it('returns the contextual icon', () => {
     [
-      ['success', 'checkCircle'],
-      ['info', 'infoCircle'],
+      ['success', 'check-circle'],
+      ['info', 'info-circle'],
       ['warning', 'error'],
       ['danger', 'error'],
       ['dne', 'check'],
