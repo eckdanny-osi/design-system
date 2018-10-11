@@ -1,0 +1,101 @@
+import Alert, {AlertUncontrolled} from '@cwds/components/dist/Alert';
+import Card from '@cwds/components/dist/Cards';
+import DemoCard from '../../../../components/DemoCard';
+
+## Synopsis
+
+Use an `Alert` to deliver feedback to the user in an attention-grabbing way.
+
+<DemoCard>
+  <Alert color="info">Hello, I am an alert!</Alert>
+</DemoCard>
+
+```jsx
+import Alert from '@cwds/components/dist/Alert';
+```
+
+## Usage Guidelines
+
+* Alerts should not be used for field level validation - see invalid fields for this.
+* Alerts should be placed at the top of a card or at the top of the page.
+* Error alerts should never be dismissible, so that a user always knows what they need to do to progress.
+* Use Error Alerts to denote when an error exists that prevents a user from progressing (Ex: internet offline, 500 error when submitting).
+* Warning, Info & Success alerts can be dismissible as it does not prevent a user from doing their work.
+* Use Warning Alerts for when something important occurs, but does not prevent a user from progressing (Ex: Medium risk or saftey levels)
+* Use Info Alerts for giving users a heads up about something new or a change (Ex: new feature, notification)
+* Use Success Alerts for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
+
+## Examples
+
+@todo
+
+<Alert color="success">This is a success alert — check it out!</Alert>
+<Alert color="danger">This is a danger alert — check it out!</Alert>
+<Alert color="warning">This is a warning alert — check it out!</Alert>
+<Alert color="info">This is an info alert — check it out!</Alert>
+
+## Props
+
+@todo
+
+<table style={{ width: '100%', backgroundColor: 'white', border: '1px solid #ccc' }}>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>PropType</th>
+      <th>Required</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Foo</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Bar</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Quo</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Variants
+
+@todo
+
+### Uncontrolled Alerts
+
+If you don't want want `isOpen` cluttering up your state manager.
+
+<AlertUncontrolled color="warning">
+  <p>This is a warning alert — check it out!</p>
+  <p>You may also be interested to see how the overflow conditions work here...</p>
+  <p className="mb-0">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+</AlertUncontrolled>
+
+
+## Related
+
+@todo
+
+### Pattens
+
+@todo
+
+### Components
+
+@todo

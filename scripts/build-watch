@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const sass = require('gulp-sass');
+const sourceMaps = require('gulp-sourcemaps');
+const tildeImporter = require('node-sass-tilde-importer');
+
+const WATCH_DIR = './src';
+const OUT_DIR = './dist';
+const FILES_CSS = './src/**/*.scss';
+
+const argv = require('yargs').argv;
+
+gulp.watch('./src/**/*.scss').on('change', file => {
+  gulp
+    .src(file.path, { base: 'src' })
+    .pipe(sourceMaps.init())
+    .pipe(sass({ importer: tildeImporter }))
+    .pipe(sourceMaps.write('./'))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp
+  .watch(['./src/**/*.{js,jsx}', '!./src/**/*.{stories,test}.js'])
+  .on('change', file => {
+    gulp
+      .src(file.path, { base: 'src' })
+      .pipe(babel())
+      .pipe(gulp.dest('./dist'));
+  });
