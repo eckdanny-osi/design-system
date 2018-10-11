@@ -6,7 +6,8 @@
       "**/react-scripts",
       "**/react-scripts/**",
       "libs/www/**",
-      "**/libs/www"
+      "**/libs/www",
+      "libs/rails_app/**"
     ],
     "packages": [
       "libs/*"
