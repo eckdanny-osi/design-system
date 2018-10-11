@@ -44,9 +44,11 @@ library.add(
   faArrowUp
 );
 
+// @TODO map colors
 const Icon = props => (
   <FontAwesomeIcon
-    className={cn(Styles['color-primary'])}
+    className="text-primary"
+    color="#00517a"
     focusable="false"
     {...props}
   />
@@ -71,7 +73,7 @@ export const ICON_NAMES = {
   plus: 'plus',
   minus: 'minus',
   plusCircle: 'plus-circle',
-  ellipsis: 'ellipsis',
+  ellipsis: 'ellipsisV',
   lightbulb: 'lightbulb',
   arrowUp: 'arrow-up',
 };
