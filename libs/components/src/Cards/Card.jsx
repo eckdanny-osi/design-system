@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import getDisplayName from 'react-display-name';
 import CardUnstyled from 'reactstrap/lib/Card';
@@ -7,6 +7,7 @@ import {
   findChildCardStructure,
 } from './card-utils';
 import Styles from './Cards.module.scss';
+
 // @todo(dce): this shouldn't depend on DataGrid for anything
 import LoadingText from '../DataGrid/LoadingText';
 

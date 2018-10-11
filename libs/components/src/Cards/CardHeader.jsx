@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-import CardHeaderUnstyled from 'reactstrap/lib/CardHeader';
-import styles from './Cards.module.scss';
+import React from 'react';
+import { CardHeader as CardHeaderUnstyled } from 'reactstrap';
+import Styles from './Cards.module.scss';
 
-export { CardHeaderUnstyled };
-
-export class CardHeader extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <CardHeaderUnstyled cssModule={styles} {...props} />;
-  }
-}
+const CardHeader = props => <CardHeaderUnstyled {...props} />;
+CardHeader.propTypes = { ...CardHeaderUnstyled.propTypes };
+CardHeader.defaultProps = { ...CardHeader.defaultProps, cssModule: Styles };
 
 export default CardHeader;

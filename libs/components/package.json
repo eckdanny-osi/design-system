@@ -40,6 +40,7 @@
     "reactstrap": "^6.5.0"
   },
   "devDependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4",
     "react-display-name": "^0.2.4"
   },

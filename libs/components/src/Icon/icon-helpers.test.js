@@ -5,8 +5,8 @@ describe('getIcon', () => {
     [
       ['success', 'check-circle'],
       ['info', 'info-circle'],
-      ['warning', 'error'],
-      ['danger', 'error'],
+      ['warning', 'exclamation-triangle'],
+      ['danger', 'exclamation-triangle'],
       ['dne', 'check'],
       ['', 'check'],
     ].map(([key, value]) => expect(getIcon(key)).toBe(value));
