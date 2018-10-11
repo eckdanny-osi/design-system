@@ -12,6 +12,7 @@ import Button from '!babel-loader!@mdx-js/loader!./modules/Button/Button.mdx';
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/ButtonGroup.mdx';
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx';
 import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
+import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx';
 
 const routes = {
   title: 'Component Library',
@@ -71,15 +72,7 @@ const routes = {
     { title: 'FormFeedback', path: '/formfeedback' },
     { title: 'FormGroup', path: '/formgroup' },
     { title: 'Forms', path: '/forms' },
-    {
-      title: 'Grid',
-      path: '/grid',
-      children: [
-        { title: 'Row', path: '/row' },
-        { title: 'Col', path: '/col' },
-        { title: 'Container', path: '/container' },
-      ],
-    },
+    { title: 'Grid', path: '/grid', component: Grid },
     { title: 'Icon', path: '/icon' },
     { title: 'InfoTip', path: '/infotip' },
     { title: 'Input', path: '/input' },

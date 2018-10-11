@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { ReactTableDefaults } from 'react-table/lib';
 import Pagination from './Pagination';
 import Button from '../Button';
-import Icon from '../Icon';
 
 import LoadingText from './LoadingText';
 import NoDataText from './NoDataText';

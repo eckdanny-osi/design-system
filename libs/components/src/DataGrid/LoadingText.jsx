@@ -16,7 +16,7 @@ const LoadingText = ({ className, style }) => (
     }
   >
     <Icon
-      icon="circleNotch"
+      icon="circle-notch"
       spin
       size="2x"
       className="text-info"

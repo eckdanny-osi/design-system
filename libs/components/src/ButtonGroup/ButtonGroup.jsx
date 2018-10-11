@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import ButtonGroupUnstyled from 'reactstrap/lib/ButtonGroup';
-import cn from 'classnames';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import { ButtonGroup as ButtonGroupUnstyled } from 'reactstrap';
 import Styles from './ButtonGroup.module.scss';
 
-export class ButtonGroup extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <ButtonGroupUnstyled cssModule={Styles} {...props} />;
-  }
-}
-
-export { ButtonGroupUnstyled };
+const ButtonGroup = props => <ButtonGroupUnstyled {...props} />;
+ButtonGroup.propTypes = { ...ButtonGroupUnstyled.propTypes };
+ButtonGroup.defaultProps = {
+  ...ButtonGroupUnstyled.defaultProps,
+  cssModule: Styles,
+};
 
 export default ButtonGroup;

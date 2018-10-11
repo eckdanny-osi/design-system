@@ -8,7 +8,7 @@ const PagerButtonFactory = ({ rotation }) => props => {
     <Fragment>
       <span className="sr-only">{children}</span>
       <Button {...rest} color="info" aria-label={children}>
-        <Icon aria-hidden="true" icon="chevronDown" rotation={rotation} />
+        <Icon aria-hidden="true" icon="chevron-down" rotation={rotation} />
       </Button>
     </Fragment>
   );

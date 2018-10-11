@@ -5,7 +5,11 @@ import Icon from '../Icon';
 
 const NoDataText = () => (
   <div className={cn(Styles.Overlay, 'text-danger')}>
-    <Icon icon="error" size="2x" className={cn(Styles.Icon, 'mr-2')} />
+    <Icon
+      icon="exclamation-triangle"
+      size="2x"
+      className={cn(Styles.Icon, 'mr-2')}
+    />
     No Records Found!
   </div>
 );

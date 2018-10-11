@@ -1,7 +1,7 @@
 import React from 'react';
 import AnchorLink from './AnchorLink';
 import SyntaxHighlighter from 'react-syntax-highlighter/prism';
-import { xonokai, dark } from 'react-syntax-highlighter/styles/prism';
+import { xonokai } from 'react-syntax-highlighter/styles/prism';
 
 export default {
   h1: props => <AnchorLink {...props} tag="h1" />,

@@ -1,3 +1,4 @@
+import React from 'react';
 import { InputGroup as InputGroupAddonUnstyled } from 'reactstrap';
 import Styles from '../Forms/Forms.module.scss';
 
