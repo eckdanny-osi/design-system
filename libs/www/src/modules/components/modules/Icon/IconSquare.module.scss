@@ -1,0 +1,21 @@
+@import '~@cwds/core/src/base';
+$width: 6rem;
+
+.IconSquare {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #dfdfdf;
+  background-color: white;
+  width: $width;
+  overflow: hidden;
+}
+
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  text-align: center;
+}

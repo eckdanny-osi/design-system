@@ -13,6 +13,7 @@ import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/Butt
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx';
 import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx';
+import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx';
 
 const routes = {
   title: 'Component Library',
@@ -73,7 +74,7 @@ const routes = {
     { title: 'FormGroup', path: '/formgroup' },
     { title: 'Forms', path: '/forms' },
     { title: 'Grid', path: '/grid', component: Grid },
-    { title: 'Icon', path: '/icon' },
+    { title: 'Icon', path: '/icon', component: Icon },
     { title: 'InfoTip', path: '/infotip' },
     { title: 'Input', path: '/input' },
     { title: 'InputGroup', path: '/inputgroup' },
