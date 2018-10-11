@@ -8,7 +8,7 @@ import JumpToTop from '@cwds/components/dist/JumpToTop';
 import componentMap from './components/MDXComponentProviderMappings';
 
 import ScrollToTop from './ScrollToTop';
-// import Status from './modules/status';
+import Status from './modules/status';
 import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
 import CoreStyles from './modules/core-styles';
@@ -31,7 +31,7 @@ class App extends Component {
               {/* <Route path="/labs" component={LabsPage} /> */}
               {/* <Route path="/components-prev" component={ComponentBrowser} /> */}
               <Route path="/components" component={Components} />
-              {/* <Route path="/status" component={Status} /> */}
+              <Route path="/status" component={Status} />
               <JumpToTop />
             </Fragment>
           </ScrollToTop>

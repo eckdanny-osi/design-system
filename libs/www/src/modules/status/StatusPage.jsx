@@ -5,8 +5,17 @@ import Page from '@cwds/components/dist/Layouts/Page';
 import Button from '@cwds/components/dist/Button';
 import slackLogo from './Slack_Mark_White_Web.png';
 import githubLogo from './GitHub-Mark-Light-64px.png';
-import status from './status';
+// import status from './status';
 import Style from './StatusButton.module.css';
+
+const status = {
+  lerna: [],
+  pkg: {
+    bugs: {
+      url: '',
+    },
+  },
+};
 
 export default () => (
   <Page
