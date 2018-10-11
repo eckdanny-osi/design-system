@@ -12,7 +12,6 @@ import Status from './modules/status';
 import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
 import CoreStyles from './modules/core-styles';
-// import PrinciplesPage from './modules/design-principles';
 // import LabsPage from './modules/labs';
 // import ComponentBrowser from './modules/component-browser';
 import Components from './modules/components';
@@ -27,7 +26,6 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               {/* <Route path="/page-layouts" component={PageLayouts} /> */}
               <Route path="/core-style" component={CoreStyles} />
-              {/* <Route path="/principles" component={PrinciplesPage} /> */}
               {/* <Route path="/labs" component={LabsPage} /> */}
               {/* <Route path="/components-prev" component={ComponentBrowser} /> */}
               <Route path="/components" component={Components} />
