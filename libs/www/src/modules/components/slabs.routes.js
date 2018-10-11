@@ -30,23 +30,23 @@ const routes = {
       title: 'Cards',
       path: '/cards',
       component: Card,
-      children: [
-        {
-          title: 'Structure',
-          path: '/structure',
-          component: CardStructure,
-        },
-        {
-          title: 'Loading State',
-          path: '/loading',
-          component: () => <div>TODO</div>,
-        },
-        {
-          title: 'MultiState',
-          path: '/multistate',
-          component: () => <div>TODO</div>,
-        },
-      ],
+      // children: [
+      //   {
+      //     title: 'Structure',
+      //     path: '/structure',
+      //     component: CardStructure,
+      //   },
+      //   {
+      //     title: 'Loading State',
+      //     path: '/loading',
+      //     component: () => <div>TODO</div>,
+      //   },
+      //   {
+      //     title: 'MultiState',
+      //     path: '/multistate',
+      //     component: () => <div>TODO</div>,
+      //   },
+      // ],
     },
     { title: 'CheckboxBank', path: '/checkboxbank' },
     { title: 'Collapse', path: '/collapse' },

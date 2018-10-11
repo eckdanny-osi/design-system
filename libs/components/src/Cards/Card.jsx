@@ -70,7 +70,8 @@ const LoadingCard = ({ children, ...props }) => (
 );
 
 const Card = props => {
-  if (props.loading) return <LoadingCard {...passProps} />;
+  const { loading, ...passProps } = props;
+  if (loading) return <LoadingCard {...passProps} />;
   if (!hasCardComponentStructure(props.children)) {
     const { children, ...passProps } = props;
     return (
