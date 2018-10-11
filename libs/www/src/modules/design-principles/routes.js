@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import Card from '@cwds/components/lib/Cards';
+import Card from '@cwds/components/dist/Cards';
 import Styles from './DesignPrinciplesPage.module.css';
 import wikiRoutes from './wiki/wiki-routes';
 

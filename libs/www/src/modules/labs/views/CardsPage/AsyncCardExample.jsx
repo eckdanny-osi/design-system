@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import Card from '@cwds/components/lib/Cards';
-import MultiCard from '@cwds/components/lib/Cards/CardMultiContext';
-import Button from '@cwds/components/lib/Button';
+import Card from '@cwds/components/dist/Cards';
+import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
+import Button from '@cwds/components/dist/Button';
 
 class AsyncCardExample extends React.Component {
   state = {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { Row, Col } from '@cwds/components/lib/Grid';
-import Card from '@cwds/components/lib/Cards';
-import FormFeedback from '@cwds/components/lib/FormFeedback';
-import FormGroup from '@cwds/components/lib/FormGroup';
-import Label from '@cwds/components/lib/Label';
-import Select from '@cwds/components/lib/Select';
-import CheckboxBank from '@cwds/components/lib/CheckboxBank';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import Card from '@cwds/components/dist/Cards';
+import FormFeedback from '@cwds/components/dist/FormFeedback';
+import FormGroup from '@cwds/components/dist/FormGroup';
+import Label from '@cwds/components/dist/Label';
+import Select from '@cwds/components/dist/Select';
+import CheckboxBank from '@cwds/components/dist/CheckboxBank';
 
 export default () => (
   <Formik

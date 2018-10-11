@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import { Container, Row, Col } from '@cwds/components/lib/Grid';
+import AppBar from '@cwds/components/dist/AppBar';
+import PageHeader from '@cwds/components/dist/PageHeader';
+import { Container, Row, Col } from '@cwds/components/dist/Grid';
 
 export default () => {
   return <div>Hello World</div>;

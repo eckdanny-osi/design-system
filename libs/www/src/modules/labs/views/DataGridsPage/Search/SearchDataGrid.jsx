@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import Card from '@cwds/components/lib/Cards';
-import Button from '@cwds/components/lib/Button';
-import DataGrid from '@cwds/components/lib/DataGrid';
-import Input from '@cwds/components/lib/Input';
-import InputGroup from '@cwds/components/lib/InputGroup';
-import InputGroupAddon from '@cwds/components/lib/InputGroupAddon';
-import Icon from '@cwds/components/lib/Icon';
+import Card from '@cwds/components/dist/Cards';
+import Button from '@cwds/components/dist/Button';
+import DataGrid from '@cwds/components/dist/DataGrid';
+import Input from '@cwds/components/dist/Input';
+import InputGroup from '@cwds/components/dist/InputGroup';
+import InputGroupAddon from '@cwds/components/dist/InputGroupAddon';
+import Icon from '@cwds/components/dist/Icon';
 import data from '../data/people.json';
 import { toCapitalCase } from '../utils';
 

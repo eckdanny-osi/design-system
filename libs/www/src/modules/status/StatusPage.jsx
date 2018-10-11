@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row, Col } from '@cwds/components/lib/Grid';
-import Card from '@cwds/components/lib/Cards';
-import Page from '@cwds/components/lib/Layouts/Page';
-import Button from '@cwds/components/lib/Button';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import Card from '@cwds/components/dist/Cards';
+import Page from '@cwds/components/dist/Layouts/Page';
+import Button from '@cwds/components/dist/Button';
 import slackLogo from './Slack_Mark_White_Web.png';
 import githubLogo from './GitHub-Mark-Light-64px.png';
 import status from './status';

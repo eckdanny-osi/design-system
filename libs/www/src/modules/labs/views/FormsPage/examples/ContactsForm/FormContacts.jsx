@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
 import { Formik } from 'formik';
-import Button from '@cwds/components/lib/Button';
-import Card from '@cwds/components/lib/Cards';
-import Collapse from '@cwds/components/lib/Collapse';
-import FormGroup from '@cwds/components/lib/FormGroup';
-import { Row, Col } from '@cwds/components/lib/Grid';
-import Input from '@cwds/components/lib/Input';
-import Label from '@cwds/components/lib/Label';
-import Select from '@cwds/components/lib/Select';
-import Icon from '@cwds/components/lib/Icon';
-import FormFeedback from '@cwds/components/lib/FormFeedback';
-import RadioGroup from '@cwds/components/lib/RadioGroup';
+import Button from '@cwds/components/dist/Button';
+import Card from '@cwds/components/dist/Cards';
+import Collapse from '@cwds/components/dist/Collapse';
+import FormGroup from '@cwds/components/dist/FormGroup';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import Input from '@cwds/components/dist/Input';
+import Label from '@cwds/components/dist/Label';
+import Select from '@cwds/components/dist/Select';
+import Icon from '@cwds/components/dist/Icon';
+import FormFeedback from '@cwds/components/dist/FormFeedback';
+import RadioGroup from '@cwds/components/dist/RadioGroup';
 import {
   CLASSIFICATION_OPTIONS,
   CONCTACT_METHOD_OPTIONS,

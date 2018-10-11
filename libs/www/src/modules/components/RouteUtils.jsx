@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route, Link, withRouter } from 'react-router-dom';
-import ListGroup from '@cwds/components/lib/ListGroups';
-import Page from '@cwds/components/lib/Layouts/Page';
+import ListGroup from '@cwds/components/dist/ListGroups';
+import Page from '@cwds/components/dist/Layouts/Page';
 
 // Demo some CTA usage
 import SearchWizard from './SearchWizard';

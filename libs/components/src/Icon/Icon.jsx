@@ -64,7 +64,7 @@ export const ICON_NAMES = {
   circleNotch: 'circle-notch',
   checkCircle: 'check-circle',
   infoCircle: 'info-circle',
-  error: 'error',
+  error: 'exclamation-triangle',
   user: 'user',
   search: 'search',
   chevronDown: 'chevron-down',

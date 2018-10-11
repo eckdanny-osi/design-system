@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Row, Col } from '@cwds/components/lib/Grid';
-import Card from '@cwds/components/lib/Cards';
-import DataGrid from '@cwds/components/lib/DataGrid';
-import CheckboxBank from '@cwds/components/lib/CheckboxBank';
-import Input from '@cwds/components/lib/Input';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import Card from '@cwds/components/dist/Cards';
+import DataGrid from '@cwds/components/dist/DataGrid';
+import CheckboxBank from '@cwds/components/dist/CheckboxBank';
+import Input from '@cwds/components/dist/Input';
 import PeopleService from './mockService';
-import Collapse from '@cwds/components/lib/Collapse';
-import Button from '@cwds/components/lib/Button';
-import Toggle from '@cwds/components/lib/Toggle';
+import Collapse from '@cwds/components/dist/Collapse';
+import Button from '@cwds/components/dist/Button';
+import Toggle from '@cwds/components/dist/Toggle';
 
 import { toCapitalCase } from '../utils';
 

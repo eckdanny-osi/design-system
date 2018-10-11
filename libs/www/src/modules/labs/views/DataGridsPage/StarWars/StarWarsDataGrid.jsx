@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DataGrid from '@cwds/components/lib/DataGrid';
-import Card from '@cwds/components/lib/Cards';
+import DataGrid from '@cwds/components/dist/DataGrid';
+import Card from '@cwds/components/dist/Cards';
 import PeopleService from './people-service';
 
 const columnConfig = [

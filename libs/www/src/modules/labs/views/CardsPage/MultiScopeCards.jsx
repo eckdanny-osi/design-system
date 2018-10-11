@@ -1,14 +1,14 @@
 import React, { Fragment, Component } from 'react';
-import Card from '@cwds/components/lib/Cards';
-import MultiCard from '@cwds/components/lib/Cards/CardMultiContext';
-import Button from '@cwds/components/lib/Button';
-import { Row, Col } from '@cwds/components/lib/Grid';
-import FormGroup from '@cwds/components/lib/FormGroup';
-import Label from '@cwds/components/lib/Label';
-import Input from '@cwds/components/lib/Input';
-import Icon from '@cwds/components/lib/Icon';
+import Card from '@cwds/components/dist/Cards';
+import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
+import Button from '@cwds/components/dist/Button';
+import { Row, Col } from '@cwds/components/dist/Grid';
+import FormGroup from '@cwds/components/dist/FormGroup';
+import Label from '@cwds/components/dist/Label';
+import Input from '@cwds/components/dist/Input';
+import Icon from '@cwds/components/dist/Icon';
 import { Formik } from 'formik';
-import Alert from '@cwds/components/lib/Alert';
+import Alert from '@cwds/components/dist/Alert';
 
 class Example extends Component {
   state = {

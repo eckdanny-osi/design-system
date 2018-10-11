@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Page from '@cwds/components/lib/Layouts/Page';
-import AnchorNav from '@cwds/components/lib/AnchorNav';
-import AppBar from '@cwds/components/lib/AppBar';
-import { Container } from '@cwds/components/lib/Grid';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
+import Page from '@cwds/components/dist/Layouts/Page';
+import AnchorNav from '@cwds/components/dist/AnchorNav';
+import AppBar from '@cwds/components/dist/AppBar';
+import { Container } from '@cwds/components/dist/Grid';
+import PageHeader from '@cwds/components/dist/PageHeader';
+import Breadcrumb from '@cwds/components/dist/Breadcrumbs';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import { Container } from '@cwds/components/lib/Grid';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
-import AnchorNav from '@cwds/components/lib/AnchorNav';
+import AppBar from '@cwds/components/dist/AppBar';
+import PageHeader from '@cwds/components/dist/PageHeader';
+import { Container } from '@cwds/components/dist/Grid';
+import Breadcrumb from '@cwds/components/dist/Breadcrumbs';
+import AnchorNav from '@cwds/components/dist/AnchorNav';
 
 import routes from './routes';
 

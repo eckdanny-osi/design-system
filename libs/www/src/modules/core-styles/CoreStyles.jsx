@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import AppBar from '@cwds/components/lib/AppBar';
-import PageHeader from '@cwds/components/lib/PageHeader';
-import Breadcrumb from '@cwds/components/lib/Breadcrumbs';
-import Card from '@cwds/components/lib/Cards';
-import { Container } from '@cwds/components/lib/Grid';
+import AppBar from '@cwds/components/dist/AppBar';
+import PageHeader from '@cwds/components/dist/PageHeader';
+import Breadcrumb from '@cwds/components/dist/Breadcrumbs';
+import Card from '@cwds/components/dist/Cards';
+import { Container } from '@cwds/components/dist/Grid';
 
 export default () => {
   return (

@@ -15,7 +15,7 @@ import CoreStyles from './modules/core-styles';
 // import PrinciplesPage from './modules/design-principles';
 // import LabsPage from './modules/labs';
 // import ComponentBrowser from './modules/component-browser';
-// import Components from './modules/components';
+import Components from './modules/components';
 
 class App extends Component {
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
               {/* <Route path="/principles" component={PrinciplesPage} /> */}
               {/* <Route path="/labs" component={LabsPage} /> */}
               {/* <Route path="/components-prev" component={ComponentBrowser} /> */}
-              {/* <Route path="/components" component={Components} /> */}
+              <Route path="/components" component={Components} />
               {/* <Route path="/status" component={Status} /> */}
               <JumpToTop />
             </Fragment>

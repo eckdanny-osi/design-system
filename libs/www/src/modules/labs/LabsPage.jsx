@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route, withRouter, Link } from 'react-router-dom';
-import ListGroup from '@cwds/components/lib/ListGroups';
-import Page from '@cwds/components/lib/Layouts/Page';
+import ListGroup from '@cwds/components/dist/ListGroups';
+import Page from '@cwds/components/dist/Layouts/Page';
 /* eslint-disable import/no-webpack-loader-syntax */
 import DefaultPage from '!babel-loader!@mdx-js/loader!./views/DefaultView.mdx';
 import CardsPage from '!babel-loader!@mdx-js/loader!./views/CardsPage/Cards.mdx';
