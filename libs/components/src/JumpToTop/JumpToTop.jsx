@@ -17,7 +17,7 @@ class JumpToTop extends Component {
         className={cn(Styles.JumpToTop, 'p-2')}
         onClick={this.scrollToTop}
       >
-        <Icon icon="arrowUp" className={cn(Styles.Icon)} />
+        <Icon icon="arrow-up" className={cn(Styles.Icon)} />
       </button>
     );
   }
