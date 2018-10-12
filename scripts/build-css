@@ -6,11 +6,10 @@ const sourceMaps = require('gulp-sourcemaps');
 const tildeImporter = require('node-sass-tilde-importer');
 
 const SRC_GLOB = argv.src || './src/**/*.scss';
-console.log(SRC_GLOB);
 const DST_GLOB = argv['out-dir'] || './dist';
 
 gulp
-  .src(SRC_GLOB)
+  .src(['src/**/*.scss', 'scss/styles.scss'])
   .pipe(sourceMaps.init())
   .pipe(sass({ importer: tildeImporter }))
   .pipe(sourceMaps.write('./'))
