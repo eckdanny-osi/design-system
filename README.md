@@ -9,7 +9,7 @@ Monorepo for CWDS design system
 
 ### Consuming the Component Library
 
-_STOP!_ If you're just looking to start using `@cwds/components`, install from npm:
+🛑 If want the component library, install from [npm](https://www.npmjs.com/package/@cwds/components):
 
 ```sh
 yarn add @cwds/components@alpha
@@ -19,7 +19,7 @@ Start using components in your application:
 
 ```jsx
 import React from 'react';
-import Button from '@cwds/components/lib/Button';
+import Button from '@cwds/components/dist/Button';
 
 const App = () => (
   <div>
@@ -37,46 +37,41 @@ git clone https://github.com/ca-cwds/design-system.git && cd $_
 lerna bootstrap
 ```
 
-Run the component library build process:
+Run the component library streaming build process:
 
 ```sh
-cd packages/cwds-components
-yarn build:watch
+lerna run build:watch
 ```
 
 To run the _Guide Site_:
 
 ```sh
-cd packages/design.cwds.io
-yarn start
+yarn guide
 ```
 
 To run _Storybook_:
 
 ```sh
-cd packages/cwds-components
 yarn storybook
 ```
 
 To run the _rails app_:
 
+> Its helpful to have two processes running. We suggest using multiple terminals or a terminal multiplexer.
+
 first start webpack:
 
 ```sh
-cd rails_app
+cd libs/rails_app
 ./bin/webpack-dev-server
 ```
 
 then start the rails server:
 
 ```sh
-cd rails_app
-rails s
+cd libs/rails_app
+./bin/rails s
 ```
-
-### TODOs
-
-- [ ] globalize the functional css
 
 ### Development
 
@@ -98,6 +93,6 @@ Both work. My pref is to use the guide site.
 
 **Additionally** (since we're all about fast feedback loops) you can just use [`storybook`](https://storybook.js.org/). From the `cwds-components` package directory, run `yarn storybook`.
 
-# Questions
+### Questions
 
-If you have any questions regarding the contents of this repository, please email the Office of Systems Integration at FOSS@osi.ca.gov.
+If you have any questions regarding the contents of this repository, please email the Office of Systems Integration at <FOSS@osi.ca.gov>.
