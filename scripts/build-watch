@@ -19,7 +19,8 @@ gulp.watch('./src/**/*.scss').on('change', file => {
     .pipe(sourceMaps.init())
     .pipe(sass({ importer: tildeImporter }))
     .pipe(sourceMaps.write('./'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist'))
+    .on('end', () => console.log('processed scss file'));
 });
 
 gulp
@@ -27,6 +28,8 @@ gulp
   .on('change', file => {
     gulp
       .src(file.path, { base: 'src' })
+      .on('change', () => {})
       .pipe(babel())
-      .pipe(gulp.dest('./dist'));
+      .pipe(gulp.dest('./dist'))
+      .on('end', () => console.log('processed js/jsx file'));
   });
