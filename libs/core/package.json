@@ -11,7 +11,8 @@
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "../../scripts/build-css --src=scss/styles.scss"
+    "build": "node ./fix-build.js",
+    "//build": "../../scripts/build-css"
   },
   "directories": {
     "lib": "dist",

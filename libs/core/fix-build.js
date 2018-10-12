@@ -1,15 +1,10 @@
-#!/usr/bin/env node
-// const argv = require('yargs').argv;
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
 const tildeImporter = require('node-sass-tilde-importer');
 
-// const SRC_GLOB = argv.src || './src/**/*.scss';
-// const DST_GLOB = argv['out-dir'] || './dist';
-
 gulp
-  .src(['src/**/*.scss', 'scss/styles.scss'])
+  .src('scss/styles.scss')
   .pipe(sourceMaps.init())
   .pipe(sass({ importer: tildeImporter }))
   .pipe(sourceMaps.write('./'))
