@@ -1,11 +1,11 @@
-// // Variables
-// //
-// // Variables should follow the `$component-state-property-size` formula for
-// // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-// //
-// // Color system
-// //
+//
+// Color system
+//
 
 // // stylelint-disable
 $white: #fff !default;
@@ -173,9 +173,9 @@ $body-bg: $ray;
 $body-color: $shark;
 // $body-color: $gray-900 !default;
 
-// // Links
-// //
-// // Style anchor elements.
+// Links
+//
+// Style anchor elements.
 
 $link-color: theme-color('primary') !default;
 $link-decoration: none !default;
@@ -188,18 +188,24 @@ $link-hover-decoration: none !default;
 
 $paragraph-margin-bottom: 1rem !default;
 
-// // Grid breakpoints
-// //
-// // Define the minimum dimensions at which your layout will change,
-// // adapting to different screen sizes, for use in media queries.
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoint-xs: 0;
+$grid-breakpoint-sm: 576px;
+$grid-breakpoint-md: 768px;
+$grid-breakpoint-lg: 992px;
+$grid-breakpoint-xl: 1200px;
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
+  xs: $grid-breakpoint-xs,
+  sm: $grid-breakpoint-sm,
+  md: $grid-breakpoint-md,
+  lg: $grid-breakpoint-lg,
+  xl: $grid-breakpoint-xl,
+);
 
 // @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 // @include _assert-starts-at-zero($grid-breakpoints);

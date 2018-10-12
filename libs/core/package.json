@@ -8,6 +8,11 @@
   "main": "dist/core.js",
   "module": "dist/core.module.js",
   "style": "dist/styles.css",
+  "scripts": {
+    "test": "echo \"No tests in @cwds/core\" && exit 0",
+    "prebuild": "rimraf dist",
+    "build": "../../scripts/build-css --src=scss/styles.scss"
+  },
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -17,10 +22,6 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "test": "echo \"No tests in @cwds/core\" && exit 0",
-    "build": "../../scripts/build-css"
   },
   "dependencies": {
     "bootstrap": "^4.1.3"
