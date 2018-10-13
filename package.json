@@ -18,7 +18,7 @@
     "test:all": "CI=true lerna run --parallel test ",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "guide": "cd libs/www && SKIP_PREFLIGHT_CHECK=true yarn react-scripts start",
-    "build:libs": "lerna run --ignore \"www\" build",
+    "build:libs": "lerna run --scope @cwds/* build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "prebuild": "lerna bootstrap",
     "build": "yarn build:libs && lerna run --scope www --stream build"
