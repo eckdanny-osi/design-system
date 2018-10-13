@@ -22,7 +22,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "//prebuild_netlify-debug": "yarn -v && exit 1",
     "//prebuild_super-safe": "lerna clean -y && yarn cache clean && yarn && lerna bootstrap --concurrency 1",
-    "prebuild": "lerna bootstrap --concurrency 1",
+    "prebuild": "yarn -v && lerna bootstrap --concurrency 1",
     "build": "yarn build:libs && lerna run --scope www --stream build"
   },
   "devDependencies": {
