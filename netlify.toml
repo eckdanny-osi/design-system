@@ -7,7 +7,7 @@
   publish = "libs/www/build"
 
   # Default build command.
-  command = "npm i yarn && yarn && yarn build"
+  command = "npm i -gs yarn && yarn build"
 
 
 # Redirects and headers are GLOBAL for all builds – they do not get scoped to

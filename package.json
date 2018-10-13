@@ -20,9 +20,7 @@
     "guide": "cd libs/www && SKIP_PREFLIGHT_CHECK=true yarn react-scripts start",
     "build:libs": "lerna run --ignore \"www\" build",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "//prebuild_netlify-debug": "yarn -v && exit 1",
-    "//prebuild_super-safe": "lerna clean -y && yarn cache clean && yarn && lerna bootstrap --concurrency 1",
-    "prebuild": "yarn -v && lerna bootstrap --concurrency 1",
+    "prebuild": "lerna bootstrap",
     "build": "yarn build:libs && lerna run --scope www --stream build"
   },
   "devDependencies": {
