@@ -1,32 +1,52 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs');
+const path = require('path');
+const argv = require('yargs').argv;
 const gulp = require('gulp');
+const through = require('through2');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
 const tildeImporter = require('node-sass-tilde-importer');
 
-const WATCH_DIR = './src';
-const OUT_DIR = './dist';
-const FILES_CSS = './src/**/*.scss';
+// Parse args
 
-const argv = require('yargs').argv;
+const SCSS_GLOB = argv.scss || './src/**/*.scss';
+const JS_GLOB = argv.js || [
+  './src/**/*.{js,jsx}',
+  '!./src/**/*.{stories,test}.js',
+];
+const BASE = argv.base || 'src';
+const OUT_DIR = argv['out-dir'] || './dist';
 
-gulp.watch('./src/**/*.scss').on('change', file => {
+// Simple logger
+
+const cwd = process.cwd();
+const getRelative = fh => path.relative(cwd, fh);
+const log = srcFile =>
+  through.obj((file, enc, cb) => {
+    if (!/\.map$/.test(file.path)) {
+      console.log(`${getRelative(srcFile.path)} -> ${getRelative(file.path)}`);
+    }
+    return cb(null, file);
+  });
+
+// Register watchers
+
+gulp.watch(SCSS_GLOB).on('change', file => {
   gulp
-    .src(file.path, { base: 'src' })
+    .src(file.path, { base: BASE })
     .pipe(sourceMaps.init())
     .pipe(sass({ importer: tildeImporter }))
     .pipe(sourceMaps.write('./'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest(OUT_DIR))
+    .pipe(log(file));
 });
 
-gulp
-  .watch(['./src/**/*.{js,jsx}', '!./src/**/*.{stories,test}.js'])
-  .on('change', file => {
-    gulp
-      .src(file.path, { base: 'src' })
-      .pipe(babel())
-      .pipe(gulp.dest('./dist'));
-  });
+gulp.watch(JS_GLOB).on('change', file => {
+  gulp
+    .src(file.path, { base: BASE })
+    .pipe(babel())
+    .pipe(gulp.dest(OUT_DIR))
+    .pipe(log(file));
+});

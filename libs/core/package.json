@@ -11,7 +11,8 @@
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "../../scripts/build-css --src=scss/styles.scss"
+    "build": "../../scripts/build-css --src=./scss/**/styles.scss",
+    "build:watch": "../../scripts/build-watch --scss=\"./scss/styles.scss\" --base 'scss'"
   },
   "directories": {
     "lib": "dist",
