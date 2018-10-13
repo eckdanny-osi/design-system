@@ -1,4 +1,4 @@
-## CWDS Design System
+# CWDS Design System
 
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
@@ -7,9 +7,11 @@
 
 Monorepo for CWDS design system
 
-### Consuming the Component Library
+## Consuming the Component Library
 
-🛑 If want the component library, install from [npm](https://www.npmjs.com/package/@cwds/components):
+🛑 **If want the component library** 🛑
+
+Install from [npm](https://www.npmjs.com/package/@cwds/components):
 
 ```sh
 yarn add @cwds/components@alpha
@@ -28,7 +30,7 @@ const App = () => (
 );
 ```
 
-### Getting Started
+## Getting Started
 
 Clone the repository
 
@@ -73,7 +75,7 @@ cd libs/rails_app
 ./bin/rails s
 ```
 
-### Development
+## Development
 
 I find [`tmux`](https://linux.die.net/man/1/tmux) very handy here because we're often dealing with _many_ processes in this monorepo. The big benefit of a monorepo set up is to have dependencies _linked_ so that you're always seeing early integration feedback when working on the CL. This project uses [`lerna`](https://github.com/lerna/lerna) and [`yarn workspaces`](https://yarnpkg.com/lang/en/docs/workspaces/)
 
@@ -93,6 +95,6 @@ Both work. My pref is to use the guide site.
 
 **Additionally** (since we're all about fast feedback loops) you can just use [`storybook`](https://storybook.js.org/). From the `cwds-components` package directory, run `yarn storybook`.
 
-### Questions
+## Questions
 
 If you have any questions regarding the contents of this repository, please email the Office of Systems Integration at <FOSS@osi.ca.gov>.
