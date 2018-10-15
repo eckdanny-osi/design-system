@@ -1,5 +1,5 @@
 {
-  "name": "@test/design-system",
+  "name": "design-system",
   "private": true,
   "scripts": {
     "test": "jest",
