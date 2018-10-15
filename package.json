@@ -16,8 +16,9 @@
     "nohoist": [
       "**/react-scripts",
       "**/react-scripts/**",
-      "www/**",
-      "rails_app/**"
+      "libs/www/**",
+      "**/libs/www",
+      "libs/rails_app/**"
     ],
     "packages": [
       "libs/*"
