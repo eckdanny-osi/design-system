@@ -7,8 +7,9 @@
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "start": "cd libs/www && SKIP_PREFLIGHT_CHECK=true yarn react-scripts start",
     "prebuild": "lerna bootstrap",
-    "build": "yarn build:libs && lerna run --scope www --stream build",
+    "build:www": "SKIP_PREFLIGHT_CHECK=true lerna run --stream --scope www build",
     "build:libs": "lerna run --scope @cwds/* build",
+    "build": "yarn build:libs && yarn build:www",
     "dev": "lerna run --scope @cwds/* --parallel build:watch",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
