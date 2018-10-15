@@ -99,5 +99,5 @@ function Alert(props) {
 Alert.propTypes = propTypes;
 Alert.defaultProps = defaultProps;
 
-export Alert;
+export { Alert };
 export default Alert;
