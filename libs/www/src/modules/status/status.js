@@ -8,11 +8,14 @@ const status = preval`
   const rootDir = execSync('git rev-parse --show-toplevel', {
     encoding: 'utf8',
   }).trim();
+
+  // Main
   const mainPkg = JSON.parse(
     readFileSync(resolve(rootDir, 'package.json'), { encoding: 'utf8' })
   );
   mainPkg.name = 'main';
-  // lerna packages
+
+  // Packages
   const packages = JSON.parse(
     execSync('npx lerna ls --json', {
       encoding: 'utf8',
@@ -26,25 +29,28 @@ const status = preval`
       ),
     };
   });
+
   // Git
   const git = execSync('git rev-parse --abbrev-ref HEAD', {
     encoding: 'utf8',
   }).trim();
 
+  // Build
+  const build = {
+    repositoryUrl: process.env.REPOSITORY_URL || '',
+    branch: process.env.BRANCH || '',
+    pullRequest: process.env.PULL_REQUEST || '',
+    head: process.env.HEAD || git,
+    commitRef: process.env.COMMIT_REF || '',
+    context: process.env.CONTEXT || 'local',
+    reviewId: process.env.REVIEW_ID || '',
+    date: new Date()
+  };
+
   const out = {
     main: mainPkg,
     packages,
-    git,
-    buildDate: JSON.stringify(new Date()),
-    build: {
-      REPOSITORY_URL: process.env.REPOSITORY_URL || '',
-      BRANCH: process.env.BRANCH || '',
-      PULL_REQUEST: process.env.PULL_REQUEST || '',
-      HEAD: process.env.HEAD || '',
-      COMMIT_REF: process.env.COMMIT_REF || '',
-      CONTEXT: process.env.CONTEXT || '',
-      REVIEW_ID: process.env.REVIEW_ID || '',
-    },
+    build,
     version: 'latest',
   };
   module.exports = out;
