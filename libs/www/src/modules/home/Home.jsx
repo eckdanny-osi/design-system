@@ -5,7 +5,6 @@ import Button from '@cwds/components/dist/Button';
 import Badge from '@cwds/components/dist/Badge';
 import Card from '@cwds/components/dist/Cards';
 import { Row, Col } from '@cwds/components/dist/Grid';
-import Media from 'react-media';
 
 export default () => (
   <Page
@@ -14,17 +13,6 @@ export default () => (
     breadcrumb={props => <em>Welcome to your dashboard!</em>}
     main={props => (
       <Row>
-        <Col xs={12}>
-          <Media query="(max-width: 599px)">
-            {matches =>
-              matches ? (
-                <p>The document is less than 600px wide.</p>
-              ) : (
-                <p>The document is at least 600px wide.</p>
-              )
-            }
-          </Media>
-        </Col>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
           <Row>
             <Col sm={6}>
