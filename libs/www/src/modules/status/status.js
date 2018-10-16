@@ -44,7 +44,7 @@ const status = preval`
       COMMIT_REF: process.env.COMMIT_REF || '',
       CONTEXT: process.env.CONTEXT || '',
       REVIEW_ID: process.env.REVIEW_ID || '',
-    }
+    },
     version: 'latest',
   };
   module.exports = out;
