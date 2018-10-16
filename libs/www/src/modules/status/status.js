@@ -36,6 +36,15 @@ const status = preval`
     packages,
     git,
     buildDate: JSON.stringify(new Date()),
+    build: {
+      REPOSITORY_URL: process.env.REPOSITORY_URL || '',
+      BRANCH: process.env.BRANCH || '',
+      PULL_REQUEST: process.env.PULL_REQUEST || '',
+      HEAD: process.env.HEAD || '',
+      COMMIT_REF: process.env.COMMIT_REF || '',
+      CONTEXT: process.env.CONTEXT || '',
+      REVIEW_ID: process.env.REVIEW_ID || '',
+    }
     version: 'latest',
   };
   module.exports = out;

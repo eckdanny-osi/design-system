@@ -38,6 +38,14 @@ export default () => (
                       <tt>{status.git}</tt>
                     </td>
                   </tr>
+                  <tr>
+                    <td>Info</td>
+                    <td>
+                      <pre>
+                        <code>{JSON.stringify(status.build, null, 2)}</code>
+                      </pre>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </Card.Body>
