@@ -30,7 +30,7 @@
   }
 
   .PageHeaderContainer {
-    @include gradient-x($spruce, $aspen);
+    @include gradient-x($info, $primary);
     display: flex;
     align-items: center;
     flex-grow: 1;

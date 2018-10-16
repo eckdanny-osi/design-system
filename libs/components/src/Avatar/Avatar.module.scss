@@ -1,7 +1,7 @@
 @import '~@cwds/core/scss/base';
 
 .wrapper {
-  background-color: $spruce;
+  background-color: $info;
   color: $white;
   display: inline-flex;
   border-radius: 50%;
@@ -10,7 +10,7 @@
 
 .inverted {
   background-color: $white;
-  color: $spruce;
+  color: $info;
 }
 
 @each $size, $value in $avatar-sizes {
