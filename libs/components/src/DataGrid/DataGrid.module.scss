@@ -1,4 +1,4 @@
-@import '../core';
+@import '~@cwds/core/scss/base';
 
 :global {
   @import '~react-table/react-table';
@@ -13,7 +13,7 @@
       box-shadow: none;
     }
     .rt-thead.-header {
-      border-bottom: 1px solid $grouper;
+      border-bottom: 1px solid $card-border-color; // grouper;
     }
     .rt-thead {
       .rt-tr {
@@ -25,10 +25,10 @@
         padding: 10px 5px;
         border-right: none;
         &.-sort-asc {
-          box-shadow: inset 0 3px 0 0 $aspen;
+          box-shadow: inset 0 3px 0 0 $primary;
         }
         &.-sort-desc {
-          box-shadow: inset 0 -3px 0 0 $aspen;
+          box-shadow: inset 0 -3px 0 0 $primary;
         }
       }
     }
@@ -38,6 +38,7 @@
       }
     }
     .-pagination {
+      border-top: $card-border-width solid $card-border-color;
       .-previous,
       .-next {
         margin-top: 2.5px;
