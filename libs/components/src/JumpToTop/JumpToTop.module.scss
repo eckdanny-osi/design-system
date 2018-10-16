@@ -1,8 +1,8 @@
-@import '../core';
+@import '~@cwds/core/scss/base';
 
 .JumpToTop {
-  border: 3px solid $aspen;
-  color: $aspen;
+  border: 3px solid $primary;
+  color: $primary;
   position: fixed;
   bottom: 20px;
   right: 20px;
