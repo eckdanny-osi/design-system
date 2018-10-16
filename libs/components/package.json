@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
-  "homepage": "",
+  "homepage": "https://cws-cares.netlify.com",
+  "bugs": {
+    "url": "https://github.com/ca-cwds/design-system/issues"
+  },
   "license": "ISC",
   "main": "dist/components.js",
   "module": "dist/components.module.js",

@@ -1,6 +1,12 @@
 {
   "name": "design-system",
+  "description": "CARES Design System",
+  "version": "latest",
   "private": true,
+  "homepage": "https://cws-cares.netlify.com",
+  "bugs": {
+    "url": "https://github.com/ca-cwds/design-system/issues"
+  },
   "scripts": {
     "test": "jest",
     "test:all": "CI=true lerna run --parallel test ",

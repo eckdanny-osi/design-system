@@ -5,17 +5,8 @@ import Page from '@cwds/components/dist/Layouts/Page';
 import Button from '@cwds/components/dist/Button';
 import slackLogo from './Slack_Mark_White_Web.png';
 import githubLogo from './GitHub-Mark-Light-64px.png';
-// import status from './status';
 import Style from './StatusButton.module.css';
-
-const status = {
-  lerna: [],
-  pkg: {
-    bugs: {
-      url: '',
-    },
-  },
-};
+import status from './status';
 
 export default () => (
   <Page
@@ -41,33 +32,16 @@ export default () => (
                       <tt>{status.buildDate}</tt>
                     </td>
                   </tr>
-                  {status.lerna.map(({ name, version }) => {
-                    return (
-                      <tr key={name}>
-                        <td>
-                          <tt>{name}</tt>
-                        </td>
-                        <td>
-                          <tt>{version}</tt>
-                        </td>
-                      </tr>
-                    );
-                  })}
                   <tr>
                     <td>Branch</td>
                     <td>
-                      <tt>{status.gitInfo}</tt>
+                      <tt>{status.git}</tt>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </Card.Body>
-          </Card>
-          <Card>
-            <Card.Header>
-              <Card.Title>Issues</Card.Title>
-            </Card.Header>
-            <Card.Body>
+            <Card.Footer>
               <Button
                 color="primary"
                 href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
@@ -82,7 +56,7 @@ export default () => (
               </Button>{' '}
               <Button
                 color="primary"
-                href={status.pkg.bugs.url}
+                href={status.main.bugs.url}
                 className={Style.StatusButton}
                 target="_blank"
               >
@@ -92,9 +66,36 @@ export default () => (
                   alt="github logo"
                 />
                 Issues
-              </Button>{' '}
-            </Card.Body>
+              </Button>
+            </Card.Footer>
           </Card>
+          <h3>Packages</h3>
+          {status.packages.map(pkg => {
+            return (
+              <Card key={pkg.name}>
+                <Card.Header>
+                  <h4
+                    className="m-0"
+                    style={{
+                      fontFamily:
+                        'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                      fontSize: '85%',
+                    }}
+                  >
+                    {pkg.name}
+                  </h4>
+                </Card.Header>
+                <Card.Body>
+                  <h4>Dependencies</h4>
+                  <pre>
+                    <code>
+                      {JSON.stringify(pkg.pkgJson.dependencies, null, 2)}
+                    </code>
+                  </pre>
+                </Card.Body>
+              </Card>
+            );
+          })}
         </Col>
       </Row>
     )}
