@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { Formik } from 'formik';
 import Card from '@cwds/components/dist/Cards';
 import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components/dist/Buttons';
 import { Row, Col } from '@cwds/components/dist/Grid';
 import FormGroup from '@cwds/components/dist/FormGroup';
 import Label from '@cwds/components/dist/Label';

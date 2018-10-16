@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Page from '@cwds/components/dist/Layouts/Page';
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components';
 import Badge from '@cwds/components/dist/Badge';
 import Card from '@cwds/components/dist/Cards';
 import { Row, Col } from '@cwds/components/dist/Grid';

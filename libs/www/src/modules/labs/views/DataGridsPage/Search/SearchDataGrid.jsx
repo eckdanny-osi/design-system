@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Card from '@cwds/components/dist/Cards';
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components/dist/Buttons';
 import DataGrid from '@cwds/components/dist/DataGrid';
 import Input from '@cwds/components/dist/Input';
 import InputGroup from '@cwds/components/dist/InputGroup';

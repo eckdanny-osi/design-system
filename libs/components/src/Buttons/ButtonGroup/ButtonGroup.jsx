@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup as ButtonGroupUnstyled } from 'reactstrap';
-import Styles from './ButtonGroup.module.scss';
+import Styles from '../Buttons.module.scss';
 
 const ButtonGroup = props => <ButtonGroupUnstyled {...props} />;
 ButtonGroup.propTypes = { ...ButtonGroupUnstyled.propTypes };

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import Button from '../Button';
+import { Button } from '../Buttons';
 import Card from './Card';
 
 class MultiContextCard extends Component {

@@ -11,7 +11,7 @@ import ScrollToTop from './ScrollToTop';
 import Status from './modules/status';
 import Home from './modules/home';
 // import PageLayouts from './modules/layouts';
-import CoreStyles from './modules/core-styles';
+import CoreStyles from './modules/core-style';
 import LabsPage from './modules/labs';
 import Components from './modules/components';
 

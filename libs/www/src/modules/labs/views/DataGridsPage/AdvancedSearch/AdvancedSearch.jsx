@@ -6,8 +6,7 @@ import CheckboxBank from '@cwds/components/dist/CheckboxBank';
 import Input from '@cwds/components/dist/Input';
 import PeopleService from './mockService';
 import Collapse from '@cwds/components/dist/Collapse';
-import Button from '@cwds/components/dist/Button';
-import Toggle from '@cwds/components/dist/Toggle';
+import { Button } from '@cwds/components/dist/Buttons';
 
 import { toCapitalCase } from '../utils';
 
@@ -146,13 +145,13 @@ class AdvancedPeopleSearchDataGrid extends Component {
             isOpenSearchForm={this.state.isOpenSearchForm}
             onSearchFormToggle={this.onSearchFormToggle}
           />
-          <div className="text-right my-3">
+          {/* <div className="text-right my-3">
             <Toggle value="table">
               <Toggle.Option value="table">Table</Toggle.Option>
               <Toggle.Option value="foo">Grid</Toggle.Option>
               <Toggle.Option value="whatever">Map</Toggle.Option>
             </Toggle>
-          </div>
+          </div> */}
           <DataGrid
             data={data}
             pages={pages}

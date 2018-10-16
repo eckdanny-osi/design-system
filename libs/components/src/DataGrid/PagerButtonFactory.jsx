@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Button from '../Button';
+import { Button } from '../Buttons';
 import Icon from '../Icon';
 
 const PagerButtonFactory = ({ rotation }) => props => {

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './AppBar.module.scss';
 import { Row, Col, Container } from '../Grid';
 import Logo from '../Logo';
-import Button from '../Button';
+import { Button } from '../Buttons';
 import Popover from '../Popover';
 import Avatar from '../Avatar';
 import { ListGroup, ListGroupItem } from '../ListGroups';

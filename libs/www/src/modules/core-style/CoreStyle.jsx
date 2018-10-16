@@ -16,10 +16,11 @@ const routes = [
   'Experience Principles',
   'Grid System',
   'Functional CSS',
-  'Typography',
+  'Spacing',
   'Color System',
-  'Iconography',
   'Accessibility',
+  'Iconography',
+  'Typography',
   'Tone',
 ].map(title => ({ title, path: `#${toSlug(title)}` }));
 

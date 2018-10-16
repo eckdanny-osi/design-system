@@ -1,4 +1,3 @@
-import React from 'react';
 /* eslint-disable import/no-webpack-loader-syntax */
 import Components from '!babel-loader!@mdx-js/loader!./modules/Components.mdx';
 import DataGridsPage from '!babel-loader!@mdx-js/loader!./modules/DataGrid/DataGrid.mdx';
@@ -11,7 +10,7 @@ import Badge from '!babel-loader!@mdx-js/loader!./modules/Badge/Badge.mdx';
 import Button from '!babel-loader!@mdx-js/loader!./modules/Button/Button.mdx';
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/ButtonGroup.mdx';
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx';
-import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
+// import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx';
 import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx';
 
@@ -23,9 +22,15 @@ const routes = {
     { title: 'Alert', path: '/alert', component: Alert },
     { title: 'Avatar', path: '/avatar', component: Avatar },
     { title: 'Badge', path: '/badge', component: Badge },
+    {
+      title: 'Buttons',
+      path: '/buttons',
+      children: [
+        { title: 'Button', path: '/button', component: Button },
+        { title: 'ButtonGroup', path: '/button-group', component: ButtonGroup },
+      ],
+    },
     { title: 'Breadcrumbs', path: '/breadcrumbs' },
-    { title: 'Button', path: '/button', component: Button },
-    { title: 'ButtonGroup', path: '/buttongroup', component: ButtonGroup },
     {
       title: 'Cards',
       path: '/cards',
