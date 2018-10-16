@@ -7,151 +7,124 @@
 // Color system
 //
 
-// // stylelint-disable
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+$white:       #ffffff;
+$blue:        #007bff;
+$indigo:      #6610f2;
+$purple:      #6f42c1;
+$pink:        #e83e8c;
+$red:         #dc3545;
+$orange:      #fd7e14;
+$yellow:      #ffc107;
+$green:       #28a745;
+$teal:        #20c997;
+$cyan:        #17a2b8;
+$black:       #000000;
 
-$grays: () !default;
-$grays: map-merge(
-  (
-    '100': $gray-100,
-    '200': $gray-200,
-    '300': $gray-300,
-    '400': $gray-400,
-    '500': $gray-500,
-    '600': $gray-600,
-    '700': $gray-700,
-    '800': $gray-800,
-    '900': $gray-900,
-  ),
-  $grays
+$spruce:      #0d4f78;
+$aspen:       #09798e;
+$fir:         #d8ecf0;
+$oak:         #601974;
+$maple:       #bb3709;
+$hickory:     #e7740b;
+$elm:         #068347;
+
+// $ray:         #f5f5f5;
+// $grouper:     #e8e8e8;
+// $trout:       #d1d1d1;
+// $wahoo:       #5c5c5c;
+// $shark:       #1a1a1a;
+// $spruce -> $aspen	.c-locust	.bg-locust	    #0d4f78..   #09798e
+
+$gray-100:    hsl(0, 0, 96); // #f8f9fa; ($ray)
+$gray-200:    hsl(0, 0, 91); // #e9ecef; ($grouper)
+$gray-300:    hsl(0, 0, 82); // #dee2e6; ($trout)
+$gray-400:    hsl(0, 0, 60); // #ced4da;
+$gray-500:    hsl(0, 0, 50); // #adb5bd;
+$gray-600:    hsl(0, 0, 40); // #6c757d;
+$gray-700:    hsl(0, 0, 36); // #495057; ($wahoo)
+$gray-800:    hsl(0, 0, 20); // #343a40;
+$gray-900:    hsl(0, 0, 10); // #212529; ($shark)
+
+$grays: (
+  '100':        $gray-100,
+  '200':        $gray-200,
+  '300':        $gray-300,
+  '400':        $gray-400,
+  '500':        $gray-500,
+  '600':        $gray-600,
+  '700':        $gray-700,
+  '800':        $gray-800,
+  '900':        $gray-900,
 );
 
-$blue: #007bff !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #e83e8c !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #28a745 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
-
-$spruce: #0d4f78;
-$aspen: #09798e;
-$fir: #d8ecf0;
-$oak: #601974;
-$maple: #bb3709;
-$hickory: #e7740b;
-$elm: #068347;
-
-$white: #ffffff;
-$ray: #f5f5f5;
-$grouper: #e8e8e8;
-$trout: #d1d1d1;
-$wahoo: #5c5c5c;
-$shark: #1a1a1a;
-// $spruce -> $aspen	.c-locust	.bg-locust	#0d4f78..#09798e
-
-$colors: () !default;
-$colors: map-merge(
-  (
-    'spruce': $spruce,
-    'aspen': $aspen,
-    'fir': $fir,
-    'oak': $oak,
-    'maple': $maple,
-    'hickory': $hickory,
-    'elm': $elm,
-  ),
-  $colors
+$colors: (
+  'spruce':     $spruce,
+  'aspen':      $aspen,
+  'fir':        $fir,
+  'oak':        $oak,
+  'maple':      $maple,
+  'hickory':    $hickory,
+  'elm':        $elm,
 );
 
-$primary: $aspen;
-$secondary: $wahoo;
-$success: $elm;
-$info: $spruce;
-$warning: $hickory;
-$danger: $maple;
-$light: $gray-100 !default;
-$dark: $gray-800 !default;
+$primary:       $aspen;
+$secondary:     $gray-700;
+$success:       $elm;
+$info:          $spruce;
+$warning:       $hickory;
+$danger:        $maple;
+$light:         $gray-100;
+$dark:          $gray-800;
 
-$theme-colors: ();
-$theme-colors: map-merge(
-  (
-    'primary': $primary,
-    'secondary': $white,
-    'success': $success,
-    'info': $info,
-    'warning': $warning,
-    'danger': $danger,
-    'light': $light,
-    'dark': $dark,
-  ),
-  $theme-colors
+$theme-colors: (
+  'primary':    $primary,
+  'secondary':  $white,
+  'success':    $success,
+  'info':       $info,
+  'warning':    $warning,
+  'danger':     $danger,
+  'light':      $light,
+  'dark':       $dark,
 );
-// // stylelint-enable
 
-// // Set a specific jump point for requesting color jumps
+// Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
 
-// // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150 !default;
 
-// // Customize the light and dark text colors for use in our YIQ color contrast function.
+// Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark: $gray-900 !default;
 $yiq-text-light: $white !default;
 
-// // Options
-// //
-// // Quickly modify global styling by enabling or disabling optional features.
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret: true !default;
-$enable-rounded: true !default;
+$enable-caret:        true !default;
+$enable-rounded:      true !default;
 // $enable-shadows: true !default;
-$enable-gradients: false !default;
-$enable-transitions: true !default;
+$enable-gradients:    false !default;
+$enable-transitions:  true !default;
 // $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
 // $enable-grid-classes:       true !default;
 // $enable-print-styles:       true !default;
 
-// // Spacing
-// //
-// // Control the default styling of most Bootstrap elements by modifying these
-// // variables. Mostly focused on spacing.
-// // You can add more entries to the $spacers map, should you need more variation.
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
 
-// // stylelint-disable
-$spacer: 1rem !default;
-$spacers: () !default;
-$spacers: map-merge(
-  (
-    0: 0,
-    1: (
-      $spacer * 0.25,
-    ),
-    2: (
-      $spacer * 0.5,
-    ),
-    3: $spacer,
-    4: (
-      $spacer * 1.5,
-    ),
-    5: (
-      $spacer * 3,
-    ),
-  ),
-  $spacers
+// stylelint-disable
+$spacer: 1rem;
+$spacers: (
+  0:   $spacer * 0,
+  1:   $spacer * 0.25,
+  2:   $spacer * 0.5,
+  3:   $spacer * 1,
+  4:   $spacer * 1.5,
+  5:   $spacer * 3,
 );
 
 // // This variable affects the `.h-*` and `.w-*` classes.
@@ -168,10 +141,8 @@ $spacers: map-merge(
 // //
 // // Settings for the `<body>` element.
 
-// $body-bg: $white !default;
-$body-bg: $ray;
-$body-color: $shark;
-// $body-color: $gray-900 !default;
+$body-bg:       map-get($grays, '100'); // $ray;
+$body-color:    map-get($grays, '900'); // $shark;
 
 // Links
 //
@@ -694,17 +665,17 @@ $nav-divider-margin-y: ($spacer / 2) !default;
 // $jumbotron-padding:                 2rem !default;
 // $jumbotron-bg:                      $gray-200 !default;
 
-// // Cards
+// Cards
 
 $card-spacer-y: map-get($spacers, 3);
 $card-spacer-x: $card-spacer-y;
 // $card-spacer-x: 1.25rem !default;
-$card-border-width: $border-width !default;
-$card-border-radius: $border-radius !default;
-$card-border-color: #dfdfdf; // rgba($black, 0.125) !default;
-$card-inner-border-radius: calc(
-  #{$card-border-radius} - #{$card-border-width}
-) !default;
+// $card-border-width: $border-width !default;
+// $card-border-radius: $border-radius !default;
+$card-border-color: $gray-300; //#dfdfdf; // rgba($black, 0.125) !default;
+// $card-inner-border-radius: calc(
+//   #{$card-border-radius} - #{$card-border-width}
+// ) !default;
 $card-cap-bg: $white;
 $card-bg: $white;
 
@@ -880,8 +851,7 @@ $breadcrumb-margin-bottom: 1rem !default;
 
 $breadcrumb-bg: $gray-200 !default;
 $breadcrumb-divider-color: $gray-600 !default;
-$breadcrumb-active-color: $gray-600 !default;
-$breadcrumb-active-color: $trout;
+$breadcrumb-active-color: $gray-300;
 $breadcrumb-divider: quote('/') !default;
 
 $breadcrumb-border-radius: $border-radius !default;
