@@ -672,7 +672,7 @@ $card-spacer-x: $card-spacer-y;
 // $card-spacer-x: 1.25rem !default;
 // $card-border-width: $border-width !default;
 // $card-border-radius: $border-radius !default;
-$card-border-color: $gray-300; //#dfdfdf; // rgba($black, 0.125) !default;
+$card-border-color: $gray-200; //#dfdfdf; // rgba($black, 0.125) !default;
 // $card-inner-border-radius: calc(
 //   #{$card-border-radius} - #{$card-border-width}
 // ) !default;
@@ -803,7 +803,7 @@ $alert-color-level: 6 !default;
 // // List group
 
 $list-group-bg: $white !default;
-$list-group-border-color: rgba($black, 0.125) !default;
+$list-group-border-color: $gray-200;
 // $list-group-border-width:           $border-width !default;
 // $list-group-border-radius:          $border-radius !default;
 
