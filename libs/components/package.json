@@ -23,7 +23,7 @@
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
-    "build": "npm run build:es && npm run build:css",
+    "build": "run-p build:es build:css",
     "build:es": "babel src --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
     "build:esm": "echo TODO",
     "build:css": "node-sass -r -o dist --source-map true --importer ../../node_modules/node-sass-tilde-importer/index.js src",

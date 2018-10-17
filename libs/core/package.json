@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "run-p build:*",
+    "build": "run-p build:css",
     "build:css": "node-sass -r -o dist --source-map true --importer ../../node_modules/node-sass-tilde-importer/index.js scss",
     "prebuild:watch": "yarn prebuild",
     "build:watch": "run-p build:watch:*",
