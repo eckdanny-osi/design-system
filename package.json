@@ -16,7 +16,8 @@
     "build:www": "SKIP_PREFLIGHT_CHECK=true lerna run --stream --scope www build",
     "build:libs": "lerna run --scope @cwds/* build",
     "build": "yarn build:libs && yarn build:www",
-    "dev": "lerna run --scope @cwds/* --parallel build:watch",
+    "build:watch": "lerna run --scope @cwds/* --parallel build:watch",
+    "dev": "yarn build:watch",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "workspaces": {
