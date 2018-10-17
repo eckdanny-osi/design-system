@@ -7,12 +7,14 @@ import { Container } from '../../Grid';
 import BreadcrumbTrail from '../../BreadcrumbTrail';
 import Styles from '../Layout.module.scss';
 
-const renderBreadcrumb = itemsOrRenderFn => {
-  return typeof itemsOrRenderFn === 'function' ? (
-    itemsOrRenderFn()
-  ) : (
-    <BreadcrumbTrail items={itemsOrRenderFn} />
-  );
+const renderBreadcrumbDefault = itemsOrRenderFn => {
+  if (React.isValidElement(itemsOrRenderFn)) return itemsOrRenderFn;
+  if (typeof itemsOrRenderFn === 'function') {
+    return itemsOrRenderFn();
+  }
+  if (Array.isArray(itemsOrRenderFn)) {
+    return <BreadcrumbTrail items={itemsOrRenderFn} />;
+  }
 };
 
 const Banner = ({
@@ -21,6 +23,7 @@ const Banner = ({
   BreadcrumbTrail,
   title,
   breadcrumb,
+  renderBreadcrumb = renderBreadcrumbDefault,
   cta,
 }) => (
   <div role="banner" className={cn(Styles.Banner)}>

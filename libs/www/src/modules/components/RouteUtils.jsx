@@ -89,7 +89,7 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
             <Page
               layout="subroutes"
               title={title}
-              breadcrumb={trail}
+              breadcrumb={<MyBreadcrumb />}
               cta={ContextualActions}
               sidenav={() => (
                 <SideNav
@@ -128,4 +128,12 @@ export function getTrail(partialRoutes) {
     pathsAndTitles.push({ ...partial, path: prefix });
   }
   return pathsAndTitles;
+}
+
+function MyBreadcrumb() {
+  return <div>I am the MyBreadcrumb component</div>;
+}
+
+function renderBreadcrumb() {
+  return <div>RENDER BREADCRUMB</div>;
 }
