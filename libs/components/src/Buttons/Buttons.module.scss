@@ -5,3 +5,21 @@
 .btn {
   text-transform: uppercase;
 }
+
+// Need a focus outline for white button
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 $btn-focus-width $primary;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      box-shadow: none;
+      &:focus {
+        box-shadow: 0 0 0 $btn-focus-width $primary;
+      }
+    }
+  }
+}

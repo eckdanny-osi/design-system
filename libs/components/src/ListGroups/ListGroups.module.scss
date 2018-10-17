@@ -3,11 +3,7 @@
 
 .list-group-item {
   &.active {
-    color: $gray-700;
-    color: theme-color-level('primary');
-    font-weight: 600;
-    // background-color: $list-group-active-bg;
-    // border-color: $list-group-active-border-color;
+    color: theme-color('primary');
     &::before {
       content: '';
       width: 5px;
@@ -16,6 +12,15 @@
       top: 0;
       left: 0;
       bottom: 0;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary, 0.5);
+    outline: none;
+    z-index: 3;
+    &:active {
+      box-shadow: none;
     }
   }
 }
