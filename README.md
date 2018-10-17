@@ -36,20 +36,22 @@ Clone the repository
 
 ```sh
 git clone https://github.com/ca-cwds/design-system.git && cd $_
-lerna bootstrap
+yarn
 ```
 
-Run the component library streaming build process:
+Run the build-watch process for public packages:
 
 ```sh
-lerna run build:watch
+yarn dev
 ```
 
-To run the _Guide Site_:
+### Development
 
-```sh
-yarn guide
-```
+You have a few options. Select the workflow that most appropriately suits your context:
+
+#### Storybook
+
+> Great for developing components in isolation
 
 To run _Storybook_:
 
@@ -57,16 +59,29 @@ To run _Storybook_:
 yarn storybook
 ```
 
+#### The Guide Site
+
+> This is public docs site and reference implemenation. It runs on CRA@2.x.
+
+To run the _Guide Site_:
+
+```sh
+yarn start
+```
+#### rails_app
+
+> This is a good integration check for our digital service teams that all utilize this stack.
+
 To run the _rails app_:
 
-> Its helpful to have two processes running. We suggest using multiple terminals or a terminal multiplexer.
-
-first start webpack:
+first start the webpack dev server:
 
 ```sh
 cd libs/rails_app
 ./bin/webpack-dev-server
 ```
+
+> You may find it helpful to have two processes running for debugging via `pry` or for whatever. We suggest using multiple terminals/panes or using terminal multiplexer like `tmux`.
 
 then start the rails server:
 
@@ -74,26 +89,6 @@ then start the rails server:
 cd libs/rails_app
 ./bin/rails s
 ```
-
-## Development
-
-I find [`tmux`](https://linux.die.net/man/1/tmux) very handy here because we're often dealing with _many_ processes in this monorepo. The big benefit of a monorepo set up is to have dependencies _linked_ so that you're always seeing early integration feedback when working on the CL. This project uses [`lerna`](https://github.com/lerna/lerna) and [`yarn workspaces`](https://yarnpkg.com/lang/en/docs/workspaces/)
-
-To start up a pipeline for the component library itself (e.g.; watch and build styles, javascript, type definitions, etc.) you can:
-
-`cd packages/cwds-components && yarn build:watch`
-
-To see live changes in a downstream consumer app, there are two candidates:
-
-The `rails_app` package is a `rails5 webpacker` setup that immitates the common setup for CWDS Digital Service teams. One can use the familiar methods to handle that: `rails s` (optionally running `./bin/webpack-dev-server` in a seperate shell) from the `rails_app` directory.
-
-_or_
-
-The `cwds.design.io` package is a static front-end build with `create-react-app`. This is [**the guide site**](https://distracted-dijkstra-a44525.netlify.com/) for the component library. Spin up the devserver with `yarn start` from the `design.cwds.io` package directory.
-
-Both work. My pref is to use the guide site.
-
-**Additionally** (since we're all about fast feedback loops) you can just use [`storybook`](https://storybook.js.org/). From the `cwds-components` package directory, run `yarn storybook`.
 
 ## Questions
 
