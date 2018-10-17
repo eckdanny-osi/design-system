@@ -11,8 +11,11 @@
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "../../scripts/build-css --src=./scss/**/styles.scss",
-    "build:watch": "../../scripts/build-watch --scss=\"./scss/styles.scss\" --base 'scss'"
+    "build": "run-p build:css",
+    "build:css": "node-sass -r -o dist --source-map true --importer ../../node_modules/node-sass-tilde-importer/index.js scss",
+    "prebuild:watch": "yarn prebuild",
+    "build:watch": "run-p build:watch:*",
+    "build:watch:css": "yarn build:css && yarn build:css -w"
   },
   "directories": {
     "lib": "dist",
@@ -29,5 +32,6 @@
   },
   "peerDependencies": {
     "bootstrap": "^4.1.3"
-  }
+  },
+  "devDependencies": {}
 }
