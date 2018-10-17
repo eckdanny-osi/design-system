@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, Link, NavLink, withRouter } from 'react-router-dom';
+import BreadcrumbItem from '@cwds/components/dist/Breadcrumbs/BreadcrumbItem';
 import ListGroup from '@cwds/components/dist/ListGroups';
 import Page from '@cwds/components/dist/Layouts/Page';
 
@@ -50,7 +51,7 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
           render={() => (
             <Page
               title={title}
-              breadcrumb={trail}
+              breadcrumb={<MyBreadcrumb items={trail} />}
               cta={ContextualActions}
               layout="subroutes"
               sidenav={() => (
@@ -89,7 +90,7 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
             <Page
               layout="subroutes"
               title={title}
-              breadcrumb={trail}
+              breadcrumb={<MyBreadcrumb items={trail} />}
               cta={ContextualActions}
               sidenav={() => (
                 <SideNav
@@ -128,4 +129,31 @@ export function getTrail(partialRoutes) {
     pathsAndTitles.push({ ...partial, path: prefix });
   }
   return pathsAndTitles;
+}
+
+function MyBreadcrumb({ items }) {
+  return (
+    <React.Fragment>
+      {items.map((item, i) => (
+        <BreadcrumbItem
+          key={item.title}
+          active={i + 1 === items.length}
+          tag={Link}
+          to={item.path}
+        >
+          {item.title}
+        </BreadcrumbItem>
+      ))}
+    </React.Fragment>
+  );
+}
+
+function renderBreadcrumb({ trail }) {
+  return (
+    <React.Fragment>
+      {trail.map(({ path, title }) => {
+        return <BreadcrumbItem>alskdfj</BreadcrumbItem>;
+      })}
+    </React.Fragment>
+  );
 }
