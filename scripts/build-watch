@@ -16,7 +16,8 @@ const JS_GLOB = argv.js || [
   './src/**/*.{js,jsx}',
   '!./src/**/*.{stories,test}.js',
 ];
-const BASE = argv.base || 'src';
+// const BASE = argv.base || 'src';
+const BASE = argv.base;
 const OUT_DIR = argv['out-dir'] || './dist';
 
 // Simple logger
@@ -31,9 +32,18 @@ const log = srcFile =>
     return cb(null, file);
   });
 
+// Fallthru Task
+
 // Register watchers
 
 gulp.watch(SCSS_GLOB).on('change', file => {
+  // if (/.+\.module\.scss$/.test(path.basename(file.path))) {
+  //   console.log('I AM A SASS MODULE');
+  // }
+  if (/^_.+\.scss$/.test(path.basename(file.path))) {
+    console.log('Partial Detected!');
+    return void 0;
+  }
   gulp
     .src(file.path, { base: BASE })
     .pipe(sourceMaps.init())
