@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Formik } from 'formik';
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components/dist/Buttons';
 import Card from '@cwds/components/dist/Cards';
 import Collapse from '@cwds/components/dist/Collapse';
 import FormGroup from '@cwds/components/dist/FormGroup';

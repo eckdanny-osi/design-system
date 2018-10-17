@@ -1,5 +1,4 @@
-import ButtonGroup from '@cwds/components/dist/ButtonGroup';
-import Button from '@cwds/components/dist/Button';
+import { Button, ButtonGroup } from '@cwds/components/dist/Buttons';
 import DemoCard from '../../../../components/DemoCard';
 
 ## Synopsis
@@ -8,16 +7,34 @@ Use a `ButtonGroup` to visually group `Buttons`;
 
 <DemoCard>
   <ButtonGroup>
-    <Button color="info">Left</Button>
-    <Button color="info">Middle</Button>
-    <Button color="info">Right</Button>
+    <Button>Left</Button>
+    <Button>Middle</Button>
+    <Button>Right</Button>
   </ButtonGroup>
 </DemoCard>
 
 ```jsx
+import { Button } from '@cwds/components';
+```
+
+## Usage Guidelines
+
+@TODO
+
+## Examples
+
+@TODO
+
+<ButtonGroup className="mb-3">
+  <Button color="primary" size="sm">Left</Button>
+  <Button color="primary" size="sm">Middle</Button>
+  <Button color="primary" size="sm">Right</Button>
+</ButtonGroup>
+
+```jsx
 <ButtonGroup>
-  <Button color="info">Left</Button>
-  <Button color="info">Middle</Button>
-  <Button color="info">Right</Button>
+  <Button color="primary" size="sm">Left</Button>
+  <Button color="primary" size="sm">Middle</Button>
+  <Button color="primary" size="sm">Right</Button>
 </ButtonGroup>
 ```

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col } from '@cwds/components/dist/Grid';
 import Card from '@cwds/components/dist/Cards';
 import Page from '@cwds/components/dist/Layouts/Page';
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components/dist/Buttons';
 import slackLogo from './Slack_Mark_White_Web.png';
 import githubLogo from './GitHub-Mark-Light-64px.png';
 import Style from './StatusButton.module.css';

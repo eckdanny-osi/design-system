@@ -1,4 +1,4 @@
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components';
 import DemoCard from '../../../../components/DemoCard';
 
 ## Synopsis
@@ -10,7 +10,7 @@ Use a `Button` to indicate an opportunity for the user to interact with the app.
 </DemoCard>
 
 ```jsx
-import Button from '@cwds/components/dist/Button';
+import { Button } from '@cwds/components';
 ```
 
 ## Usage Guidelines
@@ -21,26 +21,54 @@ import Button from '@cwds/components/dist/Button';
 
 @TODO
 
-### Colors
-
 <div className="my-3">
   <Button color="primary">primary</Button>{' '}
-  <Button color="secondary">secondary</Button>{' '}
-  <Button color="success">success</Button>{' '}
-  <Button color="info">info</Button>{' '}
-  <Button color="warning">warning</Button>{' '}
-  <Button color="danger">danger</Button>{' '}
-  <Button color="link">link</Button>
+  <Button color="secondary">secondary</Button>
 </div>
 
 ```jsx
 <Button color="primary">primary</Button>
-<Button color="secondary">secondary</Button>
+<Button>secondary</Button>
+```
+
+### Contextual Colors
+
+alksdjfasdf
+
+<div className="my-3">
+  <Button color="success">success</Button>{' '}
+  <Button color="info">info</Button>{' '}
+  <Button color="warning">warning</Button>{' '}
+  <Button color="danger">danger</Button>
+</div>
+
+```jsx
 <Button color="success">success</Button>
 <Button color="info">info</Button>
 <Button color="warning">warning</Button>
 <Button color="danger">danger</Button>
-<Button color="link">link</Button>
+```
+
+### Light/Dark
+
+
+<div className="my-3">
+  <Button color="light">light</Button>{' '}
+  <Button color="dark">dark</Button>
+</div>
+
+
+
+### Links
+
+asdflkjasdf
+
+<div className="my-3">
+  <Button color="link" href="#links">link</Button>
+</div>
+
+```jsx
+<Button color="link" href="#links">link</Button>
 ```
 
 ...
