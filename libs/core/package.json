@@ -12,7 +12,8 @@
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
     "build": "../../scripts/build-css --src=./scss/**/styles.scss",
-    "build:watch": "../../scripts/build-watch --scss=\"./scss/styles.scss\" --base 'scss'"
+    "build:watch": "../../scripts/build-watch --scss=\"./scss/**/*.scss\"",
+    "build:watch:css": "node-sass -rw -o dist --source-map true --importer ../../node_modules/node-sass-tilde-importer/index.js scss"
   },
   "directories": {
     "lib": "dist",

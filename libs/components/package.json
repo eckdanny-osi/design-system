@@ -27,7 +27,9 @@
     "build:es": "babel ./src --out-dir ./dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
     "build:esm": "echo TODO",
     "build:css": "../../scripts/build-css",
-    "build:watch": "../../scripts/build-watch"
+    "build:watch": "../../scripts/build-watch --base=src",
+    "//onchange": "onchange '../core/scss/**/*.scss' -- echo '{{event}} to {{changed}}'",
+    "onchange": "onchange '../core/scss/**/*.scss' -- yarn build:css"
   },
   "dependencies": {
     "@cwds/core": "^0.0.0",
@@ -43,6 +45,7 @@
     "reactstrap": "^6.5.0"
   },
   "devDependencies": {
+    "onchange": "^5.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.4",
     "react-display-name": "^0.2.4"
