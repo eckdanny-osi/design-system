@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/tag';
 import '@cwds/core/dist/styles.css';
-// import 'react-select/dist/react-select.css';
+import 'react-select/dist/react-select.css';
 
 import JumpToTop from '@cwds/components/dist/JumpToTop';
 import componentMap from './components/MDXComponentProviderMappings';
