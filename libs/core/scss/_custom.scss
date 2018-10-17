@@ -33,10 +33,10 @@ $grays: (
 );
 
 // $fir:         #d8ecf0;
-// $oak:         #601974;
 
 $primary:       #09798e; // ($aspen)
 $secondary:     $gray-700;
+$accent:        #601974; // ($oak)
 $success:       #068347; // ($elm)
 $info:          #0d4f78; // ($spruce)
 $warning:       #e7740b; // ($hickory)
@@ -890,6 +890,8 @@ $avatar-sizes: (
 
 $banner-height: 8.5rem;
 
-// :export {
-//   banner-height: $banner-height;
-// }
+// Focus Outlines
+$focus-outline-color: $accent;
+$focus-outline-style: solid;
+$focus-outline-width: 3px;
+$focus-outline-offset: 2px;
