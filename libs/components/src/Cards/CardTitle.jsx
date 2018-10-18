@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CardTitleUnstyled from 'reactstrap/lib/CardTitle';
+import { CardTitle as CardTitleUnstyled } from 'reactstrap';
 import Styles from './Cards.module.scss';
 
-export { CardTitleUnstyled };
-
-export class CardTitle extends Component {
-  render() {
-    const { cssModule, ...props } = this.props;
-    return <CardTitleUnstyled cssModule={Styles} tag="h3" {...props} />;
-  }
-}
+const CardTitle = props => <CardTitleUnstyled {...props} />;
+CardTitle.propTypes = { ...CardTitleUnstyled.propTypes };
+CardTitle.defaultProps = {
+  ...CardTitle.defaultProps,
+  cssModule: Styles,
+  tag: 'h3',
+};
 
 export default CardTitle;

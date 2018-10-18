@@ -15,6 +15,7 @@ const renderBreadcrumbDefault = itemsOrRenderFn => {
   if (Array.isArray(itemsOrRenderFn)) {
     return <BreadcrumbTrail items={itemsOrRenderFn} />;
   }
+  throw new TypeError('Invalid argument: itemsOrRenderFn', 'Banner.jsx');
 };
 
 const Banner = ({

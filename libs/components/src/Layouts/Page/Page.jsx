@@ -15,4 +15,9 @@ const Page = ({ title, sidenav, main, breadcrumb, layout, cta }) => {
   );
 };
 
+Page.propTypes = {
+  ...Banner.propTypes,
+  ...Body.propTypes,
+};
+
 export default Page;
