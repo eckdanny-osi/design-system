@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import { Route, Link, NavLink, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import BreadcrumbItem from '@cwds/components/dist/Breadcrumbs/BreadcrumbItem';
-import ListGroup from '@cwds/components/dist/ListGroups';
+import { ListGroup, ListGroupItem } from '@cwds/components';
 import Page from '@cwds/components/dist/Layouts/Page';
 
 // Demo some CTA usage
@@ -13,7 +13,7 @@ const SideNav = withRouter(({ match, routes = [] }) => {
   return (
     <ListGroup>
       {routes.map(({ path, title }) => (
-        <ListGroup.Item
+        <ListGroupItem
           action
           key={path}
           active={match.path === path}
@@ -21,7 +21,7 @@ const SideNav = withRouter(({ match, routes = [] }) => {
           to={path}
         >
           {title}
-        </ListGroup.Item>
+        </ListGroupItem>
       ))}
     </ListGroup>
   );
@@ -144,16 +144,6 @@ function MyBreadcrumb({ items }) {
           {item.title}
         </BreadcrumbItem>
       ))}
-    </React.Fragment>
-  );
-}
-
-function renderBreadcrumb({ trail }) {
-  return (
-    <React.Fragment>
-      {trail.map(({ path, title }) => {
-        return <BreadcrumbItem>alskdfj</BreadcrumbItem>;
-      })}
     </React.Fragment>
   );
 }
