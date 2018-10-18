@@ -9,5 +9,4 @@ ListGroupItem.defaultProps = {
   cssModule: Styles,
 };
 
-export { ListGroupItemUnstyled };
 export default ListGroupItem;

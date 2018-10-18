@@ -1,13 +1,5 @@
-import React, { Fragment } from 'react';
-import Card from '@cwds/components/dist/Cards';
-import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
-import Button from '@cwds/components/dist/Button';
-import { Row, Col } from '@cwds/components/dist/Grid';
-import FormGroup from '@cwds/components/dist/FormGroup';
-import Label from '@cwds/components/dist/Label';
-import Input from '@cwds/components/dist/Input';
-import Icon from '@cwds/components/dist/Icon';
-import { Formik } from 'formik';
+import React from 'react';
+import { Card } from '@cwds/components';
 import MultiScopeCardExample from './MultiScopeCards';
 
 // import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';

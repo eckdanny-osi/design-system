@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from '@cwds/components/dist/Cards';
-import { Row, Col } from '@cwds/components/dist/Grid';
+import { Card, Row, Col } from '@cwds/components';
 
 const CardsForCANS = () => {
   return (
@@ -13,13 +12,15 @@ const CardsForCANS = () => {
           <Row>
             <Col sm="5">
               <label>
-                alskdjf<br />
+                alskdjf
+                <br />
                 <input type="text" />
               </label>
             </Col>
             <Col sm="5">
               <label>
-                alskdjf<br />
+                alskdjf
+                <br />
                 <input type="text" />
               </label>
             </Col>

@@ -1,6 +1,5 @@
 import React from 'react';
-import Modal from '@cwds/components/dist/Modal';
-import { Button } from '@cwds/components/dist/Buttons';
+import { Modal, Button } from '@cwds/components';
 
 class ModalExample extends React.Component {
   constructor(props) {

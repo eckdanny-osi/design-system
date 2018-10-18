@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '@cwds/components/dist/Icon';
+import { Icon } from '@cwds/components';
 import cn from 'classnames';
 import Styles from './IconSquare.module.scss';
 

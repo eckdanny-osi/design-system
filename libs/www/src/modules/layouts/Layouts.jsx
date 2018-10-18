@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Page from '@cwds/components/dist/Layouts/Page';
-import AnchorNav from '@cwds/components/dist/AnchorNav';
-import AppBar from '@cwds/components/dist/AppBar';
-import { Container } from '@cwds/components/dist/Grid';
-import PageHeader from '@cwds/components/dist/PageHeader';
-import Breadcrumb from '@cwds/components/dist/Breadcrumbs';
-
+import {
+  Page,
+  AnchorNav,
+  AppBar,
+  Container,
+  PageHeader,
+  Breadcrumb,
+} from '@cwds/components';
 /* eslint-disable import/no-webpack-loader-syntax */
 import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx';
 import Dashboard from '!babel-loader!@mdx-js/loader!./views/Dashboard.mdx';

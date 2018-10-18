@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { Row, Col } from '@cwds/components/dist/Grid';
-import Card from '@cwds/components/dist/Cards';
-import DataGrid from '@cwds/components/dist/DataGrid';
-import CheckboxBank from '@cwds/components/dist/CheckboxBank';
-import Input from '@cwds/components/dist/Input';
+import {
+  Row,
+  Col,
+  Card,
+  DataGrid,
+  CheckboxBank,
+  Input,
+  Collapse,
+  Button,
+} from '@cwds/components';
 import PeopleService from './mockService';
-import Collapse from '@cwds/components/dist/Collapse';
-import { Button } from '@cwds/components/dist/Buttons';
 
 import { toCapitalCase } from '../utils';
 

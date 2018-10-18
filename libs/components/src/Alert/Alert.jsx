@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { mapToCssModules } from 'reactstrap/lib/utils';
-import Fade from 'reactstrap/lib/Fade';
+// import { mapToCssModules } from 'reactstrap/lib/utils';
+import { Fade, Util } from 'reactstrap';
 import Icon, { ICON_NAMES, getIcon } from '../Icon';
 import Styles from './Alert.module.scss';
+
+const mapToCssModules = Util.mapToCssModules;
 
 const propTypes = {
   children: PropTypes.node,
