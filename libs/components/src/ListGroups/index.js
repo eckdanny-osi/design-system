@@ -1,5 +1,5 @@
-import { ListGroup, ListGroupUnstyled } from './ListGroup';
-import { ListGroupItem, ListGroupItemUnstyled } from './ListGroupItem';
+import { ListGroup } from './ListGroup';
+import { ListGroupItem } from './ListGroupItem';
 
 ListGroup.Item = ListGroupItem;
 
