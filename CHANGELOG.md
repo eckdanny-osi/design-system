@@ -1,6 +1,26 @@
-## Changelog
+# Changelog
 
-### v0.2.0-alpha.24
+## v0.3.0
+
+- (tech): reorg the monorepo (#125)
+- (docs): update Readme with legal contact information (#124)
+- (docs): update readme with monorepo commands (#126)
+- (build): update css build scripts (#127)
+- (fix): add redirect spec for Netlify (#133)
+- (build): streaming build updates (#136)
+- (build): fix broken netlify build (#144)
+- (docs): fix status page babel macros (#150)
+- (core): subtle shadows, no more trees/fishes (#152)
+- (components): pack Button stuff by sass module, docs update (#137)
+- (core): Active and Focus visual treatment (#153)
+- (fix): react-select styles (#154)
+- (build): Fix watching scenario (#155)
+- (components): Breadcrumb render prop (#163)
+- (tech): improve tests (#166)
+- (docs): Add easy button for Designers (#167)
+- (build): Use rollup to bundle components (#168)
+
+## v0.2.0-alpha.24
 
 - (docs): Update labs to use mdx (#101)
 - (core): Add scss for type and imgs (#102)
@@ -11,14 +31,14 @@
 - (components): fix alignment/padding in Paginator (#111)
 - (components): fix spacing for pagination in cards (#112)
 - (components): fix icons no focusable (#113)
-- clean up Nav components (#119)
+  up Nav components (#119)
 - Add JumpNav component (#120)
 - Use MDXProvider (#121)
 - component cleanup (#122)
 
-### v0.2.0-alpha.21
+## v0.2.0-alpha.21
 
-- (fix) reference the transpiled upstream deps (#80)
+- reference the transpiled upstream deps (#80)
 - (docs): show ref tech impls in docs (#88)
 - (components): fix Avatar allowed sizes only (#82)
 - (docs): Show meta info on guide site (#91)
@@ -28,7 +48,7 @@
 - (components): Hoist layout components from guide site into lib (#99)
 - (fix): Broken import statement (#100)
 
-### v0.2.0-alpha.18
+## v0.2.0-alpha.18
 
 - (fix): update react-scripts to fix jest bug (#63)
 - (components): Add JumpToTop (#64)
@@ -42,7 +62,7 @@
 - (components): Fix initial value in Toggle (#75)
 - (docs): add MultiScope Card example (#76)
 
-### v0.2.0-alpha.17
+## v0.2.0-alpha.17
 
 - (guide): fix starwars example pagination (#29)
 - (components,guide): Hoist components, use direct es imports, fix CRA warnings (#38)
