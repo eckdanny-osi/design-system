@@ -1,8 +1,8 @@
 // export { Card, CardUnstyled } from './Card';
-export { CardBody, CardBodyUnstyled } from './CardBody';
-export { CardFooter, CardFooterUnstyled } from './CardFooter';
-export { CardHeader, CardHeaderUnstyled } from './CardHeader';
-export { CardSubtitle, CardSubtitleUnstyled } from './CardSubtitle';
-export { CardDeck, CardDeckUnstyled } from './CardDeck';
+export { default as CardBody } from './CardBody';
+export { default as CardFooter } from './CardFooter';
+export { default as CardHeader } from './CardHeader';
+export { default as CardSubtitle } from './CardSubtitle';
+export { default as CardDeck } from './CardDeck';
 
 export { default } from './Card';

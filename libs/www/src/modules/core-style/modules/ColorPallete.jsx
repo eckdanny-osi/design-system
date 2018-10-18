@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-import Card from '@cwds/components/dist/Cards';
-import { CONTEXT } from '@cwds/components/dist/utils/design-system';
+import { Card, Utils } from '@cwds/components';
+
+const CONTEXT = Utils.CONTEXT;
 
 export default () => (
   <Card>

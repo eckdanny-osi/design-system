@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '@cwds/components/dist/Cards';
+import { Card } from '@cwds/components';
 
 const CardsWithSections = () => {
   return (

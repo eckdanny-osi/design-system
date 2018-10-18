@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import slugify from 'slugify';
-import Page from '@cwds/components/dist/Layouts/Page';
-import JumpNav from '@cwds/components/dist/JumpNav';
+import { Page, JumpNav } from '@cwds/components';
 /* eslint-disable import/no-webpack-loader-syntax */
 import CoreStyle from '!babel-loader!@mdx-js/loader!./CoreStyle.mdx';
 

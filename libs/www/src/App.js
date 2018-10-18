@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/tag';
 import '@cwds/core/dist/styles.css';
 import 'react-select/dist/react-select.css';
 
-import JumpToTop from '@cwds/components/dist/JumpToTop';
+import { JumpToTop } from '@cwds/components';
 import componentMap from './components/MDXComponentProviderMappings';
 
 import ScrollToTop from './ScrollToTop';
