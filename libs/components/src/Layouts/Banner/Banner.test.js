@@ -1,11 +1,26 @@
 import React from 'react';
 import Banner from '../Banner';
 import BreadcrumbTail from '../../BreadcrumbTrail';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Banner', () => {
   it('renders', () => {
     expect(() => shallow(<Banner />)).not.toThrow();
+  });
+
+  it('has [aria-role=banner]', () => {
+    const wrapper = shallow(<Banner />);
+    expect(wrapper.prop('role')).toEqual('banner');
+  });
+
+  it('renders 2 content areas', () => {
+    const wrapper = shallow(<Banner />);
+    expect(wrapper.children().length).toBe(2);
+  });
+
+  it('renders 3 content areas when a breadcrumb is provided', () => {
+    const wrapper = shallow(<Banner breadcrumb={<div id="breadcrumb" />} />);
+    expect(wrapper.children().length).toBe(3);
   });
 
   describe('breadcrumb prop', () => {
@@ -28,6 +43,9 @@ describe('Banner', () => {
       ];
       const wrapper = shallow(<Banner breadcrumb={trail} />);
       expect(wrapper.find(BreadcrumbTail).prop('items')).toBe(trail);
+    });
+    it('throws a TypeError on invalid prop', () => {
+      expect(() => shallow(<Banner breadcrumb={true} />)).toThrow(TypeError);
     });
   });
 });
