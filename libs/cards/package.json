@@ -1,6 +1,6 @@
 {
   "name": "@cwds/cards",
-  "version": "0.0.0",
+  "version": "0.3.1",
   "description": "Card components for CWS-CARES",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com",
@@ -21,6 +21,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@cwds/core": "^0.3.0"
+    "@cwds/core": "^0.3.1"
   }
 }
