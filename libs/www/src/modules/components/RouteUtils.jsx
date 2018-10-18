@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 import { Route, Link, withRouter } from 'react-router-dom';
-import BreadcrumbItem from '@cwds/components/dist/Breadcrumbs/BreadcrumbItem';
-import { ListGroup, ListGroupItem } from '@cwds/components';
-import Page from '@cwds/components/dist/Layouts/Page';
+import {
+  Page,
+  ListGroup,
+  ListGroupItem,
+  BreadcrumbItem,
+} from '@cwds/components';
 
 // Demo some CTA usage
 import SearchWizard from './SearchWizard';

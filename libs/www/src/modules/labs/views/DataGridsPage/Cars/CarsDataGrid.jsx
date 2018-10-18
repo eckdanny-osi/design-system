@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from '@cwds/components/dist/Cards';
-import DataGrid from '@cwds/components/dist/DataGrid';
+import { Card, DataGrid } from '@cwds/components';
 import mtcars from '../data/mtcars.json';
 
 const columns = [

@@ -1,16 +1,11 @@
 import React from 'react';
 import slugify from 'slugify';
 import { Link } from 'react-router-dom';
-import { Row, Col } from '@cwds/components/dist/Grid';
-import Card from '@cwds/components/dist/Cards';
-import Page from '@cwds/components/dist/Layouts/Page';
-import { Button } from '@cwds/components/dist/Buttons';
+import { Card, Row, Col, Button, Page, JumpNav } from '@cwds/components';
 import slackLogo from './Slack_Mark_White_Web.png';
 import githubLogo from './GitHub-Mark-Light-64px.png';
 import Style from './StatusButton.module.css';
 import status from './status';
-
-import JumpNav from '@cwds/components/dist/JumpNav';
 
 const toSlug = str =>
   slugify(str, {
