@@ -1,0 +1,26 @@
+{
+  "name": "@cwds/cards",
+  "version": "0.0.0",
+  "description": "Card components for CWS-CARES",
+  "author": "Danny Eck <danny.eck@osi.ca.gov>",
+  "homepage": "https://cws-cares.netlify.com",
+  "license": "AGPL-3.0",
+  "main": "dist/cards.js",
+  "module": "dist/cards.module.js",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@cwds/core": "^0.3.0"
+  }
+}
