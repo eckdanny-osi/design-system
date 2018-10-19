@@ -15,7 +15,8 @@
     "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js scss",
     "prebuild:watch": "yarn prebuild",
     "build:watch": "run-p build:watch:*",
-    "build:watch:css": "yarn build:css && yarn build:css -w"
+    "build:watch:css": "yarn build:css && yarn build:css -w",
+    "build:watch:json-sass": "onchange variables.json5 -- touch -c scss/_custom.scss"
   },
   "directories": {
     "lib": "dist",

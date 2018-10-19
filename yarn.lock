@@ -9446,6 +9446,10 @@ node-gyp@^3.8.0:
     tar "^2.0.0"
     which "1"
 
+node-inserted@*:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/node-inserted/-/node-inserted-0.0.6.tgz#77689e71c4782c4841ee354876a0c2b146857828"
+
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -9545,6 +9549,12 @@ node-sass@^4.8.3, node-sass@^4.9.2, node-sass@^4.9.3:
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+node-touch@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/node-touch/-/node-touch-0.0.3.tgz#665613dd5029463b05b6d30bcb32c229ef43491f"
+  dependencies:
+    node-inserted "*"
 
 nomnom@~1.6.2:
   version "1.6.2"
