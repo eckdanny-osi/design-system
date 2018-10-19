@@ -1,10 +1,7 @@
+const path = require('path');
+const cfg = require('../../jest/config');
+const project = __dirname.split(path.sep).pop();
+
 module.exports = {
-  verbose: true,
-  setupTestFrameworkScriptFile: '<rootDir>/../../setupTests.js',
-  moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/../../__mocks__/fileMock.js',
-    '\\.(css|scss)$': 'identity-obj-proxy',
-  },
-  coverageDirectory: '../../coverage/libs/components',
+  ...cfg(project),
 };
