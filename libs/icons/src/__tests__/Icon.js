@@ -18,6 +18,6 @@ describe('Icon', () => {
   });
   it('raises an error on invalid icon prop', () => {
     const wrapper = mount(<Icon icon="dne" />);
-    console.log(wrapper);
+    console.log(wrapper.debug());
   });
 });
