@@ -16,7 +16,7 @@ export { default as FormGroup } from './FormGroup';
 export { default as Form } from './Forms';
 export { Grid, Container, Row, Col } from './Grid';
 // export { default as Icon } from './Icon';
-export { default as Icon } from '@cwds/icons';
+export { default as Icon, ICON_NAMES } from '@cwds/icons';
 export { default as InfoTip } from './InfoTip';
 export { default as Input } from './Input';
 export { default as InputGroup } from './InputGroup';

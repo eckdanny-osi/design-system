@@ -1,6 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-export const ICONS = [
+const ICONS = [
   'faArrowUp',
   'faCheck',
   'faCheckCircle',
@@ -20,17 +20,22 @@ export const ICONS = [
   'faUser',
 ];
 
+const { iconPack, iconNames: ICON_NAMES } = loadIcons(ICONS);
+
 // Seed Icon Library
 export default () => {
-  library.add(iconPack(ICONS));
+  library.add(iconPack);
 };
 
-function iconPack(icons) {
-  return icons.reduce(
-    (acc, name) => ({
-      ...acc,
-      [name]: require(`@fortawesome/free-solid-svg-icons/${name}`).definition,
-    }),
-    {}
-  );
+export { ICON_NAMES };
+
+function loadIcons(icons) {
+  const iconPack = {};
+  let iconNames = [];
+  icons.forEach(name => {
+    const mod = require(`@fortawesome/free-solid-svg-icons/${name}`);
+    iconPack[name] = mod.definition;
+    iconNames.push(mod.iconName);
+  });
+  return { iconPack, iconNames };
 }
