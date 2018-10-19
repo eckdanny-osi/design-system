@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from '@cwds/components';
+import { Modal, Button, Icon } from '@cwds/components';
 
 class ModalExample extends React.Component {
   constructor(props) {
@@ -31,6 +31,7 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Button color="secondary" onClick={this.toggle}>
+          <Icon icon="search" className="mr-2" color="black" />
           Search
         </Button>
         <Modal

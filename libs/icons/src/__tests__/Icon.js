@@ -16,4 +16,8 @@ describe('Icon', () => {
     const wrapper = mount(<Icon icon="check" />);
     expect(wrapper.find('svg').prop('focusable')).toBe('false');
   });
+  it('raises an error on invalid icon prop', () => {
+    const wrapper = mount(<Icon icon="dne" />);
+    console.log(wrapper);
+  });
 });

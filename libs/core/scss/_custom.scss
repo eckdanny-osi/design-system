@@ -1,3 +1,5 @@
+@import '../variables.json5';
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -10,15 +12,15 @@
 $white:       #ffffff;
 $black:       #000000;
 
-$gray-100:    hsl(0, 0, 96); // ($ray)
-$gray-200:    hsl(0, 0, 91); // ($grouper)
-$gray-300:    hsl(0, 0, 82); // ($trout)
-$gray-400:    hsl(0, 0, 60); //
-$gray-500:    hsl(0, 0, 50); //
-$gray-600:    hsl(0, 0, 40); //
-$gray-700:    hsl(0, 0, 36); // ($wahoo)
-$gray-800:    hsl(0, 0, 20); //
-$gray-900:    hsl(0, 0, 10); // ($shark)
+// $gray-100:    hsl(0, 0, 96); // ($ray)
+// $gray-200:    hsl(0, 0, 91); // ($grouper)
+// $gray-300:    hsl(0, 0, 82); // ($trout)
+// $gray-400:    hsl(0, 0, 60); //
+// $gray-500:    hsl(0, 0, 50); //
+// $gray-600:    hsl(0, 0, 40); //
+// $gray-700:    hsl(0, 0, 36); // ($wahoo)
+// $gray-800:    hsl(0, 0, 20); //
+// $gray-900:    hsl(0, 0, 10); // ($shark)
 
 $grays: (
   '100':        $gray-100,
@@ -35,14 +37,14 @@ $grays: (
 // $fir:         #d8ecf0;
 // $oak:         #601974;
 
-$primary:       #09798e; // ($aspen)
-$secondary:     $gray-700;
-$success:       #068347; // ($elm)
-$info:          #0d4f78; // ($spruce)
-$warning:       #e7740b; // ($hickory)
-$danger:        #bb3709; // ($maple)
-$light:         $gray-100;
-$dark:          $gray-800;
+// $primary:       #09798e; // ($aspen)
+// $secondary:     $gray-700;
+// $success:       #068347; // ($elm)
+// $info:          #0d4f78; // ($spruce)
+// $warning:       #e7740b; // ($hickory)
+// $danger:        #bb3709; // ($maple)
+// $light:         $gray-100;
+// $dark:          $gray-800;
 
 $theme-colors: (
   'primary':    $primary,
