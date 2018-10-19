@@ -6,7 +6,12 @@ import loadIcons from './icon-library';
 // Side Effect
 loadIcons();
 
-const Icon = props => <FontAwesomeIcon focusable="false" {...props} />;
+const Icon = props => {
+  const { name, icon, ...restProps } = props;
+  return (
+    <FontAwesomeIcon focusable="false" icon={name || icon} {...restProps} />
+  );
+};
 Icon.propTypes = { ...FontAwesomeIcon.propTypes };
 Icon.defaultProps = {
   ...FontAwesomeIcon.defaultProps,
