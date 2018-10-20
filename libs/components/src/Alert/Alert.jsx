@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // import { mapToCssModules } from 'reactstrap/lib/utils';
 import { Fade, Util } from 'reactstrap';
-import Icon, { ICON_NAMES, getIcon } from '../Icon';
+import { ICON_NAMES, getIcon } from '../Icon';
+import Icon from '@cwds/icons';
 import Styles from './Alert.module.scss';
 
 const mapToCssModules = Util.mapToCssModules;
@@ -78,7 +79,7 @@ function Alert(props) {
           Styles
         )}
       >
-        <Icon icon={getIcon(color)} style={{ color: 'white' }} />
+        <Icon icon={getIcon(color)} color="white" />
       </div>
       <div className={mapToCssModules(classNames('alert-body'), Styles)}>
         {toggle ? (

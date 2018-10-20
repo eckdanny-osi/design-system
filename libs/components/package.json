@@ -1,6 +1,6 @@
 {
   "name": "@cwds/components",
-  "version": "0.0.0",
+  "version": "0.3.1",
   "description": "> TODO: description",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com",
@@ -26,7 +26,7 @@
     "build": "run-p build:es build:cjs build:css",
     "build:es": "babel src --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
     "build:cjs": "rollup src/index.js -c rollup.config.js --format cjs --file dist/index.cjs.js",
-    "build:css": "node-sass -r -o dist --source-map true --importer ../../node_modules/node-sass-tilde-importer/index.js src",
+    "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js src",
     "prebuild:watch": "rimraf dist",
     "build:watch": "run-p build:watch:*",
     "build:watch:es": "yarn build:es -w",
@@ -35,7 +35,8 @@
     "build:watch:css:self": "yarn build:css && yarn build:css -w"
   },
   "dependencies": {
-    "@cwds/core": "^0.0.0",
+    "@cwds/core": "^0.3.1",
+    "@cwds/icons": "^0.3.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.5",
     "@fortawesome/free-solid-svg-icons": "^5.4.0",
     "@fortawesome/react-fontawesome": "^0.1.3",

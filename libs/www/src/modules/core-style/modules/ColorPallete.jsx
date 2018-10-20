@@ -1,6 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { Card, Utils } from '@cwds/components';
+const DS = require('@cwds/core');
+console.log(DS);
 
 const CONTEXT = Utils.CONTEXT;
 
