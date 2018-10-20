@@ -8,15 +8,21 @@ import loadIcons from './icon-library';
 loadIcons();
 
 const Icon = props => {
-  const { name, icon, ...restProps } = props;
+  const { name, icon, color, themeColors, ...restProps } = props;
   return (
-    <FontAwesomeIcon focusable="false" icon={name || icon} {...restProps} />
+    <FontAwesomeIcon
+      focusable="false"
+      icon={name || icon}
+      color={themeColors[color] || color}
+      {...restProps}
+    />
   );
 };
 Icon.propTypes = { ...FontAwesomeIcon.propTypes };
 Icon.defaultProps = {
   ...FontAwesomeIcon.defaultProps,
-  color: themeColors.info,
+  color: 'info',
+  themeColors: themeColors,
 };
 
 export default Icon;
