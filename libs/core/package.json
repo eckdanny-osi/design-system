@@ -18,8 +18,8 @@
     "prebuild:watch": "yarn prebuild",
     "build:watch": "run-p build:watch:*",
     "build:watch:css": "yarn build:css && yarn build:css -w",
-    "//build:watch:js": "TODO",
-    "//build:watch:json-sass": "onchange variables.json5 -- touch -c scss/_custom.scss"
+    "build:watch:js": "yarn build:esm --watch",
+    "build:watch:sass-js-trigger": "onchange js/**/*.js -- touch -c scss/_custom.scss"
   },
   "directories": {
     "lib": "dist",
