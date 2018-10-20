@@ -16,13 +16,13 @@ const grays = {
 // Theme Colors
 const themeColors = {
   primary: Color('#09798e').hex(), // ($aspen)
-  secondary: '$gray-700',
+  secondary: grays['gray-700'], // '$gray-700',
   success: Color('#068347').hex(), // ($elm)
   info: Color('#0d4f78').hex(), // ($spruce)
   warning: Color('#e7740b').hex(), // ($hickory)
   danger: Color('#bb3709').hex(), // ($maple)
-  light: '$gray-100',
-  dark: '$gray-800',
+  light: grays['gray-100'], // '$gray-100',
+  dark: grays['gray-800'], // '$gray-800',
 };
 
 module.exports = {
