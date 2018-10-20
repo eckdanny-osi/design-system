@@ -7,4 +7,5 @@ module.exports = {
   ...DS.spacers,
   white: DS.colors.white,
   black: DS.colors.black,
+  ...DS.breakpoints,
 };

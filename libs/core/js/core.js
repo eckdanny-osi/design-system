@@ -42,12 +42,22 @@ const spacers = {
   'spacer-5': `${spacer * 3}rem`,
 };
 
+// Breakpoints
+const breakpoints = {
+  'grid-breakpoint-xs': 0,
+  'grid-breakpoint-sm': 576,
+  'grid-breakpoint-md': 768,
+  'grid-breakpoint-lg': 992,
+  'grid-breakpoint-xl': 1200,
+};
+
 module.exports = {
   grays,
   colors,
   themeColors,
   spacer: `${spacer}rem`,
   spacers,
+  breakpoints,
 };
 
 // Options

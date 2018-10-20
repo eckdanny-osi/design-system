@@ -9,9 +9,6 @@
 // Color system
 //
 
-// $white:       #ffffff;
-// $black:       #000000;
-
 $grays: (
   '100':        $gray-100,
   '200':        $gray-200,
@@ -42,22 +39,17 @@ $theme-colors: (
 // $enable-caret:        true !default;
 // $enable-rounded:      true !default;
 // $enable-shadows:      false !default;
-$enable-shadows: true;
+// $enable-shadows: true;
 
 // $enable-gradients:    false !default;
-$enable-transitions:  true !default;
+// $enable-transitions:  true !default;
 // $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
 // $enable-grid-classes:       true !default;
 // $enable-print-styles:       true !default;
 
+//
 // Spacing
 //
-// Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
-// You can add more entries to the $spacers map, should you need more variation.
-
-// stylelint-disable
-// $spacer: 1rem;
 $spacers: (
   0: $spacer-0,
   1: $spacer-1,
@@ -67,48 +59,8 @@ $spacers: (
   5: $spacer-5,
 );
 
-// // This variable affects the `.h-*` and `.w-*` classes.
-// $sizes: () !default;
-// $sizes: map-merge((
-//   25: 25%,
-//   50: 50%,
-//   75: 75%,
-//   100: 100%
-// ), $sizes);
-// // stylelint-enable
-
-// Body
-//
-// Settings for the `<body>` element.
-
-$body-bg:       $gray-100; // map-get($grays, '100'); // $ray;
-$body-color:    $gray-900; // map-get($grays, '900'); // $shark;
-
-// Links
-//
-// Style anchor elements.
-
-// $link-color: theme-color('primary');
-// $link-decoration: none !default;
-// $link-hover-color: darken($link-color, 15%) !default;
-// $link-hover-decoration: none !default;
-
-// // Paragraphs
-// //
-// // Style p element.
-
-// $paragraph-margin-bottom: 1rem !default;
-
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-$grid-breakpoint-xs: 0;
-$grid-breakpoint-sm: 576px;
-$grid-breakpoint-md: 768px;
-$grid-breakpoint-lg: 992px;
-$grid-breakpoint-xl: 1200px;
+$body-bg:       $gray-100;
+$body-color:    $gray-900;
 
 $grid-breakpoints: (
   xs: $grid-breakpoint-xs,
