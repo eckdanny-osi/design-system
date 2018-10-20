@@ -5,18 +5,21 @@
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/core.js",
-  "module": "dist/core.module.js",
+  "main": "dist/core.cjs.js",
+  "module": "dist/core.js",
   "style": "dist/styles.css",
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "run-p build:css",
+    "build": "run-p build:esm build:css",
+    "//build:cjs": "rollup js/core.js -c rollup.config.js --format cjs --file dist/core.cjs.js",
+    "build:esm": "babel js --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\",\"__tests__\"",
     "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js scss",
     "prebuild:watch": "yarn prebuild",
     "build:watch": "run-p build:watch:*",
     "build:watch:css": "yarn build:css && yarn build:css -w",
-    "build:watch:json-sass": "onchange variables.json5 -- touch -c scss/_custom.scss"
+    "//build:watch:js": "TODO",
+    "//build:watch:json-sass": "onchange variables.json5 -- touch -c scss/_custom.scss"
   },
   "directories": {
     "lib": "dist",
@@ -33,5 +36,8 @@
   },
   "peerDependencies": {
     "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "color": "^3.1.0"
   }
 }
