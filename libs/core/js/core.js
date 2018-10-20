@@ -31,6 +31,17 @@ const themeColors = {
   dark: grays['gray-800'], // '$gray-800',
 };
 
+// Options
+const options = {
+  // 'enable-caret': true,
+  // 'enable-rounded': true,
+  'enable-shadows': true,
+  // 'enable-gradients': false,
+  // 'enable-transitions': true,
+  // 'enable-grid-classes': true,
+  // 'enable-print-styles': true,
+};
+
 // Spacing
 const spacer = 1; // rem
 const spacers = {
@@ -58,17 +69,5 @@ module.exports = {
   spacer: `${spacer}rem`,
   spacers,
   breakpoints,
+  options,
 };
-
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
-
-// $enable-caret:              true !default;
-// $enable-rounded:            true !default;
-// $enable-shadows:            false !default;
-// $enable-gradients:          false !default;
-// $enable-transitions:        true !default;
-// $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
-// $enable-grid-classes:       true !default;
-// $enable-print-styles:       true !default;

@@ -18,4 +18,5 @@ module.exports = {
   black: DS.colors.black,
   // ...DS.breakpoints,
   ...breakpoints,
+  ...DS.options,
 };
