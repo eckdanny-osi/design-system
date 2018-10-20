@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { Card, Utils } from '@cwds/components';
-// const variables = require('@cwds/core/variables.json');
-// console.log(variables);
+const DS = require('@cwds/core');
+console.log(DS);
 
 const CONTEXT = Utils.CONTEXT;
 

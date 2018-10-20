@@ -11,8 +11,8 @@
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
-    "build": "run-p build:esm build:css",
-    "//build:cjs": "rollup js/core.js -c rollup.config.js --format cjs --file dist/core.cjs.js",
+    "build": "run-p build:esm build:css build:cjs",
+    "build:cjs": "rollup js/core.js -c rollup.config.js --format cjs --file dist/core.cjs.js",
     "build:esm": "babel js --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\",\"__tests__\"",
     "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js scss",
     "prebuild:watch": "yarn prebuild",
