@@ -13,6 +13,12 @@ const grays = {
   'gray-900': Color.hsl(0, 0, 10).hex(), // ($shark)
 };
 
+// Colors
+const colors = {
+  white: Color('#ffffff').hex(),
+  black: Color('#000000').hex(),
+};
+
 // Theme Colors
 const themeColors = {
   primary: Color('#09798e').hex(), // ($aspen)
@@ -25,9 +31,23 @@ const themeColors = {
   dark: grays['gray-800'], // '$gray-800',
 };
 
+// Spacing
+const spacer = 1; // rem
+const spacers = {
+  'spacer-0': `${spacer * 0}rem`,
+  'spacer-1': `${spacer * 0.25}rem`,
+  'spacer-2': `${spacer * 0.5}rem`,
+  'spacer-3': `${spacer * 1}rem`,
+  'spacer-4': `${spacer * 1.5}rem`,
+  'spacer-5': `${spacer * 3}rem`,
+};
+
 module.exports = {
   grays,
+  colors,
   themeColors,
+  spacer: `${spacer}rem`,
+  spacers,
 };
 
 // Options

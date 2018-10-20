@@ -9,8 +9,8 @@
 // Color system
 //
 
-$white:       #ffffff;
-$black:       #000000;
+// $white:       #ffffff;
+// $black:       #000000;
 
 $grays: (
   '100':        $gray-100,
@@ -57,14 +57,14 @@ $enable-transitions:  true !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // stylelint-disable
-$spacer: 1rem;
+// $spacer: 1rem;
 $spacers: (
-  0:   $spacer * 0,
-  1:   $spacer * 0.25,
-  2:   $spacer * 0.5,
-  3:   $spacer * 1,
-  4:   $spacer * 1.5,
-  5:   $spacer * 3,
+  0: $spacer-0,
+  1: $spacer-1,
+  2: $spacer-2,
+  3: $spacer-3,
+  4: $spacer-4,
+  5: $spacer-5,
 );
 
 // // This variable affects the `.h-*` and `.w-*` classes.

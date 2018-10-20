@@ -1,6 +1,10 @@
-const { grays, themeColors } = require('./core');
+const DS = require('./core');
 
 module.exports = {
-  ...grays,
-  ...themeColors,
+  ...DS.grays,
+  ...DS.themeColors,
+  spacer: DS.spacer,
+  ...DS.spacers,
+  white: DS.colors.white,
+  black: DS.colors.black,
 };
