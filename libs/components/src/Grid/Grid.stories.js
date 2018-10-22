@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 
-import Grid from './';
+import { Grid } from './';
 
 storiesOf('Grid', module)
   .addDecorator(withKnobs)
