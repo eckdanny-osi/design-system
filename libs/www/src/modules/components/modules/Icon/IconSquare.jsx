@@ -7,7 +7,7 @@ const IconSquare = props => {
   return (
     <div className={cn('p-2', 'm-1', Styles.IconSquare)}>
       <div>
-        <Icon size="2x" icon={props.icon} />
+        <Icon size="2x" {...props} />
       </div>
       <small className={cn('mt-1', Styles.name)}>
         <tt>{props.icon}</tt>
