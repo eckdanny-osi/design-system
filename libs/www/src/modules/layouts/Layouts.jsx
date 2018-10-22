@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Page,
   AnchorNav,
@@ -7,12 +7,12 @@ import {
   Container,
   PageHeader,
   Breadcrumb,
-} from '@cwds/components';
+} from '@cwds/components'
 /* eslint-disable import/no-webpack-loader-syntax */
-import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx';
-import Dashboard from '!babel-loader!@mdx-js/loader!./views/Dashboard.mdx';
-import JumpNav from '!babel-loader!@mdx-js/loader!./views/JumpNav.mdx';
-import SubRoutes from '!babel-loader!@mdx-js/loader!./views/SubRoutes.mdx';
+import PageComposition from '!babel-loader!@mdx-js/loader!./views/PageComposition.mdx'
+import Dashboard from '!babel-loader!@mdx-js/loader!./views/Dashboard.mdx'
+import JumpNav from '!babel-loader!@mdx-js/loader!./views/JumpNav.mdx'
+import SubRoutes from '!babel-loader!@mdx-js/loader!./views/SubRoutes.mdx'
 
 const routes = [
   {
@@ -47,7 +47,7 @@ const routes = [
       },
     ],
   },
-];
+]
 
 export default () => {
   return (
@@ -61,8 +61,8 @@ export default () => {
       sidenav={() => <div />}
       main={() => <div>{routes.map(renderSection)}</div>}
     />
-  );
-};
+  )
+}
 
 export const _default = () => {
   return (
@@ -90,8 +90,8 @@ export const _default = () => {
         />
       </Container>
     </div>
-  );
-};
+  )
+}
 
 function renderSection({ title, slug, children, component: Component }) {
   if (children) {
@@ -100,13 +100,13 @@ function renderSection({ title, slug, children, component: Component }) {
         <Component />
         {children.map(renderSection)}
       </AnchorNav.Section>
-    );
+    )
   } else {
     return (
       <AnchorNav.Section key={slug} id={slug}>
         <Component />
         <hr className="my-4" />
       </AnchorNav.Section>
-    );
+    )
   }
 }

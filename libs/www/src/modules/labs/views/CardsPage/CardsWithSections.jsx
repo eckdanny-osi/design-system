@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from '@cwds/components';
+import React from 'react'
+import { Card } from '@cwds/components'
 
 const CardsWithSections = () => {
   return (
@@ -19,7 +19,7 @@ const CardsWithSections = () => {
         </Card.Body>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CardsWithSections;
+export default CardsWithSections

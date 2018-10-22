@@ -1,8 +1,8 @@
-import path from 'path';
-import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-const pkgJson = require('./package.json');
+import path from 'path'
+import resolve from 'rollup-plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+const pkgJson = require('./package.json')
 
 // import sass from 'rollup-plugin-sass';
 // import postcss from 'rollup-plugin-postcss';
@@ -10,14 +10,14 @@ const pkgJson = require('./package.json');
 const externals = [
   ...Object.keys(pkgJson.dependencies),
   ...Object.keys(pkgJson.peerDependencies),
-];
+]
 
 module.exports = {
   input: 'js/core.js',
   external: id => {
-    if (externals.includes(id)) return true;
-    if (/module\.s?css$/.test(id)) return true;
-    return false;
+    if (externals.includes(id)) return true
+    if (/module\.s?css$/.test(id)) return true
+    return false
   },
   output: {
     file: 'core.cjs.js',
@@ -51,4 +51,4 @@ module.exports = {
       ],
     }),
   ],
-};
+}

@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text, selectV2 } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, boolean, text, selectV2 } from '@storybook/addon-knobs'
 
-import Avatar from './';
+import Avatar from './'
 
 const demoImgUrl =
-  'https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg';
+  'https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg'
 
 storiesOf('Avatars', module)
   .addDecorator(withKnobs)
@@ -26,7 +26,7 @@ storiesOf('Avatars', module)
           xl: 'xl',
         },
         'md'
-      );
+      )
       return (
         <Avatar
           imgUrl={text('imgUrl', demoImgUrl)}
@@ -45,6 +45,6 @@ storiesOf('Avatars', module)
         //   block={boolean('block', false)}
         //   className="btn-outline-warning btn-warning btn-block"
         // />
-      );
+      )
     })
-  );
+  )

@@ -1,19 +1,19 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { MDXProvider } from '@mdx-js/tag';
-import '@cwds/core/dist/styles.css';
-import 'react-select/dist/react-select.css';
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { MDXProvider } from '@mdx-js/tag'
+import '@cwds/core/dist/styles.css'
+import 'react-select/dist/react-select.css'
 
-import { JumpToTop } from '@cwds/components';
-import componentMap from './components/MDXComponentProviderMappings';
+import { JumpToTop } from '@cwds/components'
+import componentMap from './components/MDXComponentProviderMappings'
 
-import ScrollToTop from './ScrollToTop';
-import Status from './modules/status';
-import Home from './modules/home';
+import ScrollToTop from './ScrollToTop'
+import Status from './modules/status'
+import Home from './modules/home'
 // import PageLayouts from './modules/layouts';
-import CoreStyles from './modules/core-style';
-import LabsPage from './modules/labs';
-import Components from './modules/components';
+import CoreStyles from './modules/core-style'
+import LabsPage from './modules/labs'
+import Components from './modules/components'
 
 class App extends Component {
   render() {
@@ -32,8 +32,8 @@ class App extends Component {
           </ScrollToTop>
         </Router>
       </MDXProvider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

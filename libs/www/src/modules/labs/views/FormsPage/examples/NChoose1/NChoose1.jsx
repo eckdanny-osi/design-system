@@ -1,5 +1,5 @@
-import React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import { Formik } from 'formik'
 import {
   Card,
   Row,
@@ -9,7 +9,7 @@ import {
   Label,
   Select,
   RadioGroup,
-} from '@cwds/components';
+} from '@cwds/components'
 
 export default () => (
   <Formik
@@ -23,7 +23,7 @@ export default () => (
         { label: 'Bar', value: 'bar' },
         { label: 'Quo', value: 'quo' },
         { label: 'Qux', value: 'qux' },
-      ];
+      ]
       return (
         <Card>
           <Row>
@@ -37,8 +37,8 @@ export default () => (
                 // TODO: Should look more like this
                 // onChange={value => props.setFieldValue('myField', value)}
                 onChange={e => {
-                  props.setFieldValue(e.target.name, e.target.value, false);
-                  props.handleChange(e);
+                  props.setFieldValue(e.target.name, e.target.value, false)
+                  props.handleChange(e)
                 }}
               />
             </Col>
@@ -49,7 +49,7 @@ export default () => (
                   name="myField"
                   options={options}
                   onChange={option => {
-                    props.setFieldValue('myField', option ? option.value : '');
+                    props.setFieldValue('myField', option ? option.value : '')
                   }}
                   onBlur={_ => props.setFieldTouched('methodOfContact')}
                   value={props.values.myField}
@@ -59,7 +59,7 @@ export default () => (
             </Col>
           </Row>
         </Card>
-      );
+      )
     }}
   />
-);
+)

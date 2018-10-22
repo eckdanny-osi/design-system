@@ -12,12 +12,12 @@
 
 // export default Modal;
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { mapToCssModules } from 'reactstrap/lib/utils';
-import Icon, { ICON_NAMES } from '../Icon';
-import Styles from './Modal.module.scss';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { mapToCssModules } from 'reactstrap/lib/utils'
+import Icon, { ICON_NAMES } from '../Icon'
+import Styles from './Modal.module.scss'
 
 const propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -27,16 +27,16 @@ const propTypes = {
   cssModule: PropTypes.object,
   children: PropTypes.node,
   closeAriaLabel: PropTypes.string,
-};
+}
 
 const defaultProps = {
   tag: 'h5',
   wrapTag: 'div',
   closeAriaLabel: 'Close',
-};
+}
 
 const ModalHeaderUnstyled = props => {
-  let closeButton;
+  let closeButton
   const {
     className,
     cssModule,
@@ -47,12 +47,12 @@ const ModalHeaderUnstyled = props => {
     closeAriaLabel,
     closeClassName,
     ...attributes
-  } = props;
+  } = props
 
   const classes = mapToCssModules(
     classNames(className, 'modal-header'),
     cssModule
-  );
+  )
 
   if (toggle) {
     // closeButton = (
@@ -76,7 +76,7 @@ const ModalHeaderUnstyled = props => {
       >
         <Icon icon="times" />
       </button>
-    );
+    )
   }
 
   return (
@@ -86,19 +86,19 @@ const ModalHeaderUnstyled = props => {
       </Tag>
       {closeButton}
     </WrapTag>
-  );
-};
+  )
+}
 
-ModalHeaderUnstyled.propTypes = propTypes;
-ModalHeaderUnstyled.defaultProps = defaultProps;
+ModalHeaderUnstyled.propTypes = propTypes
+ModalHeaderUnstyled.defaultProps = defaultProps
 
 export class Modal extends Component {
   render() {
-    const { cssModule, ...props } = this.props;
-    return <ModalHeaderUnstyled cssModule={Styles} {...props} />;
+    const { cssModule, ...props } = this.props
+    return <ModalHeaderUnstyled cssModule={Styles} {...props} />
   }
 }
 
-export { ModalHeaderUnstyled };
+export { ModalHeaderUnstyled }
 
-export default Modal;
+export default Modal

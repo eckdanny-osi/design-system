@@ -8,4 +8,4 @@ module.exports = ({ lib }) => ({
   },
   coverageReporters: ['lcov'],
   coverageDirectory: `<rootDir>/../../coverage/${lib}`,
-});
+})

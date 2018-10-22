@@ -1,7 +1,7 @@
-import Body from '../Body';
+import Body from '../Body'
 
 describe('Body', () => {
   it('exists', () => {
-    expect(Body).toBeDefined();
-  });
-});
+    expect(Body).toBeDefined()
+  })
+})

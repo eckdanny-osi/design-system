@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Page, Button, Badge, Card, Row, Col } from '@cwds/components';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Page, Button, Badge, Card, Row, Col } from '@cwds/components'
 
 export default () => (
   <Page
@@ -129,4 +129,4 @@ export default () => (
       </Row>
     )}
   />
-);
+)

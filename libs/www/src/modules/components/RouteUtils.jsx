@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react';
-import { Route, Link, withRouter } from 'react-router-dom';
+import React, { Fragment } from 'react'
+import { Route, Link, withRouter } from 'react-router-dom'
 import {
   Page,
   ListGroup,
   ListGroupItem,
   BreadcrumbItem,
-} from '@cwds/components';
+} from '@cwds/components'
 
 // Demo some CTA usage
-import SearchWizard from './SearchWizard';
-const ContextualActions = () => <SearchWizard />;
+import SearchWizard from './SearchWizard'
+const ContextualActions = () => <SearchWizard />
 
 const SideNav = withRouter(({ match, routes = [] }) => {
-  if (!routes.length) return null;
+  if (!routes.length) return null
   return (
     <ListGroup>
       {routes.map(({ path, title }) => (
@@ -27,10 +27,10 @@ const SideNav = withRouter(({ match, routes = [] }) => {
         </ListGroupItem>
       ))}
     </ListGroup>
-  );
-});
+  )
+})
 
-const DefaultComponent = () => <div>@TODO</div>;
+const DefaultComponent = () => <div>@TODO</div>
 
 export const GeneralRoute = ({ route, parentContext = [] }) => {
   const {
@@ -38,14 +38,14 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
     path,
     children,
     component: MainComponent = DefaultComponent,
-  } = route;
+  } = route
   if (route.children) {
-    const basePath = getParentPath(parentContext).join('');
-    const fullPath = `${basePath}${path}`;
+    const basePath = getParentPath(parentContext).join('')
+    const fullPath = `${basePath}${path}`
     const trail = getTrail([
       ...parentContext.map(({ path, title }) => ({ path, title })),
       { path, title },
-    ]);
+    ])
     return (
       <Fragment>
         <Route
@@ -77,14 +77,14 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
           />
         ))}
       </Fragment>
-    );
+    )
   } else {
-    const basePath = getParentPath(parentContext).join('');
-    const fullPath = `${basePath}${path}`;
+    const basePath = getParentPath(parentContext).join('')
+    const fullPath = `${basePath}${path}`
     const trail = getTrail([
       ...parentContext.map(({ path, title }) => ({ path, title })),
       { path, title },
-    ]);
+    ])
     return (
       <Route
         path={fullPath}
@@ -105,33 +105,33 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
               )}
               main={MainComponent}
             />
-          );
+          )
         }}
       />
-    );
+    )
   }
-};
+}
 
 //
 // Helpers
 //
 
 function getParentPath(parentChain) {
-  return parentChain.map(({ path }) => path);
+  return parentChain.map(({ path }) => path)
 }
 
 export function getSiblingRoutes(parentContexts) {
-  return parentContexts[parentContexts.length - 1].children;
+  return parentContexts[parentContexts.length - 1].children
 }
 
 export function getTrail(partialRoutes) {
-  const pathsAndTitles = [{ path: '/', title: 'Home' }];
-  let prefix = '';
+  const pathsAndTitles = [{ path: '/', title: 'Home' }]
+  let prefix = ''
   for (let partial of partialRoutes) {
-    prefix += partial.path;
-    pathsAndTitles.push({ ...partial, path: prefix });
+    prefix += partial.path
+    pathsAndTitles.push({ ...partial, path: prefix })
   }
-  return pathsAndTitles;
+  return pathsAndTitles
 }
 
 function MyBreadcrumb({ items }) {
@@ -148,5 +148,5 @@ function MyBreadcrumb({ items }) {
         </BreadcrumbItem>
       ))}
     </React.Fragment>
-  );
+  )
 }

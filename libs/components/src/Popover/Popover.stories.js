@@ -1,32 +1,32 @@
-import React from 'react';
+import React from 'react'
 
-import { Button } from '../Buttons';
-import Popover from './';
+import { Button } from '../Buttons'
+import Popover from './'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
 storiesOf('Popovers', module)
   .addDecorator(withKnobs)
-  .add('Popover', withInfo()(() => <Example />));
+  .add('Popover', withInfo()(() => <Example />))
 
 class Example extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       popoverOpen: false,
-    };
+    }
   }
 
   toggle() {
     this.setState({
       popoverOpen: !this.state.popoverOpen,
-    });
+    })
   }
 
   render() {
@@ -52,6 +52,6 @@ class Example extends React.Component {
           </Popover.Body>
         </Popover>
       </div>
-    );
+    )
   }
 }

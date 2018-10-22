@@ -1,5 +1,5 @@
-import React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import { Formik } from 'formik'
 import {
   Card,
   Row,
@@ -9,7 +9,7 @@ import {
   Label,
   Select,
   CheckboxBank,
-} from '@cwds/components';
+} from '@cwds/components'
 
 export default () => (
   <Formik
@@ -23,7 +23,7 @@ export default () => (
         { label: 'Bar', value: 'bar' },
         { label: 'Quo', value: 'quo' },
         { label: 'Qux', value: 'qux' },
-      ];
+      ]
       return (
         <Card>
           <Row>
@@ -35,7 +35,7 @@ export default () => (
                 options={options}
                 value={props.values.myField}
                 onChange={(field, value) => {
-                  props.setFieldValue(field, value);
+                  props.setFieldValue(field, value)
                 }}
               />
             </Col>
@@ -51,7 +51,7 @@ export default () => (
                     props.setFieldValue(
                       'myField',
                       values.map(({ value }) => value)
-                    );
+                    )
                   }}
                 />
                 <FormFeedback>{props.errors.myField}</FormFeedback>
@@ -59,7 +59,7 @@ export default () => (
             </Col>
           </Row>
         </Card>
-      );
+      )
     }}
   />
-);
+)

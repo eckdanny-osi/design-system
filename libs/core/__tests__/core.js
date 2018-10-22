@@ -1,5 +1,5 @@
 describe('core', () => {
   it('runs this test', () => {
-    expect(true).not.toBe(false);
-  });
-});
+    expect(true).not.toBe(false)
+  })
+})

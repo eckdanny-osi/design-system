@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Styles from './Figure.module.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Styles from './Figure.module.css'
 
 const propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   caption: PropTypes.string,
-};
+}
 
 const Figure = ({ src, alt, caption }) => (
   <div className={Styles.FigureContainer}>
@@ -17,8 +17,8 @@ const Figure = ({ src, alt, caption }) => (
       )}
     </figure>
   </div>
-);
+)
 
-Figure.propTypes = propTypes;
+Figure.propTypes = propTypes
 
-export default Figure;
+export default Figure

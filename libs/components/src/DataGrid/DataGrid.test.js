@@ -1,11 +1,11 @@
-import React from 'react';
-import { shallow, render } from 'enzyme';
-import DataGrid from './DataGrid';
+import React from 'react'
+import { shallow, render } from 'enzyme'
+import DataGrid from './DataGrid'
 
 describe('DataGrdi', () => {
   it('pass', () => {
-    expect(true).toBe(true);
-  });
+    expect(true).toBe(true)
+  })
 
   it('renders', () => {
     // expect(() => shallow(<div>alksdfj</div>)).not.toThrow();
@@ -32,7 +32,7 @@ describe('DataGrdi', () => {
           defaultPageSize={10}
           className="-striped -highlight"
         />
-      );
-    }).not.toThrow();
-  });
-});
+      )
+    }).not.toThrow()
+  })
+})

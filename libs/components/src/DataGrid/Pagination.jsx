@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import classnames from 'classnames';
-import PaginationRT from 'react-table/lib/pagination';
-import Input from '../Input';
-import Select from '../Select';
-import uniqueId from 'lodash.uniqueid';
+import React, { Component } from 'react'
+import classnames from 'classnames'
+import PaginationRT from 'react-table/lib/pagination'
+import Input from '../Input'
+import Select from '../Select'
+import uniqueId from 'lodash.uniqueid'
 
 // From react-table@6.8.6
 // See https://github.com/react-tools/react-table/blob/f55ce620411c619855a2fe2f081407e4f82727b9/src/pagination.js
 
 class Pagination extends PaginationRT {
-  uniqueId = uniqueId('datagrid_pagination_');
+  uniqueId = uniqueId('datagrid_pagination_')
   render() {
     const {
       // Computed
@@ -26,7 +26,7 @@ class Pagination extends PaginationRT {
       className,
       PreviousComponent = defaultButton,
       NextComponent = defaultButton,
-    } = this.props;
+    } = this.props
 
     return (
       <div
@@ -36,8 +36,8 @@ class Pagination extends PaginationRT {
         <div className="-previous">
           <PreviousComponent
             onClick={() => {
-              if (!canPrevious) return;
-              this.changePage(page - 1);
+              if (!canPrevious) return
+              this.changePage(page - 1)
             }}
             disabled={!canPrevious}
           >
@@ -59,18 +59,18 @@ class Pagination extends PaginationRT {
                   id={`${this.uniqueId}_pageJump`}
                   type={this.state.page === '' ? 'text' : 'number'}
                   onChange={e => {
-                    const val = e.target.value;
-                    const page = val - 1;
+                    const val = e.target.value
+                    const page = val - 1
                     if (val === '') {
-                      return this.setState({ page: val });
+                      return this.setState({ page: val })
                     }
-                    this.setState({ page: this.getSafePage(page) });
+                    this.setState({ page: this.getSafePage(page) })
                   }}
                   value={this.state.page === '' ? '' : this.state.page + 1}
                   onBlur={this.applyPage}
                   onKeyPress={e => {
                     if (e.which === 13 || e.keyCode === 13) {
-                      this.applyPage();
+                      this.applyPage()
                     }
                   }}
                 />
@@ -102,8 +102,8 @@ class Pagination extends PaginationRT {
         <div className="-next">
           <NextComponent
             onClick={() => {
-              if (!canNext) return;
-              this.changePage(page + 1);
+              if (!canNext) return
+              this.changePage(page + 1)
             }}
             disabled={!canNext}
           >
@@ -111,8 +111,8 @@ class Pagination extends PaginationRT {
           </NextComponent>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Pagination;
+export default Pagination

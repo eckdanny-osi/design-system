@@ -1,1 +1,1 @@
-export { default } from './InputGroupAddon';
+export { default } from './InputGroupAddon'

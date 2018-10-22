@@ -1,4 +1,4 @@
-import preval from 'preval.macro';
+import preval from 'preval.macro'
 
 const status = preval`
   const { readFileSync } = require('fs');
@@ -54,6 +54,6 @@ const status = preval`
     version: 'latest',
   };
   module.exports = out;
-`;
+`
 
-export default status;
+export default status

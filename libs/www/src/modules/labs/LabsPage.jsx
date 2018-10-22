@@ -1,28 +1,28 @@
-import React, { Fragment } from 'react';
-import { Route, withRouter, Link } from 'react-router-dom';
-import { ListGroup, Page } from '@cwds/components';
+import React, { Fragment } from 'react'
+import { Route, withRouter, Link } from 'react-router-dom'
+import { ListGroup, Page } from '@cwds/components'
 /* eslint-disable import/no-webpack-loader-syntax */
-import DefaultPage from '!babel-loader!@mdx-js/loader!./views/DefaultView.mdx';
-import CardsPage from '!babel-loader!@mdx-js/loader!./views/CardsPage/Cards.mdx';
+import DefaultPage from '!babel-loader!@mdx-js/loader!./views/DefaultView.mdx'
+import CardsPage from '!babel-loader!@mdx-js/loader!./views/CardsPage/Cards.mdx'
 // import DataGridsPage from '!babel-loader!@mdx-js/loader!./views/DataGridsPage/DataGridsPage.mdx';
-import FormsPage from '!babel-loader!@mdx-js/loader!./views/FormsPage/FormsPage.mdx';
+import FormsPage from '!babel-loader!@mdx-js/loader!./views/FormsPage/FormsPage.mdx'
 
-const TITLE = 'Labs';
-const HOME_ROUTE = { title: TITLE, path: '/labs' };
+const TITLE = 'Labs'
+const HOME_ROUTE = { title: TITLE, path: '/labs' }
 
 const routes = [
   { title: 'Cards', path: '/cards', component: CardsPage },
   { title: 'Forms', path: '/forms', component: FormsPage },
   // { title: 'DataGrids', path: '/datagrids', component: DataGridsPage },
-].map(d => ({ ...d, path: [HOME_ROUTE.path, d.path].join('') }));
+].map(d => ({ ...d, path: [HOME_ROUTE.path, d.path].join('') }))
 
 const makeBreadcrumb = location => {
   return [
     { path: '/', title: 'Home' },
     HOME_ROUTE,
     routes.find(({ path }) => path === location.pathname),
-  ].filter(Boolean);
-};
+  ].filter(Boolean)
+}
 
 export default withRouter(({ match, location }) => (
   <Page
@@ -50,9 +50,9 @@ export default withRouter(({ match, location }) => (
             >
               {title}
             </ListGroup.Item>
-          );
+          )
         })}
       </ListGroup>
     )}
   />
-));
+))

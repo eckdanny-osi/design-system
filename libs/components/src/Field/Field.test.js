@@ -1,11 +1,11 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Field from './Field';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import Field from './Field'
 
 describe.skip('Field', () => {
   it('exists', () => {
-    expect(() => mount(<Field />)).not.toThrow();
-  });
+    expect(() => mount(<Field />)).not.toThrow()
+  })
 
   // xit('accepts a custom component type', () => {
   //   const MyComponent = () => <div />;
@@ -19,4 +19,4 @@ describe.skip('Field', () => {
   //   // console.log(myComponent.debug());
   //   // expect(myComponent.prop('onChange')).toEqual(onChange);
   // });
-});
+})

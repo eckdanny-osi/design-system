@@ -1,4 +1,4 @@
-const Color = require('color');
+const Color = require('color')
 
 // Grays
 const grays = {
@@ -11,13 +11,13 @@ const grays = {
   'gray-700': Color.hsl(0, 0, 36).hex(), // ($wahoo)
   'gray-800': Color.hsl(0, 0, 20).hex(), //
   'gray-900': Color.hsl(0, 0, 10).hex(), // ($shark)
-};
+}
 
 // Colors
 const colors = {
   white: Color('#ffffff').hex(),
   black: Color('#000000').hex(),
-};
+}
 
 // Theme Colors
 const themeColors = {
@@ -29,7 +29,7 @@ const themeColors = {
   danger: Color('#bb3709').hex(), // ($maple)
   light: grays['gray-100'], // '$gray-100',
   dark: grays['gray-800'], // '$gray-800',
-};
+}
 
 // Options
 const options = {
@@ -40,10 +40,10 @@ const options = {
   // 'enable-transitions': true,
   // 'enable-grid-classes': true,
   // 'enable-print-styles': true,
-};
+}
 
 // Spacing
-const spacer = 1; // rem
+const spacer = 1 // rem
 const spacers = {
   'spacer-0': `${spacer * 0}rem`,
   'spacer-1': `${spacer * 0.25}rem`,
@@ -51,7 +51,7 @@ const spacers = {
   'spacer-3': `${spacer * 1}rem`,
   'spacer-4': `${spacer * 1.5}rem`,
   'spacer-5': `${spacer * 3}rem`,
-};
+}
 
 // Breakpoints
 const breakpoints = {
@@ -60,7 +60,7 @@ const breakpoints = {
   'grid-breakpoint-md': 768,
   'grid-breakpoint-lg': 992,
   'grid-breakpoint-xl': 1200,
-};
+}
 
 module.exports = {
   grays,
@@ -70,4 +70,4 @@ module.exports = {
   spacers,
   breakpoints,
   options,
-};
+}

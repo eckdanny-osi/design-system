@@ -1,11 +1,11 @@
-import React from 'react';
-import '@cwds/core/dist/styles.css';
-import { AlertUncontrolled } from '@cwds/components/dist/Alert';
-import Avatar from '@cwds/components/dist/Avatar';
-import Button from '@cwds/components/dist/Button';
-import Card from '@cwds/components/dist/Cards';
-import { Container, Row, Col } from '@cwds/components/dist/Grid';
-import Page from '@cwds/components/dist/Layouts/Page';
+import React from 'react'
+import '@cwds/core/dist/styles.css'
+import { AlertUncontrolled } from '@cwds/components/dist/Alert'
+import Avatar from '@cwds/components/dist/Avatar'
+import Button from '@cwds/components/dist/Button'
+import Card from '@cwds/components/dist/Cards'
+import { Container, Row, Col } from '@cwds/components/dist/Grid'
+import Page from '@cwds/components/dist/Layouts/Page'
 
 export const App = ({}) => (
   <Page
@@ -114,5 +114,5 @@ export const App = ({}) => (
       </div>
     )}
   />
-);
-export default App;
+)
+export default App

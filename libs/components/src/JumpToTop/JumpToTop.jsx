@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import cn from 'classnames';
-import Icon from '../Icon';
-import Styles from './JumpToTop.module.scss';
+import React, { Component } from 'react'
+import cn from 'classnames'
+import Icon from '../Icon'
+import Styles from './JumpToTop.module.scss'
 
 class JumpToTop extends Component {
-  static propTypes = {};
-  static defaultProps = {};
+  static propTypes = {}
+  static defaultProps = {}
   scrollToTop = () => {
-    window.scrollTo(0, 0);
-    this.el.blur();
-  };
+    window.scrollTo(0, 0)
+    this.el.blur()
+  }
   render() {
     return (
       <button
@@ -19,8 +19,8 @@ class JumpToTop extends Component {
       >
         <Icon icon="arrow-up" className={cn(Styles.Icon)} />
       </button>
-    );
+    )
   }
 }
 
-export default JumpToTop;
+export default JumpToTop

@@ -1,5 +1,5 @@
-import React from 'react';
-import './DemoCard.css';
+import React from 'react'
+import './DemoCard.css'
 
 export default props => (
   <div {...props} className={`${props.className} DemoCard mt-2 mb-4 p-3`}>
@@ -7,4 +7,4 @@ export default props => (
       {React.cloneElement(props.children, { className: 'mb-0' })}
     </div>
   </div>
-);
+)

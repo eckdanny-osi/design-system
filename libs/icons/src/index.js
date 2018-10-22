@@ -1,2 +1,2 @@
-export { default } from './Icon';
-export { ICON_NAMES } from './icon-library';
+export { default } from './Icon'
+export { ICON_NAMES } from './icon-library'

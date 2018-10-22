@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 // import { mapToCssModules } from 'reactstrap/lib/utils';
-import { Fade, Util } from 'reactstrap';
-import { ICON_NAMES, getIcon } from '../Icon';
-import Icon from '@cwds/icons';
-import Styles from './Alert.module.scss';
+import { Fade, Util } from 'reactstrap'
+import { ICON_NAMES, getIcon } from '../Icon'
+import Icon from '@cwds/icons'
+import Styles from './Alert.module.scss'
 
-const mapToCssModules = Util.mapToCssModules;
+const mapToCssModules = Util.mapToCssModules
 
 const propTypes = {
   children: PropTypes.node,
@@ -20,7 +20,7 @@ const propTypes = {
   toggle: PropTypes.func,
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   transition: PropTypes.shape(Fade.propTypes),
-};
+}
 
 const defaultProps = {
   color: 'success',
@@ -33,7 +33,7 @@ const defaultProps = {
     appear: false,
     enter: false,
   },
-};
+}
 
 function Alert(props) {
   const {
@@ -48,19 +48,19 @@ function Alert(props) {
     children,
     transition,
     ...attributes
-  } = props;
+  } = props
 
   const classes = mapToCssModules(
     classNames(className, 'alert', `alert-${color}`, {
       'alert-dismissible': toggle,
     }),
     cssModule
-  );
+  )
 
   const closeClasses = mapToCssModules(
     classNames('close', closeClassName),
     Styles
-  );
+  )
 
   return (
     <Fade
@@ -96,11 +96,11 @@ function Alert(props) {
         {children}
       </div>
     </Fade>
-  );
+  )
 }
 
-Alert.propTypes = propTypes;
-Alert.defaultProps = defaultProps;
+Alert.propTypes = propTypes
+Alert.defaultProps = defaultProps
 
-export { Alert };
-export default Alert;
+export { Alert }
+export default Alert

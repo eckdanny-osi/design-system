@@ -1,1 +1,1 @@
-export { default } from './SearchDataGrid';
+export { default } from './SearchDataGrid'

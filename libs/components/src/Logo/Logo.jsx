@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Logo.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import styles from './Logo.module.scss'
 
-const propTypes = {};
+const propTypes = {}
 
-const defaultProps = {};
+const defaultProps = {}
 
-const Logo = () => <span className={cn(styles.Logo)}>CWS-CARES</span>;
+const Logo = () => <span className={cn(styles.Logo)}>CWS-CARES</span>
 
 const LogoSVG = () => {
   return (
@@ -78,10 +78,10 @@ const LogoSVG = () => {
         </g>
       </g>
     </svg>
-  );
-};
+  )
+}
 
-Logo.propTypes = propTypes;
-Logo.defaultProps = defaultProps;
+Logo.propTypes = propTypes
+Logo.defaultProps = defaultProps
 
-export default Logo;
+export default Logo

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import '@test/core/dist/styles.css';
-import Button from '@test/components/dist/Button';
+import React, { Component } from 'react'
+import '@test/core/dist/styles.css'
+import Button from '@test/components/dist/Button'
 
 class App extends Component {
   render() {
@@ -23,8 +23,8 @@ class App extends Component {
           </a>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
 describe('Select', () => {
   it('has a test', () => {
-    expect(true).not.toBe(false);
-  });
-});
+    expect(true).not.toBe(false)
+  })
+})

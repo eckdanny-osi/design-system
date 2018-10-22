@@ -1,1 +1,1 @@
-export { default } from './BreadcrumbTrail';
+export { default } from './BreadcrumbTrail'

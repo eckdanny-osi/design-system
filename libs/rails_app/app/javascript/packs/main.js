@@ -1,14 +1,14 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from '../main';
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../main'
 
 document.addEventListener('DOMContentLoaded', () => {
-  let data;
-  const el = document.getElementById('root');
+  let data
+  const el = document.getElementById('root')
   try {
-    data = JSON.parse(el.getAttribute('data'));
+    data = JSON.parse(el.getAttribute('data'))
   } catch (e) {
-    data = {};
+    data = {}
   }
-  render(<App {...data} />, el);
-});
+  render(<App {...data} />, el)
+})

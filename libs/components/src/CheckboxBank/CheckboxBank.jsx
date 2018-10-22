@@ -1,10 +1,10 @@
-import React, { PureComponent, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import uniqueId from 'lodash.uniqueid';
-import Input from '../Input';
-import FormGroup from '../FormGroup';
-import Label from '../Label';
+import React, { PureComponent, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import uniqueId from 'lodash.uniqueid'
+import Input from '../Input'
+import FormGroup from '../FormGroup'
+import Label from '../Label'
 
 class CheckboxBank extends PureComponent {
   static propTypes = {
@@ -24,18 +24,18 @@ class CheckboxBank extends PureComponent {
     error: PropTypes.string,
     touched: PropTypes.bool,
     inline: PropTypes.bool,
-  };
+  }
   static defaultProps = {
     labelKey: 'label',
     valueKey: 'value',
-  };
+  }
   handleChange = e => {
-    const { value, checked } = e.target;
+    const { value, checked } = e.target
     const newValues = checked
       ? [...this.props.value, value]
-      : this.props.value.filter(item => item !== value);
-    this.props.onChange(this.props.name, newValues);
-  };
+      : this.props.value.filter(item => item !== value)
+    this.props.onChange(this.props.name, newValues)
+  }
   render() {
     const {
       options,
@@ -45,12 +45,12 @@ class CheckboxBank extends PureComponent {
       value: values,
       error,
       inline,
-    } = this.props;
+    } = this.props
     return (
       <Fragment>
         {options.map(options => {
-          const [label, value] = [options[labelKey], options[valueKey]];
-          const id = uniqueId();
+          const [label, value] = [options[labelKey], options[valueKey]]
+          const id = uniqueId()
           return (
             <FormGroup
               check
@@ -69,12 +69,12 @@ class CheckboxBank extends PureComponent {
               />
               <Label htmlFor={id}>{label}</Label>
             </FormGroup>
-          );
+          )
         })}
         <div>{error}</div>
       </Fragment>
-    );
+    )
   }
 }
 
-export default CheckboxBank;
+export default CheckboxBank

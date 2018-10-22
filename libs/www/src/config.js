@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { AppBar } from '@cwds/components';
-import { Logo } from '@cwds/components';
-import { Badge } from '@cwds/components';
-import status from './modules/status/status';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { AppBar } from '@cwds/components'
+import { Logo } from '@cwds/components'
+import { Badge } from '@cwds/components'
+import status from './modules/status/status'
 
 // const libVersion = status.lerna.find(d => d.name === '@cwds/components')
 //   .version;
@@ -24,4 +24,4 @@ AppBar.config({
       </Link>
     </React.Fragment>
   ),
-});
+})

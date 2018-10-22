@@ -1,12 +1,12 @@
-import React from 'react';
-import { Card } from '@cwds/components';
-import MultiScopeCardExample from './MultiScopeCards';
+import React from 'react'
+import { Card } from '@cwds/components'
+import MultiScopeCardExample from './MultiScopeCards'
 
 // import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';
 
-import CardWithSections from './CardsWithSections';
+import CardWithSections from './CardsWithSections'
 
-import AsyncCardExample from './AsyncCardExample';
+import AsyncCardExample from './AsyncCardExample'
 
 const CardsPage = () => {
   return (
@@ -100,10 +100,10 @@ const CardsPage = () => {
         </Card>
       </section> */}
     </div>
-  );
-};
+  )
+}
 
 export default {
   name: 'Cards',
   component: CardsPage,
-};
+}

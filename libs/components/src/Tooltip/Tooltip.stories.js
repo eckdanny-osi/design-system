@@ -1,27 +1,27 @@
-import React from 'react';
+import React from 'react'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import Tooltip from './';
+import Tooltip from './'
 
 class Example extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       tooltipOpen: false,
-    };
+    }
   }
 
   toggle() {
     this.setState({
       tooltipOpen: !this.state.tooltipOpen,
-    });
+    })
   }
 
   render() {
@@ -37,7 +37,8 @@ class Example extends React.Component {
           Somewhere in here is a{' '}
           <a href="#" id="TooltipExample">
             tooltip
-          </a>.
+          </a>
+          .
         </p>
         <Tooltip
           placement="top"
@@ -51,10 +52,10 @@ class Example extends React.Component {
           Hello world!
         </Tooltip>
       </div>
-    );
+    )
   }
 }
 
 storiesOf('Tooltips', module)
   .addDecorator(withKnobs)
-  .add('Tooltip', withInfo()(() => <Example />));
+  .add('Tooltip', withInfo()(() => <Example />))

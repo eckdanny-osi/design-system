@@ -1,1 +1,1 @@
-export { default } from './FormFeedback';
+export { default } from './FormFeedback'

@@ -1,1 +1,1 @@
-export { default } from './LabsPage';
+export { default } from './LabsPage'

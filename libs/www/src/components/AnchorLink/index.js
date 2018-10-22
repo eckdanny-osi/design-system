@@ -1,1 +1,1 @@
-export { default } from './AnchorLink';
+export { default } from './AnchorLink'

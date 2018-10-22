@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import Collapsible, { Collapse } from '../Collapse';
-import Icon from '../Icon';
-import CardSubtitle from './CardSubtitle';
-import Subtitle from './CardSubtitle';
-import Styles from './Cards.module.scss';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import Collapsible, { Collapse } from '../Collapse'
+import Icon from '../Icon'
+import CardSubtitle from './CardSubtitle'
+import Subtitle from './CardSubtitle'
+import Styles from './Cards.module.scss'
 
 class CardSubsection extends PureComponent {
   static propTypes = {
@@ -13,28 +13,28 @@ class CardSubsection extends PureComponent {
     renderTitle: PropTypes.func,
     collapsible: PropTypes.bool,
     initialOpen: PropTypes.bool,
-  };
-  state = {};
+  }
+  state = {}
   constructor(props) {
-    super(props);
+    super(props)
     if (props.collapsible) {
-      this.state.collapsed = !this.props.initialOpen;
+      this.state.collapsed = !this.props.initialOpen
     }
     if (props.renderTitle) {
-      this._renderTitle = props.renderTitle;
+      this._renderTitle = props.renderTitle
     }
   }
   renderTitle() {
-    return (this._renderTitle && this._renderTitle()) || this.props.title;
+    return (this._renderTitle && this._renderTitle()) || this.props.title
   }
   toggleCollapse = e => {
-    e.preventDefault();
+    e.preventDefault()
     this.setState({
       collapsed: !this.state.collapsed,
-    });
-  };
+    })
+  }
   renderSectionTitle() {
-    const { title, renderTitle } = this.props;
+    const { title, renderTitle } = this.props
     return (
       <div
         className={cn(Styles.CardSubsectionTitle, {
@@ -55,27 +55,27 @@ class CardSubsection extends PureComponent {
           </div>
         </a>
       </div>
-    );
+    )
   }
   renderSectionBody() {
     if (!this.props.collapsible) {
-      return this.props.children;
+      return this.props.children
     }
     return (
       <Collapse isOpen={!this.state.collapsed}>
         <div className={Styles.CardSubsectionBody}>{this.props.children}</div>
       </Collapse>
-    );
+    )
   }
   render() {
-    const { children, title, collapsible } = this.props;
+    const { children, title, collapsible } = this.props
     return (
       <div className={Styles.CardSubsection}>
         {this.renderSectionTitle()}
         {this.renderSectionBody()}
       </div>
-    );
+    )
   }
 }
 
-export default CardSubsection;
+export default CardSubsection

@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import slugify from 'slugify';
-import { Page, JumpNav } from '@cwds/components';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import slugify from 'slugify'
+import { Page, JumpNav } from '@cwds/components'
 /* eslint-disable import/no-webpack-loader-syntax */
-import CoreStyle from '!babel-loader!@mdx-js/loader!./CoreStyle.mdx';
+import CoreStyle from '!babel-loader!@mdx-js/loader!./CoreStyle.mdx'
 
 const toSlug = str =>
   slugify(str, {
     replacement: '-',
     lower: true,
-  });
+  })
 
 const routes = [
   'Experience Principles',
@@ -21,12 +21,12 @@ const routes = [
   'Iconography',
   'Typography',
   'Tone',
-].map(title => ({ title, path: `#${toSlug(title)}` }));
+].map(title => ({ title, path: `#${toSlug(title)}` }))
 
 class CoreStylePage extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log({ nextProps });
-    return false;
+    console.log({ nextProps })
+    return false
   }
   render() {
     return (
@@ -38,12 +38,12 @@ class CoreStylePage extends Component {
           { title: 'Core Style', path: '/core-style' },
         ]}
         sidenav={() => {
-          return <JumpNav tag={Link} routes={routes} />;
+          return <JumpNav tag={Link} routes={routes} />
         }}
         main={() => <CoreStyle />}
       />
-    );
+    )
   }
 }
 
-export default CoreStylePage;
+export default CoreStylePage

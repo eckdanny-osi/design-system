@@ -1,7 +1,7 @@
-import JumpNav from '../JumpNav';
+import JumpNav from '../JumpNav'
 
 describe('JumpNav', () => {
   it('exists', () => {
-    expect(JumpNav).toBeDefined();
-  });
-});
+    expect(JumpNav).toBeDefined()
+  })
+})

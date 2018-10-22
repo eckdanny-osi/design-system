@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from '../Forms/Forms.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import styles from '../Forms/Forms.module.scss'
 
-const propTypes = {};
+const propTypes = {}
 
-const defaultProps = {};
+const defaultProps = {}
 
 const Legend = props => (
   <legend
@@ -14,9 +14,9 @@ const Legend = props => (
     })}
     {...props}
   />
-);
+)
 
-Legend.propTypes = propTypes;
-Legend.defaultProps = defaultProps;
+Legend.propTypes = propTypes
+Legend.defaultProps = defaultProps
 
-export default Legend;
+export default Legend

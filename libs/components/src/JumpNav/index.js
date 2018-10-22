@@ -1,1 +1,1 @@
-export { default } from './JumpNav';
+export { default } from './JumpNav'

@@ -1,8 +1,8 @@
-import React from 'react';
-import imgCenter from '../media/centered-content.jpg';
-import imgHeaderElems from '../media/header-elems.jpg';
-import imgLayout13 from '../media/layout13.jpg';
-import imgLayout31 from '../media/layout31.jpg';
+import React from 'react'
+import imgCenter from '../media/centered-content.jpg'
+import imgHeaderElems from '../media/header-elems.jpg'
+import imgLayout13 from '../media/layout13.jpg'
+import imgLayout31 from '../media/layout31.jpg'
 
 export default () => (
   <div>
@@ -45,4 +45,4 @@ export default () => (
       <figcaption style={{ textAlign: 'center' }}>alksdjfalksdjf</figcaption>
     </figure>
   </div>
-);
+)

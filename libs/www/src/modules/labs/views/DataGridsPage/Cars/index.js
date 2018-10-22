@@ -1,1 +1,1 @@
-export { default } from './CarsDataGrid';
+export { default } from './CarsDataGrid'

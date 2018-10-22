@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Row,
   Col,
@@ -8,10 +8,10 @@ import {
   Input,
   Collapse,
   Button,
-} from '@cwds/components';
-import PeopleService from './mockService';
+} from '@cwds/components'
+import PeopleService from './mockService'
 
-import { toCapitalCase } from '../utils';
+import { toCapitalCase } from '../utils'
 
 const columns = [
   { Header: 'Last', accessor: 'name.last' },
@@ -27,7 +27,7 @@ const columns = [
     accessor: 'eyeColor',
     Cell: ({ value }) => toCapitalCase(value),
   },
-];
+]
 
 const AdvancedPeopleSearchForm = ({
   onSearchFormToggle,
@@ -90,11 +90,11 @@ const AdvancedPeopleSearchForm = ({
         {/* </Card.Footer> */}
       </Collapse>
     </Card>
-  );
-};
+  )
+}
 
 class AdvancedPeopleSearchDataGrid extends Component {
-  peopleService = new PeopleService();
+  peopleService = new PeopleService()
   state = {
     loading: false,
     pages: null,
@@ -102,16 +102,16 @@ class AdvancedPeopleSearchDataGrid extends Component {
     pageSize: 10,
     isOpenSearchForm: true,
     viewType: 'table',
-  };
+  }
   componentDidMount() {
-    this._mounted = true;
+    this._mounted = true
   }
   componentWillUnmount() {
-    this._mounted = false;
+    this._mounted = false
   }
   onSearchChange() {}
   onFetchData = (state, instance) => {
-    this.setState({ loading: true });
+    this.setState({ loading: true })
     this.peopleService
       .search({
         from:
@@ -127,17 +127,17 @@ class AdvancedPeopleSearchDataGrid extends Component {
             loading: false,
             data: res.records,
             pages: Math.ceil(res.meta.total / 10),
-          });
+          })
       })
-      .catch(err => {});
-  };
+      .catch(err => {})
+  }
   onSearchFormToggle = () => {
     this.setState({
       isOpenSearchForm: !this.state.isOpenSearchForm,
-    });
-  };
+    })
+  }
   render() {
-    const { loading, pages, data } = this.state;
+    const { loading, pages, data } = this.state
     return (
       <Card>
         <Card.Header>
@@ -167,8 +167,8 @@ class AdvancedPeopleSearchDataGrid extends Component {
             onSortedChange={sorted => this.setState({ sorted })}
             onPageChange={page => this.setState({ page })}
             onPageSizeChange={(pageSize, page) => {
-              this.setState({ page, pageSize });
-              console.log('hi');
+              this.setState({ page, pageSize })
+              console.log('hi')
             }}
             onExpandedChange={expanded => this.setState({ expanded })}
             onResizedChange={resized => this.setState({ resized })}
@@ -176,8 +176,8 @@ class AdvancedPeopleSearchDataGrid extends Component {
           />
         </Card.Body>
       </Card>
-    );
+    )
   }
 }
 
-export default AdvancedPeopleSearchDataGrid;
+export default AdvancedPeopleSearchDataGrid

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faCheck,
   faTimes,
@@ -21,8 +21,8 @@ import {
   faMinus,
   faLightbulb,
   faArrowUp,
-} from '@fortawesome/free-solid-svg-icons';
-import Styles from './Icon.module.scss';
+} from '@fortawesome/free-solid-svg-icons'
+import Styles from './Icon.module.scss'
 
 library.add(
   faCheck,
@@ -42,17 +42,17 @@ library.add(
   faMinus,
   faLightbulb,
   faArrowUp
-);
+)
 
 // TODO: map colors
 // TODO: fix default color
 const Icon = props => (
   <FontAwesomeIcon className="text-primary" focusable="false" {...props} />
-);
-Icon.propTypes = { ...FontAwesomeIcon.propTypes };
-Icon.defaultProps = { ...FontAwesomeIcon.defaultProps, color: '#00517a' };
+)
+Icon.propTypes = { ...FontAwesomeIcon.propTypes }
+Icon.defaultProps = { ...FontAwesomeIcon.defaultProps, color: '#00517a' }
 
-export default Icon;
+export default Icon
 
 export const ICON_NAMES = {
   check: 'check',
@@ -72,4 +72,4 @@ export const ICON_NAMES = {
   ellipsis: 'ellipsisV',
   lightbulb: 'lightbulb',
   arrowUp: 'arrow-up',
-};
+}

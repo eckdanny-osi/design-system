@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import AppBar from '../../AppBar';
-import PageHeader from '../../PageHeader';
-import { Container } from '../../Grid';
-import BreadcrumbTrail from '../../BreadcrumbTrail';
-import Styles from '../Layout.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import AppBar from '../../AppBar'
+import PageHeader from '../../PageHeader'
+import { Container } from '../../Grid'
+import BreadcrumbTrail from '../../BreadcrumbTrail'
+import Styles from '../Layout.module.scss'
 
 const renderBreadcrumbDefault = itemsOrRenderFn => {
-  if (React.isValidElement(itemsOrRenderFn)) return itemsOrRenderFn;
+  if (React.isValidElement(itemsOrRenderFn)) return itemsOrRenderFn
   if (typeof itemsOrRenderFn === 'function') {
-    return itemsOrRenderFn();
+    return itemsOrRenderFn()
   }
   if (Array.isArray(itemsOrRenderFn)) {
-    return <BreadcrumbTrail items={itemsOrRenderFn} />;
+    return <BreadcrumbTrail items={itemsOrRenderFn} />
   }
-  throw new TypeError('Invalid argument: itemsOrRenderFn', 'Banner.jsx');
-};
+  throw new TypeError('Invalid argument: itemsOrRenderFn', 'Banner.jsx')
+}
 
 const Banner = ({
   AppBar,
@@ -44,7 +44,7 @@ const Banner = ({
       </div>
     )}
   </div>
-);
+)
 
 Banner.propTypes = {
   AppBar: PropTypes.func,
@@ -52,12 +52,12 @@ Banner.propTypes = {
   BreadcrumbTrail: PropTypes.func,
   title: PropTypes.string,
   breadcrumbItems: PropTypes.arrayOf(PropTypes.func),
-};
+}
 
 Banner.defaultProps = {
   AppBar: AppBar,
   PageHeader: PageHeader,
   BreadcrumbTrail: BreadcrumbTrail,
-};
+}
 
-export default Banner;
+export default Banner

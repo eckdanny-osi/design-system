@@ -1,5 +1,5 @@
-import React, { Fragment, Component } from 'react';
-import { Formik } from 'formik';
+import React, { Fragment, Component } from 'react'
+import { Formik } from 'formik'
 import {
   Card,
   Button,
@@ -9,8 +9,8 @@ import {
   Label,
   Input,
   Icon,
-} from '@cwds/components';
-import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
+} from '@cwds/components'
+import MultiCard from '@cwds/components/dist/Cards/CardMultiContext'
 
 class Example extends Component {
   state = {
@@ -21,7 +21,7 @@ class Example extends Component {
       verbPast: 'dedicated',
       animal: 'men',
     },
-  };
+  }
 
   render() {
     return (
@@ -34,7 +34,7 @@ class Example extends Component {
             place,
             animal,
             verbPast,
-          } = this.state.values;
+          } = this.state.values
           return (
             <Card>
               {renderHeader({ scope })}
@@ -55,21 +55,21 @@ class Example extends Component {
                 </blockquote>
               </Card.Body>
             </Card>
-          );
+          )
         }}
         edit={({ renderHeader, toggleScope, scope }) => (
           <Formik
             initialValues={this.state.values}
             onSubmit={(values, actions) => {
               setTimeout(() => {
-                actions.resetForm(values);
-                this.setState({ values });
-                toggleScope();
-              }, 1000);
+                actions.resetForm(values)
+                this.setState({ values })
+                toggleScope()
+              }, 1000)
             }}
             render={props => {
               const onChange = e =>
-                props.setFieldValue(e.target.name, e.target.value);
+                props.setFieldValue(e.target.name, e.target.value)
               return (
                 <form onSubmit={props.handleSubmit} autoComplete="off">
                   <Card>
@@ -155,13 +155,13 @@ class Example extends Component {
                     </Card.Footer>
                   </Card>
                 </form>
-              );
+              )
             }}
           />
         )}
       />
-    );
+    )
   }
 }
 
-export default Example;
+export default Example

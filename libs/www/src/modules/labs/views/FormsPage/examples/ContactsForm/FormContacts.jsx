@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Formik } from 'formik';
+import React, { Fragment } from 'react'
+import { Formik } from 'formik'
 import {
   Card,
   Button,
@@ -13,7 +13,7 @@ import {
   Icon,
   FormFeedback,
   RadioGroup,
-} from '@cwds/components';
+} from '@cwds/components'
 import {
   CLASSIFICATION_OPTIONS,
   CONCTACT_METHOD_OPTIONS,
@@ -22,9 +22,9 @@ import {
   NOTICE_OPTIONS,
   COLLATERAL_VISIT_OPTIONS,
   VISIT_TYPE_OPTIONS,
-} from './contactsFormEnums';
-import initialValues from './contactsFormInitialValues';
-import validate from './contactsFormValidate';
+} from './contactsFormEnums'
+import initialValues from './contactsFormInitialValues'
+import validate from './contactsFormValidate'
 
 export default () => (
   <Formik
@@ -87,7 +87,7 @@ export default () => (
                         props.setFieldValue(
                           'methodOfContact',
                           option ? option.value : ''
-                        );
+                        )
                       }}
                       onBlur={_ => props.setFieldTouched('methodOfContact')}
                       value={props.values.methodOfContact}
@@ -117,7 +117,7 @@ export default () => (
                           props.setFieldValue(
                             'inPersonDetail.location',
                             option ? option.value : ''
-                          );
+                          )
                         }}
                       />
                     </FormGroup>
@@ -203,7 +203,7 @@ export default () => (
                           props.setFieldValue(
                             'inPersonDetail.visitType',
                             option ? option.value : ''
-                          );
+                          )
                         }}
                       />
                     </FormGroup>
@@ -267,7 +267,7 @@ export default () => (
             </Button>
           </Card.Footer>
         </Card>
-      );
+      )
     }}
   />
-);
+)

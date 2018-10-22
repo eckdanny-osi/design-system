@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Card from '../Cards';
-import DataGrid from '../DataGrid';
-import mtcars from './mtcars.json';
+import React, { Component } from 'react'
+import Card from '../Cards'
+import DataGrid from '../DataGrid'
+import mtcars from './mtcars.json'
 
 class CarsDataGrid extends Component {
   render() {
@@ -32,8 +32,8 @@ class CarsDataGrid extends Component {
           />
         </Card.Body>
       </Card>
-    );
+    )
   }
 }
 
-export default CarsDataGrid;
+export default CarsDataGrid

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, DataGrid } from '@cwds/components';
-import mtcars from '../data/mtcars.json';
+import React from 'react'
+import { Card, DataGrid } from '@cwds/components'
+import mtcars from '../data/mtcars.json'
 
 const columns = [
   { Header: 'Model', accessor: '_row', width: 150 },
@@ -15,7 +15,7 @@ const columns = [
   { Header: 'am', accessor: 'am' },
   { Header: 'gear', accessor: 'gear' },
   { Header: 'carb', accessor: 'carb' },
-];
+]
 
 const CarsDataGrid = () => (
   <Card>
@@ -26,6 +26,6 @@ const CarsDataGrid = () => (
       <DataGrid data={mtcars} columns={columns} className="-highlight" />
     </Card.Body>
   </Card>
-);
+)
 
-export default CarsDataGrid;
+export default CarsDataGrid

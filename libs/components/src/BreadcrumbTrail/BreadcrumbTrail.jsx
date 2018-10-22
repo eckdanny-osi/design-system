@@ -1,12 +1,12 @@
-import React from 'react';
-import cn from 'classnames';
-import Breadcrumb from '../Breadcrumbs';
-import { Container } from '../Grid';
-import Styles from './BreadcrumbTrail.module.scss';
+import React from 'react'
+import cn from 'classnames'
+import Breadcrumb from '../Breadcrumbs'
+import { Container } from '../Grid'
+import Styles from './BreadcrumbTrail.module.scss'
 
 // @TODO: this should break!!! Only works because of lerna!
 // import { NavLink } from 'react-router-dom';
-const NavLink = props => <a href={props.to}>{props.children}</a>;
+const NavLink = props => <a href={props.to}>{props.children}</a>
 
 const BreadcrumbTrail = ({ items = [], renderItem }) => {
   return (
@@ -26,7 +26,7 @@ const BreadcrumbTrail = ({ items = [], renderItem }) => {
         ))}
       </Breadcrumb>
     </div>
-  );
-};
+  )
+}
 
-export default BreadcrumbTrail;
+export default BreadcrumbTrail

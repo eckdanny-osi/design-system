@@ -1,8 +1,8 @@
-import Popover from './Popover';
-import Header from './PopoverHeader';
-import Body from './PopoverBody';
+import Popover from './Popover'
+import Header from './PopoverHeader'
+import Body from './PopoverBody'
 
-Popover.Header = Header;
-Popover.Body = Body;
+Popover.Header = Header
+Popover.Body = Body
 
-export default Popover;
+export default Popover

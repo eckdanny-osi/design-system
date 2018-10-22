@@ -1,1 +1,1 @@
-export { default } from './NChooseK';
+export { default } from './NChooseK'

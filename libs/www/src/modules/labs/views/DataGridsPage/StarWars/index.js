@@ -1,1 +1,1 @@
-export { default } from './StarWarsDataGrid';
+export { default } from './StarWarsDataGrid'

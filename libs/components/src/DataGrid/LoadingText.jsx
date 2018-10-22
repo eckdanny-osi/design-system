@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import cn from 'classnames';
-import Styles from './DataGrid.module.scss';
-import Icon from '../Icon';
+import React, { Fragment } from 'react'
+import cn from 'classnames'
+import Styles from './DataGrid.module.scss'
+import Icon from '../Icon'
 
 const LoadingText = ({ className, style }) => (
   <div
@@ -26,6 +26,6 @@ const LoadingText = ({ className, style }) => (
     />
     <span>Loading...</span>
   </div>
-);
+)
 
-export default LoadingText;
+export default LoadingText

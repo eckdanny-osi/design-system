@@ -1,58 +1,58 @@
 export const CLASSIFICATION = {
   CONFIDENTIAL: 'confidential',
   PUBLIC: 'public',
-};
+}
 
 export const CLASSIFICATION_OPTIONS = [
   { value: CLASSIFICATION.CONFIDENTIAL, label: 'Confidential' },
   { value: CLASSIFICATION.PUBLIC, label: 'Public' },
-];
+]
 
 export const CONTACT_METHOD = {
   IN_PERSON: 'inPerson',
   TELEPHONE: 'telephone',
   EMAIL: 'email',
   OTHER: 'other',
-};
+}
 
 export const CONCTACT_METHOD_OPTIONS = [
   { value: CONTACT_METHOD.IN_PERSON, label: 'In Person' },
   { value: CONTACT_METHOD.EMAIL, label: 'Email' },
   { value: CONTACT_METHOD.TELEPHONE, label: 'Telephone' },
   { value: CONTACT_METHOD.OTHER, label: 'Other' },
-];
+]
 
 export const LOCATION = {
   OFFICE: 'office',
   HOME_FACILITY: 'homeFacility',
   OTHER: 'other',
-};
+}
 
 export const LOCATION_OPTIONS = [
   { value: LOCATION.OFFICE, label: 'Office' },
   { value: LOCATION.HOME_FACILITY, label: 'Home/Facility' },
   { value: LOCATION.OTHER, label: 'Other' },
-];
+]
 
 export const NOTICE = {
   ANNOUNCED: 'announced',
   UNANNOUNCED: 'unannounced',
-};
+}
 
 export const NOTICE_OPTIONS = [
   { value: NOTICE.ANNOUNCED, label: 'Announced' },
   { value: NOTICE.UNANNOUNCED, label: 'Unannounced' },
-];
+]
 
 export const IS_COLLATERAL_VISIT = {
   YES: 'yes',
   NO: 'no',
-};
+}
 
 export const COLLATERAL_VISIT_OPTIONS = [
   { value: IS_COLLATERAL_VISIT.NO, label: 'No' },
   { value: IS_COLLATERAL_VISIT.YES, label: 'Yes' },
-];
+]
 
 export const VISIT_TYPE = {
   EMERGENCY_PLACEMENT_ASSESSMENT: '01',
@@ -68,7 +68,7 @@ export const VISIT_TYPE = {
   RSO_CHECK: '11',
   CLIENT_DEATH: '12',
   OTHER: '13',
-};
+}
 
 export const VISIT_TYPE_OPTIONS = [
   {
@@ -99,4 +99,4 @@ export const VISIT_TYPE_OPTIONS = [
   { value: VISIT_TYPE.RSO_CHECK, label: 'RSO Check' },
   { value: VISIT_TYPE.CLIENT_DEATH, label: 'Client Death' },
   { value: VISIT_TYPE.OTHER, label: 'Other' },
-];
+]

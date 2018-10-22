@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Card, DataGrid } from '@cwds/components';
-import PeopleService from './people-service';
+import React, { Component } from 'react'
+import { Card, DataGrid } from '@cwds/components'
+import PeopleService from './people-service'
 
 const columnConfig = [
   {
@@ -24,39 +24,39 @@ const columnConfig = [
     Header: 'Mass',
     accessor: 'mass',
   },
-];
+]
 
 const columnSort = [
   {
     id: 'name',
     desc: true,
   },
-];
+]
 
 export default class DataGridsExample extends Component {
   // Guard against promise resolution after unmount
-  _mounted = false;
+  _mounted = false
   state = {
     data: undefined,
     status: 'idle',
     pages: -1,
     pageSize: undefined,
-  };
+  }
   constructor(props) {
-    super(props);
-    this._service = PeopleService.create();
-    this.fetchData = this.fetchData.bind(this);
+    super(props)
+    this._service = PeopleService.create()
+    this.fetchData = this.fetchData.bind(this)
   }
   componentDidMount() {
-    this._mounted = true;
+    this._mounted = true
   }
   componentWillUnmount() {
-    this._mounted = false;
+    this._mounted = false
   }
   fetchData(tableState) {
     this.setState({
       status: 'loading',
-    });
+    })
     this._service
       .get('/people', {
         params: {
@@ -71,14 +71,14 @@ export default class DataGridsExample extends Component {
             status: 'idle',
             pageSize: tableState.pageSize,
             pages: Math.ceil(meta.count / tableState.pageSize),
-          });
+          })
       })
       .catch(err => {
-        debugger;
-      });
+        debugger
+      })
   }
   render() {
-    const { data } = this.state;
+    const { data } = this.state
     return (
       <Card>
         <Card.Header>
@@ -97,6 +97,6 @@ export default class DataGridsExample extends Component {
           />
         </Card.Body>
       </Card>
-    );
+    )
   }
 }

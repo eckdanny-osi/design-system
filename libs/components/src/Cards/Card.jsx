@@ -1,30 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import getDisplayName from 'react-display-name';
-import CardUnstyled from 'reactstrap/lib/Card';
-import {
-  hasCardComponentStructure,
-  findChildCardStructure,
-} from './card-utils';
-import Styles from './Cards.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import getDisplayName from 'react-display-name'
+import CardUnstyled from 'reactstrap/lib/Card'
+import { hasCardComponentStructure, findChildCardStructure } from './card-utils'
+import Styles from './Cards.module.scss'
 
 // @todo(dce): this shouldn't depend on DataGrid for anything
-import LoadingText from '../DataGrid/LoadingText';
+import LoadingText from '../DataGrid/LoadingText'
 
-import Body from './CardBody';
-import Footer from './CardFooter';
-import Header from './CardHeader';
-import Section from './CardSection';
-import SectionGroup from './CardSectionGroup';
-import Subtitle from './CardSubtitle';
-import Title from './CardTitle';
+import Body from './CardBody'
+import Footer from './CardFooter'
+import Header from './CardHeader'
+import Section from './CardSection'
+import SectionGroup from './CardSectionGroup'
+import Subtitle from './CardSubtitle'
+import Title from './CardTitle'
 
-import { Row, Col } from '../Grid';
+import { Row, Col } from '../Grid'
 
 const greyOutStyle = {
   backgroundColor: 'whitesmoke',
   textIndent: '-99999px',
-};
+}
 
 const LoadingCard = ({ children, ...props }) => (
   <CardUnstyled {...props}>
@@ -67,28 +64,28 @@ const LoadingCard = ({ children, ...props }) => (
       </Card.Body>
     </Body>
   </CardUnstyled>
-);
+)
 
 const Card = props => {
-  const { loading, ...passProps } = props;
-  if (loading) return <LoadingCard {...passProps} />;
+  const { loading, ...passProps } = props
+  if (loading) return <LoadingCard {...passProps} />
   if (!hasCardComponentStructure(props.children)) {
-    const { children, ...passProps } = props;
+    const { children, ...passProps } = props
     return (
       <CardUnstyled {...passProps}>
         <Body>{children}</Body>
       </CardUnstyled>
-    );
+    )
   }
-  return <CardUnstyled {...props} />;
-};
-Card.propTypes = { ...CardUnstyled.propTypes, loading: PropTypes.bool };
-Card.defaultProps = { ...CardUnstyled.defaultProps, cssModule: Styles };
-Card.Body = Body;
-Card.Header = Header;
-Card.Footer = Footer;
-Card.Subtitle = Subtitle;
-Card.Section = Section;
-Card.Title = Title;
+  return <CardUnstyled {...props} />
+}
+Card.propTypes = { ...CardUnstyled.propTypes, loading: PropTypes.bool }
+Card.defaultProps = { ...CardUnstyled.defaultProps, cssModule: Styles }
+Card.Body = Body
+Card.Header = Header
+Card.Footer = Footer
+Card.Subtitle = Subtitle
+Card.Section = Section
+Card.Title = Title
 
-export default Card;
+export default Card

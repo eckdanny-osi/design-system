@@ -1,12 +1,12 @@
-import React from 'react';
-import { ListGroupItem as ListGroupItemUnstyled } from 'reactstrap';
-import Styles from './ListGroups.module.scss';
+import React from 'react'
+import { ListGroupItem as ListGroupItemUnstyled } from 'reactstrap'
+import Styles from './ListGroups.module.scss'
 
-const ListGroupItem = props => <ListGroupItemUnstyled {...props} />;
-ListGroupItem.propTypes = { ...ListGroupItemUnstyled.propTypes };
+const ListGroupItem = props => <ListGroupItemUnstyled {...props} />
+ListGroupItem.propTypes = { ...ListGroupItemUnstyled.propTypes }
 ListGroupItem.defaultProps = {
   ...ListGroupItemUnstyled.defaultProps,
   cssModule: Styles,
-};
+}
 
-export default ListGroupItem;
+export default ListGroupItem

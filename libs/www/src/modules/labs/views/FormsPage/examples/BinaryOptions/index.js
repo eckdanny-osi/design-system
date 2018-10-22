@@ -1,1 +1,1 @@
-export { default } from './BinaryChoice';
+export { default } from './BinaryChoice'

@@ -1,12 +1,12 @@
-import React from 'react';
-import { InputGroupAddon as InputGroupAddonUnstyled } from 'reactstrap';
-import Styles from '../Forms/Forms.module.scss';
+import React from 'react'
+import { InputGroupAddon as InputGroupAddonUnstyled } from 'reactstrap'
+import Styles from '../Forms/Forms.module.scss'
 
-const InputGroupAddon = props => <InputGroupAddonUnstyled {...props} />;
-InputGroupAddon.propTypes = { ...InputGroupAddonUnstyled.propTypes };
+const InputGroupAddon = props => <InputGroupAddonUnstyled {...props} />
+InputGroupAddon.propTypes = { ...InputGroupAddonUnstyled.propTypes }
 InputGroupAddon.defaultProps = {
   ...InputGroupAddonUnstyled.defaultProps,
   cssModule: Styles,
-};
+}
 
-export default InputGroupAddon;
+export default InputGroupAddon

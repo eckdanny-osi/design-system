@@ -1,4 +1,4 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 const ICONS = [
   'faArrowUp',
@@ -18,24 +18,24 @@ const ICONS = [
   'faTimes',
   'faUpload',
   'faUser',
-];
+]
 
-const { iconPack, iconNames: ICON_NAMES } = loadIcons(ICONS);
+const { iconPack, iconNames: ICON_NAMES } = loadIcons(ICONS)
 
 // Seed Icon Library
 export default () => {
-  library.add(iconPack);
-};
+  library.add(iconPack)
+}
 
-export { ICON_NAMES };
+export { ICON_NAMES }
 
 function loadIcons(icons) {
-  const iconPack = {};
-  let iconNames = [];
+  const iconPack = {}
+  let iconNames = []
   icons.forEach(name => {
-    const mod = require(`@fortawesome/free-solid-svg-icons/${name}`);
-    iconPack[name] = mod.definition;
-    iconNames.push(mod.iconName);
-  });
-  return { iconPack, iconNames };
+    const mod = require(`@fortawesome/free-solid-svg-icons/${name}`)
+    iconPack[name] = mod.definition
+    iconNames.push(mod.iconName)
+  })
+  return { iconPack, iconNames }
 }

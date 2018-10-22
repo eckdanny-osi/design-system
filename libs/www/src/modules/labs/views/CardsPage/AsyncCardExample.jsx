@@ -1,13 +1,13 @@
-import React from 'react';
-import { Button, Card } from '@cwds/components';
+import React from 'react'
+import { Button, Card } from '@cwds/components'
 
 class AsyncCardExample extends React.Component {
   state = {
     loading: true,
-  };
+  }
   toggleLoading = () => {
-    this.setState({ loading: !this.state.loading });
-  };
+    this.setState({ loading: !this.state.loading })
+  }
   render() {
     return (
       <div>
@@ -24,8 +24,8 @@ class AsyncCardExample extends React.Component {
           </Card.Footer>
         </Card>
       </div>
-    );
+    )
   }
 }
 
-export default AsyncCardExample;
+export default AsyncCardExample

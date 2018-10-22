@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import cn from 'classnames';
-import Styles from './DataGrid.module.scss';
-import Icon from '../Icon';
+import React, { Fragment } from 'react'
+import cn from 'classnames'
+import Styles from './DataGrid.module.scss'
+import Icon from '../Icon'
 
 const NoDataText = () => (
   <div className={cn(Styles.Overlay, 'text-danger')}>
@@ -12,6 +12,6 @@ const NoDataText = () => (
     />
     No Records Found!
   </div>
-);
+)
 
-export default NoDataText;
+export default NoDataText

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import omit from 'lodash.omit';
+import React, { Component } from 'react'
+import omit from 'lodash.omit'
 // import getDisplayName from 'react-display-name';
 // import hoistNonReactStatics from 'hoist-non-react-statics';
 
@@ -22,5 +22,5 @@ import omit from 'lodash.omit';
 // }
 
 function getProps(props, ...omits) {
-  return omit(props, omits);
+  return omit(props, omits)
 }

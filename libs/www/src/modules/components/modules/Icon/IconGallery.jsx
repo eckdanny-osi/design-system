@@ -1,6 +1,6 @@
-import React from 'react';
-import IconSquare from './IconSquare';
-import { ICON_NAMES } from '@cwds/components';
+import React from 'react'
+import IconSquare from './IconSquare'
+import { ICON_NAMES } from '@cwds/components'
 
 export default ({ className }) => {
   return (
@@ -9,5 +9,5 @@ export default ({ className }) => {
         <IconSquare key={name} name={name} />
       ))}
     </div>
-  );
-};
+  )
+}

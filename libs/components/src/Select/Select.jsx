@@ -1,4 +1,4 @@
-export { default } from 'react-select';
+export { default } from 'react-select'
 
 // import React, { Component } from 'react';
 // import cn from 'classnames';

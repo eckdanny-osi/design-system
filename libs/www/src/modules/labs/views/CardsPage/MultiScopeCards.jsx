@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component } from 'react'
 import {
   Button,
   Card,
@@ -8,9 +8,9 @@ import {
   Label,
   Input,
   Icon,
-} from '@cwds/components';
-import { Formik } from 'formik';
-import MultiCard from '@cwds/components/dist/Cards/CardMultiContext';
+} from '@cwds/components'
+import { Formik } from 'formik'
+import MultiCard from '@cwds/components/dist/Cards/CardMultiContext'
 
 class Example extends Component {
   state = {
@@ -19,7 +19,7 @@ class Example extends Component {
       bar: 'another value',
       quo: 'yet another value',
     },
-  };
+  }
 
   render() {
     return (
@@ -101,14 +101,14 @@ class Example extends Component {
             initialValues={this.state.values}
             onSubmit={(values, actions) => {
               setTimeout(() => {
-                actions.resetForm(values);
-                this.setState({ values });
-                toggleScope();
-              }, 1000);
+                actions.resetForm(values)
+                this.setState({ values })
+                toggleScope()
+              }, 1000)
             }}
             render={props => {
               const onChange = e =>
-                props.setFieldValue(e.target.name, e.target.value);
+                props.setFieldValue(e.target.name, e.target.value)
               return (
                 <form onSubmit={props.handleSubmit} autoComplete="off">
                   <Card>
@@ -174,13 +174,13 @@ class Example extends Component {
                     </Card.Footer>
                   </Card>
                 </form>
-              );
+              )
             }}
           />
         )}
       />
-    );
+    )
   }
 }
 
-export default Example;
+export default Example

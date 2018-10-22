@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
-import { ReactTableDefaults } from 'react-table/lib';
-import Pagination from './Pagination';
-import { Button } from '../Buttons';
+import React, { Fragment } from 'react'
+import { ReactTableDefaults } from 'react-table/lib'
+import Pagination from './Pagination'
+import { Button } from '../Buttons'
 
-import LoadingText from './LoadingText';
-import NoDataText from './NoDataText';
-import PagerButtonFactory from './PagerButtonFactory';
+import LoadingText from './LoadingText'
+import NoDataText from './NoDataText'
+import PagerButtonFactory from './PagerButtonFactory'
 
 const DataGridDefaults = {
   NextComponent: PagerButtonFactory({ rotation: 270 }),
@@ -16,7 +16,7 @@ const DataGridDefaults = {
   // LoadingComponent: LoadingIndicator,
   loadingText: <LoadingText />,
   noDataText: <NoDataText />,
-};
+}
 
 export const config = config =>
-  Object.assign(ReactTableDefaults, DataGridDefaults, config);
+  Object.assign(ReactTableDefaults, DataGridDefaults, config)

@@ -1,22 +1,22 @@
-import React from 'react';
-import slugify from 'slugify';
-import { Link } from 'react-router-dom';
-import { Card, Row, Col, Button, Page, JumpNav } from '@cwds/components';
-import slackLogo from './Slack_Mark_White_Web.png';
-import githubLogo from './GitHub-Mark-Light-64px.png';
-import Style from './StatusButton.module.css';
-import status from './status';
+import React from 'react'
+import slugify from 'slugify'
+import { Link } from 'react-router-dom'
+import { Card, Row, Col, Button, Page, JumpNav } from '@cwds/components'
+import slackLogo from './Slack_Mark_White_Web.png'
+import githubLogo from './GitHub-Mark-Light-64px.png'
+import Style from './StatusButton.module.css'
+import status from './status'
 
 const toSlug = str =>
   slugify(str, {
     replacement: '-',
     lower: true,
-  });
+  })
 
 const routes = ['Report an Issue', 'Build Info', 'Packages'].map(title => ({
   title,
   path: `#${toSlug(title)}`,
-}));
+}))
 
 export default () => (
   <Page
@@ -27,7 +27,7 @@ export default () => (
       { path: '/status', title: 'Status' },
     ]}
     sidenav={() => {
-      return <JumpNav tag={Link} routes={routes} />;
+      return <JumpNav tag={Link} routes={routes} />
     }}
     main={() => (
       <Row>
@@ -119,10 +119,10 @@ export default () => (
                   </pre>
                 </Card.Body>
               </Card>
-            );
+            )
           })}
         </Col>
       </Row>
     )}
   />
-);
+)

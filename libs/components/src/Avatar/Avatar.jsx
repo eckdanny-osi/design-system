@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import Icon from '../Icon';
-import Styles from './Avatar.module.scss';
-import { SIZES_ALL, isValidSize } from '../utils/design-system';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
+import Icon from '../Icon'
+import Styles from './Avatar.module.scss'
+import { SIZES_ALL, isValidSize } from '../utils/design-system'
 
 const propTypes = {
   /** Image URL (eg; img[src]) */
@@ -14,12 +14,12 @@ const propTypes = {
   text: PropTypes.string,
   /** Invert the color scheme? */
   invert: PropTypes.bool,
-};
+}
 
 const defaultProps = {
   size: 'md',
   invert: false,
-};
+}
 
 const Avatar = ({ imgUrl, size, text, invert }) => {
   const classes = cn(
@@ -28,25 +28,25 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
     {
       [Styles.inverted]: invert,
     }
-  );
+  )
   if (imgUrl) {
-    return <img src={imgUrl} className={classes} />;
+    return <img src={imgUrl} className={classes} />
   }
   if (text) {
     return (
       <div className={classes}>
         <div className={cn(Styles.inner)}>{text}</div>
       </div>
-    );
+    )
   }
   return (
     <div className={classes}>
       <Icon icon="user" className={cn(Styles.inner)} />
     </div>
-  );
-};
+  )
+}
 
-Avatar.propTypes = propTypes;
-Avatar.defaultProps = defaultProps;
+Avatar.propTypes = propTypes
+Avatar.defaultProps = defaultProps
 
-export default Avatar;
+export default Avatar

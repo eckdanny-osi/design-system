@@ -1,7 +1,7 @@
-import BreadcrumbTrail from './BreadcrumbTrail';
+import BreadcrumbTrail from './BreadcrumbTrail'
 
 describe('BreadcrumbTrail', () => {
   it('exists', () => {
-    expect(BreadcrumbTrail).toBeDefined();
-  });
-});
+    expect(BreadcrumbTrail).toBeDefined()
+  })
+})

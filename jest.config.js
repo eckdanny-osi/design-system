@@ -9,4 +9,4 @@ module.exports = {
   },
   coverageReporters: ['lcov'],
   coverageDirectory: '<rootDir>/coverage',
-};
+}

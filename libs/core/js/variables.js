@@ -1,4 +1,4 @@
-const DS = require('./core');
+const DS = require('./core')
 
 const breakpoints = Object.keys(DS.breakpoints)
   .map(key => ({ key, value: DS.breakpoints[key] }))
@@ -6,8 +6,8 @@ const breakpoints = Object.keys(DS.breakpoints)
     return {
       ...acc,
       [kv.key]: `${kv.value}px`,
-    };
-  }, {});
+    }
+  }, {})
 
 module.exports = {
   ...DS.grays,
@@ -19,4 +19,4 @@ module.exports = {
   // ...DS.breakpoints,
   ...breakpoints,
   ...DS.options,
-};
+}

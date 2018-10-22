@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import {
   Card,
   Button,
@@ -7,9 +7,9 @@ import {
   InputGroup,
   InputGroupAddon,
   Icon,
-} from '@cwds/components';
-import data from '../data/people.json';
-import { toCapitalCase } from '../utils';
+} from '@cwds/components'
+import data from '../data/people.json'
+import { toCapitalCase } from '../utils'
 
 const columns = [
   { Header: 'Last', accessor: 'name.last' },
@@ -25,14 +25,14 @@ const columns = [
     accessor: 'eyeColor',
     Cell: ({ value }) => toCapitalCase(value),
   },
-];
+]
 
 const SearchForm = ({ onChange, onSubmit, disabled, value }) => (
   <div className="mb-3">
     <form
       onSubmit={e => {
-        e.preventDefault();
-        onSubmit();
+        e.preventDefault()
+        onSubmit()
       }}
     >
       <InputGroup>
@@ -41,7 +41,7 @@ const SearchForm = ({ onChange, onSubmit, disabled, value }) => (
           value={value}
           placeholder="Ex; John Smith, Danny Eck, ..."
           onChange={e => {
-            onChange(e.target.value);
+            onChange(e.target.value)
           }}
         />
         <InputGroupAddon addonType="append">
@@ -62,7 +62,7 @@ const SearchForm = ({ onChange, onSubmit, disabled, value }) => (
       </InputGroup>
     </form>
   </div>
-);
+)
 
 class CarsDataGrid extends Component {
   state = {
@@ -70,21 +70,21 @@ class CarsDataGrid extends Component {
     filteredData: null,
     filterValue: null,
     value: '',
-  };
+  }
   handleChange = value => {
-    this.setState({ value });
-  };
+    this.setState({ value })
+  }
   handleSubmit = e => {
-    const { value } = this.state;
-    const re = new RegExp(value, 'i');
+    const { value } = this.state
+    const re = new RegExp(value, 'i')
     const filteredData = this.state.data.filter(({ name }) =>
       re.test(`${name.first} ${name.last}`)
-    );
-    this.setState({ filteredData, filterValue: value });
+    )
+    this.setState({ filteredData, filterValue: value })
     // console.log(this.datagrid);
-  };
+  }
   render() {
-    const { data, filteredData } = this.state;
+    const { data, filteredData } = this.state
     return (
       <Card>
         <Card.Header>
@@ -110,13 +110,13 @@ class CarsDataGrid extends Component {
                   />
                   {makeTable()}
                 </Fragment>
-              );
+              )
             }}
           </DataGrid>
         </Card.Body>
       </Card>
-    );
+    )
   }
 }
 
-export default CarsDataGrid;
+export default CarsDataGrid

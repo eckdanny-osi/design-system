@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import Field from './Field';
-import { Card } from '../';
+import Field from './Field'
+import { Card } from '../'
 
 storiesOf('Fields', module)
   .addDecorator(withKnobs)
   .add('basic field', withInfo()(() => <Field label="Hello" />))
-  .add('within a Card', () => <WithinCard />);
+  .add('within a Card', () => <WithinCard />)
 
 class WithinCard extends Component {
   state = {
     value: '',
-  };
+  }
   handleChange = e => {
-    action('change');
-    this.setState({ value: e.target.value });
-  };
+    action('change')
+    this.setState({ value: e.target.value })
+  }
   render() {
     return (
       <Card>
@@ -37,6 +37,6 @@ class WithinCard extends Component {
         </Card.Body>
         <Card.Footer>alsdkfj</Card.Footer>
       </Card>
-    );
+    )
   }
 }

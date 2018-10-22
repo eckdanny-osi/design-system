@@ -1,1 +1,1 @@
-export { default } from 'reactstrap/lib/Collapse';
+export { default } from 'reactstrap/lib/Collapse'

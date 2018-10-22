@@ -1,7 +1,7 @@
-import React from 'react';
-import { Icon } from '@cwds/components';
-import cn from 'classnames';
-import Styles from './IconSquare.module.scss';
+import React from 'react'
+import { Icon } from '@cwds/components'
+import cn from 'classnames'
+import Styles from './IconSquare.module.scss'
 
 const IconSquare = props => {
   return (
@@ -13,7 +13,7 @@ const IconSquare = props => {
         <tt>{props.name || props.icon}</tt>
       </small>
     </div>
-  );
-};
+  )
+}
 
-export default IconSquare;
+export default IconSquare

@@ -1,30 +1,30 @@
-import React from 'react';
-import { Modal, Button, Icon } from '@cwds/components';
+import React from 'react'
+import { Modal, Button, Icon } from '@cwds/components'
 
 class ModalExample extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       modal: false,
       backdrop: true,
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
-    this.changeBackdrop = this.changeBackdrop.bind(this);
+    this.toggle = this.toggle.bind(this)
+    this.changeBackdrop = this.changeBackdrop.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal,
-    });
+    })
   }
 
   changeBackdrop(e) {
-    let value = e.target.value;
+    let value = e.target.value
     if (value !== 'static') {
-      value = JSON.parse(value);
+      value = JSON.parse(value)
     }
-    this.setState({ backdrop: value });
+    this.setState({ backdrop: value })
   }
 
   render() {
@@ -54,8 +54,8 @@ class ModalExample extends React.Component {
           </Modal.Footer>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default ModalExample;
+export default ModalExample
