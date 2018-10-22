@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import metaInfo from '@cwds/meta-info.macro'
+import metaInfo from '../../macros/meta-info.macro'
 import { Page, Button, Badge, Card, Row, Col } from '@cwds/components'
+
+const info = metaInfo('../components/index.js')
+console.log(info)
 
 export default () => (
   <Page
