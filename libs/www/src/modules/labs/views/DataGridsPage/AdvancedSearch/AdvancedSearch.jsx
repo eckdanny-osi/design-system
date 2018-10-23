@@ -3,6 +3,9 @@ import {
   Row,
   Col,
   Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
   DataGrid,
   CheckboxBank,
   Input,
@@ -39,12 +42,12 @@ const AdvancedPeopleSearchForm = ({
         backgroundColor: 'rgba(10, 121, 142, .15)',
       }}
     >
-      {/* <Card.Header style="">alsdkfj</Card.Header> */}
+      {/* <CardHeader style="">alsdkfj</CardHeader> */}
       <div className="text-right">
         <Button onClick={onSearchFormToggle}>Toggle</Button>
       </div>
       <Collapse isOpen={isOpenSearchForm}>
-        {/* <Card.Body> */}
+        {/* <CardBody> */}
         <section>
           <form>
             <Row>
@@ -85,9 +88,9 @@ const AdvancedPeopleSearchForm = ({
             </div>
           </form>
         </section>
-        {/* </Card.Body> */}
-        {/* <Card.Footer> */}
-        {/* </Card.Footer> */}
+        {/* </CardBody> */}
+        {/* <CardFooter> */}
+        {/* </CardFooter> */}
       </Collapse>
     </Card>
   )
@@ -140,10 +143,10 @@ class AdvancedPeopleSearchDataGrid extends Component {
     const { loading, pages, data } = this.state
     return (
       <Card>
-        <Card.Header>
-          <Card.Title>People</Card.Title>
-        </Card.Header>
-        <Card.Body>
+        <CardHeader>
+          <CardTitle>People</CardTitle>
+        </CardHeader>
+        <CardBody>
           <AdvancedPeopleSearchForm
             isOpenSearchForm={this.state.isOpenSearchForm}
             onSearchFormToggle={this.onSearchFormToggle}
@@ -174,7 +177,7 @@ class AdvancedPeopleSearchDataGrid extends Component {
             onResizedChange={resized => this.setState({ resized })}
             onFilteredChange={filtered => this.setState({ filtered })}
           />
-        </Card.Body>
+        </CardBody>
       </Card>
     )
   }

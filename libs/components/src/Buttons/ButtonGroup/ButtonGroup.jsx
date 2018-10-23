@@ -6,7 +6,7 @@ const ButtonGroup = props => <ButtonGroupUnstyled {...props} />
 ButtonGroup.propTypes = { ...ButtonGroupUnstyled.propTypes }
 ButtonGroup.defaultProps = {
   ...ButtonGroupUnstyled.defaultProps,
-  cssModule: Styles,
+  // cssModule: Styles,
 }
 
 export default ButtonGroup

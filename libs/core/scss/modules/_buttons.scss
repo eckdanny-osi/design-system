@@ -1,0 +1,23 @@
+@import '~bootstrap/scss/buttons';
+
+.btn {
+  text-transform: uppercase;
+}
+
+// TODO: consistent active and focus visual style
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 $btn-focus-width $black;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      box-shadow: none;
+      &:focus {
+        box-shadow: 0 0 0 $btn-focus-width $black;
+      }
+    }
+  }
+}

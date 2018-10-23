@@ -28,7 +28,7 @@ class Example extends Component {
         read={({ renderHeader, toggleScope, scope }) => (
           <Card>
             {renderHeader({ scope })}
-            <Card.Body>
+            <CardBody>
               <p>Check out these interesting stats:</p>
               <Row>
                 <Col md={4}>
@@ -93,7 +93,7 @@ class Example extends Component {
                 continent, a new nation, conceived in Liberty, and dedicated to
                 the proposition that all men are created equal.
               </blockquote>
-            </Card.Body>
+            </CardBody>
           </Card>
         )}
         edit={({ renderHeader, toggleScope, scope }) => (
@@ -113,7 +113,7 @@ class Example extends Component {
                 <form onSubmit={props.handleSubmit} autoComplete="off">
                   <Card>
                     {renderHeader({ scope })}
-                    <Card.Body>
+                    <CardBody>
                       <Row>
                         <Col md={4}>
                           <FormGroup>
@@ -152,8 +152,8 @@ class Example extends Component {
                           </FormGroup>
                         </Col>
                       </Row>
-                    </Card.Body>
-                    <Card.Footer>
+                    </CardBody>
+                    <CardFooter>
                       <Button onClick={toggleScope}>Cancel</Button>{' '}
                       <Button
                         type="submit"
@@ -171,7 +171,7 @@ class Example extends Component {
                           'Save'
                         )}
                       </Button>
-                    </Card.Footer>
+                    </CardFooter>
                   </Card>
                 </form>
               )

@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { Card, DataGrid } from '@cwds/components'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  DataGrid,
+} from '@cwds/components'
 import PeopleService from './people-service'
 
 const columnConfig = [
@@ -81,10 +87,10 @@ export default class DataGridsExample extends Component {
     const { data } = this.state
     return (
       <Card>
-        <Card.Header>
-          <Card.Title>StarWars</Card.Title>
-        </Card.Header>
-        <Card.Body className="pt-0">
+        <CardHeader>
+          <CardTitle>StarWars</CardTitle>
+        </CardHeader>
+        <CardBody className="pt-0">
           <DataGrid
             data={data}
             pages={this.state.pages}
@@ -95,7 +101,7 @@ export default class DataGridsExample extends Component {
             className="-highlight"
             manual
           />
-        </Card.Body>
+        </CardBody>
       </Card>
     )
   }

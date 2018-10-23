@@ -25,11 +25,11 @@ const CardsPage = () => {
         <h3>Structure</h3>
         <p>There are </p>
         <Card>
-          <Card.Header>
-            <Card.Title>Card Title</Card.Title>
-          </Card.Header>
-          <Card.Body>Card.Body</Card.Body>
-          <Card.Footer>Card.Footer</Card.Footer>
+          <CardHeader>
+            <CardTitle>Card Title</CardTitle>
+          </CardHeader>
+          <CardBody>CardBody</CardBody>
+          <CardFooter>CardFooter</CardFooter>
         </Card>
       </section>
 
@@ -51,11 +51,11 @@ const CardsPage = () => {
       {/* <section>
         <h3>Something Else I dunno</h3>
         <Card>
-          <Card.Header>
-            <Card.Title>Card Header</Card.Title>
-          </Card.Header>
-          <Card.Body>
-            <Card.Section>
+          <CardHeader>
+            <CardTitle>Card Header</CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSection>
               <Row>
                 <Col sm="4">
                   Label<br />Value
@@ -67,9 +67,9 @@ const CardsPage = () => {
                   Label<br />Value
                 </Col>
               </Row>
-            </Card.Section>
-            <Card.Section collapsible={true}>
-              <Card.Subtitle>Hello</Card.Subtitle>
+            </CardSection>
+            <CardSection collapsible={true}>
+              <CardSubtitle>Hello</CardSubtitle>
               <Row>
                 <Col sm="4">
                   Label<br />Value
@@ -81,9 +81,9 @@ const CardsPage = () => {
                   Label<br />Value
                 </Col>
               </Row>
-            </Card.Section>
-            <Card.Section>
-              <Card.Subtitle>World</Card.Subtitle>
+            </CardSection>
+            <CardSection>
+              <CardSubtitle>World</CardSubtitle>
               <Row>
                 <Col sm="4">
                   Label<br />Value
@@ -95,8 +95,8 @@ const CardsPage = () => {
                   Label<br />Value
                 </Col>
               </Row>
-            </Card.Section>
-          </Card.Body>
+            </CardSection>
+          </CardBody>
         </Card>
       </section> */}
     </div>

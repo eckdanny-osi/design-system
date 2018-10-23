@@ -23,6 +23,7 @@ const colors = {
 const themeColors = {
   primary: Color('#09798e').hex(), // ($aspen)
   secondary: colors['white'],
+  accent: Color('#601974').hex(), // ($oak)
   success: Color('#068347').hex(), // ($elm)
   info: Color('#0d4f78').hex(), // ($spruce)
   warning: Color('#e7740b').hex(), // ($hickory)

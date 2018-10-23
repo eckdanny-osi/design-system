@@ -2,6 +2,8 @@ import React, { Fragment, Component } from 'react'
 import { Formik } from 'formik'
 import {
   Card,
+  CardBody,
+  CardFooter,
   Button,
   Row,
   Col,
@@ -38,7 +40,7 @@ class Example extends Component {
           return (
             <Card>
               {renderHeader({ scope })}
-              <Card.Body>
+              <CardBody>
                 <blockquote
                   style={{
                     fontFamily: 'serif',
@@ -53,7 +55,7 @@ class Example extends Component {
                   and <strong>{verbPast}</strong> to the proposition that all{' '}
                   <strong>{animal}</strong> are created equal.
                 </blockquote>
-              </Card.Body>
+              </CardBody>
             </Card>
           )
         }}
@@ -74,7 +76,7 @@ class Example extends Component {
                 <form onSubmit={props.handleSubmit} autoComplete="off">
                   <Card>
                     {renderHeader({ scope })}
-                    <Card.Body>
+                    <CardBody>
                       <Row>
                         <Col md={4}>
                           <FormGroup>
@@ -133,8 +135,8 @@ class Example extends Component {
                           </FormGroup>
                         </Col>
                       </Row>
-                    </Card.Body>
-                    <Card.Footer>
+                    </CardBody>
+                    <CardFooter>
                       <Button onClick={toggleScope}>Cancel</Button>{' '}
                       <Button
                         type="submit"
@@ -152,7 +154,7 @@ class Example extends Component {
                           'Save'
                         )}
                       </Button>
-                    </Card.Footer>
+                    </CardFooter>
                   </Card>
                 </form>
               )

@@ -1,7 +1,16 @@
 import React from 'react'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
-import { Card, Row, Col, Button, Page, JumpNav } from '@cwds/components'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Row,
+  Col,
+  Button,
+  Page,
+  JumpNav,
+} from '@cwds/components'
 import slackLogo from './Slack_Mark_White_Web.png'
 import githubLogo from './GitHub-Mark-Light-64px.png'
 import Style from './StatusButton.module.css'
@@ -98,7 +107,7 @@ export default () => (
           {status.packages.map(pkg => {
             return (
               <Card key={pkg.name}>
-                <Card.Header>
+                <CardHeader>
                   <h3
                     className="m-0"
                     style={{
@@ -109,15 +118,15 @@ export default () => (
                   >
                     {pkg.name}
                   </h3>
-                </Card.Header>
-                <Card.Body>
+                </CardHeader>
+                <CardBody>
                   <h4>Dependencies</h4>
                   <pre className="mb-0">
                     <code>
                       {JSON.stringify(pkg.pkgJson.dependencies, null, 2)}
                     </code>
                   </pre>
-                </Card.Body>
+                </CardBody>
               </Card>
             )
           })}
