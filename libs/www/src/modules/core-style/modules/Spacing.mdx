@@ -1,5 +1,33 @@
+import DS from '@cwds/core'
+import cn from 'classnames'
 import { Card } from '@cwds/components';
+console.log(DS);
 
 ## Spacing
 
-TODO
+<Card>
+  {
+    Object.keys(DS.spacers)
+      .map(label => ({ label, value: DS.spacers[label]  }))
+      .map(({ label, value }, i) => {
+        return <div key={label}
+                        className={cn(
+                'd-flex justify-content-between align-items-center',
+                {
+                  'mt-2': i !== 0,
+                }
+              )}
+              >
+          <div
+          style={{
+            backgroundColor: 'green',
+            height: value,
+            width: value
+          }}
+        >&nbsp;</div>
+        <div>{label}</div>
+        <div>{value}</div>
+        </div>
+      })
+  }
+</Card>
