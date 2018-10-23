@@ -1,4 +1,4 @@
-const DS = require('./core')
+import DS from './core'
 
 const breakpoints = Object.keys(DS.breakpoints)
   .map(key => ({ key, value: DS.breakpoints[key] }))
@@ -9,7 +9,7 @@ const breakpoints = Object.keys(DS.breakpoints)
     }
   }, {})
 
-module.exports = {
+export default {
   ...DS.grays,
   ...DS.themeColors,
   spacer: DS.spacer,

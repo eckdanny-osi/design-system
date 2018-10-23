@@ -12,18 +12,13 @@ const externals = [
   ...Object.keys(pkgJson.peerDependencies),
 ]
 
-module.exports = {
-  input: 'js/core.js',
+const base = () => ({
+  // input,
+  // output
   external: id => {
     if (externals.includes(id)) return true
     if (/module\.s?css$/.test(id)) return true
     return false
-  },
-  output: {
-    file: 'core.cjs.js',
-    dir: 'dist',
-    format: 'cjs',
-    sourcemap: true,
   },
   plugins: [
     resolve({
@@ -51,4 +46,27 @@ module.exports = {
       ],
     }),
   ],
-}
+})
+
+module.exports = [
+  {
+    ...base(),
+    input: 'js/core.js',
+    output: {
+      file: 'core.cjs.js',
+      dir: 'dist',
+      format: 'cjs',
+      sourcemap: true,
+    },
+  },
+  {
+    ...base(),
+    input: 'js/variables.js',
+    output: {
+      file: 'variables.cjs.js',
+      dir: 'dist',
+      format: 'cjs',
+      sourcemap: true,
+    },
+  },
+]

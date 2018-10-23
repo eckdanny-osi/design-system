@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-// import Icon from '../Icon'
 import Icon from '@cwds/icons'
 import Styles from './Avatar.module.scss'
 import { SIZES_ALL, isValidSize } from '../utils/design-system'
-import { colors, themeColors } from '@cwds/core'
+import DS from '@cwds/core'
 
 const propTypes = {
   /** Image URL (eg; img[src]) */
@@ -46,7 +45,7 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
       <Icon
         name="user"
         className={cn(Styles.inner)}
-        color={invert ? themeColors.info : colors.white}
+        color={invert ? DS.themeColors.info : DS.colors.white}
       />
     </div>
   )

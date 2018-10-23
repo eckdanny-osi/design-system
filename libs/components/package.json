@@ -32,7 +32,7 @@
     "build:watch:es": "yarn build:es -w",
     "build:watch:css": "run-p build:watch:css:*",
     "build:watch:css:deps": "onchange '../core/scss/**/*.scss' -- yarn build:css",
-    "build:watch:css:self": "yarn build:css && yarn build:css -w"
+    "build:watch:css:self": "sleep 1 && yarn build:css && yarn build:css -w"
   },
   "dependencies": {
     "@cwds/core": "^0.3.1",

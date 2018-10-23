@@ -1,12 +1,27 @@
 import React from 'react'
 import cn from 'classnames'
 import { Card, Utils } from '@cwds/components'
-const DS = require('@cwds/core')
-console.log(DS)
+import DS from '@cwds/core'
 
 const CONTEXT = Utils.CONTEXT
 
-export default () => (
+export default () => {
+  return (
+    <React.Fragment>
+      <pre>
+        <code>{JSON.stringify(DS.themeColors, null, 2)}</code>
+      </pre>
+      <pre>
+        <code>{JSON.stringify(DS.grays, null, 2)}</code>
+      </pre>
+      <pre>
+        <code>{JSON.stringify(DS.colors, null, 2)}</code>
+      </pre>
+    </React.Fragment>
+  )
+}
+
+export const OLD = () => (
   <Card>
     {Object.keys(CONTEXT).map((key, i) => (
       <div

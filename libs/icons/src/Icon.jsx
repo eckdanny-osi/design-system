@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { themeColors } from '@cwds/core'
+import DS from '@cwds/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import loadIcons from './icon-library'
 
@@ -13,7 +13,7 @@ const Icon = props => {
     <FontAwesomeIcon
       focusable="false"
       icon={name || icon}
-      color={themeColors[color] || color}
+      color={DS.themeColors[color] || color}
       {...restProps}
     />
   )
@@ -22,7 +22,7 @@ Icon.propTypes = { ...FontAwesomeIcon.propTypes }
 Icon.defaultProps = {
   ...FontAwesomeIcon.defaultProps,
   color: 'info',
-  themeColors: themeColors,
+  themeColors: DS.themeColors,
 }
 
 export default Icon

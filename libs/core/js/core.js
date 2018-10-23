@@ -1,4 +1,4 @@
-const Color = require('color')
+import Color from 'color'
 
 // Grays
 const grays = {
@@ -62,7 +62,7 @@ const breakpoints = {
   'grid-breakpoint-xl': 1200,
 }
 
-module.exports = {
+export default {
   grays,
   colors,
   themeColors,
