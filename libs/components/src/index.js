@@ -28,7 +28,7 @@ export {
   DropdownMenu,
   DropdownToggle,
 } from 'reactstrap'
-export { Grid, Container, Row, Col } from './Grid'
+export { Container, Row, Col } from 'reactstrap'
 export { default as Icon, ICON_NAMES } from '@cwds/icons'
 export { default as InfoTip } from './InfoTip'
 export { default as Input } from './Input'
