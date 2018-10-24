@@ -40,7 +40,7 @@ export { default as Legend } from './Legend'
 
 export { ListGroup, ListGroupItem } from 'reactstrap'
 export { default as Logo } from './Logo'
-export { default as Modal } from './Modal'
+export { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
 export { default as Nav } from './Nav'
 export { default as PageHeader } from './PageHeader'
 export {

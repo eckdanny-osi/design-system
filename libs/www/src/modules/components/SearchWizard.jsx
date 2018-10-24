@@ -1,5 +1,12 @@
 import React from 'react'
-import { Modal, Button, Icon } from '@cwds/components'
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Icon,
+} from '@cwds/components'
 
 class ModalExample extends React.Component {
   constructor(props) {
@@ -37,20 +44,19 @@ class ModalExample extends React.Component {
           isOpen={this.state.modal}
           toggle={this.toggle}
           className={this.props.className}
+          fade={false}
           size="lg"
           backdrop="static"
         >
-          <Modal.Header toggle={this.toggle}>
-            Search for Components
-          </Modal.Header>
-          <Modal.Body>
+          <ModalHeader toggle={this.toggle}>Search for Components</ModalHeader>
+          <ModalBody>
             <p>Yea... wouldn't that be nice?</p>
-          </Modal.Body>
-          <Modal.Footer>
+          </ModalBody>
+          <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
               Close
             </Button>
-          </Modal.Footer>
+          </ModalFooter>
         </Modal>
       </div>
     )
