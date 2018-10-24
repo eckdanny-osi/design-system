@@ -8,15 +8,18 @@ import { hasCardComponentStructure, findChildCardStructure } from './card-utils'
 // @todo(dce): this shouldn't depend on DataGrid for anything
 import LoadingText from '../DataGrid/LoadingText'
 
-import Body from './CardBody'
-import Footer from './CardFooter'
-import Header from './CardHeader'
+import {
+  Row,
+  Col,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardSubtitle,
+} from 'reactstrap'
+
 import Section from './CardSection'
 import SectionGroup from './CardSectionGroup'
-import Subtitle from './CardSubtitle'
-import Title from './CardTitle'
-
-import { Row, Col } from '../Grid'
 
 const greyOutStyle = {
   backgroundColor: 'whitesmoke',
@@ -27,7 +30,7 @@ const LoadingCard = ({ children, ...props }) => (
   <CardUnstyled {...props}>
     {findChildCardStructure(children, Header)}
     <Body>
-      <Card.Body
+      <CardBody
         style={{
           overflow: 'auto',
           position: 'relative',
@@ -61,7 +64,7 @@ const LoadingCard = ({ children, ...props }) => (
             justifyContent: 'center',
           }}
         />
-      </Card.Body>
+      </CardBody>
     </Body>
   </CardUnstyled>
 )

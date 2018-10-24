@@ -1,7 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import Breadcrumb from '../Breadcrumbs'
-import { Container } from '../Grid'
+import { Container, Breadcrumb, BreadcrumbItem } from 'reactstrap'
 import Styles from './BreadcrumbTrail.module.scss'
 
 // @TODO: this should break!!! Only works because of lerna!
@@ -15,13 +14,13 @@ const BreadcrumbTrail = ({ items = [], renderItem }) => {
         {items.map((item, i) => (
           <React.Fragment key={i}>
             {i !== 0 && <div className="mx-2 text-primary">/</div>}
-            <Breadcrumb.Item
+            <BreadcrumbItem
               active={i + 1 === items.length ? true : false}
               tag={NavLink}
               to={item.path}
             >
               {item.title}
-            </Breadcrumb.Item>
+            </BreadcrumbItem>
           </React.Fragment>
         ))}
       </Breadcrumb>

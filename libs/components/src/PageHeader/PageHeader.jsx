@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Container, Row, Col } from '../Grid'
+import { Container, Row, Col } from 'reactstrap'
 import Icon from '../Icon'
 import styles from './PageHeader.module.scss'
 
