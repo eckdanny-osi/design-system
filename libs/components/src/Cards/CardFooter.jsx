@@ -1,12 +1,13 @@
-import React from 'react'
-import { CardFooter as CardFooterUnstyled } from 'reactstrap'
-import Styles from './Cards.module.scss'
+export { CardFooter as default } from 'reactstrap'
+// import React from 'react'
+// import { CardFooter as CardFooterUnstyled } from 'reactstrap'
+// import Styles from './Cards.module.scss'
 
-const CardFooter = props => <CardFooterUnstyled {...props} />
-CardFooter.propTypes = { ...CardFooterUnstyled.propTypes }
-CardFooter.defaultProps = {
-  ...CardFooterUnstyled.defaultProps,
-  cssModule: Styles,
-}
+// const CardFooter = props => <CardFooterUnstyled {...props} />
+// CardFooter.propTypes = { ...CardFooterUnstyled.propTypes }
+// CardFooter.defaultProps = {
+//   ...CardFooterUnstyled.defaultProps,
+//   cssModule: Styles,
+// }
 
-export default CardFooter
+// export default CardFooter

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import getDisplayName from 'react-display-name'
 import CardUnstyled from 'reactstrap/lib/Card'
 import { hasCardComponentStructure, findChildCardStructure } from './card-utils'
-import Styles from './Cards.module.scss'
+// import Styles from './Cards.module.scss'
 
 // @todo(dce): this shouldn't depend on DataGrid for anything
 import LoadingText from '../DataGrid/LoadingText'
@@ -80,7 +80,7 @@ const Card = props => {
   return <CardUnstyled {...props} />
 }
 Card.propTypes = { ...CardUnstyled.propTypes, loading: PropTypes.bool }
-Card.defaultProps = { ...CardUnstyled.defaultProps, cssModule: Styles }
+Card.defaultProps = { ...CardUnstyled.defaultProps }
 Card.Body = Body
 Card.Header = Header
 Card.Footer = Footer

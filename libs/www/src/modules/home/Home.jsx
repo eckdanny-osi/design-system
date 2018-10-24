@@ -135,10 +135,14 @@ export default () => (
         >
           <Row>
             <Col sm={6} md={4} lg={12}>
-              <Card>Placeholder Widget</Card>
+              <Card>
+                <CardBody>Placeholder Widget</CardBody>
+              </Card>
             </Col>
             <Col sm={6} md={4} lg={12}>
-              <Card>Placeholder Widget</Card>
+              <Card>
+                <CardBody>Placeholder Widget</CardBody>
+              </Card>
             </Col>
           </Row>
         </Col>
