@@ -67,4 +67,5 @@ DS.breakpoints = {
   lg: 992,
   xl: 1200,
 }
+
 export default DS

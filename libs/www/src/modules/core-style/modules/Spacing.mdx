@@ -7,22 +7,23 @@ console.log(DS);
 
 <Card>
   {
-    Object.keys(DS.spacers)
-      .map(label => ({ label, value: DS.spacers[label]  }))
+    Object.keys(DS.spacing.spacers)
+      .map(label => ({ label, value: DS.spacing.spacers[label]  }))
       .map(({ label, value }, i) => {
-        return <div key={label}
-                        className={cn(
-                'd-flex justify-content-between align-items-center',
-                {
-                  'mt-2': i !== 0,
-                }
-              )}
-              >
-          <div
+        return <div
+          key={label}
+          className={cn(
+            'd-flex justify-content-between align-items-center',
+            {
+              'mt-2': i !== 0,
+            }
+          )}
+        >
+        <div
           style={{
             backgroundColor: 'green',
-            height: value,
-            width: value
+            height: `${value}${DS.spacing.spacerUnit}`,
+            width: `${value}${DS.spacing.spacerUnit}`,
           }}
         >&nbsp;</div>
         <div>{label}</div>
