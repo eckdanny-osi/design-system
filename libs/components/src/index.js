@@ -16,13 +16,18 @@ export { Button, ButtonGroup } from 'reactstrap'
 // export { default as Card } from './Cards'
 export { Card, CardBody, CardHeader, CardFooter, CardTitle } from 'reactstrap'
 export { default as CheckboxBank } from './CheckboxBank'
-export { default as Collapse } from './Collapse'
+export { Collapse } from 'reactstrap'
 export { default as DataGrid } from './DataGrid'
-export { default as Dropdown } from './Dropdown'
 export { default as Field } from './Field'
 export { default as FormFeedback } from './FormFeedback'
 export { default as FormGroup } from './FormGroup'
 export { default as Form } from './Forms'
+export {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from 'reactstrap'
 export { Grid, Container, Row, Col } from './Grid'
 export { default as Icon, ICON_NAMES } from '@cwds/icons'
 export { default as InfoTip } from './InfoTip'
