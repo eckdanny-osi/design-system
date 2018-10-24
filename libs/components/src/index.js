@@ -41,7 +41,7 @@ export { default as Legend } from './Legend'
 export { ListGroup, ListGroupItem } from 'reactstrap'
 export { default as Logo } from './Logo'
 export { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
-export { default as Nav } from './Nav'
+export { Nav, NavItem, NavLink } from 'reactstrap'
 export { default as PageHeader } from './PageHeader'
 export {
   Popover,
