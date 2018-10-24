@@ -53,7 +53,7 @@ export {
 } from 'reactstrap'
 export { default as RadioGroup } from './RadioGroup'
 export { default as Select } from './Select'
-export { default as Tooltip } from './Tooltip'
+export { Tooltip } from 'reactstrap'
 import * as Utils from './utils'
 export { Utils }
 
