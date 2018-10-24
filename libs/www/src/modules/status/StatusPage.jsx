@@ -45,61 +45,65 @@ export default () => (
             <a href="#report-an-issue">Report an Issue</a>
           </h2>
           <Card>
-            <Button
-              color="primary"
-              href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
-              className={Style.StatusButton}
-            >
-              <img
-                src={slackLogo}
-                className={Style.BlockLogo}
-                alt="slack logo"
-              />
-              #design-ops
-            </Button>{' '}
-            <Button
-              color="primary"
-              href={status.main.bugs.url}
-              className={Style.StatusButton}
-              target="_blank"
-            >
-              <img
-                src={githubLogo}
-                className={Style.BlockLogo}
-                alt="github logo"
-              />
-              Issues
-            </Button>
+            <CardBody>
+              <Button
+                color="primary"
+                href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
+                className={Style.StatusButton}
+              >
+                <img
+                  src={slackLogo}
+                  className={Style.BlockLogo}
+                  alt="slack logo"
+                />
+                #design-ops
+              </Button>{' '}
+              <Button
+                color="primary"
+                href={status.main.bugs.url}
+                className={Style.StatusButton}
+                target="_blank"
+              >
+                <img
+                  src={githubLogo}
+                  className={Style.BlockLogo}
+                  alt="github logo"
+                />
+                Issues
+              </Button>
+            </CardBody>
           </Card>
 
           <h2 id="build-info">
             <a href="#build-info">Build Info</a>
           </h2>
           <Card>
-            <table style={{ width: '100%' }}>
-              <tbody>
-                <tr>
-                  <td>Build Date</td>
-                  <td>
-                    <tt>{status.buildDate}</tt>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Branch</td>
-                  <td>
-                    <tt>{status.git}</tt>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Info</td>
-                  <td>
-                    <pre>
-                      <code>{JSON.stringify(status.build, null, 2)}</code>
-                    </pre>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <CardBody>
+              <table style={{ width: '100%' }}>
+                <tbody>
+                  <tr>
+                    <td>Build Date</td>
+                    <td>
+                      <tt>{status.buildDate}</tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Branch</td>
+                    <td>
+                      <tt>{status.git}</tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Info</td>
+                    <td>
+                      <pre>
+                        <code>{JSON.stringify(status.build, null, 2)}</code>
+                      </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardBody>
           </Card>
           <h2 id="packages">
             <a href="#packages">Packages</a>

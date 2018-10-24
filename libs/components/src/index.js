@@ -1,9 +1,9 @@
-// export { Alert, AlertUncontrolled } from './Alert'
-export {
-  Alert,
-  UncontrolledAlert,
-  UncontrolledAlert as AlertUncontrolled,
-} from 'reactstrap'
+export { Alert, AlertUncontrolled } from './Alert'
+// export {
+//   Alert,
+//   UncontrolledAlert,
+//   UncontrolledAlert as AlertUncontrolled,
+// } from 'reactstrap'
 export { default as AppBar } from './AppBar'
 export { default as Avatar } from './Avatar'
 // export { default as Badge } from './Badge'

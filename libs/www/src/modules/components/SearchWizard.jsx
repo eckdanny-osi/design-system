@@ -30,8 +30,7 @@ class ModalExample extends React.Component {
   render() {
     return (
       <div>
-        <Button color="secondary" onClick={this.toggle}>
-          <Icon icon="search" className="mr-2" color="black" />
+        <Button color="secondary" outline onClick={this.toggle}>
           Search
         </Button>
         <Modal

@@ -6,47 +6,24 @@
 @import '~bootstrap/scss/images';
 @import '~bootstrap/scss/code';
 @import '~bootstrap/scss/grid';
-// @import '~bootstrap/scss/tables';
-// @import '~bootstrap/scss/forms';
-// @import '~bootstrap/scss/buttons';
-// @import '~bootstrap/scss/transitions';
-// @import '~bootstrap/scss/dropdown';
-// @import '~bootstrap/scss/button-group';
-// @import '~bootstrap/scss/input-group';
-// @import '~bootstrap/scss/custom-forms';
-// @import '~bootstrap/scss/nav';
-// @import '~bootstrap/scss/navbar';
-// @import '~bootstrap/scss/card';
-// @import '~bootstrap/scss/breadcrumb';
-// @import '~bootstrap/scss/pagination';
-// @import '~bootstrap/scss/badge';
-// @import '~bootstrap/scss/jumbotron';
-// @import '~bootstrap/scss/alert';
-// @import '~bootstrap/scss/progress';
-// @import '~bootstrap/scss/media';
-// @import '~bootstrap/scss/list-group';
-// @import '~bootstrap/scss/close';
-// @import '~bootstrap/scss/modal';
-// @import '~bootstrap/scss/tooltip';
-// @import '~bootstrap/scss/popover';
-// @import '~bootstrap/scss/carousel';
+
 @import '~bootstrap/scss/_utilities';
 @import '~bootstrap/scss/print';
 
 //
 // Garbage Zone
 //
-// h1, .h1 { font-size: $h1-font-size; }
-// h2,
-// .h2 {
-//   font-size: $h2-font-size;
-//   font-weight: 600;
-// }
-// h3,
-// .h3 {
-//   font-size: $h3-font-size;
-//   font-weight: 600;
-// }
-// h4, .h4 { font-size: $h4-font-size; }
-// h5, .h5 { font-size: $h5-font-size; }
-// h6, .h6 { font-size: $h6-font-size; }
+h1, .h1 { font-size: $h1-font-size; }
+h2,
+.h2 {
+  font-size: $h2-font-size;
+  // font-weight: 600;
+}
+h3,
+.h3 {
+  font-size: $h3-font-size;
+  font-weight: 600;
+}
+h4, .h4 { font-size: $h4-font-size; }
+h5, .h5 { font-size: $h5-font-size; }
+h6, .h6 { font-size: $h6-font-size; }

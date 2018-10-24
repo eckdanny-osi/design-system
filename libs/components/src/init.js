@@ -1,5 +1,4 @@
 import { Util } from 'reactstrap'
-import styles from '@cwds/core/dist/styles.module.css'
+import cssModule from '@cwds/core/dist/bootstrap-cares.module.css'
 
-console.log(styles)
-Util.setGlobalCssModule(styles)
+Util.setGlobalCssModule(cssModule)
