@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Route, withRouter, Link } from 'react-router-dom'
-import { ListGroup, Page } from '@cwds/components'
+import { ListGroup, ListGroupItem, Page } from '@cwds/components'
 /* eslint-disable import/no-webpack-loader-syntax */
 import DefaultPage from '!babel-loader!@mdx-js/loader!./views/DefaultView.mdx'
 import CardsPage from '!babel-loader!@mdx-js/loader!./views/CardsPage/Cards.mdx'
@@ -41,7 +41,7 @@ export default withRouter(({ match, location }) => (
       <ListGroup>
         {routes.map(({ path, title }) => {
           return (
-            <ListGroup.Item
+            <ListGroupItem
               action
               key={path}
               active={location.pathname === path}
@@ -49,7 +49,7 @@ export default withRouter(({ match, location }) => (
               to={path}
             >
               {title}
-            </ListGroup.Item>
+            </ListGroupItem>
           )
         })}
       </ListGroup>

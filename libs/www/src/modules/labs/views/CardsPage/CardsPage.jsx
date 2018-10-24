@@ -1,5 +1,11 @@
 import React from 'react'
-import { Card } from '@cwds/components'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+} from '@cwds/components'
 import MultiScopeCardExample from './MultiScopeCards'
 
 // import Test from '!babel-loader!mdx-loader!../../../../../../wiki/About-Child-Welfare.md';

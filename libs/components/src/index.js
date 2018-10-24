@@ -18,10 +18,11 @@ export { Card, CardBody, CardHeader, CardFooter, CardTitle } from 'reactstrap'
 export { default as CheckboxBank } from './CheckboxBank'
 export { Collapse } from 'reactstrap'
 export { default as DataGrid } from './DataGrid'
+
+export { FormFeedback, FormGroup, Form } from 'reactstrap'
+
 export { default as Field } from './Field'
-export { default as FormFeedback } from './FormFeedback'
-export { default as FormGroup } from './FormGroup'
-export { default as Form } from './Forms'
+
 export {
   Dropdown,
   DropdownItem,
