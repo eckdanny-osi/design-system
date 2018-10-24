@@ -44,7 +44,13 @@ export { default as Logo } from './Logo'
 export { default as Modal } from './Modal'
 export { default as Nav } from './Nav'
 export { default as PageHeader } from './PageHeader'
-export { default as Popover } from './Popover'
+export {
+  Popover,
+  PopoverContent,
+  PopoverBody,
+  PopoverTitle,
+  PopoverHeader,
+} from 'reactstrap'
 export { default as RadioGroup } from './RadioGroup'
 export { default as Select } from './Select'
 export { default as Tooltip } from './Tooltip'
