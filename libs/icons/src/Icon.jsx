@@ -13,7 +13,7 @@ const Icon = props => {
     <FontAwesomeIcon
       focusable="false"
       icon={name || icon}
-      color={DS.themeColors[color] || color}
+      color={themeColors[color] || color}
       {...restProps}
     />
   )
