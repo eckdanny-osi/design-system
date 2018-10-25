@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Nav } from 'reactstrap'
+import { Nav, NavItem, NavLink } from 'reactstrap'
 import Styles from './JumpNav.module.scss'
 
 const naiveSolnJs = e => {
@@ -20,14 +20,14 @@ const naiveSolnJs = e => {
 
 const DefaulItemTag = ({ path, title, children, ...props }) => {
   return (
-    <Nav.Item {...props}>
-      <Nav.Link
+    <NavItem {...props}>
+      <NavLink
         href={path}
         // onClick={naiveSolnJs}
       >
         {title}
-      </Nav.Link>
-    </Nav.Item>
+      </NavLink>
+    </NavItem>
   )
 }
 
