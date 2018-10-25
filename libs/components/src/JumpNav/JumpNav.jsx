@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import Nav from '../Nav'
+import { Nav } from 'reactstrap'
 import Styles from './JumpNav.module.scss'
 
 const naiveSolnJs = e => {

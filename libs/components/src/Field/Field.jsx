@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormGroup, Label, FormFeedback, Input } from '../Forms'
+import { FormGroup, Label, FormFeedback, Input } from 'reactstrap'
 import cn from 'classnames'
 
 const noop = () => {}
