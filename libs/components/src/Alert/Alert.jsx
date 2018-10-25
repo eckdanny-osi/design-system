@@ -1,13 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-// import { mapToCssModules } from 'reactstrap/lib/utils';
 import { Fade, Util } from 'reactstrap'
-import { ICON_NAMES, getIcon } from '../Icon'
 import Icon from '@cwds/icons'
 import Styles from './Alert.module.scss'
 
 const mapToCssModules = Util.mapToCssModules
+
+const getIcon = context => {
+  switch (context) {
+    case 'success':
+      return 'checkCircle'
+    case 'info':
+      return 'infoCircle'
+    case 'warning':
+    case 'danger':
+      return 'error'
+    default:
+      return 'check'
+  }
+}
 
 const propTypes = {
   children: PropTypes.node,
