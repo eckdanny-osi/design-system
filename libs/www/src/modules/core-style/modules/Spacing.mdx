@@ -1,33 +1,44 @@
 import DS from '@cwds/core'
 import cn from 'classnames'
-import { Card } from '@cwds/components';
-console.log(DS);
+import { Card, CardBody } from '@cwds/components';
 
 ## Spacing
 
 <Card>
-  {
-    Object.keys(DS.spacers)
-      .map(label => ({ label, value: DS.spacers[label]  }))
-      .map(({ label, value }, i) => {
-        return <div key={label}
-                        className={cn(
-                'd-flex justify-content-between align-items-center',
-                {
-                  'mt-2': i !== 0,
-                }
-              )}
-              >
-          <div
-          style={{
-            backgroundColor: 'green',
-            height: value,
-            width: value
-          }}
-        >&nbsp;</div>
-        <div>{label}</div>
-        <div>{value}</div>
-        </div>
-      })
-  }
+  <CardBody>
+    <table style={{ width: '100%' }}>
+      <thead>
+        <tr>
+          <th>Spacer</th>
+          <th className="text-center">Sass</th>
+          <th className="text-center">JS</th>
+          <th className="text-center">Size ({DS.spacing.spacerUnit})</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          Object.keys(DS.spacing.spacers)
+            .map(label => ({ label, value: DS.spacing.spacers[label]  }))
+            .map(({ label, value }, i) => {
+              return (
+                <tr key={label} style={{ height: '3rem' }}>
+                  <td>
+                    <div
+                      style={{
+                        backgroundColor: DS.themeColors.accent,
+                        height: `${value}${DS.spacing.spacerUnit}`,
+                        width: `${value}${DS.spacing.spacerUnit}`,
+                      }}
+                    >&nbsp;</div>
+                  </td>
+                  <td className="text-center"><tt>$spacer-{label}</tt></td>
+                  <td className="text-center"><tt>DS.spacing.spacer[{label}]</tt></td>
+                  <td className="text-center">{value}</td>
+                </tr>
+              )
+            })
+        }
+      </tbody>
+    </table>
+  </CardBody>
 </Card>

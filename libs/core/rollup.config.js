@@ -61,12 +61,12 @@ module.exports = [
   },
   {
     ...base(),
-    input: 'js/variables.js',
+    input: 'js/bridge.js',
     output: {
-      file: 'variables.cjs.js',
+      file: 'bridge.cjs.js',
       dir: 'dist',
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: false,
     },
   },
 ]

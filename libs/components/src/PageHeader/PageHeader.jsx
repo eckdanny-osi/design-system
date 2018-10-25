@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Container, Row, Col } from '../Grid'
-import Icon from '../Icon'
+import { Container, Row, Col } from 'reactstrap'
+import Icon from '@cwds/icons'
 import styles from './PageHeader.module.scss'
 
 class PageHeader extends PureComponent {

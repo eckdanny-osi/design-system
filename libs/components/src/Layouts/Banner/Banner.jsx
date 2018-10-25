@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
-import { Container } from '../../Grid'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
+import { Container } from 'reactstrap'
 import Styles from '../Layout.module.scss'
 
 const renderBreadcrumbDefault = itemsOrRenderFn => {

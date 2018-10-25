@@ -15,13 +15,13 @@ class AsyncCardExample extends React.Component {
           <Button onClick={this.toggleLoading}>Duh</Button>
         </div>
         <Card loading={this.state.loading || undefined}>
-          <Card.Header>
-            <Card.Title>Async Card</Card.Title>
-          </Card.Header>
-          <Card.Body>Checkout the resolved state!</Card.Body>
-          <Card.Footer>
+          <CardHeader>
+            <CardTitle>Async Card</CardTitle>
+          </CardHeader>
+          <CardBody>Checkout the resolved state!</CardBody>
+          <CardFooter>
             <Button color="primary">OK</Button>
-          </Card.Footer>
+          </CardFooter>
         </Card>
       </div>
     )

@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/card';
+
+.card {
+  margin-bottom: map-get($map: $spacers, $key: 3)
+}
+
+.card-title {
+  margin-bottom: 0rem;
+  font-size: $h3-font-size;
+  font-weight: $font-weight-bold;
+}
+
+.card-footer {
+  text-align: right;
+}
