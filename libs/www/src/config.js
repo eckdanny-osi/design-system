@@ -1,12 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AppBar } from '@cwds/components'
-import { Logo } from '@cwds/components'
-import { Badge } from '@cwds/components'
+import { AppBar, Logo, Badge } from '@cwds/components'
 import status from './modules/status/status'
-
-// const libVersion = status.lerna.find(d => d.name === '@cwds/components')
-//   .version;
 
 //
 // Configure Components
@@ -17,10 +12,8 @@ AppBar.config({
       <Link to="/">
         <Logo />
       </Link>
-      <Link to="/status" className="d-none d-sm-inline-block">
-        <Badge color="primary" className="ml-2">
-          {status.version}
-        </Badge>
+      <Link to="/status" className="d-none d-sm-inline-block ml-2">
+        <Badge color="primary">{status.version}</Badge>
       </Link>
     </React.Fragment>
   ),

@@ -46,10 +46,12 @@ class AppBar extends PureComponent {
   render() {
     const { actions, ...props } = this.props
     return (
-      <Row style={{ alignItems: 'center' }}>
-        <Col>{this.renderBrand()}</Col>
-        <Col className="text-right">{this.renderActions()}</Col>
-      </Row>
+      <div className="row">
+        <div className="col">{this.renderBrand()}</div>
+        <div className="col" className="text-right">
+          {this.renderActions()}
+        </div>
+      </div>
     )
   }
 }
