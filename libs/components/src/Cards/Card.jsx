@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import getDisplayName from 'react-display-name'
 import CardUnstyled from 'reactstrap/lib/Card'
 import { hasCardComponentStructure, findChildCardStructure } from './card-utils'
 import Styles from './Cards.module.scss'
