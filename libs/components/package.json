@@ -50,8 +50,7 @@
   },
   "devDependencies": {
     "prop-types": "^15.6.2",
-    "react": "^16.4",
-    "react-display-name": "^0.2.4"
+    "react": "^16.4"
   },
   "peerDependencies": {
     "react": "^16.4",
