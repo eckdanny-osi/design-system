@@ -2,6 +2,10 @@ import React, { Fragment } from 'react'
 import { Formik } from 'formik'
 import {
   Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  CardFooter,
   Button,
   Collapse,
   FormGroup,
@@ -34,10 +38,10 @@ export default () => (
     render={props => {
       return (
         <Card>
-          <Card.Header>
-            <Card.Title>Create New Contact</Card.Title>
-          </Card.Header>
-          <Card.Body>
+          <CardHeader>
+            <CardTitle>Create New Contact</CardTitle>
+          </CardHeader>
+          <CardBody>
             <p>
               Lorem ipsum dolor sit amet, consealksdjf lkj asdlfkj alsdkfj
               lasjkdf lkajsdflkja sldkfj asldfjasdfj alsdf jk
@@ -242,8 +246,8 @@ export default () => (
                 </Col>
               </Row>
             </form>
-          </Card.Body>
-          <Card.Footer>
+          </CardBody>
+          <CardFooter>
             <Button
               onClick={() => alert(JSON.stringify(props.values, null, 2))}
               type="button"
@@ -265,7 +269,7 @@ export default () => (
                 'Save'
               )}
             </Button>
-          </Card.Footer>
+          </CardFooter>
         </Card>
       )
     }}

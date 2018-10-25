@@ -1,7 +1,16 @@
 import React from 'react'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
-import { Card, Row, Col, Button, Page, JumpNav } from '@cwds/components'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Row,
+  Col,
+  Button,
+  Page,
+  JumpNav,
+} from '@cwds/components'
 import slackLogo from './Slack_Mark_White_Web.png'
 import githubLogo from './GitHub-Mark-Light-64px.png'
 import Style from './StatusButton.module.css'
@@ -36,61 +45,65 @@ export default () => (
             <a href="#report-an-issue">Report an Issue</a>
           </h2>
           <Card>
-            <Button
-              color="primary"
-              href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
-              className={Style.StatusButton}
-            >
-              <img
-                src={slackLogo}
-                className={Style.BlockLogo}
-                alt="slack logo"
-              />
-              #design-ops
-            </Button>{' '}
-            <Button
-              color="primary"
-              href={status.main.bugs.url}
-              className={Style.StatusButton}
-              target="_blank"
-            >
-              <img
-                src={githubLogo}
-                className={Style.BlockLogo}
-                alt="github logo"
-              />
-              Issues
-            </Button>
+            <CardBody>
+              <Button
+                color="primary"
+                href="slack://channel?team=T0FSW5RLH&id=C34SC4BMF"
+                className={Style.StatusButton}
+              >
+                <img
+                  src={slackLogo}
+                  className={Style.BlockLogo}
+                  alt="slack logo"
+                />
+                #design-ops
+              </Button>{' '}
+              <Button
+                color="primary"
+                href={status.main.bugs.url}
+                className={Style.StatusButton}
+                target="_blank"
+              >
+                <img
+                  src={githubLogo}
+                  className={Style.BlockLogo}
+                  alt="github logo"
+                />
+                Issues
+              </Button>
+            </CardBody>
           </Card>
 
           <h2 id="build-info">
             <a href="#build-info">Build Info</a>
           </h2>
           <Card>
-            <table style={{ width: '100%' }}>
-              <tbody>
-                <tr>
-                  <td>Build Date</td>
-                  <td>
-                    <tt>{status.buildDate}</tt>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Branch</td>
-                  <td>
-                    <tt>{status.git}</tt>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Info</td>
-                  <td>
-                    <pre>
-                      <code>{JSON.stringify(status.build, null, 2)}</code>
-                    </pre>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <CardBody>
+              <table style={{ width: '100%' }}>
+                <tbody>
+                  <tr>
+                    <td>Build Date</td>
+                    <td>
+                      <tt>{status.buildDate}</tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Branch</td>
+                    <td>
+                      <tt>{status.git}</tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Info</td>
+                    <td>
+                      <pre>
+                        <code>{JSON.stringify(status.build, null, 2)}</code>
+                      </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardBody>
           </Card>
           <h2 id="packages">
             <a href="#packages">Packages</a>
@@ -98,7 +111,7 @@ export default () => (
           {status.packages.map(pkg => {
             return (
               <Card key={pkg.name}>
-                <Card.Header>
+                <CardHeader>
                   <h3
                     className="m-0"
                     style={{
@@ -109,15 +122,15 @@ export default () => (
                   >
                     {pkg.name}
                   </h3>
-                </Card.Header>
-                <Card.Body>
+                </CardHeader>
+                <CardBody>
                   <h4>Dependencies</h4>
                   <pre className="mb-0">
                     <code>
                       {JSON.stringify(pkg.pkgJson.dependencies, null, 2)}
                     </code>
                   </pre>
-                </Card.Body>
+                </CardBody>
               </Card>
             )
           })}

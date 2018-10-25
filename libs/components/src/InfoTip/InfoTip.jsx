@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 // import { TooltipUncontrolled } from '../Tooltip';
-import TooltipUncontrolled from 'reactstrap/lib/UncontrolledTooltip'
-import { default as Icon } from '../Icon'
+import { UncontrolledTooltip } from 'reactstrap'
+import Icon from '@cwds/icons'
 import styles from './InfoTip.module.scss'
 import uuid from 'lodash.uniqueid'
 
@@ -29,9 +29,9 @@ class InfoTip extends PureComponent {
     return (
       <div className={cn(styles.InfoTipContainer)}>
         <Icon icon="infoCircle" color="primary" size="xs" id={id} />
-        <TooltipUncontrolled placement="top" target={id}>
+        <UncontrolledTooltip placement="top" target={id}>
           {this.renderText()}
-        </TooltipUncontrolled>
+        </UncontrolledTooltip>
       </div>
     )
   }

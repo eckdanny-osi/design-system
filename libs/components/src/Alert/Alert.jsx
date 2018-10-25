@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-// import { mapToCssModules } from 'reactstrap/lib/utils';
 import { Fade, Util } from 'reactstrap'
-import { ICON_NAMES, getIcon } from '../Icon'
-import Icon from '@cwds/icons'
+import Icon, { getIconFromContext } from '@cwds/icons'
 import Styles from './Alert.module.scss'
 
 const mapToCssModules = Util.mapToCssModules
@@ -79,7 +77,7 @@ function Alert(props) {
           Styles
         )}
       >
-        <Icon icon={getIcon(color)} color="white" />
+        <Icon icon={getIconFromContext(color)} color="white" />
       </div>
       <div className={mapToCssModules(classNames('alert-body'), Styles)}>
         {toggle ? (

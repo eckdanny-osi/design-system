@@ -5,18 +5,18 @@ const CardsWithSections = () => {
   return (
     <div>
       <Card>
-        <Card.Header>Add CANS</Card.Header>
-        <Card.Body>
-          <Card.Section title="Child Behavioral/Emotional Needs">
+        <CardHeader>Add CANS</CardHeader>
+        <CardBody>
+          <CardSection title="Child Behavioral/Emotional Needs">
             Hello World
-          </Card.Section>
-          <Card.Section title="Child Behavioral/Emotional Needs">
+          </CardSection>
+          <CardSection title="Child Behavioral/Emotional Needs">
             Hello World
-          </Card.Section>
-          <Card.Section title="Child Behavioral/Emotional Needs">
+          </CardSection>
+          <CardSection title="Child Behavioral/Emotional Needs">
             Hello World
-          </Card.Section>
-        </Card.Body>
+          </CardSection>
+        </CardBody>
       </Card>
     </div>
   )

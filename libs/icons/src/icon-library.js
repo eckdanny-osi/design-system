@@ -29,6 +29,20 @@ export default () => {
 
 export { ICON_NAMES }
 
+export const getIconFromContext = context => {
+  switch (context) {
+    case 'success':
+      return 'check-circle'
+    case 'info':
+      return 'info-circle'
+    case 'warning':
+    case 'danger':
+      return 'exclamation-triangle'
+    default:
+      return false
+  }
+}
+
 function loadIcons(icons) {
   const iconPack = {}
   let iconNames = []

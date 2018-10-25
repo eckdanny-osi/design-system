@@ -1,4 +1,4 @@
-import { Button } from '@cwds/components';
+import { Button, Badge } from '@cwds/components';
 import ButtonPropdefs from './ButtonPropdefs';
 import DemoCard from '../../../../components/DemoCard';
 
@@ -7,7 +7,10 @@ import DemoCard from '../../../../components/DemoCard';
 Use a `Button` to indicate an opportunity for the user to interact with the app.
 
 <DemoCard>
-  <Button color="primary">Click Me</Button>
+  <Button color="primary">
+    Click Me
+    <Badge color="danger">42</Badge>
+  </Button>
 </DemoCard>
 
 <ButtonPropdefs />

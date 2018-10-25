@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Avatar from './'
-import Icon from '../Icon'
+import Icon from '@cwds/icons'
 
 describe('Avatar', () => {
   it('renders', () => {
@@ -24,7 +24,7 @@ describe('Avatar', () => {
     const wrapper = shallow(<Avatar />)
     const $icon = wrapper.find(Icon)
     expect($icon.length).toBe(1)
-    expect($icon.prop('icon')).toEqual('user')
+    expect($icon.prop('name')).toEqual('user')
   })
 
   it('applies size classes', () => {

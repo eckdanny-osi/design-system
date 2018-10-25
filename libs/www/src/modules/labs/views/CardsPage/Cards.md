@@ -10,12 +10,12 @@ There are many _subcomponents_ in the `Card` namespace. The top-level subcompone
 * `Body`
 * `Footer`
 
-there are additional structural subcomponents intended to be used in `Card.Body`:
+there are additional structural subcomponents intended to be used in `CardBody`:
 
-* `Card.Section`
-* `Card.SectionGroup`
-* `Card.Subsection`
-* `Card.SubsectionGroup`
-* `Card.Subtitle`
+* `CardSection`
+* `CardSectionGroup`
+* `CardSubsection`
+* `CardSubsectionGroup`
+* `CardSubtitle`
 
 asdfasdf

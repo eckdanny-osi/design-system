@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import {
   Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
   Button,
   DataGrid,
   Input,
@@ -87,10 +90,10 @@ class CarsDataGrid extends Component {
     const { data, filteredData } = this.state
     return (
       <Card>
-        <Card.Header>
-          <Card.Title>People</Card.Title>
-        </Card.Header>
-        <Card.Body>
+        <CardHeader>
+          <CardTitle>People</CardTitle>
+        </CardHeader>
+        <CardBody>
           <DataGrid
             ref={el => (this.datagrid = el)}
             data={filteredData || data}
@@ -113,7 +116,7 @@ class CarsDataGrid extends Component {
               )
             }}
           </DataGrid>
-        </Card.Body>
+        </CardBody>
       </Card>
     )
   }

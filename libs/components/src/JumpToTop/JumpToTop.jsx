@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
-import Icon from '../Icon'
+import Icon from '@cwds/icons'
 import Styles from './JumpToTop.module.scss'
 
 class JumpToTop extends Component {

@@ -2,12 +2,17 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import styles from './AppBar.module.scss'
-import { Row, Col, Container } from '../Grid'
 import Logo from '../Logo'
-import { Button } from '../Buttons'
-import Popover from '../Popover'
+import {
+  Button,
+  Popover,
+  Row,
+  Col,
+  Container,
+  ListGroup,
+  ListGroupItem,
+} from 'reactstrap'
 import Avatar from '../Avatar'
-import { ListGroup, ListGroupItem } from '../ListGroups'
 
 const defaultActionsRenderer = () => {}
 
@@ -41,10 +46,12 @@ class AppBar extends PureComponent {
   render() {
     const { actions, ...props } = this.props
     return (
-      <Row style={{ alignItems: 'center' }}>
-        <Col>{this.renderBrand()}</Col>
-        <Col className="text-right">{this.renderActions()}</Col>
-      </Row>
+      <div className="row">
+        <div className="col">{this.renderBrand()}</div>
+        <div className="col" className="text-right">
+          {this.renderActions()}
+        </div>
+      </div>
     )
   }
 }

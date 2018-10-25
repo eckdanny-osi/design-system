@@ -1,5 +1,11 @@
 import React from 'react'
-import { Card, DataGrid } from '@cwds/components'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  DataGrid,
+} from '@cwds/components'
 import mtcars from '../data/mtcars.json'
 
 const columns = [
@@ -19,12 +25,12 @@ const columns = [
 
 const CarsDataGrid = () => (
   <Card>
-    <Card.Header>
-      <Card.Title>Cars</Card.Title>
-    </Card.Header>
-    <Card.Body className="pt-0">
+    <CardHeader>
+      <CardTitle>Cars</CardTitle>
+    </CardHeader>
+    <CardBody className="pt-0">
       <DataGrid data={mtcars} columns={columns} className="-highlight" />
-    </Card.Body>
+    </CardBody>
   </Card>
 )
 
