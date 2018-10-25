@@ -4,6 +4,7 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![slack](https://img.shields.io/badge/chat-slack-53b390.svg?logo=slack)](https://slack.com/app_redirect?channel=C34SC4BMF)
 
 Monorepo for CWDS design system
 
