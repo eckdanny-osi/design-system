@@ -1,9 +1,9 @@
 {
   "name": "www",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "dependencies": {
-    "@cwds/components": "^0.3.2",
+    "@cwds/components": "^0.3.3",
     "@cwds/core": "^0.3.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
