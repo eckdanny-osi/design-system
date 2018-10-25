@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
+import Icon from '@cwds/icons'
 import Styles from './DataGrid.module.scss'
-import Icon from '../Icon'
 
 const NoDataText = () => (
   <div className={cn(Styles.Overlay, 'text-danger')}>

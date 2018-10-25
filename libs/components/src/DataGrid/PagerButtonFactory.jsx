@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import { Button } from '../Buttons'
-import Icon from '../Icon'
+import { Button } from 'reactstrap'
+import Icon from '@cwds/icons'
 
 const PagerButtonFactory = ({ rotation }) => props => {
   const { children, ...rest } = props

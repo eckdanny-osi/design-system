@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
+import { Button } from 'reactstrap'
 import { ReactTableDefaults } from 'react-table/lib'
 import Pagination from './Pagination'
-import { Button } from '../Buttons'
 
 import LoadingText from './LoadingText'
 import NoDataText from './NoDataText'
