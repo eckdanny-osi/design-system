@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Fade, Util } from 'reactstrap'
-import Icon, { ICON_NAMES, getIconFromContext } from '@cwds/icons'
+import Icon, { getIconFromContext } from '@cwds/icons'
 import Styles from './Alert.module.scss'
 
 const mapToCssModules = Util.mapToCssModules
