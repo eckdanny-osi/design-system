@@ -5,7 +5,6 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  Icon,
 } from '@cwds/components'
 
 class ModalExample extends React.Component {
