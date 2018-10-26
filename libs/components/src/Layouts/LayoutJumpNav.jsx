@@ -1,7 +1,7 @@
 import React from 'react'
 import AppBar from '../AppBar'
 import PageHeader from '../PageHeader'
-import { Container, Col, Row } from 'reactstrap'
+import { Container, Col, Row } from '@cwds/reactstrap'
 import { POINT_CONVERSION_COMPRESSED } from 'constants'
 
 export default ({ appbar, appBar, header, sidebar, render, ...props }) => {
