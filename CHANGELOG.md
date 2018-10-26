@@ -1,5 +1,38 @@
 # Changelog
 
+## v0.3.5
+
+- (tech): extract reactstrap components (#204)
+- (docs): use correct license in npm packages (#201)
+- (docs): add react props table to component doc pages (#193)
+- (bug): fix JumpToTop placement (#205)
+
+## v0.3.4
+
+- (tech): use a global css module for all reacstrap components (#196)
+- (tech): update the rails_app to use es2015 module imports (#200)
+- (docs): add Slack badge (#192)
+- (docs): add license (#191)
+- (bug): fix avatar tests (#190)
+- (bug): fix Icon color bug (#189)
+
+## v0.3.3
+
+- (fix) removes react-display-name (#199)
+- (tech): Remove Unused Workspace DevDependencies (#194)
+
+## v0.3.2
+
+- (docs): sizing and color system (#188)
+- (tech): Fix dev build watch (#187)
+- (tech,docs): Add macro for loading react-docgens, misc fixes (#186)
+- (fix) Clean up from #170/#180 (#185)
+- (tech): No semis (#184)
+- (core) Manage DS in JS (#183)
+- (core): sass+js unity (#182)
+- (components): extract package Icons (#181)
+- (tech): Fix storybook imports to match current paths (#179)
+
 ## v0.3.0
 
 - (tech): reorg the monorepo (#125)
