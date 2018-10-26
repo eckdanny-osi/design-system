@@ -3,8 +3,6 @@ const docgen = require('react-docgen')
 const path = require('path')
 const fs = require('fs')
 
-console.log(createMacro)
-
 module.exports = createMacro(docgenComposedMacro)
 
 function docgenComposedMacro({ references, state, babel }) {
