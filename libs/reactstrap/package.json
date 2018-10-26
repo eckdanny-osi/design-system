@@ -1,0 +1,30 @@
+{
+  "name": "@cwds/reactstrap",
+  "version": "0.3.4",
+  "description": "reactstrap components for CWS-CARES",
+  "keywords": [
+    "reactstrap"
+  ],
+  "author": "Danny Eck <danny.eck@osi.ca.gov>",
+  "homepage": "https://cws-cares.netlify.com/libs/reactstrap",
+  "license": "AGPL-3.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c rollup.config.js"
+  },
+  "dependencies": {
+    "reactstrap": "^6.5.0"
+  }
+}

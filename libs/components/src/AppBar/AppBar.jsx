@@ -11,7 +11,7 @@ import {
   Container,
   ListGroup,
   ListGroupItem,
-} from 'reactstrap'
+} from '@cwds/reactstrap'
 import Avatar from '../Avatar'
 
 const defaultActionsRenderer = () => {}

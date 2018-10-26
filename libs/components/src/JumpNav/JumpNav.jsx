@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem, NavLink } from '@cwds/reactstrap'
 import Styles from './JumpNav.module.scss'
 
 const naiveSolnJs = e => {

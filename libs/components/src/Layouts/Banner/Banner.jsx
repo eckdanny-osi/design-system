@@ -4,7 +4,7 @@ import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
-import { Container } from 'reactstrap'
+import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 
 const renderBreadcrumbDefault = itemsOrRenderFn => {

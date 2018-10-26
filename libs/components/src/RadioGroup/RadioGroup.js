@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import Legend from '../Legend'
-import { Input, FormGroup } from 'reactstrap'
+import { Input, FormGroup } from '@cwds/reactstrap'
 const noop = () => {}
 const defaultRenderOption = ({
   name,

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 
 const Body = ({ layout, sidenav: SideNav = () => null, main: Main }) => {

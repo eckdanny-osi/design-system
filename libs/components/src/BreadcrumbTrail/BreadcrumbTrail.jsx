@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import { Container, Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { Container, Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
 import Styles from './BreadcrumbTrail.module.scss'
 
 // @TODO: this should break!!! Only works because of lerna!
