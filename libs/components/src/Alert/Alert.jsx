@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { Fade, Util } from 'reactstrap'
+import { Fade, Util } from '@cwds/reactstrap'
 import Icon, { getIconFromContext } from '@cwds/icons'
 import Styles from './Alert.module.scss'
 

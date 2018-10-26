@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Button } from 'reactstrap'
+import { Button } from '@cwds/reactstrap'
 import { ReactTableDefaults } from 'react-table/lib'
 import Pagination from './Pagination'
 

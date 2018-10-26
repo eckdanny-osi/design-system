@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import uniqueId from 'lodash.uniqueid'
-import { Input, FormGroup, Label } from 'reactstrap'
+import { Input, FormGroup, Label } from '@cwds/reactstrap'
 
 class CheckboxBank extends PureComponent {
   static propTypes = {
