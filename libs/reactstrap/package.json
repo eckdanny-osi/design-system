@@ -21,7 +21,9 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
     "reactstrap": "^6.5.0"
