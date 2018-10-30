@@ -1,3 +1,4 @@
+import React from 'react'
 import { Button } from '@cwds/reactstrap'
 import { ReactTableDefaults } from 'react-table'
 import Pagination from './Pagination'
