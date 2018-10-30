@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.6
+
+(components): Grid classes into css modules (#215)
+(docs): use CARES table for docgen PropTables (#211)
+(debt): delete old files (#213)
+(icons): sets icons used by CARES (#210)
+(fix): delete the offending col class (#208)
+
 ## v0.3.5
 
 - (tech): extract reactstrap components (#204)
