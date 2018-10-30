@@ -22,14 +22,8 @@ const routes = {
     { title: 'Alert', path: '/alert', component: Alert },
     { title: 'Avatar', path: '/avatar', component: Avatar },
     { title: 'Badge', path: '/badge', component: Badge },
-    {
-      title: 'Buttons',
-      path: '/buttons',
-      children: [
-        { title: 'Button', path: '/button', component: Button },
-        { title: 'ButtonGroup', path: '/button-group', component: ButtonGroup },
-      ],
-    },
+    { title: 'Button', path: '/button', component: Button },
+    { title: 'ButtonGroup', path: '/button-group', component: ButtonGroup },
     { title: 'Breadcrumbs', path: '/breadcrumbs' },
     {
       title: 'Cards',

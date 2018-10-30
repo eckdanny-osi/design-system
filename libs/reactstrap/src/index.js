@@ -34,7 +34,6 @@
  *   - PopperTargetHelper
  *   - Progress
  *   - TabContent
- *   - Table
  *   - TabPane
  *   - UncontrolledCarousel
  *   - UncontrolledCollapse
@@ -86,6 +85,7 @@ export {
   PopoverHeader,
   PopoverTitle,
   Row,
+  Table,
   Tooltip,
   UncontrolledAlert,
   UncontrolledButtonDropdown,

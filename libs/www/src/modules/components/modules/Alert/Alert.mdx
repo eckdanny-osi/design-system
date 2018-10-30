@@ -1,5 +1,7 @@
 import { Alert, AlertUncontrolled, Card } from '@cwds/components';
 import DemoCard from '../../../../components/DemoCard';
+import PropTable from '../../../../components/PropTable'
+import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
@@ -12,6 +14,10 @@ Use an `Alert` to deliver feedback to the user in an attention-grabbing way.
 ```jsx
 import { Alert } from '@cwds/components';
 ```
+
+## Props
+
+<PropTable docgen={Docgen.Alert} />
 
 ## Usage Guidelines
 
@@ -32,45 +38,6 @@ import { Alert } from '@cwds/components';
 <Alert color="danger">This is a danger alert — check it out!</Alert>
 <Alert color="warning">This is a warning alert — check it out!</Alert>
 <Alert color="info">This is an info alert — check it out!</Alert>
-
-## Props
-
-@todo
-
-<table style={{ width: '100%', backgroundColor: 'white', border: '1px solid #ccc' }}>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>PropType</th>
-      <th>Required</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Foo</td>
-      <td>string</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>Bar</td>
-      <td>string</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>Quo</td>
-      <td>string</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Variants
 

@@ -1,0 +1,7 @@
+@import '~bootstrap/scss/tables';
+
+.table {
+  thead th {
+    border-bottom: (1 * $table-border-width) solid $table-border-color;
+  }
+}

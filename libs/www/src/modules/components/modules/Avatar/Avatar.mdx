@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Avatar, Alert, Card, Row, Col } from '@cwds/components';
 import DemoCard from '../../../../components/DemoCard';
-import PropTable from '../../../../components/PropDefs/AvatarProps';
+import PropTable from '../../../../components/PropTable'
+import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
@@ -15,9 +16,11 @@ Use an `Avatar` to represent an indentifiable logical entity.
 import { Avatar } from '@cwds/components';
 ```
 
-## Usage Guidelines
+## Props
 
-<PropTable />
+<PropTable docgen={Docgen.Avatar} />
+
+## Usage Guidelines
 
 Observe the following when using `Avatar`s:
 

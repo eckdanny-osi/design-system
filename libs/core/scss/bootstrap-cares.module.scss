@@ -1,6 +1,6 @@
 @import './base';
 
-// @import '~bootstrap/scss/tables';
+@import 'modules/tables'; // override '~bootstrap/scss/tables';
 @import '~bootstrap/scss/forms';
 @import 'modules/buttons'; // override '~bootstrap/scss/buttons'
 @import '~bootstrap/scss/transitions';

@@ -1,12 +1,24 @@
 import { Button, Container, Row, Col, Card } from '@cwds/components';
 import DemoCard from '../../../../components/DemoCard';
+import PropTable from '../../../../components/PropTable/PropTable.jsx';
+import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
-Use a `Button` to indicate an opportunity for the user to interact with the app.
+The components: `Container`, `Row`, and `Col` are used to structure content into a grid.
 
 <DemoCard>
-  <Button color="primary">Click Me</Button>
+  <div>
+    <Row>
+      <Col sm="6"><Card className="p-2">Col</Card></Col>
+      <Col sm="6"><Card className="p-2">Col</Card></Col>
+    </Row>
+    <Row>
+      <Col sm="3"><Card className="p-2 mb-0">Col</Card></Col>
+      <Col sm="6"><Card className="p-2 mb-0">Col</Card></Col>
+      <Col sm="3"><Card className="p-2 mb-0">Col</Card></Col>
+    </Row>
+  </div>
 </DemoCard>
 
 ```jsx
@@ -17,41 +29,49 @@ import { Container, Row, Col } from '@cwds/components';
 
 @TODO
 
+## Props
+
+<PropTable docgen={Docgen.Container} />
+
+<PropTable docgen={Docgen.Row} />
+
+<PropTable docgen={Docgen.Col} />
+
 ## Examples
 
 <div>
   <Row>
-    <Col><Card>.col</Card></Col>
+    <Col><Card className="p-2">.col</Card></Col>
   </Row>
   <Row>
-    <Col><Card>.col</Card></Col>
-    <Col><Card>.col</Card></Col>
-    <Col><Card>.col</Card></Col>
-    <Col><Card>.col</Card></Col>
+    <Col><Card className="p-2">.col</Card></Col>
+    <Col><Card className="p-2">.col</Card></Col>
+    <Col><Card className="p-2">.col</Card></Col>
+    <Col><Card className="p-2">.col</Card></Col>
   </Row>
   <Row>
-    <Col xs="3"><Card>.col-3</Card></Col>
-    <Col xs="auto"><Card>.col-auto - variable width content</Card></Col>
-    <Col xs="3"><Card>.col-3</Card></Col>
+    <Col xs="3"><Card className="p-2">.col-3</Card></Col>
+    <Col xs="auto"><Card className="p-2">.col-auto - variable width content</Card></Col>
+    <Col xs="3"><Card className="p-2">.col-3</Card></Col>
   </Row>
   <Row>
-    <Col xs="6"><Card>.col-6</Card></Col>
-    <Col xs="6"><Card>.col-6</Card></Col>
+    <Col xs="6"><Card className="p-2">.col-6</Card></Col>
+    <Col xs="6"><Card className="p-2">.col-6</Card></Col>
   </Row>
   <Row>
-    <Col xs="6" sm="4"><Card>.col-6 .col-sm-4</Card></Col>
-    <Col xs="6" sm="4"><Card>.col-6 .col-sm-4</Card></Col>
-    <Col sm="4"><Card>.col-sm-4</Card></Col>
+    <Col xs="6" sm="4"><Card className="p-2">.col-6 .col-sm-4</Card></Col>
+    <Col xs="6" sm="4"><Card className="p-2">.col-6 .col-sm-4</Card></Col>
+    <Col sm="4"><Card className="p-2">.col-sm-4</Card></Col>
   </Row>
   <Row>
-    <Col sm={{ size: 6, order: 2, offset: 1 }}><Card>.col-sm-6 .col-sm-order-2 .col-sm-offset-2</Card></Col>
+    <Col sm={{ size: 6, order: 2, offset: 1 }}><Card className="p-2">.col-sm-6 .col-sm-order-2 .col-sm-offset-2</Card></Col>
   </Row>
   <Row>
-    <Col sm="12" md={{ size: 8, offset: 2 }}><Card>.col-sm-12 .col-md-6 .col-md-offset-3</Card></Col>
+    <Col sm="12" md={{ size: 8, offset: 2 }}><Card className="p-2">.col-sm-12 .col-md-6 .col-md-offset-3</Card></Col>
   </Row>
   <Row>
-    <Col sm={{ size: 'auto', offset: 1 }}><Card>.col-sm .col-sm-offset-1</Card></Col>
-    <Col sm={{ size: 'auto', offset: 1 }}><Card>.col-sm .col-sm-offset-1</Card></Col>
+    <Col sm={{ size: 'auto', offset: 1 }}><Card className="p-2">.col-sm .col-sm-offset-1</Card></Col>
+    <Col sm={{ size: 'auto', offset: 1 }}><Card className="p-2">.col-sm .col-sm-offset-1</Card></Col>
   </Row>
 </div>
 
