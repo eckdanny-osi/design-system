@@ -13,9 +13,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-# Changelog
-
 ## v0.3.6
 
 - (components): Grid classes into css modules (#215)
