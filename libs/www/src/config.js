@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AppBar, Logo, Badge } from '@cwds/components'
-import status from './modules/status/status'
+import getRepoStatus from './macros/repo-status.macro'
+const status = getRepoStatus()
 
 //
 // Configure Components

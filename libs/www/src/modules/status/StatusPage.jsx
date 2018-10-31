@@ -14,7 +14,8 @@ import {
 import slackLogo from './Slack_Mark_White_Web.png'
 import githubLogo from './GitHub-Mark-Light-64px.png'
 import Style from './StatusButton.module.css'
-import status from './status'
+import getRepoStatus from '../../macros/repo-status.macro'
+const status = getRepoStatus()
 
 const toSlug = str =>
   slugify(str, {
