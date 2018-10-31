@@ -1,6 +1,7 @@
 {
   "name": "design-system",
   "description": "CARES Design System",
+  "license": "AGPL-3.0",
   "version": "latest",
   "private": true,
   "homepage": "https://cws-cares.netlify.com",

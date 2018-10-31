@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/ca-cwds/design-system/issues"
   },
-  "license": "ISC",
+  "license": "AGPL-3.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "directories": {

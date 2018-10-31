@@ -1,6 +1,7 @@
 {
   "name": "www",
   "version": "0.3.6",
+  "license": "AGPL-3.0",
   "private": true,
   "dependencies": {
     "@cwds/components": "^0.3.6",
