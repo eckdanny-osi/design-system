@@ -1,6 +1,15 @@
-# Changelog
+# Change Log
 
-## v0.3.6
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.3.7](https://github.com/ca-cwds/design-system/compare/v0.3.6...v0.3.7) (2018-10-31)
+
+### Bug Fixes
+
+- add build:watch to reactstrap pkg ([#216](https://github.com/ca-cwds/design-system/issues/216)) ([b505e88](https://github.com/ca-cwds/design-system/commit/b505e88))
+
+## [0.3.6](https://github.com/ca-cwds/design-system/compare/v0.3.5...v0.3.6)
 
 - (components): Grid classes into css modules (#215)
 - (docs): use CARES table for docgen PropTables (#211)
@@ -8,14 +17,14 @@
 - (icons): sets icons used by CARES (#210)
 - (fix): delete the offending col class (#208)
 
-## v0.3.5
+## [0.3.5](https://github.com/ca-cwds/design-system/compare/v0.3.4...v0.3.5)
 
 - (tech): extract reactstrap components (#204)
 - (docs): use correct license in npm packages (#201)
 - (docs): add react props table to component doc pages (#193)
 - (bug): fix JumpToTop placement (#205)
 
-## v0.3.4
+## [0.3.4](https://github.com/ca-cwds/design-system/compare/v0.3.3...v0.3.4)
 
 - (tech): use a global css module for all reacstrap components (#196)
 - (tech): update the rails_app to use es2015 module imports (#200)
@@ -24,12 +33,12 @@
 - (bug): fix avatar tests (#190)
 - (bug): fix Icon color bug (#189)
 
-## v0.3.3
+## [0.3.3](https://github.com/ca-cwds/design-system/compare/v0.3.2...v0.3.3)
 
 - (fix) removes react-display-name (#199)
 - (tech): Remove Unused Workspace DevDependencies (#194)
 
-## v0.3.2
+## [0.3.2](https://github.com/ca-cwds/design-system/compare/v0.3.1...v0.3.2)
 
 - (docs): sizing and color system (#188)
 - (tech): Fix dev build watch (#187)
@@ -41,7 +50,7 @@
 - (components): extract package Icons (#181)
 - (tech): Fix storybook imports to match current paths (#179)
 
-## v0.3.0
+## [0.3.0](https://github.com/ca-cwds/design-system/compare/v0.2.0-alpha.24...v0.3.0)
 
 - (tech): reorg the monorepo (#125)
 - (docs): update Readme with legal contact information (#124)
@@ -61,7 +70,7 @@
 - (docs): Add easy button for Designers (#167)
 - (build): Use rollup to bundle components (#168)
 
-## v0.2.0-alpha.24
+## [0.2.0-alpha.24](https://github.com/ca-cwds/design-system/compare/v0.2.0-alpha.21...v0.2.0-alpha.24)
 
 - (docs): Update labs to use mdx (#101)
 - (core): Add scss for type and imgs (#102)
@@ -77,7 +86,7 @@
 - Use MDXProvider (#121)
 - component cleanup (#122)
 
-## v0.2.0-alpha.21
+## [0.2.0-alpha.21](https://github.com/ca-cwds/design-system/compare/v0.2.0-alpha.18...v0.2.0-alpha.21)
 
 - reference the transpiled upstream deps (#80)
 - (docs): show ref tech impls in docs (#88)
@@ -89,7 +98,7 @@
 - (components): Hoist layout components from guide site into lib (#99)
 - (fix): Broken import statement (#100)
 
-## v0.2.0-alpha.18
+## [0.2.0-alpha.18](https://github.com/ca-cwds/design-system/compare/v0.2.0-alpha.17...v0.2.0-alpha.18)
 
 - (fix): update react-scripts to fix jest bug (#63)
 - (components): Add JumpToTop (#64)
@@ -103,7 +112,7 @@
 - (components): Fix initial value in Toggle (#75)
 - (docs): add MultiScope Card example (#76)
 
-## v0.2.0-alpha.17
+## [0.2.0-alpha.17](https://github.com/ca-cwds/design-system/compare/v0.2.0-alpha.16...v0.2.0-alpha.17)
 
 - (guide): fix starwars example pagination (#29)
 - (components,guide): Hoist components, use direct es imports, fix CRA warnings (#38)

@@ -1,6 +1,7 @@
 {
   "name": "design-system",
   "description": "CARES Design System",
+  "license": "AGPL-3.0",
   "version": "latest",
   "private": true,
   "homepage": "https://cws-cares.netlify.com",
@@ -18,7 +19,8 @@
     "build": "yarn build:libs && yarn build:www",
     "build:watch": "lerna run --scope @cwds/* --parallel build:watch",
     "dev": "yarn build:watch",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "release": "lerna publish --conventional-commits --force-publish"
   },
   "workspaces": {
     "nohoist": [

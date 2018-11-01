@@ -1,7 +1,12 @@
 {
-  "version": "0.3.6",
+  "version": "0.3.7",
   "independent": false,
   "packages": ["libs/*", "apps/*"],
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": "master"
+    }
+  }
 }

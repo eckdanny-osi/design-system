@@ -1,6 +1,6 @@
 {
   "name": "@cwds/reactstrap",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "reactstrap components for CWS-CARES",
   "keywords": [
     "reactstrap"
@@ -21,6 +21,7 @@
   },
   "scripts": {
     "test": "jest",
+    "build:watch": "yarn build --watch",
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.js"
   },
