@@ -12,7 +12,7 @@
     "test": "jest",
     "test:all": "CI=true lerna run --parallel test ",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "start": "cd libs/www && yarn react-scripts start",
+    "start": "cd apps/www && yarn react-scripts start",
     "prebuild": "lerna bootstrap",
     "build:www": "lerna run --stream --scope www build",
     "build:libs": "lerna run --scope @cwds/* build",
@@ -30,7 +30,8 @@
       "rails_app/**"
     ],
     "packages": [
-      "libs/*"
+      "libs/*",
+      "apps/*"
     ]
   },
   "devDependencies": {
