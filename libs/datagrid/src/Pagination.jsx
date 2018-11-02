@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 import PaginationRT from 'react-table/lib/pagination'
 import { Input } from '@cwds/reactstrap'
-import Select from '../Select'
+import Select from 'react-select'
 import uniqueId from 'lodash.uniqueid'
 
 // From react-table@6.8.6
