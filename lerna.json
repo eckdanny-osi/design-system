@@ -1,7 +1,10 @@
 {
-  "version": "0.3.7",
+  "version": "0.3.8",
   "independent": false,
-  "packages": ["libs/*", "apps/*"],
+  "packages": [
+    "libs/*",
+    "apps/*"
+  ],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
