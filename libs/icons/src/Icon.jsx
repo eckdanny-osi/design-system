@@ -2,10 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import DS from '@cwds/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import loadIcons from './icon-library'
-
-// Side Effect
-loadIcons()
 
 const Icon = props => {
   const { name, icon, color, themeColors, ...restProps } = props

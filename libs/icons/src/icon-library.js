@@ -1,36 +1,51 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faArrowUp,
+  faBell,
+  faCheck,
+  faCheckCircle,
+  faChevronDown,
+  faCircleNotch,
+  faClipboard,
+  faClock,
+  faCog,
+  faEllipsisV,
+  faExclamationTriangle,
+  faExternalLinkAlt,
+  faFlag,
+  faInfoCircle,
+  faMapMarkerAlt,
+  faPrint,
+  faSearch,
+  faTimes,
+  faUpload,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons'
 
-const ICONS = [
-  'faArrowUp',
-  'faBell',
-  'faCheck',
-  'faCheckCircle',
-  'faChevronDown',
-  'faCircleNotch',
-  'faClipboard',
-  'faClock',
-  'faCog',
-  'faEllipsisV',
-  'faExclamationTriangle',
-  'faExternalLinkAlt',
-  'faFlag',
-  'faInfoCircle',
-  'faMapMarkerAlt',
-  'faPrint',
-  'faSearch',
-  'faTimes',
-  'faUpload',
-  'faUser',
-]
+library.add(
+  faArrowUp,
+  faBell,
+  faCheck,
+  faCheckCircle,
+  faChevronDown,
+  faCircleNotch,
+  faClipboard,
+  faClock,
+  faCog,
+  faEllipsisV,
+  faExclamationTriangle,
+  faExternalLinkAlt,
+  faFlag,
+  faInfoCircle,
+  faMapMarkerAlt,
+  faPrint,
+  faSearch,
+  faTimes,
+  faUpload,
+  faUser
+)
 
-const { iconPack, iconNames: ICON_NAMES } = loadIcons(ICONS)
-
-// Seed Icon Library
-export default () => {
-  library.add(iconPack)
-}
-
-export { ICON_NAMES }
+export const ICON_NAMES = Object.keys(library.definitions['fas'])
 
 export const getIconFromContext = context => {
   switch (context) {
@@ -44,15 +59,4 @@ export const getIconFromContext = context => {
     default:
       return false
   }
-}
-
-function loadIcons(icons) {
-  const iconPack = {}
-  let iconNames = []
-  icons.forEach(name => {
-    const mod = require(`@fortawesome/free-solid-svg-icons/${name}`)
-    iconPack[name] = mod.definition
-    iconNames.push(mod.iconName)
-  })
-  return { iconPack, iconNames }
 }
