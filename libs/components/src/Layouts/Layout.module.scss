@@ -37,11 +37,13 @@
   }
 
   .BreadcrumbContainer {
-    background-color: $body-bg;
-    height: 2rem;
-    overflow-x: scroll;
-    display: flex;
     align-items: center;
+    background-color: $body-bg;
+    display: flex;
+    height: 2rem;
+    -ms-overflow-style: none;
+    overflow-x: scroll;
+    white-space: nowrap;
   }
 }
 
