@@ -1,14 +1,13 @@
 import React from 'react'
 import { shallow, render } from 'enzyme'
-import DataGrid from './DataGrid'
+import DataGrid from '../'
 
-describe('DataGrdi', () => {
+describe('DataGrid', () => {
   it('pass', () => {
     expect(true).toBe(true)
   })
 
   it('renders', () => {
-    // expect(() => shallow(<div>alksdfj</div>)).not.toThrow();
     expect(() => {
       const wrapper = render(
         <DataGrid

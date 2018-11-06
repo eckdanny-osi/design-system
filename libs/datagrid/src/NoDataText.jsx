@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cn from 'classnames'
 import Icon from '@cwds/icons'
 import Styles from './DataGrid.module.scss'
