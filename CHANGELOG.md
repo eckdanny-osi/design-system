@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/ca-cwds/design-system/compare/v0.3.8...v0.4.0) (2018-11-06)
+
+
+### Bug Fixes
+
+* **build:** add version files for js and ru ([#231](https://github.com/ca-cwds/design-system/issues/231)) ([8605434](https://github.com/ca-cwds/design-system/commit/8605434))
+* **components:** fix ie11 breadcrumb layout bug ([#236](https://github.com/ca-cwds/design-system/issues/236)) ([2195047](https://github.com/ca-cwds/design-system/commit/2195047))
+* **www:** fix support for ie11 ([#228](https://github.com/ca-cwds/design-system/issues/228)) ([4bbb330](https://github.com/ca-cwds/design-system/commit/4bbb330)), closes [#227](https://github.com/ca-cwds/design-system/issues/227)
+
+
+### Features
+
+* **datagrid:** extract datagrid to standalone package ([#220](https://github.com/ca-cwds/design-system/issues/220)) ([d735323](https://github.com/ca-cwds/design-system/commit/d735323))
+
+
+
+
+
 ## [0.3.8](https://github.com/ca-cwds/design-system/compare/v0.3.7...v0.3.8) (2018-11-05)
 
 
