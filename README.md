@@ -21,15 +21,21 @@ yarn add @cwds/components@alpha
 Start using components in your application:
 
 ```jsx
-import React from 'react';
-import Button from '@cwds/components/dist/Button';
-
+import React from 'react'
+import { Button } from '@cwds/components'
 const App = () => (
   <div>
     <Button>Hello World!</Button>
   </div>
-);
+)
 ```
+
+### How to Use / Relevant files:
+
+System dependencies:
+
+- Node version: > 6.3.1, npm
+- yarn version: 1.10.1
 
 ## Getting Started
 
@@ -69,6 +75,7 @@ To run the _Guide Site_:
 ```sh
 yarn start
 ```
+
 #### rails_app
 
 > This is a good integration check for our digital service teams that all utilize this stack.
