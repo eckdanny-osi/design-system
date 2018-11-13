@@ -36,7 +36,6 @@
  *   - TabContent
  *   - TabPane
  *   - UncontrolledCarousel
- *   - UncontrolledCollapse
  *   - UncontrolledNavDropdown
  */
 export {
@@ -89,6 +88,7 @@ export {
   Tooltip,
   UncontrolledAlert,
   UncontrolledButtonDropdown,
+  UncontrolledCollapse,
   UncontrolledDropdown,
   UncontrolledTooltip,
   Util,

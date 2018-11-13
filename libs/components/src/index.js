@@ -1,6 +1,7 @@
 import * as Utils from './utils'
 export * from '@cwds/reactstrap'
 export { default as DataGrid } from '@cwds/datagrid'
+export { default as Rolodex } from './Rolodex'
 export { Alert, AlertUncontrolled } from './Alert'
 export { default as AppBar } from './AppBar'
 export { default as Avatar } from './Avatar'
