@@ -1,5 +1,7 @@
 import {
   Rolodex,
+  Row,
+  Col,
   Card,
   CardHeader,
   CardTitle,
@@ -32,7 +34,12 @@ Some `Card` variants and experimental behaviors.
   </Card>
   <Card>
     <CardHeader>
-      <CardTitle>Second Card</CardTitle>
+      <Row>
+        <Col>
+          <CardTitle>Second Card</CardTitle>
+        </Col>
+        <Col style={{ textAlign: 'right' }}>Hello World</Col>
+      </Row>
     </CardHeader>
     <CardBody>Second Card Body</CardBody>
   </Card>
