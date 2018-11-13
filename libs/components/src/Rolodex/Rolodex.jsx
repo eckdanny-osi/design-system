@@ -9,24 +9,15 @@ import {
   CardTitle,
 } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
+import Styles from './Rolodex.module.scss'
 
 const pushRight = '60px'
 
 const RolodexToggle = ({ isOpen, onClick }) => {
   return (
-    <Button
-      className="rolodex__toggle"
-      onClick={onClick}
-      style={{
-        display: 'block',
-        position: 'absolute',
-        right: '5px',
-        top: '10px',
-        zIndex: 99,
-      }}
-    >
+    <div className={cn(Styles.RolodexToggle)} onClick={onClick}>
       <Icon name="chevron-down" rotation={!isOpen ? undefined : 180} />
-    </Button>
+    </div>
   )
 }
 
@@ -65,12 +56,11 @@ class Rolodex extends Component {
       <Card className="mb-0" key={index}>
         <Header.type
           {...Header.props}
-          className={cn(Header.props.className, {
+          className={cn(Header.props.className, Styles.RolodexHeader, {
             'border-bottom-0': !isOpen && status !== 'exiting',
           })}
-          style={{
-            paddingRight: pushRight,
-          }}
+          tag="button"
+          onClick={e => this.toggleCard(index)}
         >
           {Header.props.children}
           <RolodexToggle

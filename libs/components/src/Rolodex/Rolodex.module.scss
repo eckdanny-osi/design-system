@@ -1,0 +1,25 @@
+$push: 45px;
+
+.RolodexHeader {
+  padding-right: $push;
+  text-align: inherit;
+  position: relative;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+
+  &:focus {
+    z-index: 2;
+  }
+}
+
+.RolodexToggle {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  padding-right: 15px;
+  align-items: center;
+}
