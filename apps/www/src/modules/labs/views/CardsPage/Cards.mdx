@@ -1,5 +1,6 @@
 import {
   Rolodex,
+  Badge,
   Row,
   Col,
   Card,
@@ -25,10 +26,15 @@ Some `Card` variants and experimental behaviors.
 
 ### Rolodex
 
-<Rolodex>
+<Rolodex exclusive>
   <Card>
     <CardHeader>
-      <CardTitle>First Card</CardTitle>
+      <CardTitle>
+        First Card{' '}
+        <Badge pill color="success">
+          5/5
+        </Badge>
+      </CardTitle>
     </CardHeader>
     <CardBody>First Card Body</CardBody>
   </Card>
@@ -36,7 +42,12 @@ Some `Card` variants and experimental behaviors.
     <CardHeader>
       <Row>
         <Col>
-          <CardTitle>Second Card</CardTitle>
+          <CardTitle>
+            Second Card{' '}
+            <Badge pill color="warning">
+              3/4
+            </Badge>
+          </CardTitle>
         </Col>
         <Col style={{ textAlign: 'right' }}>Hello World</Col>
       </Row>
@@ -45,7 +56,12 @@ Some `Card` variants and experimental behaviors.
   </Card>
   <Card>
     <CardHeader>
-      <CardTitle>Third Card</CardTitle>
+      <CardTitle>
+        Third Card{' '}
+        <Badge pill color="warning">
+          1/5
+        </Badge>
+      </CardTitle>
     </CardHeader>
     <CardBody>
       <h4>Whatever</h4>
@@ -65,6 +81,55 @@ Some `Card` variants and experimental behaviors.
       </form>
     </CardBody>
     <CardFooter>Third Card Footer</CardFooter>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Fourth Card (nested)</CardTitle>
+    </CardHeader>
+    <CardBody>
+      <Rolodex exclusive>
+        <Card>
+          <CardHeader>
+            <CardTitle>4.1 Card</CardTitle>
+          </CardHeader>
+          <CardBody>4.1 Card Body</CardBody>
+        </Card>
+        <Card isOpen={true}>
+          <CardHeader>
+            <Row>
+              <Col>
+                <CardTitle>4.2 Card</CardTitle>
+              </Col>
+              <Col style={{ textAlign: 'right' }}>Hello World</Col>
+            </Row>
+          </CardHeader>
+          <CardBody>4.2 Card Body</CardBody>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>4.3 Card</CardTitle>
+          </CardHeader>
+          <CardBody>
+            <h4>Whatever</h4>
+            <form>
+              <fieldset>
+                <legend>It's dangerous to go alone! Take this.</legend>
+                <label>
+                  <input type="radio" name="foo" /> alskdfj
+                </label>
+                <label>
+                  <input type="radio" name="foo" /> alskdfj
+                </label>
+                <label>
+                  <input type="radio" name="foo" /> alskdfj
+                </label>
+              </fieldset>
+            </form>
+          </CardBody>
+          <CardFooter>Third Card Footer</CardFooter>
+        </Card>
+      </Rolodex>
+    </CardBody>
   </Card>
 </Rolodex>
 

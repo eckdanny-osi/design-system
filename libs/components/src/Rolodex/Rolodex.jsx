@@ -20,6 +20,8 @@ const { keyCodes } = Util
 class Rolodex extends Component {
   static propTypes = {
     exclusive: PropTypes.bool,
+    collapsible: PropTypes.bool,
+    aggregateControl: PropTypes.bool,
   }
   state = {
     cards: [],
@@ -98,11 +100,22 @@ class Rolodex extends Component {
     console.log('all good', sections)
   }
   toggleCard(i) {
-    this.setState({
-      cards: this.state.cards.map((cardState, j) =>
-        i === j ? { ...cardState, isOpen: !cardState.isOpen } : cardState
-      ),
-    })
+    const { exclusive, collapsible } = this.props
+    if (exclusive) {
+      this.setState({
+        cards: this.state.cards.map((card, j) =>
+          i === j
+            ? { ...card, isOpen: !card.isOpen }
+            : { ...card, isOpen: false }
+        ),
+      })
+    } else {
+      this.setState({
+        cards: cards.map((cardState, j) =>
+          i === j ? { ...cardState, isOpen: !cardState.isOpen } : cardState
+        ),
+      })
+    }
   }
   handleKeyDown(e, index) {
     const { cards } = this.state
@@ -173,14 +186,16 @@ class Rolodex extends Component {
       .map(this.renderPanel)
     return (
       <div>
-        <div className="text-right mb-2">
-          <Button size="sm" color="primary">
-            Expand
-          </Button>{' '}
-          <Button size="sm" color="primary">
-            Collapse
-          </Button>
-        </div>
+        {this.props.aggregateControls && (
+          <div className="text-right mb-2">
+            <Button size="sm" color="primary">
+              Expand
+            </Button>{' '}
+            <Button size="sm" color="primary">
+              Collapse
+            </Button>
+          </div>
+        )}
         {cards}
       </div>
     )
