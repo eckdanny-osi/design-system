@@ -21,6 +21,7 @@ class Rolodex extends Component {
   static propTypes = {
     exclusive: PropTypes.bool,
     collapsible: PropTypes.bool,
+    animate: PropTypes.bool,
     aggregateControl: PropTypes.bool,
   }
   state = {
@@ -111,7 +112,7 @@ class Rolodex extends Component {
       })
     } else {
       this.setState({
-        cards: cards.map((cardState, j) =>
+        cards: this.state.cards.map((cardState, j) =>
           i === j ? { ...cardState, isOpen: !cardState.isOpen } : cardState
         ),
       })
@@ -165,6 +166,9 @@ class Rolodex extends Component {
         </Header.type>
         <Collapse
           isOpen={isOpen}
+          timeout={100}
+          enter={!!this.props.animate}
+          exit={!!this.props.animate}
           onEntering={() => this.setCardCollapseState(index, 'entering')}
           onEntered={() => this.setCardCollapseState(index, 'entered')}
           onExiting={() => this.setCardCollapseState(index, 'exiting')}
