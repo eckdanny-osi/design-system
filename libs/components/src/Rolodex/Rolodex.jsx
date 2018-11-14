@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
+import uniqueId from 'lodash.uniqueid'
 import {
   Button,
   Card,
@@ -7,9 +8,12 @@ import {
   CardBody,
   Collapse,
   CardTitle,
+  Util,
 } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 import Styles from './Rolodex.module.scss'
+
+const { keyCodes } = Util
 
 const pushRight = '60px'
 
@@ -30,7 +34,9 @@ class Rolodex extends Component {
 
     this.renderPanel = this.renderPanel.bind(this)
     this.toggleCard = this.toggleCard.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
+  mkId = () => uniqueId('rolodex--')
   componentWillUpdate() {
     // Something...
   }
@@ -40,6 +46,11 @@ class Rolodex extends Component {
         i === j ? { ...cardState, isOpen: !cardState.isOpen } : cardState
       ),
     })
+  }
+  handleKeyDown(e, index) {
+    if ([keyCodes.up, keyCodes.down].indexOf(e.which) > -1) {
+      debugger
+    }
   }
   setCardCollapseState(i, status) {
     this.setState({
@@ -52,6 +63,7 @@ class Rolodex extends Component {
     if (node.type !== Card) return null
     const [Header, Body, Footer] = React.Children.toArray(node.props.children)
     const { isOpen, status } = this.state.cards[index]
+    const id = this.mkId()
     return (
       <Card className="mb-0" key={index}>
         <Header.type
@@ -61,6 +73,9 @@ class Rolodex extends Component {
           })}
           tag="button"
           onClick={e => this.toggleCard(index)}
+          aria-expanded={this.isOpen}
+          aria-controls={id}
+          onKeyDown={e => this.handleKeyDown(e, index)}
         >
           {Header.props.children}
           <RolodexToggle
@@ -75,17 +90,20 @@ class Rolodex extends Component {
           onExiting={() => this.setCardCollapseState(index, 'exiting')}
           onExited={() => this.setCardCollapseState(index, 'exited')}
         >
-          {React.cloneElement(Body, {})}
-          {Footer && React.cloneElement(Footer, {})}
+          <div id={id}>
+            {React.cloneElement(Body, {})}
+            {Footer && React.cloneElement(Footer, {})}
+          </div>
         </Collapse>
       </Card>
     )
   }
 
   render() {
-    return React.Children.toArray(this.props.children)
+    const cards = React.Children.toArray(this.props.children)
       .filter(({ type }) => type === Card)
       .map(this.renderPanel)
+    return <div>{cards}</div>
   }
 }
 
