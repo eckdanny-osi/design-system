@@ -1,5 +1,8 @@
 $push: 45px;
 
+.RolodexCard {
+}
+
 .RolodexHeader {
   padding-right: $push;
   text-align: inherit;
@@ -11,6 +14,9 @@ $push: 45px;
   &:focus {
     z-index: 2;
   }
+}
+
+.RolodexPanel {
 }
 
 .RolodexToggle {

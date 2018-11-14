@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import cn from 'classnames'
 import uniqueId from 'lodash.uniqueid'
 import {
@@ -6,6 +7,7 @@ import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Collapse,
   CardTitle,
   Util,
@@ -15,30 +17,85 @@ import Styles from './Rolodex.module.scss'
 
 const { keyCodes } = Util
 
-const pushRight = '60px'
-
-const RolodexToggle = ({ isOpen, onClick }) => {
-  return (
-    <div className={cn(Styles.RolodexToggle)} onClick={onClick}>
-      <Icon name="chevron-down" rotation={!isOpen ? undefined : 180} />
-    </div>
-  )
-}
-
 class Rolodex extends Component {
-  state = {
-    cards: [{ isOpen: false }, { isOpen: false }, { isOpen: false }],
+  static propTypes = {
+    exclusive: PropTypes.bool,
   }
+  state = {
+    cards: [],
+  }
+  ALLOWED_CHILD_TYPES = [Card]
+  ALLOWED_GRANDCHILD_TYPES = [CardHeader, CardBody, CardFooter]
   constructor(props) {
     super(props)
+
+    const { sections } = this.parseChildren()
+    this.state = {
+      cards: sections,
+    }
 
     this.renderPanel = this.renderPanel.bind(this)
     this.toggleCard = this.toggleCard.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
   }
-  mkId = () => uniqueId('rolodex--')
+  rolodexId = uniqueId('rolodex-')
+  mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}-`)
+  parseChildren() {
+    let sections = []
+    try {
+      React.Children.forEach(this.props.children, child => {
+        let section = {}
+        if (this.ALLOWED_CHILD_TYPES.indexOf(child.type) === -1) {
+          throw new Error('Invalid Child Type!')
+        }
+        section.id = child.props.id || this.mkId('region')
+        section.isOpen = child.props.isOpen
+        React.Children.forEach(child.props.children, grandchild => {
+          if (this.ALLOWED_GRANDCHILD_TYPES.indexOf(grandchild.type) === -1) {
+            throw new Error('Invalid Child Composition')
+          }
+        })
+        sections.push(section)
+      })
+    } catch (err) {
+      // TODO: handle err
+    }
+    return {
+      sections,
+    }
+  }
   componentWillUpdate() {
-    // Something...
+    console.log('will update')
+  }
+  componentDidMount() {
+    console.log('did mount')
+    this.handleProps()
+  }
+  componentWillReceiveProps() {
+    console.log('will receive props')
+  }
+  shouldComponentUpdate() {
+    console.log('should update')
+    return true
+  }
+  handleProps() {
+    const sections = []
+    try {
+      React.Children.forEach(this.props.children, child => {
+        if (this.ALLOWED_CHILD_TYPES.indexOf(child.type) === -1) {
+          throw new Error('Invalid Child Type!')
+        }
+        sections.push({})
+        React.Children.forEach(child.props.children, grandchild => {
+          if (this.ALLOWED_GRANDCHILD_TYPES.indexOf(grandchild.type) === -1) {
+            throw new Error('Invalid Child Composition')
+          }
+        })
+      })
+    } catch (err) {
+      // TODO: handle err
+    }
+    console.log('all good', sections)
   }
   toggleCard(i) {
     this.setState({
@@ -48,8 +105,16 @@ class Rolodex extends Component {
     })
   }
   handleKeyDown(e, index) {
-    if ([keyCodes.up, keyCodes.down].indexOf(e.which) > -1) {
-      debugger
+    const { cards } = this.state
+    if ([keyCodes.up, keyCodes.down].indexOf(e.which) !== -1) {
+      let newIndex
+      if (e.which === keyCodes.up) {
+        newIndex = index <= 0 ? cards.length - 1 : index - 1
+      } else if (e.which == keyCodes.down) {
+        newIndex = index >= cards.length - 1 ? 0 : index + 1
+      }
+      const nextId = this.state.cards[newIndex].id
+      document.querySelector(`button[aria-controls="${nextId}"]`).focus()
     }
   }
   setCardCollapseState(i, status) {
@@ -61,9 +126,10 @@ class Rolodex extends Component {
   }
   renderPanel(node, index, array) {
     if (node.type !== Card) return null
-    const [Header, Body, Footer] = React.Children.toArray(node.props.children)
-    const { isOpen, status } = this.state.cards[index]
-    const id = this.mkId()
+    const [Header, ...restChildren] = React.Children.toArray(
+      node.props.children
+    )
+    const { isOpen, status, id } = this.state.cards[index]
     return (
       <Card className="mb-0" key={index}>
         <Header.type
@@ -77,11 +143,12 @@ class Rolodex extends Component {
           aria-controls={id}
           onKeyDown={e => this.handleKeyDown(e, index)}
         >
-          {Header.props.children}
-          <RolodexToggle
-            onClick={e => this.toggleCard(index)}
-            isOpen={isOpen}
-          />
+          <div role="header" ref={el => (this.headerRef = el)}>
+            {Header.props.children}
+            <div className={cn(Styles.RolodexToggle)}>
+              <Icon name="chevron-down" rotation={!isOpen ? undefined : 180} />
+            </div>
+          </div>
         </Header.type>
         <Collapse
           isOpen={isOpen}
@@ -90,9 +157,8 @@ class Rolodex extends Component {
           onExiting={() => this.setCardCollapseState(index, 'exiting')}
           onExited={() => this.setCardCollapseState(index, 'exited')}
         >
-          <div id={id}>
-            {React.cloneElement(Body, {})}
-            {Footer && React.cloneElement(Footer, {})}
+          <div id={id} ref={el => (this.panelRef = el)}>
+            {restChildren}
           </div>
         </Collapse>
       </Card>
@@ -100,10 +166,24 @@ class Rolodex extends Component {
   }
 
   render() {
+    // console.log('render')
+    // console.log({ headerRef: this.headerRef, panelRef: this.panelRef })
     const cards = React.Children.toArray(this.props.children)
       .filter(({ type }) => type === Card)
       .map(this.renderPanel)
-    return <div>{cards}</div>
+    return (
+      <div>
+        <div className="text-right mb-2">
+          <Button size="sm" color="primary">
+            Expand
+          </Button>{' '}
+          <Button size="sm" color="primary">
+            Collapse
+          </Button>
+        </div>
+        {cards}
+      </div>
+    )
   }
 }
 
