@@ -51,6 +51,7 @@ class Rolodex extends Component {
       keys: this.initKeys(),
     }
   }
+  // TODO: use id's if provided, generate if not
   initKeys() {
     const keys = []
     React.Children.forEach(this.props.children, card => {
@@ -108,14 +109,12 @@ class Rolodex extends Component {
       ) {
         newIndex = index >= this.state.keys.length - 1 ? 0 : index + 1
       }
-      try {
-        const nextId = this.state.keys[newIndex].headerId
-        this.el.querySelector(`#${nextId}`).focus()
-      } catch (err) {
-        console.warn('focus dom element not found')
-        debugger
-      }
+      this.setFocus(newIndex)
     }
+  }
+  setFocus(index) {
+    const id = this.state.keys[index].headerId
+    this.el.querySelector(`#${id}`).focus()
   }
   render() {
     return (

@@ -1,7 +1,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Rolodex from './Rolodex'
-import { Card, CardHeader, CardBody } from '@cwds/reactstrap'
+import { Card, CardHeader, CardBody, Util } from '@cwds/reactstrap'
+const { keyCodes } = Util
 
 describe('Rolodex', () => {
   it('exists', () => {
@@ -82,7 +83,164 @@ describe('Rolodex', () => {
       expect(node.getDOMNode().getAttribute('tabIndex')).toBe('0')
     })
     it('expands on click', () => {
+      const toggleCardSpy = jest.spyOn(Rolodex.prototype, 'toggleCard')
+      const wrapper = mount(
+        <Rolodex>
+          <Card>
+            <CardHeader>test header</CardHeader>
+            <CardBody>test body</CardBody>
+          </Card>
+        </Rolodex>
+      )
       const el = wrapper.find('div[role="button"]').first()
+      expect(el.prop('onClick')).toBeDefined()
+      expect(toggleCardSpy).not.toHaveBeenCalled()
+      el.hostNodes().simulate('click')
+      expect(Rolodex.prototype.toggleCard.mock.calls.length).toBe(1)
+      toggleCardSpy.mockRestore()
+    })
+    it('toggles on enter/space', () => {
+      const handleKeyDownSpy = jest.spyOn(Rolodex.prototype, 'handleKeyDown')
+      const toggleCardSpy = jest.spyOn(Rolodex.prototype, 'toggleCard')
+
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader id="a-header">test header</CardHeader>
+            <CardBody id="a-body">test body</CardBody>
+          </Card>
+        </Rolodex>
+      )
+      const el = wrapper.find('div[role="button"]').first()
+
+      expect(toggleCardSpy).not.toHaveBeenCalled()
+      expect(handleKeyDownSpy).not.toHaveBeenCalled()
+
+      // Must mock the event#target#click b/c enzyme doesnt do this you you
+      el.hostNodes().simulate('keydown', {
+        which: keyCodes.enter,
+        target: { click: () => el.hostNodes().simulate('click') },
+      })
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(1)
+      expect(toggleCardSpy).toHaveBeenCalledTimes(1)
+
+      el.hostNodes().simulate('keydown', {
+        which: keyCodes.enter,
+        target: { click: () => el.hostNodes().simulate('click') },
+      })
+      el.hostNodes().simulate('keydown', {
+        which: keyCodes.space,
+        target: { click: () => el.hostNodes().simulate('click') },
+      })
+      el.hostNodes().simulate('keydown', {
+        which: keyCodes.space,
+        target: { click: () => el.hostNodes().simulate('click') },
+      })
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(4)
+      expect(toggleCardSpy).toHaveBeenCalledTimes(4)
+
+      toggleCardSpy.mockRestore()
+      handleKeyDownSpy.mockRestore()
+    })
+    it('does does nothing when unhandled keyDown events are received', () => {
+      const handleKeyDownSpy = jest.spyOn(Rolodex.prototype, 'handleKeyDown')
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader data-test="a-header">test header</CardHeader>
+            <CardBody data-test="a-body">test body</CardBody>
+          </Card>
+        </Rolodex>
+      )
+      const el = wrapper
+        .find('[data-test="a-header"][role="button"]')
+        .hostNodes()
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(0)
+      el.simulate('keydown', { which: keyCodes.esc })
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(1)
+      expect(handleKeyDownSpy).toHaveReturned(undefined)
+
+      handleKeyDownSpy.mockRestore()
+    })
+    it('cycles focused [role="button"] on up/down arrow keyDown', () => {
+      const handleKeyDownSpy = jest.spyOn(Rolodex.prototype, 'handleKeyDown')
+      const setFocusSpy = jest.spyOn(Rolodex.prototype, 'setFocus')
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader x-test="a-header">test header</CardHeader>
+            <CardBody x-test="a-body">test body</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">test header</CardHeader>
+            <CardBody x-test="b-body">test body</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      wrapper
+        .find('[x-test="a-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: keyCodes.down })
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledWith(1)
+
+      wrapper
+        .find('[x-test="b-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: keyCodes.up })
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(2)
+      expect(setFocusSpy).toHaveBeenCalledTimes(2)
+      expect(setFocusSpy).toHaveBeenCalledWith(0)
+
+      handleKeyDownSpy.mockRestore()
+      setFocusSpy.mockRestore()
+    })
+    it('cycles focused [role="button"] on ctrl+p/ctrl+n keyDown', () => {
+      const handleKeyDownSpy = jest.spyOn(Rolodex.prototype, 'handleKeyDown')
+      const setFocusSpy = jest.spyOn(Rolodex.prototype, 'setFocus')
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader x-test="a-header">test header</CardHeader>
+            <CardBody x-test="a-body">test body</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">test header</CardHeader>
+            <CardBody x-test="b-body">test body</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      wrapper
+        .find('[x-test="a-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: 78, ctrlKey: true }) // ctrl+n
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledWith(1)
+
+      wrapper
+        .find('[x-test="b-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: 80, ctrlKey: true }) // ctrl+p
+
+      expect(handleKeyDownSpy).toHaveBeenCalledTimes(2)
+      expect(setFocusSpy).toHaveBeenCalledTimes(2)
+      expect(setFocusSpy).toHaveBeenCalledWith(0)
+
+      handleKeyDownSpy.mockRestore()
+      setFocusSpy.mockRestore()
     })
   })
 })
