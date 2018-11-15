@@ -15,7 +15,11 @@ import RolodexCard from './RolodexCard'
 import Icon from '@cwds/icons'
 import Styles from './Rolodex.module.scss'
 
-const { keyCodes } = Util
+const keyCodes = {
+  ...Util.keyCodes,
+  p: 80,
+  n: 78,
+}
 
 class Rolodex extends Component {
   static propTypes = {
@@ -96,11 +100,17 @@ class Rolodex extends Component {
     if ([keyCodes.space, keyCodes.enter].indexOf(e.which) > -1) {
       e.target.click()
     }
-    if ([keyCodes.up, keyCodes.down].indexOf(e.which) > -1) {
+    if (
+      [keyCodes.up, keyCodes.down].indexOf(e.which) > -1 ||
+      ([keyCodes.n, keyCodes.p].indexOf(e.which) > -1 && e.ctrlKey)
+    ) {
       let newIndex
-      if (e.which === keyCodes.up) {
+      if (e.which === keyCodes.up || (e.which === keyCodes.p && e.ctrlKey)) {
         newIndex = index > 0 ? index - 1 : cards.length - 1
-      } else if (e.which == keyCodes.down) {
+      } else if (
+        e.which == keyCodes.down ||
+        (e.which === keyCodes.n && e.ctrlKey)
+      ) {
         newIndex = index >= cards.length - 1 ? 0 : index + 1
       }
       try {
