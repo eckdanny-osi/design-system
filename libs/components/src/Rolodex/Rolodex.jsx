@@ -145,6 +145,7 @@ class Rolodex extends Component {
         )}
         {this.state.cards.map(({ isOpen, headerId, panelId, node }, index) => (
           <RolodexCard
+            animate={this.props.animate}
             isOpen={isOpen}
             onClick={e => this.toggleCard(e, index)}
             onKeyDown={e => this.handleKeyDown(e, index)}

@@ -9,6 +9,7 @@ import Styles from './Rolodex.module.scss'
 
 class RolodexCard extends Component {
   static propTypes = {
+    animate: PropTypes.bool,
     headerId: PropTypes.string,
     panelId: PropTypes.string,
     isOpen: PropTypes.bool,
@@ -34,7 +35,11 @@ class RolodexCard extends Component {
         >
           {Header}
         </RolodexHeader>
-        <RolodexPanel isOpen={this.props.isOpen} id={this.panelId}>
+        <RolodexPanel
+          animate={this.props.animate}
+          isOpen={this.props.isOpen}
+          id={this.panelId}
+        >
           {restChildren}
         </RolodexPanel>
       </Card>
