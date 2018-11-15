@@ -117,19 +117,6 @@ class Rolodex extends Component {
       }
     }
   }
-  setCardCollapseState(i, status) {
-    this.setState({
-      cards: this.state.cards.map((cardState, j) =>
-        i === j ? { ...cardState, status } : cardState
-      ),
-    })
-  }
-  isDisabled(index) {
-    if (!this.props.exclusive) return false
-    // if (index === this.state.cards.findIndex(({ isOpen }) => !!isOpen)) {
-    //   return true
-    // }
-  }
   render() {
     return (
       <div ref={el => (this.el = el)}>

@@ -7,8 +7,53 @@ describe('Rolodex', () => {
   it('exists', () => {
     expect(!!Rolodex).toBeDefined()
   })
+  describe('composition errors', () => {
+    it('throws when no children are found', () => {
+      const quiet = jest
+        .spyOn(global.console, 'error')
+        .mockImplementation(() => {})
+      expect(() => {
+        mount(<Rolodex />)
+      }).toThrow()
+      quiet.mockRestore()
+    })
+    it('throws when children are not Cards', () => {
+      const quiet = jest
+        .spyOn(global.console, 'error')
+        .mockImplementation(() => {})
+      expect(() =>
+        mount(
+          <Rolodex>
+            <Card>
+              <CardHeader>Good</CardHeader>
+              <CardBody>Good</CardBody>
+            </Card>
+            <div>Bad</div>
+          </Rolodex>
+        )
+      ).toThrowError()
+      quiet.mockRestore()
+    })
+    it('throws when Card descendent are not CardHeader, CardBody, or CardFooter', () => {
+      const quiet = jest
+        .spyOn(global.console, 'error')
+        .mockImplementation(() => {})
+      expect(() =>
+        mount(
+          <Rolodex>
+            <Card>
+              <CardHeader>Good</CardHeader>
+              <CardBody>Good</CardBody>
+              <div>No Good</div>
+            </Card>
+          </Rolodex>
+        )
+      ).toThrowError()
+      quiet.mockRestore()
+    })
+  })
   describe('basic interactions', () => {
-    let wrapper = mount(<div />)
+    let wrapper = mount(<div />) // initialize to a :wrapper for type support
 
     beforeEach(() => {
       wrapper = mount(
@@ -29,13 +74,15 @@ describe('Rolodex', () => {
       expect(wrapper.find(CardHeader).length).toBe(2)
       expect(wrapper.find(CardBody).length).toBe(2)
     })
-    it('expands on click', () => {
+    it('renders aria attributes', () => {
       expect(wrapper.find('div[role="button"]').length).toBe(2)
-      console.log(wrapper.find('header-one').length)
-      console.log(wrapper.html())
+      const node = wrapper.find('div[role="button"]').first()
+      expect(node.getDOMNode().getAttribute('aria-controls')).toBeDefined()
+      expect(node.getDOMNode().getAttribute('aria-expanded')).toBe('false')
+      expect(node.getDOMNode().getAttribute('tabIndex')).toBe('0')
     })
-    it('wtf', () => {
-      console.log(wrapper.debug())
+    it('expands on click', () => {
+      const el = wrapper.find('div[role="button"]').first()
     })
   })
 })
