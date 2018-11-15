@@ -11,6 +11,7 @@ import {
   Util,
 } from '@cwds/reactstrap'
 import RolodexHeader from './RolodexHeader'
+import RolodexPanel from './RolodexPanel'
 import RolodexCard from './RolodexCard'
 import Icon from '@cwds/icons'
 import Styles from './Rolodex.module.scss'
@@ -28,17 +29,19 @@ class Rolodex extends Component {
     animate: PropTypes.bool,
     aggregateControl: PropTypes.bool,
   }
-  state = {
-    cards: [],
-  }
   ALLOWED_CHILD_TYPES = [Card]
   ALLOWED_GRANDCHILD_TYPES = [CardHeader, CardBody, CardFooter]
-  initialized = false
   constructor(props) {
     super(props)
 
     this.toggleCard = this.toggleCard.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.renderChildren = this.renderChildren.bind(this)
+
+    this.validateChildren()
+    this.state = {
+      keys: this.createKeyMap(),
+    }
   }
   rolodexId = uniqueId('rolodex-')
   mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}`)
@@ -48,6 +51,16 @@ class Rolodex extends Component {
       headerId: `${cardId}__header`,
       panelId: `${cardId}__panel`,
     }
+  }
+  createKeyMap() {
+    const keys = {}
+    React.Children.forEach(this.props.children, card => {
+      keys[card.key] = {
+        isOpen: false,
+        ...this.mkIds(),
+      }
+    })
+    return keys
   }
   parseChildren() {
     let cards = []
@@ -73,29 +86,94 @@ class Rolodex extends Component {
     }
     this.setState({ cards })
   }
-  toggleCard(e, i) {
+  validateChildren() {
+    if (!React.Children.count(this.props.children)) {
+      throw new Error('Requires at least one child node')
+    }
+    React.Children.forEach(this.props.children, child => {
+      if (this.ALLOWED_CHILD_TYPES.indexOf(child.type) === -1) {
+        throw new Error('Encountered invalid child component!')
+      }
+      React.Children.forEach(child.props.children, grandchild => {
+        if (this.ALLOWED_GRANDCHILD_TYPES.indexOf(grandchild.type) === -1) {
+          throw new Error('Encountered invalid child component!')
+        }
+      })
+    })
+  }
+  renderChildren() {
+    return React.Children.map(this.props.children, card => {
+      const [cardHeader, ...restCardParts] = React.Children.toArray(
+        card.props.children
+      )
+      const { isOpen, headerId, panelId } = this.state.keys[card.key]
+      return React.cloneElement(card, {
+        className: cn(card.props.className, 'mb-0'),
+        children: (
+          <React.Fragment>
+            <RolodexHeader
+              isOpen={isOpen}
+              id={headerId}
+              panelId={panelId}
+              onClick={e => this.toggleCard(e, card.key)}
+              onKeyDown={e => this.handleKeyDown(e, card.key)}
+              // disabled={this.isDisabled(card.key)}
+            >
+              {cardHeader}
+            </RolodexHeader>
+            <RolodexPanel
+              isOpen={isOpen}
+              animate={this.props.animate}
+              id={panelId}
+            >
+              {restCardParts}
+            </RolodexPanel>
+          </React.Fragment>
+        ),
+      })
+      // this.setState({ keys })
+      // <RolodexCard
+      //   animate={this.props.animate}
+      //   isOpen={isOpen}
+      //   onClick={e => this.toggleCard(e, index)}
+      //   onKeyDown={e => this.handleKeyDown(e, index)}
+      //   headerId={headerId}
+      //   panelId={panelId}
+      //   disabled={this.isDisabled(index)}
+      //   key={headerId}
+      //   {...node.props}
+      // />
+    })
+  }
+  toggleCard(e, key) {
     if (e.currentTarget.getAttribute('aria-disabled')) {
       e.preventDefault()
       return
     }
     const { exclusive, collapsible } = this.props
     if (exclusive) {
-      this.setState({
-        cards: this.state.cards.map((card, j) =>
-          i === j
-            ? { ...card, isOpen: !card.isOpen }
-            : { ...card, isOpen: false }
-        ),
-      })
+      const keys = Object.keys(this.state.keys).reduce((acc, k) => {
+        const v = this.state.keys[k]
+        return {
+          ...acc,
+          [k]:
+            k !== key ? { ...v, isOpen: false } : { ...v, isOpen: !v.isOpen },
+        }
+      }, {})
+      this.setState({ keys })
     } else {
       this.setState({
-        cards: this.state.cards.map((cardState, j) =>
-          i === j ? { ...cardState, isOpen: !cardState.isOpen } : cardState
-        ),
+        keys: {
+          ...this.state.keys,
+          [key]: {
+            ...this.state.keys[key],
+            isOpen: !this.state.keys[key].isOpen,
+          },
+        },
       })
     }
   }
-  handleKeyDown(e, index) {
+  handleKeyDown(e, key) {
     const { cards } = this.state
     if ([keyCodes.space, keyCodes.enter].indexOf(e.which) > -1) {
       e.target.click()
@@ -136,11 +214,11 @@ class Rolodex extends Component {
     //   return true
     // }
   }
-  componentDidMount() {
-    this.parseChildren()
-  }
+  // componentDidMount() {
+  //   this.parseChildren()
+  // }
   render() {
-    if (!this.state.cards.length) return null
+    // if (!this.state.cards.length) return null
     return (
       <div ref={el => (this.el = el)}>
         {this.props.aggregateControls && (
@@ -153,7 +231,7 @@ class Rolodex extends Component {
             </Button>
           </div>
         )}
-        {this.state.cards.map(({ isOpen, headerId, panelId, node }, index) => (
+        {/* {this.state.cards.map(({ isOpen, headerId, panelId, node }, index) => (
           <RolodexCard
             animate={this.props.animate}
             isOpen={isOpen}
@@ -165,7 +243,8 @@ class Rolodex extends Component {
             key={headerId}
             {...node.props}
           />
-        ))}
+        ))} */}
+        {this.renderChildren()}
       </div>
     )
   }

@@ -27,7 +27,7 @@ Some `Card` variants and experimental behaviors.
 ### Rolodex
 
 <Rolodex exclusive>
-  <Card>
+  <Card key="a">
     <CardHeader>
       <CardTitle>First Card</CardTitle>
     </CardHeader>
@@ -36,7 +36,7 @@ Some `Card` variants and experimental behaviors.
       First Card Body
     </CardBody>
   </Card>
-  <Card>
+  <Card key="b">
     <CardHeader>
       <Row>
         <Col>
@@ -47,7 +47,7 @@ Some `Card` variants and experimental behaviors.
     </CardHeader>
     <CardBody>Second Card Body</CardBody>
   </Card>
-  <Card>
+  <Card key="c">
     <CardHeader>
       <CardTitle>Third Card </CardTitle>
     </CardHeader>
@@ -70,19 +70,19 @@ Some `Card` variants and experimental behaviors.
     </CardBody>
     <CardFooter>Third Card Footer</CardFooter>
   </Card>
-  <Card>
+  <Card key="d">
     <CardHeader>
       <CardTitle>Fourth Card (nested)</CardTitle>
     </CardHeader>
     <CardBody>
       <Rolodex animate>
-        <Card>
+        <Card key="a">
           <CardHeader>
             <CardTitle>4.1 Card</CardTitle>
           </CardHeader>
           <CardBody>4.1 Card Body</CardBody>
         </Card>
-        <Card>
+        <Card key="b">
           <CardHeader>
             <Row>
               <Col>
@@ -93,7 +93,7 @@ Some `Card` variants and experimental behaviors.
           </CardHeader>
           <CardBody>4.2 Card Body</CardBody>
         </Card>
-        <Card>
+        <Card card="c">
           <CardHeader>
             <CardTitle>4.3 Card</CardTitle>
           </CardHeader>
