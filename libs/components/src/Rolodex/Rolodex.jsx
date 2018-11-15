@@ -31,18 +31,6 @@ class Rolodex extends Component {
   }
   ALLOWED_CHILD_TYPES = [Card]
   ALLOWED_GRANDCHILD_TYPES = [CardHeader, CardBody, CardFooter]
-  constructor(props) {
-    super(props)
-
-    this.toggleCard = this.toggleCard.bind(this)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
-    this.renderChildren = this.renderChildren.bind(this)
-
-    this.validateChildren()
-    this.state = {
-      keys: this.initKeys(),
-    }
-  }
   rolodexId = uniqueId('rolodex-')
   mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}`)
   mkIds = () => {
@@ -50,6 +38,17 @@ class Rolodex extends Component {
     return {
       headerId: `${cardId}__header`,
       panelId: `${cardId}__panel`,
+    }
+  }
+  constructor(props) {
+    super(props)
+
+    this.toggleCard = this.toggleCard.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+
+    this.validateChildren()
+    this.state = {
+      keys: this.initKeys(),
     }
   }
   initKeys() {
@@ -62,30 +61,6 @@ class Rolodex extends Component {
       })
     })
     return keys
-  }
-  parseChildren() {
-    let cards = []
-    try {
-      React.Children.forEach(this.props.children, child => {
-        if (this.ALLOWED_CHILD_TYPES.indexOf(child.type) === -1) {
-          throw new Error('Invalid Child Type!')
-        }
-        React.Children.forEach(child.props.children, grandchild => {
-          if (this.ALLOWED_GRANDCHILD_TYPES.indexOf(grandchild.type) === -1) {
-            throw new Error('Invalid Child Composition')
-          }
-        })
-        // https://github.com/facebook/react/issues/13381
-        cards.push({
-          isOpen: child.props.isOpen || false,
-          ...this.mkIds(),
-          node: child,
-        })
-      })
-    } catch (err) {
-      debugger
-    }
-    this.setState({ cards })
   }
   validateChildren() {
     if (!React.Children.count(this.props.children)) {
@@ -100,52 +75,6 @@ class Rolodex extends Component {
           throw new Error('Encountered invalid child component!')
         }
       })
-    })
-  }
-  renderChildren() {
-    return React.Children.map(this.props.children, card => {
-      const [cardHeader, ...restCardParts] = React.Children.toArray(
-        card.props.children
-      )
-      const { isOpen, headerId, panelId } = this.state.keys.find(
-        ({ key }) => key === card.key
-      )
-      return React.cloneElement(card, {
-        className: cn(card.props.className, 'mb-0'),
-        children: (
-          <React.Fragment>
-            <RolodexHeader
-              isOpen={isOpen}
-              id={headerId}
-              panelId={panelId}
-              onClick={e => this.toggleCard(e, card.key)}
-              onKeyDown={e => this.handleKeyDown(e, card.key)}
-              // disabled={this.isDisabled(card.key)}
-            >
-              {cardHeader}
-            </RolodexHeader>
-            <RolodexPanel
-              isOpen={isOpen}
-              animate={this.props.animate}
-              id={panelId}
-            >
-              {restCardParts}
-            </RolodexPanel>
-          </React.Fragment>
-        ),
-      })
-      // this.setState({ keys })
-      // <RolodexCard
-      //   animate={this.props.animate}
-      //   isOpen={isOpen}
-      //   onClick={e => this.toggleCard(e, index)}
-      //   onKeyDown={e => this.handleKeyDown(e, index)}
-      //   headerId={headerId}
-      //   panelId={panelId}
-      //   disabled={this.isDisabled(index)}
-      //   key={headerId}
-      //   {...node.props}
-      // />
     })
   }
   toggleCard(e, key) {
@@ -181,7 +110,6 @@ class Rolodex extends Component {
       }
       try {
         const nextId = this.state.keys[newIndex].headerId
-        // this.el.querySelector(`button[aria-controls="${nextId}"]`).focus()
         this.el.querySelector(`#${nextId}`).focus()
       } catch (err) {
         console.warn('focus dom element not found')
@@ -202,37 +130,41 @@ class Rolodex extends Component {
     //   return true
     // }
   }
-  // componentDidMount() {
-  //   this.parseChildren()
-  // }
   render() {
-    // if (!this.state.cards.length) return null
     return (
       <div ref={el => (this.el = el)}>
-        {this.props.aggregateControls && (
-          <div className="text-right mb-2">
-            <Button size="sm" color="primary">
-              Expand
-            </Button>{' '}
-            <Button size="sm" color="primary">
-              Collapse
-            </Button>
-          </div>
-        )}
-        {/* {this.state.cards.map(({ isOpen, headerId, panelId, node }, index) => (
-          <RolodexCard
-            animate={this.props.animate}
-            isOpen={isOpen}
-            onClick={e => this.toggleCard(e, index)}
-            onKeyDown={e => this.handleKeyDown(e, index)}
-            headerId={headerId}
-            panelId={panelId}
-            disabled={this.isDisabled(index)}
-            key={headerId}
-            {...node.props}
-          />
-        ))} */}
-        {this.renderChildren()}
+        {React.Children.map(this.props.children, card => {
+          const [cardHeader, ...restCardParts] = React.Children.toArray(
+            card.props.children
+          )
+          const { isOpen, headerId, panelId } = this.state.keys.find(
+            ({ key }) => key === card.key
+          )
+          return React.cloneElement(card, {
+            className: cn(card.props.className, 'mb-0'),
+            children: (
+              <React.Fragment>
+                <RolodexHeader
+                  isOpen={isOpen}
+                  id={headerId}
+                  panelId={panelId}
+                  onClick={e => this.toggleCard(e, card.key)}
+                  onKeyDown={e => this.handleKeyDown(e, card.key)}
+                  // disabled={this.isDisabled(card.key)}
+                >
+                  {cardHeader}
+                </RolodexHeader>
+                <RolodexPanel
+                  isOpen={isOpen}
+                  animate={this.props.animate}
+                  id={panelId}
+                >
+                  {restCardParts}
+                </RolodexPanel>
+              </React.Fragment>
+            ),
+          })
+        })}
       </div>
     )
   }
