@@ -40,7 +40,7 @@ class Rolodex extends Component {
 
     this.validateChildren()
     this.state = {
-      keys: this.createKeyMap(),
+      keys: this.initKeys(),
     }
   }
   rolodexId = uniqueId('rolodex-')
@@ -52,13 +52,14 @@ class Rolodex extends Component {
       panelId: `${cardId}__panel`,
     }
   }
-  createKeyMap() {
-    const keys = {}
+  initKeys() {
+    const keys = []
     React.Children.forEach(this.props.children, card => {
-      keys[card.key] = {
+      keys.push({
+        key: card.key,
         isOpen: false,
         ...this.mkIds(),
-      }
+      })
     })
     return keys
   }
@@ -106,7 +107,9 @@ class Rolodex extends Component {
       const [cardHeader, ...restCardParts] = React.Children.toArray(
         card.props.children
       )
-      const { isOpen, headerId, panelId } = this.state.keys[card.key]
+      const { isOpen, headerId, panelId } = this.state.keys.find(
+        ({ key }) => key === card.key
+      )
       return React.cloneElement(card, {
         className: cn(card.props.className, 'mb-0'),
         children: (
@@ -151,30 +154,14 @@ class Rolodex extends Component {
       return
     }
     const { exclusive, collapsible } = this.props
-    if (exclusive) {
-      const keys = Object.keys(this.state.keys).reduce((acc, k) => {
-        const v = this.state.keys[k]
-        return {
-          ...acc,
-          [k]:
-            k !== key ? { ...v, isOpen: false } : { ...v, isOpen: !v.isOpen },
-        }
-      }, {})
-      this.setState({ keys })
-    } else {
-      this.setState({
-        keys: {
-          ...this.state.keys,
-          [key]: {
-            ...this.state.keys[key],
-            isOpen: !this.state.keys[key].isOpen,
-          },
-        },
-      })
-    }
+    this.setState({
+      keys: this.state.keys.map(d => ({
+        ...d,
+        isOpen: d.key !== key ? (exclusive ? false : d.isOpen) : !d.isOpen,
+      })),
+    })
   }
   handleKeyDown(e, key) {
-    const { cards } = this.state
     if ([keyCodes.space, keyCodes.enter].indexOf(e.which) > -1) {
       e.target.click()
     }
@@ -183,16 +170,17 @@ class Rolodex extends Component {
       ([keyCodes.n, keyCodes.p].indexOf(e.which) > -1 && e.ctrlKey)
     ) {
       let newIndex
+      const index = this.state.keys.findIndex(d => d.key === key)
       if (e.which === keyCodes.up || (e.which === keyCodes.p && e.ctrlKey)) {
-        newIndex = index > 0 ? index - 1 : cards.length - 1
+        newIndex = index > 0 ? index - 1 : this.state.keys.length - 1
       } else if (
         e.which == keyCodes.down ||
         (e.which === keyCodes.n && e.ctrlKey)
       ) {
-        newIndex = index >= cards.length - 1 ? 0 : index + 1
+        newIndex = index >= this.state.keys.length - 1 ? 0 : index + 1
       }
       try {
-        const nextId = this.state.cards[newIndex].headerId
+        const nextId = this.state.keys[newIndex].headerId
         // this.el.querySelector(`button[aria-controls="${nextId}"]`).focus()
         this.el.querySelector(`#${nextId}`).focus()
       } catch (err) {
