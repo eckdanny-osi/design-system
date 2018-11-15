@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardBody,
   CardFooter,
+  Alert,
 } from '@cwds/components'
 
 ## Cards
@@ -26,7 +27,7 @@ Some `Card` variants and experimental behaviors.
 
 ### Rolodex
 
-<Rolodex>
+<Rolodex exclusive>
   <Card>
     <CardHeader>
       <CardTitle>
@@ -36,9 +37,12 @@ Some `Card` variants and experimental behaviors.
         </Badge>
       </CardTitle>
     </CardHeader>
-    <CardBody>First Card Body</CardBody>
+    <CardBody>
+      <Alert color="success">Hooray!</Alert>
+      First Card Body
+    </CardBody>
   </Card>
-  <Card isOpen={true}>
+  <Card>
     <CardHeader>
       <Row>
         <Col>
