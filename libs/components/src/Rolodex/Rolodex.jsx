@@ -45,10 +45,6 @@ class Rolodex extends Component {
       panelId: `${cardId}__panel`,
     }
   }
-  shouldComponentUpdate(prevProps, prevState) {
-    // if (prevState === this.state) return false
-    return true
-  }
   parseChildren() {
     let cards = []
     try {
@@ -61,6 +57,7 @@ class Rolodex extends Component {
             throw new Error('Invalid Child Composition')
           }
         })
+        // https://github.com/facebook/react/issues/13381
         cards.push({
           isOpen: child.props.isOpen || false,
           ...this.mkIds(),
@@ -73,7 +70,6 @@ class Rolodex extends Component {
     this.setState({ cards })
   }
   toggleCard(e, i) {
-    console.log(e.currentTarget)
     if (e.currentTarget.getAttribute('aria-disabled')) {
       e.preventDefault()
       return
@@ -126,15 +122,15 @@ class Rolodex extends Component {
   }
   isDisabled(index) {
     if (!this.props.exclusive) return false
-    if (index === this.state.cards.findIndex(({ isOpen }) => !!isOpen)) {
-      return true
-    }
+    // if (index === this.state.cards.findIndex(({ isOpen }) => !!isOpen)) {
+    //   return true
+    // }
   }
   componentDidMount() {
     this.parseChildren()
   }
-
   render() {
+    if (!this.state.cards.length) return null
     return (
       <div ref={el => (this.el = el)}>
         {this.props.aggregateControls && (
@@ -155,7 +151,7 @@ class Rolodex extends Component {
             headerId={headerId}
             panelId={panelId}
             disabled={this.isDisabled(index)}
-            key={index}
+            key={headerId}
             {...node.props}
           />
         ))}

@@ -9,16 +9,16 @@ class RolodexPanel extends Component {
     isOpen: PropTypes.bool,
     animate: PropTypes.bool,
   }
-  shouldComponentUpdate(prevProps, prevState) {
-    if (this.props.isOpen !== prevProps.isOpen) return true
-    if (
-      this.props.animate &&
-      this.state.animationState !== prevState.animationState
-    ) {
-      return true
-    }
-    return false
-  }
+  // shouldComponentUpdate(prevProps, prevState) {
+  //   if (this.props.isOpen !== prevProps.isOpen) return true
+  //   if (
+  //     this.props.animate &&
+  //     this.state.animationState !== prevState.animationState
+  //   ) {
+  //     return true
+  //   }
+  //   return false
+  // }
   setAnimationState = animationState => {
     if (!this.props.animate) return
     this.setState({ animationState })

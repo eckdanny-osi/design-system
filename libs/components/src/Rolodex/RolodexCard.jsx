@@ -14,7 +14,10 @@ class RolodexCard extends Component {
     isOpen: PropTypes.bool,
     onClick: PropTypes.func,
     onKeyDown: PropTypes.func,
-    idPrefix: PropTypes.string,
+  }
+  shouldComponentUpdate(prevProps, prevState) {
+    if (this.props.isOpen === prevProps.isOpen) return false
+    return true
   }
   render() {
     const [Header, ...restChildren] = React.Children.toArray(

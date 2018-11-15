@@ -1,6 +1,5 @@
 import {
   Rolodex,
-  Badge,
   Row,
   Col,
   Card,
@@ -30,12 +29,7 @@ Some `Card` variants and experimental behaviors.
 <Rolodex exclusive>
   <Card>
     <CardHeader>
-      <CardTitle>
-        First Card{' '}
-        <Badge pill color="success">
-          5/5
-        </Badge>
-      </CardTitle>
+      <CardTitle>First Card</CardTitle>
     </CardHeader>
     <CardBody>
       <Alert color="success">Hooray!</Alert>
@@ -46,12 +40,7 @@ Some `Card` variants and experimental behaviors.
     <CardHeader>
       <Row>
         <Col>
-          <CardTitle>
-            Second Card{' '}
-            <Badge pill color="warning">
-              3/4
-            </Badge>
-          </CardTitle>
+          <CardTitle>Second Card</CardTitle>
         </Col>
         <Col style={{ textAlign: 'right' }}>Hello World</Col>
       </Row>
@@ -60,12 +49,7 @@ Some `Card` variants and experimental behaviors.
   </Card>
   <Card>
     <CardHeader>
-      <CardTitle>
-        Third Card{' '}
-        <Badge pill color="warning">
-          1/5
-        </Badge>
-      </CardTitle>
+      <CardTitle>Third Card </CardTitle>
     </CardHeader>
     <CardBody>
       <h4>Whatever</h4>
@@ -91,14 +75,14 @@ Some `Card` variants and experimental behaviors.
       <CardTitle>Fourth Card (nested)</CardTitle>
     </CardHeader>
     <CardBody>
-      <Rolodex exclusive>
+      <Rolodex>
         <Card>
           <CardHeader>
             <CardTitle>4.1 Card</CardTitle>
           </CardHeader>
           <CardBody>4.1 Card Body</CardBody>
         </Card>
-        <Card isOpen={true}>
+        <Card>
           <CardHeader>
             <Row>
               <Col>
