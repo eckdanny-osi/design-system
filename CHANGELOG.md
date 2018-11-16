@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/ca-cwds/design-system/compare/v0.4.0...v0.4.1) (2018-11-15)
+
+
+### Bug Fixes
+
+* **components:** update react-select ([#226](https://github.com/ca-cwds/design-system/issues/226)) ([c3b4082](https://github.com/ca-cwds/design-system/commit/c3b4082))
+* **datagrid:** update react-select ([#246](https://github.com/ca-cwds/design-system/issues/246)) ([1c3b924](https://github.com/ca-cwds/design-system/commit/1c3b924)), closes [#245](https://github.com/ca-cwds/design-system/issues/245)
+* **docs:** update content in npm pkg READMEs ([#241](https://github.com/ca-cwds/design-system/issues/241)) ([0a954d6](https://github.com/ca-cwds/design-system/commit/0a954d6))
+* **rails_app:** move ruby-version file ([#240](https://github.com/ca-cwds/design-system/issues/240)) ([0be3c1b](https://github.com/ca-cwds/design-system/commit/0be3c1b))
+
+
+
+
+
 # [0.4.0](https://github.com/ca-cwds/design-system/compare/v0.3.8...v0.4.0) (2018-11-06)
 
 
