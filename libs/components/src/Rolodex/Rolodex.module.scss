@@ -1,19 +1,20 @@
 $push: 45px;
 
+.Rolodex {
+  // border: 5px solid red;
+}
+
 .RolodexCard {
 }
 
-.RolodexHeader {
-  padding-right: $push;
-  text-align: inherit;
-  position: relative;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+.RolodexCardHeader {
   cursor: pointer;
-
+  &[aria-disabled='true'] {
+    color: red;
+  }
   &:focus {
-    z-index: 2;
+    position: relative;
+    z-index: 1;
   }
 }
 

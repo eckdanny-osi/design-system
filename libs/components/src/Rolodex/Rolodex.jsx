@@ -28,18 +28,23 @@ class Rolodex extends Component {
     collapsible: PropTypes.bool,
     animate: PropTypes.bool,
     aggregateControl: PropTypes.bool,
+    level: PropTypes.number,
+    isOpenKeys: PropTypes.arrayOf(PropTypes.string),
+  }
+  static defaultProps = {
+    isOpenKeys: [],
   }
   ALLOWED_CHILD_TYPES = [Card]
   ALLOWED_GRANDCHILD_TYPES = [CardHeader, CardBody, CardFooter]
-  rolodexId = uniqueId('rolodex-')
-  mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}`)
-  mkIds = () => {
-    const cardId = this.mkId('card')
-    return {
-      headerId: `${cardId}__header`,
-      panelId: `${cardId}__panel`,
-    }
-  }
+  rolodexId = uniqueId()
+  // mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}`)
+  // mkIds = () => {
+  //   const cardId = this.mkId('card')
+  //   return {
+  //     headerId: `rolodex__${cardId}__header`,
+  //     panelId: `rolodex__${cardId}__panel`,
+  //   }
+  // }
   constructor(props) {
     super(props)
 
@@ -57,8 +62,10 @@ class Rolodex extends Component {
     React.Children.forEach(this.props.children, card => {
       keys.push({
         key: card.key,
-        isOpen: false,
-        ...this.mkIds(),
+        isOpen: this.props.isOpenKeys.indexOf(card.key) > -1,
+        headerId: `rolodex-${this.rolodexId}__header-${card.key}`,
+        panelId: `rolodex-${this.rolodexId}__panel-${card.key}`,
+        ref: React.createRef(),
       })
     })
     return keys
@@ -79,7 +86,7 @@ class Rolodex extends Component {
     })
   }
   toggleCard(e, key) {
-    if (e.currentTarget.getAttribute('aria-disabled')) {
+    if (e.currentTarget.getAttribute('aria-disabled') === 'true') {
       e.preventDefault()
       return
     }
@@ -113,17 +120,29 @@ class Rolodex extends Component {
     }
   }
   setFocus(index) {
-    const id = this.state.keys[index].headerId
-    this.el.querySelector(`#${id}`).focus()
+    const { ref } = this.state.keys[index]
+    ref.current.focus()
+  }
+  isDisabled() {
+    return false
   }
   render() {
+    const {
+      exclusive,
+      collapsible,
+      animate,
+      aggregateControl,
+      level,
+      isOpenKeys,
+      ...restProps
+    } = this.props
     return (
-      <div ref={el => (this.el = el)}>
+      <div {...restProps} ref={el => (this.el = el)} className={Styles.Rolodex}>
         {React.Children.map(this.props.children, card => {
           const [cardHeader, ...restCardParts] = React.Children.toArray(
             card.props.children
           )
-          const { isOpen, headerId, panelId } = this.state.keys.find(
+          const { isOpen, headerId, panelId, ref } = this.state.keys.find(
             ({ key }) => key === card.key
           )
           return React.cloneElement(card, {
@@ -131,19 +150,21 @@ class Rolodex extends Component {
             children: (
               <React.Fragment>
                 <RolodexHeader
+                  {...cardHeader.props}
                   isOpen={isOpen}
-                  id={headerId}
+                  headerId={headerId}
                   panelId={panelId}
                   onClick={e => this.toggleCard(e, card.key)}
                   onKeyDown={e => this.handleKeyDown(e, card.key)}
-                  // disabled={this.isDisabled(card.key)}
-                >
-                  {cardHeader}
-                </RolodexHeader>
+                  disabled={this.isDisabled(card.key)}
+                  children={cardHeader.props.children}
+                  ref={ref}
+                />
                 <RolodexPanel
                   isOpen={isOpen}
                   animate={this.props.animate}
-                  id={panelId}
+                  panelId={panelId}
+                  headerId={headerId}
                 >
                   {restCardParts}
                 </RolodexPanel>

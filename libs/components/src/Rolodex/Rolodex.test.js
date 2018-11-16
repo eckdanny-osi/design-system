@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Rolodex from './Rolodex'
+import RolodexPanel from './RolodexPanel'
 import { Card, CardHeader, CardBody, Util } from '@cwds/reactstrap'
 const { keyCodes } = Util
 
@@ -98,6 +99,60 @@ describe('Rolodex', () => {
       el.hostNodes().simulate('click')
       expect(Rolodex.prototype.toggleCard.mock.calls.length).toBe(1)
       toggleCardSpy.mockRestore()
+    })
+    it('may have many open panels', () => {
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader x-test="a-header">Test</CardHeader>
+            <CardBody x-test="a-body">Test</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">Test</CardHeader>
+            <CardBody x-test="b-body">Test</CardBody>
+          </Card>
+          <Card key="c">
+            <CardHeader x-test="c-header">Test</CardHeader>
+            <CardBody x-test="c-body">Test</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      wrapper
+        .find('div[role="button"]')
+        .first()
+        .simulate('click')
+
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .first()
+          .prop('isOpen')
+      ).toBe(true)
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .last()
+          .prop('isOpen')
+      ).toBe(false)
+
+      wrapper
+        .find('div[role="button"]')
+        .last()
+        .simulate('click')
+
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .first()
+          .prop('isOpen')
+      ).toBe(true)
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .last()
+          .prop('isOpen')
+      ).toBe(true)
     })
     it('toggles on enter/space', () => {
       const handleKeyDownSpy = jest.spyOn(Rolodex.prototype, 'handleKeyDown')
@@ -241,6 +296,126 @@ describe('Rolodex', () => {
 
       handleKeyDownSpy.mockRestore()
       setFocusSpy.mockRestore()
+    })
+    it('moves focus to the first [role="button"] when advancing from the last', () => {
+      const setFocusSpy = jest.spyOn(Rolodex.prototype, 'setFocus')
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader x-test="a-header">Test</CardHeader>
+            <CardBody x-test="a-body">Test</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">Test</CardHeader>
+            <CardBody x-test="b-body">Test</CardBody>
+          </Card>
+          <Card key="c">
+            <CardHeader x-test="c-header">Test</CardHeader>
+            <CardBody x-test="c-body">Test</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      expect(setFocusSpy).toHaveBeenCalledTimes(0)
+
+      wrapper
+        .find('[x-test="c-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: keyCodes.down })
+
+      expect(setFocusSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledWith(0)
+
+      setFocusSpy.mockRestore()
+    })
+    it('moves to the last [role="button"] when moving backwards from the first', () => {
+      const setFocusSpy = jest.spyOn(Rolodex.prototype, 'setFocus')
+      const wrapper = mount(
+        <Rolodex>
+          <Card key="a">
+            <CardHeader x-test="a-header">Test</CardHeader>
+            <CardBody x-test="a-body">Test</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">Test</CardHeader>
+            <CardBody x-test="b-body">Test</CardBody>
+          </Card>
+          <Card key="c">
+            <CardHeader x-test="c-header">Test</CardHeader>
+            <CardBody x-test="c-body">Test</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      expect(setFocusSpy).toHaveBeenCalledTimes(0)
+
+      wrapper
+        .find('[x-test="a-header"][role="button"]')
+        .hostNodes()
+        .first()
+        .simulate('keydown', { which: keyCodes.up })
+
+      expect(setFocusSpy).toHaveBeenCalledTimes(1)
+      expect(setFocusSpy).toHaveBeenCalledWith(2)
+
+      setFocusSpy.mockRestore()
+    })
+  })
+  describe('exclusive', () => {
+    it('closes all other panels when a new header is activated', () => {
+      const wrapper = mount(
+        <Rolodex exclusive>
+          <Card key="a">
+            <CardHeader x-test="a-header">Test</CardHeader>
+            <CardBody x-test="a-body">Test</CardBody>
+          </Card>
+          <Card key="b">
+            <CardHeader x-test="b-header">Test</CardHeader>
+            <CardBody x-test="b-body">Test</CardBody>
+          </Card>
+          <Card key="c">
+            <CardHeader x-test="c-header">Test</CardHeader>
+            <CardBody x-test="c-body">Test</CardBody>
+          </Card>
+        </Rolodex>
+      )
+
+      wrapper
+        .find('div[role="button"]')
+        .first()
+        .simulate('click')
+
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .first()
+          .prop('isOpen')
+      ).toBe(true)
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .last()
+          .prop('isOpen')
+      ).toBe(false)
+
+      wrapper
+        .find('div[role="button"]')
+        .last()
+        .simulate('click')
+
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .first()
+          .prop('isOpen')
+      ).toBe(false)
+      expect(
+        wrapper
+          .find(RolodexPanel)
+          .last()
+          .prop('isOpen')
+      ).toBe(true)
     })
   })
 })

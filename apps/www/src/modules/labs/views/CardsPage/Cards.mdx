@@ -1,11 +1,13 @@
 import {
   Rolodex,
+  Button,
   Row,
   Col,
   Card,
   CardHeader,
   CardTitle,
   CardBody,
+  Icon,
   CardFooter,
   Alert,
 } from '@cwds/components'
@@ -18,29 +20,121 @@ Some `Card` variants and experimental behaviors.
 
 <Card>
   <CardHeader>
-    <CardTitle>Card Title</CardTitle>
+    <CardTitle tag="div">Card Title</CardTitle>
   </CardHeader>
   <CardBody>CardBody</CardBody>
   <CardFooter>CardFooter</CardFooter>
 </Card>
 
+<!--
+### Shit
+
+<Card className="mb-0">
+  <div role="heading" aria-level="3">
+    <div
+      id="my-expander"
+      role="button"
+      aria-controls="my-panel-body"
+      aria-expanded="false"
+      aria-disabled="false"
+      tabIndex="0"
+    >
+      <CardHeader className="d-flex align-items-center">
+        <div className="mr-3 flex-grow-1">
+          <Row>
+            <Col>
+              <CardTitle tag="div">Big thing to click</CardTitle>
+            </Col>
+            <Col className="text-right">Hello World</Col>
+          </Row>
+        </div>
+        <Icon name="chevron-down" />
+      </CardHeader>
+    </div>
+  </div>
+  <div role="region" id="my-panel-body" aria-labelledby="my-expander">
+    <CardBody>alsdkfj</CardBody>
+    <CardBody>more</CardBody>
+    <CardBody>even more</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </div>
+</Card>
+<Card className="mb-0">
+  <div role="heading" aria-level="3">
+    <div
+      id="my-expander"
+      role="button"
+      aria-controls="my-panel-body"
+      aria-expanded="false"
+      aria-disabled="false"
+      tabIndex="0"
+    >
+      <CardHeader className="d-flex align-items-center">
+        <div className="mr-3 flex-grow-1">
+          <Row>
+            <Col>
+              <CardTitle tag="div">Big thing to click</CardTitle>
+            </Col>
+            <Col className="text-right">Hello World</Col>
+          </Row>
+        </div>
+        <Icon name="chevron-down" />
+      </CardHeader>
+    </div>
+  </div>
+  <div role="region" id="my-panel-body" aria-labelledby="my-expander">
+    <CardBody>alsdkfj</CardBody>
+    <CardBody>more</CardBody>
+    <CardBody>even more</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </div>
+</Card>
+<Card>
+  <div role="heading" aria-level="3">
+    <div
+      id="my-expander"
+      role="button"
+      aria-controls="my-panel-body"
+      aria-expanded="false"
+      aria-disabled="false"
+      tabIndex="0"
+    >
+      <CardHeader className="d-flex align-items-center">
+        <div className="mr-3 flex-grow-1">
+          <Row>
+            <Col>
+              <CardTitle tag="div">Big thing to click</CardTitle>
+            </Col>
+            <Col className="text-right">Hello World</Col>
+          </Row>
+        </div>
+        <Icon name="chevron-down" />
+      </CardHeader>
+    </div>
+  </div>
+  <div role="region" id="my-panel-body" aria-labelledby="my-expander">
+    <CardBody>alsdkfj</CardBody>
+    <CardBody>more</CardBody>
+    <CardBody>even more</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </div>
+</Card>
+-->
+
 ### Rolodex
 
-<Rolodex exclusive>
-  <Card key="a">
+<Rolodex exclusive isOpenKeys={['c']}>
+  <Card key="a" id="whatever">
     <CardHeader>
-      <CardTitle>First Card</CardTitle>
+      <CardTitle tag="div">First Card</CardTitle>
     </CardHeader>
-    <CardBody>
-      <Alert color="success">Hooray!</Alert>
-      First Card Body
-    </CardBody>
+    <CardBody>First Card Body</CardBody>
   </Card>
   <Card key="b">
     <CardHeader>
       <Row>
         <Col>
-          <CardTitle>Second Card</CardTitle>
+          <CardTitle tag="div">Second Card</CardTitle>
         </Col>
         <Col style={{ textAlign: 'right' }}>Hello World</Col>
       </Row>
@@ -49,7 +143,7 @@ Some `Card` variants and experimental behaviors.
   </Card>
   <Card key="c">
     <CardHeader>
-      <CardTitle>Third Card </CardTitle>
+      <CardTitle tag="div">Third Card</CardTitle>
     </CardHeader>
     <CardBody>
       <h4>Whatever</h4>
@@ -72,13 +166,13 @@ Some `Card` variants and experimental behaviors.
   </Card>
   <Card key="d">
     <CardHeader>
-      <CardTitle>Fourth Card (nested)</CardTitle>
+      <CardTitle tag="div">Fourth Card (nested)</CardTitle>
     </CardHeader>
     <CardBody>
       <Rolodex animate>
         <Card key="a">
           <CardHeader>
-            <CardTitle>4.1 Card</CardTitle>
+            <CardTitle tag="div">4.1 Card</CardTitle>
           </CardHeader>
           <CardBody>4.1 Card Body</CardBody>
         </Card>
@@ -86,7 +180,7 @@ Some `Card` variants and experimental behaviors.
           <CardHeader>
             <Row>
               <Col>
-                <CardTitle>4.2 Card</CardTitle>
+                <CardTitle tag="div">4.2 Card</CardTitle>
               </Col>
               <Col style={{ textAlign: 'right' }}>Hello World</Col>
             </Row>
@@ -95,7 +189,7 @@ Some `Card` variants and experimental behaviors.
         </Card>
         <Card card="c">
           <CardHeader>
-            <CardTitle>4.3 Card</CardTitle>
+            <CardTitle tag="div">4.3 Card</CardTitle>
           </CardHeader>
           <CardBody>
             <h4>Whatever</h4>

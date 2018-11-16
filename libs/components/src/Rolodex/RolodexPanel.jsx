@@ -8,6 +8,8 @@ class RolodexPanel extends Component {
   static propTypes = {
     isOpen: PropTypes.bool,
     animate: PropTypes.bool,
+    headerId: PropTypes.string.isRequired,
+    panelId: PropTypes.string.isRequired,
   }
   // shouldComponentUpdate(prevProps, prevState) {
   //   if (this.props.isOpen !== prevProps.isOpen) return true
@@ -27,6 +29,9 @@ class RolodexPanel extends Component {
     const { isOpen, animate, children } = this.props
     return (
       <Collapse
+        role="region"
+        id={this.props.panelId}
+        aria-labelledby={this.props.headerId}
         isOpen={isOpen}
         enter={!!animate}
         exit={!!animate}
