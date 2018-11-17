@@ -8,18 +8,7 @@ describe('RolodexHeader', () => {
   it('exists', () => {
     expect(!!RolodexHeader).toBeDefined()
   })
-  it('throws when not used on CardHeader', () => {
-    const quiet = jest
-      .spyOn(global.console, 'error')
-      .mockImplementation(() => {})
-    expect(() =>
-      mount(
-        <RolodexHeader>
-          <div>bad</div>
-        </RolodexHeader>
-      )
-    ).toThrowError()
-    quiet.mockRestore()
+  it('renders a CardHeader', () => {
     expect(() =>
       mount(
         <RolodexHeader>

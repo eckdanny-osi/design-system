@@ -11,17 +11,11 @@ class RolodexPanel extends Component {
     headerId: PropTypes.string.isRequired,
     panelId: PropTypes.string.isRequired,
   }
-  // shouldComponentUpdate(prevProps, prevState) {
-  //   if (this.props.isOpen !== prevProps.isOpen) return true
-  //   if (
-  //     this.props.animate &&
-  //     this.state.animationState !== prevState.animationState
-  //   ) {
-  //     return true
-  //   }
-  //   return false
-  // }
-  setAnimationState = animationState => {
+  constructor(props) {
+    super(props)
+    this.setAnimationState = this.setAnimationState.bind(this)
+  }
+  setAnimationState(animationState) {
     if (!this.props.animate) return
     this.setState({ animationState })
   }
