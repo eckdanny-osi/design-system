@@ -120,6 +120,7 @@ class Rolodex extends Component {
   }
   render() {
     const {
+      className,
       exclusive,
       collapsible,
       animate,
@@ -129,7 +130,11 @@ class Rolodex extends Component {
       ...restProps
     } = this.props
     return (
-      <div {...restProps} ref={el => (this.el = el)} className={Styles.Rolodex}>
+      <div
+        {...restProps}
+        ref={el => (this.el = el)}
+        className={cn('mb-3', Styles.Rolodex, className)}
+      >
         {React.Children.map(this.props.children, card => {
           const [cardHeader, ...restCardParts] = React.Children.toArray(
             card.props.children
