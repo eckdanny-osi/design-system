@@ -38,6 +38,12 @@
  *   - UncontrolledCarousel
  *   - UncontrolledNavDropdown
  */
+
+// see https://github.com/reactstrap/reactstrap/issues/1297
+import { CardTitle } from 'reactstrap'
+CardTitle.defaultProps.tag = 'div'
+export { CardTitle }
+
 export {
   Badge,
   Breadcrumb,
@@ -50,7 +56,6 @@ export {
   CardBody,
   CardFooter,
   CardHeader,
-  CardTitle,
   Col,
   Collapse,
   Container,
