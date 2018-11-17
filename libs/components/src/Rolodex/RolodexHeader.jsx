@@ -35,15 +35,19 @@ class RolodexHeader extends Component {
       ...otherProps
     } = this.props
     return (
-      <div role="heading" aria-level={ariaLevel} ref={this.el}>
+      <div
+        role="heading"
+        aria-level={ariaLevel}
+        className={cn(Styles.RolodexCap)}
+        ref={this.el}
+      >
         <CardHeader
           {...otherProps}
           className={cn(
             className,
             Styles.RolodexCardHeader,
             {
-              'border-bottom-0': !isOpen,
-              // 'bg-light': !isOpen,
+              [Styles.Expanded]: isOpen,
             },
             'd-flex align-items-center'
           )}

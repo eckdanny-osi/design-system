@@ -7,18 +7,35 @@ $push: 45px;
 .RolodexCard {
 }
 
+.RolodexCap {
+  position: relative;
+}
+
 .RolodexCardHeader {
   cursor: pointer;
+  position: relative;
+  border-bottom: 0;
   &[aria-disabled='true'] {
-    color: red;
+    // TODO: What should this style be?
+    // color: red;
   }
   &:focus {
-    position: relative;
     z-index: 1;
+  }
+  &.Expanded {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
   }
 }
 
 .RolodexPanel {
+  position: relative;
 }
 
 .RolodexToggle {

@@ -29,22 +29,14 @@ class Rolodex extends Component {
     animate: PropTypes.bool,
     aggregateControl: PropTypes.bool,
     level: PropTypes.number,
-    isOpenKeys: PropTypes.arrayOf(PropTypes.string),
+    initOpenKeys: PropTypes.arrayOf(PropTypes.string),
   }
   static defaultProps = {
-    isOpenKeys: [],
+    initOpenKeys: [],
   }
   ALLOWED_CHILD_TYPES = [Card]
   ALLOWED_GRANDCHILD_TYPES = [CardHeader, CardBody, CardFooter]
   rolodexId = uniqueId()
-  // mkId = prefix => uniqueId(`${this.rolodexId}__${prefix}`)
-  // mkIds = () => {
-  //   const cardId = this.mkId('card')
-  //   return {
-  //     headerId: `rolodex__${cardId}__header`,
-  //     panelId: `rolodex__${cardId}__panel`,
-  //   }
-  // }
   constructor(props) {
     super(props)
 
@@ -62,7 +54,7 @@ class Rolodex extends Component {
     React.Children.forEach(this.props.children, card => {
       keys.push({
         key: card.key,
-        isOpen: this.props.isOpenKeys.indexOf(card.key) > -1,
+        isOpen: this.props.initOpenKeys.indexOf(card.key) > -1,
         headerId: `rolodex-${this.rolodexId}__header-${card.key}`,
         panelId: `rolodex-${this.rolodexId}__panel-${card.key}`,
         ref: React.createRef(),
@@ -133,7 +125,7 @@ class Rolodex extends Component {
       animate,
       aggregateControl,
       level,
-      isOpenKeys,
+      initOpenKeys,
       ...restProps
     } = this.props
     return (
