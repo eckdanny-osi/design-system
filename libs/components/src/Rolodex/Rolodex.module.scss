@@ -1,0 +1,52 @@
+@import '~@cwds/core/scss/base';
+
+.Rolodex {
+  // border: 5px solid red;
+}
+
+.RolodexCard {
+}
+
+.RolodexCap {
+  position: relative;
+}
+
+.RolodexCardHeader {
+  cursor: pointer;
+  position: relative;
+  border-bottom: 0;
+  &[aria-disabled='true'] {
+    // TODO: What should this style be?
+    // color: red;
+  }
+  // Focus outline needs to stack higher than sibling headers
+  &:focus {
+    z-index: 1;
+  }
+  // Workaround for the border-width pixel thrash open/closed
+  &.Expanded {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: $card-border-width solid $card-border-color;
+    }
+  }
+}
+
+.RolodexPanel {
+  position: relative;
+}
+
+.RolodexToggle {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  padding-right: 15px;
+  align-items: center;
+}

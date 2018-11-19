@@ -45,6 +45,12 @@ import { CardTitle } from 'reactstrap'
 CardTitle.defaultProps.tag = 'div'
 export { CardTitle }
 
+// Add keys to keyCodes map
+import { Util } from 'reactstrap'
+Util.keyCodes['p'] = 80
+Util.keyCodes['n'] = 78
+export { Util }
+
 export {
   Badge,
   Breadcrumb,
@@ -96,7 +102,6 @@ export {
   UncontrolledButtonDropdown,
   UncontrolledDropdown,
   UncontrolledTooltip,
-  Util,
 } from 'reactstrap'
 
 import './init'
