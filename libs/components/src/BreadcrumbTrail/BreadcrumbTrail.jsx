@@ -20,7 +20,7 @@ const BreadcrumbTrail = ({ items = [], tag: Tag = LinkTag }) => {
       {items.map((item, i) => {
         const active = i + 1 === items.length
         return (
-          <React.Fragment key={i}>
+          <React.Fragment key={item.path}>
             {i !== 0 && <div className="mx-2 text-primary">/</div>}
             <BreadcrumbItem
               tag={Tag}
