@@ -4,21 +4,10 @@ import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
+import JumpToTop from '../../JumpToTop'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 import CaresContext from '../../utils/Cares'
-import { JumpToTop } from '@cwds/components'
-
-// const renderBreadcrumbDefault = itemsOrRenderFn => {
-//   if (React.isValidElement(itemsOrRenderFn)) return itemsOrRenderFn
-//   if (typeof itemsOrRenderFn === 'function') {
-//     return itemsOrRenderFn()
-//   }
-//   if (Array.isArray(itemsOrRenderFn)) {
-//     return <BreadcrumbTrail items={itemsOrRenderFn} />
-//   }
-//   throw new TypeError('Invalid argument: itemsOrRenderFn', 'Banner.jsx')
-// }
 
 const BreadcrumbContainer = ({ children }) => (
   <div className={cn(Styles.BreadcrumbContainer)}>
@@ -31,6 +20,8 @@ class Banner extends Component {
     const { breadcrumb } = this.props
     if (false === breadcrumb) {
       return null
+    } else if (true === breadcrumb) {
+      throw new TypeError('invalid argument')
     } else if (React.isValidElement(breadcrumb)) {
       return <BreadcrumbContainer>{breadcrumb}</BreadcrumbContainer>
     } else if (Array.isArray(breadcrumb)) {
@@ -49,15 +40,7 @@ class Banner extends Component {
     )
   }
   render() {
-    const {
-      AppBar,
-      PageHeader,
-      // BreadcrumbTrail,
-      title,
-      breadcrumb,
-      // renderBreadcrumb = renderBreadcrumbDefault,
-      cta,
-    } = this.props
+    const { AppBar, PageHeader, title, breadcrumb, cta } = this.props
     return (
       <div role="banner" className={cn(Styles.Banner)}>
         <div className={cn(Styles.AppBarContainer)}>
