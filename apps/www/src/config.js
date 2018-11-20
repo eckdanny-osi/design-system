@@ -1,11 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AppBar, Logo, Badge } from '@cwds/components'
+import { AppBar, Logo, Badge, BreadcrumbTrail } from '@cwds/components'
 import getRepoStatus from './macros/repo-status.macro'
 const status = getRepoStatus()
 
+export const breadcrumbRenderer = items => {
+  return !Array.isArray(items) ? (
+    <em>Hello World</em>
+  ) : (
+    <BreadcrumbTrail
+      items={items}
+      tag={({ path, title, ...props }) => (
+        <Link to={path} {...props}>
+          {title}
+        </Link>
+      )}
+    />
+  )
+}
+
 //
 // Configure Components
+// TODO: Use CaresContext instead of side-effectful config
 //
 AppBar.config({
   brand: _ => (

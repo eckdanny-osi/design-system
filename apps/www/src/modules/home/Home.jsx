@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import metaInfo from '../../macros/meta-info.macro'
 import {
   Page,
   Button,
@@ -14,14 +13,14 @@ import {
   Col,
 } from '@cwds/components'
 
-// const info = metaInfo('../components/index.js')
-// console.log(info)
-
 export default () => (
   <Page
     layout="dashboard"
     title="Design System"
-    breadcrumb={props => <em>Welcome to your dashboard!</em>}
+    // breadcrumb={false}
+    // breadcrumb={props => <em>Welcome to your dashboard!</em>}
+    // breadcrumb={<div>aslkdfj</div>}
+    // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
