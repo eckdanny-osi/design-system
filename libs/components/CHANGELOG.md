@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/ca-cwds/design-system/compare/v0.4.1...v0.5.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **components:** Avatar icon alignment ([#252](https://github.com/ca-cwds/design-system/issues/252)) ([04b4128](https://github.com/ca-cwds/design-system/commit/04b4128))
+
+
+### Features
+
+* **components:** introduce Rolodex component ([#247](https://github.com/ca-cwds/design-system/issues/247)) ([597ed2c](https://github.com/ca-cwds/design-system/commit/597ed2c))
+* **layouts:** template-level primitives with context config ([#251](https://github.com/ca-cwds/design-system/issues/251)) ([eaf5166](https://github.com/ca-cwds/design-system/commit/eaf5166))
+
+
+
+
+
 ## [0.4.1](https://github.com/ca-cwds/design-system/compare/v0.4.0...v0.4.1) (2018-11-15)
 
 
