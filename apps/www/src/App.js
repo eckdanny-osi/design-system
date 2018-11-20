@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/tag'
 import '@cwds/core/dist/styles.css'
-import { Utils } from '@cwds/components'
+import { Utils, JumpToTop } from '@cwds/components'
 import componentMap from './components/MDXComponentProviderMappings'
 
 import ScrollToTop from './ScrollToTop'
@@ -34,6 +34,7 @@ class App extends Component {
                 <Route path="/labs" component={LabsPage} />
                 <Route path="/components" component={Components} />
                 <Route path="/status" component={Status} />
+                <JumpToTop />
               </Fragment>
             </ScrollToTop>
           </Router>

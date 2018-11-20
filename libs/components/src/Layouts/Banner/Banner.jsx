@@ -4,7 +4,6 @@ import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
-import JumpToTop from '../../JumpToTop'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 import CaresContext from '../../utils/CaresContext'
@@ -54,7 +53,6 @@ class Banner extends Component {
           </Container>
         </div>
         {this.renderBreadcrumbs()}
-        <JumpToTop />
       </div>
     )
   }
