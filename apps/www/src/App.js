@@ -19,19 +19,19 @@ class App extends Component {
   render() {
     return (
       <MDXProvider components={componentMap}>
-        {/* <CaresProvider value={CaresConfig}> */}
-        <Router>
-          <ScrollToTop>
-            <Fragment>
-              <Route exact path="/" component={Home} />
-              <Route path="/core-style" component={CoreStyles} />
-              <Route path="/labs" component={LabsPage} />
-              <Route path="/components" component={Components} />
-              <Route path="/status" component={Status} />
-            </Fragment>
-          </ScrollToTop>
-        </Router>
-        {/* </CaresProvider> */}
+        <CaresProvider value={CaresConfig}>
+          <Router>
+            <ScrollToTop>
+              <Fragment>
+                <Route exact path="/" component={Home} />
+                <Route path="/core-style" component={CoreStyles} />
+                <Route path="/labs" component={LabsPage} />
+                <Route path="/components" component={Components} />
+                <Route path="/status" component={Status} />
+              </Fragment>
+            </ScrollToTop>
+          </Router>
+        </CaresProvider>
       </MDXProvider>
     )
   }

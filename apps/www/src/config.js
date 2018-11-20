@@ -1,10 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Logo, Badge, BreadcrumbTrail } from '@cwds/components'
+import {
+  Avatar,
+  Logo,
+  Badge,
+  BreadcrumbTrail,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from '@cwds/components'
 import getRepoStatus from './macros/repo-status.macro'
 const status = getRepoStatus()
 
-export const appBarBrand = () => (
+const appBarBrand = () => (
   <React.Fragment>
     <Link to="/">
       <Logo />
@@ -15,9 +24,19 @@ export const appBarBrand = () => (
   </React.Fragment>
 )
 
-export const appBarUserMenu = () => <div>User Menu</div>
+const appBarUserMenu = () => (
+  <UncontrolledDropdown>
+    <DropdownToggle className="bg-transparent border-0 text-white" size="sm">
+      <span className="mr-2 text-capitalize">Guest</span>
+      <Avatar invert size="sm" />
+    </DropdownToggle>
+    <DropdownMenu right>
+      <DropdownItem>Logout</DropdownItem>
+    </DropdownMenu>
+  </UncontrolledDropdown>
+)
 
-export const breadcrumbRenderer = items => {
+const breadcrumbRenderer = items => {
   return !Array.isArray(items) ? (
     <em>Hello World</em>
   ) : (
