@@ -7,7 +7,9 @@ const propTypes = {}
 
 const defaultProps = {}
 
-const Logo = () => <span className={cn(styles.Logo)}>CWS-CARES</span>
+const Logo = () => (
+  <span className={cn(styles.Logo, 'text-white')}>CWS-CARES</span>
+)
 
 const LogoSVG = () => {
   return (

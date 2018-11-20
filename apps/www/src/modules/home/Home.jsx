@@ -18,7 +18,7 @@ export default () => (
     layout="dashboard"
     title="Design System"
     // breadcrumb={false}
-    // breadcrumb={props => <em>Welcome to your dashboard!</em>}
+    breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     // breadcrumb={<div>aslkdfj</div>}
     // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
     main={props => (

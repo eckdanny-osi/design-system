@@ -13,23 +13,14 @@ import {
   ListGroupItem,
 } from '@cwds/reactstrap'
 import Avatar from '../Avatar'
+import CaresContext from '../utils/Cares'
 
 const defaultActionsRenderer = () => {}
 
 class AppBar extends PureComponent {
-  static options = {
-    brand: _ => <a>CWDS-CARES</a>,
-    actions: defaultActionsRenderer,
-  }
   static propTypes = {
     brand: PropTypes.func,
     actions: PropTypes.func,
-  }
-  static config(opts) {
-    AppBar.options = {
-      ...AppBar.options,
-      ...opts,
-    }
   }
   constructor(props) {
     super(props)
@@ -46,12 +37,18 @@ class AppBar extends PureComponent {
   render() {
     const { actions, ...props } = this.props
     return (
-      <div className="row">
-        <div className="col">{this.renderBrand()}</div>
-        <div className="col" className="text-right">
-          {this.renderActions()}
-        </div>
-      </div>
+      <Row>
+        <Col>
+          <CaresContext.Consumer>
+            {({ appBarBrand }) => appBarBrand(this.props)}
+          </CaresContext.Consumer>
+        </Col>
+        <Col className="text-right">
+          <CaresContext.Consumer>
+            {({ appBarUserMenu }) => appBarUserMenu(this.props)}
+          </CaresContext.Consumer>
+        </Col>
+      </Row>
     )
   }
 }
