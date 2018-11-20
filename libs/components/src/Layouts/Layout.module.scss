@@ -1,0 +1,52 @@
+@import '~@cwds/core/scss/base';
+
+// Anchor link fix
+:global {
+  :target:before {
+    display: block;
+    content: ' ';
+    margin-top: -($banner-height + map-get($spacers, 3));
+    padding-top: $banner-height + map-get($spacers, 3);
+    visibility: hidden;
+  }
+}
+
+.Banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  height: $banner-height;
+  box-shadow: 0 1px 5px rgba(2, 2, 2, 0.25);
+
+  .AppBarContainer {
+    background-color: $info;
+    color: $white;
+    padding: 0.25rem 0;
+    height: 2.5rem;
+  }
+
+  .PageHeaderContainer {
+    @include gradient-x($info, $primary);
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .BreadcrumbContainer {
+    align-items: center;
+    background-color: $body-bg;
+    display: flex;
+    height: 2rem;
+    -ms-overflow-style: none;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+
+.Body {
+  margin-top: $banner-height;
+}
