@@ -6,6 +6,8 @@
   display: inline-flex;
   border-radius: 50%;
   text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
 }
 
 .inverted {
@@ -24,5 +26,6 @@
 }
 
 .inner {
-  margin: auto;
+  width: 50% !important;
+  height: auto;
 }
