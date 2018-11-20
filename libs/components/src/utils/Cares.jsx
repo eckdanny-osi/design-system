@@ -35,11 +35,13 @@ const appBarUserMenu = () => (
   </UncontrolledDropdown>
 )
 
-const context = React.createContext({
+export const defaultConfig = {
   breadcrumbRenderer,
   appBarUserMenu,
   appBarBrand,
-})
+}
+
+const context = React.createContext(defaultConfig)
 
 export default context
 

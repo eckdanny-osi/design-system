@@ -13,13 +13,19 @@ import LabsPage from './modules/labs'
 import Components from './modules/components'
 
 import CaresConfig from './config'
-const { CaresProvider } = Utils
+const { CaresProvider, defaultConfig } = Utils
 
 class App extends Component {
+  state = {
+    config: {
+      ...defaultConfig,
+      ...CaresConfig,
+    },
+  }
   render() {
     return (
       <MDXProvider components={componentMap}>
-        <CaresProvider value={CaresConfig}>
+        <CaresProvider value={this.state.config}>
           <Router>
             <ScrollToTop>
               <Fragment>
