@@ -7,7 +7,7 @@ import BreadcrumbTrail from '../../BreadcrumbTrail'
 import JumpToTop from '../../JumpToTop'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
-import CaresContext from '../../utils/Cares'
+import CaresContext from '../../utils/CaresContext'
 
 const BreadcrumbContainer = ({ children }) => (
   <div className={cn(Styles.BreadcrumbContainer)}>

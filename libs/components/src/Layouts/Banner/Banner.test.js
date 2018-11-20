@@ -43,7 +43,6 @@ describe('Banner', () => {
         { title: 'Quo', path: '/foo/bar/quo' },
       ]
       const wrapper = mount(<Banner breadcrumb={trail} />)
-      // console.log(wrapper.debug())
       expect(
         wrapper
           .find(BreadcrumbTail)

@@ -13,7 +13,7 @@ import {
   ListGroupItem,
 } from '@cwds/reactstrap'
 import Avatar from '../Avatar'
-import CaresContext from '../utils/Cares'
+import CaresContext from '../utils/CaresContext'
 
 const defaultActionsRenderer = () => {}
 
