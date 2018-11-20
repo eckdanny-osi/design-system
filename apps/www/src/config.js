@@ -31,7 +31,7 @@ const appBarUserMenu = () => (
       <Avatar invert size="sm" />
     </DropdownToggle>
     <DropdownMenu right>
-      <DropdownItem>Logout</DropdownItem>
+      <DropdownItem onClick={() => alert('logout!')}>Logout</DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
 )
