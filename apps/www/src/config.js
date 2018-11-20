@@ -26,7 +26,11 @@ const appBarBrand = () => (
 
 const appBarUserMenu = () => (
   <UncontrolledDropdown>
-    <DropdownToggle className="bg-transparent border-0 text-white" size="sm">
+    <DropdownToggle
+      className="bg-transparent border-0 text-white"
+      tag="button"
+      size="sm"
+    >
       <span className="mr-2 text-capitalize">Guest</span>
       <Avatar invert size="sm" />
     </DropdownToggle>
