@@ -18,22 +18,6 @@ import CaresContext from '../utils/Cares'
 const defaultActionsRenderer = () => {}
 
 class AppBar extends PureComponent {
-  static propTypes = {
-    brand: PropTypes.func,
-    actions: PropTypes.func,
-  }
-  constructor(props) {
-    super(props)
-    this.renderBrand = this.renderBrand.bind(this)
-  }
-  renderBrand() {
-    const { brand } = this.props
-    return brand ? brand() : AppBar.options.brand()
-  }
-  renderActions() {
-    const { actions, ...props } = this.props
-    return actions ? actions(props) : AppBar.options.actions(props)
-  }
   render() {
     const { actions, ...props } = this.props
     return (
