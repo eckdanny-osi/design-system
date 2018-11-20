@@ -1,7 +1,8 @@
 import React from 'react'
 import Banner from '../Banner'
 import BreadcrumbTail from '../../BreadcrumbTrail'
-import { shallow } from 'enzyme'
+import AppBar from '../../AppBar'
+import { shallow, mount } from 'enzyme'
 
 describe('Banner', () => {
   it('renders', () => {
@@ -13,14 +14,14 @@ describe('Banner', () => {
     expect(wrapper.prop('role')).toEqual('banner')
   })
 
-  it('renders 2 content areas', () => {
+  it('renders the AppBar', () => {
     const wrapper = shallow(<Banner />)
-    expect(wrapper.children().length).toBe(2)
+    expect(wrapper.find(AppBar).length).toBe(1)
   })
 
-  it('renders 3 content areas when a breadcrumb is provided', () => {
-    const wrapper = shallow(<Banner breadcrumb={<div id="breadcrumb" />} />)
-    expect(wrapper.children().length).toBe(3)
+  it('renders the breadcrumb', () => {
+    const wrapper = mount(<Banner breadcrumb={<div id="breadcrumb" />} />)
+    expect(wrapper.find('#breadcrumb').length).toBe(1)
   })
 
   describe('breadcrumb prop', () => {
@@ -41,8 +42,13 @@ describe('Banner', () => {
         { title: 'Bar', path: '/foo/bar' },
         { title: 'Quo', path: '/foo/bar/quo' },
       ]
-      const wrapper = shallow(<Banner breadcrumb={trail} />)
-      expect(wrapper.find(BreadcrumbTail).prop('items')).toBe(trail)
+      const wrapper = mount(<Banner breadcrumb={trail} />)
+      expect(
+        wrapper
+          .find(BreadcrumbTail)
+          .first()
+          .prop('items')
+      ).toBe(trail)
     })
     it('throws a TypeError on invalid prop', () => {
       expect(() => shallow(<Banner breadcrumb={true} />)).toThrow(TypeError)
