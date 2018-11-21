@@ -80,7 +80,9 @@ export default () => (
           </h2>
           <Card>
             <CardBody>
-              <table style={{ width: '100%' }}>
+              <table
+                style={{ width: '100%', overflowX: 'scroll', display: 'block' }}
+              >
                 <tbody>
                   <tr>
                     <td>Build Date</td>
