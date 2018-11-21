@@ -1,6 +1,6 @@
 import DS from '@cwds/core'
 import cn from 'classnames'
-import { Card, CardBody } from '@cwds/components';
+import { Card, CardBody } from '@cwds/components'
 
 ## Spacing
 
@@ -16,28 +16,32 @@ import { Card, CardBody } from '@cwds/components';
         </tr>
       </thead>
       <tbody>
-        {
-          Object.keys(DS.spacing.spacers)
-            .map(label => ({ label, value: DS.spacing.spacers[label]  }))
-            .map(({ label, value }, i) => {
-              return (
-                <tr key={label} style={{ height: '3rem' }}>
-                  <td>
-                    <div
-                      style={{
-                        backgroundColor: DS.themeColors.accent,
-                        height: `${value}${DS.spacing.spacerUnit}`,
-                        width: `${value}${DS.spacing.spacerUnit}`,
-                      }}
-                    >&nbsp;</div>
-                  </td>
-                  <td className="text-center"><tt>$spacer-{label}</tt></td>
-                  <td className="text-center"><tt>DS.spacing.spacer[{label}]</tt></td>
-                  <td className="text-center">{value}</td>
-                </tr>
-              )
-            })
-        }
+        {Object.keys(DS.spacing.spacers)
+          .map(label => ({ label, value: DS.spacing.spacers[label] }))
+          .map(({ label, value }, i) => {
+            return (
+              <tr key={label} style={{ height: '3rem' }}>
+                <td>
+                  <div
+                    style={{
+                      backgroundColor: DS.themeColors.accent,
+                      height: `${value}${DS.spacing.spacerUnit}`,
+                      width: `${value}${DS.spacing.spacerUnit}`,
+                    }}
+                  >
+                    &nbsp;
+                  </div>
+                </td>
+                <td className="text-center">
+                  <tt>$spacer-{label}</tt>
+                </td>
+                <td className="text-center">
+                  <tt>DS.spacing.spacer[{label}]</tt>
+                </td>
+                <td className="text-center">{value}</td>
+              </tr>
+            )
+          })}
       </tbody>
     </table>
   </CardBody>

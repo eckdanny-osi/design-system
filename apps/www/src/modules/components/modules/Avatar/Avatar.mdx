@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { Avatar, Alert, Card, Row, Col } from '@cwds/components';
-import DemoCard from '../../../../components/DemoCard';
+import { Link } from 'react-router-dom'
+import { Avatar, Alert, Card, Row, Col } from '@cwds/components'
+import DemoCard from '../../../../components/DemoCard'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 
@@ -13,7 +13,7 @@ Use an `Avatar` to represent an indentifiable logical entity.
 </DemoCard>
 
 ```jsx
-import { Avatar } from '@cwds/components';
+import { Avatar } from '@cwds/components'
 ```
 
 ## Props
@@ -24,9 +24,9 @@ import { Avatar } from '@cwds/components';
 
 Observe the following when using `Avatar`s:
 
-* Display a default image if no custom image has been uploaded.
-* `imgUrl` takes precedence over `text` display
-* `text` takes precendence over the default icon
+- Display a default image if no custom image has been uploaded.
+- `imgUrl` takes precedence over `text` display
+- `text` takes precendence over the default icon
 
 ## Examples
 
@@ -45,11 +45,8 @@ The default `Avatar` uses an [`Icon`](icon) to represent an ambiguous identity:
 The `size` can be specified using one of the <Link to="/core-style#Sizing">DS_SIZES</Link>:
 
 <div className="mb-3">
-  <Avatar size="xs" />{' '}
-  <Avatar size="sm" />{' '}
-  <Avatar size="md" />{' '}
-  <Avatar size="lg" />{' '}
-  <Avatar size="xl" />
+  <Avatar size="xs" /> <Avatar size="sm" /> <Avatar size="md" />{' '}
+  <Avatar size="lg" /> <Avatar size="xl" />
 </div>
 
 ```jsx
@@ -96,15 +93,12 @@ asdfasdf
 </div>
 
 ```jsx
-<Avatar
-  imgUrl="//images.com/some-face.jpg"
-  size="lg"
-/>
+<Avatar imgUrl="//images.com/some-face.jpg" size="lg" />
 ```
 
 <Alert color="warning">
-  <strong>DO NOT</strong>{' '}
-  use <tt>Alert</tt> with an <tt>imgUrl</tt> for <tt>size</tt> less than <tt>lg</tt>!
+  <strong>DO NOT</strong> use <tt>Alert</tt> with an <tt>imgUrl</tt> for{' '}
+  <tt>size</tt> less than <tt>lg</tt>!
 </Alert>
 
 ## Props

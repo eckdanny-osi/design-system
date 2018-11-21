@@ -1,5 +1,5 @@
-import { Alert, AlertUncontrolled, Card } from '@cwds/components';
-import DemoCard from '../../../../components/DemoCard';
+import { Alert, AlertUncontrolled, Card } from '@cwds/components'
+import DemoCard from '../../../../components/DemoCard'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 
@@ -12,7 +12,7 @@ Use an `Alert` to deliver feedback to the user in an attention-grabbing way.
 </DemoCard>
 
 ```jsx
-import { Alert } from '@cwds/components';
+import { Alert } from '@cwds/components'
 ```
 
 ## Props
@@ -21,14 +21,14 @@ import { Alert } from '@cwds/components';
 
 ## Usage Guidelines
 
-* Alerts should not be used for field level validation - see invalid fields for this.
-* Alerts should be placed at the top of a card or at the top of the page.
-* Error alerts should never be dismissible, so that a user always knows what they need to do to progress.
-* Use Error Alerts to denote when an error exists that prevents a user from progressing (Ex: internet offline, 500 error when submitting).
-* Warning, Info & Success alerts can be dismissible as it does not prevent a user from doing their work.
-* Use Warning Alerts for when something important occurs, but does not prevent a user from progressing (Ex: Medium risk or saftey levels)
-* Use Info Alerts for giving users a heads up about something new or a change (Ex: new feature, notification)
-* Use Success Alerts for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
+- Alerts should not be used for field level validation - see invalid fields for this.
+- Alerts should be placed at the top of a card or at the top of the page.
+- Error alerts should never be dismissible, so that a user always knows what they need to do to progress.
+- Use Error Alerts to denote when an error exists that prevents a user from progressing (Ex: internet offline, 500 error when submitting).
+- Warning, Info & Success alerts can be dismissible as it does not prevent a user from doing their work.
+- Use Warning Alerts for when something important occurs, but does not prevent a user from progressing (Ex: Medium risk or saftey levels)
+- Use Info Alerts for giving users a heads up about something new or a change (Ex: new feature, notification)
+- Use Success Alerts for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
 
 ## Examples
 
@@ -49,10 +49,16 @@ If you don't want want `isOpen` cluttering up your state manager.
 
 <AlertUncontrolled color="warning">
   <p>This is a warning alert — check it out!</p>
-  <p>You may also be interested to see how the overflow conditions work here...</p>
-  <p className="mb-0">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  <p>
+    You may also be interested to see how the overflow conditions work here...
+  </p>
+  <p className="mb-0">
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+    ultricies mi vitae est. Mauris placerat eleifend leo.
+  </p>
 </AlertUncontrolled>
-
 
 ## Related
 
