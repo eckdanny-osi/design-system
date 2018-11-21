@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/ca-cwds/design-system/compare/v0.5.0...v0.5.1) (2018-11-21)
+
+
+### Bug Fixes
+
+* **www:** fix content overflow in status page ([#254](https://github.com/ca-cwds/design-system/issues/254)) ([03f3cb3](https://github.com/ca-cwds/design-system/commit/03f3cb3))
+* update prettier for MDX formatting support ([#253](https://github.com/ca-cwds/design-system/issues/253)) ([b901408](https://github.com/ca-cwds/design-system/commit/b901408))
+
+
+
+
+
 # [0.5.0](https://github.com/ca-cwds/design-system/compare/v0.4.1...v0.5.0) (2018-11-20)
 
 
