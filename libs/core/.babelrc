@@ -1,3 +1,4 @@
 {
-  "presets": ["../../babel.config-common"]
+  "comments": false,
+  "plugins": ["preval", "transform-object-rest-spread"]
 }
