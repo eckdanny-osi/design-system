@@ -23,6 +23,7 @@ $grays: (
 $theme-colors: (
   'primary':    $primary,
   'secondary':  $white,
+  'accent':     $accent,
   'success':    $success,
   'info':       $info,
   'warning':    $warning,
@@ -145,6 +146,10 @@ $list-group-bg:                     $white !default;
 $list-group-border-color:           $gray-200;
 $list-group-active-bg:              $list-group-bg;
 $list-group-active-border-color:    $list-group-border-color;
+
+// Code
+
+$code-color:                        $accent;
 
 
 //
