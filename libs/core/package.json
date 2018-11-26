@@ -1,6 +1,6 @@
 {
   "name": "@cwds/core",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "> TODO: description",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "",
@@ -29,7 +29,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {},
   "peerDependencies": {
     "bootstrap": "^4.1.3"
   },

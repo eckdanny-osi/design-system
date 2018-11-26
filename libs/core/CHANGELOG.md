@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/ca-cwds/design-system/compare/v0.5.1...v0.5.2) (2018-11-26)
+
+
+### Bug Fixes
+
+* **core:** Use preval to ship plain object DS config ([#257](https://github.com/ca-cwds/design-system/issues/257)) ([394e1cc](https://github.com/ca-cwds/design-system/commit/394e1cc))
+
+
+
+
+
 ## [0.5.1](https://github.com/ca-cwds/design-system/compare/v0.5.0...v0.5.1) (2018-11-21)
 
 **Note:** Version bump only for package @cwds/core
