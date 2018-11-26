@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/ca-cwds/design-system/compare/v0.5.2...v0.5.3) (2018-11-26)
+
+
+### Bug Fixes
+
+* **core:** use accent color ([#259](https://github.com/ca-cwds/design-system/issues/259)) ([ef3aa31](https://github.com/ca-cwds/design-system/commit/ef3aa31))
+
+
+
+
+
 ## [0.5.2](https://github.com/ca-cwds/design-system/compare/v0.5.1...v0.5.2) (2018-11-26)
 
 
