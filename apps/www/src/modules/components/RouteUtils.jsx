@@ -55,7 +55,7 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
             <Page
               title={title}
               breadcrumb={<MyBreadcrumb items={trail} />}
-              cta={ContextualActions}
+              // cta={ContextualActions}
               layout="subroutes"
               sidenav={() => (
                 <SideNav
@@ -94,7 +94,7 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
               layout="subroutes"
               title={title}
               breadcrumb={<MyBreadcrumb items={trail} />}
-              cta={ContextualActions}
+              // cta={ContextualActions}
               sidenav={() => (
                 <SideNav
                   routes={getSiblingRoutes(parentContext).map(child => ({
