@@ -124,6 +124,27 @@ export default () => (
                 </CardFooter>
               </Card>
             </Col>
+
+            <Col sm={6}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>
+                    Glossary
+                    <small>
+                      <Badge color="warning" className="ml-1">
+                        TODO
+                      </Badge>
+                    </small>
+                  </CardTitle>
+                </CardHeader>
+                <CardBody>Glossary of Terms</CardBody>
+                <CardFooter>
+                  <Button color="primary" tag={Link} to="/glossary">
+                    Go!
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Col>
           </Row>
         </Col>
         <Col
