@@ -16,8 +16,8 @@ class DismissableAlertExample extends Component {
           <Alert toggle={this.toggle} isOpen={this.state.isOpen}>
             <p>I am dismissable!</p>
             <p>
-              You may also be interested to see how the overflow conditions work
-              here...
+              This <code>Alert</code> has sufficiently long content to
+              demonstrate the overflow and wrapping behavior of the component.
             </p>
             <p className="mb-0">
               Pellentesque habitant morbi tristique senectus et netus et

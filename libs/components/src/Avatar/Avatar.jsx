@@ -15,14 +15,17 @@ const propTypes = {
   text: PropTypes.string,
   /** Invert the color scheme? */
   invert: PropTypes.bool,
+  /** Alernative text */
+  alt: PropTypes.string,
 }
 
 const defaultProps = {
   size: 'md',
   invert: false,
+  alt: '',
 }
 
-const Avatar = ({ imgUrl, size, text, invert }) => {
+const Avatar = ({ imgUrl, alt, size, text, invert }) => {
   const classes = cn(
     Styles['wrapper'],
     Styles[`size-${isValidSize(size, SIZES_ALL.MD)}`],
@@ -31,7 +34,7 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
     }
   )
   if (imgUrl) {
-    return <img src={imgUrl} className={classes} />
+    return <img src={imgUrl} className={classes} alt={alt} />
   }
   if (text) {
     return (
@@ -46,6 +49,7 @@ const Avatar = ({ imgUrl, size, text, invert }) => {
         name="user"
         className={cn(Styles.inner)}
         color={invert ? DS.themeColors.info : DS.colors.white}
+        alt={alt}
       />
     </div>
   )

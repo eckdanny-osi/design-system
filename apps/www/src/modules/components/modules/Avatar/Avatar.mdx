@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import { Avatar, Alert, Card, Row, Col } from '@cwds/components'
+import { Avatar, Alert, Card, CardBody, Row, Col } from '@cwds/components'
 import DemoCard from '../../../../components/DemoCard'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
-Use an `Avatar` to represent an indentifiable logical entity.
+`Avatar`s are visual representations of a user or other identifiable entity.
 
 <DemoCard>
   <Avatar />
@@ -16,21 +16,70 @@ Use an `Avatar` to represent an indentifiable logical entity.
 import { Avatar } from '@cwds/components'
 ```
 
+The `Avatar` manifests (in order of precedence) as:
+
+1. a raster **image** (if available)
+1. text **initials** (if available)
+1. generic **icon** (fallback)
+
+<Card>
+  <CardBody className="d-flex justify-content-around">
+    <div className="text-center">
+      <Avatar imgUrl="https://bit.ly/2Ar9w7z" alt="Beardy McBeardFace" />
+      <div>image</div>
+    </div>
+    <div className="text-center">
+      <Avatar text="WW" />
+      <div>text</div>
+    </div>
+    <div className="text-center">
+      <Avatar />
+      <div>icon</div>
+    </div>
+  </CardBody>
+</Card>
+
+```jsx
+<Card>
+  <CardBody className="d-flex justify-content-around">
+    <div className="text-center">
+      <Avatar imgUrl="https://bit.ly/2Ar9w7z" alt="Beardy McBeardFace" />
+      <div>image</div>
+    </div>
+    <div className="text-center">
+      <Avatar text="WW" />
+      <div>text</div>
+    </div>
+    <div className="text-center">
+      <Avatar />
+      <div>icon</div>
+    </div>
+  </CardBody>
+</Card>
+```
+
 ## Props
 
 <PropTable docgen={Docgen.Avatar} />
 
 ## Usage Guidelines
 
-Observe the following when using `Avatar`s:
+Use the best available `Avatar` type for optimal recognition with the user
 
-- Display a default image if no custom image has been uploaded.
-- `imgUrl` takes precedence over `text` display
-- `text` takes precendence over the default icon
+Use an appropriate `size` based on placement. (See [Adjusting the size value](#adjusting-the-size-value)).
+
+<!--
+@todo(mj): Is this true?
+Avatars may have a badge over one of their four corners in order to signify certain qualities. For example, a badge on an avatar may show a user's presence (if they're available, away or busy).
+-->
+
+### Accessibility
+
+Do provide meaningful <code>alt</code> text when using **image** or **icon** `Avatar` types as necessary (see [WebAIM: Alternative Text](https://webaim.org/techniques/alttext/)).
 
 ## Examples
 
-The default `Avatar` uses an [`Icon`](icon) to represent an ambiguous identity:
+The default `Avatar` (with no additional props provided) uses an [`Icon`](icon) to represent an ambiguous identity:
 
 <div className="mb-3">
   <Avatar />
@@ -42,7 +91,7 @@ The default `Avatar` uses an [`Icon`](icon) to represent an ambiguous identity:
 
 ### Adjusting the size value
 
-The `size` can be specified using one of the <Link to="/core-style#Sizing">DS_SIZES</Link>:
+The `size` can be specified using one of the Design System's <Link to="/core-style">discrete size values</Link>:
 
 <div className="mb-3">
   <Avatar size="xs" /> <Avatar size="sm" /> <Avatar size="md" />{' '}
@@ -57,9 +106,17 @@ The `size` can be specified using one of the <Link to="/core-style#Sizing">DS_SI
 <Avatar size="xl" />
 ```
 
+<!-- @todo(mj): what are these unknown things? -->
+
+- `xs` should be used for [on-screen metadata]()
+- `sm` should be used in small areas like 40px text fields
+- `md` should be used for [activity streams](), [comments](), or [table views]() for [project listings]()
+- `lg` should be used in [`PageTitles`](), like a user's account settings
+- `xl` should be used in prominent positions on the [`Page`](), like in [`UserProfile`]()
+
 ### Inverting
 
-Inverting is easy, yo!
+The color theme can be easily inverted for contrast flexibility:
 
 <div className="mb-3">
   <Avatar invert />
@@ -83,36 +140,17 @@ When user or identifiable entity does not have an `imgUrl` (path to a raster gra
 
 ### Using Images
 
-asdfasdf
+Use this form whenever graphic media is available:
 
 <div className="mb-3">
-  <Avatar
-    imgUrl="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boudin-eugene-c-face-half.jpg"
-    size="lg"
-  />
+  <Avatar imgUrl="https://bit.ly/2Ar9w7z" size="lg" />
 </div>
 
 ```jsx
-<Avatar imgUrl="//images.com/some-face.jpg" size="lg" />
+<Avatar imgUrl="user.jpg" size="lg" />
 ```
 
 <Alert color="warning">
-  <strong>DO NOT</strong> use <tt>Alert</tt> with an <tt>imgUrl</tt> for{' '}
-  <tt>size</tt> less than <tt>lg</tt>!
+  <strong>DO NOT</strong> use <code>Alert</code> with an <code>imgUrl</code> for{' '}
+  <code>size</code> less than <code>lg</code>!
 </Alert>
-
-## Props
-
-@todo
-
-## Related
-
-@todo
-
-### Patterns
-
-@todo
-
-### Components
-
-@todo

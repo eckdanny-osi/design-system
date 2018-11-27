@@ -20,7 +20,7 @@ const routes = {
   component: Components,
   children: [
     { title: 'Alert', path: '/alert', component: Alert },
-    // { title: 'Avatar', path: '/avatar', component: Avatar },
+    { title: 'Avatar', path: '/avatar', component: Avatar },
     // { title: 'Badge', path: '/badge', component: Badge },
     // { title: 'Button', path: '/button', component: Button },
     // { title: 'ButtonGroup', path: '/button-group', component: ButtonGroup },
