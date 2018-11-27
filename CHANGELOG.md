@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/ca-cwds/design-system/compare/v0.5.3...v0.5.4) (2018-11-27)
+
+
+### Bug Fixes
+
+* update libs to resolve flatmap-stream security vulnerability ([#261](https://github.com/ca-cwds/design-system/issues/261)) ([ccbf023](https://github.com/ca-cwds/design-system/commit/ccbf023)), closes [#260](https://github.com/ca-cwds/design-system/issues/260)
+
+
+
+
+
 ## [0.5.3](https://github.com/ca-cwds/design-system/compare/v0.5.2...v0.5.3) (2018-11-26)
 
 
