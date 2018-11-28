@@ -5,35 +5,29 @@ import pick from 'lodash.pick'
 import { Button } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 
+const LIGHT_COLORS = {
+  primary: true,
+  secondary: false,
+  accent: true,
+  success: true,
+  info: true,
+  warning: true,
+  danger: true,
+  light: false,
+  dark: true,
+  link: true,
+}
+
 const getIconProps = ({ className, color, ...props }) =>
   pick(props, 'iconClassName', Object.keys(Icon.propTypes))
 
 const getButtonProps = props => pick(props, Object.keys(Button.propTypes))
 
-const isLightIcon = (
-  color = Button.defaultProps.color,
-  light = 'text-light',
-  dark = 'text-dark'
-) => {
-  return [
-    'primary',
-    // 'secondary',
-    'accent',
-    'success',
-    'info',
-    'warning',
-    'danger',
-    // 'light',
-    'dark',
-    'link',
-  ].includes(color)
-    ? light
-    : dark
-  // return [] 'text-light' : 'text-dark'
-}
+const isLightIcon = (color, light = 'text-light', dark = 'text-dark') =>
+  LIGHT_COLORS[color] ? light : dark
 
 const IconButton = ({ children, ...props }) => {
-  const { className: iconClassName, ...iconProps } = getIconProps(props)
+  const { iconClassName, ...iconProps } = getIconProps(props)
   return (
     <Button {...getButtonProps(props)}>
       <Icon
