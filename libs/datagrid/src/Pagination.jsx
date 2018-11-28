@@ -28,6 +28,13 @@ class Pagination extends PaginationRT {
       NextComponent = defaultButton,
     } = this.props
 
+    const options = pageSizeOptions.map((option, i) => ({
+      value: option,
+      label: `${option} ${this.props.rowsText}`,
+    }))
+
+    const value = options.find(({ value }) => value === pageSize)
+
     return (
       <div
         className={classnames(className, '-pagination')}
@@ -84,14 +91,9 @@ class Pagination extends PaginationRT {
           {showPageSizeOptions && (
             <div className="select-wrap -pageSizeOptions">
               <Select
-                value={pageSize}
-                style={{
-                  textAlign: 'left',
-                }}
-                options={pageSizeOptions.map((option, i) => ({
-                  value: option,
-                  label: `${option} ${this.props.rowsText}`,
-                }))}
+                value={value}
+                style={{ textAlign: 'left' }}
+                options={options}
                 onChange={({ value }) => onPageSizeChange(Number(value))}
                 clearable={false}
                 searchable={false}
