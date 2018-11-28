@@ -14,7 +14,12 @@ const Icon = props => {
     />
   )
 }
-Icon.propTypes = { ...FontAwesomeIcon.propTypes }
+Icon.propTypes = {
+  ...FontAwesomeIcon.propTypes,
+  name: PropTypes.string,
+  color: PropTypes.string,
+  themeColors: PropTypes.object,
+}
 Icon.defaultProps = {
   ...FontAwesomeIcon.defaultProps,
   color: 'info',
