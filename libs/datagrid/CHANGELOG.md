@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/ca-cwds/design-system/compare/v0.5.4...v0.5.5) (2018-11-28)
+
+
+### Bug Fixes
+
+* **datagrid:** fix pagination selected option ([#264](https://github.com/ca-cwds/design-system/issues/264)) ([4e1f581](https://github.com/ca-cwds/design-system/commit/4e1f581))
+
+
+
+
+
 ## [0.5.4](https://github.com/ca-cwds/design-system/compare/v0.5.3...v0.5.4) (2018-11-27)
 
 **Note:** Version bump only for package @cwds/datagrid
