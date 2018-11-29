@@ -4,6 +4,10 @@ import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 import DismissableAlertExample from './DismissableAlert.example.jsx'
 
+export const meta = {
+  authors: ['Danny Eck <danny.eck@osi.ca.gov>'],
+}
+
 ## Synopsis
 
 Use an `Alert` to communicate important and task-sensitive contextual messages from the system to user. `Alerts` provide feedback regarding the outcome of the users' intended interactions and operations.
@@ -35,6 +39,12 @@ import { Alert } from '@cwds/components'
 
 </CardBody></Card>
 
+<Card>
+  <CardBody>
+    <markdown>_Note_: `Alert`s **_MUST NOT_**</markdown>
+  </CardBody>
+</Card>
+
 <!--
 ### Language & Tone
 
@@ -45,7 +55,7 @@ asdf
 
 The `Alert` component places the aria live region role `alert` on the containing element.
 
-See [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#alert) for additional context.
+See [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#alert) for additional information.
 
 ## Examples
 

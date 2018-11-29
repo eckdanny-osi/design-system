@@ -1,9 +1,5 @@
 @import '~bootstrap/scss/buttons';
 
-.btn {
-  text-transform: uppercase;
-}
-
 // TODO: consistent active and focus visual style
 @each $color, $value in $theme-colors {
   .btn-#{$color} {

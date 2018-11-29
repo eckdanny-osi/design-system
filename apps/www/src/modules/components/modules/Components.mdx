@@ -1,10 +1,43 @@
+import { Badge, Card, CardBody } from '@cwds/components'
+import DemoCard from '../../../components/DemoCard'
+import ReferenceCard from '../../../components/ReferenceCard'
+
 ## About
 
-Here you'll find a showcase of our components. This is a resource for developers, designers, and stakeholders.
+You are browsing the CARES component docs. This resource is intended to help developers, designers, and stakeholders work together to build apps for CARES.
 
-## Usage
+- Quick reference for visual patterns and components
+- Component API documentation
+- Design
+- Implementation guide for technical consumers
+- Conversation starters for ideation
 
-Using the Component Browser...
+The entire guide is built with CARES components. However you may encounter a few visual patterns that _are not_ part of the CARES design system and are meant to facilitate comprehension only. Those components are identified in the sections below.
+
+#### DemoCard
+
+Used to visually demonstrate a component in isolation from its surrounding supporting documentation.
+
+<DemoCard>
+  <Badge color="primary">Demo Badge</Badge>
+</DemoCard>
+
+#### Code Snippets
+
+Used to provide technical reference implementation in small, narrowly scoped blocks.
+
+```jsx
+<Badge
+  color="primary"
+  onClick={() => alert('we dont need no stinking badges!')}
+>
+  Demo Badge
+</Badge>
+```
+
+#### ReferenceCard
+
+<ReferenceCard>alksdjf</ReferenceCard>
 
 ### Structure
 

@@ -1,11 +1,11 @@
-import { Button, Icon, IconButton } from '@cwds/components'
+import { Button, Icon, IconButton, Card, CardBody } from '@cwds/components'
 import DemoCard from '../../../../components/DemoCard'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
-Use a `Button` to indicate an opportunity for the user to interact with the app.
+`Button`s indicate an opportunity for users to trigger a system response when activated.
 
 <DemoCard>
   <Button color="primary">Click Me</Button>
@@ -14,6 +14,25 @@ Use a `Button` to indicate an opportunity for the user to interact with the app.
 ```jsx
 import { Button } from '@cwds/components'
 ```
+
+The `Button` is the dominant component for indicating Call To Action (CTA) opportunties to the user. Within a particular context, there may exist multiple CTAs and
+
+<DemoCard>
+  <div className="d-flex justify-content-around">
+    <div className="text-center">
+      <Button color="primary">Submit</Button>
+      <div>Primary</div>
+    </div>
+    <div className="text-center">
+      <Button>Cancel</Button>
+      <div>Secondary (default)</div>
+    </div>
+    <div className="text-center">
+      <Button color="warning">Detonate</Button>
+      <div>Warning</div>
+    </div>
+  </div>
+</DemoCard>
 
 ## Usage Guidelines
 
