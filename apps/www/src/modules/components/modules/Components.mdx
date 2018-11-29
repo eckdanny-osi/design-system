@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
 import { Badge, Card, CardBody } from '@cwds/components'
 import DemoCard from '../../../components/DemoCard'
 import ReferenceCard from '../../../components/ReferenceCard'
+import Figure from '../../../components/Figure'
+import img from './image.jpg'
 
 ## About
 
@@ -8,11 +11,25 @@ You are browsing the CARES component docs. This resource is intended to help dev
 
 - Quick reference for visual patterns and components
 - Component API documentation
-- Design
+- Usage recommendations
 - Implementation guide for technical consumers
-- Conversation starters for ideation
+- Conversation starters!
 
-The entire guide is built with CARES components. However you may encounter a few visual patterns that _are not_ part of the CARES design system and are meant to facilitate comprehension only. Those components are identified in the sections below.
+The component-level docs are more specific and have higher precedence than the <Link to="/core-style">Core Style</Link> material.
+
+## Components
+
+Each CARES component intended direct use by Digital Service application developers is described in an article format.
+
+### Structure
+
+Each component article includes a general Synopsis, General Usage, Component property specifications, and a number of demonstrative examples.
+
+### Documentation-Only Components
+
+The entire guide is built with CARES components. There are however components present here that _are not_ part of the CARES design system and are meant to facilitate comprehension only. Those components are identified in the sections below.
+
+_Note_:
 
 #### DemoCard
 
@@ -37,16 +54,16 @@ Used to provide technical reference implementation in small, narrowly scoped blo
 
 #### ReferenceCard
 
-<ReferenceCard>alksdjf</ReferenceCard>
+<ReferenceCard>
 
-### Structure
+**Badge** starts with the letter "B"
 
-@TODO
+</ReferenceCard>
 
-### Navigating
+#### Figure
 
-@TODO
+<Figure src={img} caption="Figure" alt="cws-cares logo" />
 
 ## Errata
 
-@TODO
+The guide site is **living documentation**. We're doing our best to provide accurate docs, but if you do find a bug, a typo, another error, or have other suggestions to improve the guide site please open an issue! Pertinent build information and helpful links for raising issues are available on the <Link to="/status">Status</Link> page.

@@ -1,21 +1,22 @@
 import React from 'react'
 import cn from 'classnames'
-import './DemoCard.css'
+import Styles from './DemoCard.module.scss'
 
-export default props => {
+const DemoCard = props => {
   if (React.Children.only(props.children)) {
+    const { children: child } = props
     return (
-      <div className="DemoCard p-3 mb-4">
+      <div className={cn(Styles.DemoCard, props.className)}>
         <div style={{ position: 'relative' }}>
-          {React.cloneElement(props.children, {
-            className: cn(props.children.props.className, 'mb-0'),
+          {React.cloneElement(child, {
+            className: cn(child.props.className, 'mb-0'),
           })}
         </div>
       </div>
     )
   }
   return (
-    <div className="DemoCard p-3 mb-4">
+    <div className={cn(Styles.DemoCard, props.className)}>
       <div style={{ position: 'relative' }}>
         {React.cloneElement(props.children, {
           className: cn(props.className, 'mb-0'),
@@ -24,3 +25,9 @@ export default props => {
     </div>
   )
 }
+
+DemoCard.defaultProps = {
+  className: 'p-3 mb-4',
+}
+
+export default DemoCard

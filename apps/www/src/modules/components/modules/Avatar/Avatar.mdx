@@ -19,43 +19,51 @@ import { Avatar } from '@cwds/components'
 The `Avatar` manifests (in order of precedence) as:
 
 1. a raster **image** (if available)
-1. text **initials** (if available)
+1. **text** initials (if available)
 1. generic **icon** (fallback)
 
-<Card>
-  <CardBody className="d-flex justify-content-around">
-    <div className="text-center">
+<div className="d-flex justify-content-around mb-3">
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar imgUrl="https://bit.ly/2Ar9w7z" alt="Beardy McBeardFace" />
-      <div>image</div>
-    </div>
-    <div className="text-center">
+    </DemoCard>
+    <div>image</div>
+  </div>
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar text="WW" />
-      <div>text</div>
-    </div>
-    <div className="text-center">
+    </DemoCard>
+    <div>text</div>
+  </div>
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar />
-      <div>icon</div>
-    </div>
-  </CardBody>
-</Card>
+    </DemoCard>
+    <div>icon</div>
+  </div>
+</div>
 
 ```jsx
-<Card>
-  <CardBody className="d-flex justify-content-around">
-    <div className="text-center">
+<div className="d-flex justify-content-around mb-3">
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar imgUrl="https://bit.ly/2Ar9w7z" alt="Beardy McBeardFace" />
-      <div>image</div>
-    </div>
-    <div className="text-center">
+    </DemoCard>
+    <div>image</div>
+  </div>
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar text="WW" />
-      <div>text</div>
-    </div>
-    <div className="text-center">
+    </DemoCard>
+    <div>text</div>
+  </div>
+  <div className="text-center">
+    <DemoCard className="p-2 mb-0">
       <Avatar />
-      <div>icon</div>
-    </div>
-  </CardBody>
-</Card>
+    </DemoCard>
+    <div>icon</div>
+  </div>
+</div>
 ```
 
 ## Props
