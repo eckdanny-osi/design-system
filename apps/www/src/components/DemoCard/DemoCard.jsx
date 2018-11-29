@@ -1,10 +1,33 @@
 import React from 'react'
-import './DemoCard.css'
+import cn from 'classnames'
+import Styles from './DemoCard.module.scss'
 
-export default props => (
-  <div {...props} className={`${props.className} DemoCard mt-2 mb-4 p-3`}>
-    <div style={{ position: 'relative' }}>
-      {React.cloneElement(props.children, { className: 'mb-0' })}
+const DemoCard = props => {
+  if (React.Children.only(props.children)) {
+    const { children: child } = props
+    return (
+      <div className={cn(Styles.DemoCard, props.className)}>
+        <div style={{ position: 'relative' }}>
+          {React.cloneElement(child, {
+            className: cn(child.props.className, 'mb-0'),
+          })}
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className={cn(Styles.DemoCard, props.className)}>
+      <div style={{ position: 'relative' }}>
+        {React.cloneElement(props.children, {
+          className: cn(props.className, 'mb-0'),
+        })}
+      </div>
     </div>
-  </div>
-)
+  )
+}
+
+DemoCard.defaultProps = {
+  className: 'p-3 mb-4',
+}
+
+export default DemoCard
