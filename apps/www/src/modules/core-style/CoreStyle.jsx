@@ -13,7 +13,6 @@ const toSlug = str =>
 
 const routes = [
   'Experience Principles',
-  'Grid System',
   'Functional CSS',
   'Spacing',
   'Color System',
