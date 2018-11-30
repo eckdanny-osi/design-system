@@ -1,4 +1,4 @@
-module.exports = ({ lib }) => ({
+module.exports = ({ project }) => ({
   verbose: true,
   setupTestFrameworkScriptFile: '<rootDir>/../../setupTests.js',
   moduleNameMapper: {
@@ -7,5 +7,5 @@ module.exports = ({ lib }) => ({
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   coverageReporters: ['lcov'],
-  coverageDirectory: `<rootDir>/../../coverage/${lib}`,
+  coverageDirectory: `<rootDir>/../../coverage/${project}`,
 })
