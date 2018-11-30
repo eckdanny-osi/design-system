@@ -1,13 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cn from 'classnames'
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  Table,
-  Badge,
-} from '@cwds/components'
+import { Card, CardBody, Table, Badge } from '@cwds/components'
 import AnchorLink from '../AnchorLink'
 import Styles from './PropTable.module.scss'
 
