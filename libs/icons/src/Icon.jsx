@@ -28,6 +28,11 @@ const Icon = props => {
 }
 Icon.propTypes = {
   ...FontAwesomeIcon.propTypes,
+  name: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]),
   color: PropTypes.string,
   themeColors: PropTypes.object,
   set: PropTypes.string,
