@@ -10,7 +10,13 @@ const IconSquare = props => {
         <Icon size="2x" {...props} />
       </div>
       <small className={cn('mt-1', Styles.name)}>
-        <tt>{props.name || props.icon}</tt>
+        {Array.isArray(props.name) && (
+          <tt>
+            {props.name[1]}
+            {props.name[0] !== 'fas' && <span> ({props.name[0]})</span>}
+          </tt>
+        )}
+        {typeof props.name === 'string' && <tt>{props.name}</tt>}
       </small>
     </div>
   )

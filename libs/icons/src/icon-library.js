@@ -20,7 +20,9 @@ import {
   faTimes,
   faUpload,
   faUser,
+  faCommentAlt as fasFaCommentAlt,
 } from '@fortawesome/free-solid-svg-icons'
+import { faCommentAlt as farFaCommentAlt } from '@fortawesome/free-regular-svg-icons'
 
 library.add(
   faArrowUp,
@@ -42,10 +44,15 @@ library.add(
   faSearch,
   faTimes,
   faUpload,
-  faUser
+  faUser,
+  fasFaCommentAlt,
+  farFaCommentAlt
 )
 
-export const ICON_NAMES = Object.keys(library.definitions['fas'])
+export const ICON_NAMES = [
+  ...Object.keys(library.definitions['fas']).map(name => ['fas', name]),
+  [farFaCommentAlt.prefix, farFaCommentAlt.iconName],
+]
 
 export const getIconFromContext = context => {
   switch (context) {

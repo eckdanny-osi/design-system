@@ -1,5 +1,6 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
+import './icon-library' // required for side-effectful init
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Icon from '../Icon'
 
@@ -17,12 +18,6 @@ describe('Icon', () => {
     const wrapper = mount(<Icon icon="check" />)
     expect(wrapper.find('svg').prop('focusable')).toBe('false')
   })
-  it('aliases the `icon` prop as `name`', () => {
-    const nameWrapper = shallow(<Icon name="check" />)
-    expect(nameWrapper.find(FontAwesomeIcon).prop('icon')).toEqual('check')
-    const iconWrapper = shallow(<Icon icon="some-name" />)
-    expect(iconWrapper.find(FontAwesomeIcon).prop('icon')).toEqual('some-name')
-  })
   it('has a default color', () => {
     const wrapper = mount(<Icon name="check" />)
     expect(wrapper.find('svg').prop('color')).toBeDefined()
@@ -39,5 +34,35 @@ describe('Icon', () => {
         .find(FontAwesomeIcon)
         .prop('color')
     ).toEqual('nope')
+  })
+  describe('arg normalization', () => {
+    it('aliases the `icon` prop as `name`', () => {
+      const nameWrapper = shallow(<Icon name="foo" />)
+      expect(nameWrapper.find(FontAwesomeIcon).prop('icon')).toEqual('foo')
+      const iconWrapper = shallow(<Icon icon="foo" />)
+      expect(iconWrapper.find(FontAwesomeIcon).prop('icon')).toEqual('foo')
+    })
+    it('does not decorate when `set` is not defined', () => {
+      const [str, arr, obj] = ['foo', ['foo', 'bar'], {}]
+      let wrapper
+
+      wrapper = shallow(<Icon name={str} />)
+      expect(wrapper.find(FontAwesomeIcon).prop('icon')).toEqual(str)
+
+      wrapper = shallow(<Icon name={arr} />)
+      expect(wrapper.find(FontAwesomeIcon).prop('icon')).toBe(arr)
+
+      wrapper = shallow(<Icon name={obj} />)
+      expect(wrapper.find(FontAwesomeIcon).prop('icon')).toBe(obj)
+    })
+    it('decorates the `icon` when `set` is defined', () => {
+      const wrapper = shallow(<Icon name="foo" set="bar" />)
+      expect(wrapper.find(FontAwesomeIcon).prop('icon')).toEqual(['bar', 'foo'])
+    })
+    it('throws when `set` is used with an invalid iconArg', () => {
+      expect(() => {
+        shallow(<Icon name={['quo', 'qux']} set="bar" />)
+      }).toThrow()
+    })
   })
 })
