@@ -12,12 +12,19 @@ const defaultProps = {
   tag: 'span',
 }
 
-const AnchorLink = ({ children: text, tag: Tag }) => {
+const AnchorLink = ({
+  children: text,
+  tag: Tag,
+  parentClassName,
+  ...props
+}) => {
   console.debug('AnchorLink!')
   const slug = toSlug(text)
   return (
-    <Tag id={slug}>
-      <a href={`#${slug}`}>{text}</a>
+    <Tag id={slug} className={parentClassName}>
+      <a {...props} href={`#${slug}`}>
+        {text}
+      </a>
     </Tag>
   )
 }
