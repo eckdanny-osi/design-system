@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/ca-cwds/design-system/compare/v0.5.5...v0.5.6) (2018-11-30)
+
+
+### Bug Fixes
+
+* **core:** fix theme colors ([#268](https://github.com/ca-cwds/design-system/issues/268)) ([84f9b02](https://github.com/ca-cwds/design-system/commit/84f9b02))
+* **core:** use sentance case for buttons ([#265](https://github.com/ca-cwds/design-system/issues/265)) ([44b2546](https://github.com/ca-cwds/design-system/commit/44b2546))
+
+
+
+
+
 ## [0.5.5](https://github.com/ca-cwds/design-system/compare/v0.5.4...v0.5.5) (2018-11-28)
 
 **Note:** Version bump only for package @cwds/core

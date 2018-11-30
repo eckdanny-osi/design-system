@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/ca-cwds/design-system/compare/v0.5.5...v0.5.6) (2018-11-30)
+
+
+### Bug Fixes
+
+* **icons:** add comment-alt icons ([#270](https://github.com/ca-cwds/design-system/issues/270)) ([769e73c](https://github.com/ca-cwds/design-system/commit/769e73c))
+* **www:** fix DemoCard ([#266](https://github.com/ca-cwds/design-system/issues/266)) ([3d9ed09](https://github.com/ca-cwds/design-system/commit/3d9ed09))
+
+
+
+
+
 ## [0.5.5](https://github.com/ca-cwds/design-system/compare/v0.5.4...v0.5.5) (2018-11-28)
 
 **Note:** Version bump only for package www

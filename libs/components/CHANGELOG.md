@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/ca-cwds/design-system/compare/v0.5.5...v0.5.6) (2018-11-30)
+
+
+### Bug Fixes
+
+* **build:** fix jest coverage dirs ([#267](https://github.com/ca-cwds/design-system/issues/267)) ([fae93a5](https://github.com/ca-cwds/design-system/commit/fae93a5))
+
+
+
+
+
 ## [0.5.5](https://github.com/ca-cwds/design-system/compare/v0.5.4...v0.5.5) (2018-11-28)
 
 **Note:** Version bump only for package @cwds/components
