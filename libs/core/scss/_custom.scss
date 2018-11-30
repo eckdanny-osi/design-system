@@ -24,6 +24,7 @@ $theme-colors: (
   'primary':    $primary,
   'secondary':  $white,
   'accent':     $accent,
+  'breath':     $breath,
   'success':    $success,
   'info':       $info,
   'warning':    $warning,
@@ -51,6 +52,15 @@ $spacers: (
 
 $body-bg:       $gray-100;
 $body-color:    $gray-900;
+
+//
+// Links
+//
+
+$link-color:                theme-color("info") !default;
+// $link-decoration:           none !default;
+// $link-hover-color:          darken($link-color, 15%) !default;
+// $link-hover-decoration:     underline !default;
 
 //
 // Grid breakpoints

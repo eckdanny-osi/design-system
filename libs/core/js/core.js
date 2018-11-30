@@ -43,9 +43,10 @@ DS.grays = {
 
 // Theme Colors
 DS.themeColors = {
-  primary:      Color('#09798e').hex(),   // ($aspen)
+  primary:      Color('#098e88').hex(),   // ($aspen)
   secondary:    DS.colors['white'],       // $white
   accent:       Color('#601974').hex(),   // ($oak)
+  breath:       Color('#d8ecf0').hex(),   // ($fir)
   success:      Color('#068347').hex(),   // ($elm)
   info:         Color('#0d4f78').hex(),   // ($spruce)
   warning:      Color('#e7740b').hex(),   // ($hickory)
