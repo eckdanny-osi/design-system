@@ -18,4 +18,5 @@ export { default as Logo } from './Logo'
 export { default as PageHeader } from './PageHeader'
 export { default as RadioGroup } from './RadioGroup'
 export { default as Select } from 'react-select'
+export { default as Placeholder } from './Placeholder'
 export { Utils }
