@@ -23,7 +23,7 @@ class Example extends Component {
               Toggle
             </Button>
           </div>
-          <Card>
+          <Card className="mb-0">
             <CardHeader>
               {this.state.isLoading ? (
                 <Placeholder>Uknown Person</Placeholder>

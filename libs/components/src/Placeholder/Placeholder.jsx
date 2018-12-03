@@ -25,9 +25,9 @@ const Placeholder = ({ cols, rows, tag: Tag }) => {
       {new Array(cols).fill().map((_, i) => {
         return (
           <Col key={i} className={Styles['PlaceholderContainer']}>
-            {new Array(rows).fill().map((_, j) => {
-              return <Tag key={j} />
-            })}
+            {new Array(rows).fill().map((_, j) => (
+              <Tag key={j} />
+            ))}
           </Col>
         )
       })}
