@@ -1,0 +1,12 @@
+@import '~@cwds/core/scss/base';
+
+.PlaceholderContainer {
+  & > .Placeholder:last-child {
+    margin-bottom: 0 !important;
+  }
+  .Placeholder {
+    display: block;
+    background-color: $gray-100;
+    text-indent: -99999px;
+  }
+}

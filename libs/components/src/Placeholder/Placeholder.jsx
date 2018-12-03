@@ -1,18 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import { Row, Col } from '@cwds/reactstrap'
+import Styles from './Placeholder.module.scss'
 
 // TODO: the `rows` and `cols` props should have the same reponsive prop format
 //       as the `Col` [size] interface (reactstrap)
 
-const ShimmerLine = () => <div>shimmer</div>
+const PlaceholderLine = ({ className, children, tag: Tag, ...props }) => (
+  <Tag className={cn(className, 'mb-2 p-1', Styles['Placeholder'])} {...props}>
+    {children || 'placeholder'}
+  </Tag>
+)
+PlaceholderLine.propTypes = {
+  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+}
+PlaceholderLine.defaultProps = {
+  tag: 'p',
+}
 
 const Placeholder = ({ cols, rows, tag: Tag }) => {
   return cols > 1 ? (
     <Row>
       {new Array(cols).fill().map((_, i) => {
         return (
-          <Col key={i}>
+          <Col key={i} className={Styles['PlaceholderContainer']}>
             {new Array(rows).fill().map((_, j) => {
               return <Tag key={j} />
             })}
@@ -21,19 +33,20 @@ const Placeholder = ({ cols, rows, tag: Tag }) => {
       })}
     </Row>
   ) : (
-    <span>alksdfj</span>
+    <div className={Styles['PlaceholderContainer']}>
+      <Tag>placeholder</Tag>
+    </div>
   )
 }
 Placeholder.propTypes = {
   cols: PropTypes.number,
   rows: PropTypes.number,
-  // TODO: what is the right tag here?
-  // tag: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  tag: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.func]),
 }
 Placeholder.defaultProps = {
   cols: 1,
   rows: 4,
-  tag: ShimmerLine,
+  tag: PlaceholderLine,
 }
 
 export default Placeholder

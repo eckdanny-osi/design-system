@@ -3,9 +3,12 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
+  Button,
   CardTitle,
+  Placeholder,
 } from '@cwds/components'
 import DemoCard from '../../../../components/DemoCard'
+import LoadingCardExample from './LoadingCardExample.jsx'
 import MultiScopeCardExample from './MultiScopeCard.example.jsx'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
@@ -56,12 +59,39 @@ asldkfj
 
 asldkfj
 
-<Card loading>
+<LoadingCardExample />
+
+```jsx
+<Card>
   <CardHeader>
-    <CardTitle>Async Card</CardTitle>
+    {this.state.isLoading ? (
+      <Placeholder>Uknown Person</Placeholder>
+    ) : (
+      <CardTitle>Fred Jones</CardTitle>
+    )}
   </CardHeader>
-  <CardBody>CardBody</CardBody>
-  <CardFooter>CardFooter</CardFooter>
+  <CardBody>
+    {this.state.isLoading ? (
+      <Placeholder cols={2} rows={3} />
+    ) : (
+      <FriendsList friends={this.data} />
+    )}
+  </CardBody>
+</Card>
+```
+
+asdfasdf
+
+<Card>
+  <CardHeader>
+    <CardTitle>Loading Card</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <Placeholder cols={2} rows={5} />
+  </CardBody>
+  <CardFooter>
+    <Button color="primary">Go!</Button>
+  </CardFooter>
 </Card>
 
 asldkfj
