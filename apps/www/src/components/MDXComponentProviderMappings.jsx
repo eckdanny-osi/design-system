@@ -1,7 +1,14 @@
 import React from 'react'
-import AnchorLink from './AnchorLink'
+import set from 'lodash.set'
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
 import { xonokai } from 'react-syntax-highlighter/styles/prism'
+import AnchorLink from './AnchorLink'
+
+const codeSnippetStyle = set(
+  xonokai,
+  ['pre[class*="language-"]', 'borderRadius'],
+  'none'
+)
 
 export default {
   h1: props => <AnchorLink {...props} tag="h1" />,
@@ -18,7 +25,7 @@ export default {
     return (
       <SyntaxHighlighter
         language={code.props.props.className.slice(9)}
-        style={xonokai}
+        style={codeSnippetStyle}
         children={code.props.children}
       />
     )
