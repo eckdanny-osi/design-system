@@ -3,11 +3,15 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
+  Button,
   CardTitle,
+  Placeholder,
 } from '@cwds/components'
 import DemoCard from '../../../../components/DemoCard'
+import LoadingCardExample from './LoadingCardExample.jsx'
 import MultiScopeCardExample from './MultiScopeCard.example.jsx'
 import PropTable from '../../../../components/PropTable'
+import ReferenceCard from '../../../../components/ReferenceCard'
 import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
@@ -15,7 +19,9 @@ import Docgen from '../ReactDogenInfo.js'
 Use a `Card` to visually organize related content.
 
 <DemoCard>
-  <Card className="mb-0">I am a Card</Card>
+  <Card className="mb-0">
+    <CardBody>I am a Card</CardBody>
+  </Card>
 </DemoCard>
 
 ```jsx
@@ -36,46 +42,58 @@ import { Card } from '@cwds/components'
 
 ### Card Structure
 
-alskdjfalsdkfj
-
-<Card>I'm in a Card!</Card>
-
-But they can also
-
 <Card>
   <CardHeader>
-    <CardTitle>asldkfj</CardTitle>
+    <CardTitle>CardTitle</CardTitle>
   </CardHeader>
   <CardBody>CardBody</CardBody>
   <CardFooter>CardFooter</CardFooter>
 </Card>
 
-asldkfj
-
-### Loading
-
-asldkfj
-
-<Card loading>
+```jsx
+<Card>
   <CardHeader>
-    <CardTitle>Async Card</CardTitle>
+    <CardTitle>CardTitle</CardTitle>
   </CardHeader>
   <CardBody>CardBody</CardBody>
   <CardFooter>CardFooter</CardFooter>
 </Card>
+```
 
-asldkfj
+### Loading State
 
+Many `Card` instances may require async data fetching to resolve before the first _meaningful_ render. To reduce the disorienting layout thrash on users, use a `Placeholder` component to frame the `Card` to its approximate final dimension.
+
+`Placeholder` may be used as a temporary stand-in for either a single line of block flow text or a homogenous grid:
+
+<LoadingCardExample />
+
+```jsx
+<Card>
+  <CardHeader>
+    {this.state.isLoading ? <Placeholder /> : <CardTitle>Fred Jones</CardTitle>}
+  </CardHeader>
+  <CardBody>
+    {this.state.isLoading ? (
+      <Placeholder grid cols={2} rows={3} />
+    ) : (
+      <FriendsList friends={this.data} />
+    )}
+  </CardBody>
+</Card>
+```
+
+The `grid` option is provided as a convenience to the developer. If your particular use case requires `Placeholder` to be visually mapped to content blocks with the _highest_ conformity, please compose content placeholders within the `Grid` components to match your implementation.
+
+<!--
 ### MultiScope Cards (WiP)
 
 asdflkj
 
 <MultiScopeCardExample />
+-->
 
-## Props
-
-@todo
-
+<!--
 ## Related
 
 @todo
@@ -87,3 +105,4 @@ asdflkj
 ### Components
 
 @todo
+-->

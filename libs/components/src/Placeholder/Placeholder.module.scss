@@ -1,0 +1,16 @@
+@import '~@cwds/core/scss/base';
+
+.Placeholder {
+  display: block;
+  background-color: $gray-100;
+  text-indent: -99999px;
+}
+
+.PlaceholderRow {
+  margin-bottom: -$spacer-2;
+  .PlaceholderCol {
+    .Placeholder {
+      margin-bottom: $spacer-2;
+    }
+  }
+}
