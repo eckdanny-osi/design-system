@@ -1,3 +1,31 @@
+import ReferenceCard from '../../../components/ReferenceCard'
+
 ## Functional CSS
 
-@TODO
+In order to promote compositional css class usage in a consistent manner, the <tt>global</tt> stylesheet exposes most of the [Bootstrap utility classes](https://getbootstrap.com/docs/4.1/utilities). This technical design decision exposes the design system to developers so they may style color, layout, etc all while remaining safely within the constructs of the system. The system exposes discrete and predetermined values to reduce the need for application developers to fork/override style rules which ultimately introduces inconsistency in CARES.
+
+Here's a quick example:
+
+Say we need to do some pixel pushing on an `Alert` component. Systematic declaration of inline-styles or passing of custom css modules to CARES components weakens the visual contract we're trying to establish at component level.
+
+```jsx
+// Do NOT do this
+<Alert
+  style={{ marginTop: '42px' }}
+  className={Styles['MyBlueBorderClass']}
+>Oh Nos!</Alert>
+
+// Do this
+<Alert className="mt-2 border-info">Ahh... Much better</Alert>
+```
+
+<ReferenceCard>
+
+The Bootstrap4 utility classes are quite powerful and expressive. We **_encourage_** application
+developers to take full advantage of [`Spacing`](https://getbootstrap.com/docs/4.1/utilities/spacing/)
+and [`Flex`](https://getbootstrap.com/docs/4.1/utilities/flex/) helper classes. However we caution
+against overuse of most other helpers (e.g.; `Shadows`, `Borders`, etc) since visual consistency
+gaurantees from the component become weak. We recommend having as few "custom styles" as possible
+in digital service application projects.
+
+</ReferenceCard>

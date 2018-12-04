@@ -2,84 +2,27 @@ import { Card, CardBody } from '@cwds/components'
 
 ## Typography
 
-some blurb about our type system...
-
-### Headings
-
 <Card>
   <CardBody>
     <h1>Heading 1 (Page Title)</h1>
     <h2>Heading 2 (Header)</h2>
     <h3>Heading 3 (Title)</h3>
     <h4>Heading 4 (Subheader)</h4>
-    <div>Regular</div>
-  </CardBody>
-</Card>
-
-### Inline Text
-
-<Card>
-  <CardBody>
-    <p>
-      You can use the mark tag to <mark>highlight</mark> text.
+    <div className="mb-1">Regular</div>
+    <p className="my-1">
+      <del>This is deleted text</del>
     </p>
-    <p>
-      <del>This line of text is meant to be treated as deleted text.</del>
+    <p className="my-1">
+      <u>This is underlined text</u>
     </p>
-    <p>
-      <s>This line of text is meant to be treated as no longer accurate.</s>
+    <p className="my-1">
+      <small>This is small text</small>
     </p>
-    <p>
-      <ins>
-        This line of text is meant to be treated as an addition to the document.
-      </ins>
+    <p className="my-1">
+      <strong>This is bold text</strong>
     </p>
-    <p>
-      <u>This line of text will render as underlined</u>
+    <p className="my-1">
+      <em>This is italicized text</em>
     </p>
-    <p>
-      <small>This line of text is meant to be treated as fine print.</small>
-    </p>
-    <p>
-      <strong>This line rendered as bold text.</strong>
-    </p>
-    <p>
-      <em>This line rendered as italicized text.</em>
-    </p>
-  </CardBody>
-</Card>
-
-### Lists
-
-<Card>
-  <CardBody>
-    <p>Unordered List</p>
-    <ul>
-      <li>List Item</li>
-      <li>List Item</li>
-      <li>
-        List Item
-        <ul>
-          <li>Nested Item</li>
-          <li>Nested Item</li>
-          <li>Nested Item</li>
-        </ul>
-      </li>
-      <li>List Item</li>
-    </ul>
-    <p>Ordered List</p>
-    <ol>
-      <li>List Item</li>
-      <li>List Item</li>
-      <li>
-        List Item
-        <ul>
-          <li>Nested Item</li>
-          <li>Nested Item</li>
-          <li>Nested Item</li>
-        </ul>
-      </li>
-      <li>List Item</li>
-    </ol>
   </CardBody>
 </Card>
