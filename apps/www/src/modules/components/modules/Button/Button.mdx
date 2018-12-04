@@ -1,11 +1,11 @@
-import { Button } from '@cwds/components'
+import { Button, Icon, IconButton, Card, CardBody } from '@cwds/components'
 import DemoCard from '../../../../components/DemoCard'
 import PropTable from '../../../../components/PropTable'
 import Docgen from '../ReactDogenInfo.js'
 
 ## Synopsis
 
-Use a `Button` to indicate an opportunity for the user to interact with the app.
+`Button`s indicate an opportunity for users to trigger a system response when activated.
 
 <DemoCard>
   <Button color="primary">Click Me</Button>
@@ -15,9 +15,70 @@ Use a `Button` to indicate an opportunity for the user to interact with the app.
 import { Button } from '@cwds/components'
 ```
 
+The `Button` is the dominant component for indicating Call To Action (CTA) opportunties to the user. Within a particular context, there may exist multiple CTAs and
+
+<DemoCard>
+  <div className="d-flex justify-content-around">
+    <div className="text-center">
+      <Button color="primary">Submit</Button>
+      <div>Primary</div>
+    </div>
+    <div className="text-center">
+      <Button>Cancel</Button>
+      <div>Secondary (default)</div>
+    </div>
+    <div className="text-center">
+      <Button color="warning">Detonate</Button>
+      <div>Warning</div>
+    </div>
+  </div>
+</DemoCard>
+
 ## Usage Guidelines
 
-@TODO
+### Primary Buttons
+
+- Primary buttons should be used to call attention to an action on a form, or highlight the strongest calls to action on a page, or in a card.
+- Keep in mind that not every screen needs a primary button.
+
+### Secondary Buttons
+
+- Secondary buttons should be used for secondary actions, semi-destructive actions such as "Cancel," or to discourage usage.
+
+### Buttons with Icon
+
+- Buttons with Icon may be used when you want to draw more attention to the button, or when an icon helps to clarify or convey more meaning.
+
+<IconButton icon="circle-notch" spin color="primary" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="secondary" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="accent" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="success" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="info" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="warning" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="danger" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="light" size="sm">
+  Busy
+</IconButton><br />
+<IconButton icon="circle-notch" spin color="dark" size="sm">
+  Busy
+</IconButton>
 
 ## Props
 
