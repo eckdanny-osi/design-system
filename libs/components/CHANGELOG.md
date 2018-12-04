@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/ca-cwds/design-system/compare/v0.5.6...v0.5.7) (2018-12-04)
+
+
+### Bug Fixes
+
+* **components:** add IconButton ([#279](https://github.com/ca-cwds/design-system/issues/279)) ([c4aeb6b](https://github.com/ca-cwds/design-system/commit/c4aeb6b))
+* **components:** add placeholder component ([#281](https://github.com/ca-cwds/design-system/issues/281)) ([5913b53](https://github.com/ca-cwds/design-system/commit/5913b53))
+* **components:** Avatar alt, alignment fix ([#273](https://github.com/ca-cwds/design-system/issues/273)) ([d71d78a](https://github.com/ca-cwds/design-system/commit/d71d78a))
+
+
+
+
+
 ## [0.5.6](https://github.com/ca-cwds/design-system/compare/v0.5.5...v0.5.6) (2018-11-30)
 
 

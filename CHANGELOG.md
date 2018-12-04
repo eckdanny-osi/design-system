@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/ca-cwds/design-system/compare/v0.5.6...v0.5.7) (2018-12-04)
+
+
+### Bug Fixes
+
+* **components:** add IconButton ([#279](https://github.com/ca-cwds/design-system/issues/279)) ([c4aeb6b](https://github.com/ca-cwds/design-system/commit/c4aeb6b))
+* **components:** add placeholder component ([#281](https://github.com/ca-cwds/design-system/issues/281)) ([5913b53](https://github.com/ca-cwds/design-system/commit/5913b53))
+* resolve missing dep on lodash.set ([#283](https://github.com/ca-cwds/design-system/issues/283)) ([7c4bd15](https://github.com/ca-cwds/design-system/commit/7c4bd15))
+* **components:** Avatar alt, alignment fix ([#273](https://github.com/ca-cwds/design-system/issues/273)) ([d71d78a](https://github.com/ca-cwds/design-system/commit/d71d78a))
+* restore image for Figure doc-only component ([#289](https://github.com/ca-cwds/design-system/issues/289)) ([8796298](https://github.com/ca-cwds/design-system/commit/8796298))
+* **www:** add ReferenceCard component ([#269](https://github.com/ca-cwds/design-system/issues/269)) ([a0e6384](https://github.com/ca-cwds/design-system/commit/a0e6384))
+* **www:** fix CRA lint warning in PropTable ([#278](https://github.com/ca-cwds/design-system/issues/278)) ([ae4bd6b](https://github.com/ca-cwds/design-system/commit/ae4bd6b))
+* **www:** handle className in AnchorLink ([#274](https://github.com/ca-cwds/design-system/issues/274)) ([2b24321](https://github.com/ca-cwds/design-system/commit/2b24321))
+* **www:** no boder radius for doc-only components ([#277](https://github.com/ca-cwds/design-system/issues/277)) ([48af62f](https://github.com/ca-cwds/design-system/commit/48af62f))
+* **www:** remove unvalidated search modal ([#285](https://github.com/ca-cwds/design-system/issues/285)) ([d7b0160](https://github.com/ca-cwds/design-system/commit/d7b0160))
+* **www:** update docs for Avatar, Alert, Button ([#287](https://github.com/ca-cwds/design-system/issues/287)) ([bd9ee1f](https://github.com/ca-cwds/design-system/commit/bd9ee1f))
+* **www:** update general DS article content ([#286](https://github.com/ca-cwds/design-system/issues/286)) ([cbb4f24](https://github.com/ca-cwds/design-system/commit/cbb4f24))
+
+
+### Features
+
+* **tech:** add eslint and eslint-prettier ([#284](https://github.com/ca-cwds/design-system/issues/284)) ([1b82e05](https://github.com/ca-cwds/design-system/commit/1b82e05))
+
+
+
+
+
 ## [0.5.6](https://github.com/ca-cwds/design-system/compare/v0.5.5...v0.5.6) (2018-11-30)
 
 
