@@ -7,10 +7,6 @@ import {
   BreadcrumbItem,
 } from '@cwds/components'
 
-// Demo some CTA usage
-import SearchWizard from './SearchWizard'
-const ContextualActions = () => <SearchWizard />
-
 const SideNav = withRouter(({ match, routes = [] }) => {
   if (!routes.length) return null
   return (

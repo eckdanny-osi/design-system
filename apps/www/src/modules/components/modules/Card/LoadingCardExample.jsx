@@ -7,7 +7,6 @@ import {
   Placeholder,
   Button,
 } from '@cwds/components'
-import DemoCard from '../../../../components/DemoCard'
 
 class Example extends Component {
   state = {
