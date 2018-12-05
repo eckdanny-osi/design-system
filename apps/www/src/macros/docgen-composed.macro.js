@@ -2,6 +2,7 @@ const { createMacro } = require('babel-plugin-macros')
 const docgen = require('react-docgen')
 const path = require('path')
 const fs = require('fs')
+const merge = require('lodash.merge')
 
 module.exports = createMacro(docgenComposedMacro)
 
@@ -29,7 +30,9 @@ function docgenComposedMacro({ references, state, babel }) {
 function composeDocgens(modules) {
   return modules
     .reverse()
-    .reduce((acc, m) => Object.assign({}, acc, getDocgen(m)), {})
+    .reduce((acc, m) => {
+      return merge(acc, getDocgen(m))
+    }, {})
 }
 
 function getDocgen(module) {

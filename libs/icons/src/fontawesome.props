@@ -1,0 +1,72 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+/**
+ * @file: The propTypes and defaultProps are manually lifted from @fortawesome/react-fontawesome
+ * We're doing so that react-docgen can generate docgens and merge them (recursively) for our
+ * guide site documentation pages. The FAKE class should NEVER be published, shipped, consumed or
+ * referenced in any way other than by our private docgen-composed.macro
+ */
+
+export default class FAKE extends Component {
+  constructor() { throw new Error('DOCS ONLY') }
+  render() { return null }
+  static propTypes = {
+    border: PropTypes.bool,
+    className: PropTypes.string,
+    mask: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.string,
+    ]),
+    fixedWidth: PropTypes.bool,
+    inverse: PropTypes.bool,
+    flip: PropTypes.oneOf(['horizontal', 'vertical', 'both']),
+    icon: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.string,
+    ]),
+    listItem: PropTypes.bool,
+    pull: PropTypes.oneOf(['right', 'left']),
+    pulse: PropTypes.bool,
+    rotation: PropTypes.oneOf([90, 180, 270]),
+    size: PropTypes.oneOf([
+      'lg',
+      'xs',
+      'sm',
+      '1x',
+      '2x',
+      '3x',
+      '4x',
+      '5x',
+      '6x',
+      '7x',
+      '8x',
+      '9x',
+      '10x',
+    ]),
+    spin: PropTypes.bool,
+    symbol: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    title: PropTypes.string,
+    transform: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  }
+  static defaultProps = {
+    border: false,
+    className: '',
+    mask: null,
+    fixedWidth: false,
+    inverse: false,
+    flip: null,
+    icon: null,
+    listItem: false,
+    pull: null,
+    pulse: false,
+    rotation: null,
+    size: null,
+    spin: false,
+    symbol: false,
+    title: '',
+    transform: null,
+  }
+}

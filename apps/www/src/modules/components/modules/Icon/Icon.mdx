@@ -1,7 +1,10 @@
-import { Icon, Button } from '@cwds/components'
-import IconSquare from './IconSquare'
-import IconGallery from './IconGallery'
-import DemoCard from '../../../../components/DemoCard'
+import { Icon, Alert, Button, IconButton, Badge } from "@cwds/components";
+import IconSquare from "./IconSquare";
+import IconGallery from "./IconGallery";
+import DemoCard from "../../../../components/DemoCard";
+import ReferenceCard from "../../../../components/ReferenceCard";
+import PropTable from "../../../../components/PropTable";
+import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
@@ -12,27 +15,149 @@ The `Icon` is a visual cue to for various associations.
 </DemoCard>
 
 ```jsx
-import { Icon } from '@cwds/components'
+import { Icon } from "@cwds/components";
 ```
 
-## Usage Guidelines
+### Icon Library
+
+<Alert color="warning">
+  Please <strong>do not</strong> use unregistered icons in CARES apps!
+</Alert>
+
+Here are the icons registered in the CARES icon library:
 
 <IconGallery className="my-3" />
 
-## Examples
+<ReferenceCard>
 
-@TODO
+The CARES `Icon` component is a thin wrapper around
+[`react-fontawesome`](https://github.com/FortAwesome/react-fontawesome#react-fontawesome). For complete component documentation, please reference their docs. This article lists all supported props, but will only focus on the relevant props and usage for CARES app devs.
 
-### Colors
+</ReferenceCard>
 
 ## Props
 
-@TODO
+<PropTable docgen={Docgen.Icon} />
 
+## Usage Guidelines
+
+The design system Iconography is most effective when used _consistently_!
+
+- DO's
+  - foo
+  - bar
+  - bizz
+- DON'T
+  - quo
+  - qux
+
+### Accessibility
+
+The `Icon` renders an non-focusable `svg` element with the `[aria-role="hidden"]`. Provision of `alt` text is typically not required. Do ensure that if you are using an `Icon` within an interactive container that the parent element does have `alt` text and `aria-*` attributes as required.
+
+## Examples
+
+`Icon`s are **_rarely_** used in isolation.
+
+### Icon Name
+
+<DemoCard>
+  <div>
+    <Icon className="mx-2" name="cog" size="2x" />
+    <Icon className="mx-2" name="user" size="2x" />
+    <Icon className="mx-2" name="comment-alt" size="2x" />
+    <Icon className="mx-2" set="far" name="comment-alt" size="2x" />
+  </div>
+</DemoCard>
+
+```jsx
+<Icon name="cog" size="2x" />
+<Icon name="user" size="2x" />
+<Icon name="comment-alt" size="2x" />
+<Icon name="comment-alt" set="far" size="2x" />
+```
+
+### Colors
+
+Thematic colors or valid color values may be specified using the `color` prop:
+
+<DemoCard>
+  <div>
+    <Icon className="mx-2" name="comment-alt" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="primary" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="warning" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="danger" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="info" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="accent" size="2x" />
+    <Icon className="mx-2" name="comment-alt" color="#b4da55" size="2x" />
+  </div>
+</DemoCard>
+
+```jsx
+<Icon name="comment-alt" size="2x" />
+<Icon name="comment-alt" color="primary" size="2x" />
+<Icon name="comment-alt" color="warning" size="2x" />
+<Icon name="comment-alt" color="danger" size="2x" />
+<Icon name="comment-alt" color="info" size="2x" />
+<Icon name="comment-alt" color="accent" size="2x" />
+<Icon name="comment-alt" color="#b4da55" size="2x" />
+```
+
+### Size
+
+<DemoCard>
+  <div className="d-flex align-items-center">
+    <Icon className="m-2" name="cog" size="xs" />
+    <Icon className="m-2" name="cog" size="sm" />
+    <Icon className="m-2" name="cog" />
+    <Icon className="m-2" name="cog" size="lg" />
+  </div>
+</DemoCard>
+
+```jsx
+<Icon name="cog" size="xs" />
+<Icon name="cog" size="sm" />
+<Icon name="cog" />
+<Icon name="cog" size="lg" />
+```
+
+<DemoCard>
+  <div className="d-flex align-items-center">
+    <Icon className="m-2" name="cog" size="1x" />
+    <Icon className="m-2" name="cog" size="2x" />
+    <Icon className="m-2" name="cog" size="3x" />
+    <Icon className="m-2" name="cog" size="4x" />
+    <Icon className="m-2" name="cog" size="5x" />
+  </div>
+</DemoCard>
+
+```jsx
+<Icon name="cog" size="1x" />
+<Icon name="cog" size="2x" />
+<Icon name="cog" size="3x" />
+<Icon name="cog" size="4x" />
+<Icon name="cog" size="5x" />
+```
+
+### Animating
+
+<DemoCard>
+  <Icon name="cog" size="lg" spin />
+</DemoCard>
+
+```jsx
+<Icon name="cog" size="lg" spin />
+```
+
+## Related Articles
+
+<!--
 ### Patterns
 
 @TODO
+-->
 
 ### Components
 
-@TODO
+- [`IconButton`]()
+- [`Alert`](/components/alert)

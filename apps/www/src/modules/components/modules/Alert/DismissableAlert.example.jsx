@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, CardBody, Alert } from '@cwds/components'
+import DemoCard from '../../../../components/DemoCard'
 
 class DismissableAlertExample extends Component {
   rdoGrpName = 'DismissableAlertExampleGroup'
@@ -11,7 +12,7 @@ class DismissableAlertExample extends Component {
   }
   render() {
     return (
-      <Card>
+      <DemoCard>
         <CardBody>
           <Alert toggle={this.toggle} isOpen={this.state.isOpen}>
             <p>I am dismissable!</p>
@@ -62,7 +63,7 @@ class DismissableAlertExample extends Component {
             </CardBody>
           </Card>
         </CardBody>
-      </Card>
+      </DemoCard>
     )
   }
 }
