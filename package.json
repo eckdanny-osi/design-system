@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:libs": "yarn test --testPathIgnorePatterns=\"apps/*\"",
     "test:all": "CI=true lerna run --parallel test ",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "start": "cd apps/www && yarn react-scripts start",
@@ -20,9 +21,11 @@
     "build:watch": "lerna run --scope @cwds/* --parallel build:watch",
     "dev": "yarn build:watch",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "prerelease": "yarn lint:libs && yarn test:libs && yarn build:libs",
     "release": "lerna publish --conventional-commits --force-publish",
-    "lint": "eslint --ext .jsx --ext .js libs/",
-    "lint:fix": "yarn lint --fix"
+    "lint": "eslint --ext .js,.jsx",
+    "lint:libs": "yarn lint libs",
+    "lint:libs:fix": "yarn lint:libs --fix"
   },
   "workspaces": {
     "nohoist": [
