@@ -1,13 +1,18 @@
 module.exports = {
   extends: [
+    'standard',
+    'plugin:react/recommended',
     'prettier',
+    'prettier/react',
+    'prettier/standard'
   ],
-  plugins: ['prettier'],
+  plugins: ['react', 'prettier', 'standard', 'jest'],
   env: {
     browser: true,
     es6: true,
     jasmine: true,
     node: true,
+    'jest/globals': true,
   },
   rules: {
     'prettier/prettier': [
