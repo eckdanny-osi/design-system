@@ -7,29 +7,26 @@ import {
 } from '@cwds/reactstrap'
 
 export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      dropdownOpen: false,
-    }
+  state = {
+    dropdownOpen: false,
   }
-
-  toggle() {
+  toggle = () => {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen,
     }))
   }
-
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle caret>Dropdown</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem>Action</DropdownItem>
+          <DropdownItem disabled>Disabled</DropdownItem>
+          <DropdownItem>Foo</DropdownItem>
+          <DropdownItem>Bar</DropdownItem>
+          <DropdownItem>Quo</DropdownItem>
+          <DropdownItem>Qux</DropdownItem>
           <DropdownItem divider />
           <DropdownItem>Another Action</DropdownItem>
         </DropdownMenu>

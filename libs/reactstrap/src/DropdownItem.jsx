@@ -40,22 +40,20 @@ class DropdownItem extends RSDropdownItem {
       }
     }
 
-    return <div>alskdfj</div>
-
-    // return (
-    //   <Tag
-    //     type={
-    //       Tag === 'button' && (props.onClick || this.props.toggle)
-    //         ? 'button'
-    //         : undefined
-    //     }
-    //     {...props}
-    //     tabIndex={tabIndex}
-    //     role={role}
-    //     className={classes}
-    //     onClick={this.onClick}
-    //   />
-    // )
+    return (
+      <Tag
+        type={
+          Tag === 'button' && (props.onClick || this.props.toggle)
+            ? 'button'
+            : undefined
+        }
+        {...props}
+        tabIndex={tabIndex}
+        role={role}
+        className={classes}
+        onClick={this.onClick}
+      />
+    )
   }
 }
 
