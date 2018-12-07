@@ -40,17 +40,11 @@
  *   - UncontrolledNavDropdown
  */
 
-import cssModule from '@cwds/core/dist/bootstrap-cares.module.css'
-import { CardTitle } from 'reactstrap'
-import { Util } from './utils'
-
-Util.setGlobalCssModule(cssModule)
-CardTitle.defaultProps.tag = 'div'
-
-export { Util, CardTitle }
-
+// These exports are overrides or have side-effects!
+export { default as CardTitle } from './CardTitle'
 export { default as Dropdown } from './Dropdown'
 export { default as DropdownItem } from './DropdownItem'
+export { Util } from './utils'
 
 export {
   Badge,
@@ -67,8 +61,6 @@ export {
   Col,
   Collapse,
   Container,
-  // Dropdown,
-  // DropdownItem,
   DropdownMenu,
   DropdownToggle,
   Fade,
