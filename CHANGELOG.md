@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/ca-cwds/design-system/compare/v0.5.7...v0.5.8) (2018-12-07)
+
+
+### Bug Fixes
+
+* **build:** tidy npm run scripts ([#295](https://github.com/ca-cwds/design-system/issues/295)) ([9843063](https://github.com/ca-cwds/design-system/commit/9843063))
+* **components:** WAI-ARIA Dropdown fixes ([#301](https://github.com/ca-cwds/design-system/issues/301)) ([2690b12](https://github.com/ca-cwds/design-system/commit/2690b12))
+* **datagrid:** always highlight rows ([#298](https://github.com/ca-cwds/design-system/issues/298)) ([198db9a](https://github.com/ca-cwds/design-system/commit/198db9a))
+* **datagrid:** fix typo ([#302](https://github.com/ca-cwds/design-system/issues/302)) ([9696299](https://github.com/ca-cwds/design-system/commit/9696299))
+* **tech:** add eslint standard and react plugins ([#296](https://github.com/ca-cwds/design-system/issues/296)) ([e5b9a57](https://github.com/ca-cwds/design-system/commit/e5b9a57))
+* **www:** add react-testing-library ([#294](https://github.com/ca-cwds/design-system/issues/294)) ([f974096](https://github.com/ca-cwds/design-system/commit/f974096))
+* **www:** fix DemoCard overflow ([#300](https://github.com/ca-cwds/design-system/issues/300)) ([65004ef](https://github.com/ca-cwds/design-system/commit/65004ef))
+* **www:** update Icon docs ([#292](https://github.com/ca-cwds/design-system/issues/292)) ([0c0fad5](https://github.com/ca-cwds/design-system/commit/0c0fad5))
+
+
+
+
+
 ## [0.5.7](https://github.com/ca-cwds/design-system/compare/v0.5.6...v0.5.7) (2018-12-04)
 
 

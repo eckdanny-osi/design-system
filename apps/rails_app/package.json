@@ -1,6 +1,6 @@
 {
   "name": "rails_app",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "license": "AGPL-3.0",
   "private": true,
   "dependencies": {

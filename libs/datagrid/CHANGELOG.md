@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/ca-cwds/design-system/compare/v0.5.7...v0.5.8) (2018-12-07)
+
+
+### Bug Fixes
+
+* **datagrid:** always highlight rows ([#298](https://github.com/ca-cwds/design-system/issues/298)) ([198db9a](https://github.com/ca-cwds/design-system/commit/198db9a))
+* **datagrid:** fix typo ([#302](https://github.com/ca-cwds/design-system/issues/302)) ([9696299](https://github.com/ca-cwds/design-system/commit/9696299))
+
+
+
+
+
 ## [0.5.7](https://github.com/ca-cwds/design-system/compare/v0.5.6...v0.5.7) (2018-12-04)
 
 **Note:** Version bump only for package @cwds/datagrid

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/ca-cwds/design-system/compare/v0.5.7...v0.5.8) (2018-12-07)
+
+
+### Bug Fixes
+
+* **components:** WAI-ARIA Dropdown fixes ([#301](https://github.com/ca-cwds/design-system/issues/301)) ([2690b12](https://github.com/ca-cwds/design-system/commit/2690b12))
+
+
+
+
+
 ## [0.5.7](https://github.com/ca-cwds/design-system/compare/v0.5.6...v0.5.7) (2018-12-04)
 
 **Note:** Version bump only for package @cwds/reactstrap
