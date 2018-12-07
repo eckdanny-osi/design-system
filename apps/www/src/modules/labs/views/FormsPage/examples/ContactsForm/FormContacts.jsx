@@ -153,7 +153,7 @@ export default () => (
                       <Collapse
                         style={{ width: '100%' }}
                         isOpen={
-                          'yes' === props.values.inPersonDetail.collateralVisit
+                          props.values.inPersonDetail.collateralVisit === 'yes'
                         }
                       >
                         <Col md={12}>

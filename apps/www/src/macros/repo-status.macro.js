@@ -87,7 +87,7 @@ function lerna() {
 
 module.exports = createMacro(repoStatusMacro)
 
-if (typeof require != 'undefined' && require.main === module) {
+if (typeof require !== 'undefined' && require.main === module) {
   process.stdout.write(
     `${JSON.stringify(collectRepoStatus(), null, 2)}\n`,
     'utf8'

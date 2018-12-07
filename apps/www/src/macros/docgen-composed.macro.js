@@ -28,11 +28,9 @@ function docgenComposedMacro({ references, state, babel }) {
 }
 
 function composeDocgens(modules) {
-  return modules
-    .reverse()
-    .reduce((acc, m) => {
-      return merge(acc, getDocgen(m))
-    }, {})
+  return modules.reverse().reduce((acc, m) => {
+    return merge(acc, getDocgen(m))
+  }, {})
 }
 
 function getDocgen(module) {

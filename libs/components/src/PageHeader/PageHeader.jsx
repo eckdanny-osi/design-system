@@ -19,7 +19,7 @@ class PageHeader extends PureComponent {
       <div className={cn(styles.PageHeader, 'd-flex', 'align-items-center')}>
         <div className={cn('flex-grow-1')}>
           <h1 className={cn(styles.PageTitle, 'm-0')}>
-            {'function' === typeof title ? title() : title}
+            {typeof title === 'function' ? title() : title}
           </h1>
         </div>
 

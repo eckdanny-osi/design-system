@@ -17,9 +17,9 @@ const BreadcrumbContainer = ({ children }) => (
 class Banner extends Component {
   renderBreadcrumbs = () => {
     const { breadcrumb } = this.props
-    if (false === breadcrumb) {
+    if (breadcrumb === false) {
       return null
-    } else if (true === breadcrumb) {
+    } else if (breadcrumb === true) {
       throw new TypeError('invalid argument')
     } else if (React.isValidElement(breadcrumb)) {
       return <BreadcrumbContainer>{breadcrumb}</BreadcrumbContainer>

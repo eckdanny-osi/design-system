@@ -25,6 +25,7 @@
     "release": "lerna publish --conventional-commits --force-publish",
     "lint": "eslint --ext .jsx,.js libs/ apps/www/src/",
     "lint:libs": "eslint --ext .jsx,.js libs/",
+    "lint:apps": "eslint --ext .jsx,.js apps/www/src/",
     "lint:fix": "yarn lint --fix"
   },
   "workspaces": {

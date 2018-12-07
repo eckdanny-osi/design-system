@@ -2,11 +2,12 @@ module.exports = {
   extends: [
     'standard',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react',
     'prettier/standard'
   ],
-  plugins: ['react', 'prettier', 'standard', 'jest'],
+  plugins: ['react', 'prettier', 'standard', 'jsx-a11y', 'jest', 'babel'],
   env: {
     browser: true,
     es6: true,
@@ -15,6 +16,7 @@ module.exports = {
     'jest/globals': true,
   },
   rules: {
+    'babel/no-invalid-this': 1,
     'prettier/prettier': [
       'error',
       {

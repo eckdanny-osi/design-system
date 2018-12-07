@@ -118,7 +118,7 @@ class AdvancedPeopleSearchDataGrid extends Component {
     this.peopleService
       .search({
         from:
-          0 === this.state.page ? 0 : (state.page - 1) * this.state.pageSize,
+          this.state.page === 0 ? 0 : (state.page - 1) * this.state.pageSize,
         size: this.state.pageSize,
         sort: [],
         query: [],

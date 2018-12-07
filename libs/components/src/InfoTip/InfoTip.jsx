@@ -17,7 +17,7 @@ class InfoTip extends PureComponent {
   }
 
   renderText() {
-    if ('function' === typeof this.props.text) {
+    if (typeof this.props.text === 'function') {
       return this.props.text()
     }
     return this.props.text
