@@ -40,16 +40,12 @@
  *   - UncontrolledNavDropdown
  */
 
-// see https://github.com/reactstrap/reactstrap/issues/1297
-import { CardTitle } from 'reactstrap'
-CardTitle.defaultProps.tag = 'div'
-export { CardTitle }
-
-// Add keys to keyCodes map
-import { Util } from 'reactstrap'
-Util.keyCodes['p'] = 80
-Util.keyCodes['n'] = 78
-export { Util }
+// These exports are overrides or have side-effects!
+export { default as CardTitle } from './CardTitle'
+export { default as Dropdown } from './Dropdown'
+export { default as DropdownItem } from './DropdownItem'
+export { default as UncontrolledDropdown } from './UncontrolledDropdown'
+export { Util } from './utils'
 
 export {
   Badge,
@@ -66,8 +62,6 @@ export {
   Col,
   Collapse,
   Container,
-  Dropdown,
-  DropdownItem,
   DropdownMenu,
   DropdownToggle,
   Fade,
@@ -100,8 +94,5 @@ export {
   Tooltip,
   UncontrolledAlert,
   UncontrolledButtonDropdown,
-  UncontrolledDropdown,
   UncontrolledTooltip,
 } from 'reactstrap'
-
-import './init'

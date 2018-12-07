@@ -10,6 +10,7 @@ import Badge from '!babel-loader!@mdx-js/loader!./modules/Badge/Badge.mdx'
 import Button from '!babel-loader!@mdx-js/loader!./modules/Button/Button.mdx'
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/ButtonGroup.mdx'
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx'
+import Dropdown from '!babel-loader!@mdx-js/loader!./modules/Dropdown/Dropdown.mdx'
 // import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx'
 import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx'
@@ -67,7 +68,7 @@ const routes = {
         },
       ],
     },
-    { title: 'Dropdown', path: '/dropdown' },
+    { title: 'Dropdown', path: '/dropdown', component: Dropdown },
     { title: 'Field', path: '/field' },
     { title: 'FormFeedback', path: '/formfeedback' },
     { title: 'FormGroup', path: '/formgroup' },
