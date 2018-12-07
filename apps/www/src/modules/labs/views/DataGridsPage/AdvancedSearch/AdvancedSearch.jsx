@@ -165,7 +165,6 @@ class AdvancedPeopleSearchDataGrid extends Component {
             pageSize={this.state.pageSize}
             loading={loading}
             columns={columns}
-            className="-highlight"
             onFetchData={this.onFetchData}
             onSortedChange={sorted => this.setState({ sorted })}
             onPageChange={page => this.setState({ page })}

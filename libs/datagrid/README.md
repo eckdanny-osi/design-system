@@ -32,7 +32,7 @@ const columns = [
 
 const App = () => (
   <div>
-    <DataGrid data={mtcars} columns={columns} className="-highlight" />
+    <DataGrid data={mtcars} columns={columns} />
   </div>
 );
 

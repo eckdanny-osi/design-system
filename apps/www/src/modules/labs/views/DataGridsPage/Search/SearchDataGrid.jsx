@@ -99,7 +99,6 @@ class CarsDataGrid extends Component {
             data={filteredData || data}
             columns={columns}
             defaultPageSize={10}
-            className="-highlight"
             filterable={false}
           >
             {(state, makeTable, instance) => {

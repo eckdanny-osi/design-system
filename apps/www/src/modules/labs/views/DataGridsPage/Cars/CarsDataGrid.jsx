@@ -29,7 +29,7 @@ const CarsDataGrid = () => (
       <CardTitle>Cars</CardTitle>
     </CardHeader>
     <CardBody className="pt-0">
-      <DataGrid data={mtcars} columns={columns} className="-highlight" />
+      <DataGrid data={mtcars} columns={columns} />
     </CardBody>
   </Card>
 )

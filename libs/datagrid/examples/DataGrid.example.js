@@ -28,7 +28,6 @@ class CarsDataGrid extends Component {
               { Header: 'carb', accessor: 'carb' },
             ]}
             defaultPageSize={10}
-            className="-highlight"
           />
         </Card.Body>
       </Card>
