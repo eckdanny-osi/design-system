@@ -1,10 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-// import App from './App';
+import React from "react";
+import { render } from "react-testing-library";
+import App from "./App";
 
-it.skip('renders without crashing', () => {
-  // TODO: figure out how to mock loaders?! Nah
-  // const div = document.createElement('div');
-  // ReactDOM.render(<App />, div);
-  // ReactDOM.unmountComponentAtNode(div);
-})
+jest.mock("./modules/status", () => () => null);
+jest.mock("./modules/home", () => () => null);
+jest.mock("./modules/core-style", () => () => null);
+jest.mock("./modules/labs", () => () => null);
+jest.mock("./modules/components", () => () => null);
+
+describe("App", () => {
+  it("renders a jumpToTop button", () => {
+    const spy = jest
+      .spyOn(global.window, "scrollTo")
+      .mockImplementationOnce(() => {});
+    const wrapper = render(<App />);
+    const $el = wrapper.getByText("Scroll to top").parentElement;
+    expect($el).toBeInTheDocument();
+    expect($el.tagName).toBe("BUTTON");
+    expect(spy).not.toHaveBeenCalled();
+    $el.click();
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+});
