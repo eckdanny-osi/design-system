@@ -4,3 +4,4 @@ libs/core/scss
 libs/core/js/core.js
 *.json5
 libs/*/dist
+**/node_modules/*

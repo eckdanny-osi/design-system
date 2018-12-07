@@ -1,3 +1,4 @@
+const pkg = require('./package.json')
 module.exports = {
   extends: [
     'standard',
@@ -5,7 +6,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react',
-    'prettier/standard'
+    'prettier/standard',
   ],
   plugins: ['react', 'prettier', 'standard', 'jsx-a11y', 'jest', 'babel'],
   env: {
@@ -24,7 +25,7 @@ module.exports = {
         trailingComma: 'es5',
         singleQuote: true,
         semi: false,
-      }
+      },
     ],
   },
   parser: 'babel-eslint',
@@ -37,4 +38,9 @@ module.exports = {
     },
     sourceType: 'module',
   },
-};
+  settings: {
+    react: {
+      version: (pkg.devDependencies && pkg.devDependencies.react) || '^16.4',
+    },
+  },
+}
