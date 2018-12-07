@@ -98,7 +98,6 @@ export default class DataGridsExample extends Component {
             onFetchData={this.fetchData}
             defaultSorted={columnSort}
             loading={this.state.status === 'loading'}
-            className="-highlight"
             manual
           />
         </CardBody>

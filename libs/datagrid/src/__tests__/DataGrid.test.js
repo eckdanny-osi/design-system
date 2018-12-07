@@ -29,9 +29,14 @@ describe('DataGrid', () => {
             },
           ]}
           defaultPageSize={10}
-          className="-striped -highlight"
+          className="-striped"
         />
       )
     }).not.toThrow()
+  })
+
+  it('has the highlight className', () => {
+    const wrapper = shallow(<DataGrid data={[]} />)
+    expect(wrapper.at(0).hasClass('-highlight')).toBe(true)
   })
 })
