@@ -27,6 +27,8 @@ module.exports = {
         semi: false,
       },
     ],
+    'react/display-name': [0],
+    'react/prop-types': [2, { skipUndeclared: true }],
   },
   parser: 'babel-eslint',
   parserOptions: {
