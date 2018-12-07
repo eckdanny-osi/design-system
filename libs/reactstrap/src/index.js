@@ -40,16 +40,17 @@
  *   - UncontrolledNavDropdown
  */
 
-// see https://github.com/reactstrap/reactstrap/issues/1297
+import cssModule from '@cwds/core/dist/bootstrap-cares.module.css'
 import { CardTitle } from 'reactstrap'
-CardTitle.defaultProps.tag = 'div'
-export { CardTitle }
+import { Util } from './utils'
 
-// Add keys to keyCodes map
-import { Util } from 'reactstrap'
-Util.keyCodes['p'] = 80
-Util.keyCodes['n'] = 78
-export { Util }
+Util.setGlobalCssModule(cssModule)
+CardTitle.defaultProps.tag = 'div'
+
+export { Util, CardTitle }
+
+export { default as Dropdown } from './Dropdown'
+export { default as DropdownItem } from './DropdownItem'
 
 export {
   Badge,
@@ -66,8 +67,8 @@ export {
   Col,
   Collapse,
   Container,
-  Dropdown,
-  DropdownItem,
+  // Dropdown,
+  // DropdownItem,
   DropdownMenu,
   DropdownToggle,
   Fade,
@@ -103,5 +104,3 @@ export {
   UncontrolledDropdown,
   UncontrolledTooltip,
 } from 'reactstrap'
-
-import './init'
