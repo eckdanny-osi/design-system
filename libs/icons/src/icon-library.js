@@ -21,6 +21,8 @@ import {
   faUpload,
   faUser,
   faCommentAlt as fasFaCommentAlt,
+  faTrashAlt,
+  faTasks,
 } from '@fortawesome/free-solid-svg-icons'
 import { faCommentAlt as farFaCommentAlt } from '@fortawesome/free-regular-svg-icons'
 
@@ -46,7 +48,9 @@ library.add(
   faUpload,
   faUser,
   fasFaCommentAlt,
-  farFaCommentAlt
+  farFaCommentAlt,
+  faTrashAlt,
+  faTasks
 )
 
 export const ICON_NAMES = [
