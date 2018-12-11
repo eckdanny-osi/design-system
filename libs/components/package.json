@@ -1,6 +1,6 @@
 {
   "name": "@cwds/components",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "> TODO: description",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com",
@@ -35,10 +35,10 @@
     "build:watch:css:self": "sleep 1 && yarn build:css && yarn build:css -w"
   },
   "dependencies": {
-    "@cwds/core": "^0.5.9",
-    "@cwds/datagrid": "^0.5.9",
-    "@cwds/icons": "^0.5.9",
-    "@cwds/reactstrap": "^0.5.9",
+    "@cwds/core": "^0.5.10",
+    "@cwds/datagrid": "^0.5.10",
+    "@cwds/icons": "^0.5.10",
+    "@cwds/reactstrap": "^0.5.10",
     "bootstrap": "^4.1.3",
     "classnames": "^2.2.6",
     "lodash.omit": "^4.5.0",

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/ca-cwds/design-system/compare/v0.5.9...v0.5.10) (2018-12-11)
+
+
+### Bug Fixes
+
+* **datagrid:** fix resize handle z-index bug ([#326](https://github.com/ca-cwds/design-system/issues/326)) ([4510266](https://github.com/ca-cwds/design-system/commit/4510266))
+* **tech:** resolve lint errors ([#331](https://github.com/ca-cwds/design-system/issues/331)) ([9a9f653](https://github.com/ca-cwds/design-system/commit/9a9f653))
+
+
+
+
+
 ## [0.5.9](https://github.com/ca-cwds/design-system/compare/v0.5.8...v0.5.9) (2018-12-11)
 
 **Note:** Version bump only for package @cwds/datagrid

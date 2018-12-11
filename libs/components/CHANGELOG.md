@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/ca-cwds/design-system/compare/v0.5.9...v0.5.10) (2018-12-11)
+
+
+### Bug Fixes
+
+* **tech:** add lint rule no-console ([#324](https://github.com/ca-cwds/design-system/issues/324)) ([cf43df9](https://github.com/ca-cwds/design-system/commit/cf43df9))
+* **tech:** eslint best practices ([#320](https://github.com/ca-cwds/design-system/issues/320)) ([94b08ca](https://github.com/ca-cwds/design-system/commit/94b08ca))
+* **tech:** resolve lint errors ([#331](https://github.com/ca-cwds/design-system/issues/331)) ([9a9f653](https://github.com/ca-cwds/design-system/commit/9a9f653))
+
+
+
+
+
 ## [0.5.9](https://github.com/ca-cwds/design-system/compare/v0.5.8...v0.5.9) (2018-12-11)
 
 
