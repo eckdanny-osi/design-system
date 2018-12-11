@@ -24,7 +24,6 @@ const routes = [
 
 class CoreStylePage extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log({ nextProps })
     return false
   }
   render() {

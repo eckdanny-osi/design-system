@@ -76,7 +76,7 @@ const AdvancedPeopleSearchForm = ({
                       { label: 'Quo', value: 'quo' },
                       { label: 'Qux', value: 'qux' },
                     ]}
-                    onChange={() => {}}
+                    onChange={() => { }}
                   />
                 </fieldset>
               </Col>
@@ -112,7 +112,7 @@ class AdvancedPeopleSearchDataGrid extends Component {
   componentWillUnmount() {
     this._mounted = false
   }
-  onSearchChange() {}
+  onSearchChange() { }
   onFetchData = (state, instance) => {
     this.setState({ loading: true })
     this.peopleService
@@ -132,7 +132,7 @@ class AdvancedPeopleSearchDataGrid extends Component {
             pages: Math.ceil(res.meta.total / 10),
           })
       })
-      .catch(err => {})
+      .catch(err => { })
   }
   onSearchFormToggle = () => {
     this.setState({
@@ -170,7 +170,6 @@ class AdvancedPeopleSearchDataGrid extends Component {
             onPageChange={page => this.setState({ page })}
             onPageSizeChange={(pageSize, page) => {
               this.setState({ page, pageSize })
-              console.log('hi')
             }}
             onExpandedChange={expanded => this.setState({ expanded })}
             onResizedChange={resized => this.setState({ resized })}

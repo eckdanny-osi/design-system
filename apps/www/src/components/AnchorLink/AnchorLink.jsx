@@ -18,7 +18,6 @@ const AnchorLink = ({
   parentClassName,
   ...props
 }) => {
-  console.debug('AnchorLink!')
   const slug = toSlug(text)
   return (
     <Tag id={slug} className={parentClassName}>

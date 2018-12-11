@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["log"] }] */
+
 const { createMacro } = require('babel-plugin-macros')
 const docgen = require('react-docgen')
 const path = require('path')

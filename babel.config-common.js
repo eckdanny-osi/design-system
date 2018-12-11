@@ -10,5 +10,11 @@ module.exports = {
         replacement: '$1.css',
       },
     ],
+    [
+      'transform-remove-console',
+      {
+        exclude: ['error', 'warn'],
+      },
+    ],
   ],
 }

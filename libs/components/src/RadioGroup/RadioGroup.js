@@ -30,7 +30,13 @@ const defaultRenderOption = ({
       onChange: handleChange,
       value: option.value,
     }),
-    React.createElement('label', { htmlFor: id }, option.label)
+    React.createElement(
+      'label',
+      {
+        htmlFor: id,
+      },
+      option.label
+    )
   )
 }
 /**
@@ -66,11 +72,9 @@ export default class RadioGroup extends React.Component {
     }
     this.renderError = () => {}
     this.handleBlur = e => {
-      console.debug('RadioGroup#handleBlur()')
       this.props.onBlur(e)
     }
     this.handleChange = e => {
-      console.debug('RadioGroup#handleChange()')
       this.props.onChange(e)
     }
   }
@@ -82,7 +86,13 @@ export default class RadioGroup extends React.Component {
         'fieldset',
         null,
         this.props.legend &&
-          React.createElement(Legend, { required: true }, this.props.legend),
+          React.createElement(
+            Legend,
+            {
+              required: true,
+            },
+            this.props.legend
+          ),
         this.props.options.map(this.renderOption)
       ),
       this.props.error && this.props.renderError(this.props.error)
