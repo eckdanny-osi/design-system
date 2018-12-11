@@ -18,6 +18,12 @@ module.exports = {
   },
   rules: {
     'babel/no-invalid-this': 1,
+    'jsx-a11y/label-has-associated-control': [2, {
+      labelComponents: ['CustomLabel'],
+      labelAttributes: ['inputLabel'],
+      controlComponents: ['CustomInput'],
+      depth: 3,
+    }],
     'consistent-return': [2],
     'dot-notation': [2],
     'func-names': [2],
