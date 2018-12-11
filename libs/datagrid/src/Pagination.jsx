@@ -8,6 +8,12 @@ import uniqueId from 'lodash.uniqueid'
 // From react-table@6.8.6
 // See https://github.com/react-tools/react-table/blob/f55ce620411c619855a2fe2f081407e4f82727b9/src/pagination.js
 
+const defaultButton = props => (
+  <button type="button" {...props} className="-btn">
+    {props.children}
+  </button>
+)
+
 class Pagination extends PaginationRT {
   uniqueId = uniqueId('datagrid_pagination_')
   render() {
@@ -72,6 +78,7 @@ class Pagination extends PaginationRT {
                       return this.setState({ page: val })
                     }
                     this.setState({ page: this.getSafePage(page) })
+                    return undefined
                   }}
                   value={this.state.page === '' ? '' : this.state.page + 1}
                   onBlur={this.applyPage}

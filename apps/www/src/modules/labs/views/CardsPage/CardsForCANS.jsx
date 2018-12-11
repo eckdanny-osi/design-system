@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Row, Col } from '@cwds/components'
+import { Card, CardHeader, CardBody, Row, Col } from '@cwds/components'
 
 const CardsForCANS = () => {
   return (

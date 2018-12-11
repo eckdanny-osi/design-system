@@ -80,7 +80,9 @@ export default class DataGridsExample extends Component {
           })
       })
       .catch(err => {
-        debugger
+        if (err) {
+          // Do nothing
+        }
       })
   }
   render() {

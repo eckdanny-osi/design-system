@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
 import { Collapse } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
 
 class RolodexPanel extends Component {
   static propTypes = {
@@ -10,6 +8,7 @@ class RolodexPanel extends Component {
     animate: PropTypes.bool,
     headerId: PropTypes.string.isRequired,
     panelId: PropTypes.string.isRequired,
+    children: PropTypes.node,
   }
   constructor(props) {
     super(props)

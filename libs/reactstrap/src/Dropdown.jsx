@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'react'
 import ReactDOM from 'react-dom'
 import { Util } from './utils'

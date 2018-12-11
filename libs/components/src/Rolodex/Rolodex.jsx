@@ -2,14 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import uniqueId from 'lodash.uniqueid'
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Util,
-} from '@cwds/reactstrap'
+import { Card, CardHeader, CardBody, CardFooter, Util } from '@cwds/reactstrap'
 import RolodexHeader from './RolodexHeader'
 import RolodexPanel from './RolodexPanel'
 import Styles from './Rolodex.module.scss'
@@ -74,7 +67,7 @@ class Rolodex extends Component {
       e.preventDefault()
       return
     }
-    const { exclusive, collapsible } = this.props
+    const { exclusive } = this.props
     this.setState({
       keys: this.state.keys.map(d => ({
         ...d,
@@ -95,7 +88,7 @@ class Rolodex extends Component {
       if (e.which === keyCodes.up || (e.which === keyCodes.p && e.ctrlKey)) {
         newIndex = index > 0 ? index - 1 : this.state.keys.length - 1
       } else if (
-        e.which == keyCodes.down ||
+        e.which === keyCodes.down ||
         (e.which === keyCodes.n && e.ctrlKey)
       ) {
         newIndex = index >= this.state.keys.length - 1 ? 0 : index + 1
@@ -145,9 +138,10 @@ class Rolodex extends Component {
                   onClick={e => this.toggleCard(e, card.key)}
                   onKeyDown={e => this.handleKeyDown(e, card.key)}
                   disabled={this.isDisabled(card.key)}
-                  children={cardHeader.props.children}
                   ref={ref}
-                />
+                >
+                  {cardHeader.props.children}
+                </RolodexHeader>
                 <RolodexPanel
                   isOpen={isOpen}
                   animate={this.props.animate}

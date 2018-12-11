@@ -1,3 +1,4 @@
+/* eslint-disable */
 exports.__esModule = true
 const data = require('../data/people.json')
 const PeopleService = /** @class */ (function() {

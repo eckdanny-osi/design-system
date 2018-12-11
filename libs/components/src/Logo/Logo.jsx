@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 import styles from './Logo.module.scss'
 
@@ -11,7 +10,7 @@ const Logo = () => (
   <span className={cn(styles.Logo, 'text-white')}>CWS-CARES</span>
 )
 
-const LogoSVG = () => {
+export const LogoSVG = () => {
   return (
     <svg
       className={cn(styles.Logo)}

@@ -11,6 +11,7 @@ import {
   Input,
   Collapse,
   Button,
+  Label,
 } from '@cwds/components'
 import PeopleService from './mockService'
 
@@ -52,16 +53,22 @@ const AdvancedPeopleSearchForm = ({
           <form>
             <Row>
               <Col md={6}>
-                <label>alsdkfj</label>
-                <Input type="text" />
+                <Label>
+                  asdflkjasdf
+                  <Input type="text" />
+                </Label>
               </Col>
               <Col md={6}>
-                <label>alsdkfj</label>
-                <Input type="text" />
+                <Label>
+                  alsdkfj
+                  <Input type="text" />
+                </Label>
               </Col>
               <Col md={6}>
-                <label>Range</label>
-                <Input type="range" />
+                <Label>
+                  Range
+                  <Input type="range" />
+                </Label>
               </Col>
               <Col md={6}>
                 <fieldset>
@@ -76,7 +83,7 @@ const AdvancedPeopleSearchForm = ({
                       { label: 'Quo', value: 'quo' },
                       { label: 'Qux', value: 'qux' },
                     ]}
-                    onChange={() => { }}
+                    onChange={() => {}}
                   />
                 </fieldset>
               </Col>
@@ -112,7 +119,7 @@ class AdvancedPeopleSearchDataGrid extends Component {
   componentWillUnmount() {
     this._mounted = false
   }
-  onSearchChange() { }
+  onSearchChange() {}
   onFetchData = (state, instance) => {
     this.setState({ loading: true })
     this.peopleService
@@ -129,10 +136,14 @@ class AdvancedPeopleSearchDataGrid extends Component {
           this.setState({
             loading: false,
             data: res.records,
-            pages: Math.ceil(res.meta.total / 10),
+            pages: Math.ceil(res.meta.total / this.state.pageSize),
           })
       })
-      .catch(err => { })
+      .catch(err => {
+        if (err) {
+          // do nothing
+        }
+      })
   }
   onSearchFormToggle = () => {
     this.setState({

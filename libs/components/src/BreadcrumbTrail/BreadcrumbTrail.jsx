@@ -1,7 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
 import { Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
-import Styles from './BreadcrumbTrail.module.scss'
 
 const LinkTag = ({ active, path, title, ...props }) => (
   <a href={active ? undefined : path} {...props}>

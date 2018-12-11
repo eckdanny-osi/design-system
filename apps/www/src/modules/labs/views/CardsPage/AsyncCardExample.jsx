@@ -1,5 +1,12 @@
 import React from 'react'
-import { Button, Card } from '@cwds/components'
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  CardFooter,
+} from '@cwds/components'
 
 class AsyncCardExample extends React.Component {
   state = {

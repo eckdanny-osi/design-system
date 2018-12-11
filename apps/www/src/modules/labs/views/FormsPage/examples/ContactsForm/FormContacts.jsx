@@ -47,8 +47,8 @@ export default () => (
               lasjkdf lkajsdflkja sldkfj asldfjasdfj alsdf jk
             </p>
             <p>
-              <strong>Note</strong>: All fields are required unless labeled
-              "Optional".
+              <strong>Note</strong>: All fields are required unless labeled:{' '}
+              <tt>Optional</tt>
             </p>
             <form onSubmit={props.handleSubmit} id="contact-form">
               <Row>

@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { Container, Row, Col } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 
-const Body = ({ layout, sidenav: SideNav = () => null, main: Main }) => {
+const Body = ({ layout, sidenav: SideNav, main: Main }) => {
   return (
     <div className={cn('pt-3', Styles.Body)}>
       <Container>
@@ -40,10 +40,13 @@ const Body = ({ layout, sidenav: SideNav = () => null, main: Main }) => {
 
 Body.propTypes = {
   layout: PropTypes.oneOf(['dashboard', 'subroutes', 'jumpnav']),
+  sidenav: PropTypes.any,
+  main: PropTypes.any,
 }
 
 Body.defaultProps = {
   layout: 'dashboard',
+  sidenav: () => null,
 }
 
 export default Body

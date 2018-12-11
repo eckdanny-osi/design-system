@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
-import BreadcrumbTrail from '../../BreadcrumbTrail'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 import CaresContext from '../../utils/CaresContext'
@@ -39,7 +38,7 @@ class Banner extends Component {
     )
   }
   render() {
-    const { AppBar, PageHeader, title, breadcrumb, cta } = this.props
+    const { AppBar, PageHeader, title, cta } = this.props
     return (
       <div role="banner" className={cn(Styles.Banner)}>
         <div className={cn(Styles.AppBarContainer)}>
@@ -64,6 +63,9 @@ Banner.propTypes = {
   // BreadcrumbTrail: PropTypes.func,
   title: PropTypes.string,
   // breadcrumbItems: PropTypes.arrayOf(PropTypes.func),
+  breadcrumb: PropTypes.any,
+  /** TODO */
+  cta: PropTypes.any,
 }
 
 Banner.contextType = CaresContext

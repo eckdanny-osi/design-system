@@ -9,7 +9,7 @@ describe('DataGrid', () => {
 
   it('renders', () => {
     expect(() => {
-      const wrapper = render(
+      render(
         <DataGrid
           data={[]}
           columns={[

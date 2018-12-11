@@ -49,7 +49,7 @@ class ModalExample extends React.Component {
         >
           <ModalHeader toggle={this.toggle}>Search for Components</ModalHeader>
           <ModalBody>
-            <p>Yea... wouldn't that be nice?</p>
+            <p>Yea... wouldn&apos;t that be nice?</p>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>

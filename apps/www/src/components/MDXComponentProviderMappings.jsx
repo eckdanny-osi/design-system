@@ -10,6 +10,12 @@ const codeSnippetStyle = set(
   'none'
 )
 
+const getLanguage = (classNames, RE = /^language-/) =>
+  classNames
+    .split(/\s/)
+    .find(className => RE.test(className))
+    .replace(RE, '')
+
 export default {
   h1: props => <AnchorLink {...props} tag="h1" />,
   h2: props => <AnchorLink {...props} tag="h2" />,
@@ -24,10 +30,11 @@ export default {
     }
     return (
       <SyntaxHighlighter
-        language={code.props.props.className.slice(9)}
+        language={getLanguage(code.props.props.className)}
         style={codeSnippetStyle}
-        children={code.props.children}
-      />
+      >
+        {code.props.children}
+      </SyntaxHighlighter>
     )
   },
 }

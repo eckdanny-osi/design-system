@@ -20,7 +20,6 @@ function rawMacros({ references, state, babel }) {
 
 function requireRaw({ referencePath, state, babel }) {
   const filename = state.file.opts.filename
-  const t = babel.types
   const callExpressionPath = referencePath.parentPath
   const dirname = path.dirname(filename)
   let rawPath

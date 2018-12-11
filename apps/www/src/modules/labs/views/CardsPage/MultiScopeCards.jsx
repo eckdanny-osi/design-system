@@ -2,6 +2,8 @@ import React, { Fragment, Component } from 'react'
 import {
   Button,
   Card,
+  CardBody,
+  CardFooter,
   Row,
   Col,
   FormGroup,
@@ -13,6 +15,9 @@ import { Formik } from 'formik'
 import MultiCard from '@cwds/components/dist/Cards/CardMultiContext'
 
 class Example extends Component {
+  /* eslint-disable no-magic-numbers */
+  SIMULATED_DELAY = 1000
+
   state = {
     values: {
       foo: 'some value',
@@ -104,7 +109,7 @@ class Example extends Component {
                 actions.resetForm(values)
                 this.setState({ values })
                 toggleScope()
-              }, 1000)
+              }, this.SIMULATED_DELAY)
             }}
             render={props => {
               const onChange = e =>

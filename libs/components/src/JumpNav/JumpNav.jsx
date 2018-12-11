@@ -4,36 +4,17 @@ import cn from 'classnames'
 import { Nav, NavItem, NavLink } from '@cwds/reactstrap'
 import Styles from './JumpNav.module.scss'
 
-const naiveSolnJs = e => {
-  e.preventDefault()
-  const el = e.target.getAttribute('href').slice(1)
-  const $el = document.getElementById(el)
-
-  const rect = $el.getBoundingClientRect()
-  const anchorOffset = window.pageYOffset + rect.top - (136 + 8.5 + 7)
-  window.scrollTo(window.pageXOffset, anchorOffset)
-
-  // @todo(dce): fix lame scroll thing
-  // $el.scrollIntoView();
-  // 136 + 8.5
-}
-
 const DefaulItemTag = ({ path, title, children, ...props }) => {
   return (
     <NavItem {...props}>
-      <NavLink
-        href={path}
-        // onClick={naiveSolnJs}
-      >
-        {title}
-      </NavLink>
+      <NavLink href={path}>{title}</NavLink>
     </NavItem>
   )
 }
 
 const propTypes = {
   routes: PropTypes.array,
-  tag: PropTypes.oneOfType([
+  itemTag: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.func,
@@ -48,7 +29,9 @@ const defaultProps = {
 const JumpNav = ({ routes, itemTag: ItemTag }) => (
   <Nav vertical className={cn(Styles.JumpNav)}>
     {routes.map(({ path, title, children }) => (
-      <ItemTag key={path} path={path} title={title} children={children} />
+      <ItemTag key={path} path={path} title={title}>
+        {children}
+      </ItemTag>
     ))}
   </Nav>
 )

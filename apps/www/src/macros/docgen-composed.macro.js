@@ -2,7 +2,6 @@
 
 const { createMacro } = require('babel-plugin-macros')
 const docgen = require('react-docgen')
-const path = require('path')
 const fs = require('fs')
 const merge = require('lodash.merge')
 

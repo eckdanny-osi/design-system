@@ -1,3 +1,5 @@
+/* eslint-disable */
+// THIS IS COMPILED FROM TYPESCRIPT SOURCE. THIS MODULE TO BE PLACED IN @CWDS/FORMS
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import Legend from '../Legend'

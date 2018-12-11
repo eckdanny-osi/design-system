@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, Label, FormFeedback, Input } from '@cwds/reactstrap'
-import cn from 'classnames'
 
 const noop = () => {}
 
@@ -9,6 +8,9 @@ const propTypes = {
   component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   onChange: PropTypes.func,
   label: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  value: PropTypes.any,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
 }
 
 const defaultProps = {

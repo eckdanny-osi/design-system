@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from '@cwds/components'
+import { Card, CardHeader, CardBody, CardSection } from '@cwds/components'
 
 const CardsWithSections = () => {
   return (
