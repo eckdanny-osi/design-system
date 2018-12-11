@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.9](https://github.com/ca-cwds/design-system/compare/v0.5.8...v0.5.9) (2018-12-11)
+
+
+### Bug Fixes
+
+* relax lints ([#317](https://github.com/ca-cwds/design-system/issues/317)) ([83692c1](https://github.com/ca-cwds/design-system/commit/83692c1))
+* **icons:** add icons: trash, tasks ([#325](https://github.com/ca-cwds/design-system/issues/325)) ([f379173](https://github.com/ca-cwds/design-system/commit/f379173))
+* **tech:** add jsx-a11y, babel to lint rules ([#299](https://github.com/ca-cwds/design-system/issues/299)) ([a2f64b1](https://github.com/ca-cwds/design-system/commit/a2f64b1))
+* **tech:** minor eslint config changes ([#316](https://github.com/ca-cwds/design-system/issues/316)) ([6ef8094](https://github.com/ca-cwds/design-system/commit/6ef8094))
+
+
+
+
+
 ## [0.5.8](https://github.com/ca-cwds/design-system/compare/v0.5.7...v0.5.8) (2018-12-07)
 
 
