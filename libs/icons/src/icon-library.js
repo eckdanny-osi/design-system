@@ -54,7 +54,7 @@ library.add(
 )
 
 export const ICON_NAMES = [
-  ...Object.keys(library.definitions['fas']).map(name => ['fas', name]),
+  ...Object.keys(library.definitions.fas).map(name => ['fas', name]),
   [farFaCommentAlt.prefix, farFaCommentAlt.iconName],
 ]
 

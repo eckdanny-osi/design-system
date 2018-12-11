@@ -1,6 +1,6 @@
 import { LOCATION, CONTACT_METHOD } from './contactsFormEnums'
 export default values => {
-  let errors = {}
+  const errors = {}
 
   if (values.date === '') errors.date = 'Required!'
 
@@ -22,7 +22,7 @@ export default values => {
   }
 
   if (CONTACT_METHOD.IN_PERSON === values.methodOfContact) {
-    let inPersonDetailErrors = {}
+    const inPersonDetailErrors = {}
     if (values.inPersonDetail.notice === '') {
       inPersonDetailErrors.notice = 'Required!'
     }

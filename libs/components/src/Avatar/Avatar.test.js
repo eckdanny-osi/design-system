@@ -30,10 +30,14 @@ describe('Avatar', () => {
   it('applies size classes', () => {
     const wrapper = shallow(<Avatar />)
     expect(wrapper.hasClass('size-md')).toBe(true)
-    wrapper.setProps({ size: 'xs' })
+    wrapper.setProps({
+      size: 'xs',
+    })
     expect(wrapper.hasClass('size-xs')).toBe(true)
     expect(wrapper.hasClass('size-md')).not.toBe(true)
-    wrapper.setProps({ size: 'xl' })
+    wrapper.setProps({
+      size: 'xl',
+    })
     expect(wrapper.hasClass('size-xl')).toBe(true)
   })
 
@@ -50,7 +54,9 @@ describe('Avatar', () => {
   it('inverts color scheme', () => {
     const wrapper = shallow(<Avatar />)
     expect(wrapper.hasClass('inverted')).not.toBe(true)
-    wrapper.setProps({ invert: true })
+    wrapper.setProps({
+      invert: true,
+    })
     expect(wrapper.hasClass('inverted')).toBe(true)
   })
 })

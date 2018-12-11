@@ -46,7 +46,7 @@ const defaultProps = {
 }
 
 const JumpNav = ({ routes, itemTag: ItemTag }) => (
-  <Nav vertical className={cn(Styles['JumpNav'])}>
+  <Nav vertical className={cn(Styles.JumpNav)}>
     {routes.map(({ path, title, children }) => (
       <ItemTag key={path} path={path} title={title} children={children} />
     ))}

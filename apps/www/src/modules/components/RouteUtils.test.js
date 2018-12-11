@@ -2,7 +2,7 @@ import { getTrail, getSiblingRoutes } from './RouteUtils'
 
 describe('getTrail', () => {
   it.skip('joins partials', () => {
-    let trail = [
+    const trail = [
       { path: '/foo', title: 'Foo' },
       { path: '/bar', title: 'Bar' },
       { path: '/quo', title: 'Quo' },

@@ -6,7 +6,7 @@ import Styles from '../Layout.module.scss'
 
 const Body = ({ layout, sidenav: SideNav = () => null, main: Main }) => {
   return (
-    <div className={cn('pt-3', Styles['Body'])}>
+    <div className={cn('pt-3', Styles.Body)}>
       <Container>
         {layout === 'dashboard' && (
           <div role="main">

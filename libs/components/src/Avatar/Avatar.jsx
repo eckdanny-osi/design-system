@@ -27,7 +27,7 @@ const defaultProps = {
 
 const Avatar = ({ imgUrl, alt, size, text, invert }) => {
   const classes = cn(
-    Styles['wrapper'],
+    Styles.wrapper,
     Styles[`size-${isValidSize(size, SIZES_ALL.MD)}`],
     {
       [Styles.inverted]: invert,

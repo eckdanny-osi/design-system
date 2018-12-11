@@ -11,7 +11,7 @@ const getBodyProps = props => pick(props, ['main', 'sidenav', 'layout'])
 
 const Page = props => {
   return (
-    <div className={Styles['Page']}>
+    <div className={Styles.Page}>
       <Banner {...props.getBannerProps(props)} />
       <Body {...props.getBodyProps(props)} />
     </div>

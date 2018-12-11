@@ -121,7 +121,7 @@ export function getSiblingRoutes(parentContexts) {
 export function getTrail(partialRoutes) {
   const pathsAndTitles = [{ path: '/', title: 'Home' }]
   let prefix = ''
-  for (let partial of partialRoutes) {
+  for (const partial of partialRoutes) {
     prefix += partial.path
     pathsAndTitles.push({ ...partial, path: prefix })
   }

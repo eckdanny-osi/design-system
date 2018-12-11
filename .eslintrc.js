@@ -18,6 +18,27 @@ module.exports = {
   },
   rules: {
     'babel/no-invalid-this': 1,
+    'consistent-return': [2],
+    'dot-notation': [2],
+    'func-names': [2],
+    'no-console': [1],
+    'no-implicit-coercion': [2, {
+      "allow": ["!!"]
+    }],
+    'no-magic-numbers': [1, {
+      ignore: [-1, 0, 1, 2]
+    }],
+    'no-useless-concat': [2],
+    'no-var': [2],
+    'prefer-const': [2],
+    'prefer-template': [2],
+    'radix': [2, 'as-needed'],
+    'react/display-name': [0],
+    'react/prop-types': [2, {
+      skipUndeclared: true
+    }],
+    'react/no-did-mount-set-state': [1],
+    'react/no-did-update-set-state': [1],
     'prettier/prettier': [
       'error',
       {
@@ -27,8 +48,6 @@ module.exports = {
         semi: false,
       },
     ],
-    'react/display-name': [0],
-    'react/prop-types': [2, { skipUndeclared: true }],
   },
   parser: 'babel-eslint',
   parserOptions: {

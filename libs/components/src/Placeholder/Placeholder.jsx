@@ -6,7 +6,7 @@ import { Row, Col } from '@cwds/reactstrap'
 import Styles from './Placeholder.module.scss'
 
 const PlaceholderLine = ({ className, children, tag: Tag, ...props }) => (
-  <Tag className={cn(Styles['Placeholder'], className)} {...props}>
+  <Tag className={cn(Styles.Placeholder, className)} {...props}>
     &nbsp;
   </Tag>
 )
@@ -27,10 +27,10 @@ const Placeholder = ({
 }) => {
   const colProps = pick(restProps, ['xs', 'sm', 'md', 'lg', 'xl'])
   return grid ? (
-    <Row className={Styles['PlaceholderRow']}>
+    <Row className={Styles.PlaceholderRow}>
       {new Array(cols).fill().map((_, i) => {
         return (
-          <Col key={i} className={Styles['PlaceholderCol']} {...colProps}>
+          <Col key={i} className={Styles.PlaceholderCol} {...colProps}>
             {new Array(rows).fill().map((_, j) => (
               <Tag key={j} />
             ))}

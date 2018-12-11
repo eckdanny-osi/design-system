@@ -1,17 +1,17 @@
 exports.__esModule = true
-var data = require('../data/people.json')
-var PeopleService = /** @class */ (function() {
+const data = require('../data/people.json')
+const PeopleService = /** @class */ (function() {
   function PeopleService() {
     this.DELAY = 1000
   }
   PeopleService.prototype.search = function(opts) {
-    var _this = this
+    const _this = this
     // console.log(opts);
-    var pageSize = opts.size
-    var from = opts.from || 0
+    const pageSize = opts.size
+    const from = opts.from || 0
     return new Promise(function(resolve) {
       setTimeout(function() {
-        var records = data.slice(from, pageSize)
+        const records = data.slice(from, pageSize)
         resolve({
           records: records,
           meta: {
@@ -30,4 +30,4 @@ var PeopleService = /** @class */ (function() {
   }
   return PeopleService
 })()
-exports['default'] = PeopleService
+exports.default = PeopleService
