@@ -15,7 +15,7 @@ Monorepo for CWDS design system
 Install from [npm](https://www.npmjs.com/package/@cwds/components):
 
 ```sh
-yarn add @cwds/components@alpha
+yarn add @cwds/components
 ```
 
 Start using components in your application:
