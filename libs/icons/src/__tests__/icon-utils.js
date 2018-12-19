@@ -1,4 +1,4 @@
-import { getIconFromContext } from '../icon-library'
+import { getIconFromContext, getIconContrast } from '..'
 
 describe('icon-library', () => {
   describe('getIconFromContext', () => {
@@ -14,5 +14,11 @@ describe('icon-library', () => {
         expect(getIconFromContext(input)).toBe(ouput)
       })
     })
+  })
+})
+
+describe('getIconContrast', () => {
+  it('returns black or white depending on contrast', () => {
+    expect(getIconContrast('primary')).toBe('white')
   })
 })

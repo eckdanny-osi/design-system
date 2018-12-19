@@ -1,4 +1,4 @@
-@import '../dist/bridge.js';
+@import "../dist/bridge.js";
 
 //
 // Color system
@@ -7,30 +7,30 @@
 // Grays
 
 $grays: (
-  '100':        $gray-100,
-  '200':        $gray-200,
-  '300':        $gray-300,
-  '400':        $gray-400,
-  '500':        $gray-500,
-  '600':        $gray-600,
-  '700':        $gray-700,
-  '800':        $gray-800,
-  '900':        $gray-900,
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
 );
 
 // Theme Colors
 
 $theme-colors: (
-  'primary':    $primary,
-  'secondary':  $white,
-  'accent':     $accent,
-  'breath':     $breath,
-  'success':    $success,
-  'info':       $info,
-  'warning':    $warning,
-  'danger':     $danger,
-  'light':      $light,
-  'dark':       $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "breath": $breath,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
 );
 
 //
@@ -43,21 +43,21 @@ $spacers: (
   2: $spacer-2,
   3: $spacer-3,
   4: $spacer-4,
-  5: $spacer-5,
+  5: $spacer-5
 );
 
 //
 // Body
 //
 
-$body-bg:       $gray-100;
-$body-color:    $gray-900;
+$body-bg: $gray-100;
+$body-color: $gray-900;
 
 //
 // Links
 //
 
-$link-color:                theme-color("info") !default;
+$link-color: theme-color("info") !default;
 // $link-decoration:           none !default;
 // $link-hover-color:          darken($link-color, 15%) !default;
 // $link-hover-decoration:     underline !default;
@@ -71,7 +71,7 @@ $grid-breakpoints: (
   sm: $grid-breakpoint-sm,
   md: $grid-breakpoint-md,
   lg: $grid-breakpoint-lg,
-  xl: $grid-breakpoint-xl,
+  xl: $grid-breakpoint-xl
 );
 
 //
@@ -84,10 +84,14 @@ $container-max-width-lg: 960px;
 $container-max-width-xl: 1140px;
 
 $container-max-widths: (
-  sm: $container-max-width-sm, // 540px,
-  md: $container-max-width-md, // 720px,
-  lg: $container-max-width-lg, // 960px,
-  xl: $container-max-width-xl, // 1140px,
+  sm: $container-max-width-sm,
+  // 540px,
+    md: $container-max-width-md,
+  // 720px,
+    lg: $container-max-width-lg,
+  // 960px,
+    xl: $container-max-width-xl,
+  // 1140px,
 );
 
 //
@@ -100,26 +104,26 @@ $grid-gutter-width: 15px;
 // Components
 //
 
-$border-color:                $gray-200;
+$border-color: $gray-200;
 
 $border-radius: 0.175rem;
 $border-radius-lg: 0.3rem;
 $border-radius-sm: 0.125rem;
 
-$component-active-color:      $white;
-$component-active-bg:         theme-color("primary");
+$component-active-color: $white;
+$component-active-bg: theme-color("primary");
 
 //
 // Fonts
 //
 
-$font-family-sans-serif:      'Source Sans Pro', sans-serif;
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
 
-$font-size-base:              1rem;
+$font-size-base: 1rem;
 
 // $font-weight-light:           300 !default;
 // $font-weight-normal:          400 !default;
-$font-weight-bold:            600;
+$font-weight-bold: 600;
 
 // TODO: Remove the heading size overrides in styles.scss... do it here!
 $h1-font-size: $font-size-base * 1.75;
@@ -131,6 +135,19 @@ $h6-font-size: $font-size-base * 0.875;
 
 $btn-box-shadow: 0 1px 1px rgba($black, 0.125);
 
+// Dropdowns
+
+$dropdown-padding-y: 0; // .5rem !default;
+$dropdown-link-hover-bg: $breath; // $gray-100 !default;
+$dropdown-link-color: $gray-900 !default;
+$dropdown-link-active-color: $dropdown-link-color; // $component-active-color !default;
+$dropdown-link-active-bg: darken(
+  $dropdown-link-hover-bg,
+  10%
+); // $component-active-bg !default;
+$dropdown-item-padding-x: map-get($spacers, 3); // .25rem !default;
+$dropdown-item-padding-y: map-get($spacers, 2); // 1.5rem !default;
+
 // Cards
 
 $card-spacer-y: map-get($spacers, 3);
@@ -140,7 +157,7 @@ $card-cap-bg: $white;
 
 // Tables
 
-$table-border-color:                $border-color;
+$table-border-color: $border-color;
 
 // Tooltips
 
@@ -152,15 +169,14 @@ $modal-inner-padding: map-get($spacers, 3);
 
 // List group
 
-$list-group-bg:                     $white !default;
-$list-group-border-color:           $gray-200;
-$list-group-active-bg:              $list-group-bg;
-$list-group-active-border-color:    $list-group-border-color;
+$list-group-bg: $white !default;
+$list-group-border-color: $gray-200;
+$list-group-active-bg: $list-group-bg;
+$list-group-active-border-color: $list-group-border-color;
 
 // Code
 
-$code-color:                        $accent;
-
+$code-color: $accent;
 
 //
 // CUSTOM
@@ -173,7 +189,7 @@ $avatar-sizes: (
   sm: 24px,
   md: 32px,
   lg: 48px,
-  xl: 96px,
+  xl: 96px
 );
 
 // Banner

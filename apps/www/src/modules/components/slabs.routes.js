@@ -10,10 +10,11 @@ import Badge from '!babel-loader!@mdx-js/loader!./modules/Badge/Badge.mdx'
 import Button from '!babel-loader!@mdx-js/loader!./modules/Button/Button.mdx'
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/ButtonGroup.mdx'
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx'
-import Dropdown from '!babel-loader!@mdx-js/loader!./modules/Dropdown/Dropdown.mdx'
 // import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx'
 import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx'
+import MenuPage from '!babel-loader!@mdx-js/loader!./modules/Menu/MenuPage.mdx'
+import TooltipPage from '!babel-loader!@mdx-js/loader!./modules/Tooltip/TooltipPage.mdx'
 import Modal from '!babel-loader!@mdx-js/loader!./modules/Modal/Modal.mdx'
 
 const routes = {
@@ -103,9 +104,9 @@ const routes = {
       ],
     },
     {
-      title: 'Dropdown',
-      path: '/dropdown',
-      component: Dropdown,
+      title: 'Menu',
+      path: '/menu',
+      component: MenuPage,
     },
     {
       title: 'Field',
@@ -205,6 +206,7 @@ const routes = {
     {
       title: 'Tooltip',
       path: '/tooltip',
+      component: TooltipPage,
     },
   ],
 }

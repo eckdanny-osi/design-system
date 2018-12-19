@@ -1,0 +1,109 @@
+import DemoCard from "../../../../components/DemoCard";
+import PropTable from "../../../../components/PropTable";
+import Docgen from "../ReactDogenInfo.js";
+import { UncontrolledMenu as Menu, MenuItem } from "@cwds/components";
+import SyntaxHighlighter from "react-syntax-highlighter/prism";
+import { xonokai, dark } from "react-syntax-highlighter/styles/prism";
+import {
+  MenuExample,
+  MenuExampleSrc,
+  IconMenuExample,
+  IconMenuExampleSrc,
+  LinkMenuExample,
+  LinkMenuExampleSrc
+} from "./examples";
+
+## Synopsis
+
+The `Menu` is an accessible dialog menu for selecting a contextual action.
+
+<DemoCard>
+  <div>
+    <Menu label="My Menu">
+      <MenuItem>Foo</MenuItem>
+      <MenuItem>Bar</MenuItem>
+      <MenuItem>Quo</MenuItem>
+    </Menu>
+  </div>
+</DemoCard>
+
+```jsx
+import { Menu, MenuItem } from "@cwds/components";
+```
+
+There are **two** usage methods:
+
+### Default Menu
+
+For relatively broad contexts:
+
+<DemoCard>
+  <div>
+    <MenuExample />
+  </div>
+</DemoCard>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {MenuExampleSrc}
+</SyntaxHighlighter>
+
+### Icon Menu
+
+For relatively narrow contexts (e.g.; item in a list view):
+
+<DemoCard>
+  <div>
+    <IconMenuExample />
+  </div>
+</DemoCard>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {IconMenuExampleSrc}
+</SyntaxHighlighter>
+
+### Links
+
+Props passed to `MenuItem` are passed through, so creating a `Menu` of links is accomplished simply without having to use imperative callback methods. One can use the `tag` prop with any additional props to create simple `anchor` links or client-side routed links (e.g. `Link` components from `react-router-dom`):
+
+<DemoCard>
+  <div>
+    <LinkMenuExample />
+  </div>
+</DemoCard>
+
+<SyntaxHighlighter language="jsx" style={xonokai}>
+  {LinkMenuExampleSrc}
+</SyntaxHighlighter>
+
+## Props
+
+Below are the props for the `Menu` and `MenuItem` components:
+
+### Menu
+
+<PropTable docgen={Docgen["Menu"]} />
+
+### MenuItem
+
+<PropTable docgen={Docgen["MenuItem"]} />
+
+## Usage Guidelines
+
+- **DO** provide meaningful label when a _default_ `Menu` is required
+- **DO** use `IconMenu`s in list views
+
+<!--
+### Context
+
+### Accessibility
+
+## Examples
+-->
+
+## Related Articles
+
+<!--### Patterns-->
+
+### Components
+
+- [`Select`](/components/select)

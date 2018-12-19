@@ -1,0 +1,79 @@
+@import "~bootstrap/scss/dropdown";
+
+.dropdown-item {
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+  &:not(:first-child) {
+    border-top: 1px solid $dropdown-border-color;
+  }
+}
+
+// hard-coded tag in reacstrap#dropdownitem
+h6.dropdown-header {
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  font-size: inherit;
+  line-height: 1.5rem;
+}
+
+.DropdownArrow {
+  position: absolute;
+  display: block;
+  width: $popover-arrow-width;
+  height: $popover-arrow-height;
+  margin: 0 $border-radius-lg;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+.WithArrow {
+  @if $enable-caret {
+    .dropdown-toggle:after {
+      display: none;
+    }
+  }
+  .dropdown-menu[data-placement^="bottom"] {
+    margin-top: $popover-arrow-height;
+    .DropdownArrow {
+      top: calc((#{$popover-arrow-height} + #{$popover-border-width}) * -1);
+      &:before,
+      &:after {
+        border-width: 0 ($popover-arrow-width / 2) $popover-arrow-height
+          ($popover-arrow-width / 2);
+      }
+      &:before {
+        top: 0;
+        border-bottom-color: $popover-arrow-outer-color;
+      }
+      &:after {
+        top: $popover-border-width;
+        border-bottom-color: $popover-arrow-color;
+      }
+    }
+  }
+  .dropdown-menu[data-placement^="top"] {
+    margin-bottom: $popover-arrow-height;
+    .DropdownArrow {
+      bottom: calc((#{$popover-arrow-height} + #{$popover-border-width}) * -1);
+      &:before,
+      &:after {
+        border-width: $popover-arrow-height ($popover-arrow-width / 2) 0;
+      }
+      &:before {
+        bottom: 0;
+        border-top-color: $popover-arrow-outer-color;
+      }
+      &:after {
+        bottom: $popover-border-width;
+        border-top-color: $popover-arrow-color;
+      }
+    }
+  }
+}
