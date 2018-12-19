@@ -15,4 +15,5 @@ export default {
     '@cwds/icons/src/Icon.jsx',
     '@cwds/icons/src/fontawesome.props'
   ),
+  Modal: docgenComposed('reactstrap/src/Modal.js'),
 }

@@ -14,18 +14,42 @@ import Dropdown from '!babel-loader!@mdx-js/loader!./modules/Dropdown/Dropdown.m
 // import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx'
 import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx'
+import Modal from '!babel-loader!@mdx-js/loader!./modules/Modal/Modal.mdx'
 
 const routes = {
   title: 'Component Library',
   path: '/components',
   component: Components,
   children: [
-    { title: 'Alert', path: '/alert', component: Alert },
-    { title: 'Avatar', path: '/avatar', component: Avatar },
-    { title: 'Badge', path: '/badge', component: Badge },
-    { title: 'Button', path: '/button', component: Button },
-    { title: 'ButtonGroup', path: '/button-group', component: ButtonGroup },
-    { title: 'Breadcrumbs', path: '/breadcrumbs' },
+    {
+      title: 'Alert',
+      path: '/alert',
+      component: Alert,
+    },
+    {
+      title: 'Avatar',
+      path: '/avatar',
+      component: Avatar,
+    },
+    {
+      title: 'Badge',
+      path: '/badge',
+      component: Badge,
+    },
+    {
+      title: 'Button',
+      path: '/button',
+      component: Button,
+    },
+    {
+      title: 'ButtonGroup',
+      path: '/button-group',
+      component: ButtonGroup,
+    },
+    {
+      title: 'Breadcrumbs',
+      path: '/breadcrumbs',
+    },
     {
       title: 'Cards',
       path: '/cards',
@@ -48,14 +72,24 @@ const routes = {
       //   },
       // ],
     },
-    { title: 'CheckboxBank', path: '/checkboxbank' },
-    { title: 'Collapse', path: '/collapse' },
+    {
+      title: 'CheckboxBank',
+      path: '/checkboxbank',
+    },
+    {
+      title: 'Collapse',
+      path: '/collapse',
+    },
     {
       title: 'DataGrid',
       path: '/datagrid',
       component: DataGridsPage,
       children: [
-        { title: 'Simple', path: '/simple', component: SimpleDataGrid },
+        {
+          title: 'Simple',
+          path: '/simple',
+          component: SimpleDataGrid,
+        },
         {
           title: 'Basic Search',
           path: '/basic-search',
@@ -68,31 +102,110 @@ const routes = {
         },
       ],
     },
-    { title: 'Dropdown', path: '/dropdown', component: Dropdown },
-    { title: 'Field', path: '/field' },
-    { title: 'FormFeedback', path: '/formfeedback' },
-    { title: 'FormGroup', path: '/formgroup' },
-    { title: 'Forms', path: '/forms' },
-    { title: 'Grid', path: '/grid', component: Grid },
-    { title: 'Icon', path: '/icon', component: Icon },
-    { title: 'InfoTip', path: '/infotip' },
-    { title: 'Input', path: '/input' },
-    { title: 'InputGroup', path: '/inputgroup' },
-    { title: 'InputGroupAddon', path: '/inputgroupaddon' },
-    { title: 'JumpToTop', path: '/jumptotop' },
-    { title: 'Label', path: '/label' },
-    { title: 'Layouts', path: '/layouts' },
-    { title: 'Legend', path: '/legend' },
-    { title: 'ListGroups', path: '/listgroups' },
-    { title: 'Logo', path: '/logo' },
-    { title: 'Modal', path: '/modal' },
-    { title: 'Nav', path: '/nav' },
-    { title: 'PageHeader', path: '/pageheader' },
-    { title: 'Popover', path: '/popover' },
-    { title: 'RadioGroup', path: '/radiogroup' },
-    { title: 'Select', path: '/select' },
-    { title: 'Toggle', path: '/toggle' },
-    { title: 'Tooltip', path: '/tooltip' },
+    {
+      title: 'Dropdown',
+      path: '/dropdown',
+      component: Dropdown,
+    },
+    {
+      title: 'Field',
+      path: '/field',
+    },
+    {
+      title: 'FormFeedback',
+      path: '/formfeedback',
+    },
+    {
+      title: 'FormGroup',
+      path: '/formgroup',
+    },
+    {
+      title: 'Forms',
+      path: '/forms',
+    },
+    {
+      title: 'Grid',
+      path: '/grid',
+      component: Grid,
+    },
+    {
+      title: 'Icon',
+      path: '/icon',
+      component: Icon,
+    },
+    {
+      title: 'InfoTip',
+      path: '/infotip',
+    },
+    {
+      title: 'Input',
+      path: '/input',
+    },
+    {
+      title: 'InputGroup',
+      path: '/inputgroup',
+    },
+    {
+      title: 'InputGroupAddon',
+      path: '/inputgroupaddon',
+    },
+    {
+      title: 'JumpToTop',
+      path: '/jumptotop',
+    },
+    {
+      title: 'Label',
+      path: '/label',
+    },
+    {
+      title: 'Layouts',
+      path: '/layouts',
+    },
+    {
+      title: 'Legend',
+      path: '/legend',
+    },
+    {
+      title: 'ListGroups',
+      path: '/listgroups',
+    },
+    {
+      title: 'Logo',
+      path: '/logo',
+    },
+    {
+      title: 'Modal',
+      path: '/modal',
+      component: Modal,
+    },
+    {
+      title: 'Nav',
+      path: '/nav',
+    },
+    {
+      title: 'PageHeader',
+      path: '/pageheader',
+    },
+    {
+      title: 'Popover',
+      path: '/popover',
+    },
+    {
+      title: 'RadioGroup',
+      path: '/radiogroup',
+    },
+    {
+      title: 'Select',
+      path: '/select',
+    },
+    {
+      title: 'Toggle',
+      path: '/toggle',
+    },
+    {
+      title: 'Tooltip',
+      path: '/tooltip',
+    },
   ],
 }
 
