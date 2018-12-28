@@ -46,10 +46,9 @@ git clone https://github.com/ca-cwds/design-system.git && cd $_
 yarn
 ```
 
-Run the build-watch process for public packages:
-
+To precompile the libs and www do
 ```sh
-yarn dev
+yarn build
 ```
 
 ### Development
@@ -75,6 +74,35 @@ To run the _Guide Site_:
 ```sh
 yarn start
 ```
+#### Contirbution guidelines
+
+> Build a component under `libs/components/src` and export the component through index.js as
+
+```js
+export { Example } from './Example'
+```
+
+> For PO or designers to review the changes host it on storybook by adding Example story to components in modules under apps/www
+
+Export it to storybook via slabs.routes.js
+
+```js
+import Example from '!babel-loader!@mdx-js/loader!./modules/Example/Example.mdx'
+
+const routes = {
+  title: 'Component Library',
+  path: '/components',
+  component: Components,
+  children: [
+    {
+      title: 'Example',
+      path: '/Example',
+      component: Example,
+    },
+  ]
+}
+```
+
 
 #### rails_app
 
