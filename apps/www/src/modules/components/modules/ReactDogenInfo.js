@@ -13,6 +13,7 @@ export default {
   Menu: docgenComposed('reactstrap/src/Dropdown.js'),
   MenuItem: docgenComposed('reactstrap/src/DropdownMenu.js'),
   Row: docgenComposed('reactstrap/src/Row.js'),
+  Infotip: docgenComposed('@cwds/components/src/Infotip/Infotip.jsx'),
   Icon: docgenComposed(
     '@cwds/icons/src/Icon.jsx',
     '@cwds/icons/src/fontawesome.props'

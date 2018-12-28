@@ -14,6 +14,7 @@ import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx'
 // import CardStructure from '!babel-loader!@mdx-js/loader!./modules/Card/CardStructure.mdx';
 import Grid from '!babel-loader!@mdx-js/loader!./modules/Grid/Grid.mdx'
 import Icon from '!babel-loader!@mdx-js/loader!./modules/Icon/Icon.mdx'
+import Infotip from '!babel-loader!@mdx-js/loader!./modules/Infotip/Infotip.mdx'
 import MenuPage from '!babel-loader!@mdx-js/loader!./modules/Menu/MenuPage.mdx'
 import TooltipPage from '!babel-loader!@mdx-js/loader!./modules/Tooltip/TooltipPage.mdx'
 import Modal from '!babel-loader!@mdx-js/loader!./modules/Modal/Modal.mdx'
@@ -137,8 +138,9 @@ const routes = {
       component: Icon,
     },
     {
-      title: 'InfoTip',
+      title: 'Infotip',
       path: '/infotip',
+      component: Infotip,
     },
     {
       title: 'Input',

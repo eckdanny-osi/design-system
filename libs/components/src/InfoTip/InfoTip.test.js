@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import InfoTip from './'
+import Infotip from './'
 
-describe('InfoTip', () => {
+describe('Infotip', () => {
   it('renders', () => {
-    const wrapper = shallow(<InfoTip> Hello </InfoTip>)
+    const wrapper = shallow(<Infotip> Hello </Infotip>)
     expect(!!wrapper).toBe(true)
   })
 })

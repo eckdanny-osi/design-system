@@ -1,39 +1,61 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import pick from 'lodash.pick'
 import cn from 'classnames'
-import { UncontrolledTooltip } from '@cwds/reactstrap'
+import { Button, Popover, PopoverHeader, PopoverBody } from '@cwds/components'
 import Icon from '@cwds/icons'
-import styles from './InfoTip.module.scss'
-import uuid from 'lodash.uniqueid'
+import Styles from './Infotip.module.scss'
 
-class InfoTip extends PureComponent {
-  static propTypes = {
-    text: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+// https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip
 
-  constructor(props) {
-    super(props)
-    this.renderText = this.renderText.bind(this)
-  }
-
-  renderText() {
-    if (typeof this.props.text === 'function') {
-      return this.props.text()
-    }
-    return this.props.text
-  }
-
-  render() {
-    const id = uuid()
-    return (
-      <div className={cn(styles.InfoTipContainer)}>
-        <Icon icon="infoCircle" color="primary" size="xs" id={id} />
-        <UncontrolledTooltip placement="top" target={id}>
-          {this.renderText()}
-        </UncontrolledTooltip>
-      </div>
-    )
-  }
+const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  id: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  placement: Popover.propTypes.placement,
 }
 
-export default InfoTip
+const defaultProps = {
+  isOpen: false,
+  placement: 'top',
+}
+
+const Infotip = ({ children, id, isOpen, placement, ...props }) => {
+  const eventHandlers = pick(props, [
+    'onMouseEnter',
+    'onMouseLeave',
+    'onFocus',
+    'onBlur',
+  ])
+  const containerId = `${id}--info`
+  return (
+    <div className={cn(Styles.InfotipContainer, 'ml-1')}>
+      <Button
+        id={id}
+        aria-describedby={containerId}
+        {...eventHandlers}
+        className="bg-transparent border-0 p-0 px-1" // shadow-none
+      >
+        <Icon icon="info-circle" />
+      </Button>
+      {children && (
+        <Popover
+          role="tooltip"
+          placement={placement}
+          isOpen={isOpen}
+          target={id}
+        >
+          {children}
+        </Popover>
+      )}
+    </div>
+  )
+}
+
+Infotip.propTypes = propTypes
+Infotip.defaultProps = defaultProps
+
+export default Infotip

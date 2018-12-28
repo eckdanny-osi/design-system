@@ -1,7 +1,6 @@
-@import '~@cwds/core/scss/base';
+@import "~@cwds/core/scss/base";
 
-.InfoTipContainer {
+.InfotipContainer {
   display: inline-block;
   cursor: pointer;
-  margin-left: map-get($spacers, 1);
 }

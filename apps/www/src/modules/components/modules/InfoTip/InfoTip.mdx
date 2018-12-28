@@ -1,0 +1,99 @@
+import DemoCard from "../../../../components/DemoCard";
+import PropTable from "../../../../components/PropTable";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  PopoverBody,
+  Infotip,
+  UncontrolledInfotip
+} from "@cwds/components";
+import { InfotipExample, UncontrolledInfotipExample } from "./examples";
+import Docgen from "../ReactDogenInfo.js";
+
+## Synopsis
+
+The `Infotip` is a great component.
+
+<DemoCard>
+  <Card>
+    <CardBody>
+      <CardTitle>
+        Something Ambiguous
+        <InfotipExample />
+      </CardTitle>
+    </CardBody>
+  </Card>
+</DemoCard>
+
+```jsx
+import { Infotip } from "@cwds/components";
+```
+
+### Uncontrolled Infotip
+
+better
+
+```jsx
+import { UncontrolledInfotip } from "@cwds/components";
+```
+
+outcome is
+
+<DemoCard>
+  <UncontrolledInfotip id="my-uncontrolled-infotip" placement="right">
+    <PopoverBody>
+      <p className="mb-0">
+        The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+        over the lazy dog.
+      </p>
+    </PopoverBody>
+  </UncontrolledInfotip>
+</DemoCard>
+
+and usage is
+
+```jsx
+<UncontrolledInfotip id="my-uncontrolled-infotip" placement="right">
+  <PopoverBody>
+    <p>
+      The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+      over the lazy dog.
+    </p>
+  </PopoverBody>
+</UncontrolledInfotip>
+```
+
+<!--
+### Optional Supporting Section
+
+Additional introductory section or a gallery if there exist a wide range of instances that should be shown (e.g.; IconGallery)
+-->
+
+## Props
+
+<PropTable docgen={Docgen["Infotip"]} />
+
+<!--
+## Usage Guidelines
+
+DOs & DONTs
+
+### Content Guidelines
+
+### Accessibility
+
+## Examples
+
+-->
+
+## Related Articles
+
+<!--
+### Patterns
+-->
+
+### Components
+
+- [`Popover`](/components/popover)
+- [`Tooltip`](/components/tooltip)

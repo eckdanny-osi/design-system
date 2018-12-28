@@ -4,22 +4,22 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import InfoTip from './'
+import Infotip from './'
 
-storiesOf('InfoTips', module)
+storiesOf('Infotips', module)
   .addDecorator(withKnobs)
   .add(
-    'InfoTip',
+    'Infotip',
     withInfo()(() => (
       <div>
         <p>
           Need some inline help regarding a partiular item?
           <br />
-          Consider using an <tt>InfoTip</tt>.
+          Consider using an <tt>Infotip</tt>.
         </p>
         <p>
-          There is an <tt>InfoTip</tt> following this statement
-          <InfoTip text="Hello from the InfoTip again!" />
+          There is an <tt>Infotip</tt> following this statement
+          <Infotip text="Hello from the Infotip again!" />
         </p>
       </div>
     ))
