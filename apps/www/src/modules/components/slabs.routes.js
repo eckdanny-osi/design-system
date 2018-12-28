@@ -7,6 +7,7 @@ import AdvancedSearchDataGrid from '!babel-loader!@mdx-js/loader!./modules/DataG
 import Avatar from '!babel-loader!@mdx-js/loader!./modules/Avatar/Avatar.mdx'
 import Alert from '!babel-loader!@mdx-js/loader!./modules/Alert/Alert.mdx'
 import Badge from '!babel-loader!@mdx-js/loader!./modules/Badge/Badge.mdx'
+import BreadcrumbTrail from '!babel-loader!@mdx-js/loader!./modules/BreadcrumbTrail/BreadcrumbTrail.mdx'
 import Button from '!babel-loader!@mdx-js/loader!./modules/Button/Button.mdx'
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./modules/ButtonGroup/ButtonGroup.mdx'
 import Card from '!babel-loader!@mdx-js/loader!./modules/Card/Card.mdx'
@@ -38,6 +39,11 @@ const routes = {
       component: Badge,
     },
     {
+      title: 'Breadcrumbs',
+      path: '/breadcrumbs',
+      component: BreadcrumbTrail
+    },
+    {
       title: 'Button',
       path: '/button',
       component: Button,
@@ -46,10 +52,6 @@ const routes = {
       title: 'ButtonGroup',
       path: '/button-group',
       component: ButtonGroup,
-    },
-    {
-      title: 'Breadcrumbs',
-      path: '/breadcrumbs',
     },
     {
       title: 'Cards',

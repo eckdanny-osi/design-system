@@ -1,5 +1,6 @@
 import React from 'react'
 import { Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
+import PropTypes from 'prop-types'
 
 const LinkTag = ({ active, path, title, ...props }) => (
   <a href={active ? undefined : path} {...props}>
@@ -7,7 +8,12 @@ const LinkTag = ({ active, path, title, ...props }) => (
   </a>
 )
 
-const BreadcrumbTrail = ({ items = [], tag: Tag = LinkTag }) => {
+const propTypes = {
+  /** List of breadcrumbs items. Item should contain `path` and `title` fields. */
+  items: PropTypes.array,
+}
+
+const BreadcrumbTrail = ({ items = [] }) => {
   return (
     <Breadcrumb
       listClassName="p-0 m-0 bg-transparent"
@@ -21,7 +27,7 @@ const BreadcrumbTrail = ({ items = [], tag: Tag = LinkTag }) => {
           <React.Fragment key={item.path}>
             {i !== 0 && <div className="mx-2 text-primary">/</div>}
             <BreadcrumbItem
-              tag={Tag}
+              tag={LinkTag}
               active={active}
               path={item.path}
               title={item.title}
@@ -32,5 +38,7 @@ const BreadcrumbTrail = ({ items = [], tag: Tag = LinkTag }) => {
     </Breadcrumb>
   )
 }
+
+BreadcrumbTrail.propTypes = propTypes
 
 export default BreadcrumbTrail
