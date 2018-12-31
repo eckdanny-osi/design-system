@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash.pick'
 import cn from 'classnames'
-import { Button, Popover, PopoverHeader, PopoverBody } from '@cwds/components'
+import { Button, Popover } from '../'
 import Icon from '@cwds/icons'
 import Styles from './Infotip.module.scss'
 

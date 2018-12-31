@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Infotip } from '@cwds/components'
+import Infotip from './Infotip'
 
 export default class UncontrolledInfotip extends Component {
   static propTypes = {
