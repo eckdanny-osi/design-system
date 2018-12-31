@@ -1,7 +1,7 @@
-@import '~@cwds/core/scss/base';
+@import "~@cwds/core/scss/base";
 
 :global {
-  @import '~react-table/react-table';
+  @import "~react-table/react-table";
   .ReactTable {
     margin-top: -$card-border-width;
     border: $card-border-width solid $card-border-color;
@@ -37,8 +37,12 @@
         border-right: none;
       }
     }
+    .pagination-bottom > .-pagination {
+      padding-top: map-get($map: $spacers, $key: 3);
+    }
     .-pagination {
       border-top: $card-border-width solid $card-border-color;
+      flex-wrap: nowrap;
       .-previous,
       .-next {
         margin-top: 2.5px;
@@ -50,8 +54,17 @@
         text-align: left;
       }
       .-center {
+        flex: 0;
+        @include media-breakpoint-down(sm) {
+          flex: auto;
+        }
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
         .select-wrap {
           flex: 1 0;
+          @include media-breakpoint-up(sm) {
+            min-width: 7rem;
+          }
         }
       }
       .-pageJump {
@@ -60,6 +73,7 @@
         }
       }
       // .-pageInfo {
+      //   // nothing here
       // }
     }
     .rt-resizer {
