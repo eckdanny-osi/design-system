@@ -1,6 +1,6 @@
 {
   "name": "@cwds/icons",
-  "version": "0.5.10",
+  "version": "0.6.0",
   "description": "Icons for CWS CARES",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com",
@@ -23,7 +23,7 @@
     "build": "rollup src/index.js -c rollup.config.js"
   },
   "dependencies": {
-    "@cwds/core": "^0.5.10",
+    "@cwds/core": "^0.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.5",
     "@fortawesome/free-regular-svg-icons": "^5.5.0",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",

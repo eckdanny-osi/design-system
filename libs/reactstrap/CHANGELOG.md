@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/ca-cwds/design-system/compare/v0.5.10...v0.6.0) (2018-12-31)
+
+
+### Features
+
+* **components:** Menu, MenuItem for contextual menus ([#336](https://github.com/ca-cwds/design-system/issues/336)) ([c926144](https://github.com/ca-cwds/design-system/commit/c926144)), closes [/github.com/FezVrasta/popper.js/issues/478#issuecomment-341506071](https://github.com//github.com/FezVrasta/popper.js/issues/478/issues/issuecomment-341506071)
+
+
+
+
+
 ## [0.5.10](https://github.com/ca-cwds/design-system/compare/v0.5.9...v0.5.10) (2018-12-11)
 
 

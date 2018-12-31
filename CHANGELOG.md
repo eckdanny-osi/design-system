@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/ca-cwds/design-system/compare/v0.5.10...v0.6.0) (2018-12-31)
+
+
+### Bug Fixes
+
+* **components:** fix Banner zIndex ([#338](https://github.com/ca-cwds/design-system/issues/338)) ([fa1debf](https://github.com/ca-cwds/design-system/commit/fa1debf))
+* **datagrid:** fix datagrid pagination flex layout bug ([#346](https://github.com/ca-cwds/design-system/issues/346)) ([f69b5ef](https://github.com/ca-cwds/design-system/commit/f69b5ef))
+* **tech:** consistent filename casing for Infotips ([#345](https://github.com/ca-cwds/design-system/issues/345)) ([0963202](https://github.com/ca-cwds/design-system/commit/0963202))
+* **www:** Add Breadcrumb docs ([#343](https://github.com/ca-cwds/design-system/issues/343)) ([d160c2c](https://github.com/ca-cwds/design-system/commit/d160c2c))
+* **www:** Add Modal component docs ([#342](https://github.com/ca-cwds/design-system/issues/342)) ([6e5854d](https://github.com/ca-cwds/design-system/commit/6e5854d))
+
+
+### Features
+
+* **components:** Add InfoTip component ([#339](https://github.com/ca-cwds/design-system/issues/339)) ([dd4e0e3](https://github.com/ca-cwds/design-system/commit/dd4e0e3))
+* **components:** Menu, MenuItem for contextual menus ([#336](https://github.com/ca-cwds/design-system/issues/336)) ([c926144](https://github.com/ca-cwds/design-system/commit/c926144)), closes [/github.com/FezVrasta/popper.js/issues/478#issuecomment-341506071](https://github.com//github.com/FezVrasta/popper.js/issues/478/issues/issuecomment-341506071)
+
+
+
+
+
 ## [0.5.10](https://github.com/ca-cwds/design-system/compare/v0.5.9...v0.5.10) (2018-12-11)
 
 
