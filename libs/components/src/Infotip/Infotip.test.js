@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Infotip from './'
+import Infotip from './Infotip'
 
 describe('Infotip', () => {
   it('renders', () => {
