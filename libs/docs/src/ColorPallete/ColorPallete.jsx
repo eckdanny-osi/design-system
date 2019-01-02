@@ -13,6 +13,7 @@ export default ({ colors }) => {
               <div
                 key={value}
                 className={cn(
+                  'color-pallete__color',
                   'd-flex justify-content-between align-items-center',
                   {
                     'mt-2': i !== 0,
