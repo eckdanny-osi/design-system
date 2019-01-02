@@ -16,7 +16,8 @@
     "prebuild": "rimraf dist",
     "build": "run-p build:js build:css",
     "build:js": "rollup -c rollup.config.js",
-    "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js src",
+    "build:css": "echo NO CSS BUILD STEP IN @cwds/docs yet!",
+    "//build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js src",
     "build:watch": "yarn build --watch"
   },
   "dependencies": {
