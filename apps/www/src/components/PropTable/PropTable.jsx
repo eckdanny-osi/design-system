@@ -45,7 +45,7 @@ const PropDoc = ({ propDef, tag: Tag = 'h4' }) => {
               </td>
             </tr>
           )}
-          {type.value && (
+          {Array.isArray(type.value) && (
             <tr>
               <td>oneOf</td>
               <td>
