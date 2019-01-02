@@ -1,11 +1,5 @@
-# `@cwds/docs`
+### Components
 
-> TODO: description
+These components are **not** part of the design system!
 
-## Usage
-
-```
-import docs from '@cwds/docs';
-
-// TODO: DEMONSTRATE API
-```
+The components here are only for design guide documentation. There is little "content" content in CARES, but some `Blockquote`s, and `Figure`s may be helpful for readers.
