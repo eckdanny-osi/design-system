@@ -62,14 +62,9 @@ class Pagination extends PaginationRT {
             <span className="mr-1">{this.props.pageText}</span>
             {showPageJump ? (
               <div className="-pageJump">
-                <label
-                  className="sr-only"
-                  htmlFor={`${this.uniqueId}_pageJump`}
-                >
-                  Page Jump
-                </label>
                 <Input
                   id={`${this.uniqueId}_pageJump`}
+                  aria-label="Page Jump"
                   type={this.state.page === '' ? 'text' : 'number'}
                   onChange={e => {
                     const val = e.target.value
@@ -98,6 +93,7 @@ class Pagination extends PaginationRT {
           {showPageSizeOptions && (
             <div className="select-wrap -pageSizeOptions">
               <Select
+                aria-label="Page Size"
                 value={value}
                 style={{ textAlign: 'left' }}
                 options={options}
