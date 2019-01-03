@@ -45,18 +45,20 @@ const PropDoc = ({ propDef, tag: Tag = 'h4' }) => {
               </td>
             </tr>
           )}
-          {Array.isArray(type.value) && (
-            <tr>
-              <td>oneOf</td>
-              <td>
-                <pre className="mb-0" style={{ verticalAlign: 'middle' }}>
-                  <code>
-                    {type.value.map(({ value }) => value).join(' | ')}
-                  </code>
-                </pre>
-              </td>
-            </tr>
-          )}
+          {type.name === 'enum'
+            ? Array.isArray(type.value) && (
+                <tr>
+                  <td>oneOf</td>
+                  <td>
+                    <pre className="mb-0 align-middle">
+                      <code>
+                        {type.value.map(({ value }) => value).join(' | ')}
+                      </code>
+                    </pre>
+                  </td>
+                </tr>
+              )
+            : null}
         </tbody>
       </Table>
     </div>
