@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/ca-cwds/design-system/compare/v0.6.0...v0.6.1) (2019-01-03)
+
+
+### Bug Fixes
+
+* **www:** filter enum types in Proptable types ([#354](https://github.com/ca-cwds/design-system/issues/354)) ([24de75b](https://github.com/ca-cwds/design-system/commit/24de75b))
+* **www:** fix PropTable enum type renders ([#353](https://github.com/ca-cwds/design-system/issues/353)) ([60c082e](https://github.com/ca-cwds/design-system/commit/60c082e))
+* **www:** show enum values in PropTables ([#349](https://github.com/ca-cwds/design-system/issues/349)) ([10e411f](https://github.com/ca-cwds/design-system/commit/10e411f))
+* **www:** support code tags in MDX AnchorLinks ([#348](https://github.com/ca-cwds/design-system/issues/348)) ([26465a0](https://github.com/ca-cwds/design-system/commit/26465a0))
+
+
+
+
+
 # [0.6.0](https://github.com/ca-cwds/design-system/compare/v0.5.10...v0.6.0) (2018-12-31)
 
 
