@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Styles from './Figure.module.css'
+import Styles from './Figure.module.scss'
 
 const propTypes = {
   src: PropTypes.string.isRequired,
