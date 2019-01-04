@@ -2,7 +2,7 @@ import React from 'react'
 import set from 'lodash.set'
 import SyntaxHighlighter from 'react-syntax-highlighter/prism'
 import { xonokai } from 'react-syntax-highlighter/styles/prism'
-import AnchorLink from './AnchorLink'
+import { AnchorLink } from '@cwds/docs'
 
 const codeSnippetStyle = set(
   xonokai,
