@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, CardBody, Alert } from '@cwds/components'
-import DemoCard from '../../../../components/DemoCard'
+import { DemoCard } from '@cwds/docs'
 
 class DismissableAlertExample extends Component {
   rdoGrpName = 'DismissableAlertExampleGroup'
