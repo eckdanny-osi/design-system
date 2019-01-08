@@ -29,15 +29,16 @@ class App extends Component {
           <Router>
             <ScrollToTop>
               <Fragment>
-                <Route exact path="/" component={Home} />{' '}
-                <Route path="/core-style" component={CoreStyles} />{' '}
-                <Route path="/labs" component={LabsPage} />{' '}
-                <Route path="/components" component={Components} />{' '}
-                <Route path="/status" component={Status} /> <JumpToTop />
-              </Fragment>{' '}
-            </ScrollToTop>{' '}
-          </Router>{' '}
-        </CaresProvider>{' '}
+                <Route exact path="/" component={Home} />
+                <Route path="/core-style" component={CoreStyles} />
+                <Route path="/labs" component={LabsPage} />
+                <Route path="/components" component={Components} />
+                <Route path="/status" component={Status} />
+                <JumpToTop />
+              </Fragment>
+            </ScrollToTop>
+          </Router>
+        </CaresProvider>
       </MDXProvider>
     )
   }
