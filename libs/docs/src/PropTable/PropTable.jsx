@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { Card, CardBody, Table, Badge } from '@cwds/components'
-import AnchorLink from '../AnchorLink'
+import { AnchorLink } from '@cwds/docs'
 import Styles from './PropTable.module.scss'
 
 const ResponsiveTag = props => (
