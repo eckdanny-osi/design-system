@@ -1,6 +1,11 @@
 import {DemoCard, PropTable} from '@cwds/docs'
 import Docgen from "../ReactDogenInfo.js";
-import { UncontrolledMenu as Menu, MenuItem } from "@cwds/components";
+import {
+  UncontrolledMenu as Menu,
+  MenuItem,
+  UserMenu,
+  UncontrolledUserMenu
+} from "@cwds/components";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { xonokai, dark } from "react-syntax-highlighter/styles/prism";
 import {
@@ -73,6 +78,30 @@ Props passed to `MenuItem` are passed through, so creating a `Menu` of links is 
 <SyntaxHighlighter language="jsx" style={xonokai}>
   {LinkMenuExampleSrc}
 </SyntaxHighlighter>
+
+### UserMenu
+
+The `UserMenu` is a unique case of the `Menu` component. The `caret`, and `right` props are predetermined (and opaque to the component consumer). There shall be _exactly one_ instance of the `UserMenu` component present on any CARES screen. The `icon` is replaced with an instance of [`Avatar`](/components/avatar) and the `label` prop is used for the accompanying text node.
+
+<DemoCard>
+  <div className="text-right p-2 bg-info">
+    <UncontrolledUserMenu label="Joe">
+      <MenuItem>Foo</MenuItem>
+      <MenuItem>Bar</MenuItem>
+      <MenuItem tag="a" href="/logout">
+        Logout
+      </MenuItem>
+    </UncontrolledUserMenu>
+  </div>
+</DemoCard>
+
+```jsx
+<UncontrolledUserMenu label="Joe">
+  <MenuItem tag="a" href="/logout">
+    Logout
+  </MenuItem>
+</UncontrolledUserMenu>
+```
 
 ## Props
 

@@ -1,3 +1,5 @@
 export { default as Menu } from './Menu'
 export { default as MenuItem } from './MenuItem'
+export { default as UserMenu } from './UserMenu'
+export { default as UncontrolledUserMenu } from './UncontrolledUserMenu'
 export { default as UncontrolledMenu } from './UncontrolledMenu'

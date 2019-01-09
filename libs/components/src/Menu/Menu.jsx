@@ -36,7 +36,7 @@ const Menu = ({
     <Dropdown
       {...getDropdownProps(props)}
       className={cn(props.className, {
-        [Styles.WithArrow]: !props.label,
+        [Styles.WithArrow]: props.caret || !props.label,
       })}
     >
       <ToggleComponent {...getDropdownToggleProps(props)} />
