@@ -38,11 +38,6 @@ checks:
     enabled: false
   identical-code:
     enabled: true
-plugins:
-  brakeman:
-    enabled: true
-  rubocop:
-    enabled: true
 exclude_patterns:
   - "config/"
   - "coverage/"
