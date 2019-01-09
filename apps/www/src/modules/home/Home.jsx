@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import {
   Page,
   Button,
-  Badge,
   Card,
   CardHeader,
   CardBody,
@@ -22,6 +21,8 @@ export default () => (
     // breadcrumb={<div>aslkdfj</div>}
     // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
     // Breadcrumbs={() => <div>Hello World!</div>}
+    // breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
+    Breadcrumb={() => 'Helo World'}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
@@ -62,6 +63,7 @@ export default () => (
               </Card>
             </Col>
 
+            {/*
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -82,6 +84,7 @@ export default () => (
                 </CardFooter>
               </Card>
             </Col>
+            */}
 
             <Col sm={6}>
               <Card>
@@ -101,6 +104,7 @@ export default () => (
               </Card>
             </Col>
 
+            {/*
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -125,6 +129,7 @@ export default () => (
                 </CardFooter>
               </Card>
             </Col>
+            */}
           </Row>
         </Col>
         <Col

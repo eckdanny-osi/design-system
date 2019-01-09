@@ -24,7 +24,7 @@ export const App = () => (
   <Page
     title="Yay! You're on Rails!"
     layout="dashboard"
-    breadcrumb={<WelcomeMarquee />}
+    Breadcrumb={<WelcomeMarquee />}
     sidenav={() => 'Sidenav'}
     main={() => (
       <div>

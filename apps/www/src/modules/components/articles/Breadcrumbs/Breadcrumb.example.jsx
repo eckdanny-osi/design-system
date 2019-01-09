@@ -13,10 +13,8 @@ const disabledItems = [
   { title: 'Breadcrumbs' },
 ]
 
-export const Breadcrumbs = () => <BreadcrumbTrail items={items} />
+export const BreadcrumbExample = () => <BreadcrumbTrail items={items} />
 
 export const DisabledBreadcrumbs = () => (
   <BreadcrumbTrail items={disabledItems} />
 )
-
-export default Breadcrumbs

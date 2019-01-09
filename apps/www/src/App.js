@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/tag'
-import { Utils, JumpToTop } from '@cwds/components'
+import { CaresProvider, JumpToTop } from '@cwds/components'
 import componentMap from './MDXComponentProviderMappings'
+import appConfig from './config'
 
 import ScrollToTop from './ScrollToTop'
 import Status from './modules/status'
@@ -10,23 +11,13 @@ import Home from './modules/home'
 import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
-
 import FacilityProfile from './demos/FacilityProfile'
 
-import CaresConfig from './config'
-const { CaresProvider, defaultConfig } = Utils
-
 class App extends Component {
-  state = {
-    config: {
-      ...defaultConfig,
-      ...CaresConfig,
-    },
-  }
   render() {
     return (
       <MDXProvider components={componentMap}>
-        <CaresProvider value={this.state.config}>
+        <CaresProvider {...appConfig}>
           <Router>
             <ScrollToTop>
               <Fragment>

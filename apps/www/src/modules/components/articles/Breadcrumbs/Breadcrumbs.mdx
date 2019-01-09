@@ -1,0 +1,148 @@
+import { BreadcrumbTrail, Alert } from "@cwds/components";
+import { DemoCard, PropTable } from "@cwds/docs";
+import {
+  BreadcrumbExample,
+  DisabledBreadcrumbs
+} from "./Breadcrumb.example.jsx";
+import Docgen from "../ReactDogenInfo.js";
+
+export const meta = {
+  authors: [
+    "Oleksii Khilkevych <oleksii.khilkevych@osi.ca.gov>",
+    "Danny Eck <danny.eck@osi.ca.gov>"
+  ]
+};
+
+## Synopsis
+
+Use `Breadcrumb`s to indicate the location of the current page within a navigational hierarchy.
+
+<DemoCard>
+  <BreadcrumbExample />
+</DemoCard>
+
+### Disambiguating Terms
+
+_Breadcrumb navigation_ is a foundational UX pattern in CWS CARES. The sections below distinguish the pattern as implemented as a `Page` construct vs the standalone component:
+
+#### Region in `Page` Layouts
+
+Most CWS-CARES `Page`s exhibit the [_Breadcrumb naviation_](/patterns/breadcrumbs) pattern. There exists a horizontal band of reserved space in the `Banner` into which the breadcrumb navigation controls are slotted. It is here that the `Breadcrumb` _component_ is ultimately placed.
+
+```jsx
+import { Page } from "@cwds/components";
+```
+
+Usage with the `Page` component
+
+```jsx
+<Page
+  breadcrumb={[
+    { path: "/", title: "Home" },
+    { path: "/books", title: "Books" },
+    { path: "/book/123", title: "Moby-Dick" }
+  ]}
+/>
+```
+
+The `breadcrumb` prop of the `Page` component accepts a number of different data types. See the [`Page` article](/components/Page) and [`CaresProvider` article](/components/CaresProvider) for more detailed usage options.
+
+#### The `Breadcrumb` Component
+
+The _standalone_ component is less often used, but is exported to promote incremental adoption with application developers:
+
+```jsx
+import { Breadcrumb, BreadcrumbItem } from "@cwds/components";
+```
+
+Construction is simply:
+
+```jsx
+<Breadcrumb>
+  <BreadcrumbItem>Home</BreadcrumbItem>
+  <BreadcrumbItem>Books</BreadcrumbItem>
+  <BreadcrumbItem active>Moby-Dick</BreadcrumbItem>
+</Breadcrumb>
+```
+
+<Alert color="warning">
+  <code>Breadcrumb</code> component itself is unlikely to be consumed directly.
+  Consider using the <code>Page</code> component instead.
+</Alert>
+
+### Usage
+
+alskdjfalksdjf
+
+#### in `Page` component
+
+To support strong visual consistency across CWS-CARES applications, the [`Page` component](/components/Page) accepts breadcrumb props and is the **preferred** method for producing the _breadcrumb naviation_ pattern and used as follows:
+
+#### Using the `Page` component
+
+The high level [`Page`](/components/page) component accepts a flexible prop for breadcrumb formation and is the preferred mechanism for application developers to construct breadcrumb elements.
+
+```jsx
+import { Page } from "@cwds/components";
+```
+
+```jsx
+<Page
+  breadcrumb={[
+    { path: "/", title: "Home" },
+    { path: "/books", title: "Books" },
+    { path: "/book/123", title: "Moby-Dick" }
+  ]}
+/>
+```
+
+#### Standalone
+
+alskdjfalksdjf
+
+## Props
+
+<PropTable docgen={Docgen.BreadcrumbTrail} />
+
+## Usage Guidelines
+
+`Breadcrumb`s are nested within the [`Banner`](/components/banner) component. They must appear on each page as a secondary navigational tool.
+
+### Content Guidelines
+
+- Use the shortest comprehensible term for breadcrumb labels. Usually this will be the same label used in menu navigation. There are no hard and fast rules for limiting character length or number of words used, just try to be descriptive yet brief.
+- Breadcrumbs must be associated with link to another screen, not used as anchor links.
+
+### Technical Guidelines
+
+There are two
+
+## Example
+
+The `Breadcrumb`Trail usage:
+
+<BreadcrumbExample />
+
+```jsx
+const items = [
+  { path: '/', title: 'Dashboard' },
+  { path: '/components', title: 'Components' },
+  { path: '#', title: 'Breadcrumbs' },
+]
+
+<BreadcrumbTrail items={items}/>
+```
+
+You can get a breadcrumbs with disabled links if you don't pass 'path' param.
+
+<DisabledBreadcrumbs />
+
+```jsx
+const items = [
+  { title: 'Dashboard' },
+  { title: 'Components' },
+  { title: 'Breadcrumbs' },
+]
+
+<BreadcrumbTrail items={items}/>
+```

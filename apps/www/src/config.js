@@ -10,7 +10,7 @@ import {
 import getRepoStatus from './macros/repo-status.macro'
 const status = getRepoStatus()
 
-const appBarBrand = () => (
+const Brand = () => (
   <React.Fragment>
     <Link to="/">
       <Logo />
@@ -21,29 +21,33 @@ const appBarBrand = () => (
   </React.Fragment>
 )
 
-const appBarUserMenu = () => (
+const UserMenu = () => (
   <UncontrolledUserMenu>
     <MenuItem onClick={() => alert('logout!')}>Logout</MenuItem>
   </UncontrolledUserMenu>
 )
 
-const breadcrumbRenderer = items => {
+const Breadcrumbs = ({ breadcrumb, items }) => {
+  if (breadcrumb) return breadcrumb
   return !Array.isArray(items) ? (
     <em>Hello World</em>
   ) : (
     <BreadcrumbTrail
       items={items}
-      tag={({ path, title, ...props }) => (
-        <Link to={path} {...props}>
-          {title}
-        </Link>
-      )}
+      tag={({ path, title, ...props }) => {
+        return (
+          <Link to={path} {...props}>
+            {title}
+          </Link>
+        )
+      }}
     />
   )
 }
 
 export default {
-  appBarBrand,
-  appBarUserMenu,
-  breadcrumbRenderer,
+  Brand,
+  UserMenu,
+  // Breadcrumbs,
+  // breadcrumbRenderer,
 }

@@ -30,3 +30,4 @@ export {
 } from './Menu'
 export { default as RadioGroup } from './RadioGroup'
 export { Utils }
+export { CaresContext, default as CaresProvider } from './utils/CaresContext'
