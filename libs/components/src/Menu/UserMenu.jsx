@@ -28,6 +28,7 @@ export default UserMenu
 
 function getDropdownToggleProps(props) {
   return {
+    size: 'sm',
     className: 'bg-transparent border-0 text-white',
     children: (
       <Fragment>

@@ -5,10 +5,8 @@ import {
   Logo,
   Badge,
   BreadcrumbTrail,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  MenuItem,
+  UncontrolledUserMenu,
 } from '@cwds/components'
 import getRepoStatus from './macros/repo-status.macro'
 const status = getRepoStatus()
@@ -25,19 +23,9 @@ const appBarBrand = () => (
 )
 
 const appBarUserMenu = () => (
-  <UncontrolledDropdown>
-    <DropdownToggle
-      className="bg-transparent border-0 text-white"
-      tag="button"
-      size="sm"
-    >
-      <span className="mr-2 text-capitalize">Guest</span>
-      <Avatar invert size="sm" />
-    </DropdownToggle>
-    <DropdownMenu right>
-      <DropdownItem onClick={() => alert('logout!')}>Logout</DropdownItem>
-    </DropdownMenu>
-  </UncontrolledDropdown>
+  <UncontrolledUserMenu>
+    <MenuItem onClick={() => alert('logout!')}>Logout</MenuItem>
+  </UncontrolledUserMenu>
 )
 
 const breadcrumbRenderer = items => {
