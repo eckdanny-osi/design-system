@@ -1,8 +1,8 @@
 module.exports = {
-  presets: ['env', 'react'],
+  presets: ['@babel/preset-env', '@babel/preset-react'],
   plugins: [
-    'transform-class-properties',
-    'transform-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
     [
       'transform-rename-import',
       {
