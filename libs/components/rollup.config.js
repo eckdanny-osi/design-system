@@ -34,7 +34,7 @@ module.exports = {
     babel({
       exclude: 'node_modules/**',
       babelrc: false,
-      presets: [['babel-preset-env', { modules: false }]],
+      presets: [['@babel/preset-env', { modules: false }]],
       plugins: [
         [
           'transform-rename-import',
@@ -43,10 +43,10 @@ module.exports = {
             replacement: '$1.css',
           },
         ],
-        'transform-class-properties',
-        'transform-object-rest-spread',
-        'transform-react-jsx',
-        'external-helpers',
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-object-rest-spread',
+        '@babel/plugin-transform-react-jsx',
+        '@babel/plugin-external-helpers',
       ],
     }),
   ],

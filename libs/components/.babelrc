@@ -1,5 +1,5 @@
 {
-  "presets": ["env", "react"],
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
@@ -13,8 +13,11 @@
   ],
   "env": {
     "test": {
-      "presets": [["env"], "react"],
-      "plugins": ["transform-class-properties", "transform-object-rest-spread"]
+      "presets": [["@babel/preset-env"], "@babel/preset-env"],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
     }
   }
 }
