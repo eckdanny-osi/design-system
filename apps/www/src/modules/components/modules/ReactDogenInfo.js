@@ -13,6 +13,7 @@ export default {
   Col: docgenComposed('reactstrap/src/Col.js'),
   Container: docgenComposed('reactstrap/src/Container.js'),
   Infotip: docgenComposed('@cwds/components/src/Infotip/Infotip.jsx'),
+  InputMask: docgenComposed('@cwds/components/src/InputMask/InputMask.jsx'),
   Icon: docgenComposed(
     '@cwds/icons/src/Icon.jsx',
     '@cwds/icons/src/fontawesome.props'

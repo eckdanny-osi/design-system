@@ -1,0 +1,32 @@
+import {DemoCard, PropTable} from '@cwds/docs'
+import PhoneInputMaskExample from './PhoneInputMask.example.jsx'
+import CustomInputMaskExample from './CustomInputMask.example.jsx'
+import Docgen from '../ReactDogenInfo.js'
+
+## Synopsis
+
+Use a `InputMask` for a masked inputs. Default maskChar: '_'.
+
+## Examples
+
+Phone number InputMask:
+
+<DemoCard>
+    <PhoneInputMaskExample/>
+</DemoCard>
+
+```jsx
+  <InputMask mask='(999) 999-99-99'/>
+```
+Use InputMask for any masked input fields:
+
+<DemoCard>
+    <CustomInputMaskExample/>
+</DemoCard>
+
+```jsx
+   <InputMask mask='aaa-999' maskChar="#"/>
+```
+## Props
+
+<PropTable docgen={Docgen.InputMask} />

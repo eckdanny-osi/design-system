@@ -18,6 +18,7 @@ import Infotip from '!babel-loader!@mdx-js/loader!./modules/Infotip/Infotip.mdx'
 import MenuPage from '!babel-loader!@mdx-js/loader!./modules/Menu/MenuPage.mdx'
 import TooltipPage from '!babel-loader!@mdx-js/loader!./modules/Tooltip/TooltipPage.mdx'
 import Modal from '!babel-loader!@mdx-js/loader!./modules/Modal/Modal.mdx'
+import InputMask from '!babel-loader!@mdx-js/loader!./modules/InputMask/InputMask.mdx'
 
 const routes = {
   title: 'Component Library',
@@ -145,6 +146,11 @@ const routes = {
     {
       title: 'Input',
       path: '/input',
+    },
+    {
+      title: 'InputMask',
+      path: '/InputMask',
+      component: InputMask,
     },
     {
       title: 'InputGroup',
