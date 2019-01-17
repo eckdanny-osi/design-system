@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
+import pick from "lodash.pick";
+import get from "lodash.get";
 import {
   Button,
   Card,
@@ -12,125 +14,142 @@ import {
   FormFeedback,
   Label,
   Input,
+  Select,
   Row
 } from "@cwds/components";
 
-const data = {
-  facilityName: "",
-  id: "",
-  type: "",
-  licenseeName: ""
-};
-
-const formStructure = [
-  {
-    id: "summary__name",
-    name: "name",
-    label: "Facility / Home Name",
-    type: "text"
-    // editable: "//DERIVED VALUE"
-    // disabled: "",
-    // value: '',
-    // initialVlaue: "",
-    // helpText: '',
-    // error: () => ()
-  },
-  {
-    id: "summary__id",
-    name: "id",
-    label: "License Number / Family ID",
-    type: "string"
-  },
-  {
-    id: "summary__type",
-    name: "type",
-    label: "Facility Home Type",
-    type: "string"
-  },
-  {
-    id: "summary_licensee",
-    name: "licensee",
-    label: "Name of Licensee / Parents",
-    type: "string"
-  },
-  {
-    id: "summary__status",
-    name: "Status",
-    label: "Status",
-    type: "string"
-  },
-  {
-    id: "summary_applicationReceiveDate",
-    name: "applicationReceiveDate",
-    label: "Application Recieved Date",
-    type: "date"
-  },
-  {
-    id: "summary__assignedOversightAgency",
-    name: "assignedOversightAgency",
-    label: "Assigned Oversight Agency",
-    type: "string"
-  },
-  {
-    id: "summary__ageRange",
-    name: "ageRange",
-    label: "Age Range",
-    type: "string" // SHOULDN"T THIS BE CHECKBOX BANK OR SELECT??
-  },
-  {
-    id: "summary__capacityLastChangedDate",
-    name: "capacityLastChangedDate",
-    label: "Date Capacity Last Changed",
-    type: "date"
-  },
-  {
-    id: "summary__capacity",
-    name: "capacity",
-    label: "Capacity",
-    type: "number"
-  },
-  {
-    id: "summary__adjustedCapacity",
-    name: "adjustedCapacity",
-    label: "Adjusted Capacity",
-    type: "number"
-  },
-  {
-    id: "summary__availableBeds",
-    name: "availableBeds",
-    label: "Available Beds",
-    type: "number"
-  }
-  // Facility / Home Name	Text (abc)
-  // License Number / Family ID	Text (abc123)
-  // Facility Home Type	Enum (single)
-  // Name of Licensee / Parents	Text (abc)
-  // Status	Enum (single)
-  // Application Recieved Date	Date
-  // Assigned Oversight Agency	Enum (single)
-  // Capacity	Number (123)
-  // Date Capacity Last Changed	Date
-  // Age Range	Number (range)
-];
-
 class Summary extends Component {
   state = {
-    context: "view"
+    context: "view",
+    initialValues: {
+      name: "Cambell Family Home",
+      id: "123456789a",
+      type: "Resource Family home",
+      licenseeName: "Cambell, Sara & Katie",
+      status: "RFA Probationary",
+      originalApplicationRecievedDate: "2019-01-14",
+      districtOffice: "Sacramento", // assignedOversightAgency?
+      // (ageRange) <== // TODO: this is not on the facility model? 8 - 16
+      capacity: 6,
+      capacityLastChanged: "2019-01-14",
+      adjustedCapacity: undefined,
+      availableBeds: 6
+    }
   };
+
+  schema = [
+    {
+      id: "summary__name",
+      name: "name",
+      label: "Facility / Home Name",
+      type: "text",
+      required: true
+
+      // editable: "//DERIVED VALUE"
+      // disabled: "",
+      // value: '',
+      // initialVlaue: "",
+      // helpText: '',
+      // error: () => ()
+    },
+    {
+      id: "summary__id",
+      name: "id",
+      label: "License Number / Family ID",
+      type: "string",
+      required: true
+    },
+    {
+      id: "summary__type",
+      name: "type",
+      label: "Facility Home Type",
+      type: "string"
+    },
+    {
+      id: "summary_licenseeName",
+      name: "licenseeName",
+      label: "Name of Licensee / Parents",
+      type: "string"
+    },
+    {
+      id: "summary__status",
+      name: "status",
+      label: "Status"
+      // type: "string"
+    },
+    {
+      id: "summary_originalApplicationRecievedDate",
+      name: "originalApplicationRecievedDate",
+      label: "Application Recieved Date",
+      type: "date"
+    },
+    {
+      id: "summary__districtOffice",
+      name: "districtOffice",
+      label: "Assigned Oversight Agency",
+      type: "string"
+    },
+    // {
+    //   id: "summary__ageRange",
+    //   name: "ageRange",
+    //   label: "Age Range",
+    //   type: "string" // SHOULDN"T THIS BE CHECKBOX BANK OR SELECT??
+    // },
+    {
+      id: "summary__capacityLastChanged",
+      name: "capacityLastChanged",
+      label: "Date Capacity Last Changed",
+      type: "date"
+    },
+    {
+      id: "summary__capacity",
+      name: "capacity",
+      label: "Capacity",
+      type: "number"
+    },
+    {
+      id: "summary__adjustedCapacity",
+      name: "adjustedCapacity",
+      label: "Adjusted Capacity",
+      type: "number"
+    },
+    {
+      id: "summary__availableBeds",
+      name: "availableBeds",
+      label: "Available Beds",
+      type: "number"
+    }
+  ];
 
   constructor(props) {
     super(props);
     this.validate = this.validate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  validate() {}
+  validate(values) {
+    const errors = {};
+
+    // Required fields
+    this.schema.filter(({ required }) => !!required).forEach(fieldSpec => {
+      if (!get(values, fieldSpec.name)) {
+        errors[fieldSpec.name] = "Required!";
+      }
+    });
+
+    return errors;
+  }
+
+  handleSubmit(values) {
+    this.setState({ context: "view", initialValues: values });
+  }
 
   renderEditView() {
     return (
       <Formik
-        onSubmit={values => alert("hi")}
-        initialValues={{}}
+        initialValues={this.state.initialValues}
         validate={this.validate}
+        onSubmit={this.handleSubmit}
         render={props => {
           return (
             <form onSubmit={props.handleSubmit} id="summary-form">
@@ -140,33 +159,24 @@ class Summary extends Component {
                 </CardHeader>
                 <CardBody>
                   <Row>
-                    {/* <Col sm="6" md="4" className="p-2">
-                      <FormGroup>
-                        <Label>Facility / Home Name</Label>
-                        <Input
-                          id="facility-summary__name"
-                          type="text"
-                          value={props.values.date}
-                          invalid={!!props.errors.date}
-                          name="date"
-                          onChange={props.handleChange}
-                        />
-                        <FormFeedback>{props.errors.date}</FormFeedback>
-                      </FormGroup>
-                    </Col> */}
-                    {formStructure.map(({ id, name, label, type }) => (
-                      <Col sm="6" md="4" className="p-2">
+                    {this.schema.map(({ id, name, label, type }) => (
+                      <Col sm="6" md="4" className="p-2" key={id}>
                         <FormGroup>
                           <Label>{label}</Label>
                           <Input
                             id={id}
                             type={type}
-                            value={props.values.date}
-                            invalid={!!props.errors.date}
+                            value={props.values[name]}
+                            invalid={
+                              props.errors[name] &&
+                              props.touched[name] &&
+                              !!props.errors[name]
+                            }
                             name={name}
                             onChange={props.handleChange}
+                            onBlur={props.handleBlur}
                           />
-                          <FormFeedback>{props.errors.date}</FormFeedback>
+                          <FormFeedback>{props.errors[name]}</FormFeedback>
                         </FormGroup>
                       </Col>
                     ))}
@@ -204,45 +214,44 @@ class Summary extends Component {
         <CardBody>
           <Row>
             <Col sm="6" md="4" className="p-2">
-              <div>Facility / Home Name</div>
+              <Label>Facility / Home Name</Label>
               <div>
                 <a href="/">Cambell Family Home</a>
               </div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>License Number / Family ID</div>
+              <Label>License Number / Family ID</Label>
+              <div>{this.state.initialValues.districtOffice}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Facility Home Type</div>
-              <div>SOME VALUE</div>
+              <Label>Facility Home Type</Label>
+              <div>{this.state.initialValues.type}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Name of Licensee / Parents</div>
-              <div>SOME VALUE</div>
+              <Label>Name of Licensee / Parents</Label>
+              <div>{this.state.initialValues.licenseeName}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Status</div>
-              <div>SOME VALUE</div>
+              <Label>Status</Label>
+              <div>{this.state.initialValues.status}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Application Recieved Date</div>
-              <div>SOME VALUE</div>
+              <Label>Application Recieved Date</Label>
+              <div>
+                {this.state.initialValues.originalApplicationRecievedDate}
+              </div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Assigned Oversight Agency</div>
-              <div>SOME VALUE</div>
+              <Label>Assigned Oversight Agency</Label>
+              <div>{this.state.initialValues.districtOffice}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Capacity</div>
-              <div>6</div>
+              <Label>Capacity</Label>
+              <div>{this.state.initialValues.capacity}</div>
             </Col>
             <Col sm="6" md="4" className="p-2">
-              <div>Capacity Last Changed</div>
-              <div>12/12/2018</div>
-            </Col>
-            <Col sm="6" md="4" className="p-2">
-              <div>Age Range</div>
-              <div>8 - 16</div>
+              <Label>Capacity Last Changed</Label>
+              <div>{this.state.initialValues.capacityLastChanged}</div>
             </Col>
           </Row>
         </CardBody>
@@ -264,3 +273,108 @@ class Summary extends Component {
 }
 
 export default Summary;
+
+//
+//
+//
+
+function getFacilityTypes() {
+  return [
+    {
+      value: "Adoption Agency",
+      id: 1
+    },
+    {
+      value: "Community Treatment Facility",
+      id: 11
+    },
+    {
+      value: "County Shelter/Receiving Home(Non EA/AFDC)",
+      id: 16
+    },
+    {
+      value: "Court Specified Home",
+      id: 17
+    },
+    {
+      value: "Crisis Nursery",
+      id: 7
+    },
+    {
+      value: "Foster Fam Agency Cert Resource Fam Home",
+      id: 23
+    },
+    {
+      value: "Foster Family Agency",
+      id: 3
+    },
+    {
+      value: "Foster Family Agency Certified Home",
+      id: 22
+    },
+    {
+      value: "Foster Family AG-Sub",
+      id: 4
+    },
+    {
+      value: "Foster Family Home",
+      id: 6
+    },
+    {
+      value: "GH-Enhanced Behavioral Supports Home",
+      id: 12
+    },
+    {
+      value: "Group Home",
+      id: 13
+    },
+    {
+      value: "Guardian Home",
+      id: 19
+    },
+    {
+      value: "Out Of State GH",
+      id: 14
+    },
+    {
+      value: "Relative/NREFM Home",
+      id: 20
+    },
+    {
+      value: "Resource Family Home",
+      id: 2
+    },
+    {
+      value: "Runaway And Homeless Youth Shelter-GH",
+      id: 24
+    },
+    {
+      value: "Short Term Residential Therapeutic Program",
+      id: 15
+    },
+    {
+      value: "Small Family Home",
+      id: 5
+    },
+    {
+      value: "Supervised Independent Living Placement",
+      id: 21
+    },
+    {
+      value: "Temporary Shelter Care Facility",
+      id: 8
+    },
+    {
+      value: "Transitional Housing Placement Program",
+      id: 10
+    },
+    {
+      value: "Transitional Shelter Care",
+      id: 9
+    },
+    {
+      value: "Tribe Specified Home",
+      id: 18
+    }
+  ];
+}

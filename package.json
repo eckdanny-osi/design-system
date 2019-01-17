@@ -34,8 +34,7 @@
       "**/react-scripts",
       "**/react-scripts/**",
       "www/**",
-      "rails_app/**",
-      "facility-profile/**"
+      "rails_app/**"
     ],
     "packages": [
       "libs/*",

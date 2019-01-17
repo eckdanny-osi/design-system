@@ -7,6 +7,7 @@ import {
   Row,
   Col
 } from "@cwds/components";
+import { Progress } from "@cwds/reactstrap";
 
 class TrackingSummary extends Component {
   render() {
@@ -17,21 +18,29 @@ class TrackingSummary extends Component {
         </CardHeader>
         <CardBody>
           <Row>
-            <Col>Aggregate</Col>
-            <Col>PROGRESS_BAR 42%</Col>
+            <Col sm="4">Aggregate</Col>
+            <Col sm="8">
+              <Progress value="25" />
+            </Col>
           </Row>
           <hr />
           <Row>
-            <Col>Facility Tracklist</Col>
-            <Col>PROGRESS_BAR 62%</Col>
+            <Col sm="4">Facility Tracklist</Col>
+            <Col sm="8">
+              <Progress value="62" />
+            </Col>
           </Row>
           <Row>
-            <Col>John Doe</Col>
-            <Col>PROGRESS_BAR 25%</Col>
+            <Col sm="4">John Doe</Col>
+            <Col sm="8">
+              <Progress value="25" />
+            </Col>
           </Row>
           <Row>
-            <Col>Jane Doe</Col>
-            <Col>PROGRESS_BAR 13%</Col>
+            <Col sm="4">Jane Doe</Col>
+            <Col sm="8">
+              <Progress value="13" />
+            </Col>
           </Row>
         </CardBody>
       </Card>

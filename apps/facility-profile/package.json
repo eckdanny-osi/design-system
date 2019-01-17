@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cwds/components": "^0.7.0",
-    "@cwds/core": "^0.7.0",
-    "@cwds/datagrid": "^0.7.0",
-    "@cwds/icons": "^0.7.0",
-    "@cwds/reactstrap": "^0.7.0",
     "formik": "^1.4.2",
+    "lodash.get": "^4.4.2",
+    "lodash.pick": "^4.4.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
