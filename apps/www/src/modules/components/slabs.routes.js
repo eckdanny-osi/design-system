@@ -42,7 +42,7 @@ const routes = {
     {
       title: 'Breadcrumbs',
       path: '/breadcrumbs',
-      component: BreadcrumbTrail
+      component: BreadcrumbTrail,
     },
     {
       title: 'Button',
