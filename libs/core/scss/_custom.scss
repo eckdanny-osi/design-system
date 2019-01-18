@@ -163,6 +163,13 @@ $table-border-color: $border-color;
 
 $tooltip-bg: $info;
 
+// Progress bars
+
+$progress-height:                   0.75rem;
+$progress-bg:                       theme-color("breath");
+$progress-border-radius:            $border-radius-sm;
+// $progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1);
+
 // Modals
 
 $modal-inner-padding: map-get($spacers, 3);

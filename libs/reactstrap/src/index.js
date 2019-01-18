@@ -32,7 +32,6 @@
  *   - PaginationLink
  *   - PopperContent
  *   - PopperTargetHelper
- *   - Progress
  *   - TabContent
  *   - TabPane
  *   - UncontrolledCarousel
@@ -89,6 +88,7 @@ export {
   PopoverContent,
   PopoverHeader,
   PopoverTitle,
+  Progress,
   Row,
   Table,
   Tooltip,
