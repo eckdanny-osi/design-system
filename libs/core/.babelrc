@@ -1,4 +1,0 @@
-{
-  "comments": false,
-  "plugins": ["preval", "transform-object-rest-spread"]
-}

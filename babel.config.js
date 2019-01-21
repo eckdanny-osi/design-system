@@ -1,6 +1,7 @@
 module.exports = {
   presets: ['@babel/preset-env', '@babel/preset-react'],
   plugins: [
+    'preval',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
     [
@@ -10,11 +11,17 @@ module.exports = {
         replacement: '$1.css',
       },
     ],
-    [
-      'transform-remove-console',
-      {
-        exclude: ['error', 'warn'],
-      },
-    ],
   ],
+  env: {
+    production: {
+      plugins: [
+        [
+          'transform-remove-console',
+          {
+            exclude: ['error', 'warn'],
+          },
+        ],
+      ],
+    },
+  },
 }

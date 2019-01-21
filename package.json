@@ -11,7 +11,7 @@
   "scripts": {
     "test": "jest",
     "pretest:libs": "yarn build:libs",
-    "test:libs": "yarn test --testPathIgnorePatterns=\"apps/*\"",
+    "test:libs": "yarn test --projects libs/*",
     "test:all": "CI=true lerna run --parallel test ",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "start": "cd apps/www && yarn react-scripts start",

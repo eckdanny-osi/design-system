@@ -25,7 +25,7 @@
     "test": "jest",
     "prebuild": "rimraf dist",
     "build": "run-p build:js build:css",
-    "build:es": "babel src --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\",\"__tests__\"",
+    "build:es": "babel --root-mode upward src --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\",\"__tests__\"",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js src",
     "prebuild:watch": "rimraf dist",
