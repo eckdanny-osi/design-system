@@ -1,4 +1,6 @@
 module.exports = ({ project }) => ({
+  name: project,
+  displayName: project,
   verbose: true,
   setupTestFrameworkScriptFile: '<rootDir>/../../setupTests.js',
   moduleNameMapper: {
@@ -9,6 +11,7 @@ module.exports = ({ project }) => ({
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
   coverageReporters: ['lcov'],
   coverageDirectory: '<rootDir>/../../coverage',
 })

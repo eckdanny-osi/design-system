@@ -11,7 +11,7 @@
     "test": "echo \"No tests in @cwds/core\" && exit 0",
     "prebuild": "rimraf dist",
     "build": "run-s build:js build:css",
-    "build:js": "babel --root-mode upward js --out-dir dist",
+    "build:js": "babel --root-mode upward js --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
     "build:css": "node-sass --recursive --output dist --source-map true --importer ../../sass-importers.js scss",
     "prebuild:watch": "yarn prebuild",
     "build:watch": "npm-run-all build:cjs --parallel build:watch:*",
