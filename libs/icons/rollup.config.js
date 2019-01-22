@@ -34,12 +34,12 @@ export default [
       babel({
         babelrc: false,
         exclude: 'node_modules/**',
-        presets: [['babel-preset-env', { modules: false }]],
+        presets: [['@babel/preset-env', { modules: false }]],
         plugins: [
-          'transform-class-properties',
-          'transform-object-rest-spread',
-          'transform-react-jsx',
-          'external-helpers',
+          '@babel/plugin-proposal-class-properties',
+          '@babel/plugin-proposal-object-rest-spread',
+          '@babel/plugin-transform-react-jsx',
+          '@babel/plugin-external-helpers',
         ],
       }),
     ],

@@ -1,4 +1,6 @@
 module.exports = ({ project }) => ({
+  name: project,
+  displayName: project,
   verbose: true,
   setupTestFrameworkScriptFile: '<rootDir>/../../setupTests.js',
   moduleNameMapper: {
@@ -6,6 +8,10 @@ module.exports = ({ project }) => ({
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
   coverageReporters: ['lcov'],
-  coverageDirectory: `<rootDir>/../../coverage/${project}`,
+  coverageDirectory: '<rootDir>/../../coverage',
 })
