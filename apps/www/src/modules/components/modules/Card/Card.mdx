@@ -5,12 +5,16 @@ import {
   CardFooter,
   Button,
   CardTitle,
-  Placeholder,
-} from '@cwds/components'
-import LoadingCardExample from './LoadingCardExample.jsx'
-import MultiScopeCardExample from './MultiScopeCard.example.jsx'
-import {DemoCard, PropTable, ReferenceCard} from '@cwds/docs'
-import Docgen from '../ReactDogenInfo.js'
+  Placeholder
+} from "@cwds/components";
+import LoadingCardExample from "./LoadingCardExample.jsx";
+import MultiScopeCardExample from "./MultiScopeCard.example.jsx";
+import {
+  Example as CollapsibleCardExample,
+  UncontrolledExample as UncontrolledCollapsibleCardExample
+} from "./CollapsibleCardExamples.jsx";
+import { DemoCard, PropTable, ReferenceCard } from "@cwds/docs";
+import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
@@ -23,7 +27,7 @@ Use a `Card` to visually organize related content.
 </DemoCard>
 
 ```jsx
-import { Card } from '@cwds/components'
+import { Card } from "@cwds/components";
 ```
 
 ## Props
@@ -82,6 +86,16 @@ Many `Card` instances may require async data fetching to resolve before the firs
 ```
 
 The `grid` option is provided as a convenience to the developer. If your particular use case requires `Placeholder` to be visually mapped to content blocks with the _highest_ conformity, please compose content placeholders within the `Grid` components to match your implementation.
+
+### Collapsible Cards
+
+<CollapsibleCardExample />
+
+_or_
+
+#### Uncontrolled
+
+<UncontrolledCollapsibleCardExample />
 
 <!--
 ### MultiScope Cards (WiP)
