@@ -1,26 +1,24 @@
 import React from 'react'
-import { default as ReactInputMask } from 'react-input-mask';
+import ReactInputMask from 'react-input-mask'
 import PropTypes from 'prop-types'
 
 const propTypes = {
   /** Mask string. Default format chars: 'a', '9', '*' */
   mask: PropTypes.string,
-  /** Character to cover unfilled parts of the mask.*/
+  /** Character to cover unfilled parts of the mask. */
   maskChar: PropTypes.string,
-  /** Defines format characters with characters as a keys and corresponding RegExp strings as a values.*/
+  /** Defines format characters with characters as a keys and corresponding RegExp strings as a values. */
   formatChars: PropTypes.object,
-  /** Show mask when input is empty and has no focus.*/
+  /** Show mask when input is empty and has no focus. */
   alwaysShowMask: PropTypes.bool,
-  /** Use inputRef instead of ref if you need input node to manage focus, selection, etc.*/
+  /** Use inputRef instead of ref if you need input node to manage focus, selection, etc. */
   inputRef: PropTypes.func,
 }
 
 const defaultProps = {}
 
 const InputMask = props => {
-  return (
-    <ReactInputMask {...props}/>
-  )
+  return <ReactInputMask {...props} />
 }
 
 InputMask.propTypes = propTypes
