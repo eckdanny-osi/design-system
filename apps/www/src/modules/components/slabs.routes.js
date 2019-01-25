@@ -101,7 +101,7 @@ const routes = {
           component: BasicSearchDataGrid,
         },
         {
-          title: 'Advanced Search (WiP)',
+          title: 'Advanced Search',
           path: '/advanced-search',
           component: AdvancedSearchDataGrid,
         },

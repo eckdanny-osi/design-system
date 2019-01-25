@@ -11,8 +11,9 @@ import {
   InputGroupAddon,
   Icon,
 } from '@cwds/components'
-import data from '../data/people.json'
-import { toCapitalCase } from '../utils'
+import data from './people.json'
+
+const toCapitalCase = str => str.charAt(0).toUpperCase() + str.slice(1)
 
 const columns = [
   { Header: 'Last', accessor: 'name.last' },
@@ -30,42 +31,47 @@ const columns = [
   },
 ]
 
-const SearchForm = ({ onChange, onSubmit, disabled, value }) => (
-  <div className="mb-3">
-    <form
-      onSubmit={e => {
-        e.preventDefault()
-        onSubmit()
-      }}
-    >
-      <InputGroup>
-        <Input
-          type="search"
-          value={value}
-          placeholder="Ex; John Smith, Danny Eck, ..."
-          onChange={e => {
-            onChange(e.target.value)
+class SearchForm extends Component {
+  render() {
+    const { onChange, onSubmit, disabled, value } = this.props
+    return (
+      <div className="mb-3">
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            onSubmit()
           }}
-        />
-        <InputGroupAddon addonType="append">
-          <Button
-            color="info"
-            type="submit"
-            style={{
-              borderTopLeftRadius: 0,
-              borderBottomLeftRadius: 0,
-              // TODO: better for box-shadow clipping fix?
-              position: 'relative',
-            }}
-            disabled={Boolean(value) && Boolean(disabled)}
-          >
-            <Icon icon="search" className="mr-2" /> Search
-          </Button>
-        </InputGroupAddon>
-      </InputGroup>
-    </form>
-  </div>
-)
+        >
+          <InputGroup>
+            <Input
+              type="search"
+              value={value}
+              placeholder="Ex; John Smith, Danny Eck, ..."
+              onChange={e => {
+                onChange(e.target.value)
+              }}
+            />
+            <InputGroupAddon addonType="append">
+              <Button
+                color="info"
+                type="submit"
+                style={{
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 0,
+                  // TODO: better for box-shadow clipping fix?
+                  position: 'relative',
+                }}
+                disabled={Boolean(value) && Boolean(disabled)}
+              >
+                <Icon icon="search" className="mr-2" /> Search
+              </Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </form>
+      </div>
+    )
+  }
+}
 
 class CarsDataGrid extends Component {
   state = {
@@ -95,7 +101,6 @@ class CarsDataGrid extends Component {
         </CardHeader>
         <CardBody>
           <DataGrid
-            ref={el => (this.datagrid = el)}
             data={filteredData || data}
             columns={columns}
             defaultPageSize={10}

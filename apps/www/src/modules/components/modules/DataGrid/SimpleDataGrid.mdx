@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
-import { Alert } from '@cwds/components'
-import CarsDataGrid from '../../../labs/views/DataGridsPage/Cars'
-import StarWarsDataGrid from '../../../labs/views/DataGridsPage/StarWars'
-import SyntaxHighlighter from 'react-syntax-highlighter/prism'
-import { xonokai, dark } from 'react-syntax-highlighter/styles/prism'
-import CarsDataGridSrc from '!raw-loader!../../../labs/views/DataGridsPage/Cars/CarsDataGrid.jsx'
-import StarWarsDataGridSrc from '!raw-loader!../../../labs/views/DataGridsPage/StarWars/StarWarsDataGrid.jsx'
+import { Link } from "react-router-dom";
+import { Alert } from "@cwds/components";
+import CarsDataGrid from "./examples/CarsDataGrid";
+import StarWarsDataGrid from "./examples/StarWarsDataGrid";
+import SyntaxHighlighter from "react-syntax-highlighter/prism";
+import { xonokai, dark } from "react-syntax-highlighter/styles/prism";
+import CarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
+import StarWarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
 
 For simple use cases _(e.g.; when only sorting and pagination are required)_, the `DataGrid` can provide an excellent means for quickly navigating collections.
 
@@ -24,7 +24,7 @@ In the server-managed implementation, each UI action which changes the sorting o
 
 <Alert color="info">
   <strong>Note</strong>: The API specification used in the reference
-  implementation above <em>does not</em> actually support <code>sort</code>.{' '}
+  implementation above <em>does not</em> actually support <code>sort</code>.{" "}
   <em>(You're not crazy.)</em> This example is included for demonstrating async
   behavior with an <em>actual</em> third-party API.
 </Alert>
