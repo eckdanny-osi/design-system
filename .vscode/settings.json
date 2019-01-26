@@ -23,7 +23,6 @@
   "prettier.eslintIntegration": true,
   "javascript.validate.enable": false,
   "tslint.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "files.trimTrailingWhitespace": true,
   "files.associations": {
     "Jenkinsfile*": "groovy"
