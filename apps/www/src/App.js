@@ -12,7 +12,7 @@ import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
 
-import FacilityProfile from './kodas/FacilityProfile'
+import FacilityProfile from './demos/FacilityProfile'
 
 import CaresConfig from './config'
 const { CaresProvider, defaultConfig } = Utils
