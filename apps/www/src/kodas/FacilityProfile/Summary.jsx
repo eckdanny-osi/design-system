@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { Formik } from "formik";
-import pick from "lodash.pick";
-import get from "lodash.get";
+import React, { Component } from 'react'
+import { Formik } from 'formik'
+import get from 'lodash.get'
 import {
   Button,
   Card,
@@ -14,36 +13,35 @@ import {
   FormFeedback,
   Label,
   Input,
-  Select,
-  Row
-} from "@cwds/components";
+  Row,
+} from '@cwds/components'
 
 class Summary extends Component {
   state = {
-    context: "view",
+    context: 'view',
     initialValues: {
-      name: "Cambell Family Home",
-      id: "123456789a",
-      type: "Resource Family home",
-      licenseeName: "Cambell, Sara & Katie",
-      status: "RFA Probationary",
-      originalApplicationRecievedDate: "2019-01-14",
-      districtOffice: "Sacramento", // assignedOversightAgency?
+      name: 'Cambell Family Home',
+      id: '123456789a',
+      type: 'Resource Family home',
+      licenseeName: 'Cambell, Sara & Katie',
+      status: 'RFA Probationary',
+      originalApplicationRecievedDate: '2019-01-14',
+      districtOffice: 'Sacramento', // assignedOversightAgency?
       // (ageRange) <== // TODO: this is not on the facility model? 8 - 16
       capacity: 6,
-      capacityLastChanged: "2019-01-14",
+      capacityLastChanged: '2019-01-14',
       adjustedCapacity: undefined,
-      availableBeds: 6
-    }
-  };
+      availableBeds: 6,
+    },
+  }
 
   schema = [
     {
-      id: "summary__name",
-      name: "name",
-      label: "Facility / Home Name",
-      type: "text",
-      required: true
+      id: 'summary__name',
+      name: 'name',
+      label: 'Facility / Home Name',
+      type: 'text',
+      required: true,
 
       // editable: "//DERIVED VALUE"
       // disabled: "",
@@ -53,41 +51,41 @@ class Summary extends Component {
       // error: () => ()
     },
     {
-      id: "summary__id",
-      name: "id",
-      label: "License Number / Family ID",
-      type: "string",
-      required: true
+      id: 'summary__id',
+      name: 'id',
+      label: 'License Number / Family ID',
+      type: 'string',
+      required: true,
     },
     {
-      id: "summary__type",
-      name: "type",
-      label: "Facility Home Type",
-      type: "string"
+      id: 'summary__type',
+      name: 'type',
+      label: 'Facility Home Type',
+      type: 'string',
     },
     {
-      id: "summary_licenseeName",
-      name: "licenseeName",
-      label: "Name of Licensee / Parents",
-      type: "string"
+      id: 'summary_licenseeName',
+      name: 'licenseeName',
+      label: 'Name of Licensee / Parents',
+      type: 'string',
     },
     {
-      id: "summary__status",
-      name: "status",
-      label: "Status"
+      id: 'summary__status',
+      name: 'status',
+      label: 'Status',
       // type: "string"
     },
     {
-      id: "summary_originalApplicationRecievedDate",
-      name: "originalApplicationRecievedDate",
-      label: "Application Recieved Date",
-      type: "date"
+      id: 'summary_originalApplicationRecievedDate',
+      name: 'originalApplicationRecievedDate',
+      label: 'Application Recieved Date',
+      type: 'date',
     },
     {
-      id: "summary__districtOffice",
-      name: "districtOffice",
-      label: "Assigned Oversight Agency",
-      type: "string"
+      id: 'summary__districtOffice',
+      name: 'districtOffice',
+      label: 'Assigned Oversight Agency',
+      type: 'string',
     },
     // {
     //   id: "summary__ageRange",
@@ -96,52 +94,54 @@ class Summary extends Component {
     //   type: "string" // SHOULDN"T THIS BE CHECKBOX BANK OR SELECT??
     // },
     {
-      id: "summary__capacityLastChanged",
-      name: "capacityLastChanged",
-      label: "Date Capacity Last Changed",
-      type: "date"
+      id: 'summary__capacityLastChanged',
+      name: 'capacityLastChanged',
+      label: 'Date Capacity Last Changed',
+      type: 'date',
     },
     {
-      id: "summary__capacity",
-      name: "capacity",
-      label: "Capacity",
-      type: "number"
+      id: 'summary__capacity',
+      name: 'capacity',
+      label: 'Capacity',
+      type: 'number',
     },
     {
-      id: "summary__adjustedCapacity",
-      name: "adjustedCapacity",
-      label: "Adjusted Capacity",
-      type: "number"
+      id: 'summary__adjustedCapacity',
+      name: 'adjustedCapacity',
+      label: 'Adjusted Capacity',
+      type: 'number',
     },
     {
-      id: "summary__availableBeds",
-      name: "availableBeds",
-      label: "Available Beds",
-      type: "number"
-    }
-  ];
+      id: 'summary__availableBeds',
+      name: 'availableBeds',
+      label: 'Available Beds',
+      type: 'number',
+    },
+  ]
 
   constructor(props) {
-    super(props);
-    this.validate = this.validate.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    super(props)
+    this.validate = this.validate.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   validate(values) {
-    const errors = {};
+    const errors = {}
 
     // Required fields
-    this.schema.filter(({ required }) => !!required).forEach(fieldSpec => {
-      if (!get(values, fieldSpec.name)) {
-        errors[fieldSpec.name] = "Required!";
-      }
-    });
+    this.schema
+      .filter(({ required }) => !!required)
+      .forEach(fieldSpec => {
+        if (!get(values, fieldSpec.name)) {
+          errors[fieldSpec.name] = 'Required!'
+        }
+      })
 
-    return errors;
+    return errors
   }
 
   handleSubmit(values) {
-    this.setState({ context: "view", initialValues: values });
+    this.setState({ context: 'view', initialValues: values })
   }
 
   renderEditView() {
@@ -183,17 +183,17 @@ class Summary extends Component {
                   </Row>
                 </CardBody>
                 <CardFooter>
-                  <Button onClick={() => this.setState({ context: "view" })}>
+                  <Button onClick={() => this.setState({ context: 'view' })}>
                     Cancel
-                  </Button>{" "}
+                  </Button>{' '}
                   <Button color="primary">Save</Button>
                 </CardFooter>
               </Card>
             </form>
-          );
+          )
         }}
       />
-    );
+    )
   }
 
   renderReadView() {
@@ -205,7 +205,7 @@ class Summary extends Component {
               <CardTitle id="summary">Summary</CardTitle>
             </Col>
             <Col className="text-right">
-              <Button onClick={() => this.setState({ context: "edit" })}>
+              <Button onClick={() => this.setState({ context: 'edit' })}>
                 Edit
               </Button>
             </Col>
@@ -256,125 +256,125 @@ class Summary extends Component {
           </Row>
         </CardBody>
       </Card>
-    );
+    )
   }
 
   render() {
     switch (this.state.context) {
-      case "view":
-        return this.renderReadView();
-      case "edit":
-        return this.renderEditView();
+      case 'view':
+        return this.renderReadView()
+      case 'edit':
+        return this.renderEditView()
       default:
-        break;
+        break
     }
-    return "OOOOPS";
+    return 'OOOOPS'
   }
 }
 
-export default Summary;
+export default Summary
 
 //
 //
 //
 
-function getFacilityTypes() {
+export function getFacilityTypes() {
   return [
     {
-      value: "Adoption Agency",
-      id: 1
+      value: 'Adoption Agency',
+      id: 1,
     },
     {
-      value: "Community Treatment Facility",
-      id: 11
+      value: 'Community Treatment Facility',
+      id: 11,
     },
     {
-      value: "County Shelter/Receiving Home(Non EA/AFDC)",
-      id: 16
+      value: 'County Shelter/Receiving Home(Non EA/AFDC)',
+      id: 16,
     },
     {
-      value: "Court Specified Home",
-      id: 17
+      value: 'Court Specified Home',
+      id: 17,
     },
     {
-      value: "Crisis Nursery",
-      id: 7
+      value: 'Crisis Nursery',
+      id: 7,
     },
     {
-      value: "Foster Fam Agency Cert Resource Fam Home",
-      id: 23
+      value: 'Foster Fam Agency Cert Resource Fam Home',
+      id: 23,
     },
     {
-      value: "Foster Family Agency",
-      id: 3
+      value: 'Foster Family Agency',
+      id: 3,
     },
     {
-      value: "Foster Family Agency Certified Home",
-      id: 22
+      value: 'Foster Family Agency Certified Home',
+      id: 22,
     },
     {
-      value: "Foster Family AG-Sub",
-      id: 4
+      value: 'Foster Family AG-Sub',
+      id: 4,
     },
     {
-      value: "Foster Family Home",
-      id: 6
+      value: 'Foster Family Home',
+      id: 6,
     },
     {
-      value: "GH-Enhanced Behavioral Supports Home",
-      id: 12
+      value: 'GH-Enhanced Behavioral Supports Home',
+      id: 12,
     },
     {
-      value: "Group Home",
-      id: 13
+      value: 'Group Home',
+      id: 13,
     },
     {
-      value: "Guardian Home",
-      id: 19
+      value: 'Guardian Home',
+      id: 19,
     },
     {
-      value: "Out Of State GH",
-      id: 14
+      value: 'Out Of State GH',
+      id: 14,
     },
     {
-      value: "Relative/NREFM Home",
-      id: 20
+      value: 'Relative/NREFM Home',
+      id: 20,
     },
     {
-      value: "Resource Family Home",
-      id: 2
+      value: 'Resource Family Home',
+      id: 2,
     },
     {
-      value: "Runaway And Homeless Youth Shelter-GH",
-      id: 24
+      value: 'Runaway And Homeless Youth Shelter-GH',
+      id: 24,
     },
     {
-      value: "Short Term Residential Therapeutic Program",
-      id: 15
+      value: 'Short Term Residential Therapeutic Program',
+      id: 15,
     },
     {
-      value: "Small Family Home",
-      id: 5
+      value: 'Small Family Home',
+      id: 5,
     },
     {
-      value: "Supervised Independent Living Placement",
-      id: 21
+      value: 'Supervised Independent Living Placement',
+      id: 21,
     },
     {
-      value: "Temporary Shelter Care Facility",
-      id: 8
+      value: 'Temporary Shelter Care Facility',
+      id: 8,
     },
     {
-      value: "Transitional Housing Placement Program",
-      id: 10
+      value: 'Transitional Housing Placement Program',
+      id: 10,
     },
     {
-      value: "Transitional Shelter Care",
-      id: 9
+      value: 'Transitional Shelter Care',
+      id: 9,
     },
     {
-      value: "Tribe Specified Home",
-      id: 18
-    }
-  ];
+      value: 'Tribe Specified Home',
+      id: 18,
+    },
+  ]
 }

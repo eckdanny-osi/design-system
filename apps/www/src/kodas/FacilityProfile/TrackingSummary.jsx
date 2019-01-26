@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
   Card,
   CardHeader,
   CardTitle,
   CardBody,
   Row,
-  Col
-} from "@cwds/components";
-import { Progress } from "@cwds/reactstrap";
+  Col,
+} from '@cwds/components'
+import { Progress } from '@cwds/reactstrap'
 
 class TrackingSummary extends Component {
   render() {
@@ -44,8 +44,8 @@ class TrackingSummary extends Component {
           </Row>
         </CardBody>
       </Card>
-    );
+    )
   }
 }
 
-export default TrackingSummary;
+export default TrackingSummary

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
   Card,
   CardHeader,
   CardTitle,
   CardBody,
   Row,
-  Col
-} from "@cwds/components";
+  Col,
+} from '@cwds/components'
 
 class HomeInformation extends Component {
   render() {
@@ -36,8 +36,8 @@ class HomeInformation extends Component {
           </Row>
         </CardBody>
       </Card>
-    );
+    )
   }
 }
 
-export default HomeInformation;
+export default HomeInformation

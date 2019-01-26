@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Card, CardHeader, CardTitle, CardBody } from "@cwds/components";
+import React, { Component } from 'react'
+import { Card, CardHeader, CardTitle, CardBody } from '@cwds/components'
 
 class HomeInformation extends Component {
   render() {
@@ -10,8 +10,8 @@ class HomeInformation extends Component {
         </CardHeader>
         <CardBody>HOME INFORMATION FORM HERE</CardBody>
       </Card>
-    );
+    )
   }
 }
 
-export default HomeInformation;
+export default HomeInformation
