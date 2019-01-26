@@ -3,6 +3,5 @@ const cfg = require('../../jest/config')
 const project = __dirname.split(path.sep).pop()
 
 module.exports = {
-  name: project,
   ...cfg({ project }),
 }
