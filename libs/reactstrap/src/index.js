@@ -41,9 +41,6 @@
 
 // These exports are overrides or have side-effects!
 export { default as CardTitle } from './CardTitle'
-export { default as Dropdown } from './Dropdown'
-export { default as DropdownItem } from './DropdownItem'
-export { default as UncontrolledDropdown } from './UncontrolledDropdown'
 export { Util } from './utils'
 
 export {
@@ -61,6 +58,8 @@ export {
   Col,
   Collapse,
   Container,
+  Dropdown,
+  DropdownItem,
   DropdownMenu,
   DropdownToggle,
   Fade,
@@ -94,5 +93,6 @@ export {
   Tooltip,
   UncontrolledAlert,
   UncontrolledButtonDropdown,
+  UncontrolledDropdown,
   UncontrolledTooltip,
 } from 'reactstrap'
