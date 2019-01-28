@@ -10,6 +10,9 @@
   },
   "scripts": {
     "test": "jest",
+    "clean": "run-p clean:*",
+    "clean:git": "git clean -fdx packages",
+    "clean:pkgs": "lerna clean --yes",
     "pretest:libs": "yarn build:libs",
     "test:libs": "yarn test --projects libs/*",
     "test:all": "CI=true lerna run --parallel test ",
@@ -24,9 +27,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "prerelease": "NODE_ENV=production yarn lint:libs && yarn test:libs && yarn build:libs",
     "release": "lerna publish --conventional-commits --force-publish",
-    "lint": "eslint --ext .jsx,.js libs/ apps/www/src/",
-    "lint:libs": "eslint --ext .jsx,.js libs/",
-    "lint:apps": "eslint --ext .jsx,.js apps/www/src/",
+    "lint": "eslint --ext .jsx,.js libs apps/www/src",
     "lint:fix": "yarn lint --fix"
   },
   "workspaces": {
