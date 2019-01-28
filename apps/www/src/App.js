@@ -12,6 +12,8 @@ import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
 
+import FacilityProfile from './demos/FacilityProfile'
+
 import CaresConfig from './config'
 const { CaresProvider, defaultConfig } = Utils
 
@@ -34,6 +36,10 @@ class App extends Component {
                 <Route path="/labs" component={LabsPage} />
                 <Route path="/components" component={Components} />
                 <Route path="/status" component={Status} />
+                <Route
+                  path="/demo/facility-profile"
+                  component={FacilityProfile}
+                />
                 <JumpToTop />
               </Fragment>
             </ScrollToTop>
