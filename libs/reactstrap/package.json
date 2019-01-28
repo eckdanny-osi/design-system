@@ -26,7 +26,7 @@
     "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^7.1.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
