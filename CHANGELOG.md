@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/ca-cwds/design-system/compare/v0.8.0...v0.8.1) (2019-01-28)
+
+
+### Bug Fixes
+
+* **build:** add clean npm script ([#386](https://github.com/ca-cwds/design-system/issues/386)) ([c252827](https://github.com/ca-cwds/design-system/commit/c252827))
+* **build:** restore lint:* scripts ([#391](https://github.com/ca-cwds/design-system/issues/391)) ([8a22d72](https://github.com/ca-cwds/design-system/commit/8a22d72)), closes [#386](https://github.com/ca-cwds/design-system/issues/386)
+* **build:** update jest ([#382](https://github.com/ca-cwds/design-system/issues/382)) ([d3fcab2](https://github.com/ca-cwds/design-system/commit/d3fcab2))
+* **build:** update react-scripts ([#384](https://github.com/ca-cwds/design-system/issues/384)) ([f555b50](https://github.com/ca-cwds/design-system/commit/f555b50))
+* **build:** use semver range for babel-eslint ([#389](https://github.com/ca-cwds/design-system/issues/389)) ([5370da0](https://github.com/ca-cwds/design-system/commit/5370da0))
+* **reactstrap:** DropdownItems better indicate keyboard nav ([#390](https://github.com/ca-cwds/design-system/issues/390)) ([2363bdc](https://github.com/ca-cwds/design-system/commit/2363bdc))
+* **reactstrap:** use unpatched Dropdown from reactstrap ([#388](https://github.com/ca-cwds/design-system/issues/388)) ([4047185](https://github.com/ca-cwds/design-system/commit/4047185))
+* **www:** route for coded prototypes ([#383](https://github.com/ca-cwds/design-system/issues/383)) ([9931cc9](https://github.com/ca-cwds/design-system/commit/9931cc9))
+
+
+
+
+
 # [0.8.0](https://github.com/ca-cwds/design-system/compare/v0.7.0...v0.8.0) (2019-01-25)
 
 

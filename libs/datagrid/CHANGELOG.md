@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/ca-cwds/design-system/compare/v0.8.0...v0.8.1) (2019-01-28)
+
+
+### Bug Fixes
+
+* **build:** update jest ([#382](https://github.com/ca-cwds/design-system/issues/382)) ([d3fcab2](https://github.com/ca-cwds/design-system/commit/d3fcab2))
+
+
+
+
+
 # [0.8.0](https://github.com/ca-cwds/design-system/compare/v0.7.0...v0.8.0) (2019-01-25)
 
 
