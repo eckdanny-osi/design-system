@@ -3,6 +3,10 @@
 .dropdown-item {
   &:not([disabled]) {
     cursor: pointer;
+    &:first-letter {
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
   }
   &:not(:first-child) {
     border-top: 1px solid $dropdown-border-color;
