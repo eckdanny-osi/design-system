@@ -1,5 +1,5 @@
 import '@babel/polyfill'
-import '@cwds/components/dist/global.scss'
+import '@cwds/components/scss/global.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
