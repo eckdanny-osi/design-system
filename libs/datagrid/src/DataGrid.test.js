@@ -1,6 +1,6 @@
 import React from 'react'
-import { shallow, render } from 'enzyme'
-import DataGrid from '../'
+import { shallow } from 'enzyme'
+import DataGrid from './DataGrid'
 
 describe('DataGrid', () => {
   it('pass', () => {
@@ -9,7 +9,7 @@ describe('DataGrid', () => {
 
   it('renders', () => {
     expect(() => {
-      render(
+      shallow(
         <DataGrid
           data={[]}
           columns={[
