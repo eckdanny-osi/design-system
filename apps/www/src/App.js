@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/tag'
-import '@cwds/core/dist/styles.css'
 import { Utils, JumpToTop } from '@cwds/components'
 import componentMap from './MDXComponentProviderMappings'
 

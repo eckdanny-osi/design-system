@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardFooter,
 } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import CollapsibleCard from './CollapsibleCard'
 import UncontrolledCollapsibleCard from './UncontrolledCollapsibleCard'
 

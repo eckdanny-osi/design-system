@@ -1,4 +1,4 @@
-import cssModule from '@cwds/core/dist/bootstrap-cares.module.css'
+import cssModule from '@cwds/core/scss/bootstrap-cares.module.scss'
 import { Util } from 'reactstrap'
 
 Util.keyCodes.p = 80

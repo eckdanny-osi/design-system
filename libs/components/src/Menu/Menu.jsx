@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Arrow } from 'react-popper'
-import Icon, { getIconContrast } from '@cwds/icons'
+import { Icon, getIconContrast } from '@cwds/icons'
 import { Dropdown, DropdownMenu, DropdownToggle } from '@cwds/reactstrap'
 import pick from 'lodash.pick'
-import Styles from '@cwds/core/dist/bootstrap-cares.module.css'
+import Styles from '@cwds/core/scss/bootstrap-cares.module.scss'
 
 const propTypes = {
   getDropdownProps: PropTypes.func.isRequired,

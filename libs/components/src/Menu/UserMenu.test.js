@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import UserMenu from './UserMenu'
 import Menu from './Menu'
-import { Avatar } from '../'
+import Avatar from '../Avatar'
 
 describe('UserMenu', () => {
   it('wraps Menu', () => {

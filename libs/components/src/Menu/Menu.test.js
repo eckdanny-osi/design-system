@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { Arrow } from 'react-popper'
 import { Dropdown, DropdownItem, DropdownToggle } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import { Menu, MenuItem } from './'
 
 describe('Menu', () => {

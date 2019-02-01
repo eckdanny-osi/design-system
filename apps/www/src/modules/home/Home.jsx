@@ -18,9 +18,10 @@ export default () => (
     layout="dashboard"
     title="Design System"
     // breadcrumb={false}
-    breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
+    // breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     // breadcrumb={<div>aslkdfj</div>}
     // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
+    // Breadcrumbs={() => <div>Hello World!</div>}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>

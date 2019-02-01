@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Fade, Util } from '@cwds/reactstrap'
-import Icon, { getIconFromContext } from '@cwds/icons'
+import { Icon, getIconFromContext } from '@cwds/icons'
 import Styles from './Alert.module.scss'
 
 const mapToCssModules = Util.mapToCssModules
@@ -100,5 +100,4 @@ function Alert(props) {
 Alert.propTypes = propTypes
 Alert.defaultProps = defaultProps
 
-export { Alert }
 export default Alert

@@ -8,7 +8,7 @@ export { default as Avatar } from './Avatar'
 export { default as BreadcrumbTrail } from './BreadcrumbTrail'
 export { default as CheckboxBank } from './CheckboxBank'
 export { default as Field } from './Field'
-export { default as Icon, ICON_NAMES } from '@cwds/icons'
+export { Icon, ICON_NAMES } from '@cwds/icons'
 export { default as IconButton } from './IconButton'
 export { default as Infotip, UncontrolledInfotip } from './Infotip'
 export { default as InputMask } from './InputMask'
@@ -18,7 +18,6 @@ export { Page } from './Layouts'
 export { default as Legend } from './Legend'
 export { default as Logo } from './Logo'
 export { default as PageHeader } from './PageHeader'
-export { default as RadioGroup } from './RadioGroup'
 export { default as Select } from 'react-select'
 export { default as Placeholder } from './Placeholder'
 export { CollapsibleCard, UncontrolledCollapsibleCard } from './CollapsibleCard'
@@ -29,4 +28,5 @@ export {
   UserMenu,
   UncontrolledUserMenu,
 } from './Menu'
+export { default as RadioGroup } from './RadioGroup'
 export { Utils }

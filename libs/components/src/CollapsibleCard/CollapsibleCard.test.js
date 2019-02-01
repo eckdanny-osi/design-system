@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import { Collapse, CardBody, CardHeader, CardFooter } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import CollapsibleCard from './CollapsibleCard'
 
 describe('CollapsibleCard', () => {
