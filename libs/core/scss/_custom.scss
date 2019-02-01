@@ -1,10 +1,20 @@
-@import "../dist/bridge.js";
+// @import "../dist/bridge.js";
 
 //
 // Color system
 //
 
-// Grays
+$white:    #fff;
+$gray-100: hsl(0, 0, 96); // ($ray)
+$gray-200: hsl(0, 0, 91); // ($grouper)
+$gray-300: hsl(0, 0, 82); // ($trout)
+$gray-400: hsl(0, 0, 60); //
+$gray-500: hsl(0, 0, 50); //
+$gray-600: hsl(0, 0, 40); //
+$gray-700: hsl(0, 0, 36); // ($wahoo)
+$gray-800: hsl(0, 0, 20); //
+$gray-900: hsl(0, 0, 10); // ($shark)
+$black:    #000;
 
 $grays: (
   "100": $gray-100,
@@ -18,32 +28,51 @@ $grays: (
   "900": $gray-900
 );
 
-// Theme Colors
+
+$aspen:       #098e88;
+$oak:         #601974;
+$fir:         #d8ecf0;
+$elm:         #068347;
+$spruce:      #0d4f78;
+$hickory:     #e7740b;
+$maple:       #bb3709;
+
+$primary:      $aspen;
+$secondary:    $gray-200;
+$accent:       $oak;
+$breath:       $fir;
+$success:      $elm;
+$info:         $spruce;
+$warning:      $hickory;
+$danger:       $maple;
+$light:        $gray-100;
+$dark:         $gray-800;
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "accent": $accent,
-  "breath": $breath,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark
+  "primary":      $primary,
+  "secondary":    $secondary,
+  "accent":       $accent,
+  "breath":       $breath,
+  "success":      $success,
+  "info":         $info,
+  "warning":      $warning,
+  "danger":       $danger,
+  "light":        $light,
+  "dark":         $dark,
 );
 
 //
 // Spacing
 //
 
+$spacer: 1rem;
 $spacers: (
-  0: $spacer-0,
-  1: $spacer-1,
-  2: $spacer-2,
-  3: $spacer-3,
-  4: $spacer-4,
-  5: $spacer-5
+  0: ($spacer * 0),
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: ($spacer * 1),
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
 );
 
 //
@@ -67,11 +96,11 @@ $link-color: theme-color("info") !default;
 //
 
 $grid-breakpoints: (
-  xs: $grid-breakpoint-xs,
-  sm: $grid-breakpoint-sm,
-  md: $grid-breakpoint-md,
-  lg: $grid-breakpoint-lg,
-  xl: $grid-breakpoint-xl
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 );
 
 //
@@ -138,7 +167,7 @@ $btn-box-shadow: 0 1px 1px rgba($black, 0.125);
 // Dropdowns
 
 $dropdown-padding-y: 0; // .5rem !default;
-$dropdown-link-hover-bg: $breath; // $gray-100 !default;
+$dropdown-link-hover-bg: theme-color("breath"); // $gray-100 !default;
 $dropdown-link-color: $gray-900 !default;
 $dropdown-link-active-color: $dropdown-link-color; // $component-active-color !default;
 $dropdown-link-active-bg: darken(

@@ -9,18 +9,20 @@
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com",
   "license": "AGPL-3.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
-    "build": "run-p build:js build:css",
-    "build:js": "rollup -c rollup.config.js",
-    "build:css": "node-sass -r -o dist --source-map true --importer ../../sass-importers.js src",
-    "build:watch": "yarn build --watch"
+    "build": "run-p build:*",
+    "build:esm": "babel --verbose --root-mode upward --out-dir dist src",
+    "build:scss": "cpx --verbose \"src/**/*.{css,scss}\" dist",
+    "build:cjs": "rollup -c",
+    "dev": "run-p dev:*",
+    "dev:esm": "yarn build:esm --watch",
+    "dev:scss": "yarn build:scss --watch"
   },
   "devDependencies": {
-    "prop-types": "^15.6.2",
     "react": "^16.4"
   },
   "dependencies": {

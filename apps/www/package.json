@@ -5,7 +5,6 @@
   "private": true,
   "dependencies": {
     "@cwds/components": "^0.8.1",
-    "@cwds/core": "^0.8.1",
     "@cwds/docs": "^0.8.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
