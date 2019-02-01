@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import '../icon-library' // required for side-effectful init
+import './icon-library' // required for side-effectful init
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Icon from '../Icon'
+import Icon from './Icon'
 
 describe('Icon', () => {
   it('renders an svg', () => {

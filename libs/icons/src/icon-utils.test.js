@@ -1,4 +1,4 @@
-import { getIconFromContext, getIconContrast } from '..'
+import { getIconFromContext, getIconContrast } from './icon-utils'
 
 describe('icon-library', () => {
   describe('getIconFromContext', () => {
