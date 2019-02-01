@@ -1,7 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import postcss from 'rollup-plugin-postcss'
 
 const REGEXP_STYLE_MODULE = /module\.s?css$/
 
@@ -45,15 +44,6 @@ export function mkRollupConfig(pkg, opts = {}) {
       sourcemap: true,
     },
     plugins: [
-      // postcss({
-      //   extract: 'dist/styles.module.css',
-      //   extensions: ['.scss', '.css'],
-      //   sourceMap: true,
-      //   autoModules: true,
-      //   // onImport: (...args) => {
-      //   // console.log(args)
-      //   // },
-      // }),
       resolve({
         extensions: ['.js', '.jsx'],
       }),
