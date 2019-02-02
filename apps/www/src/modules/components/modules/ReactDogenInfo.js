@@ -22,5 +22,8 @@ export default {
   MenuItem: docgenComposed('reactstrap/src/DropdownMenu.js'),
   Modal: docgenComposed('reactstrap/src/Modal.js'),
   Row: docgenComposed('reactstrap/src/Row.js'),
-  Tooltip: docgenComposed('reactstrap/src/Tooltip.js'),
+  Tooltip: docgenComposed(
+    'reactstrap/src/Tooltip.js',
+    'reactstrap/src/TooltipPopoverWrapper.js'
+  ),
 }
