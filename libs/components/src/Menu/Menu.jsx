@@ -79,7 +79,7 @@ function getDropdownToggleProps(props) {
   }
   return {
     ...pick(props, Object.keys(DropdownToggle.propTypes)),
-    caret: true,
+    caret: false,
     children,
   }
 }
