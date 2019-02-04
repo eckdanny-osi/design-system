@@ -25,6 +25,23 @@ export default () => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
           <Row>
+          <Col sm={6}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>
+                    Start here: Focusing on Users
+                
+                  </CardTitle>
+                </CardHeader>
+                <CardBody>Developing and designing CARES requires an understanding of who we are doing this for, and how we need to communicate with them.</CardBody>
+                <CardFooter>
+                  <Button color="primary" tag={Link} to="/patterns">
+                    Go!
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Col>
+            
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -46,7 +63,7 @@ export default () => (
             <Col sm={6}>
               <Card>
                 <CardHeader>
-                  <CardTitle>Core Style</CardTitle>
+                  <CardTitle>Visual Style</CardTitle>
                 </CardHeader>
                 <CardBody>
                   Foundational UX principles and overarching design decisions
@@ -61,26 +78,7 @@ export default () => (
               </Card>
             </Col>
 
-            <Col sm={6}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>
-                    UX Guidelines / Patterns
-                    <small>
-                      <Badge color="warning" className="ml-1">
-                        TODO
-                      </Badge>
-                    </small>
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>@TODO</CardBody>
-                <CardFooter>
-                  <Button color="primary" tag={Link} to="/">
-                    Go!
-                  </Button>
-                </CardFooter>
-              </Card>
-            </Col>
+            
 
             <Col sm={6}>
               <Card>
