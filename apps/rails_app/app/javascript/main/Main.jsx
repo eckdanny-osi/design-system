@@ -1,5 +1,5 @@
 import React from 'react'
-import '@cwds/core/dist/styles.css'
+import '@cwds/components/scss/global.scss'
 import {
   AlertUncontrolled,
   Avatar,
@@ -14,15 +14,17 @@ import {
   Row,
 } from '@cwds/components'
 
+const WelcomeMarquee = () => (
+  <div>
+    Just a <code>rails</code> app build with <code>@cwds/components</code>!
+  </div>
+)
+
 export const App = () => (
   <Page
-    title="rails_app"
-    layout="jumpnav"
-    breadcrumb={() => (
-      <span>
-        Hello from <tt>Ruby on Rails</tt>!
-      </span>
-    )}
+    title="Yay! You're on Rails!"
+    layout="dashboard"
+    breadcrumb={<WelcomeMarquee />}
     sidenav={() => 'Sidenav'}
     main={() => (
       <div>
