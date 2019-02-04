@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { Alert } from "@cwds/components";
 import CarsDataGrid from "./examples/CarsDataGrid";
 import StarWarsDataGrid from "./examples/StarWarsDataGrid";
-import SyntaxHighlighter from "react-syntax-highlighter/prism";
-import { xonokai, dark } from "react-syntax-highlighter/styles/prism";
 import CarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
 import StarWarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
 
@@ -29,9 +27,7 @@ In the server-managed implementation, each UI action which changes the sorting o
   behavior with an <em>actual</em> third-party API.
 </Alert>
 
-<SyntaxHighlighter language="jsx" style={xonokai}>
-  {StarWarsDataGridSrc}
-</SyntaxHighlighter>
+<CodeBlock>{StarWarsDataGridSrc}</CodeBlock>
 
 ### Client-Side
 
@@ -39,6 +35,4 @@ For small (<mark>TODO: how small?</mark>) collections in which records are not e
 
 <CarsDataGrid />
 
-<SyntaxHighlighter language="jsx" style={xonokai}>
-  {CarsDataGridSrc}
-</SyntaxHighlighter>
+<CodeBlock>{CarsDataGridSrc}</CodeBlock>

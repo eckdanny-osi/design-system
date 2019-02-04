@@ -1,14 +1,5 @@
 import React from 'react'
-import set from 'lodash.set'
-import SyntaxHighlighter from 'react-syntax-highlighter/prism'
-import { tomorrow } from 'react-syntax-highlighter/styles/prism'
-import { AnchorLink } from '@cwds/docs'
-
-const codeSnippetStyle = set(
-  tomorrow,
-  ['pre[class*="language-"]', 'borderRadius'],
-  'none'
-)
+import { AnchorLink, CodeBlock } from '@cwds/docs'
 
 const getLanguage = (classNames, RE = /^language-/) =>
   classNames
@@ -29,12 +20,9 @@ export default {
       return <pre {...props} />
     }
     return (
-      <SyntaxHighlighter
-        language={getLanguage(code.props.props.className)}
-        style={codeSnippetStyle}
-      >
+      <CodeBlock language={getLanguage(code.props.props.className)}>
         {code.props.children}
-      </SyntaxHighlighter>
+      </CodeBlock>
     )
   },
 }
