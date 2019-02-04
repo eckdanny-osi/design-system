@@ -1,4 +1,4 @@
-import {DemoCard, PropTable} from '@cwds/docs'
+import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
 import Docgen from "../ReactDogenInfo.js";
 import {
   UncontrolledMenu as Menu,
@@ -6,8 +6,6 @@ import {
   UserMenu,
   UncontrolledUserMenu
 } from "@cwds/components";
-import SyntaxHighlighter from "react-syntax-highlighter/prism";
-import { xonokai, dark } from "react-syntax-highlighter/styles/prism";
 import {
   MenuExample,
   MenuExampleSrc,
@@ -47,9 +45,7 @@ For relatively broad contexts:
   </div>
 </DemoCard>
 
-<SyntaxHighlighter language="jsx" style={xonokai}>
-  {MenuExampleSrc}
-</SyntaxHighlighter>
+<CodeBlock>{MenuExampleSrc}</CodeBlock>
 
 ### Icon Menu
 
@@ -61,9 +57,7 @@ For relatively narrow contexts (e.g.; item in a list view):
   </div>
 </DemoCard>
 
-<SyntaxHighlighter language="jsx" style={xonokai}>
-  {IconMenuExampleSrc}
-</SyntaxHighlighter>
+<CodeBlock>{IconMenuExampleSrc}</CodeBlock>
 
 ### Links
 
@@ -75,9 +69,7 @@ Props passed to `MenuItem` are passed through, so creating a `Menu` of links is 
   </div>
 </DemoCard>
 
-<SyntaxHighlighter language="jsx" style={xonokai}>
-  {LinkMenuExampleSrc}
-</SyntaxHighlighter>
+<CodeBlock>{LinkMenuExampleSrc}</CodeBlock>
 
 ### UserMenu
 
