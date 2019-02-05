@@ -29,7 +29,7 @@ Page.propTypes = {
 
 Page.defaultProps = {
   getBannerProps: props =>
-    pick(props, ['title', 'breadcrumb', 'cta', 'PageActions']),
+    pick(props, ['title', 'breadcrumb', 'cta', 'PageActions', 'Breadcrumb']),
   getBodyProps: props => pick(props, ['main', 'sidenav', 'layout']),
   Banner,
   Body,

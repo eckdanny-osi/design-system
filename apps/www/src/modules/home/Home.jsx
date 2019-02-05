@@ -12,6 +12,21 @@ import {
   Col,
 } from '@cwds/components'
 import githubLogo from '../status/GitHub-Mark-Light-64px.png'
+import { Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
+
+const MyBreadcrumbs = props => {
+  return (
+    <Breadcrumb>
+      <BreadcrumbItem>
+        <a href="/">Home</a>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <a href="/">Library</a>
+      </BreadcrumbItem>
+      <BreadcrumbItem active>Data</BreadcrumbItem>
+    </Breadcrumb>
+  )
+}
 
 const MyPageActions = () => (
   <Button
@@ -44,13 +59,7 @@ export default () => (
     layout="dashboard"
     title="Design System"
     PageActions={MyPageActions}
-    // breadcrumb={false}
-    // breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
-    // breadcrumb={<div>aslkdfj</div>}
-    // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
-    // Breadcrumbs={() => <div>Hello World!</div>}
-    // breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
-    Breadcrumb={() => 'Helo World'}
+    Breadcrumb={MyBreadcrumbs}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>

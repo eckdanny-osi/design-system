@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom'
 import { Page, Alert, ListGroup, ListGroupItem } from '@cwds/components'
 import { getArticle } from './article-router'
 import routes from './routes'
+import { Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
 
 export default props => {
   const relativeRootUrl = props.match.url
@@ -16,7 +17,30 @@ export default props => {
           <Page
             title={article.title}
             layout="subroutes"
-            breadcrumb={[{ title: 'Home', path: '/' }, ...article.breadcrumbs]}
+            // Simple Anchors
+            // Breadcrumb={() => (
+            //   <Breadcrumb>
+            //     {[{ title: 'Home', path: '/' }, ...article.breadcrumbs].map(
+            //       d => (
+            //         <BreadcrumbItem key={d.path}>
+            //           <a href={d.path}>{d.title}</a>
+            //         </BreadcrumbItem>
+            //       )
+            //     )}
+            //   </Breadcrumb>
+            // )}
+            // React Router Links
+            Breadcrumb={() => (
+              <Breadcrumb>
+                {[{ title: 'Home', path: '/' }, ...article.breadcrumbs].map(
+                  d => (
+                    <BreadcrumbItem key={d.path}>
+                      <Link to={d.path}>{d.title}</Link>
+                    </BreadcrumbItem>
+                  )
+                )}
+              </Breadcrumb>
+            )}
             main={article.main}
             sidenav={() => <Sidenav routes={article.sidebar} />}
           />

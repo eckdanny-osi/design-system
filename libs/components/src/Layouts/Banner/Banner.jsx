@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import pick from 'lodash.pick'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
 import PageActions from '../../PageActions'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
-import { Container } from '@cwds/reactstrap'
+import { Container, Breadcrumb } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 // import { CaresContext } from '../../utils/CaresContext'
 import { withCaresConfig } from '../../utils/CaresContext'
@@ -34,9 +35,8 @@ class Banner extends Component {
       AppBar,
       PageHeader,
       PageActions,
-      Breadcrumbs,
-      breadcrumb,
-      BreadcrumbTrail,
+      Breadcrumb: Shit,
+      getBreadcrumbProps,
       title,
       cta,
     } = this.props
@@ -52,10 +52,10 @@ class Banner extends Component {
             <PageHeader title={title} cta={cta} PageActions={PageActions} />
           </Container>
         </div>
-        {breadcrumb !== false && (
+        {Shit !== false && (
           <div className={cn(Styles.BreadcrumbContainer)}>
             <Container>
-              <BreadcrumbTrail items={breadcrumb} />
+              <Shit {...getBreadcrumbProps(this.props)} />
             </Container>
           </div>
         )}
@@ -70,6 +70,8 @@ Banner.propTypes = {
   PageActions: PropTypes.func,
   BreadcrumbTrail: PropTypes.func,
   Breadcrumbs: PropTypes.func,
+  Breadcrumb: PropTypes.func.isRequired,
+  getBreadcrumbProps: PropTypes.func.isRequired,
   title: PropTypes.string,
   breadcrumb: PropTypes.any,
   renderBreadcrumbs: PropTypes.func.isRequired,
@@ -86,6 +88,8 @@ Banner.defaultProps = {
   BreadcrumbTrail: BreadcrumbTrail,
   // BreadcrumbTrail: BreadcrumbTrail,
   renderBreadcrumbs: renderBreadcrumbs,
+  Breadcrumb,
+  getBreadcrumbProps: props => ({}),
 }
 
 export { Banner }
