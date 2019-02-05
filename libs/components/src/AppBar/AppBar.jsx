@@ -1,55 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Logo from '../Logo'
 import { Row, Col } from '@cwds/reactstrap'
-import { UncontrolledUserMenu, MenuItem } from '../Menu'
+import UserMenu from '../UserMenu'
+import Brand from '../Brand'
 import { CaresContext, withCaresConfig } from '../utils/CaresContext'
 
-const AppBar = ({ Brand, UserMenu }) => {
+const AppBar = ({
+  Brand,
+  UserMenu,
+  getBrandProps,
+  getUserMenuProps,
+  ...restProps
+}) => {
   return (
     <Row>
       <Col className="d-flex justify-content-start">
-        <Brand />
+        <Brand {...getBrandProps(restProps)} />
       </Col>
       <Col className="d-flex justify-content-end align-items-center">
-        <UserMenu />
+        <UserMenu {...getUserMenuProps(restProps)} />
       </Col>
     </Row>
   )
 }
 
 AppBar.propTypes = {
-  Brand: PropTypes.func,
-  UserMenu: PropTypes.func,
+  Brand: PropTypes.func.isRequired,
+  UserMenu: PropTypes.func.isRequired,
+  getBrandProps: PropTypes.func.isRequired,
+  getUserMenuProps: PropTypes.func.isRequired,
 }
 
 AppBar.defaultProps = {
   Brand,
   UserMenu,
+  getBrandProps: () => ({}),
+  getUserMenuProps: () => ({}),
 }
 
 AppBar.contextType = CaresContext
 
+export { AppBar as AppBarNoContext }
+
 export default withCaresConfig(AppBar, ['Brand', 'UserMenu'])
-
-//
-// Default SubComponents
-//
-
-function Brand() {
-  return (
-    <a href="/">
-      <Logo />
-    </a>
-  )
-}
-
-function UserMenu() {
-  return (
-    <UncontrolledUserMenu>
-      <MenuItem tag="a" href="/logout">
-        Logout
-      </MenuItem>
-    </UncontrolledUserMenu>
-  )
-}
