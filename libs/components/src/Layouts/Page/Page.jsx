@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import pick from 'lodash.pick'
 import Styles from '../Layout.module.scss'
 import Banner from '../Banner'
 import Body from '../Body'
@@ -27,8 +28,9 @@ Page.propTypes = {
 }
 
 Page.defaultProps = {
-  getBannerProps: getBannerProps,
-  getBodyProps: getBodyProps,
+  getBannerProps: props =>
+    pick(props, ['title', 'breadcrumb', 'cta', 'PageActions']),
+  getBodyProps: props => pick(props, ['main', 'sidenav', 'layout']),
   Banner,
   Body,
 }
@@ -38,11 +40,3 @@ export default Page
 //
 // Helpers
 //
-
-function getBannerProps({ title, breadcrumb, cta }) {
-  return { title, breadcrumb, cta }
-}
-
-function getBodyProps({ main, sidenav, layout }) {
-  return { main, sidenav, layout }
-}

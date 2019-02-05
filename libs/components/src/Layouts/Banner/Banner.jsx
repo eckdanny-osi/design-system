@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
+import PageActions from '../../PageActions'
 import BreadcrumbTrail from '../../BreadcrumbTrail'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
@@ -32,6 +33,7 @@ class Banner extends Component {
     const {
       AppBar,
       PageHeader,
+      PageActions,
       Breadcrumbs,
       breadcrumb,
       BreadcrumbTrail,
@@ -47,7 +49,7 @@ class Banner extends Component {
         </div>
         <div className={cn(Styles.PageHeaderContainer)}>
           <Container>
-            <PageHeader title={title} cta={cta} />
+            <PageHeader title={title} cta={cta} PageActions={PageActions} />
           </Container>
         </div>
         {breadcrumb !== false && (
@@ -65,6 +67,7 @@ class Banner extends Component {
 Banner.propTypes = {
   AppBar: PropTypes.func,
   PageHeader: PropTypes.func,
+  PageActions: PropTypes.func,
   BreadcrumbTrail: PropTypes.func,
   Breadcrumbs: PropTypes.func,
   title: PropTypes.string,
@@ -79,6 +82,7 @@ Banner.propTypes = {
 Banner.defaultProps = {
   AppBar: AppBar,
   PageHeader: PageHeader,
+  PageActions,
   BreadcrumbTrail: BreadcrumbTrail,
   // BreadcrumbTrail: BreadcrumbTrail,
   renderBreadcrumbs: renderBreadcrumbs,

@@ -1,30 +1,42 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import styles from './PageHeader.module.scss'
+import pick from 'lodash.pick'
+import Styles from './PageHeader.module.scss'
+import PageTitle from '../PageTitle'
+import PageActions from '../PageActions'
 
-class PageHeader extends PureComponent {
-  static propTypes = {
-    title: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    cta: PropTypes.func,
-  }
-  static defaultProps = {
-    title: '',
-  }
-  render() {
-    const { title, cta } = this.props
-    return (
-      <div className={cn(styles.PageHeader, 'd-flex', 'align-items-center')}>
-        <div className={cn('flex-grow-1')}>
-          <h1 className={cn(styles.PageTitle, 'm-0')}>
-            {typeof title === 'function' ? title() : title}
-          </h1>
-        </div>
-
-        {cta && <div className={cn('pr-2')}>{cta()}</div>}
+const PageHeader = ({
+  PageTitle,
+  getPageTitleProps,
+  PageActions,
+  getPageActionsProps,
+  ...restProps
+}) => {
+  return (
+    <div className={cn(Styles.PageHeader)}>
+      <div className={cn('pr-2', Styles.PageTitleContainer)}>
+        <PageTitle {...getPageTitleProps(restProps)} />
       </div>
-    )
-  }
+      <div className={cn(Styles.PageActionsContainer)}>
+        <PageActions {...getPageActionsProps(restProps)} />
+      </div>
+    </div>
+  )
+}
+
+PageHeader.propTypes = {
+  PageTitle: PropTypes.func.isRequired,
+  getPageTitleProps: PropTypes.func.isRequired,
+  PageActions: PropTypes.func.isRequired,
+  getPageActionsProps: PropTypes.func.isRequired,
+  title: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+}
+PageHeader.defaultProps = {
+  PageTitle,
+  getPageTitleProps: props => pick(props, ['title']),
+  PageActions,
+  getPageActionsProps: props => pick(props, []),
 }
 
 export default PageHeader
