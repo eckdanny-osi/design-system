@@ -23,8 +23,8 @@ export const App = () => (
         Hello from <tt>Ruby on Rails</tt>!
       </span>
     )}
-    sidenav={'Sidenav'}
-    main={
+    sidenav={() => 'Sidenav'}
+    main={() => (
       <div>
         <AlertUncontrolled color="warning">
           <strong>Attention!</strong> This is not the guide site you&apos;re
@@ -104,7 +104,7 @@ export const App = () => (
           </section>
         </section>
       </div>
-    }
+    )}
   />
 )
 

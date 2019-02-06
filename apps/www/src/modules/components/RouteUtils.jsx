@@ -52,15 +52,15 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
               title={title}
               breadcrumb={<MyBreadcrumb items={trail} />}
               layout="subroutes"
-              sidenav={
+              sidenav={() => (
                 <SideNav
                   routes={children.map(child => ({
                     ...child,
                     path: `${fullPath}${child.path}`,
                   }))}
                 />
-              }
-              main={<MainComponent />}
+              )}
+              main={MainComponent}
             />
           )}
         />
@@ -89,15 +89,15 @@ export const GeneralRoute = ({ route, parentContext = [] }) => {
               layout="subroutes"
               title={title}
               breadcrumb={<MyBreadcrumb items={trail} />}
-              sidenav={
+              sidenav={() => (
                 <SideNav
                   routes={getSiblingRoutes(parentContext).map(child => ({
                     ...child,
                     path: `${basePath}${child.path}`,
                   }))}
                 />
-              }
-              main={<MainComponent />}
+              )}
+              main={MainComponent}
             />
           )
         }}

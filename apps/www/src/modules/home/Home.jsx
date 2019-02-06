@@ -21,7 +21,7 @@ export default () => (
     breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     // breadcrumb={<div>aslkdfj</div>}
     // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
-    main={
+    main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
           <Row>
@@ -145,6 +145,6 @@ export default () => (
           </Row>
         </Col>
       </Row>
-    }
+    )}
   />
 )

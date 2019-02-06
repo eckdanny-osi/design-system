@@ -21,7 +21,7 @@ export default () => (
       { path: '/rfa', title: 'RFA List' },
       { path: '/rfa/123456789a', title: 'Cambell Family Home' },
     ]}
-    main={
+    main={() => (
       <div>
         <Summary />
         <HomeInformation />
@@ -32,7 +32,7 @@ export default () => (
         <ContactsSummary />
         <TrackingSummary />
       </div>
-    }
-    sidenav={<Sidenav />}
+    )}
+    sidenav={Sidenav}
   />
 )

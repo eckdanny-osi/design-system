@@ -35,8 +35,10 @@ class CoreStylePage extends Component {
           { title: 'Home', path: '/' },
           { title: 'Core Style', path: '/core-style' },
         ]}
-        sidenav={<JumpNav tag={Link} routes={routes} />}
-        main={<CoreStyle />}
+        sidenav={() => {
+          return <JumpNav tag={Link} routes={routes} />
+        }}
+        main={() => <CoreStyle />}
       />
     )
   }

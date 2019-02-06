@@ -36,8 +36,10 @@ export default () => (
       { path: '/', title: 'Home' },
       { path: '/status', title: 'Status' },
     ]}
-    sidenav={<JumpNav tag={Link} routes={routes} />}
-    main={
+    sidenav={() => {
+      return <JumpNav tag={Link} routes={routes} />
+    }}
+    main={() => (
       <Row>
         <Col>
           <h2 id="report-an-issue">
@@ -137,6 +139,6 @@ export default () => (
           })}
         </Col>
       </Row>
-    }
+    )}
   />
 )
