@@ -12,21 +12,8 @@ import {
   Col,
 } from '@cwds/components'
 import githubLogo from '../status/GitHub-Mark-Light-64px.png'
-import { Breadcrumb, BreadcrumbItem } from '@cwds/reactstrap'
 
-const MyBreadcrumbs = props => {
-  return (
-    <Breadcrumb>
-      <BreadcrumbItem>
-        <a href="/">Home</a>
-      </BreadcrumbItem>
-      <BreadcrumbItem>
-        <a href="/">Library</a>
-      </BreadcrumbItem>
-      <BreadcrumbItem active>Data</BreadcrumbItem>
-    </Breadcrumb>
-  )
-}
+const MyBreadcrumbs = () => <em>Welcome to the CARES Design System guide!</em>
 
 const MyPageActions = () => (
   <Button

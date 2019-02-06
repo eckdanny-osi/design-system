@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Page, Breadcrumb, BreadcrumbItem } from '@cwds/components'
-import SideNav from './ArticleSidenav'
+import SideNav from './SideNav'
 
 const Article = ({ article }) => {
   const { title } = article
