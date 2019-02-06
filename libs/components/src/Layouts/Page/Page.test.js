@@ -16,13 +16,9 @@ describe('Page', () => {
   })
 
   it('passes bannerProps to Banner', () => {
-    const wrapper = shallow(
-      <Page title="my-title" breadcrumb="my-breadcrumb" cta="my-cta" />
-    )
+    const wrapper = shallow(<Page title="my-title" />)
     const banner = wrapper.find(Banner)
     expect(banner.prop('title')).toEqual('my-title')
-    expect(banner.prop('breadcrumb')).toEqual('my-breadcrumb')
-    expect(banner.prop('cta')).toEqual('my-cta')
   })
 
   it('passes bodyProps to Body', () => {
