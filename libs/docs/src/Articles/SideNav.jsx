@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { ListGroup, ListGroupItem } from '@cwds/components'
 
-const Sidenav = ({ routes }) => {
+const SideNav = ({ routes }) => {
   if (!routes.length) return null
   return (
     <ListGroup>
@@ -21,4 +22,17 @@ const Sidenav = ({ routes }) => {
   )
 }
 
-export default Sidenav
+SideNav.propTypes = {
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      active: PropTypes.bool,
+      path: PropTypes.string,
+      title: PropTypes.string,
+    })
+  ).isRequired,
+}
+SideNav.defaultProps = {
+  routes: [],
+}
+
+export default SideNav

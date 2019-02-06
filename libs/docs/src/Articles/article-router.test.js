@@ -1,4 +1,4 @@
-import { getArticle } from './aticle-router'
+import { getArticle } from './article-router'
 
 describe('getArticle', () => {
   it('finds articles in the routing tree ', () => {
