@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import AppBar from '../../AppBar'
@@ -32,7 +32,11 @@ const Banner = props => {
       {Breadcrumb !== false && (
         <div className={cn(Styles.BreadcrumbContainer)}>
           <Container style={{ overflowX: 'scroll' }}>
-            <Breadcrumb {...getBreadcrumbProps(props)} />
+            {React.isValidElement(Breadcrumb) ? (
+              <Fragment>{Breadcrumb}</Fragment>
+            ) : (
+              <Breadcrumb {...getBreadcrumbProps(props)} />
+            )}
           </Container>
         </div>
       )}
@@ -43,8 +47,9 @@ const Banner = props => {
 Banner.propTypes = {
   AppBar: PropTypes.func,
   PageHeader: PropTypes.func,
-  PageActions: PropTypes.func,
-  Breadcrumb: PropTypes.func.isRequired,
+  PageActions: PageHeader.propTypes.PageActions,
+  Breadcrumb: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+    .isRequired,
   getBreadcrumbProps: PropTypes.func.isRequired,
   title: PropTypes.string,
 }

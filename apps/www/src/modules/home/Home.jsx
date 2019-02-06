@@ -13,9 +13,7 @@ import {
 } from '@cwds/components'
 import githubLogo from '../status/GitHub-Mark-Light-64px.png'
 
-const MyBreadcrumbs = () => <em>Welcome to the CARES Design System guide!</em>
-
-const MyPageActions = () => (
+const MyPageActions = (
   <Button
     color="info"
     size="sm"
@@ -46,7 +44,7 @@ export default () => (
     layout="dashboard"
     title="Design System"
     PageActions={MyPageActions}
-    Breadcrumb={MyBreadcrumbs}
+    Breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>

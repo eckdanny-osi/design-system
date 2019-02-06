@@ -21,7 +21,7 @@ import Page from '!babel-loader!@mdx-js/loader!./articles/Page/Page.mdx'
 import CaresProvider from '!babel-loader!@mdx-js/loader!./articles/CaresProvider/CaresProvider.mdx'
 
 const routes = {
-  title: 'Components',
+  title: 'Component Library',
   component: Components,
   path: '/components',
   children: [

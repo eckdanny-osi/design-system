@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import pick from 'lodash.pick'
@@ -19,7 +19,11 @@ const PageHeader = ({
         <PageTitle {...getPageTitleProps(restProps)} />
       </div>
       <div className={cn(Styles.PageActionsContainer)}>
-        <PageActions {...getPageActionsProps(restProps)} />
+        {React.isValidElement(PageActions) ? (
+          <Fragment>{PageActions}</Fragment>
+        ) : (
+          <PageActions {...getPageActionsProps(restProps)} />
+        )}
       </div>
     </div>
   )
@@ -28,7 +32,8 @@ const PageHeader = ({
 PageHeader.propTypes = {
   PageTitle: PropTypes.func.isRequired,
   getPageTitleProps: PropTypes.func.isRequired,
-  PageActions: PropTypes.func.isRequired,
+  PageActions: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+    .isRequired,
   getPageActionsProps: PropTypes.func.isRequired,
   title: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 }
