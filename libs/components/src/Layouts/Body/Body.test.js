@@ -31,6 +31,15 @@ describe('Body', () => {
           .exists()
       ).toBe(false)
     })
+
+    it('supports functional main', () => {
+      const Main = () => <div id="my-main">Hello, world!</div>
+      expect(
+        shallow(<Body layout={layout} main={Main} />)
+          .find(Main)
+          .exists()
+      ).toBe(true)
+    })
   })
 
   describe('with subroutes layout', () => {
@@ -53,6 +62,24 @@ describe('Body', () => {
           .exists()
       ).toBe(true)
     })
+
+    it('supports functional main', () => {
+      const Main = () => <div id="my-main">Hello, world!</div>
+      expect(
+        shallow(<Body layout={layout} main={Main} />)
+          .find(Main)
+          .exists()
+      ).toBe(true)
+    })
+
+    it('supports functional sidenav', () => {
+      const SideNav = () => <div id="my-sidenav">Hello, world!</div>
+      expect(
+        shallow(<Body layout={layout} sidenav={SideNav} />)
+          .find(SideNav)
+          .exists()
+      ).toBe(true)
+    })
   })
 
   describe('with jumpnav layout', () => {
@@ -72,6 +99,24 @@ describe('Body', () => {
       expect(
         shallow(<Body layout={layout} sidenav={sidenav} />)
           .find('#my-sidenav')
+          .exists()
+      ).toBe(true)
+    })
+
+    it('supports functional main', () => {
+      const Main = () => <div id="my-main">Hello, world!</div>
+      expect(
+        shallow(<Body layout={layout} main={Main} />)
+          .find(Main)
+          .exists()
+      ).toBe(true)
+    })
+
+    it('supports functional sidenav', () => {
+      const SideNav = () => <div id="my-sidenav">Hello, world!</div>
+      expect(
+        shallow(<Body layout={layout} sidenav={SideNav} />)
+          .find(SideNav)
           .exists()
       ).toBe(true)
     })
