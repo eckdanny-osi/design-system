@@ -58,8 +58,8 @@ export default () => {
         { path: '/page-layouts', title: 'Layouts' },
       ]}
       layout="jumpnav"
-      sidenav={() => <div />}
-      main={() => <div>{routes.map(renderSection)}</div>}
+      sidenav={<div />}
+      main={<div>{routes.map(renderSection)}</div>}
     />
   )
 }

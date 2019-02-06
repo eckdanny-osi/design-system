@@ -29,15 +29,15 @@ export default withRouter(({ match, location }) => (
     title="Labs"
     breadcrumb={makeBreadcrumb(location)}
     layout="subroutes"
-    main={() => (
+    main={
       <Fragment>
         {routes.map(({ title, path, component: Component }) => (
           <Route key={path} path={path} component={Component} />
         ))}
         <Route exact path={match.url} render={DefaultPage} />
       </Fragment>
-    )}
-    sidenav={() => (
+    }
+    sidenav={
       <ListGroup>
         {routes.map(({ path, title }) => {
           return (
@@ -53,6 +53,6 @@ export default withRouter(({ match, location }) => (
           )
         })}
       </ListGroup>
-    )}
+    }
   />
 ))
