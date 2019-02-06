@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import startCase from 'lodash.startcase'
 import kebabCase from 'lodash.kebabcase'
 import '@cwds/components/scss/global.scss'
@@ -14,22 +14,19 @@ const ListView = () => {
           <BreadcrumbItem active>Components</BreadcrumbItem>
         </Breadcrumb>
       }
-      main={() => {
-        return (
-          <div>
-            {Object.keys(Examples).map(componentName => (
-              <a
-                className="d-block"
-                key={componentName}
-                href={`/components/${kebabCase(componentName)}`}
-              >
-                {componentName}
-              </a>
-            ))}
-          </div>
-        )
-      }}
-    />
+    >
+      <Fragment>
+        {Object.keys(Examples).map(componentName => (
+          <a
+            className="d-block"
+            key={componentName}
+            href={`/components/${kebabCase(componentName)}`}
+          >
+            {componentName}
+          </a>
+        ))}
+      </Fragment>
+    </Page>
   )
 }
 

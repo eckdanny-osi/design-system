@@ -4,14 +4,12 @@ import cn from 'classnames'
 import { Container, Row, Col } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 
-const Body = ({ layout, sidenav: SideNav, main: Main }) => {
+const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
   return (
     <div className={cn('pt-3', Styles.Body)}>
       <Container>
         {layout === 'dashboard' && (
-          <div role="main">
-            <Main />
-          </div>
+          <div role="main">{children || <Main />}</div>
         )}
         {layout === 'subroutes' && (
           <Row>
@@ -19,7 +17,7 @@ const Body = ({ layout, sidenav: SideNav, main: Main }) => {
               {<SideNav />}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {<Main />}
+              {children || <Main />}
             </Col>
           </Row>
         )}
@@ -29,7 +27,7 @@ const Body = ({ layout, sidenav: SideNav, main: Main }) => {
               {<SideNav />}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {<Main />}
+              {children || <Main />}
             </Col>
           </Row>
         )}
@@ -39,6 +37,7 @@ const Body = ({ layout, sidenav: SideNav, main: Main }) => {
 }
 
 Body.propTypes = {
+  children: PropTypes.element,
   layout: PropTypes.oneOf(['dashboard', 'subroutes', 'jumpnav']),
   sidenav: PropTypes.any,
   main: PropTypes.any,
