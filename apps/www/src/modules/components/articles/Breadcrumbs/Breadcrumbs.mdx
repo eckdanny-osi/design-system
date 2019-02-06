@@ -1,9 +1,5 @@
 import { BreadcrumbTrail, Alert } from "@cwds/components";
 import { DemoCard, PropTable } from "@cwds/docs";
-import {
-  BreadcrumbExample,
-  DisabledBreadcrumbs
-} from "./Breadcrumb.example.jsx";
 import Docgen from "../ReactDogenInfo.js";
 
 export const meta = {
@@ -16,10 +12,6 @@ export const meta = {
 ## Synopsis
 
 Use `Breadcrumb`s to indicate the location of the current page within a navigational hierarchy.
-
-<DemoCard>
-  <BreadcrumbExample />
-</DemoCard>
 
 ### Disambiguating Terms
 
@@ -102,8 +94,6 @@ alskdjfalksdjf
 
 ## Props
 
-<PropTable docgen={Docgen.BreadcrumbTrail} />
-
 ## Usage Guidelines
 
 `Breadcrumb`s are nested within the [`Banner`](/components/banner) component. They must appear on each page as a secondary navigational tool.
@@ -121,28 +111,20 @@ There are two
 
 The `Breadcrumb`Trail usage:
 
-<BreadcrumbExample />
-
 ```jsx
 const items = [
-  { path: '/', title: 'Dashboard' },
-  { path: '/components', title: 'Components' },
-  { path: '#', title: 'Breadcrumbs' },
-]
-
-<BreadcrumbTrail items={items}/>
+  { path: "/", title: "Dashboard" },
+  { path: "/components", title: "Components" },
+  { path: "#", title: "Breadcrumbs" }
+];
 ```
 
 You can get a breadcrumbs with disabled links if you don't pass 'path' param.
 
-<DisabledBreadcrumbs />
-
 ```jsx
 const items = [
-  { title: 'Dashboard' },
-  { title: 'Components' },
-  { title: 'Breadcrumbs' },
-]
-
-<BreadcrumbTrail items={items}/>
+  { title: "Dashboard" },
+  { title: "Components" },
+  { title: "Breadcrumbs" }
+];
 ```
