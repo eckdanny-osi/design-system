@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/ca-cwds/design-system/compare/v0.8.1...v0.8.2) (2019-02-07)
+
+
+### Bug Fixes
+
+* **www:** fix missing Tooltip article PropTable ([#394](https://github.com/ca-cwds/design-system/issues/394)) ([7868a66](https://github.com/ca-cwds/design-system/commit/7868a66))
+* **www:** use higher contrast syntax highlighter theme ([#393](https://github.com/ca-cwds/design-system/issues/393)) ([73bb45e](https://github.com/ca-cwds/design-system/commit/73bb45e))
+* **www,docs:** Move syntax highlighter (CodeBlock) to docs ([#397](https://github.com/ca-cwds/design-system/issues/397)) ([0d57924](https://github.com/ca-cwds/design-system/commit/0d57924))
+
+
+
+
+
 ## [0.8.1](https://github.com/ca-cwds/design-system/compare/v0.8.0...v0.8.1) (2019-01-28)
 
 
