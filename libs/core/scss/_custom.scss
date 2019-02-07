@@ -210,6 +210,14 @@ $list-group-border-color: $gray-200;
 $list-group-active-bg: $list-group-bg;
 $list-group-active-border-color: $list-group-border-color;
 
+// Breadcrumbs
+
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-bg:                     transparent;
+$breadcrumb-margin-bottom:          0;
+$breadcrumb-divider:                "\203A";
+
 // Code
 
 $code-color: $accent;

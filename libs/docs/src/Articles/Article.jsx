@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import { Page, Breadcrumb, BreadcrumbItem } from '@cwds/components'
+import { Page } from '@cwds/components'
 import SideNav from './SideNav'
+import Breadcrumb from './Breadcrumb'
 
 const Article = ({ article }) => {
   const { title } = article
@@ -10,17 +10,9 @@ const Article = ({ article }) => {
     <Page
       title={title}
       layout="subroutes"
-      Breadcrumb={() => (
-        <Breadcrumb>
-          {[{ title: 'Home', path: '/' }, ...article.breadcrumbs].map(d => (
-            <BreadcrumbItem key={d.path}>
-              <Link to={d.path}>{d.title}</Link>
-            </BreadcrumbItem>
-          ))}
-        </Breadcrumb>
-      )}
+      Breadcrumb={<Breadcrumb items={article.breadcrumbs} />}
       main={article.main}
-      sidenav={() => <SideNav routes={article.sidebar} />}
+      sidenav={<SideNav routes={article.sidebar} />}
     />
   )
 }

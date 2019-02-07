@@ -8,19 +8,23 @@ import Body from '../Body'
 const Page = ({ Banner, getBannerProps, Body, getBodyProps, ...props }) => {
   return (
     <div className={Styles.Page}>
-      <Banner {...getBannerProps(props)} />
-      <Body {...getBodyProps(props)} />
+      {typeof Banner === 'function' ? (
+        <Banner {...getBannerProps(props)} />
+      ) : (
+        Banner
+      )}
+      {typeof Body === 'function' ? <Body {...getBodyProps(props)} /> : Body}
     </div>
   )
 }
 
 Page.propTypes = {
   /** Banner component */
-  Banner: PropTypes.func,
+  Banner: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Extract Banner props from props */
   getBannerProps: PropTypes.func,
   /** Body component */
-  Body: PropTypes.func,
+  Body: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Extract Body props from props */
   getBodyProps: PropTypes.func,
   ...Banner.propTypes,
