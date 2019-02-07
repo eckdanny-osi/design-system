@@ -5,8 +5,8 @@ import { Container, Row, Col } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 
 const Body = ({ layout, sidenav: SideNav, main: Main }) => {
-  const sidenav = React.isValidElement(SideNav) ? SideNav : <SideNav />
-  const main = React.isValidElement(Main) ? Main : <Main />
+  const sidenav = typeof SideNav === 'function' ? <SideNav /> : SideNav
+  const main = typeof Main === 'function' ? <Main /> : Main
 
   return (
     <div className={cn('pt-3', Styles.Body)}>
@@ -45,8 +45,8 @@ Body.propTypes = {
 
 Body.defaultProps = {
   layout: 'dashboard',
-  main: '',
-  sidenav: '',
+  main: null,
+  sidenav: null,
 }
 
 export default Body
