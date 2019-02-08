@@ -1,16 +1,19 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import pick from 'lodash.pick'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
 import PageActions from '../../PageActions'
 import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
 import { withCaresConfig } from '../../utils/CaresContext'
+import { renderElementOrComponent } from '../../utils/renderElementOrComponent'
 
 const Banner = props => {
   const {
-    AppBar,
+    // AppBar,
+    Brand,
     PageHeader,
     PageActions,
     Breadcrumb,
@@ -21,7 +24,7 @@ const Banner = props => {
     <div role="banner" className={cn(Styles.Banner)}>
       <div className={cn(Styles.AppBarContainer)}>
         <Container>
-          <AppBar />
+          <AppBar {...pick(props, ['Brand', 'UserMenu'])} />
         </Container>
       </div>
       <div className={cn(Styles.PageHeaderContainer)}>
@@ -32,11 +35,7 @@ const Banner = props => {
       {Breadcrumb !== false && (
         <div className={cn(Styles.BreadcrumbContainer)}>
           <Container style={{ overflowX: 'scroll' }}>
-            {React.isValidElement(Breadcrumb) ? (
-              <Fragment>{Breadcrumb}</Fragment>
-            ) : (
-              <Breadcrumb {...getBreadcrumbProps(props)} />
-            )}
+            {renderElementOrComponent(Breadcrumb, props, getBreadcrumbProps)}
           </Container>
         </div>
       )}
@@ -45,9 +44,10 @@ const Banner = props => {
 }
 
 Banner.propTypes = {
-  AppBar: PropTypes.func,
+  // AppBar: PropTypes.func,
   PageHeader: PropTypes.func,
   PageActions: PageHeader.propTypes.PageActions,
+  Brand: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   Breadcrumb: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
     .isRequired,
   getBreadcrumbProps: PropTypes.func.isRequired,
@@ -55,7 +55,7 @@ Banner.propTypes = {
 }
 
 Banner.defaultProps = {
-  AppBar,
+  // AppBar,
   PageHeader,
   PageActions,
   Breadcrumb: () => '',

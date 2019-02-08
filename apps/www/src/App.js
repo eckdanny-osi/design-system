@@ -12,6 +12,7 @@ import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
 import FacilityProfile from './demos/FacilityProfile'
+import PageTemplates from './demos/PageTemplates'
 
 class App extends Component {
   render() {
@@ -29,6 +30,10 @@ class App extends Component {
                 <Route
                   path="/demo/facility-profile"
                   component={FacilityProfile}
+                />
+                <Route
+                  path="/__examples__/page-templates"
+                  component={PageTemplates}
                 />
                 <JumpToTop />
               </Fragment>

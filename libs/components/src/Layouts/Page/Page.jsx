@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash.pick'
 import Styles from '../Layout.module.scss'
+// import Brand from '../../Brand'
 import Banner from '../Banner'
 import Body from '../Body'
 import { renderElementOrComponent } from '../../utils'
@@ -16,6 +17,7 @@ const Page = ({ Banner, getBannerProps, Body, getBodyProps, ...props }) => {
 }
 
 Page.propTypes = {
+  Brand: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Banner component */
   Banner: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Extract Banner props from props */
@@ -37,10 +39,12 @@ Page.propTypes = {
 }
 
 Page.defaultProps = {
-  getBannerProps: props => pick(props, ['title', 'PageActions', 'Breadcrumb']),
+  getBannerProps: props =>
+    pick(props, ['title', 'PageActions', 'Breadcrumb', 'Brand']),
   getBodyProps: props => pick(props, ['main', 'sidenav', 'layout', 'children']),
   Banner,
   Body,
+  // Brand,
 }
 
 export default Page

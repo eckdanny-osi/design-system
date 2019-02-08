@@ -2,6 +2,10 @@ import React, { isValidElement } from 'react'
 import { renderElementOrComponent } from './renderElementOrComponent'
 
 describe('renderElementOrComponent', () => {
+  it('returns null when falsey value is encountered', () => {
+    expect(renderElementOrComponent(false)).toBe(null)
+  })
+
   it('returns the element when an element is passed', () => {
     const myElem = <div />
     expect(isValidElement(myElem)).toBe(true)

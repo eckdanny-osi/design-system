@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, AlertUncontrolled } from '@cwds/components'
+import { Alert } from '@cwds/components'
 
 export default () => (
   <div>

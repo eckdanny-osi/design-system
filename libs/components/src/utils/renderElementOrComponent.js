@@ -13,6 +13,7 @@ export const renderElementOrComponent = (
   props,
   getterFn = identity
 ) => {
+  if (!ElemOrComp) return null
   return typeof ElemOrComp === 'function'
     ? createElement(ElemOrComp, getterFn(props))
     : props
