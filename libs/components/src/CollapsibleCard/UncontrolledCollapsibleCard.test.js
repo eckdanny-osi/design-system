@@ -6,6 +6,7 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
+  Util,
 } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 import CollapsibleCard from './CollapsibleCard'
@@ -22,7 +23,7 @@ describe('UncontrolledCollapsibleCard', () => {
     )
     expect(wrapper.find(CollapsibleCard).length).toBe(1)
     expect(wrapper.find(Collapse).prop('isOpen')).toBe(true)
-    expect(wrapper.find(Icon).prop('rotation')).toBe(180)
+    expect(wrapper.find(Icon).prop('rotation')).toBe(Util.ROTATION.FLIP)
     wrapper.find(Button).simulate('click')
     expect(wrapper.find(Collapse).prop('isOpen')).toBe(false)
   })

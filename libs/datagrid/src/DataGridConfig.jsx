@@ -1,17 +1,22 @@
 import React from 'react'
 import { ReactTableDefaults } from 'react-table'
-import Pagination from './Pagination'
+import { Util } from '@cwds/reactstrap'
 
+import Pagination from './Pagination'
 import LoadingText from './LoadingText'
 import NoDataText from './NoDataText'
 import PagerButtonFactory from './PagerButtonFactory'
 
+/* eslint-disable no-magic-numbers */
+const PAGE_SIZES = [5, 10, 25, 50]
+/* eslint-enable no-magic-numbers */
+
 const DataGridDefaults = {
-  NextComponent: PagerButtonFactory({ rotation: 270 }),
+  NextComponent: PagerButtonFactory({ rotation: Util.ROTATION.LEFT }),
   PaginationComponent: Pagination,
-  PreviousComponent: PagerButtonFactory({ rotation: 90 }),
+  PreviousComponent: PagerButtonFactory({ rotation: Util.ROTATION.RIGHT }),
   defaultPageSize: 10,
-  pageSizeOptions: [5, 10, 25, 50],
+  pageSizeOptions: PAGE_SIZES,
   // LoadingComponent: LoadingIndicator,
   loadingText: <LoadingText />,
   noDataText: <NoDataText />,

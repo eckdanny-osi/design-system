@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { Button, Card, Collapse, CardHeader } from '@cwds/reactstrap'
+import { Button, Card, Collapse, CardHeader, Util } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 import Styles from './CollapsibleCard.module.scss'
 
@@ -30,7 +30,10 @@ const CollapsibleCard = ({
             {headerChildren}
           </div>
           <Button className="bg-transparent border-0" onClick={onToggle}>
-            <Icon name="chevron-down" rotation={!isOpen ? undefined : 180} />
+            <Icon
+              name="chevron-down"
+              rotation={!isOpen ? undefined : Util.ROTATION.FLIP}
+            />
           </Button>
         </div>
       </CardHeader>

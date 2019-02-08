@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { CardHeader } from '@cwds/reactstrap'
+import { CardHeader, Util } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 import Styles from './Rolodex.module.scss'
 
@@ -59,7 +59,10 @@ class RolodexHeader extends Component {
           tabIndex="0"
         >
           <div className="mr-3 flex-grow-1">{children}</div>
-          <Icon name="chevron-down" rotation={!isOpen ? undefined : 180} />
+          <Icon
+            name="chevron-down"
+            rotation={!isOpen ? undefined : Util.ROTATION.FLIP}
+          />
         </CardHeader>
       </div>
     )

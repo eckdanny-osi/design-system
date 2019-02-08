@@ -1,6 +1,12 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { Collapse, CardBody, CardHeader, CardFooter } from '@cwds/reactstrap'
+import {
+  Collapse,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  Util,
+} from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 import CollapsibleCard from './CollapsibleCard'
 
@@ -14,7 +20,7 @@ describe('CollapsibleCard', () => {
       </CollapsibleCard>
     )
     expect(wrapper.find(Collapse).length).toBe(1)
-    expect(wrapper.find(Icon).prop('rotation')).toBe(180)
+    expect(wrapper.find(Icon).prop('rotation')).toBe(Util.ROTATION.FLIP)
   })
 
   it('collapses', () => {

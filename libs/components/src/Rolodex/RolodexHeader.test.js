@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import RolodexHeader from './RolodexHeader'
-import { CardHeader } from '@cwds/reactstrap'
+import { CardHeader, Util } from '@cwds/reactstrap'
 import Icon from '@cwds/icons'
 
 describe('RolodexHeader', () => {
@@ -33,6 +33,6 @@ describe('RolodexHeader', () => {
     )
     expect(wrapper.find(Icon).prop('rotation')).toBeFalsy()
     wrapper.setProps({ isOpen: true })
-    expect(wrapper.find(Icon).prop('rotation')).toBe(180)
+    expect(wrapper.find(Icon).prop('rotation')).toBe(Util.ROTATION.FLIP)
   })
 })

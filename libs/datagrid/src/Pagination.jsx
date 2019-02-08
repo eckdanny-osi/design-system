@@ -1,13 +1,13 @@
 import React from 'react'
 import classnames from 'classnames'
 import PaginationRT from 'react-table/lib/pagination'
-import { Input } from '@cwds/reactstrap'
+import { Input, Util } from '@cwds/reactstrap'
 import Select from 'react-select'
 import uniqueId from 'lodash.uniqueid'
 
 // From react-table@6.8.6
 // See https://github.com/react-tools/react-table/blob/f55ce620411c619855a2fe2f081407e4f82727b9/src/pagination.js
-
+const { keyCodes } = Util
 const defaultButton = props => (
   <button type="button" {...props} className="-btn">
     {props.children}
@@ -78,7 +78,10 @@ class Pagination extends PaginationRT {
                   value={this.state.page === '' ? '' : this.state.page + 1}
                   onBlur={this.applyPage}
                   onKeyPress={e => {
-                    if (e.which === 13 || e.keyCode === 13) {
+                    if (
+                      e.which === keyCodes.enter ||
+                      e.keyCode === keyCodes.enter
+                    ) {
                       this.applyPage()
                     }
                   }}

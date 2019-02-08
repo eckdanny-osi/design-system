@@ -19,31 +19,43 @@ module.exports = {
   rules: {
     'babel/no-invalid-this': 1,
     'jsx-a11y/label-has-for': 0,
-    'jsx-a11y/label-has-associated-control': [2, {
-      labelComponents: ['CustomLabel'],
-      labelAttributes: ['inputLabel'],
-      controlComponents: ['CustomInput'],
-      depth: 3,
-    }],
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        labelComponents: ['CustomLabel'],
+        labelAttributes: ['inputLabel'],
+        controlComponents: ['CustomInput'],
+        depth: 3,
+      },
+    ],
     'consistent-return': [2],
     'dot-notation': [2],
     'func-names': [2],
     'no-console': [1],
-    'no-implicit-coercion': [2, {
-      "allow": ["!!"]
-    }],
-    'no-magic-numbers': [1, {
-      ignore: [-1, 0, 1, 2]
-    }],
+    'no-implicit-coercion': [
+      2,
+      {
+        allow: ['!!'],
+      },
+    ],
+    'no-magic-numbers': [
+      2,
+      {
+        ignore: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      },
+    ],
     'no-useless-concat': [2],
     'no-var': [2],
     'prefer-const': [2],
     'prefer-template': [2],
-    'radix': [2, 'as-needed'],
+    radix: [2, 'as-needed'],
     'react/display-name': [0],
-    'react/prop-types': [2, {
-      skipUndeclared: true
-    }],
+    'react/prop-types': [
+      2,
+      {
+        skipUndeclared: true,
+      },
+    ],
     'react/no-did-mount-set-state': [1],
     'react/no-did-update-set-state': [1],
     'prettier/prettier': [
