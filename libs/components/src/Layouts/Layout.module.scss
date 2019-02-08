@@ -25,8 +25,9 @@
   .AppBarContainer {
     background-color: $info;
     color: $white;
-    padding: 0.25rem 0;
     height: 2.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .PageHeaderContainer {

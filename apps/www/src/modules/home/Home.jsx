@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import {
   Page,
   Button,
-  Badge,
   Card,
   CardHeader,
   CardBody,
@@ -12,16 +11,40 @@ import {
   Row,
   Col,
 } from '@cwds/components'
+import githubLogo from '../status/GitHub-Mark-Light-64px.png'
+
+const MyPageActions = (
+  <Button
+    color="info"
+    size="sm"
+    href="https://github.com/ca-cwds/design-system"
+    style={{
+      height: '36px',
+      display: 'inline-flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+    }}
+    target="_blank"
+  >
+    <img
+      src={githubLogo}
+      style={{
+        display: 'block',
+        maxHeight: '22px',
+        marginRight: '0.5rem',
+      }}
+      alt="github logo"
+    />
+    GitHub
+  </Button>
+)
 
 export default () => (
   <Page
     layout="dashboard"
     title="Design System"
-    // breadcrumb={false}
-    // breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
-    // breadcrumb={<div>aslkdfj</div>}
-    // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
-    // Breadcrumbs={() => <div>Hello World!</div>}
+    PageActions={MyPageActions}
+    Breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
@@ -62,6 +85,7 @@ export default () => (
               </Card>
             </Col>
 
+            {/*
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -82,6 +106,7 @@ export default () => (
                 </CardFooter>
               </Card>
             </Col>
+            */}
 
             <Col sm={6}>
               <Card>
@@ -101,6 +126,7 @@ export default () => (
               </Card>
             </Col>
 
+            {/*
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -125,6 +151,7 @@ export default () => (
                 </CardFooter>
               </Card>
             </Col>
+            */}
           </Row>
         </Col>
         <Col

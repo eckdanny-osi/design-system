@@ -4,9 +4,6 @@ export default {
   Alert: docgenComposed('reactstrap/src/Alert.js'),
   Avatar: docgenComposed('@cwds/components/src/Avatar/Avatar.jsx'),
   Badge: docgenComposed('reactstrap/src/Badge.js'),
-  BreadcrumbTrail: docgenComposed(
-    '@cwds/components/src/BreadcrumbTrail/BreadcrumbTrail.jsx'
-  ),
   Button: docgenComposed('reactstrap/src/Button.js'),
   ButtonGroup: docgenComposed('reactstrap/src/ButtonGroup.js'),
   Card: docgenComposed('reactstrap/src/Card.js'),
@@ -26,4 +23,5 @@ export default {
     'reactstrap/src/Tooltip.js',
     'reactstrap/src/TooltipPopoverWrapper.js'
   ),
+  // Page: docgenComposed('@cwds/components/src/Layouts/Page/Page.jsx'),
 }

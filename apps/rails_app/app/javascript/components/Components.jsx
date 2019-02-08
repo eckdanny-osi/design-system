@@ -1,31 +1,32 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import startCase from 'lodash.startcase'
 import kebabCase from 'lodash.kebabcase'
 import '@cwds/components/scss/global.scss'
-import { Page } from '@cwds/components'
+import { Page, Breadcrumb, BreadcrumbItem } from '@cwds/components'
 import * as Examples from './examples'
 
 const ListView = () => {
   return (
     <Page
       title="Components"
-      breadcrumb={<div>Pick a component</div>}
-      main={() => {
-        return (
-          <div>
-            {Object.keys(Examples).map(componentName => (
-              <a
-                className="d-block"
-                key={componentName}
-                href={`/components/${kebabCase(componentName)}`}
-              >
-                {componentName}
-              </a>
-            ))}
-          </div>
-        )
-      }}
-    />
+      Breadcrumb={
+        <Breadcrumb>
+          <BreadcrumbItem active>Components</BreadcrumbItem>
+        </Breadcrumb>
+      }
+    >
+      <Fragment>
+        {Object.keys(Examples).map(componentName => (
+          <a
+            className="d-block"
+            key={componentName}
+            href={`/components/${kebabCase(componentName)}`}
+          >
+            {componentName}
+          </a>
+        ))}
+      </Fragment>
+    </Page>
   )
 }
 
@@ -36,7 +37,14 @@ const Components = ({ component: path }) => {
   return (
     <Page
       title={componentName}
-      breadcrumb={<div>Integration Test</div>}
+      Breadcrumb={
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/components">Components</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>{componentName}</BreadcrumbItem>
+        </Breadcrumb>
+      }
       main={Example}
     />
   )

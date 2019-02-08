@@ -1,8 +1,16 @@
-@import '~@cwds/core/scss/base';
+@import "~@cwds/core/scss/base";
 
-.PageTitle {
-  color: $white;
+.PageHeader {
+  display: flex;
+  align-items: center;
+}
+
+.PageTitleContainer {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
+  flex-grow: 1;
+}
+
+.PageActionsContainer {
+  white-space: nowrap;
 }

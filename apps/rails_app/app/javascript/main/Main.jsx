@@ -20,11 +20,18 @@ const WelcomeMarquee = () => (
   </div>
 )
 
+const MyPageActions = () => (
+  <Button color="info" size="sm" href="/components">
+    Components
+  </Button>
+)
+
 export const App = () => (
   <Page
     title="Yay! You're on Rails!"
     layout="dashboard"
-    breadcrumb={<WelcomeMarquee />}
+    PageActions={MyPageActions}
+    Breadcrumb={<WelcomeMarquee />}
     sidenav={() => 'Sidenav'}
     main={() => (
       <div>
