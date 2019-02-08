@@ -4,16 +4,13 @@ import pick from 'lodash.pick'
 import Styles from '../Layout.module.scss'
 import Banner from '../Banner'
 import Body from '../Body'
+import { renderElementOrComponent } from '../../utils'
 
 const Page = ({ Banner, getBannerProps, Body, getBodyProps, ...props }) => {
   return (
     <div className={Styles.Page}>
-      {typeof Banner === 'function' ? (
-        <Banner {...getBannerProps(props)} />
-      ) : (
-        Banner
-      )}
-      {typeof Body === 'function' ? <Body {...getBodyProps(props)} /> : Body}
+      {renderElementOrComponent(Banner, props, getBannerProps)}
+      {renderElementOrComponent(Body, props, getBodyProps)}
     </div>
   )
 }
@@ -27,8 +24,16 @@ Page.propTypes = {
   Body: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** Extract Body props from props */
   getBodyProps: PropTypes.func,
-  ...Banner.propTypes,
-  ...Body.propTypes,
+  // ...Banner.propTypes,
+  // ...Body.propTypes,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  Breadcrumbs: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  /** TODO: main prop description */
+  main: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.element,
+  ]),
 }
 
 Page.defaultProps = {
@@ -39,7 +44,3 @@ Page.defaultProps = {
 }
 
 export default Page
-
-//
-// Helpers
-//

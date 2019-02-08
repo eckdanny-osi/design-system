@@ -1,31 +1,41 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Page } from '@cwds/components'
-import SideNav from './SideNav'
-import Breadcrumb from './Breadcrumb'
+import SideNav from './ArticleSideNav'
+import Breadcrumb from './ArticleBreadcrumb'
 
-const Article = ({ article }) => {
-  const { title } = article
-  return (
-    <Page
-      title={title}
-      layout="subroutes"
-      Breadcrumb={<Breadcrumb items={article.breadcrumbs} />}
-      main={article.main}
-      sidenav={<SideNav routes={article.sidebar} />}
-    />
-  )
-}
+const Article = ({ title, main, sidebar, breadcrumbs }) => (
+  <Page
+    title={title}
+    layout="subroutes"
+    Breadcrumb={
+      <Breadcrumb items={[{ title: 'Home', path: '/' }, ...breadcrumbs]} />
+    }
+    main={main}
+    sidenav={<SideNav routes={sidebar} />}
+  />
+)
 
 Article.propTypes = {
-  article: PropTypes.shape({
-    title: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string,
+  main: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.element,
+    PropTypes.func,
+  ]),
+  sidebar: PropTypes.array,
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+      active: PropTypes.bool,
+    })
+  ).isRequired,
 }
 Article.defaultProps = {
-  article: {
-    title: '',
-  },
+  title: '',
+  breadcrumbs: [],
+  sidebar: [],
 }
 
 export default Article

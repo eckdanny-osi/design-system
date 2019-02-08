@@ -38,7 +38,11 @@ const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
 }
 
 Body.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.func,
+  ]),
   layout: PropTypes.oneOf(['dashboard', 'subroutes', 'jumpnav']),
   sidenav: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   main: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

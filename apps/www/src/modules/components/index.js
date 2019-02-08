@@ -11,8 +11,7 @@ export default props => {
       path={`${relativeRootUrl}(.*)?`}
       render={props => {
         const article = articleUtils.getArticle(props.match.url, routes)
-        if (!article) return <ArticleNotFound />
-        return <Article article={article} />
+        return !article ? <ArticleNotFound /> : <Article {...article} />
       }}
     />
   )
