@@ -1,25 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import pick from 'lodash.pick'
+import { Container } from '@cwds/reactstrap'
 import AppBar from '../../AppBar'
 import PageHeader from '../../PageHeader'
-import PageActions from '../../PageActions'
-import { Container } from '@cwds/reactstrap'
 import Styles from '../Layout.module.scss'
-import { withCaresConfig } from '../../utils/CaresContext'
 import { renderElementOrComponent } from '../../utils/renderElementOrComponent'
 
 const Banner = props => {
-  const {
-    // AppBar,
-    Brand,
-    PageHeader,
-    PageActions,
-    Breadcrumb,
-    getBreadcrumbProps,
-    title,
-  } = props
   return (
     <div role="banner" className={cn(Styles.Banner)}>
       <div className={cn(Styles.AppBarContainer)}>
@@ -29,13 +18,13 @@ const Banner = props => {
       </div>
       <div className={cn(Styles.PageHeaderContainer)}>
         <Container>
-          <PageHeader title={title} PageActions={PageActions} />
+          <PageHeader {...pick(props, ['PageActions', 'PageTitle'])} />
         </Container>
       </div>
-      {Breadcrumb !== false && (
+      {props.Breadcrumb !== false && (
         <div className={cn(Styles.BreadcrumbContainer)}>
           <Container style={{ overflowX: 'scroll' }}>
-            {renderElementOrComponent(Breadcrumb, props, getBreadcrumbProps)}
+            {renderElementOrComponent(props.Breadcrumb)}
           </Container>
         </div>
       )}
@@ -44,24 +33,10 @@ const Banner = props => {
 }
 
 Banner.propTypes = {
-  // AppBar: PropTypes.func,
-  PageHeader: PropTypes.func,
-  PageActions: PageHeader.propTypes.PageActions,
-  Brand: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  Breadcrumb: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
-    .isRequired,
-  getBreadcrumbProps: PropTypes.func.isRequired,
-  title: PropTypes.string,
+  ...pick(AppBar.propTypes, ['Brand', 'UserMenu']),
+  ...pick(PageHeader.propTypes, ['PageActions', 'PageTitle']),
+  Breadcrumb: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 }
+Banner.defaultProps = {}
 
-Banner.defaultProps = {
-  // AppBar,
-  PageHeader,
-  PageActions,
-  Breadcrumb: () => '',
-  getBreadcrumbProps: props => ({}),
-}
-
-export { Banner }
-
-export default withCaresConfig(Banner, ['Breadcrumbs'])
+export default Banner

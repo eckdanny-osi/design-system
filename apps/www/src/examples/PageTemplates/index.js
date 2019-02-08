@@ -2,11 +2,16 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import PageStructure from './PageStructure'
+import ContextOverrides from './ContextOverrides'
 
 const routes = [
   {
     path: 'page-structure',
     component: PageStructure,
+  },
+  {
+    path: 'context-overrides',
+    component: ContextOverrides,
   },
 ]
 

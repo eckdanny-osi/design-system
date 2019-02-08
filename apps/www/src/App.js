@@ -12,7 +12,7 @@ import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
 import FacilityProfile from './demos/FacilityProfile'
-import PageTemplates from './demos/PageTemplates'
+import PageTemplates from './examples/PageTemplates'
 
 class App extends Component {
   render() {

@@ -60,6 +60,7 @@ function getSidebar(node, parents) {
       path: `${parents.map(d => d.path).join('')}${child.path}`,
       active: node.path === child.path,
     }))
+  } else {
+    return []
   }
-  return []
 }

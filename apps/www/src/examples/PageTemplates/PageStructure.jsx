@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react'
-import { Page, Button, Breadcrumb, BreadcrumbItem } from '@cwds/components'
+import {
+  Page,
+  Button,
+  Breadcrumb,
+  BreadcrumbItem,
+  PageTitle,
+} from '@cwds/components'
 
 const PageStructure = () => (
   <Page
     layout="dashboard"
-    title="Dashboard Layout"
+    // title="Page Structure"
+    PageTitle={<PageTitle>Page Structure</PageTitle>}
     Brand={<div>Acme Widgets</div>}
-    UserMenu={null}
+    UserMenu={<div>Custom User Menu</div>}
     Breadcrumb={
       <Breadcrumb>
         <BreadcrumbItem>
