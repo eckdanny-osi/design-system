@@ -13,6 +13,7 @@
     "clean": "run-p clean:*",
     "clean:git": "git clean -fdx packages",
     "clean:pkgs": "lerna clean --yes",
+    "clean:dist": "lerna run --scope @cwds/* clean",
     "pretest:libs": "yarn build:libs",
     "test:libs": "yarn test --projects libs/*",
     "test:all": "CI=true lerna run --parallel test ",
