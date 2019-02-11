@@ -38,6 +38,7 @@ Page.propTypes = {
     'Breadcrumb',
   ]),
   ...pick(Body.propTypes, ['sidenav', 'layout', 'main', 'children']),
+  /** Shorthand for simple string PageTitles */
   title: PropTypes.string,
   // Banner: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   // Body: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),

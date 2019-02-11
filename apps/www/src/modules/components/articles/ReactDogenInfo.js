@@ -23,5 +23,8 @@ export default {
     'reactstrap/src/Tooltip.js',
     'reactstrap/src/TooltipPopoverWrapper.js'
   ),
-  // Page: docgenComposed('@cwds/components/src/Layouts/Page/Page.jsx'),
+  Page: docgenComposed(
+    '@cwds/components/src/Layouts/Page/Page.jsx',
+    '@cwds/components/src/Layouts/Page/Page.props'
+  ),
 }

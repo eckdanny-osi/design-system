@@ -4,38 +4,151 @@ import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
-The `Page` is a great component.
+The `Page` is a high-level element that provides a declarative interface for building consistently structured views in CARES apps.
 
 ```jsx
 import { Page } from "@cwds/components";
 ```
 
-<!--
-### Optional Supporting Section
+### Page Anatomy
 
-Additional introductory section or a gallery if there exist a wide range of instances that should be shown (e.g.; IconGallery)
--->
+%INSERT IMAGE HERE% <!-- See @somer or @geoff -->
+
+### Page Templates
+
+CARES apps views exhibit one of several distinct <dfn>Page Templates</dfn>, all of which are abstracted behind the `Page` component. The <dfn>Page Templates</dfn> are distinguished from one another as identified below:
+
+#### Dashboard
+
+A <dfn>1Col Layout</dfn> ideally suited for service module _Landing Pages_.
+
+%INSERT IMAGE HERE%
+
+```jsx
+<Page layout="dashboard" {...props} />
+```
+
+#### Jump Nav
+
+A <dfn>1-3Col Layout</dfn> best suited for _Task Pages_.
+
+%INSERT IMAGE HERE%
+
+```jsx
+<Page layout="jumpnav" {...props} />
+```
 
 ## Props
 
 <PropTable docgen={Docgen["Page"]} />
 
+## Examples
+
+```jsx
+<Page
+  layout="dashboard"
+  title="GrandChild"
+  Brand={<div>CWS, yo!</div>}
+  UserMenu={<div>My Custom User Menu</div>}
+  Breadcrumb={
+    <Breadcrumb>
+      <BreadcrumbItem>
+        <a href="/">Parent</a>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <a href="/child">Child</a>
+      </BreadcrumbItem>
+      <BreadcrumbItem active>GrandChild</BreadcrumbItem>
+    </Breadcrumb>
+  }
+  PageActions={
+    <Button color="info" size="sm">
+      Hello
+    </Button>{' '}
+  }
+>
+  Hello World
+</Page>
+```
+
+### Context Overrides
+
+The `CaresProvider` may be used to assign defaults. Props passed to the `Page` will get higher importance.
+
+```jsx
+<CaresProvider Brand={<div>Foo</div>}>
+  <Page Brand={<div>Bar</div>} />
+</CaresProvider>
+```
+
+would render a page with "Bar" in the <dfn>Brand</dfn> slot.
+
+### Breadcrumbs with `react-router`
+
+Just substitute `<a>` tags for `Link` components:
+
+```jsx
+import { Link } from 'react-router-dom'
+import { Breadcrumb, BreadcrumbItem } from '@cwds/components'
+
+<Page
+  Breadcrumb={
+    <Breadcrumb>
+      <BreadcrumbItem>
+        <Link to="/">Parent</Link>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <Link to="/child">Child</Link>
+      </BreadcrumbItem>
+      <BreadcrumbItem active>GrandChild</BreadcrumbItem>
+    </Breadcrumb>
+  }
+  {...props}
+/>
+```
+
+### Page Title
+
+For simple text, pass a `string` for the `title` prop. If you need more control, however, the `PageTitle` prop may be used instead.
+
+```jsx
+import { Page, PageTitle, Badge } from '@cwds/components'
+
+<Page
+  PageTitle={
+    <PageTitle>Foo has a <Badge>Hello</Badge></PageTitle>
+  }
+  {...props}
+/>
+```
+
+<!--
 ## Usage Guidelines
 
 DOs & DONTs
+-->
 
+<!--
 ### Content Guidelines
+-->
 
 ### Accessibility
 
-## Examples
-
-<!--
+A `BreadcrumbItem` that has recieved prop `active` adds the attribute `aria-current="page"` to the resulting DOM element.
 
 ## Related Articles
 
+<!--
 ### Patterns
+-->
 
 ### Components
 
--->
+- [`Breadcrumb`](/)
+- [`BreadcrumbItem`](/)
+- [`Banner`](/)
+- [`Body`](/)
+- [`PageHeader`](/)
+- [`PageTitle`](/)
+- [`PageActions`](/)
+- [`AppBar`](/)
