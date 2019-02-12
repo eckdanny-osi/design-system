@@ -8,6 +8,8 @@
 
 Monorepo for CWDS design system
 
+Note: this is a pre-release branch!
+
 ## Consuming the Component Library
 
 🛑 **If want the component library** 🛑
