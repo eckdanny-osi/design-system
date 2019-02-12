@@ -17,12 +17,10 @@
     "dev:esm": "yarn build:esm --watch",
     "dev:scss": "onchange 'scss/**/*.scss' -- yarn touch"
   },
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
   "files": [
-    "dist"
+    "dist",
+    "scss",
+    "src"
   ],
   "publishConfig": {
     "access": "public"

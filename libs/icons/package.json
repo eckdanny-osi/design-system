@@ -7,12 +7,10 @@
   "license": "AGPL-3.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
-  "directories": {
-    "lib": "dist",
-    "test": "src/__tests__"
-  },
   "files": [
-    "dist"
+    "dist",
+    "scss",
+    "src"
   ],
   "publishConfig": {
     "access": "public"

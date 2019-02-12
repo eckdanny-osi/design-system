@@ -26,6 +26,11 @@
     "dev:esm": "yarn build:esm --watch",
     "dev:scss": "yarn build:scss --watch"
   },
+  "files": [
+    "dist",
+    "scss",
+    "src"
+  ],
   "dependencies": {
     "@cwds/core": "^1.0.0-rc.1",
     "@cwds/icons": "^1.0.0-rc.1",
