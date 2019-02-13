@@ -19,6 +19,7 @@ import TooltipPage from '!babel-loader!@mdx-js/loader!./articles/Tooltip/Tooltip
 import Modal from '!babel-loader!@mdx-js/loader!./articles/Modal/Modal.mdx'
 import Page from '!babel-loader!@mdx-js/loader!./articles/Page/Page.mdx'
 import CaresProvider from '!babel-loader!@mdx-js/loader!./articles/CaresProvider/CaresProvider.mdx'
+import Tile from '!babel-loader!@mdx-js/loader!./articles/Tile/Tile.mdx'
 
 const routes = {
   title: 'Component Library',
@@ -76,6 +77,11 @@ const routes = {
       //     component: () => <div>TODO</div>,
       //   },
       // ],
+    },
+    {
+      title: 'Tile',
+      path: '/tile',
+      component: Tile,
     },
     // {
     //   title: 'CheckboxBank',
