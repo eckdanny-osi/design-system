@@ -1,4 +1,8 @@
+@import "~@cwds/core/scss/base";
+
+$MAX_NUM_LINES: 2;
+
 .TitleContainer {
-  max-height: 3.5rem;
+  max-height: ($h3-font-size + $spacer / 2) * $MAX_NUM_LINES;
   overflow-y: hidden;
 }
