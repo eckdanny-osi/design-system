@@ -53,4 +53,14 @@ describe('Menu', () => {
     )
     expect(wrapper.find(Arrow).length).toBe(1)
   })
+
+  it('passes the `size` prop to DropdownToggle', () => {
+    const wrapper = shallow(
+      <Menu size="sm">
+        <MenuItem>Foo</MenuItem>
+        <MenuItem>Bar</MenuItem>
+      </Menu>
+    )
+    expect(wrapper.find(DropdownToggle).prop('size')).toBe('sm')
+  })
 })

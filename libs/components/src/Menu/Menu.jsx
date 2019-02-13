@@ -78,7 +78,7 @@ function getDropdownToggleProps(props) {
     )
   }
   return {
-    ...pick(props, Object.keys(DropdownToggle.propTypes)),
+    ...pick(props, [...Object.keys(DropdownToggle.propTypes), 'size']),
     caret: false,
     children,
   }
