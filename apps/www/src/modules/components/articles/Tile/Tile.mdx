@@ -1,24 +1,31 @@
-import { Tile } from "@cwds/components";
+import { Fragment } from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  Tile,
+  TileGroup,
+  TilePlaceholder,
+  Icon,
+  MenuItem
+} from "@cwds/components";
 import TileExample from "./TileExample";
 import TileGroupExample from "./TileGroupExample";
-import { PropTable, DemoCard } from "@cwds/docs";
+import { PropTable, DemoCard, ReferenceCard } from "@cwds/docs";
 import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
-The `Tile` is a great component.
+`Tile`s are used in <dfn>Summary View</dfn>s (typically preceeding the general <dfn>Collection View</dfn>). `Tile`s are typically found in groupds of two to three in a `TileGroup` atop a `CardBody`.
 
 <DemoCard>
   <TileExample />
 </DemoCard>
 
 ```jsx
-import { Tile } from "@cwds/%LIBRARY_NAME%";
+import { Tile } from "@cwds/components";
 ```
-
-<DemoCard>
-  <TileGroupExample />
-</DemoCard>
 
 <!--
 ### Optional Supporting Section
@@ -32,20 +39,152 @@ Additional introductory section or a gallery if there exist a wide range of inst
 
 ## Usage Guidelines
 
-DOs & DONTs
+The intended use case for `Tile`s, are for _at a glance_ summaries.
 
 ### Content Guidelines
 
-### Accessibility
+The `Tile`'s title should be short and to the point. Text overflow is is truncated to two lines of content. Please limit the length of titles.
+
+<!-- ### Accessibility -->
 
 ## Examples
 
-<!--
+### Default
+
+No `Icon` or `Menu` is present by default:
+
+<DemoCard>
+  <Tile title="Basic Tile">I am just content...</Tile>
+</DemoCard>
+
+```jsx
+<Tile title="Basic Tile">I am just content...</Tile>
+```
+
+### with Icon
+
+Use the `icon` prop to add an `Icon` to a tile:
+
+<DemoCard>
+  <Tile icon="check" title="Some Title">
+    Totally sweet content here
+  </Tile>
+</DemoCard>
+
+```jsx
+<Tile icon="check" title="Some Title">
+  Totally sweet content here
+</Tile>
+```
+
+The `Tile` component also accepts an `Icon` prop if you need more control of the `Icon`. You should try to avoid using this form however. We risk introducing variability this way.
+
+<DemoCard>
+  <Tile title="Some Title" Icon={<Icon name="comment-alt" set="far" />}>
+    Totally sweet content here
+  </Tile>
+</DemoCard>
+
+### with Menu
+
+`Tile`s can have <dfn>Contextual Menu</dfn>s too!
+
+<DemoCard>
+  <Tile
+    title="With Menu"
+    MenuItems={
+      <Fragment>
+        <MenuItem>Foo</MenuItem>
+        <MenuItem>Bar</MenuItem>
+        <MenuItem>Quo</MenuItem>
+      </Fragment>
+    }
+  >
+    This <code>Tile</code> has a <code>Menu</code>. <em>Awesome!</em>
+  </Tile>
+</DemoCard>
+
+```jsx
+<Tile
+  title="With Menu"
+  MenuItems={
+    <Fragment>
+      <MenuItem>Foo</MenuItem>
+      <MenuItem>Bar</MenuItem>
+      <MenuItem>Quo</MenuItem>
+    </Fragment>
+  }
+>
+  This <code>Tile</code> has a <code>Menu</code>. <em>Awesome!</em>
+</Tile>
+```
+
+### with `TileGroup` in a `Card`
+
+`Tile`s are seldom encountered in isolation. CARES uses `TileGroup`s for summary views. The `TileGroup` behaves exactly like `CardDeck` (because it uses the `CardDeck` component). `Tile`s should generally be wrapped in the `TileGroup` so that sibling `Tile`s have the same height.
+
+<DemoCard>
+  <TileGroupExample />
+</DemoCard>
+
+```jsx
+import {
+  Tile,
+  TileGroup,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody
+} from "@cwds/components";
+
+<Card>
+  <CardHeader>
+    <CardTitle>Chores</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <TileGroup>
+      <Tile {...props} />
+      <Tile {...props} />
+      <Tile {...props} />
+    </TileGroup>
+  </CardBody>
+</Card>;
+```
+
+<!-- this needs more work (e.g.; TilePlaceholders shouldn't render in flat views)
+### Placeholder Tile
+
+In order for `Tile` widths within a `TileGroup` to be consistent, the _number_ of `Tile`s present in a particular use case should be consistent (whether data exists for them or not).
+
+Consider a `TileGroup` which may represent your 3-most-recent conversations... On first use, there will be zero conversations at all! This is an appropriate use case for the `TilePlaceholder`:
+
+<DemoCard>
+  <Card>
+    <CardHeader>
+      <CardTitle>Chores</CardTitle>
+    </CardHeader>
+    <CardBody>
+      <TileGroup>
+        <Tile title="Foo">
+          I am a normal <code>Tile</code>
+        </Tile>
+        <TilePlaceholder>PLACEHOLDER</TilePlaceholder>
+        <TilePlaceholder>PLACEHOLDER</TilePlaceholder>
+      </TileGroup>
+    </CardBody>
+  </Card>
+</DemoCard>
+-->
 
 ## Related Articles
 
+<!--
 ### Patterns
+-->
 
 ### Components
 
--->
+- [`Card`](/components/card)
+- [`CardDeck`](/components/card-deck)
+- [`TileGroup`](/components/tile-group)
+- [`TilePlaceholder`](/components/tile-placeholder)

@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react'
 import {
   Tile,
-  UncontrolledMenu as Menu,
+  // UncontrolledMenu as Menu,
   MenuItem,
-  Icon,
+  // Icon,
 } from '@cwds/components'
 
-const MyMenu = (
-  <Menu right>
-    <MenuItem>Profile</MenuItem>
-    <MenuItem>Schedule Meeting</MenuItem>
-    <MenuItem>Report Issue</MenuItem>
-  </Menu>
-)
+// const MyMenu = (
+//   <Menu right>
+//     <MenuItem>Profile</MenuItem>
+//     <MenuItem>Schedule Meeting</MenuItem>
+//     <MenuItem>Report Issue</MenuItem>
+//   </Menu>
+// )
 
 const MyMenuItemsFragment = (
   <Fragment>
@@ -22,22 +22,18 @@ const MyMenuItemsFragment = (
   </Fragment>
 )
 
-const MyMenuItemsArray = [
-  <MenuItem key="profile">Profile</MenuItem>,
-  <MenuItem key="meeting">Schedule Meeting</MenuItem>,
-  <MenuItem key="issue">Report Issue</MenuItem>,
-]
+// const MyMenuItemsArray = [
+//   <MenuItem key="profile">Profile</MenuItem>,
+//   <MenuItem key="meeting">Schedule Meeting</MenuItem>,
+//   <MenuItem key="issue">Report Issue</MenuItem>,
+// ]
 
 const TileExample = () => (
   <Tile
-    title="The Tile Title which could potentially be really really long"
-    foo="foo"
-    bar="bar"
-    quo="quo"
-    // Menu={MyMenu}
+    title="I am a Tile"
     MenuItems={MyMenuItemsFragment}
     // MenuItems={MyMenuItemsArray}
-    Icon={<Icon name="check" />}
+    icon="check"
     className="mb-0"
   >
     Just some content... I am just a container so pretty much anything can be

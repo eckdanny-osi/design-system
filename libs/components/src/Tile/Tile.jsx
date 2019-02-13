@@ -22,6 +22,7 @@ const Tile = ({
     ProvidedIcon &&
     React.cloneElement(ProvidedIcon, {
       className: cn(ProvidedIcon.props.className || '', 'mr-2'),
+      color: grays['700'],
     })
   )
   const menu = MenuItems ? (
@@ -50,9 +51,9 @@ const Tile = ({
 Tile.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  /** String shorthand for icon declaration */
+  /** String shorthand (preferred) for Icon declaration */
   icon: PropTypes.string,
-  /** Longform notation for icon declaration */
+  /** Longform notation for Icon declaration. Use the `icon` prop when possible */
   Icon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   /** Pass a Menu react node or component. Use the `MenuItems` when possible. */
   Menu: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

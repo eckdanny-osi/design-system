@@ -1,3 +1,4 @@
 import React from 'react'
+import { Card } from '@cwds/reactstrap'
 
-export default () => <div />
+export default props => <Card {...props} />
