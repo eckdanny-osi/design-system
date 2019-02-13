@@ -29,4 +29,5 @@ export default {
     '@cwds/components/src/Layouts/Page/Page.jsx',
     '@cwds/components/src/Layouts/Page/Page.props'
   ),
+  Tile: docgenComposed('@cwds/components/src/Tile/Tile.jsx'),
 }
