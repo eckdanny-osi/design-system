@@ -22,6 +22,7 @@ const TileExample = () => (
     quo="quo"
     Menu={MyMenu}
     Icon={<Icon name="check" />}
+    className="mb-0"
   >
     Just some content... I am just a container so pretty much anything can be
     put in me
