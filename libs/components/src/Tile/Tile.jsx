@@ -24,7 +24,7 @@ const Tile = ({
   )
   return (
     <Card className={cn(className)}>
-      <CardHeader className="border-bottom-0 pb-0 px-2 pt-2 d-flex justify-content-between">
+      <CardHeader className="border-bottom-0 pb-0 d-flex justify-content-between">
         <div className={cn('flex-grow-1', Styles.TitleContainer)}>
           <CardTitle>
             {TileIcon}
@@ -33,7 +33,7 @@ const Tile = ({
         </div>
         {ProvidedMenu}
       </CardHeader>
-      <CardBody className="p-2">{children}</CardBody>
+      <CardBody>{children}</CardBody>
     </Card>
   )
 }
