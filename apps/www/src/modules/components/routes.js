@@ -7,6 +7,7 @@ import Avatar from '!babel-loader!@mdx-js/loader!./articles/Avatar/Avatar.mdx'
 import Alert from '!babel-loader!@mdx-js/loader!./articles/Alert/Alert.mdx'
 import Badge from '!babel-loader!@mdx-js/loader!./articles/Badge/Badge.mdx'
 import Breadcrumbs from '!babel-loader!@mdx-js/loader!./articles/Breadcrumbs/Breadcrumbs.mdx'
+import BreadcrumbItem from '!babel-loader!@mdx-js/loader!./articles/BreadcrumbItem/BreadcrumbItem.mdx'
 import Button from '!babel-loader!@mdx-js/loader!./articles/Button/Button.mdx'
 import ButtonGroup from '!babel-loader!@mdx-js/loader!./articles/ButtonGroup/ButtonGroup.mdx'
 import Card from '!babel-loader!@mdx-js/loader!./articles/Card/Card.mdx'
@@ -41,9 +42,14 @@ const routes = {
       component: Badge,
     },
     {
-      title: 'Breadcrumbs',
-      path: '/breadcrumbs',
+      title: 'Breadcrumb',
+      path: '/breadcrumb',
       component: Breadcrumbs,
+    },
+    {
+      title: 'BreadcrumbItem',
+      path: '/breadcrumb-item',
+      component: BreadcrumbItem,
     },
     {
       title: 'Button',

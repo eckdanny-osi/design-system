@@ -4,6 +4,8 @@ export default {
   Alert: docgenComposed('reactstrap/src/Alert.js'),
   Avatar: docgenComposed('@cwds/components/src/Avatar/Avatar.jsx'),
   Badge: docgenComposed('reactstrap/src/Badge.js'),
+  Breadcrumb: docgenComposed('reactstrap/src/Breadcrumb.js'),
+  BreadcrumbItem: docgenComposed('reactstrap/src/BreadcrumbItem.js'),
   Button: docgenComposed('reactstrap/src/Button.js'),
   ButtonGroup: docgenComposed('reactstrap/src/ButtonGroup.js'),
   Card: docgenComposed('reactstrap/src/Card.js'),
