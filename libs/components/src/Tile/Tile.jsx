@@ -55,3 +55,5 @@ Tile.propTypes = {
 Tile.defaultProps = {}
 
 export default Tile
+
+const TilePlaceholder = () => <Card>alksdfj</Card>
