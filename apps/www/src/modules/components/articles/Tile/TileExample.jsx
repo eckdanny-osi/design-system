@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
   Tile,
   UncontrolledMenu as Menu,
@@ -14,13 +14,29 @@ const MyMenu = (
   </Menu>
 )
 
+const MyMenuItemsFragment = (
+  <Fragment>
+    <MenuItem>Profile</MenuItem>
+    <MenuItem>Schedule Meeting</MenuItem>
+    <MenuItem>Report Issue</MenuItem>
+  </Fragment>
+)
+
+const MyMenuItemsArray = [
+  <MenuItem key="profile">Profile</MenuItem>,
+  <MenuItem key="meeting">Schedule Meeting</MenuItem>,
+  <MenuItem key="issue">Report Issue</MenuItem>,
+]
+
 const TileExample = () => (
   <Tile
     title="The Tile Title which could potentially be really really long"
     foo="foo"
     bar="bar"
     quo="quo"
-    Menu={MyMenu}
+    // Menu={MyMenu}
+    MenuItems={MyMenuItemsFragment}
+    // MenuItems={MyMenuItemsArray}
     Icon={<Icon name="check" />}
     className="mb-0"
   >

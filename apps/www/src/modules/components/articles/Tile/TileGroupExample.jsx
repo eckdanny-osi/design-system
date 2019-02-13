@@ -46,7 +46,7 @@ const TileGroupExample = () => (
           icon="bell"
           title="Approve Changes"
           Menu={
-            <Menu right size="sm">
+            <Menu right>
               <MenuItem>Approve</MenuItem>
               <MenuItem>Edit Workflow</MenuItem>
               <MenuItem>Vacation</MenuItem>

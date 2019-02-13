@@ -4,12 +4,14 @@ import cn from 'classnames'
 import { Card, CardBody, CardHeader, CardTitle } from '@cwds/reactstrap'
 import { Icon } from '@cwds/icons'
 import { grays } from '@cwds/core'
+import { UncontrolledMenu as Menu } from '../Menu'
 import Styles from './Tile.module.scss'
 
 const Tile = ({
   children,
   className,
   Menu: ProvidedMenu,
+  MenuItems,
   icon,
   Icon: ProvidedIcon,
   title,
@@ -22,6 +24,13 @@ const Tile = ({
       className: cn(ProvidedIcon.props.className || '', 'mr-2'),
     })
   )
+  const menu = MenuItems ? (
+    <Menu size="sm" right>
+      {MenuItems}
+    </Menu>
+  ) : (
+    ProvidedMenu
+  )
   return (
     <Card className={cn(className)}>
       <CardHeader className="border-bottom-0 pb-0 d-flex justify-content-between">
@@ -31,7 +40,7 @@ const Tile = ({
             {title}
           </CardTitle>
         </div>
-        {ProvidedMenu}
+        {menu}
       </CardHeader>
       <CardBody>{children}</CardBody>
     </Card>
@@ -45,8 +54,13 @@ Tile.propTypes = {
   icon: PropTypes.string,
   /** Longform notation for icon declaration */
   Icon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  /** Pass a Menu react node or component */
+  /** Pass a Menu react node or component. Use the `MenuItems` when possible. */
   Menu: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Pass MenuItems to render a Tile menu. Does not render a Menu by default */
+  MenuItems: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
   /** String shorthand for Title declaration */
   title: PropTypes.string,
   /** Longform notation for Title declaration */
@@ -55,5 +69,3 @@ Tile.propTypes = {
 Tile.defaultProps = {}
 
 export default Tile
-
-const TilePlaceholder = () => <Card>alksdfj</Card>
