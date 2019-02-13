@@ -8,7 +8,6 @@ import {
   FormGroup,
   Label,
   Select,
-  RadioGroup,
 } from '@cwds/components'
 
 export default () => (
@@ -27,21 +26,6 @@ export default () => (
       return (
         <Card>
           <Row>
-            <Col md={6}>
-              <RadioGroup
-                required
-                name="myField"
-                legend="My Radio Group"
-                options={options}
-                value={props.values.myField}
-                // TODO: Should look more like this
-                // onChange={value => props.setFieldValue('myField', value)}
-                onChange={e => {
-                  props.setFieldValue(e.target.name, e.target.value, false)
-                  props.handleChange(e)
-                }}
-              />
-            </Col>
             <Col md={6}>
               <FormGroup>
                 <Label required>My Select</Label>

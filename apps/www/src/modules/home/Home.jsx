@@ -108,7 +108,7 @@ export default () => (
             </Col>
             */}
 
-            <Col sm={6}>
+            {/* <Col sm={6}>
               <Card>
                 <CardHeader>
                   <CardTitle>Labs</CardTitle>
@@ -124,7 +124,7 @@ export default () => (
                   </Button>
                 </CardFooter>
               </Card>
-            </Col>
+            </Col> */}
 
             {/*
             <Col sm={6}>

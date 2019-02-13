@@ -1,11 +1,11 @@
-import { Alert, AlertUncontrolled, Card, CardBody } from '@cwds/components'
-import {DemoCard, PropTable} from '@cwds/docs'
-import Docgen from '../ReactDogenInfo.js'
-import DismissableAlertExample from './DismissableAlert.example.jsx'
+import { Alert, AlertUncontrolled } from "@cwds/components";
+import { DemoCard, PropTable } from "@cwds/docs";
+import Docgen from "../ReactDogenInfo.js";
+import DismissableAlertExample from "./DismissableAlert.example.jsx";
 
 export const meta = {
-  authors: ['Danny Eck <danny.eck@osi.ca.gov>'],
-}
+  authors: ["Danny Eck <danny.eck@osi.ca.gov>"]
+};
 
 ## Synopsis
 
@@ -16,7 +16,7 @@ Use an `Alert` to communicate important and task-sensitive contextual messages f
 </DemoCard>
 
 ```jsx
-import { Alert } from '@cwds/components'
+import { Alert } from "@cwds/components";
 ```
 
 ## Props
@@ -24,8 +24,6 @@ import { Alert } from '@cwds/components'
 <PropTable docgen={Docgen.Alert} />
 
 ## Usage Guidelines
-
-<Card><CardBody>
 
 - Alerts must not be used for field level validation - see [Form Standards]() for this.
 - Alerts should be placed at the top of a [`Card`]() or at the top of the [`PageBody`]().
@@ -36,12 +34,10 @@ import { Alert } from '@cwds/components'
 - Info Alerts should be used to give users a heads up about something new or a change (Ex: new feature, notification)
 - Success Alerts should be used for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
 
-</CardBody></Card>
-
 <!--
 ### Language & Tone
 
-asdf
+@todo
 -->
 
 ### Accessibility
@@ -95,8 +91,6 @@ As a convenience to the developer, simple _dismissable_ behavior is possible wit
 ## Related Documentation
 
 <!--
-@todo
-
 ### Patterns
 
 @todo

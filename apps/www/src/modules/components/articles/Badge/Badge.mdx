@@ -1,6 +1,6 @@
-import { Badge } from '@cwds/components'
-import {DemoCard, PropTable} from '@cwds/docs'
-import Docgen from '../ReactDogenInfo.js'
+import { Badge } from "@cwds/components";
+import { DemoCard, PropTable } from "@cwds/docs";
+import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
@@ -11,25 +11,17 @@ Use a `Badge` to enumerate the common classifications of a type of thing.
 </DemoCard>
 
 ```jsx
-import { Badge } from '@cwds/components'
+import { Badge } from "@cwds/components";
 ```
 
 ## Props
 
 <PropTable docgen={Docgen.Badge} />
 
+<!--
 ## Usage
 
-TODO
-
-MUST
-
-- asdfalksdjf
-- aslkdfjasdf
-
-MUST NOT
-
-- alskdfjjj
+@todo -->
 
 ## Examples
 
@@ -44,7 +36,7 @@ Alerts should not be used for field level validation - see invalid fields for th
 ### Colors
 
 <div className="mb-3">
-  {['info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'].map(
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
     d => (
       <Badge className="mr-1" key={d} color={d}>
         {d}
@@ -56,7 +48,7 @@ Alerts should not be used for field level validation - see invalid fields for th
 ### Pills
 
 <div className="mb-3">
-  {['info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'].map(
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
     d => (
       <Badge className="mr-1" pill key={d} color={d}>
         {d}
@@ -68,7 +60,7 @@ Alerts should not be used for field level validation - see invalid fields for th
 ### Links
 
 <div className="mb-3">
-  {['info', 'success', 'primary', 'warning', 'danger', 'dark', 'light'].map(
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
     d => (
       <Badge className="mr-1" href="badge" key={d} color={d}>
         {d}
