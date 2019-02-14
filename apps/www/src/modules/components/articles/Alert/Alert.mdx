@@ -29,10 +29,27 @@ import { Alert } from "@cwds/components";
 - Alerts should be placed at the top of a [`Card`]() or at the top of the [`PageBody`]().
 - Error alerts must not be dismissible, so that a user always knows what they need to do to progress.
 - Use Error Alerts must denote when an error exists that prevents a user from progressing (Ex: internet offline, 500 error when submitting).
-- Warning, Info & Success alerts may be dismissible as it does not prevent a user from doing their work.
+- Warning, Info and Success alerts may be dismissible as it does not prevent a user from doing their work.
 - Warning Alerts should be used when something important occurs, but does not prevent a user from progressing (Ex: Medium risk or safety levels)
 - Info Alerts should be used to give users a heads up about something new or a change (Ex: new feature, notification)
 - Success Alerts should be used for positive reinforcement after completing a task (Example: screening successfully created, form 100% complete)
+
+### Content Guidelines
+
+- Alert messages must be written in a way that clearly communicates the issue/progress AND provides the user with an understanding of what can be done next, either within the system or in their real-life scenario, as necessary.
+- Use plain language, avoiding technical terms, slang, system codes, and unnecessary jargon. Since error codes are only relevant to the user if the user must use them in their response, they should be visually de-emphasized relative to the conversational message. The error code can be shown in MetaData (not physically to user) or in a way that in case there are specific error codes requiring "help-desk" assistance or guidance for figuring out what went wrong. Consider options like using small print to de-emphasize the code to the user but still be available for reference.
+- The tone of the alert message should remind the user of a helpful assistant: Direct, succinct, and friendly without being over-familiar. Remember that many users are under pressure and may be experiencing secondary trauma, so approach the creation of Alert message content with kindness.
+- For Error Alert messages, focus on helpfulness, guiding the user to correct the error by providing neutral-to-friendly instructions as needed.
+  Ex: “Please enter a valid client ID.” is an example of a neutral yet helpful message.
+- Avoid negative words and blame.
+  Ex: do not use “The client ID you entered is wrong”, which is an example of a blaming tone.
+- Use the active voice and imperative mood. Ex: "Your entry was received and will be processed in 2-4 days."
+- Avoid the passive voice, e.g., 'CARES has received your entry which is going to be processed in 2-4 days.”
+- Use sentence case capitalization and end sentences with periods. Do not use exclamation points.
+- Do not use acronyms alone, as there are always new users who are unfamiliar with them. Spell out the full term then show the acronym within parentheses after it. The only exceptions are for well-known organization names like CDSS, CWDS, etc. and the product names like CARES.
+- Refer to users in the second person, using “you”, and possessive “your” as appropriate.
+- Refer to the application in the third-person, “CARES offers...” rather than “We offer.”
+- Use “they” as a singular third-person pronoun, not “he or she.”
 
 <!--
 ### Language & Tone

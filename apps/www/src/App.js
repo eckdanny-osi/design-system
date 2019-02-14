@@ -11,6 +11,7 @@ import Home from './modules/home'
 import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
+import AboutCares from './modules/about-cares'
 import FacilityProfile from './demos/FacilityProfile'
 import PageTemplates from './examples/PageTemplates'
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Route path="/labs" component={LabsPage} />
                 <Route path="/components" component={Components} />
                 <Route path="/status" component={Status} />
+                <Route path="/about-cares" component={AboutCares} />
                 <Route
                   path="/demo/facility-profile"
                   component={FacilityProfile}

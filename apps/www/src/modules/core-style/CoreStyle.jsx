@@ -31,20 +31,16 @@ class CoreStylePage extends Component {
       <Page
         title="Core Style"
         layout="jumpnav"
-        Breadcrumb={() => (
+        Breadcrumb={
           <Breadcrumb>
-            {[
-              { title: 'Home', path: '/' },
-              { title: 'Core Style', path: '/core-style' },
-            ].map(d => (
-              <BreadcrumbItem key={d.path}>
-                <Link to={d.path}>{d.title}</Link>
-              </BreadcrumbItem>
-            ))}
+            <BreadcrumbItem>
+              <Link to="/">Home</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Core Style</BreadcrumbItem>
           </Breadcrumb>
-        )}
-        sidenav={() => <JumpNav tag={Link} routes={routes} />}
-        main={() => <CoreStyle />}
+        }
+        sidenav={<JumpNav tag={Link} routes={routes} />}
+        main={<CoreStyle />}
       />
     )
   }
