@@ -2,33 +2,46 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Container, Row, Col } from '@cwds/reactstrap'
+import { AlertUncontrolled as Alert } from '../../Alert'
+import { renderElementOrComponent } from '../../utils'
 import Styles from '../Layout.module.scss'
 
-const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
-  const sidenav = typeof SideNav === 'function' ? <SideNav /> : SideNav
-  const main = typeof Main === 'function' ? <Main /> : Main
+const Messages = ({ className, ...props }) => (
+  <div className={cn(className, Styles.Messages)} {...props} />
+)
 
+const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
   return (
-    <div className={cn('pt-3', Styles.Body)}>
+    <div className={cn(Styles.Body)}>
       <Container>
-        {layout === 'dashboard' && <div role="main">{children || main}</div>}
+        {layout === 'dashboard' && (
+          <div role="main">{renderElementOrComponent(children || Main)}</div>
+        )}
         {layout === 'subroutes' && (
           <Row>
             <Col role="navigation" sm={5} md={3}>
-              {sidenav}
+              {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {children || main}
+              <Messages>
+                <Alert color="success">Hello</Alert>
+                <Alert color="danger">Goodbye</Alert>
+              </Messages>
+              {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
         )}
         {layout === 'jumpnav' && (
           <Row>
             <Col role="navigation" sm={5} md={3}>
-              {sidenav}
+              {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {children || main}
+              <Messages>
+                <Alert color="success">Hello</Alert>
+                <Alert color="danger">Goodbye</Alert>
+              </Messages>
+              {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
         )}
