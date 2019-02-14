@@ -8,7 +8,6 @@ import {
   FormGroup,
   Label,
   Select,
-  CheckboxBank,
 } from '@cwds/components'
 
 export default () => (
@@ -27,18 +26,6 @@ export default () => (
       return (
         <Card>
           <Row>
-            <Col md={6}>
-              <CheckboxBank
-                required
-                name="myField"
-                legend="My CheckboxBank"
-                options={options}
-                value={props.values.myField}
-                onChange={(field, value) => {
-                  props.setFieldValue(field, value)
-                }}
-              />
-            </Col>
             <Col md={6}>
               <FormGroup>
                 <Label required>My Select</Label>

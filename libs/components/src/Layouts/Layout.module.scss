@@ -1,13 +1,24 @@
 @import "~@cwds/core/scss/base";
 
+$offset: $banner-height + map-get($spacers, 3);
+
 // Anchor link fix
 :global {
   :target:before {
     display: block;
     content: " ";
-    margin-top: -($banner-height + map-get($spacers, 3));
-    padding-top: $banner-height + map-get($spacers, 3);
+    margin-top: -($offset);
+    padding-top: $offset;
     visibility: hidden;
+  }
+}
+
+// Layout Fixes
+:global {
+  html,
+  body,
+  #root {
+    height: 100% !important;
   }
 }
 
@@ -25,8 +36,9 @@
   .AppBarContainer {
     background-color: $info;
     color: $white;
-    padding: 0.25rem 0;
     height: 2.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .PageHeaderContainer {
@@ -49,4 +61,17 @@
 
 .Body {
   margin-top: $banner-height;
+  padding-top: map-get($spacers, 3);
+  position: relative;
+}
+
+.Footer {
+  background-color: map-get($theme-colors, "info");
+}
+
+.Messages {
+  position: sticky;
+  top: $offset;
+  background-color: $body-bg;
+  z-index: 99999;
 }

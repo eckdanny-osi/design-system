@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import Styles from './DataGrid.module.scss'
 
 const NoDataText = () => (

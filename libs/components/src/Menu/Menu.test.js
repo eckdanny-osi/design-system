@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { Arrow } from 'react-popper'
 import { Dropdown, DropdownItem, DropdownToggle } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import { Menu, MenuItem } from './'
 
 describe('Menu', () => {
@@ -52,5 +52,15 @@ describe('Menu', () => {
       </Menu>
     )
     expect(wrapper.find(Arrow).length).toBe(1)
+  })
+
+  it('passes the `size` prop to DropdownToggle', () => {
+    const wrapper = shallow(
+      <Menu size="sm">
+        <MenuItem>Foo</MenuItem>
+        <MenuItem>Bar</MenuItem>
+      </Menu>
+    )
+    expect(wrapper.find(DropdownToggle).prop('size')).toBe('sm')
   })
 })

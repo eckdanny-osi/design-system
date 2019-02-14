@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import slugify from 'slugify'
-import { Page, JumpNav } from '@cwds/components'
+import { Page, JumpNav, Breadcrumb, BreadcrumbItem } from '@cwds/components'
 /* eslint-disable import/no-webpack-loader-syntax */
 import CoreStyle from '!babel-loader!@mdx-js/loader!./CoreStyle.mdx'
 
@@ -31,14 +31,16 @@ class CoreStylePage extends Component {
       <Page
         title="Core Style"
         layout="jumpnav"
-        breadcrumb={[
-          { title: 'Home', path: '/' },
-          { title: 'Core Style', path: '/core-style' },
-        ]}
-        sidenav={() => {
-          return <JumpNav tag={Link} routes={routes} />
-        }}
-        main={() => <CoreStyle />}
+        Breadcrumb={
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link to="/">Home</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Core Style</BreadcrumbItem>
+          </Breadcrumb>
+        }
+        sidenav={<JumpNav tag={Link} routes={routes} />}
+        main={<CoreStyle />}
       />
     )
   }
