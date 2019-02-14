@@ -1,8 +1,9 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import { AppBarNoContext as AppBar } from './AppBar'
-import Brand from '../Brand'
-import UserMenu from '../UserMenu'
+import { shallow, mount } from 'enzyme'
+import AppBar from './AppBar'
+import DefaultBrand from './DefaultBrand'
+import DefaultUserMenu from './DefaultUserMenu'
+import { CaresContext } from '../utils/CaresContext'
 
 describe('AppBar', () => {
   it('renders', () => {
@@ -11,29 +12,69 @@ describe('AppBar', () => {
   })
 
   it('renders the Brand', () => {
-    const wrapper = shallow(<AppBar />)
-    expect(wrapper.find(Brand).length).toBe(1)
+    const wrapper = mount(<AppBar />)
+    expect(wrapper.find(DefaultBrand).length).toBe(1)
   })
 
   it('renders the UserMenu', () => {
-    const wrapper = shallow(<AppBar />)
-    expect(wrapper.find(UserMenu).length).toBe(1)
+    const wrapper = mount(<AppBar />)
+    expect(wrapper.find(DefaultUserMenu).length).toBe(1)
   })
 
-  it.skip('accepts a component overload for Brand', () => {
-    const someProps = { foo: 'foo', bar: 'bar' }
-    const MyBrand = () => <div />
-    const wrapper = shallow(<AppBar Brand={MyBrand} {...someProps} />)
-    expect(wrapper.find(MyBrand).length).toBe(1)
-    expect(wrapper.find(MyBrand).props()).toEqual(someProps)
+  it('accepts Brand prop as component', () => {
+    const MyBrandComponent = () => <div />
+    const wrapper = mount(<AppBar Brand={MyBrandComponent} />)
+    expect(wrapper.find(MyBrandComponent).length).toBe(1)
   })
 
-  it.skip('accepts a component overload for UserMenu', () => {
-    const someProps = { foo: 'foo', bar: 'bar' }
-    const someFilteredProps = { quo: 'quo' }
-    const MyUserMenu = () => <div />
-    const wrapper = shallow(<AppBar UserMenu={MyUserMenu} {...someProps} />)
-    expect(wrapper.find(MyUserMenu).length).toBe(1)
-    expect(wrapper.find(MyUserMenu).props()).toEqual(someFilteredProps)
+  it('accepts Brand prop as node', () => {
+    const MyBrandNode = <div id="brand-node" />
+    const wrapper = mount(<AppBar Brand={MyBrandNode} />)
+    expect(wrapper.find('#brand-node').length).toBe(1)
+  })
+
+  it('accepts UserMenu prop as component', () => {
+    const MyUserMenuComponent = () => <div />
+    const wrapper = mount(<AppBar UserMenu={MyUserMenuComponent} />)
+    expect(wrapper.find(MyUserMenuComponent).length).toBe(1)
+  })
+
+  it('accepts UserMenu prop as node', () => {
+    const MyUserMenuNode = <div id="user-menu-node" />
+    const wrapper = mount(<AppBar UserMenu={MyUserMenuNode} />)
+    expect(wrapper.find('#user-menu-node').length).toBe(1)
+  })
+
+  describe('with Context', () => {
+    it('renders Brand override from context when no prop given', () => {
+      const MyGlobalBrand = () => <div />
+      const wrapper = mount(
+        <CaresContext.Provider value={{ Brand: MyGlobalBrand }}>
+          <AppBar />
+        </CaresContext.Provider>
+      )
+      expect(wrapper.find(MyGlobalBrand).length).toBe(1)
+    })
+
+    it('uses Brand prop instead of context value when both present', () => {
+      const MyGlobalBrand = () => <div />
+      const MyLocalBrand = () => <div />
+      const wrapper = mount(
+        <CaresContext.Provider value={{ Brand: MyGlobalBrand }}>
+          <AppBar Brand={MyLocalBrand} />
+        </CaresContext.Provider>
+      )
+      expect(wrapper.find(MyGlobalBrand).length).toBe(0)
+      expect(wrapper.find(MyLocalBrand).length).toBe(1)
+    })
+
+    it('uses default Brand when no prop passed and no context value present', () => {
+      const wrapper = mount(
+        <CaresContext.Provider value={{}}>
+          <AppBar />
+        </CaresContext.Provider>
+      )
+      expect(wrapper.find(DefaultBrand).length).toBe(1)
+    })
   })
 })

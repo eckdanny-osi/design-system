@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash.pick'
 
-export const CaresContext = React.createContext()
+export const CaresContext = React.createContext({})
 
 const CaresProvider = ({ children, ...configs }) => (
   <CaresContext.Provider value={configs}>{children}</CaresContext.Provider>
