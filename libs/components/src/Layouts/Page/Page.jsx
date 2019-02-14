@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import pick from 'lodash.pick'
 import PageTitle from '../../PageTitle'
 import Styles from '../Layout.module.scss'
 import Banner from '../Banner'
 import Body from '../Body'
+import { Container } from '@cwds/reactstrap'
 import { renderElementOrComponent } from '../../utils'
+import Logo from '../../Logo'
 
 /**
  * @todo throw a warning if `main` and `children` are passed
@@ -20,11 +23,22 @@ const getBodyProps = props => ({
   main: props.main || props.children,
 })
 
+const Footer = () => (
+  <footer className={cn('mt-auto py-2', Styles.Footer)}>
+    <Container>
+      <span className="text-muted">
+        <Logo />
+      </span>
+    </Container>
+  </footer>
+)
+
 const Page = props => {
   return (
-    <div className={Styles.Page}>
+    <div className={cn('h-100 d-flex flex-column', Styles.Page)}>
       {renderElementOrComponent(Banner, props, getBannerProps)}
       {renderElementOrComponent(Body, props, getBodyProps)}
+      <Footer />
     </div>
   )
 }

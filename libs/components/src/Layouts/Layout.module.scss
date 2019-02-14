@@ -13,6 +13,15 @@ $offset: $banner-height + map-get($spacers, 3);
   }
 }
 
+// Layout Fixes
+:global {
+  html,
+  body,
+  #root {
+    height: 100% !important;
+  }
+}
+
 .Banner {
   position: fixed;
   top: 0;
@@ -54,6 +63,10 @@ $offset: $banner-height + map-get($spacers, 3);
   margin-top: $banner-height;
   padding-top: map-get($spacers, 3);
   position: relative;
+}
+
+.Footer {
+  background-color: map-get($theme-colors, "info");
 }
 
 .Messages {
