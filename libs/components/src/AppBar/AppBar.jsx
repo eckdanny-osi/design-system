@@ -1,19 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Row, Col } from '@cwds/reactstrap'
-import UserMenu from '../UserMenu'
-import Brand from '../Brand'
 import { renderElementOrComponent } from '../utils'
-import { withCaresConfig } from '../utils/CaresContext'
+import { CaresContext } from '../utils/CaresContext'
+// For DefaultBrand
+import Logo from '../Logo'
+// For DefaultUserMenu
+import { UncontrolledUserMenu, MenuItem } from '../Menu'
 
 const AppBar = ({ Brand, UserMenu }) => {
   return (
     <Row>
       <Col className="d-flex justify-content-start align-items-center">
-        {renderElementOrComponent(Brand)}
+        <CaresContext.Consumer>
+          {({ Brand: GlobalBrand }) =>
+            renderOne(Brand, GlobalBrand, DefaultBrand)
+          }
+        </CaresContext.Consumer>
       </Col>
       <Col className="d-flex justify-content-end align-items-center">
-        {renderElementOrComponent(UserMenu)}
+        <CaresContext.Consumer>
+          {({ UserMenu: GlobalUserMenu }) =>
+            renderOne(UserMenu, GlobalUserMenu, DefaultUserMenu)
+          }
+        </CaresContext.Consumer>
       </Col>
     </Row>
   )
@@ -23,11 +33,35 @@ AppBar.propTypes = {
   Brand: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   UserMenu: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 }
-AppBar.defaultProps = {
-  Brand,
-  UserMenu,
+AppBar.defaultProps = {}
+
+export default AppBar
+
+//
+// Defaults
+//
+
+function DefaultBrand() {
+  return (
+    <a href="/">
+      <Logo />
+    </a>
+  )
 }
 
-export { AppBar as AppBarNoContext }
+function DefaultUserMenu() {
+  return (
+    <UncontrolledUserMenu>
+      <MenuItem onClick={() => alert('logout!')}>Logout</MenuItem>
+    </UncontrolledUserMenu>
+  )
+}
 
-export default withCaresConfig(AppBar, ['Brand', 'UserMenu'])
+// Helpers
+
+function renderOne(...renderables) {
+  for (const renderable of renderables) {
+    if (renderable) return renderElementOrComponent(renderable)
+  }
+  return null
+}

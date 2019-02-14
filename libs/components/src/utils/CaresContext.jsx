@@ -19,3 +19,5 @@ export const withCaresConfig = (Component, subcomponents) => props => (
     {/* {context => <Component {...props} {...pick(context, subcomponents)} />} */}
   </CaresContext.Consumer>
 )
+
+export const Consumer = CaresContext.Consumer
