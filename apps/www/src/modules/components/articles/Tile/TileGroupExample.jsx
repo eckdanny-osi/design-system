@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Badge,
@@ -44,12 +44,12 @@ const TileGroupExample = () => (
         <Tile
           icon="bell"
           title="Approve Changes"
-          Menu={
-            <Menu right>
+          MenuItems={
+            <Fragment>
               <MenuItem>Approve</MenuItem>
               <MenuItem>Edit Workflow</MenuItem>
               <MenuItem>Vacation</MenuItem>
-            </Menu>
+            </Fragment>
           }
         >
           <div className="my-1">
