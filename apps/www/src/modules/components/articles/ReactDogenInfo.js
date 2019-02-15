@@ -30,4 +30,7 @@ export default {
     '@cwds/components/src/Layouts/Page/Page.props'
   ),
   Tile: docgenComposed('@cwds/components/src/Tile/Tile.jsx'),
+  CaresProvider: docgenComposed(
+    '@cwds/components/src/utils/CaresProvider.props'
+  ),
 }
