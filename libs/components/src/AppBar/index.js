@@ -1,1 +1,1 @@
-export { default, AppBarNoContext } from './AppBar'
+export { default } from './AppBar'

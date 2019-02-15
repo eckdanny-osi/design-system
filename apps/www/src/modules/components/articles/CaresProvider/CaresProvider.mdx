@@ -1,48 +1,115 @@
-import { DemoCard, Figure } from "@cwds/docs";
+import { DemoCard, Figure, PropTable } from "@cwds/docs";
 import { CaresProvider, Page } from "@cwds/components";
+import Docgen from "../ReactDogenInfo.js";
 import caresProviderImg from "./CaresProvider.png";
 
 ## Synopsis
 
-The `CaresProvider` component allows application developers to register user-defined Components on a React Context
+The `CaresProvider` component allows application developers to register React Nodes or Components on React Context to be consumed by CARES leaf components.
 
 ```jsx
 import { CaresProvider } from "@cwds/components";
 ```
 
-<!--
-### Optional Supporting Section
+The `CaresProvider` uses the new context apis in `react@^16.3`.
 
-Additional introductory section or a gallery if there exist a wide range of instances that should be shown (e.g.; IconGallery)
--->
+Please read the [React Context docs](https://reactjs.org/docs/context.html) if you are unfamiliar with <dfn>React Context</dfn>.
+
+### CaresProvider as a Component Registry
+
+The intended use case for `CaresProvider` is to provide app teams a convenient way to register components for global reuse.
+
+Let's consider an example:
+
+The `Brand` component should be present in the `AppBar` to provide a _global escape hatch_ to return to portal home. The default provided implementation is something like:
+
+```jsx
+const DefaultBrand = () => (
+  <a href="/">
+    <Logo />
+  </a>
+);
+```
+
+But your app may need to link somewhere else. Or maybe you'd prefer to use the `Link` component from `react-router-dom` instead like:
+
+```jsx
+const MyAppBrand = () => (
+  <Link to="/home">
+    <Logo />
+  </Link>
+);
+```
+
+You _could_ handle this in all of your `Page` components:
+
+```jsx
+// FooPage.jsx
+<Page
+  title="Foo"
+  Brand={MyAppBrand}
+/>
+
+
+// BarPage.jsx
+<Page
+  title="Bar"
+  Brand={MyAppBrand}
+/>
+```
+
+but a better solution may be to register it on `CaresProvider` instead:
+
+```jsx
+<CaresProvider Brand={MyAppBrand}>
+  <Some>
+    <Component>
+      <Tree>
+        <Page title="Foo" /> // No need to pass here!
+        ...
+</CaresProvider>
+```
 
 ## Props
 
-TODO: Context
-
-<!-- <PropTable docgen={Docgen['CaresProvider']} /> -->
+<PropTable docgen={Docgen["CaresProvider"]} />
 
 ## Examples
 
 ```jsx
 import { CaresProvider, Page } from "@cwds/components";
 
-// A User-Defined Component
-const Brand = <a href="/">Acme Widgets</a>;
+// Your component definition
+const MyBrand = () => (
+  <a href="/my-app-home">
+    <Logo />
+  </a>
+);
 
-// Register `Brand` using `CaresProvider`
+// React elements are Ok too!
+const MyBrand = (
+  <a href="/my-app-home">
+    <Logo />
+  </a>
+);
+
+// All the things you want to "provide"
+const myAppOverrides = {
+  Brand: MyBrand,
+  UserMenu: MyUserMenu
+};
+
+// Use like any other provider
 const App = () => (
-  <CaresProvider Brand={Brand}>
-    <Page
-      title="My Awesome App"
-      main={props => (
-        <div>
-          I am the <tt>Page</tt> body!
-        </div>
-      )}
-    />
+  <CaresProvider {...myAppOverrides}>
+    <Page title="My App">Hello World</Page>
   </CaresProvider>
 );
 ```
 
-<Figure src={caresProviderImg} />
+### Component Hierarchy
+
+The rules for deciding _what_ gets rendered:
+
+1. Use value passed as `prop`
+1. _else_, use value registered on `CaresProvider`

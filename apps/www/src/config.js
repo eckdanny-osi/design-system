@@ -1,7 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Logo, Badge, MenuItem, UncontrolledUserMenu } from '@cwds/components'
+import {
+  Logo,
+  Badge,
+  MenuItem,
+  UncontrolledUserMenu,
+  defaultContext,
+} from '@cwds/components'
 import getRepoStatus from './macros/repo-status.macro'
+
 const status = getRepoStatus()
 
 const Brand = () => (
@@ -22,6 +29,7 @@ const UserMenu = () => (
 )
 
 export default {
+  ...defaultContext,
   Brand,
   UserMenu,
 }
