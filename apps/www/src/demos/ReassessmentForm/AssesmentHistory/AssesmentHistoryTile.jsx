@@ -16,7 +16,12 @@ import AssesmentHistoryTable from './AssesmentHistoryTable'
 const AssesmentHistoryTile = () => (
   <Card>
     <CardHeader>
-      <CardTitle>Assesment History</CardTitle>
+      <CardTitle>
+        Assesment History
+        <Link to="/" className="float-right">
+          + Reassessment
+        </Link>
+      </CardTitle>
     </CardHeader>
     <CardBody>
       <CardDeck>

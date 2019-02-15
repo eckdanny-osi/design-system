@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem, IconButton, Page } from '@cwds/components'
 
 import AssesmentHistory from './AssesmentHistory/AssesmentHistory'
-
+import ClientInfo from './ClientInfo'
 export default () => (
   <Page
     title="CANS"
@@ -25,6 +25,7 @@ export default () => (
     }
     main={() => (
       <div>
+        <ClientInfo />
         <AssesmentHistory />
       </div>
     )}
