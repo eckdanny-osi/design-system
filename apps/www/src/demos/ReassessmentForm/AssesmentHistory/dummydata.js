@@ -77,5 +77,4 @@ export const columns = [
   { Header: 'County', accessor: 'County' },
   { Header: 'Last Updated', accessor: 'Last_Updated' },
   { Header: 'Updated by', accessor: 'Updated_by' },
-  // { Header: 'Updated by', accessor: 'Updated by' },
 ]

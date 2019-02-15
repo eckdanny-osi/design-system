@@ -1,13 +1,11 @@
 import React from 'react'
-import { Card, CardBody, DataGrid } from '@cwds/components'
+import { DataGrid } from '@cwds/components'
 import { data, columns } from './dummydata.js'
 
 const AssesmentHistoryTable = () => (
-  <Card>
-    <CardBody className="pt-0">
-      <DataGrid data={data} columns={columns} />
-    </CardBody>
-  </Card>
+  <div className="mt-5">
+    <DataGrid data={data} columns={columns} />
+  </div>
 )
 
 export default AssesmentHistoryTable
