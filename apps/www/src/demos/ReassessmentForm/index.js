@@ -2,10 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem, IconButton, Page } from '@cwds/components'
 
+import AssesmentHistory from './AssesmentHistory/AssesmentHistory'
+
 export default () => (
   <Page
     title="CANS"
-    layout="jumpnav"
     Breadcrumb={
       <Breadcrumb>
         <BreadcrumbItem>
@@ -22,6 +23,10 @@ export default () => (
         CLIENT SEARCH
       </IconButton>
     }
-    main={() => <div />}
+    main={() => (
+      <div>
+        <AssesmentHistory />
+      </div>
+    )}
   />
 )
