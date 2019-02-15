@@ -13,6 +13,7 @@ import LabsPage from './modules/labs'
 import Components from './modules/components'
 import AboutCares from './modules/about-cares'
 import FacilityProfile from './demos/FacilityProfile'
+import ReassessmentForm from './demos/ReassessmentForm'
 import PageTemplates from './examples/PageTemplates'
 
 class App extends Component {
@@ -32,6 +33,10 @@ class App extends Component {
                 <Route
                   path="/demo/facility-profile"
                   component={FacilityProfile}
+                />
+                <Route
+                  path="/demo/reassessment-form"
+                  component={ReassessmentForm}
                 />
                 <Route
                   path="/__examples__/page-templates"
