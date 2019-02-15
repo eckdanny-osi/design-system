@@ -28,5 +28,5 @@ export {
   UncontrolledUserMenu,
 } from './Menu'
 export { Utils }
-export { CaresContext, default as CaresProvider } from './utils/CaresContext'
 export { Tile, TileGroup, TilePlaceholder } from './Tile'
+export { defaultContext, CaresProvider } from './CaresContext'

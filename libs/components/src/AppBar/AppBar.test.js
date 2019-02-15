@@ -1,9 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import AppBar from './AppBar'
-import DefaultBrand from './DefaultBrand'
-import DefaultUserMenu from './DefaultUserMenu'
-import { CaresContext } from '../utils/CaresContext'
+import { CaresContext, defaultContext } from '../CaresContext'
 
 describe('AppBar', () => {
   it('renders', () => {
@@ -13,12 +11,12 @@ describe('AppBar', () => {
 
   it('renders the Brand', () => {
     const wrapper = mount(<AppBar />)
-    expect(wrapper.find(DefaultBrand).length).toBe(1)
+    expect(wrapper.find(defaultContext.Brand).length).toBe(1)
   })
 
   it('renders the UserMenu', () => {
     const wrapper = mount(<AppBar />)
-    expect(wrapper.find(DefaultUserMenu).length).toBe(1)
+    expect(wrapper.find(defaultContext.UserMenu).length).toBe(1)
   })
 
   it('accepts Brand prop as component', () => {
@@ -68,13 +66,13 @@ describe('AppBar', () => {
       expect(wrapper.find(MyLocalBrand).length).toBe(1)
     })
 
-    it('uses default Brand when no prop passed and no context value present', () => {
+    it('uses nothing when no prop passed and no context value present', () => {
       const wrapper = mount(
         <CaresContext.Provider value={{}}>
           <AppBar />
         </CaresContext.Provider>
       )
-      expect(wrapper.find(DefaultBrand).length).toBe(1)
+      expect(wrapper.find(defaultContext.Brand).length).toBe(0)
     })
   })
 })

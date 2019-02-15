@@ -1,22 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash.pick'
+import { Brand, UserMenu } from './defaults'
 
-export const CaresContext = React.createContext({})
+export const defaultContext = {
+  Brand,
+  UserMenu,
+}
 
-const CaresProvider = ({ children, ...configs }) => (
+export const CaresContext = React.createContext(defaultContext)
+
+export const CaresProvider = ({ children, ...configs }) => (
   <CaresContext.Provider value={configs}>{children}</CaresContext.Provider>
 )
 
 CaresProvider.propTypes = { children: PropTypes.node }
 CaresProvider.defaultProps = {}
 
-export default CaresProvider
-
 export const withCaresConfig = (Component, subcomponents) => props => (
   <CaresContext.Consumer>
     {context => <Component {...pick(context, subcomponents)} {...props} />}
-    {/* {context => <Component {...props} {...pick(context, subcomponents)} />} */}
   </CaresContext.Consumer>
 )
 

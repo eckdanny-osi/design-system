@@ -2,24 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Row, Col } from '@cwds/reactstrap'
 import { renderOne } from '../utils'
-import { CaresContext } from '../utils/CaresContext'
-import DefaultBrand from './DefaultBrand'
-import DefaultUserMenu from './DefaultUserMenu'
+// import { CaresContext } from '../utils/CaresContext'
+import { CaresContext } from '../CaresContext'
 
 const AppBar = ({ Brand, UserMenu }) => {
   return (
     <Row>
       <Col className="d-flex justify-content-start align-items-center">
         <CaresContext.Consumer>
-          {({ Brand: GlobalBrand }) =>
-            renderOne(Brand, GlobalBrand, DefaultBrand)
-          }
+          {({ Brand: GlobalBrand }) => renderOne(Brand, GlobalBrand)}
         </CaresContext.Consumer>
       </Col>
       <Col className="d-flex justify-content-end align-items-center">
         <CaresContext.Consumer>
           {({ UserMenu: GlobalUserMenu }) =>
-            renderOne(UserMenu, GlobalUserMenu, DefaultUserMenu)
+            renderOne(UserMenu, GlobalUserMenu)
           }
         </CaresContext.Consumer>
       </Col>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { UncontrolledUserMenu, MenuItem } from '../Menu'
+import { UncontrolledUserMenu, MenuItem } from '../../Menu'
 
 export default () => (
   <UncontrolledUserMenu>
