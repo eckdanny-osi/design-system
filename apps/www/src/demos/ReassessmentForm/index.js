@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem, IconButton, Page } from '@cwds/components'
 
-import AssesmentHistory from './AssesmentHistory/AssesmentHistory'
+import AssesmentHistory from './AssesmentHistory'
 
 export default () => (
   <Page
