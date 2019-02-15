@@ -31,6 +31,6 @@ export default {
   ),
   Tile: docgenComposed('@cwds/components/src/Tile/Tile.jsx'),
   CaresProvider: docgenComposed(
-    '@cwds/components/src/utils/CaresProvider.props'
+    '@cwds/components/src/CaresContext/CaresProvider.props'
   ),
 }
