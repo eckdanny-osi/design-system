@@ -8,11 +8,11 @@
 
 Monorepo for CWDS design system
 
-Note: this is a pre-release branch!
+## Consuming CARES Components
 
-## Consuming the Component Library
+This a multi-package repository. You are reading the `README` for the repository root.
 
-🛑 **If want the component library** 🛑
+🛑 **If you are looking for `@cwds/*` components** 🛑
 
 Install from [npm](https://www.npmjs.com/package/@cwds/components):
 
@@ -20,11 +20,18 @@ Install from [npm](https://www.npmjs.com/package/@cwds/components):
 yarn add @cwds/components
 ```
 
-Start using components in your application:
+or if you want the latest RC:
+
+```sh
+yarn add @cwds/components@next
+```
+
+### Using components in your application:
 
 ```jsx
 import React from 'react'
 import { Button } from '@cwds/components'
+
 const App = () => (
   <div>
     <Button>Hello World!</Button>
@@ -32,14 +39,16 @@ const App = () => (
 )
 ```
 
-### How to Use / Relevant files:
+### System Requirements
 
-System dependencies:
+We assume that you're using a bundler (like [`webpack`](https://webpack.js.org/)) in your app. Our packages have a `cjs` and an `esm` build target. We ship `scss` source files so that you are in control (e.g.; with `browserlist`) of which polyfills/vender-prefixes/... are written at application bundling time.
 
-- Node version: > 6.3.1, npm
-- yarn version: 1.10.1
+To develop in this multi-package repository, you should have
 
-## Getting Started
+- `yarn` > `1.13.x` (workspace support)
+- `node` > `8.11.x`
+
+## Quick Start
 
 Clone the repository
 
@@ -53,30 +62,30 @@ To precompile the libs and www do
 yarn build
 ```
 
-### Development
-
-You have a few options. Select the workflow that most appropriately suits your context:
-
-#### Storybook
-
-> Great for developing components in isolation
-
-To run _Storybook_:
+### Start Builders/Watchers
 
 ```sh
-yarn storybook
+yarn dev
 ```
 
-#### The Guide Site
+### The Guide Site
 
-> This is public docs site and reference implemenation. It runs on CRA@2.x.
+The [Guide Site](https://cws-cares.netlify.com/) has the following value proposition:
 
-To run the _Guide Site_:
+1. Reference implementation for App Developers
+1. Living Documentation that is deployed with the libraries
+1. Integrated developer experience
+
+Start up the _Guide Site_:
 
 ```sh
 yarn start
 ```
-#### Contirbution guidelines
+
+> The _Guide Site_ runs on `create-react-app@^2.x` with additional loaders for [mdx](https://mdxjs.com/). It's a great way to encourage writing documentation while developers are building components.
+
+<!--
+### Contributing
 
 > Build a component under `libs/components/src` and export the component through index.js as
 
@@ -102,28 +111,24 @@ const routes = {
   ]
 }
 ```
-
+-->
 
 #### rails_app
 
-> This is a good integration check for our digital service teams that all utilize this stack.
+> This is a good integration check for our Digital Service teams at CWDS because it runs on [`rails webpacker`](https://github.com/rails/webpacker#webpacker).
 
 To run the _rails app_:
-
-first start the webpack dev server:
 
 ```sh
 cd libs/rails_app
 ./bin/webpack-dev-server
 ```
 
-> You may find it helpful to have two processes running for debugging via `pry` or for whatever. We suggest using multiple terminals/panes or using terminal multiplexer like `tmux`.
-
-then start the rails server:
+then in another terminal start the rails server:
 
 ```sh
 cd libs/rails_app
-./bin/rails s
+./bin/rails s -p 3001
 ```
 
 ## Questions
