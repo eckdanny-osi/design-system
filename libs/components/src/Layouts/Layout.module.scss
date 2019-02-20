@@ -42,7 +42,8 @@
     display: flex;
     height: 2rem;
     -ms-overflow-style: none;
-    overflow-x: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
   }
 }
