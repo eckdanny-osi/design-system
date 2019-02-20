@@ -48,7 +48,7 @@ GEM
     ffi (1.10.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.5.1)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -68,7 +68,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nio4r (2.3.1)
-    nokogiri (1.10.0)
+    nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
     puma (3.12.0)
     rack (2.0.6)
@@ -149,4 +149,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.17.3
+   2.0.1

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import pick from 'lodash.pick'
 import { Button } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 
 const LIGHT_COLORS = {
   primary: true,

@@ -1,0 +1,36 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+/**
+ * Creating a "FAKE" component for `reat-docgen` to parse an AST. Some of the known limitation of docgen:
+ *   - only supports default exports
+ *   - does not load "partials" from other files
+ * By observations, a valid react element must be returned to be parseable
+ * @todo: It this something that `babel-plugin-preval` can solve?
+ */
+
+const FAKE = () => <div />
+
+FAKE.propTypes = {
+  /** Override for the `Brand` slot. Accepts a component or react node */
+  Brand: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Override the `UserMenu` slot. Accepts a component or react node */
+  UserMenu: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Override the `PageTitle` slot. Accepts a component or react node. Use for non-string-only Page titles */
+  PageTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Override the `PageActions` slot (default is empty). Used for page-level call to action buttons. Accepts a component or react node */
+  PageActions: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Override the `Breadcrumb` slot (default is empty). Used to pass user-defined breadcrumbs composed of `Breadcrumb` and `BreadcrumbItem` components. Accepts a component or react node. */
+  Breadcrumb: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Which Page Layout to use. */
+  layout: PropTypes.oneOf(['dashboard', 'jumpnav']),
+  /** Override the `sidenav` slot (used in Page Layouts that have a `sidenav`.) Accepts a component or react node */
+  sidenav: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** Alias for `children` (do not provide both). Accepts a component or react node*/
+  main: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /** The Page body. Accepts a component or react node */
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+}
+FAKE.defaultProps = {}
+
+export default FAKE

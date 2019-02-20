@@ -1,7 +1,6 @@
-const path = require('path')
-const cfg = require('../../jest/config')
-const project = __dirname.split(path.sep).pop()
+const { getDefault } = require('../../scripts/jest-utils')
 
 module.exports = {
-  ...cfg({ project }),
+  ...getDefault(),
+  displayName: 'icons',
 }

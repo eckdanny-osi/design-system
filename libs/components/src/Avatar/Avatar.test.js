@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Avatar from './'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 
 describe('Avatar', () => {
   it('renders', () => {

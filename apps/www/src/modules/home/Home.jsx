@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import {
   Page,
   Button,
-  Badge,
   Card,
   CardHeader,
   CardBody,
@@ -12,19 +11,62 @@ import {
   Row,
   Col,
 } from '@cwds/components'
+import githubLogo from '../status/GitHub-Mark-Light-64px.png'
+
+const MyPageActions = (
+  <Button
+    color="info"
+    size="sm"
+    href="https://github.com/ca-cwds/design-system"
+    style={{
+      height: '36px',
+      display: 'inline-flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+    }}
+    target="_blank"
+  >
+    <img
+      src={githubLogo}
+      style={{
+        display: 'block',
+        maxHeight: '22px',
+        marginRight: '0.5rem',
+      }}
+      alt="github logo"
+    />
+    GitHub
+  </Button>
+)
 
 export default () => (
   <Page
     layout="dashboard"
     title="Design System"
-    // breadcrumb={false}
-    breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
-    // breadcrumb={<div>aslkdfj</div>}
-    // breadcrumb={[{ id: 'one' }, { id: 'two' }]}
+    PageActions={MyPageActions}
+    Breadcrumb={<em>Welcome to the CARES Design System guide!</em>}
     main={props => (
       <Row>
         <Col xs={{ order: 2 }} lg={{ size: 9, order: 1 }}>
           <Row>
+            <Col sm={6}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>About CARES</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  Our success in designing and developing CARES depends on all
+                  of us understanding who our users are and what mindset they
+                  are in when they use the application.
+                </CardBody>
+                <CardFooter>
+                  <Button color="primary" tag={Link} to="/about-cares">
+                    Go!
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Col>
+
             <Col sm={6}>
               <Card>
                 <CardHeader>
@@ -61,28 +103,7 @@ export default () => (
               </Card>
             </Col>
 
-            <Col sm={6}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>
-                    UX Guidelines / Patterns
-                    <small>
-                      <Badge color="warning" className="ml-1">
-                        TODO
-                      </Badge>
-                    </small>
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>@TODO</CardBody>
-                <CardFooter>
-                  <Button color="primary" tag={Link} to="/">
-                    Go!
-                  </Button>
-                </CardFooter>
-              </Card>
-            </Col>
-
-            <Col sm={6}>
+            {/* <Col sm={6}>
               <Card>
                 <CardHeader>
                   <CardTitle>Labs</CardTitle>
@@ -98,50 +119,7 @@ export default () => (
                   </Button>
                 </CardFooter>
               </Card>
-            </Col>
-
-            <Col sm={6}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>
-                    About
-                    <small>
-                      <Badge color="warning" className="ml-1">
-                        TODO
-                      </Badge>
-                    </small>
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  Defines key terms and identifies the business value of the
-                  Design System, a manual for designers, developers, and
-                  stakeholders to get the most out of this site
-                </CardBody>
-                <CardFooter>
-                  <Button color="primary" tag={Link} to="/">
-                    Go!
-                  </Button>
-                </CardFooter>
-              </Card>
-            </Col>
-          </Row>
-        </Col>
-        <Col
-          xs={{ order: 1 }}
-          lg={{ size: 3, order: 1 }}
-          className="d-none d-sm-block"
-        >
-          <Row>
-            <Col sm={6} md={4} lg={12}>
-              <Card>
-                <CardBody>Placeholder Widget</CardBody>
-              </Card>
-            </Col>
-            <Col sm={6} md={4} lg={12}>
-              <Card>
-                <CardBody>Placeholder Widget</CardBody>
-              </Card>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
       </Row>

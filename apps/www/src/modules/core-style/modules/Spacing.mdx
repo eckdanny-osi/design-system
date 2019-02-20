@@ -1,32 +1,33 @@
-import DS from '@cwds/core'
-import cn from 'classnames'
-import { Card, CardBody } from '@cwds/components'
+import DS from "@cwds/core";
+import cn from "classnames";
+import { Card, CardBody } from "@cwds/components";
+const { spacers, themeColors } = DS;
 
 ## Spacing
 
 <Card>
   <CardBody>
-    <table style={{ width: '100%' }}>
+    <table style={{ width: "100%" }}>
       <thead>
         <tr>
           <th>Spacer</th>
           <th className="text-center">Sass</th>
           <th className="text-center">JS</th>
-          <th className="text-center">Size ({DS.spacing.spacerUnit})</th>
+          <th className="text-center">Size</th>
         </tr>
       </thead>
       <tbody>
-        {Object.keys(DS.spacing.spacers)
-          .map(label => ({ label, value: DS.spacing.spacers[label] }))
+        {Object.keys(spacers)
+          .map(label => ({ label, value: spacers[label] }))
           .map(({ label, value }, i) => {
             return (
-              <tr key={label} style={{ height: '3rem' }}>
+              <tr key={label} style={{ height: "3rem" }}>
                 <td>
                   <div
                     style={{
-                      backgroundColor: DS.themeColors.accent,
-                      height: `${value}${DS.spacing.spacerUnit}`,
-                      width: `${value}${DS.spacing.spacerUnit}`,
+                      backgroundColor: themeColors.accent,
+                      height: `${value}`,
+                      width: `${value}`
                     }}
                   >
                     &nbsp;
@@ -36,11 +37,11 @@ import { Card, CardBody } from '@cwds/components'
                   <tt>$spacer-{label}</tt>
                 </td>
                 <td className="text-center">
-                  <tt>DS.spacing.spacer[{label}]</tt>
+                  <tt>spacers[{label}]</tt>
                 </td>
                 <td className="text-center">{value}</td>
               </tr>
-            )
+            );
           })}
       </tbody>
     </table>

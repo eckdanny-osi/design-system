@@ -1,0 +1,48 @@
+import { DemoCard, Figure } from "@cwds/docs";
+import { CaresProvider, Page } from "@cwds/components";
+import caresProviderImg from "./CaresProvider.png";
+
+## Synopsis
+
+The `CaresProvider` component allows application developers to register user-defined Components on a React Context
+
+```jsx
+import { CaresProvider } from "@cwds/components";
+```
+
+<!--
+### Optional Supporting Section
+
+Additional introductory section or a gallery if there exist a wide range of instances that should be shown (e.g.; IconGallery)
+-->
+
+## Props
+
+TODO: Context
+
+<!-- <PropTable docgen={Docgen['CaresProvider']} /> -->
+
+## Examples
+
+```jsx
+import { CaresProvider, Page } from "@cwds/components";
+
+// A User-Defined Component
+const Brand = <a href="/">Acme Widgets</a>;
+
+// Register `Brand` using `CaresProvider`
+const App = () => (
+  <CaresProvider Brand={Brand}>
+    <Page
+      title="My Awesome App"
+      main={props => (
+        <div>
+          I am the <tt>Page</tt> body!
+        </div>
+      )}
+    />
+  </CaresProvider>
+);
+```
+
+<Figure src={caresProviderImg} />

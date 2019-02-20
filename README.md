@@ -8,6 +8,8 @@
 
 Monorepo for CWDS design system
 
+Note: this is a pre-release branch!
+
 ## Consuming the Component Library
 
 🛑 **If want the component library** 🛑
@@ -83,8 +85,6 @@ export { Example } from './Example'
 ```
 
 > For PO or designers to review the changes host it on storybook by adding Example story to components in modules under apps/www
-
-Export it to storybook via slabs.routes.js
 
 ```js
 import Example from '!babel-loader!@mdx-js/loader!./modules/Example/Example.mdx'
