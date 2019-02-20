@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/ca-cwds/design-system/compare/v0.8.3...v0.8.4) (2019-02-20)
+
+
+### Bug Fixes
+
+* **components:** Update breadcrumb overflow styles ([#425](https://github.com/ca-cwds/design-system/issues/425)) ([60b4cb6](https://github.com/ca-cwds/design-system/commit/60b4cb6))
+
+
+
+
+
 ## [0.8.3](https://github.com/ca-cwds/design-system/compare/v0.8.2...v0.8.3) (2019-02-12)
 
 
