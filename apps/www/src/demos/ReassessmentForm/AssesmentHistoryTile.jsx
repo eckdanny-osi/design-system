@@ -55,9 +55,7 @@ const AssesmentHistoryTile = () => (
           </Fragment>
         }
       >
-        <div>
-          <Link to="/">08/15/19 CANS</Link>
-        </div>
+        <div>08/15/19 CANS</div>
         <div>Completed on 08/15/19</div>
         <div>by Jason Adams</div>
         <div>Case 98234-3486492-843847</div>
