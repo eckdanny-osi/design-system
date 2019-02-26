@@ -1,7 +1,45 @@
-import SubcomponentDataGrid from "./examples/SubcomponentDataGrid";
+import { CodeBlock } from "@cwds/docs";
 
-By adding a [SubComponent](https://github.com/tannerlinsley/react-table/tree/v6#sub-tables-and-sub-components) props, you can easily add an expansion level to all root-level rows.
+import SubcomponentDataGrid from "./examples/SubcomponentDataGrid";
+import SubcomponentDataGridSrc from "!raw-loader!./examples/SubcomponentDataGrid.jsx";
+
+Data grid can aggregate, pivot and render sub-components by adding a Subcomponent props. More info in [React Table SubComponent](https://github.com/tannerlinsley/react-table/tree/v6#sub-tables-and-sub-components)
 
 ### Examples
 
 <SubcomponentDataGrid />
+
+```jsx
+const PeopleCard = () => {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>People</CardTitle>
+      </CardHeader>
+      <CardBody>
+        <DataGrid data={data} columns={columns} SubComponent={subcomponent} />
+      </CardBody>
+    </Card>
+  );
+};
+```
+
+You can customize the expander by setting it `true` and overriding the `Expander`
+
+```jsx
+{
+  expander: true,
+  Header: () => <div>More</div>,
+  width: 70,
+  Expander: ({ isExpanded }) => (
+    <div>
+      {isExpanded ? (
+        <Icon name={'chevron-down'} sz={'sm'} />
+      ) : (
+        <Icon name={'chevron-down'} sz={'sm'} rotation={Util.ROTATION.LEFT} />
+      )}
+    </div>
+  ),
+  style: { textAlign: 'center' },
+}
+```
