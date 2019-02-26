@@ -54,7 +54,6 @@
         text-align: left;
       }
       .-center {
-        flex: 0;
         @include media-breakpoint-down(sm) {
           flex: auto;
         }
