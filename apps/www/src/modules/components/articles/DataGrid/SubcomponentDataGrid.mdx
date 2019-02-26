@@ -17,7 +17,7 @@ More info in [React Table SubComponent](https://github.com/tannerlinsley/react-t
   <CardHeader>
     <CardTitle>People</CardTitle>
   </CardHeader>
-  <CardBody>
+  <CardBody className="pt-0">
     <DataGrid
       data={data}
       pivotBy={["author"]}
@@ -46,7 +46,7 @@ const PeopleCard = () => {
       <CardHeader>
         <CardTitle>People</CardTitle>
       </CardHeader>
-      <CardBody>
+      <CardBody className="pt-0">
         <DataGrid data={data} columns={columns} SubComponent={subcomponent} />
       </CardBody>
     </Card>
