@@ -23,7 +23,7 @@ const data = [
   {
     index: 2,
     author: 'D.K. Green',
-    book: 'the Prison',
+    book: 'Prisoner',
     inventory: 10,
   },
   {
@@ -35,7 +35,7 @@ const data = [
   {
     index: 5,
     author: 'Mat Blurred',
-    book: 'Red December',
+    book: 'Red May',
     inventory: 8,
   },
   {
