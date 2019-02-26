@@ -1,11 +1,41 @@
+import { Alert } from "@cwds/components";
 import { CodeBlock } from "@cwds/docs";
-
+import AggregationDataGrid from "./examples/AggregationDataGrid";
 import SubcomponentDataGrid from "./examples/SubcomponentDataGrid";
-import SubcomponentDataGridSrc from "!raw-loader!./examples/SubcomponentDataGrid.jsx";
 
-Data grid can aggregate, pivot and render sub-components by adding a Subcomponent props. More info in [React Table SubComponent](https://github.com/tannerlinsley/react-table/tree/v6#sub-tables-and-sub-components)
+Data grid can aggregate, pivot and render sub-components by adding a Subcomponent props.
+More info in [React Table SubComponent](https://github.com/tannerlinsley/react-table/tree/v6#sub-tables-and-sub-components)
 
 ### Examples
+
+#### Aggregation and Pivot
+
+<AggregationDataGrid />
+
+```jsx
+<Card>
+  <CardHeader>
+    <CardTitle>People</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <DataGrid
+      data={data}
+      pivotBy={["author"]}
+      columns={[
+        { Header: "Author", accessor: "author" },
+        { Header: "Book", accessor: "book" },
+        {
+          Header: "Inventory",
+          accessor: "inventory",
+          aggregate: vals => vals.reduce((acc, cur) => acc + cur)
+        }
+      ]}
+    />
+  </CardBody>
+</Card>
+```
+
+#### Sub-component Render
 
 <SubcomponentDataGrid />
 
@@ -24,7 +54,10 @@ const PeopleCard = () => {
 };
 ```
 
-You can customize the expander by setting it `true` and overriding the `Expander`
+<Alert color="info">
+  <strong>Note</strong>: You can customize the expander by setting it{" "}
+  <code>true</code> and overriding the <code>Expander</code>
+</Alert>
 
 ```jsx
 {
