@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/ca-cwds/design-system/compare/v0.8.4...v0.8.5) (2019-02-26)
+
+
+### Bug Fixes
+
+* **datagrid:** fix flex layout for IE ([#430](https://github.com/ca-cwds/design-system/issues/430)) ([34c7ce5](https://github.com/ca-cwds/design-system/commit/34c7ce5))
+
+
+
+
+
 ## [0.8.4](https://github.com/ca-cwds/design-system/compare/v0.8.3...v0.8.4) (2019-02-20)
 
 **Note:** Version bump only for package @cwds/datagrid
