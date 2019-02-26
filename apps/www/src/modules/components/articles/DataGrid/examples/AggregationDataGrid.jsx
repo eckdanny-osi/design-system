@@ -100,13 +100,13 @@ const data = [
   },
 ]
 
-const PeopleCard = row => {
+const BooksCard = row => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>People</CardTitle>
+        <CardTitle>Books</CardTitle>
       </CardHeader>
-      <CardBody>
+      <CardBody className="pt-0">
         <DataGrid
           data={data}
           pivotBy={['author']}
@@ -125,4 +125,4 @@ const PeopleCard = row => {
   )
 }
 
-export default PeopleCard
+export default BooksCard

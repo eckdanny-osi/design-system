@@ -47,7 +47,7 @@ const columns = [
 const subcomponent = row => {
   const { company, email, phone } = row.original
   return (
-    <Row>
+    <Row className="pl-3">
       <Col className="p-2" md="4">
         <Label>Company</Label>
         <div>{company}</div>
@@ -69,7 +69,7 @@ const PeopleCard = () => {
       <CardHeader>
         <CardTitle>People</CardTitle>
       </CardHeader>
-      <CardBody>
+      <CardBody className="pt-0">
         <DataGrid data={data} columns={columns} SubComponent={subcomponent} />
       </CardBody>
     </Card>
