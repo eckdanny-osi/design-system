@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/tag'
-import '@cwds/core/dist/styles.css'
-import { Utils, JumpToTop } from '@cwds/components'
+import { CaresProvider, JumpToTop } from '@cwds/components'
 import componentMap from './MDXComponentProviderMappings'
+import appConfig from './config'
 
 import ScrollToTop from './ScrollToTop'
 import Status from './modules/status'
@@ -11,23 +11,16 @@ import Home from './modules/home'
 import CoreStyles from './modules/core-style'
 import LabsPage from './modules/labs'
 import Components from './modules/components'
-
+import AboutCares from './modules/about-cares'
 import FacilityProfile from './demos/FacilityProfile'
-
-import CaresConfig from './config'
-const { CaresProvider, defaultConfig } = Utils
+import ReassessmentForm from './demos/ReassessmentForm'
+import PageTemplates from './examples/PageTemplates'
 
 class App extends Component {
-  state = {
-    config: {
-      ...defaultConfig,
-      ...CaresConfig,
-    },
-  }
   render() {
     return (
       <MDXProvider components={componentMap}>
-        <CaresProvider value={this.state.config}>
+        <CaresProvider {...appConfig}>
           <Router>
             <ScrollToTop>
               <Fragment>
@@ -36,9 +29,18 @@ class App extends Component {
                 <Route path="/labs" component={LabsPage} />
                 <Route path="/components" component={Components} />
                 <Route path="/status" component={Status} />
+                <Route path="/about-cares" component={AboutCares} />
                 <Route
                   path="/demo/facility-profile"
                   component={FacilityProfile}
+                />
+                <Route
+                  path="/demo/reassessment-form"
+                  component={ReassessmentForm}
+                />
+                <Route
+                  path="/__examples__/page-templates"
+                  component={PageTemplates}
                 />
                 <JumpToTop />
               </Fragment>

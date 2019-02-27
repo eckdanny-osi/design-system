@@ -2,6 +2,8 @@ import React from 'react'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
 import {
+  Breadcrumb,
+  BreadcrumbItem,
   Card,
   CardHeader,
   CardBody,
@@ -32,13 +34,21 @@ export default () => (
   <Page
     title="Status"
     layout="jumpnav"
-    breadcrumb={[
-      { path: '/', title: 'Home' },
-      { path: '/status', title: 'Status' },
-    ]}
     sidenav={() => {
       return <JumpNav tag={Link} routes={routes} />
     }}
+    Breadcrumb={() => (
+      <Breadcrumb>
+        {[
+          { title: 'Home', path: '/' },
+          { title: 'Status', path: '/status' },
+        ].map(d => (
+          <BreadcrumbItem key={d.path}>
+            <Link to={d.path}>{d.title}</Link>
+          </BreadcrumbItem>
+        ))}
+      </Breadcrumb>
+    )}
     main={() => (
       <Row>
         <Col>

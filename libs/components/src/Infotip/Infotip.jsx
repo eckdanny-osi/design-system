@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash.pick'
 import cn from 'classnames'
-import { Button, Popover } from '../'
-import Icon from '@cwds/icons'
+import { Button, Popover } from '@cwds/reactstrap'
+import { Icon } from '@cwds/icons'
 import Styles from './Infotip.module.scss'
 
 // https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip

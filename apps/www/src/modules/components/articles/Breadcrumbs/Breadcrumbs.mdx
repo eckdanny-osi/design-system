@@ -1,0 +1,95 @@
+import { Alert } from "@cwds/components";
+import { DemoCard, PropTable, ReferenceCard } from "@cwds/docs";
+import Docgen from "../ReactDogenInfo.js";
+
+## Synopsis
+
+Use `Breadcrumb`s to indicate the location of the current page within a navigational hierarchy.
+
+### Disambiguating Terms
+
+_Breadcrumb navigation_ is a foundational UX pattern in CWS CARES. The sections below distinguish the pattern as implemented as a `Page` construct vs the standalone component:
+
+#### Region in `Page` Layouts
+
+Most CWS-CARES `Page`s exhibit the [_Breadcrumb naviation_](/patterns/breadcrumbs) pattern. There exists a horizontal band of reserved space in the `Banner` into which the `Breadcrumb` component is slotted. It is here that the `Breadcrumb` _component_ is ultimately placed.
+
+See the [`Page` article](/components/Page) for usage.
+
+#### The `Breadcrumb` Component
+
+Compose the <dfn>breadcrumb navigation</dfn> using the `Breadcrumb` and `BreadcrumbItem` components:
+
+```jsx
+import { Breadcrumb, BreadcrumbItem } from "@cwds/components";
+
+<Breadcrumb>
+  <BreadcrumbItem>
+    <a href="/">Home</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    <a href="/books">Books</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem active>Moby-Dick</BreadcrumbItem>
+</Breadcrumb>;
+```
+
+<ReferenceCard className="mt-3">
+
+`BreadcrumbItem` should wrap links. You can use simple `<a>` tags or use something like the `Link` component from `react-router-dom`. See the [`Page` article](/components/Page) for usage.
+
+</ReferenceCard>
+
+## Props
+
+<PropTable docgen={Docgen["Breadcrumb"]} />
+
+See the [`BreadcrumbItem` article](/components/breadcrumbitem) for `BreadcrumbItem` props.
+
+## Usage Guidelines
+
+`Breadcrumb`s are nested within the [`Banner`](/components/banner) component. They must appear on each page as a secondary navigational tool.
+
+### Content Guidelines
+
+- Use the shortest comprehensible term for breadcrumb labels. Usually this will be the same label used in menu navigation. There are no hard and fast rules for limiting character length or number of words used, just try to be descriptive yet brief.
+- Breadcrumbs must be associated with link to another screen, not used as anchor links.
+
+## Examples
+
+### Using Anchor Tags
+
+```jsx
+import { Breadcrumb, BreadcrumbItem } from "@cwds/components";
+
+MyBreadcrumbs = (
+  <Breadcrumb>
+    <BreadcrumbItem>
+      <a href="/">Dashboard</a>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+      <a href="/components">Components</a>
+    </BreadcrumbItem>
+    <BreadcrumbItem active>Foo</BreadcrumbItem>
+  </Breadcrumb>
+);
+```
+
+### Using `Link` Component
+
+```jsx
+import { Link } from "react-router-dom";
+import { Breadcrumb, BreadcrumbItem } from "@cwds/components";
+
+MyBreadcrumbs = (
+  <Breadcrumb>
+    <BreadcrumbItem>
+      <Link to="/">Dashboard</Link>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+      <Link to="/components">Components</Link>
+    </BreadcrumbItem>
+    <BreadcrumbItem active>Foo</BreadcrumbItem>
+  </Breadcrumb>
+);
+```

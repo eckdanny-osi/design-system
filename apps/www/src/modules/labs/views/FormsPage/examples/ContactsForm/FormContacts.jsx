@@ -16,15 +16,11 @@ import {
   Select,
   Icon,
   FormFeedback,
-  RadioGroup,
 } from '@cwds/components'
 import {
-  CLASSIFICATION_OPTIONS,
   CONCTACT_METHOD_OPTIONS,
   CONTACT_METHOD,
   LOCATION_OPTIONS,
-  NOTICE_OPTIONS,
-  COLLATERAL_VISIT_OPTIONS,
   VISIT_TYPE_OPTIONS,
 } from './contactsFormEnums'
 import initialValues from './contactsFormInitialValues'
@@ -64,17 +60,6 @@ export default () => (
                       onChange={props.handleChange}
                     />
                     <FormFeedback>{props.errors.date}</FormFeedback>
-                  </FormGroup>
-                </Col>
-                <Col md={6}>
-                  <FormGroup>
-                    <RadioGroup
-                      name="classification"
-                      legend="Classification"
-                      value={props.values.classification}
-                      options={CLASSIFICATION_OPTIONS}
-                      onChange={props.handleChange}
-                    />
                   </FormGroup>
                 </Col>
                 <Col md={6}>
@@ -125,73 +110,6 @@ export default () => (
                         }}
                       />
                     </FormGroup>
-                  </Col>
-                  <Col md={6}>
-                    <FormGroup>
-                      <RadioGroup
-                        legend="Notice"
-                        name="inPersonDetail.notice"
-                        value={props.values.inPersonDetail.notice}
-                        options={NOTICE_OPTIONS}
-                        onChange={props.handleChange}
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={6}>
-                    <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <RadioGroup
-                            name="inPersonDetail.collateralVisit"
-                            legend="Collateral Visit?"
-                            value={props.values.inPersonDetail.collateralVisit}
-                            options={COLLATERAL_VISIT_OPTIONS}
-                            onChange={props.handleChange}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Collapse
-                        style={{ width: '100%' }}
-                        isOpen={
-                          props.values.inPersonDetail.collateralVisit === 'yes'
-                        }
-                      >
-                        <Col md={12}>
-                          <Row>
-                            <Col md={6}>
-                              <FormGroup>
-                                <Label htmlFor="startTime">Start Time</Label>
-                                <Input
-                                  type="time"
-                                  value={
-                                    props.values.inPersonDetail
-                                      .collateralVisitDetail.startTime
-                                  }
-                                  id="startTime"
-                                  name="inPersonDetail.collateralVisitDetail.startTime"
-                                  onChange={props.handleChange}
-                                />
-                              </FormGroup>
-                            </Col>
-                            <Col md={6}>
-                              <FormGroup>
-                                <Label htmlFor="endTime">End Time</Label>
-                                <Input
-                                  type="time"
-                                  value={
-                                    props.values.inPersonDetail
-                                      .collateralVisitDetail.endTime
-                                  }
-                                  id="endTime"
-                                  name="inPersonDetail.collateralVisitDetail.endTime"
-                                  onChange={props.handleChange}
-                                />
-                              </FormGroup>
-                            </Col>
-                          </Row>
-                        </Col>
-                      </Collapse>
-                    </Row>
                   </Col>
                   <Col>
                     <FormGroup>
