@@ -11,6 +11,15 @@
   }
 }
 
+// Layout Fixes
+:global {
+  html,
+  body,
+  #root {
+    height: 100% !important;
+  }
+}
+
 .Banner {
   position: fixed;
   top: 0;
@@ -50,4 +59,8 @@
 
 .Body {
   margin-top: $banner-height;
+}
+
+.Footer {
+  background-color: map-get($theme-colors, "info");
 }

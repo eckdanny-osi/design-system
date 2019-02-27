@@ -2,6 +2,7 @@ import React from 'react'
 import Page from './Page'
 import Banner from '../Banner'
 import Body from '../Body'
+import Footer from '../Footer'
 import { shallow } from 'enzyme'
 
 describe('Page', () => {
@@ -9,10 +10,11 @@ describe('Page', () => {
     expect(shallow(<Page />).hasClass('Page')).toBe(true)
   })
 
-  it('renders a Banner and Body component', () => {
+  it('renders a Banner, Body, and Footer component', () => {
     const wrapper = shallow(<Page />)
     expect(wrapper.childAt(0).type()).toBe(Banner)
     expect(wrapper.childAt(1).type()).toBe(Body)
+    expect(wrapper.childAt(2).type()).toBe(Footer)
   })
 
   it.skip('allows Banner to be overriden', () => {
