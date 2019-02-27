@@ -11,6 +11,15 @@
   }
 }
 
+// Layout Fixes
+:global {
+  html,
+  body,
+  #root {
+    height: 100% !important;
+  }
+}
+
 .Banner {
   position: fixed;
   top: 0;
@@ -49,5 +58,11 @@
 }
 
 .Body {
+  flex: 1 0 auto; // Fix for IE browser
   margin-top: $banner-height;
+  margin-bottom: map-get($spacers, 3);
+}
+
+.Footer {
+  background-color: map-get($theme-colors, "info");
 }

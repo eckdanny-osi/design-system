@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import pick from 'lodash.pick'
 import PageTitle from '../../PageTitle'
 import Styles from '../Layout.module.scss'
 import Banner from '../Banner'
 import Body from '../Body'
+import Footer from '../Footer'
 import { renderElementOrComponent } from '../../utils'
 
 /**
@@ -22,9 +24,10 @@ const getBodyProps = props => ({
 
 const Page = props => {
   return (
-    <div className={Styles.Page}>
+    <div className={cn('h-100 d-flex flex-column', Styles.Page)}>
       {renderElementOrComponent(Banner, props, getBannerProps)}
       {renderElementOrComponent(Body, props, getBodyProps)}
+      <Footer />
     </div>
   )
 }
