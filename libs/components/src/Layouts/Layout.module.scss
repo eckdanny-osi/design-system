@@ -59,6 +59,7 @@
 
 .Body {
   margin-top: $banner-height;
+  margin-bottom: map-get($spacers, 3);
 }
 
 .Footer {

@@ -5,7 +5,7 @@ import Styles from '../Layout.module.scss'
 import { Container } from '@cwds/reactstrap'
 
 const Footer = () => (
-  <footer className={cn('footer mt-auto py-3', Styles.Footer)}>
+  <footer className={cn('mt-auto py-3', Styles.Footer)}>
     <Container>
       <span className="text-muted">
         <Logo />
