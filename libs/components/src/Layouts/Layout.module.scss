@@ -58,6 +58,7 @@
 }
 
 .Body {
+  flex: 1 0 auto;
   margin-top: $banner-height;
   margin-bottom: map-get($spacers, 3);
 }
