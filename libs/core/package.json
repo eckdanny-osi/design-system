@@ -1,30 +1,26 @@
 {
   "name": "@cwds/core",
-  "version": "0.8.2",
+  "version": "1.0.0-rc.4",
   "description": "> TODO: description",
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
-  "homepage": "",
   "license": "AGPL-3.0",
-  "main": "dist/core.js",
+  "main": "dist/index.js",
   "style": "dist/styles.css",
   "scripts": {
     "test": "echo \"No tests in @cwds/core\" && exit 0",
-    "prebuild": "rimraf dist",
-    "build": "run-s build:js build:css",
-    "build:js": "babel --root-mode upward js --out-dir dist --ignore \"src/**/*.stories.js\",\"src/**/*.test.js\"",
-    "build:css": "node-sass --recursive --output dist --source-map true --importer ../../sass-importers.js scss",
-    "prebuild:watch": "yarn prebuild",
-    "build:watch": "npm-run-all build:cjs --parallel build:watch:*",
-    "build:watch:css": "yarn build:css && yarn build:css -w",
-    "build:watch:js": "yarn build:js --watch",
-    "build:watch:js-sass": "onchange js/**/*.js -- touch -c scss/_custom.scss"
-  },
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
+    "prebuild": "yarn clean",
+    "build": "run-p build:*",
+    "build:esm": "babel --verbose --root-mode upward --out-dir dist src",
+    "clean": "rimraf dist",
+    "touch": "touch -c src/index.js",
+    "dev": "run-p dev:*",
+    "dev:esm": "yarn build:esm --watch",
+    "dev:scss": "onchange 'scss/**/*.scss' -- yarn touch"
   },
   "files": [
-    "dist"
+    "dist",
+    "scss",
+    "src"
   ],
   "publishConfig": {
     "access": "public"
@@ -36,5 +32,9 @@
     "babel-plugin-preval": "^3.0.1",
     "bootstrap": "^4.1.3",
     "color": "^3.1.0"
+  },
+  "dependencies": {
+    "lodash.camelcase": "^4.3.0",
+    "lodash.set": "^4.3.2"
   }
 }

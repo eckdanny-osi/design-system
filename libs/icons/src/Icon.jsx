@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DS from '@cwds/core'
+import { themeColors } from '@cwds/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Icon = props => {
@@ -32,7 +32,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   ...FontAwesomeIcon.defaultProps,
   color: 'info',
-  themeColors: DS.themeColors,
+  themeColors: themeColors,
 }
 
 export default Icon

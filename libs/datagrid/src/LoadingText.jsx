@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import Styles from './DataGrid.module.scss'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 
 const LoadingText = ({ className, style }) => (
   <div

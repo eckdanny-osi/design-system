@@ -7,7 +7,7 @@ import {
   CardFooter,
   Util,
 } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import CollapsibleCard from './CollapsibleCard'
 
 describe('CollapsibleCard', () => {

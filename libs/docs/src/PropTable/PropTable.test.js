@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import PropTable from './'
+import PropTable from './PropTable'
 
 describe('PropTable', () => {
   it('renders', () => {

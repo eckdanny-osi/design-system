@@ -30,7 +30,7 @@ export default ({ colors }) => {
                 >
                   &nbsp;
                 </div>
-                <div className="d-flex align-items-center">{label}</div>
+                <div className="flex-grow-1 text-center">{label}</div>
                 <div>
                   <code className="text-dark">{value}</code>
                 </div>

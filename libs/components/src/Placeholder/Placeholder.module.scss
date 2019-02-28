@@ -1,4 +1,4 @@
-@import '~@cwds/core/scss/base';
+@import "~@cwds/core/scss/base";
 
 .Placeholder {
   display: block;
@@ -7,10 +7,10 @@
 }
 
 .PlaceholderRow {
-  margin-bottom: -$spacer-2;
+  margin-bottom: -(map-get($map: $spacers, $key: 2));
   .PlaceholderCol {
     .Placeholder {
-      margin-bottom: $spacer-2;
+      margin-bottom: map-get($map: $spacers, $key: 2);
     }
   }
 }

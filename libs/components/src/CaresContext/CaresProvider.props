@@ -1,0 +1,13 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const FAKE = () => <div />
+
+FAKE.propTypes = {
+  /** Provide a Brand node or component to use instead of default */
+  Brand: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  /** Provide a UserMenu node or component to use instead of default */
+  UserMenu: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+}
+
+export default FAKE

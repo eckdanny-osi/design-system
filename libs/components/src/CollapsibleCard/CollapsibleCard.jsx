@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Button, Card, Collapse, CardHeader, Util } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import Styles from './CollapsibleCard.module.scss'
 
 const CollapsibleCard = ({

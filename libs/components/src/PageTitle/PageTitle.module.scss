@@ -1,0 +1,8 @@
+@import "~@cwds/core/scss/base";
+
+.PageTitle {
+  color: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
