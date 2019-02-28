@@ -2,20 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Container, Row, Col } from '@cwds/reactstrap'
-import { AlertUncontrolled as Alert } from '../../Alert'
 import { renderElementOrComponent } from '../../utils'
 import Styles from '../Layout.module.scss'
 
-const Messages = ({ className, ...props }) => (
-  <div className={cn(className, Styles.Messages)} {...props} />
-)
-
-const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
+const Body = ({ layout, sidenav: SideNav, main: Main, children, Message }) => {
   return (
     <div className={cn(Styles.Body)}>
       <Container>
         {layout === 'dashboard' && (
-          <div role="main">{renderElementOrComponent(children || Main)}</div>
+          <div role="main">
+            {renderElementOrComponent(Message)}
+            {renderElementOrComponent(children || Main)}
+          </div>
         )}
         {layout === 'subroutes' && (
           <Row>
@@ -23,10 +21,7 @@ const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
               {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              <Messages>
-                <Alert color="success">Hello</Alert>
-                <Alert color="danger">Goodbye</Alert>
-              </Messages>
+              {renderElementOrComponent(Message)}
               {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
@@ -37,10 +32,7 @@ const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
               {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              <Messages>
-                <Alert color="success">Hello</Alert>
-                <Alert color="danger">Goodbye</Alert>
-              </Messages>
+              {renderElementOrComponent(Message)}
               {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
@@ -59,6 +51,7 @@ Body.propTypes = {
   layout: PropTypes.oneOf(['dashboard', 'subroutes', 'jumpnav']),
   sidenav: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   main: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  Message: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 }
 
 Body.defaultProps = {
