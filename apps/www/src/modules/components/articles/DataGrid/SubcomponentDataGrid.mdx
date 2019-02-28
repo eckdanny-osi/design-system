@@ -15,14 +15,28 @@ More info in [React Table SubComponent](https://github.com/tannerlinsley/react-t
 ```jsx
 <Card>
   <CardHeader>
-    <CardTitle>People</CardTitle>
+    <CardTitle>Books</CardTitle>
   </CardHeader>
   <CardBody className="pt-0">
     <DataGrid
       data={data}
       pivotBy={["author"]}
       columns={[
-        { Header: "Author", accessor: "author" },
+        {
+          Header: "Author",
+          accessor: "author",
+          Expander: ({ isExpanded }) =>
+            isExpanded ? (
+              <Icon className="mr-3" name={"chevron-down"} sz={"sm"} />
+            ) : (
+              <Icon
+                className="mr-3"
+                name={"chevron-down"}
+                sz={"sm"}
+                rotation={Util.ROTATION.LEFT}
+              />
+            )
+        },
         { Header: "Book", accessor: "book" },
         {
           Header: "Inventory",
@@ -55,8 +69,9 @@ const PeopleCard = () => {
 ```
 
 <Alert color="info">
-  <strong>Note</strong>: You can customize the expander by setting it{" "}
-  <code>true</code> and overriding the <code>Expander</code>
+  <strong>Note</strong>: Please customize the expander by setting it{" "}
+  <code>true</code> and overriding the <code>Expander</code> so it follows the
+  Design Guide System
 </Alert>
 
 ```jsx

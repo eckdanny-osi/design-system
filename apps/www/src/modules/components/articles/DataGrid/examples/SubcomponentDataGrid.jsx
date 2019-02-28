@@ -19,15 +19,12 @@ const columns = [
     expander: true,
     Header: () => <div>More</div>,
     width: 70,
-    Expander: ({ isExpanded }) => (
-      <div>
-        {isExpanded ? (
-          <Icon name={'chevron-down'} sz={'sm'} />
-        ) : (
-          <Icon name={'chevron-down'} sz={'sm'} rotation={Util.ROTATION.LEFT} />
-        )}
-      </div>
-    ),
+    Expander: ({ isExpanded }) =>
+      isExpanded ? (
+        <Icon name={'chevron-down'} sz={'sm'} />
+      ) : (
+        <Icon name={'chevron-down'} sz={'sm'} rotation={Util.ROTATION.LEFT} />
+      ),
     style: { textAlign: 'center' },
   },
   { Header: 'Last', accessor: 'name.last' },
@@ -48,15 +45,15 @@ const subcomponent = row => {
   const { company, email, phone } = row.original
   return (
     <Row className="pl-3">
-      <Col className="p-2" md="4">
+      <Col className="pl-0 offset-sm-1" md="2">
         <Label>Company</Label>
         <div>{company}</div>
       </Col>
-      <Col className="p-2" md="4">
+      <Col className="pl-3" md="4">
         <Label>Email</Label>
         <div>{email}</div>
       </Col>
-      <Col className="p-2" md="4">
+      <Col className="pl-4" md="5">
         <Label>Phone</Label>
         <div>{phone}</div>
       </Col>

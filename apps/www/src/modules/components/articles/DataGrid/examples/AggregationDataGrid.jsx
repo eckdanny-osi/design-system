@@ -5,6 +5,8 @@ import {
   CardTitle,
   CardBody,
   DataGrid,
+  Icon,
+  Util,
 } from '@cwds/components'
 
 const data = [
@@ -111,7 +113,21 @@ const BooksCard = row => {
           data={data}
           pivotBy={['author']}
           columns={[
-            { Header: 'Author', accessor: 'author' },
+            {
+              Header: 'Author',
+              accessor: 'author',
+              Expander: ({ isExpanded }) =>
+                isExpanded ? (
+                  <Icon className="mr-3" name={'chevron-down'} sz={'sm'} />
+                ) : (
+                  <Icon
+                    className="mr-3"
+                    name={'chevron-down'}
+                    sz={'sm'}
+                    rotation={Util.ROTATION.LEFT}
+                  />
+                ),
+            },
             { Header: 'Book', accessor: 'book' },
             {
               Header: 'Inventory',
