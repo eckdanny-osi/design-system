@@ -32,11 +32,29 @@ describe('Body', () => {
       ).toBe(false)
     })
 
+    it('renders message element', () => {
+      const dummyMessage = <div id="my-message">This is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find('#my-message')
+          .exists()
+      ).toBe(true)
+    })
+
     it('supports functional main', () => {
       const Main = () => <div id="my-main">Hello, world!</div>
       expect(
         shallow(<Body layout={layout} main={Main} />)
           .find(Main)
+          .exists()
+      ).toBe(true)
+    })
+
+    it('supports functional message', () => {
+      const dummyMessage = () => <div id="my-message">his is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find(dummyMessage)
           .exists()
       ).toBe(true)
     })
@@ -63,6 +81,15 @@ describe('Body', () => {
       ).toBe(true)
     })
 
+    it('renders message element', () => {
+      const dummyMessage = <div id="my-message">This is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find('#my-message')
+          .exists()
+      ).toBe(true)
+    })
+
     it('supports functional main', () => {
       const Main = () => <div id="my-main">Hello, world!</div>
       expect(
@@ -77,6 +104,14 @@ describe('Body', () => {
       expect(
         shallow(<Body layout={layout} sidenav={SideNav} />)
           .find(SideNav)
+          .exists()
+      ).toBe(true)
+    })
+    it('supports functional message', () => {
+      const dummyMessage = () => <div id="my-message">his is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find(dummyMessage)
           .exists()
       ).toBe(true)
     })
@@ -103,6 +138,15 @@ describe('Body', () => {
       ).toBe(true)
     })
 
+    it('renders message element', () => {
+      const dummyMessage = <div id="my-message">This is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find('#my-message')
+          .exists()
+      ).toBe(true)
+    })
+
     it('supports functional main', () => {
       const Main = () => <div id="my-main">Hello, world!</div>
       expect(
@@ -117,6 +161,14 @@ describe('Body', () => {
       expect(
         shallow(<Body layout={layout} sidenav={SideNav} />)
           .find(SideNav)
+          .exists()
+      ).toBe(true)
+    })
+    it('supports functional message', () => {
+      const dummyMessage = () => <div id="my-message">his is a message</div>
+      expect(
+        shallow(<Body layout={layout} Message={dummyMessage} />)
+          .find(dummyMessage)
           .exists()
       ).toBe(true)
     })

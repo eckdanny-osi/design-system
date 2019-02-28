@@ -18,7 +18,7 @@ const getBannerProps = props => ({
 })
 
 const getBodyProps = props => ({
-  ...pick(props, ['sidenav', 'layout']),
+  ...pick(props, ['sidenav', 'layout', 'Message']),
   main: props.main || props.children,
 })
 
@@ -40,7 +40,7 @@ Page.propTypes = {
     'PageActions',
     'Breadcrumb',
   ]),
-  ...pick(Body.propTypes, ['sidenav', 'layout', 'main', 'children']),
+  ...pick(Body.propTypes, ['sidenav', 'layout', 'main', 'children', 'Message']),
   /** Shorthand for simple string PageTitles */
   title: PropTypes.string,
   // Banner: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
