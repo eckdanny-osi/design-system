@@ -3,6 +3,7 @@ import Components from '!babel-loader!@mdx-js/loader!./articles/Components.mdx'
 import DataGridsPage from '!babel-loader!@mdx-js/loader!./articles/DataGrid/DataGrid.mdx'
 import SimpleDataGrid from '!babel-loader!@mdx-js/loader!./articles/DataGrid/SimpleDataGrid.mdx'
 import BasicSearchDataGrid from '!babel-loader!@mdx-js/loader!./articles/DataGrid/BasicSearchDataGrid.mdx'
+import SubcomponentDataGrid from '!babel-loader!@mdx-js/loader!./articles/DataGrid/SubcomponentDataGrid.mdx'
 import Avatar from '!babel-loader!@mdx-js/loader!./articles/Avatar/Avatar.mdx'
 import Alert from '!babel-loader!@mdx-js/loader!./articles/Alert/Alert.mdx'
 import Badge from '!babel-loader!@mdx-js/loader!./articles/Badge/Badge.mdx'
@@ -111,6 +112,11 @@ const routes = {
           title: 'DataGrid with Basic Search',
           path: '/basic-search',
           component: BasicSearchDataGrid,
+        },
+        {
+          title: 'DataGrid with Sub-components',
+          path: '/subcomponent-render',
+          component: SubcomponentDataGrid,
         },
         // {
         //   title: 'Advanced Search (WiP)',
