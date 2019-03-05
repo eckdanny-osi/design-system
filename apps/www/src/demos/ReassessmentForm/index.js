@@ -1,6 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Breadcrumb, BreadcrumbItem, IconButton, Page } from '@cwds/components'
+import {
+  Alert,
+  Breadcrumb,
+  BreadcrumbItem,
+  IconButton,
+  Page,
+} from '@cwds/components'
 
 import ClientInfo from './ClientInfo'
 import AssesmentHistory from './AssesmentHistory'
@@ -24,6 +30,7 @@ export default () => (
         CLIENT SEARCH
       </IconButton>
     }
+    message={<Alert color="success">Hello</Alert>}
     main={() => (
       <div>
         <ClientInfo />
