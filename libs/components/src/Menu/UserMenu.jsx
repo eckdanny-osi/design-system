@@ -29,7 +29,7 @@ export default UserMenu
 function getDropdownToggleProps(props) {
   return {
     size: 'sm',
-    className: 'bg-transparent border-0 text-white',
+    className: 'bg-transparent border-0 text-white d-flex align-items-center',
     children: (
       <Fragment>
         <span className="mr-2 text-capitalize">{props.label}</span>
