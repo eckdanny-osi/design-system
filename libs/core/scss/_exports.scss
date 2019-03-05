@@ -1,0 +1,40 @@
+@import './base';
+
+:export {
+
+  // Grays
+  @each $key, $value in $grays {
+    grays_#{$key}: $value;
+  }
+
+  // Colors
+  @each $key, $value in $colors {
+    colors_#{$key}: $value;
+  }
+
+  // Theme Colors
+  @each $key, $value in $theme-colors {
+    theme-colors_#{$key}: $value;
+  }
+
+  // Spacers
+  @each $key, $value in $spacers {
+    spacers_#{$key}: $value;
+  }
+
+  // Grid Breakpoints
+  @each $key, $value in $grid-breakpoints {
+    grid-breakpoints_#{$key}: $value;
+  }
+
+  // Options
+  options_enable-caret:              $enable-caret;
+  options_enable-rounded:            $enable-rounded;
+  options_enable-shadows:            $enable-shadows;
+  options_enable-gradients:          $enable-gradients;
+  options_enable-transitions:        $enable-transitions;
+  options_enable-hover-media-query:  $enable-hover-media-query;
+  options_enable-grid-classes:       $enable-grid-classes;
+  options_enable-print-styles:       $enable-print-styles;
+
+}

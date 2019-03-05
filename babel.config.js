@@ -1,19 +1,25 @@
+const REGEXP_STORYBOOK = /\.stories\.[jt]sx?$/
+const REGEXP_TESTS = [/\/__tests__\/.*\.[jt]sx?$/, /.*(spec|test).[tj]sx?$/]
+
 module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
+  babelrcRoots: ['.', './libs/*'],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+      },
+    ],
+    '@babel/preset-react',
+  ],
   plugins: [
     'preval',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
-    [
-      'transform-rename-import',
-      {
-        original: '^(.+?)\\.scss$',
-        replacement: '$1.css',
-      },
-    ],
   ],
   env: {
     production: {
+      ignore: [REGEXP_STORYBOOK, ...REGEXP_TESTS],
       plugins: [
         [
           'transform-remove-console',
@@ -22,6 +28,13 @@ module.exports = {
           },
         ],
       ],
+    },
+    test: {
+      ignore: [REGEXP_STORYBOOK],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+    },
+    development: {
+      ignore: [REGEXP_STORYBOOK, ...REGEXP_TESTS],
     },
   },
 }

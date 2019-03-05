@@ -1,0 +1,93 @@
+import { Alert } from "@cwds/components";
+import { CodeBlock } from "@cwds/docs";
+import AggregationDataGrid from "./examples/AggregationDataGrid";
+import SubcomponentDataGrid from "./examples/SubcomponentDataGrid";
+
+Data grid can aggregate, pivot and render sub-components by adding a Subcomponent props.
+More info in [React Table SubComponent](https://github.com/tannerlinsley/react-table/tree/v6#sub-tables-and-sub-components)
+
+### Examples
+
+#### Aggregation and Pivot
+
+<AggregationDataGrid />
+
+```jsx
+<Card>
+  <CardHeader>
+    <CardTitle>Books</CardTitle>
+  </CardHeader>
+  <CardBody className="pt-0">
+    <DataGrid
+      data={data}
+      pivotBy={["author"]}
+      columns={[
+        {
+          Header: "Author",
+          accessor: "author",
+          Expander: ({ isExpanded }) =>
+            isExpanded ? (
+              <Icon className="mr-3" name={"chevron-down"} sz={"sm"} />
+            ) : (
+              <Icon
+                className="mr-3"
+                name={"chevron-down"}
+                sz={"sm"}
+                rotation={Util.ROTATION.LEFT}
+              />
+            )
+        },
+        { Header: "Book", accessor: "book" },
+        {
+          Header: "Inventory",
+          accessor: "inventory",
+          aggregate: vals => vals.reduce((acc, cur) => acc + cur)
+        }
+      ]}
+    />
+  </CardBody>
+</Card>
+```
+
+#### Sub-component Render
+
+<SubcomponentDataGrid />
+
+```jsx
+const PeopleCard = () => {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>People</CardTitle>
+      </CardHeader>
+      <CardBody className="pt-0">
+        <DataGrid data={data} columns={columns} SubComponent={subcomponent} />
+      </CardBody>
+    </Card>
+  );
+};
+```
+
+<Alert color="info">
+  <strong>Note</strong>: Please customize the expander by setting it{" "}
+  <code>true</code> and overriding the <code>Expander</code> so it follows the
+  Design Guide System
+</Alert>
+
+```jsx
+{
+  expander: true,
+  Header: () => <div>More</div>,
+  width: 70,
+  Expander: ({ isExpanded }) => (
+    <div>
+      {isExpanded ? (
+        <Icon name={'chevron-down'} sz={'sm'} />
+      ) : (
+        <Icon name={'chevron-down'} sz={'sm'} rotation={Util.ROTATION.LEFT} />
+      )}
+    </div>
+  ),
+  style: { textAlign: 'center' },
+}
+```

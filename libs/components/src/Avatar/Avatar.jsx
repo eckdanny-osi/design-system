@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 import Styles from './Avatar.module.scss'
 import { SIZES_ALL, isValidSize } from '../utils/design-system'
 import DS from '@cwds/core'
