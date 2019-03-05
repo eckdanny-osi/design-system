@@ -23,9 +23,7 @@ const Banner = props => {
       </div>
       {props.Breadcrumb !== false && (
         <div className={cn(Styles.BreadcrumbContainer)}>
-          <Container style={{ overflowX: 'scroll' }}>
-            {renderElementOrComponent(props.Breadcrumb)}
-          </Container>
+          <Container>{renderElementOrComponent(props.Breadcrumb)}</Container>
         </div>
       )}
     </div>
