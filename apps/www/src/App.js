@@ -14,6 +14,7 @@ import Components from './modules/components'
 import AboutCares from './modules/about-cares'
 import FacilityProfile from './demos/FacilityProfile'
 import ReassessmentForm from './demos/ReassessmentForm'
+import MessageArea from './demos/MesssageArea'
 import PageTemplates from './examples/PageTemplates'
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
                   path="/demo/reassessment-form"
                   component={ReassessmentForm}
                 />
+                <Route path="/demo/message-area" component={MessageArea} />
                 <Route
                   path="/__examples__/page-templates"
                   component={PageTemplates}
