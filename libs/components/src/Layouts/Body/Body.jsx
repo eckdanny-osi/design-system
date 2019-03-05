@@ -2,33 +2,38 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Container, Row, Col } from '@cwds/reactstrap'
+import { renderElementOrComponent } from '../../utils'
 import Styles from '../Layout.module.scss'
 
-const Body = ({ layout, sidenav: SideNav, main: Main, children }) => {
-  const sidenav = typeof SideNav === 'function' ? <SideNav /> : SideNav
-  const main = typeof Main === 'function' ? <Main /> : Main
-
+const Body = ({ layout, sidenav: SideNav, main: Main, children, message }) => {
   return (
-    <div className={cn('pt-3', Styles.Body)}>
+    <div className={cn(Styles.Body)}>
       <Container>
-        {layout === 'dashboard' && <div role="main">{children || main}</div>}
+        {layout === 'dashboard' && (
+          <div role="main">
+            <div className={Styles.Messages}>{message}</div>
+            {renderElementOrComponent(children || Main)}
+          </div>
+        )}
         {layout === 'subroutes' && (
           <Row>
             <Col role="navigation" sm={5} md={3}>
-              {sidenav}
+              {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {children || main}
+              <div className={Styles.Messages}>{message}</div>
+              {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
         )}
         {layout === 'jumpnav' && (
           <Row>
             <Col role="navigation" sm={5} md={3}>
-              {sidenav}
+              {renderElementOrComponent(SideNav)}
             </Col>
             <Col role="main" sm={7} md={9}>
-              {children || main}
+              <div className={Styles.Messages}>{message}</div>
+              {renderElementOrComponent(children || Main)}
             </Col>
           </Row>
         )}
@@ -46,6 +51,7 @@ Body.propTypes = {
   layout: PropTypes.oneOf(['dashboard', 'subroutes', 'jumpnav']),
   sidenav: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   main: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  message: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 }
 
 Body.defaultProps = {

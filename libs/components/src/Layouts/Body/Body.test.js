@@ -32,6 +32,12 @@ describe('Body', () => {
       ).toBe(false)
     })
 
+    it('renders message element', () => {
+      const myMessage = <div id="my-message" />
+      const wrapper = shallow(<Body layout="dashboard" message={myMessage} />)
+      expect(wrapper.find('#my-message').length).toBe(1)
+    })
+
     it('supports functional main', () => {
       const Main = () => <div id="my-main">Hello, world!</div>
       expect(
@@ -62,7 +68,11 @@ describe('Body', () => {
           .exists()
       ).toBe(true)
     })
-
+    it('renders message element', () => {
+      const myMessage = <div id="my-message" />
+      const wrapper = shallow(<Body layout="dashboard" message={myMessage} />)
+      expect(wrapper.find('#my-message').length).toBe(1)
+    })
     it('supports functional main', () => {
       const Main = () => <div id="my-main">Hello, world!</div>
       expect(
@@ -101,6 +111,12 @@ describe('Body', () => {
           .find('#my-sidenav')
           .exists()
       ).toBe(true)
+    })
+
+    it('renders message element', () => {
+      const myMessage = <div id="my-message" />
+      const wrapper = shallow(<Body layout="dashboard" message={myMessage} />)
+      expect(wrapper.find('#my-message').length).toBe(1)
     })
 
     it('supports functional main', () => {

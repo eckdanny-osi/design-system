@@ -1,12 +1,14 @@
 @import "~@cwds/core/scss/base";
 
+$offset: $banner-height + map-get($spacers, 3);
+
 // Anchor link fix
 :global {
   :target:before {
     display: block;
     content: " ";
-    margin-top: -($banner-height + map-get($spacers, 3));
-    padding-top: $banner-height + map-get($spacers, 3);
+    margin-top: -($offset);
+    padding-top: $offset;
     visibility: hidden;
   }
 }
@@ -61,8 +63,15 @@
   flex: 1 0 auto; // Fix for IE browser
   margin-top: $banner-height;
   margin-bottom: map-get($spacers, 3);
+  padding-top: map-get($spacers, 3);
 }
 
 .Footer {
   background-color: map-get($theme-colors, "info");
+}
+
+.Messages {
+  position: sticky;
+  top: $offset;
+  z-index: 99999;
 }

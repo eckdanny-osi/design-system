@@ -59,12 +59,18 @@ describe('Page', () => {
 
   it('passes bodyProps to Body', () => {
     const wrapper = shallow(
-      <Page main="my-main" sidenav="my-sidenav" layout="dashboard" />
+      <Page
+        main="my-main"
+        sidenav="my-sidenav"
+        layout="dashboard"
+        message="message"
+      />
     )
     const body = wrapper.find(Body)
     expect(body.prop('main')).toEqual('my-main')
     expect(body.prop('sidenav')).toEqual('my-sidenav')
     expect(body.prop('layout')).toEqual('dashboard')
+    expect(body.prop('message')).toEqual('message')
   })
 
   it('accepts children as an alias for `main`', () => {
