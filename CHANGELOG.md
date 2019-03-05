@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/ca-cwds/design-system/compare/v0.8.4...v0.8.5) (2019-02-26)
+
+
+### Bug Fixes
+
+* **datagrid:** fix flex layout for IE ([#430](https://github.com/ca-cwds/design-system/issues/430)) ([34c7ce5](https://github.com/ca-cwds/design-system/commit/34c7ce5))
+
+
+
+
+
+## [0.8.4](https://github.com/ca-cwds/design-system/compare/v0.8.3...v0.8.4) (2019-02-20)
+
+
+### Bug Fixes
+
+* **components:** Update breadcrumb overflow styles ([#425](https://github.com/ca-cwds/design-system/issues/425)) ([60b4cb6](https://github.com/ca-cwds/design-system/commit/60b4cb6))
+
+
+
+
+
+## [0.8.3](https://github.com/ca-cwds/design-system/compare/v0.8.2...v0.8.3) (2019-02-12)
+
+
+### Bug Fixes
+
+* **build:** Fix no magic numbers lint ([#405](https://github.com/ca-cwds/design-system/issues/405)) ([7e9d6fa](https://github.com/ca-cwds/design-system/commit/7e9d6fa))
+
+
+
+
+
 ## [0.8.2](https://github.com/ca-cwds/design-system/compare/v0.8.1...v0.8.2) (2019-02-07)
 
 
