@@ -140,6 +140,7 @@ class Pagination extends Component {
                 onChange={({ value }) => onPageSizeChange(Number(value))}
                 clearable={false}
                 searchable={false}
+                menuPlacement="auto"
               />
             </div>
           )}
