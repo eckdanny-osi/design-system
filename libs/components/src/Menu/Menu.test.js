@@ -44,6 +44,21 @@ describe('Menu', () => {
     expect(wrapper.find(Icon).prop('name')).toBe('ellipsis-v')
   })
 
+  it('adds discernable text to kebab menu', () => {
+    const wrapper = shallow(
+      <Menu>
+        <MenuItem>Foo</MenuItem>
+        <MenuItem>Bar</MenuItem>
+      </Menu>
+    )
+    expect(
+      wrapper
+        .find(DropdownToggle)
+        .find('.sr-only')
+        .text()
+    ).toBe('Contextual Actions')
+  })
+
   it('adds an Arrow when open and no label is present', () => {
     const wrapper = shallow(
       <Menu isOpen={true}>

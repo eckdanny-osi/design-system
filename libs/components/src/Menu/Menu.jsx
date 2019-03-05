@@ -64,7 +64,12 @@ function getDropdownProps(props) {
 function getDropdownToggleProps(props) {
   let children
   if (!props.label) {
-    children = <Icon name="ellipsis-v" color={getIconContrast(props.color)} />
+    children = (
+      <Fragment>
+        <span className="sr-only">Contextual Actions</span>
+        <Icon name="ellipsis-v" color={getIconContrast(props.color)} />
+      </Fragment>
+    )
   } else {
     children = (
       <Fragment>
