@@ -14,6 +14,7 @@
     "clean:git": "git clean -fdx packages",
     "clean:pkgs": "lerna clean --yes",
     "clean:libs": "lerna run --scope @cwds/* clean",
+    "coverage": "open coverage/lcov-report/index.html",
     "pretest:libs": "yarn build:libs",
     "test:libs": "yarn test --projects libs/*",
     "test:all": "CI=true lerna run --parallel test ",
