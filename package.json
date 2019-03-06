@@ -20,7 +20,7 @@
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "start": "cd apps/www && yarn react-scripts start",
     "dev": "lerna run --stream --parallel --scope @cwds/* dev",
-    "prerelease": "yarn lint:libs && yarn test:libs && yarn NODE_ENV=production build:libs",
+    "prerelease": "yarn lint:libs && yarn test:libs && NODE_ENV=production yarn build:libs",
     "release": "lerna publish --conventional-commits --force-publish",
     "lint": "eslint --ext .jsx,.js libs/ apps/www/src/",
     "lint:libs": "eslint --ext .jsx,.js libs/",
