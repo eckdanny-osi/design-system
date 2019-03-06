@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Arrow } from 'react-popper'
-import Icon, { getIconContrast } from '@cwds/icons'
+import { Icon, getIconContrast } from '@cwds/icons'
 import { Dropdown, DropdownMenu, DropdownToggle } from '@cwds/reactstrap'
 import pick from 'lodash.pick'
-import Styles from '@cwds/core/dist/bootstrap-cares.module.css'
+import Styles from '@cwds/core/scss/bootstrap-cares.module.scss'
 
 const propTypes = {
   getDropdownProps: PropTypes.func.isRequired,
@@ -64,7 +64,12 @@ function getDropdownProps(props) {
 function getDropdownToggleProps(props) {
   let children
   if (!props.label) {
-    children = <Icon name="ellipsis-v" color={getIconContrast(props.color)} />
+    children = (
+      <Fragment>
+        <span className="sr-only">Contextual Actions</span>
+        <Icon name="ellipsis-v" color={getIconContrast(props.color)} />
+      </Fragment>
+    )
   } else {
     children = (
       <Fragment>
@@ -78,8 +83,8 @@ function getDropdownToggleProps(props) {
     )
   }
   return {
-    ...pick(props, Object.keys(DropdownToggle.propTypes)),
-    caret: true,
+    ...pick(props, [...Object.keys(DropdownToggle.propTypes), 'size']),
+    caret: false,
     children,
   }
 }

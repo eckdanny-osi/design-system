@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import RolodexHeader from './RolodexHeader'
 import { CardHeader, Util } from '@cwds/reactstrap'
-import Icon from '@cwds/icons'
+import { Icon } from '@cwds/icons'
 
 describe('RolodexHeader', () => {
   it('exists', () => {

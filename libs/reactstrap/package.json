@@ -1,6 +1,6 @@
 {
   "name": "@cwds/reactstrap",
-  "version": "0.8.5",
+  "version": "1.0.0-rc.5",
   "description": "reactstrap components for CWS-CARES",
   "keywords": [
     "reactstrap"
@@ -8,28 +8,32 @@
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "homepage": "https://cws-cares.netlify.com/libs/reactstrap",
   "license": "AGPL-3.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "directories": {
-    "lib": "dist"
-  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "scss",
+    "src"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "jest",
-    "build:watch": "yarn build --watch",
-    "prebuild": "rimraf dist",
-    "build": "rollup -c rollup.config.js"
+    "prebuild": "yarn clean",
+    "build": "run-p build:*",
+    "build:esm": "babel --verbose --root-mode upward --out-dir dist src",
+    "build:scss": "cpx --verbose \"src/**/*.{css,scss}\" dist",
+    "build:cjs": "rollup -c",
+    "clean": "rimraf dist",
+    "dev": "run-p dev:*",
+    "dev:esm": "yarn build:esm --watch",
+    "dev:scss": "yarn build:scss --watch"
   },
   "dependencies": {
     "reactstrap": "^7.1.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.2",
     "react": "^16.4",
     "react-dom": "^16.4"
   }

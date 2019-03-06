@@ -1,0 +1,70 @@
+import { Badge } from "@cwds/components";
+import { DemoCard, PropTable } from "@cwds/docs";
+import Docgen from "../ReactDogenInfo.js";
+
+## Synopsis
+
+Use a `Badge` to enumerate the common classifications of a type of thing.
+
+<DemoCard>
+  <Badge color="primary">Badge</Badge>
+</DemoCard>
+
+```jsx
+import { Badge } from "@cwds/components";
+```
+
+## Props
+
+<PropTable docgen={Docgen.Badge} />
+
+<!--
+## Usage
+
+@todo -->
+
+## Examples
+
+Alerts should not be used for field level validation - see invalid fields for this.
+
+### Typical
+
+<Badge color="info" className="mb-3">
+  active
+</Badge>
+
+### Colors
+
+<div className="mb-3">
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
+    d => (
+      <Badge className="mr-1" key={d} color={d}>
+        {d}
+      </Badge>
+    )
+  )}
+</div>
+
+### Pills
+
+<div className="mb-3">
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
+    d => (
+      <Badge className="mr-1" pill key={d} color={d}>
+        {d}
+      </Badge>
+    )
+  )}
+</div>
+
+### Links
+
+<div className="mb-3">
+  {["info", "success", "primary", "warning", "danger", "dark", "light"].map(
+    d => (
+      <Badge className="mr-1" href="badge" key={d} color={d}>
+        {d}
+      </Badge>
+    )
+  )}
+</div>

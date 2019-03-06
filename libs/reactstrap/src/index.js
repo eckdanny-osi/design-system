@@ -5,7 +5,6 @@
  *   - Alert
  *   - CardBlock
  *   - CardColumns
- *   - CardDeck
  *   - CardGroup
  *   - CardImg
  *   - CardImgOverlay
@@ -53,6 +52,7 @@ export {
   ButtonToolbar,
   Card,
   CardBody,
+  CardDeck,
   CardFooter,
   CardHeader,
   Col,
