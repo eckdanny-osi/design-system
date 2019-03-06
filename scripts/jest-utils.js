@@ -19,12 +19,12 @@ function getDefault() {
       '^@cwds\\/([^/]+)': '<rootDir>/../$1/src',
     },
     transform: {
-      '^.+\\.jsx?$': 'babel-jest',
+      '^.+\\.(j|t)sx?$': 'babel-jest',
     },
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
     coverageReporters: ['lcov'],
     coverageDirectory: '<rootDir>/../../coverage',
-    moduleFileExtensions: ['js', 'jsx', 'css', 'scss'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'css', 'scss'],
   }
 }
 
