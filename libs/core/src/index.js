@@ -5,7 +5,8 @@ const tildeImporter = require('node-sass-tilde-importer')
 const { EOL } = require('os')
 const setWith = require('lodash.setwith')
 const camelCase = require('lodash.camelcase')
-const Color = require('color')
+const ColorString = require('color-string')
+const ColorConvert = require('color-convert')
 
 module.exports = sass
   .renderSync({
@@ -25,7 +26,8 @@ module.exports = sass
 
       // force hex, note: just fixing known broken vals here. Changing in scss could break here
       if (['whitesmoke', 'gray'].indexOf(coerced) > -1) {
-        coerced = Color(coerced).hex()
+        const { model, value } = ColorString.get(coerced)
+        coerced = ColorConvert[model].hex(value)
       }
 
       return setWith(
