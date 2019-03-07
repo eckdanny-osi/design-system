@@ -5,7 +5,10 @@ import cn from 'classnames'
 import { config } from './DataGridConfig'
 
 config() // side-effect
-
 export default ({ className, ...props }) => (
-  <ReactTable className={cn(className, '-highlight')} {...props} />
+  <ReactTable
+    className={cn(className, '-highlight')}
+    {...props}
+    showPagination={!(props.data.length < 10)}
+  />
 )
