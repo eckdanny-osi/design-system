@@ -11,11 +11,16 @@ const keyCodes = Util.keyCodes
 
 class Rolodex extends Component {
   static propTypes = {
-    exclusive: PropTypes.bool,
-    collapsible: PropTypes.bool,
     animate: PropTypes.bool,
-    level: PropTypes.number,
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]),
+    className: PropTypes.string,
+    collapsible: PropTypes.bool,
+    exclusive: PropTypes.bool,
     initOpenKeys: PropTypes.arrayOf(PropTypes.string),
+    level: PropTypes.number,
   }
   static defaultProps = {
     initOpenKeys: [],
