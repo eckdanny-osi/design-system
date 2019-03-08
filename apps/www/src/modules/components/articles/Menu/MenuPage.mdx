@@ -1,6 +1,10 @@
 import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
+import { Link } from "react-router-dom";
 import Docgen from "../ReactDogenInfo.js";
 import {
+  Avatar,
+  Card,
+  CardBody,
   UncontrolledMenu as Menu,
   MenuItem,
   UserMenu,
@@ -52,9 +56,12 @@ For relatively broad contexts:
 For relatively narrow contexts (e.g.; item in a list view):
 
 <DemoCard>
-  <div>
-    <IconMenuExample />
-  </div>
+  <Card>
+    <CardBody className="d-flex align-items-center justify-content-between">
+      <div>Foo</div>
+      <IconMenuExample />
+    </CardBody>
+  </Card>
 </DemoCard>
 
 <CodeBlock>{IconMenuExampleSrc}</CodeBlock>
@@ -77,9 +84,9 @@ The `UserMenu` is a unique case of the `Menu` component. The `caret`, and `right
 
 <DemoCard>
   <div className="text-right p-2 bg-info">
-    <UncontrolledUserMenu label="Joe">
-      <MenuItem>Foo</MenuItem>
-      <MenuItem>Bar</MenuItem>
+    <UncontrolledUserMenu label="John Smith" avatar={<Avatar text="JS" />}>
+      <MenuItem>Foo Action</MenuItem>
+      <MenuItem>Bar Action</MenuItem>
       <MenuItem tag="a" href="/logout">
         Logout
       </MenuItem>
@@ -88,12 +95,16 @@ The `UserMenu` is a unique case of the `Menu` component. The `caret`, and `right
 </DemoCard>
 
 ```jsx
-<UncontrolledUserMenu label="Joe">
+<UncontrolledUserMenu label="John Smith" avatar={<Avatar text="JS" />}>
+  <MenuItem>Foo Action</MenuItem>
+  <MenuItem>Bar Action</MenuItem>
   <MenuItem tag="a" href="/logout">
     Logout
   </MenuItem>
 </UncontrolledUserMenu>
 ```
+
+The provided `Avatar` node must abide by the same rules for _any_ `Avatar` instance (giving priority to images if available, then initials if available, or a generic icon if neither are available). See the <Link to="/components/avatar"><code>Avatar</code> article</Link> for details.
 
 ## Props
 
