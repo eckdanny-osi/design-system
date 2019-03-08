@@ -8,9 +8,13 @@ class Article extends Component {
   constructor(props) {
     super(props)
     this.state = { layout: 'subroutes' }
+    this.handleToggleClick = this.handleToggleClick.bind(this)
   }
 
+  handleToggleClick = layout => _ => this.setState({ layout })
+
   render() {
+    const isSubRoute = this.state.layout === 'subroutes'
     const { title, main, sidebar, breadcrumbs } = this.props
     return (
       <Page
@@ -24,16 +28,22 @@ class Article extends Component {
         PageActions={
           <ButtonGroup>
             <Button
+              active={isSubRoute}
+              aria-label="Side Nav"
+              aria-pressed={isSubRoute}
               color="primary"
+              onClick={this.handleToggleClick('subroutes')}
               size="sm"
-              onClick={() => this.setState({ layout: 'subroutes' })}
             >
               Side Nav
             </Button>
             <Button
+              active={!isSubRoute}
+              aria-label="Full Width"
+              aria-pressed={!isSubRoute}
               color="primary"
               size="sm"
-              onClick={() => this.setState({ layout: 'dashboard' })}
+              onClick={this.handleToggleClick('dashboard')}
             >
               Full Width
             </Button>
