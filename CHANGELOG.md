@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ca-cwds/design-system/compare/v1.0.0...v1.1.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **build:** add tsc to root for @cwds/forms ([#447](https://github.com/ca-cwds/design-system/issues/447)) ([40ad24b](https://github.com/ca-cwds/design-system/commit/40ad24b))
+* **build:** exact versions for inter-package deps ([#449](https://github.com/ca-cwds/design-system/issues/449)) ([4c747b4](https://github.com/ca-cwds/design-system/commit/4c747b4))
+* **components:** fix UserMenu support for Avatar ([#448](https://github.com/ca-cwds/design-system/issues/448)) ([cf9db36](https://github.com/ca-cwds/design-system/commit/cf9db36))
+* **components,icons,reactstrap:** add tests to assert named exports ([#413](https://github.com/ca-cwds/design-system/issues/413)) ([56269d9](https://github.com/ca-cwds/design-system/commit/56269d9))
+* **core:** fix hex values only in js output ([#443](https://github.com/ca-cwds/design-system/issues/443)) ([6ed1caf](https://github.com/ca-cwds/design-system/commit/6ed1caf))
+
+
+### Features
+
+* **forms:** Add forms package ([#415](https://github.com/ca-cwds/design-system/issues/415)) ([3f8c81a](https://github.com/ca-cwds/design-system/commit/3f8c81a))
+
+
+
+
+
 # [1.0.0](https://github.com/ca-cwds/design-system/compare/v1.0.0-rc.5...v1.0.0) (2019-03-06)
 
 ### Bug Fixes
