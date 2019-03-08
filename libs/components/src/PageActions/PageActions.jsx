@@ -8,6 +8,7 @@ const PageActions = ({ className, ...props }) => (
 
 PageActions.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
 }
 PageActions.defaultProps = {}
 

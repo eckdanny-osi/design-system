@@ -11,6 +11,11 @@ const PlaceholderLine = ({ className, children, tag: Tag, ...props }) => (
   </Tag>
 )
 PlaceholderLine.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
   tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 }
 PlaceholderLine.defaultProps = {
@@ -48,6 +53,10 @@ Placeholder.propTypes = {
   rows: PropTypes.number,
   tag: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
 }
 Placeholder.defaultProps = {
   cols: 1,

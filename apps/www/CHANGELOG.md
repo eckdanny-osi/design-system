@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ca-cwds/design-system/compare/v1.0.0...v1.1.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **components:** fix UserMenu support for Avatar ([#448](https://github.com/ca-cwds/design-system/issues/448)) ([cf9db36](https://github.com/ca-cwds/design-system/commit/cf9db36))
+
+
+
+
+
 # [1.0.0](https://github.com/ca-cwds/design-system/compare/v1.0.0-rc.5...v1.0.0) (2019-03-06)
 
 **Note:** Version bump only for package www

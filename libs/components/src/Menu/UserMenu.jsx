@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Menu from './Menu'
 import Avatar from '../Avatar'
-
-// TODO: Support the [text] and [imgUrl] usage for `Avatar` after it becomes available
 
 const UserMenu = props => {
   return (
@@ -15,8 +14,11 @@ const UserMenu = props => {
   )
 }
 
-UserMenu.propTypes = {}
+UserMenu.propTypes = {
+  avatar: PropTypes.oneOfType([PropTypes.node]),
+}
 UserMenu.defaultProps = {
+  avatar: <Avatar />,
   label: 'Guest',
 }
 
@@ -26,15 +28,18 @@ export default UserMenu
 // Helpers
 //
 
-function getDropdownToggleProps(props) {
+function getDropdownToggleProps({ avatar, label }) {
   return {
     size: 'sm',
-    className: 'bg-transparent border-0 text-white d-flex align-items-center',
+    className: 'bg-transparent border-0 text-white',
     children: (
-      <Fragment>
-        <span className="mr-2 text-capitalize">{props.label}</span>
-        <Avatar invert size="sm" />
-      </Fragment>
+      <div className="d-flex align-items-center">
+        <span className="mr-2 text-capitalize d-block text-truncate">
+          {label}
+        </span>
+        {avatar.type === Avatar &&
+          React.cloneElement(avatar, { size: 'sm', invert: true })}
+      </div>
     ),
   }
 }

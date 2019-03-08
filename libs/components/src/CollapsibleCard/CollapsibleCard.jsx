@@ -44,7 +44,12 @@ const CollapsibleCard = ({
 
 CollapsibleCard.propTypes = {
   CardHeader: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
   isOpen: PropTypes.bool,
+  onToggle: PropTypes.func,
 }
 
 CollapsibleCard.defaultProps = {
