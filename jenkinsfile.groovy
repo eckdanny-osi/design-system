@@ -2,6 +2,9 @@ import groovy.transform.Field
 
 @Library('jenkins-pipeline-utils') _
 
+@Field
+def newTag
+
 switch(env.BUILD_JOB_TYPE) {
   case 'master': buildMaster(); break;
   case 'release':releasePipeline(); break;
@@ -39,7 +42,7 @@ def buildMaster() {
 
     try {
       checkoutStage()
-      checkForLabel()
+      incrementTagStage()
     } catch(Exception exception) {
       currentBuild.result = 'FAILURE'
       throw exception
@@ -59,6 +62,12 @@ def checkoutStage() {
 def checkForLabel() {
   stage('Verify SemVer Label') {
     checkForLabel('design-system')
+  }
+}
+
+def incrementTagStage() {
+  stage("Increment Tag") {
+    newTag = newSemVer()
   }
 }
 
