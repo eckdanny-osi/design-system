@@ -22,7 +22,7 @@
     "start": "cd apps/www && yarn react-scripts start",
     "dev": "lerna run --stream --parallel --scope @cwds/* dev",
     "prerelease": "yarn lint:libs && yarn test:libs && NODE_ENV=production yarn build:libs",
-    "release": "lerna publish --conventional-commits --force-publish",
+    "release": "lerna publish --conventional-commits --force-publish --exact",
     "lint": "eslint --ext .jsx,.js libs/ apps/www/src/",
     "lint:libs": "eslint --ext .jsx,.js libs/",
     "lint:apps": "eslint --ext .jsx,.js apps/www/src/",
