@@ -46,8 +46,6 @@ def buildMaster() {
     try {
       checkoutStage()
       incrementTagStage()
-      tagRepoStage()
-      securityScanStage(newTag)
     } catch(Exception exception) {
       currentBuild.result = 'FAILURE'
       throw exception
