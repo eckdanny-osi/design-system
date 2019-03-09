@@ -8,6 +8,14 @@ import pick from 'lodash.pick'
 import Styles from '@cwds/core/scss/bootstrap-cares.module.scss'
 
 const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  className: PropTypes.string,
+  caret: PropTypes.bool,
+  label: PropTypes.string,
+  isOpen: PropTypes.bool,
   getDropdownProps: PropTypes.func.isRequired,
   getDropdownToggleProps: PropTypes.func.isRequired,
   getDropdownMenuProps: PropTypes.func.isRequired,

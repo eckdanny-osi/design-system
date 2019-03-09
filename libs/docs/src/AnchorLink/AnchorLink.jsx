@@ -23,6 +23,11 @@ function toString(elOrEls) {
 
 const propTypes = {
   tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  parentClassName: PropTypes.string,
 }
 
 const defaultProps = {

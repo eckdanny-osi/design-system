@@ -8,13 +8,15 @@ import Styles from './Rolodex.module.scss'
 class RolodexHeader extends Component {
   static propTypes = {
     'aria-level': PropTypes.number,
+    children: PropTypes.any.isRequired,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    headerId: PropTypes.string,
+    id: PropTypes.string,
     isOpen: PropTypes.bool,
     onClick: PropTypes.func,
     onKeyDown: PropTypes.func,
-    id: PropTypes.string,
     panelId: PropTypes.string,
-    disabled: PropTypes.bool,
-    children: PropTypes.any.isRequired,
   }
   static defaultProps = {
     'aria-level': 3,
