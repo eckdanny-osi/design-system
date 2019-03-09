@@ -5,10 +5,18 @@ import cn from 'classnames'
 import { config } from './DataGridConfig'
 
 config() // side-effect
+
+const displayPagination = data => {
+  if (data) {
+    return !(data.length < config().defaultPageSize)
+  }
+  return false
+}
+
 export default ({ className, ...props }) => (
   <ReactTable
     className={cn(className, '-highlight')}
     {...props}
-    showPagination={!(props.data.length < 10)}
+    showPagination={displayPagination(props.data)}
   />
 )
