@@ -69,7 +69,12 @@ class Pagination extends Component {
       className,
       PreviousComponent = defaultButton,
       NextComponent = defaultButton,
+      ...restProps
     } = this.props
+
+    if (!restProps.manual && !restProps.loading && pages === 1) {
+      return null
+    }
 
     const options = pageSizeOptions.map((option, i) => ({
       value: option,

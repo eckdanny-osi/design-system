@@ -14,9 +14,5 @@ const displayPagination = data => {
 }
 
 export default ({ className, ...props }) => (
-  <ReactTable
-    className={cn(className, '-highlight')}
-    {...props}
-    showPagination={displayPagination(props.data)}
-  />
+  <ReactTable className={cn(className, '-highlight')} {...props} />
 )

@@ -4,6 +4,7 @@ import { Alert } from "@cwds/components";
 import CarsDataGrid from "./examples/CarsDataGrid";
 import StarWarsDataGrid from "./examples/StarWarsDataGrid";
 import CarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
+import CarsDataGridSmall from "./examples/CarsDataGridSmall.jsx";
 import StarWarsDataGridSrc from "!raw-loader!./examples/CarsDataGrid.jsx";
 
 For simple use cases _(e.g.; when only sorting and pagination are required)_, the `DataGrid` can provide an excellent means for quickly navigating collections.
@@ -37,3 +38,7 @@ For small (<mark>TODO: how small?</mark>) collections in which records are not e
 <CarsDataGrid />
 
 <CodeBlock>{CarsDataGridSrc}</CodeBlock>
+
+Here is the same `DataGrid` using a _small_ subset of the `mtcars` dataset:
+
+<CarsDataGridSmall />

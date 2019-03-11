@@ -20,6 +20,7 @@ const DataGridDefaults = {
   // LoadingComponent: LoadingIndicator,
   loadingText: <LoadingText />,
   noDataText: <NoDataText />,
+  minRows: 1,
 }
 
 export const config = config =>
