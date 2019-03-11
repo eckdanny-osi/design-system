@@ -69,10 +69,11 @@ class Pagination extends Component {
       className,
       PreviousComponent = defaultButton,
       NextComponent = defaultButton,
-      ...restProps
+      manual,
+      loading,
     } = this.props
 
-    if (!restProps.manual && !restProps.loading && pages === 1) {
+    if (!manual && !loading && pages === 1) {
       return null
     }
 
