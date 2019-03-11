@@ -42,3 +42,5 @@ For small (<mark>TODO: how small?</mark>) collections in which records are not e
 Here is the same `DataGrid` using a _small_ subset of the `mtcars` dataset:
 
 <CarsDataGridSmall />
+
+Notice that because the data is not server-paginated, we may infer that pagination controls are not necessary because the _size_ of the collection is less than the `PageSize` (defaults to 10).
