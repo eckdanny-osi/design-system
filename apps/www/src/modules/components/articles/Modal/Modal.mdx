@@ -1,7 +1,18 @@
-import { Modal, ModalBody, ModalFooter, ModalHeader, Button, Icon, IconButton, Card, CardBody } from '@cwds/components'
-import {DemoCard, PropTable} from '@cwds/docs'
-import ModalExample from "./Modal.example.jsx";
-import Docgen from '../ReactDogenInfo.js'
+import {
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  Button,
+  Icon,
+  IconButton,
+  Card,
+  CardBody
+} from "@cwds/components";
+import { DemoCard, PropTable } from "@cwds/docs";
+import ModalExample, { ModalMoreExample } from "./Modal.example.jsx";
+
+import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
@@ -12,10 +23,63 @@ import Docgen from '../ReactDogenInfo.js'
 </DemoCard>
 
 ```jsx
-import { Modal } from '@cwds/components'
+import { Modal } from "@cwds/components";
 ```
-
 
 ## Props
 
 <PropTable docgen={Docgen.Modal} />
+
+## Examples
+
+More examples on Modal
+
+<ModalMoreExample />
+
+```jsx
+class Example extends React.Component {
+  state = {
+    ModalOpen: false
+  };
+  toggle = () => {
+    this.setState(prevState => ({
+      ModalOpen: !prevState.ModalOpen
+    }));
+  };
+  render() {
+    return (
+      <div>
+        <Button color="primary" onClick={this.toggle}>
+          Click Me
+        </Button>
+        <Modal
+          className="warning-modal"
+          centered={true}
+          isOpen={this.state.ModalOpen}
+          size="lg"
+          tag="h2"
+          toggle={this.toggle}
+        >
+          <ModalHeader toggle={this.toggle}>
+            How would you like to begin?
+          </ModalHeader>
+          <ModalBody className="warning-modal-body">
+            <div className="warning-modal-exclamation-triangle">
+              <i className="fa fa-exclamation-triangle" />
+              Would you prefer to start with recently completed ratings?
+            </div>
+            <div className="p-3 text-right">
+              <Button color="primary" onClick={this.toggle}>
+                Button
+              </Button>{" "}
+              <Button color="secondary" onClick={this.toggle}>
+                Button
+              </Button>
+            </div>
+          </ModalBody>
+        </Modal>
+      </div>
+    );
+  }
+}
+```
