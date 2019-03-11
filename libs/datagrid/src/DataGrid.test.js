@@ -39,8 +39,4 @@ describe('DataGrid', () => {
     const wrapper = shallow(<DataGrid data={[]} />)
     expect(wrapper.at(0).hasClass('-highlight')).toBe(true)
   })
-  it('does not render pagination if the data set is less that defaultPageSize', () => {
-    const wrapper = shallow(<DataGrid data={[]} />)
-    expect(wrapper.props().showPagination).toBe(false)
-  })
 })
