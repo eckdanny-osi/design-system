@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-
+import { Alert } from '@cwds/components'
 import { Modal, ModalBody, ModalHeader, Button } from '@cwds/reactstrap'
 
 export class ModalMoreExample extends React.Component {
@@ -46,7 +46,6 @@ export class ModalMoreExample extends React.Component {
   modalView1() {
     return (
       <Fragment>
-        {' '}
         <Button color="primary" onClick={this.toggle('ModalOpen1')}>
           Variation
         </Button>
@@ -95,8 +94,14 @@ export class ModalMoreExample extends React.Component {
           isOpen={this.state.ModalOpen2}
           toggle={this.toggle('ModalOpen2')}
         >
-          <ModalHeader tag="h2" toggle={this.toggle('ModalOpen2')}>
-            Success! You have completed your training course
+          <ModalHeader
+            className="d-flex p-0"
+            tag="h2"
+            toggle={this.toggle('ModalOpen2')}
+          >
+            <Alert className="border-0 m-0" color="success">
+              <strong>Success!</strong> You have completed your training course
+            </Alert>
           </ModalHeader>
           <ModalBody className="warning-modal-body">
             <div className="warning-modal-exclamation-triangle">
