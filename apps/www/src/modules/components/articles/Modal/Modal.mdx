@@ -9,17 +9,17 @@ import {
   Card,
   CardBody
 } from "@cwds/components";
-import { DemoCard, PropTable } from "@cwds/docs";
-import ModalExample, { ModalMoreExample } from "./Modal.example.jsx";
+import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
+import { BasicModalExample, BasicModalExampleSrc } from "./examples";
 
 import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
-`Modal`s are much like icon popover's but with more functionality rather than just some text.
+Use a `Modal` when you want users to focus on a specific task within the context of the original page.
 
 <DemoCard>
-  <ModalExample />
+  <BasicModalExample />
 </DemoCard>
 
 ```jsx
@@ -32,54 +32,18 @@ import { Modal } from "@cwds/components";
 
 ## Examples
 
+### Basic
+
+<BasicModalExample />
+
+<CodeBlock>{BasicModalExampleSrc}</CodeBlock>
+
+### Size
+
+### Scrolling
+
+### Alerts (todo)
+
 More examples on Modal
 
-<ModalMoreExample />
-
-```jsx
-class Example extends React.Component {
-  state = {
-    ModalOpen: false
-  };
-  toggle = () => {
-    this.setState(prevState => ({
-      ModalOpen: !prevState.ModalOpen
-    }));
-  };
-  render() {
-    return (
-      <div>
-        <Button color="primary" onClick={this.toggle}>
-          Click Me
-        </Button>
-        <Modal
-          className="warning-modal"
-          centered={true}
-          isOpen={this.state.ModalOpen}
-          size="lg"
-          tag="h2"
-          toggle={this.toggle}
-        >
-          <ModalHeader toggle={this.toggle}>
-            How would you like to begin?
-          </ModalHeader>
-          <ModalBody className="warning-modal-body">
-            <div className="warning-modal-exclamation-triangle">
-              <i className="fa fa-exclamation-triangle" />
-              Would you prefer to start with recently completed ratings?
-            </div>
-            <div className="p-3 text-right">
-              <Button color="primary" onClick={this.toggle}>
-                Button
-              </Button>{" "}
-              <Button color="secondary" onClick={this.toggle}>
-                Button
-              </Button>
-            </div>
-          </ModalBody>
-        </Modal>
-      </div>
-    );
-  }
-}
-```
+<!--<ModalMoreExample />-->
