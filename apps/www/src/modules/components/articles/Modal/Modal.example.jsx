@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+
 import { Modal, ModalBody, ModalHeader, Button } from '@cwds/reactstrap'
 
 export class ModalMoreExample extends React.Component {
@@ -8,9 +9,9 @@ export class ModalMoreExample extends React.Component {
     ModalOpen2: false,
   }
   toggle = key => _ => this.setState(prevState => ({ [key]: !prevState[key] }))
-  render() {
+  modalView() {
     return (
-      <div className="d-flex justify-content-around">
+      <Fragment>
         <Button color="primary" onClick={this.toggle('ModalOpen')}>
           Click Me
         </Button>
@@ -39,6 +40,13 @@ export class ModalMoreExample extends React.Component {
             </div>
           </ModalBody>
         </Modal>
+      </Fragment>
+    )
+  }
+  modalView1() {
+    return (
+      <Fragment>
+        {' '}
         <Button color="primary" onClick={this.toggle('ModalOpen1')}>
           Variation
         </Button>
@@ -71,6 +79,12 @@ export class ModalMoreExample extends React.Component {
             </div>
           </ModalBody>
         </Modal>
+      </Fragment>
+    )
+  }
+  modalView2() {
+    return (
+      <Fragment>
         <Button color="primary" onClick={this.toggle('ModalOpen2')}>
           And Another one
         </Button>
@@ -99,6 +113,15 @@ export class ModalMoreExample extends React.Component {
             </div>
           </ModalBody>
         </Modal>
+      </Fragment>
+    )
+  }
+  render() {
+    return (
+      <div className="d-flex justify-content-around">
+        {this.modalView()}
+        {this.modalView1()}
+        {this.modalView2()}
       </div>
     )
   }
