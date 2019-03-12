@@ -10,7 +10,11 @@ import {
   CardBody
 } from "@cwds/components";
 import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
-import { BasicModalExample, BasicModalExampleSrc } from "./examples";
+import {
+  BasicModalExample,
+  BasicModalExampleSrc,
+  SizeModalExample
+} from "./examples";
 
 import Docgen from "../ReactDogenInfo.js";
 
@@ -40,7 +44,20 @@ import { Modal } from "@cwds/components";
 
 ### Size
 
+<div>
+  {[
+    { value: "sm", label: "small" },
+    { value: undefined, label: "" },
+    { value: "lg", label: "large" },
+    { value: "xl", label: "extra large" }
+  ].map(({ value: size, label }, i) => (
+    <SizeModalExample key={i} size={size} label={label} className="pb-2" />
+  ))}
+</div>
+
 ### Scrolling
+
+TODO
 
 ### Alerts (todo)
 
