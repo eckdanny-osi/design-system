@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, ModalBody, ModalHeader, Button } from '@cwds/reactstrap'
+import { Modal, ModalBody, ModalHeader, Button } from '@cwds/components'
 
 export default class BasicModalExample extends Component {
   state = {

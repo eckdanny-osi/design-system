@@ -41,6 +41,7 @@
 // These exports are overrides or have side-effects!
 export { default as CardTitle } from './CardTitle'
 export { default as Modal } from './Modal'
+export { default as ModalHeader } from './ModalHeader'
 export { Util } from './utils'
 
 export {
@@ -78,7 +79,6 @@ export {
   ListGroupItemText,
   ModalBody,
   ModalFooter,
-  ModalHeader,
   Nav,
   NavItem,
   NavLink,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, ModalBody, ModalHeader, Button } from '@cwds/reactstrap'
+import { Modal, ModalBody, ModalHeader, Button } from '@cwds/components'
 
 export default class ScrollingModalExample extends Component {
   state = {
@@ -13,7 +13,7 @@ export default class ScrollingModalExample extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle}>
+        <Button className="mb-3" color="primary" onClick={this.toggle}>
           Click me to open modal
         </Button>
         <Modal isOpen={this.state.ModalOpen} toggle={this.toggle}>
