@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import {
+  Alert,
   Modal,
   ModalBody,
   ModalFooter,
@@ -9,7 +11,7 @@ import {
   Card,
   CardBody
 } from "@cwds/components";
-import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
+import { CodeBlock, DemoCard, PropTable, Refere } from "@cwds/docs";
 import {
   BasicModalExample,
   BasicModalExampleSrc,
@@ -37,6 +39,12 @@ import { Modal } from "@cwds/components";
 
 <PropTable docgen={Docgen.Modal} />
 
+## Usage Guidelines
+
+<Alert color="warning">
+  Please <strong>do not</strong> nest <code>Modal</code> dialogs!
+</Alert>
+
 ## Examples
 
 ### Basic
@@ -47,18 +55,25 @@ import { Modal } from "@cwds/components";
 
 ### Sizing
 
+Specify one of four sizes ([`size`](#size) prop):
+
 <SizeModalExamples />
 
 ### Scrolling
 
-For long scrolling, default class name is `modal-dialog-scrollable`
+If there is too much content to fit on the display, the `Modal` will scroll:
 
 <ScrollingModalExample />
 
-### Alerts
+### `Alerts` in `ModalHeader`s
+
+An <Link to="/components/alert">Alert</Link> may be included in the `ModalHeader`:
 
 <AlertModalExample />
 
 <CodeBlock>{AlertModalExampleSrc}</CodeBlock>
 
-<!--<ModalMoreExample />-->
+<Alert color="warning">
+  Please <strong>do not</strong> use <code>Alert[dismissable]</code>s in{" "}
+  <code>ModalHeaders</code>
+</Alert>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { Alert, Modal, ModalBody, ModalHeader, Button } from '@cwds/components'
 
 export default class AlertModalExample extends Component {
