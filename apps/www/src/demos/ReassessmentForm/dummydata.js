@@ -5,30 +5,6 @@ import { Link } from 'react-router-dom'
 export const data = [
   {
     Action: 'Approve',
-    Assesment_Date: '08/14/2018',
-    Case_Number: '98234-3486492-843847',
-    County: 'San Joaquin',
-    Last_Updated: '08/14/2018',
-    Updated_by: 'Adams, Jason',
-  },
-  {
-    Action: 'Delete',
-    Assesment_Date: '08/14/2017',
-    Case_Number: '98234-3486492-843847',
-    County: 'San Joaquin',
-    Last_Updated: '08/14/2018',
-    Updated_by: 'Adams, Jason',
-  },
-  {
-    Action: 'Approve',
-    Assesment_Date: '08/14/2016',
-    Case_Number: '98234-3486492-843847',
-    County: 'San Joaquin',
-    Last_Updated: '08/14/2018',
-    Updated_by: 'Adams, Jason',
-  },
-  {
-    Action: 'Approve',
     Assesment_Date: '08/14/2011',
     Case_Number: '98234-3486492-843847',
     County: 'San Joaquin',
@@ -74,14 +50,6 @@ export const data = [
     County: 'San Joaquin',
     Last_Updated: '08/14/2018',
     Updated_by: 'Adams, Jason',
-  },
-  {
-    Action: 'Approve',
-    Assesment_Date: '08/14/2018',
-    Case_Number: '98234-3486492-843847',
-    County: 'San Joaquin',
-    Last_Updated: '08/14/2018',
-    Updated_by: 'John, Jason',
   },
 ]
 
