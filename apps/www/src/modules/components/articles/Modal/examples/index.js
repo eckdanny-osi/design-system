@@ -5,7 +5,7 @@ import BasicModalExample from './BasicModalExample'
 import BasicModalExampleSrc from '!raw-loader!./BasicModalExample'
 import ScrollingModalExample from './ScrollingModalExample'
 import ScrollingModalExampleSrc from '!raw-loader!./ScrollingModalExample'
-import SizeModalExample from './SizeModalExample'
+import SizeModalExample, { SizeModalExamples } from './SizeModalExample'
 import SizeModalExampleSrc from '!raw-loader!./SizeModalExample'
 
 export {
@@ -16,5 +16,6 @@ export {
   ScrollingModalExample,
   ScrollingModalExampleSrc,
   SizeModalExample,
+  SizeModalExamples,
   SizeModalExampleSrc,
 }

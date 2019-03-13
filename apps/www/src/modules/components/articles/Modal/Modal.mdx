@@ -13,7 +13,7 @@ import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
 import {
   BasicModalExample,
   BasicModalExampleSrc,
-  SizeModalExample,
+  SizeModalExamples,
   ScrollingModalExample,
   AlertModalExample,
   AlertModalExampleSrc
@@ -45,18 +45,9 @@ import { Modal } from "@cwds/components";
 
 <CodeBlock>{BasicModalExampleSrc}</CodeBlock>
 
-### Size
+### Sizing
 
-<div>
-  {[
-    { value: "sm", label: "small" },
-    { value: undefined, label: "" },
-    { value: "lg", label: "large" },
-    { value: "xl", label: "extra large" }
-  ].map(({ value: size, label }, i) => (
-    <SizeModalExample key={i} size={size} label={label} className="pb-2" />
-  ))}
-</div>
+<SizeModalExamples />
 
 ### Scrolling
 
