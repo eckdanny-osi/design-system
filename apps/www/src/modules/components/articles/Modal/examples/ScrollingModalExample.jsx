@@ -85,6 +85,14 @@ export default class ScrollingModalExample extends Component {
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             ess aute irure dolor in reprehenderit in voluptate velit ess
           </ModalBody>
+          <div className="p-3 text-right">
+            <Button className="m-1" onClick={this.toggle}>
+              Button
+            </Button>
+            <Button className="m-1" color="primary" onClick={this.toggle}>
+              Button
+            </Button>
+          </div>
         </Modal>
       </div>
     )
