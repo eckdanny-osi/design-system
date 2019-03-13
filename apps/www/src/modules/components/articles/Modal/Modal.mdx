@@ -1,21 +1,79 @@
-import { Modal, ModalBody, ModalFooter, ModalHeader, Button, Icon, IconButton, Card, CardBody } from '@cwds/components'
-import {DemoCard, PropTable} from '@cwds/docs'
-import ModalExample from "./Modal.example.jsx";
-import Docgen from '../ReactDogenInfo.js'
+import { Link } from "react-router-dom";
+import {
+  Alert,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  Button,
+  Icon,
+  IconButton,
+  Card,
+  CardBody
+} from "@cwds/components";
+import { CodeBlock, DemoCard, PropTable } from "@cwds/docs";
+import {
+  BasicModalExample,
+  BasicModalExampleSrc,
+  SizeModalExamples,
+  ScrollingModalExample,
+  AlertModalExample,
+  AlertModalExampleSrc
+} from "./examples";
+
+import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
-`Modal`s are much like icon popover's but with more functionality rather than just some text.
+Use a `Modal` when you want users to focus on a specific task within the context of the original page.
 
 <DemoCard>
-  <ModalExample />
+  <BasicModalExample />
 </DemoCard>
 
 ```jsx
-import { Modal } from '@cwds/components'
+import { Modal } from "@cwds/components";
 ```
-
 
 ## Props
 
 <PropTable docgen={Docgen.Modal} />
+
+## Usage Guidelines
+
+<Alert color="warning">
+  Please <strong>do not</strong> nest <code>Modal</code> dialogs!
+</Alert>
+
+## Examples
+
+### Basic
+
+<BasicModalExample />
+
+<CodeBlock>{BasicModalExampleSrc}</CodeBlock>
+
+### Sizing
+
+Specify one of four sizes ([`size`](#size) prop):
+
+<SizeModalExamples />
+
+### Scrolling
+
+If there is too much content to fit on the display, the `Modal` will scroll:
+
+<ScrollingModalExample />
+
+### `Alerts` in `ModalHeader`s
+
+An <Link to="/components/alert">Alert</Link> may be included in the `ModalHeader`:
+
+<AlertModalExample />
+
+<CodeBlock>{AlertModalExampleSrc}</CodeBlock>
+
+<Alert color="warning">
+  Please <strong>do not</strong> use <code>Alert[dismissable]</code>s in{" "}
+  <code>ModalHeaders</code>
+</Alert>
