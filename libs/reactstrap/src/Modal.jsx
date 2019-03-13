@@ -5,4 +5,6 @@ import { Modal } from 'reactstrap'
  */
 Modal.defaultProps.modalClassName = 'modal-dialog-scrollable'
 
+Modal.defaultProps.centered = true
+
 export default Modal
