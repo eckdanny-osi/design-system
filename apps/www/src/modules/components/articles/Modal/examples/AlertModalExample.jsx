@@ -23,6 +23,14 @@ export default class AlertModalExample extends Component {
             </Alert>
           </ModalHeader>
           <ModalBody>Hi, I am an Alert modal!</ModalBody>
+          <div className="p-3 text-right">
+            <Button className="m-1" onClick={this.toggle}>
+              Button
+            </Button>
+            <Button className="m-1" color="primary" onClick={this.toggle}>
+              Button
+            </Button>
+          </div>
         </Modal>
       </div>
     )
