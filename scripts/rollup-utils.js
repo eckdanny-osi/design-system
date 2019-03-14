@@ -2,7 +2,16 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 
-const REGEXP_STYLE_MODULE = /module\.s?css$/
+const RE_CSS = /\.css$/
+const RE_CSS_MODULE = /\.module\.css$/
+const RE_SASS = /\.(scss|sass)$/
+const RE_SASS_MODULE = /\.module\.(scss|sass)$/
+
+function isStyleImport(name) {
+  return [RE_CSS, RE_SASS, RE_CSS_MODULE, RE_SASS_MODULE].some(re =>
+    re.test(name)
+  )
+}
 
 /**
  * Predicate filter fn to return distinct elements
@@ -34,7 +43,7 @@ export function mkRollupConfig(pkg, opts = {}) {
     input: 'src/index.js',
     external: id => {
       if (externals.includes(id)) return true
-      if (REGEXP_STYLE_MODULE.test(id)) return true
+      if (isStyleImport(id)) return true
       return false
     },
     output: {
