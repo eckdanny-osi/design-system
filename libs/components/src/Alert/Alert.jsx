@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { Fade, Util } from '@cwds/reactstrap'
 import { Icon, getIconFromContext } from '@cwds/icons'
 import Styles from './Alert.module.scss'
@@ -8,6 +8,7 @@ import Styles from './Alert.module.scss'
 const mapToCssModules = Util.mapToCssModules
 
 const propTypes = {
+  bodyClassName: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
   closeClassName: PropTypes.string,
@@ -35,6 +36,7 @@ const defaultProps = {
 
 function Alert(props) {
   const {
+    bodyClassName,
     className,
     closeClassName,
     closeAriaLabel,
@@ -49,16 +51,13 @@ function Alert(props) {
   } = props
 
   const classes = mapToCssModules(
-    classNames(className, 'alert', `alert-${color}`, {
+    cn(className, 'alert', `alert-${color}`, {
       'alert-dismissible': toggle,
     }),
     cssModule
   )
 
-  const closeClasses = mapToCssModules(
-    classNames('close', closeClassName),
-    Styles
-  )
+  const closeClasses = mapToCssModules(cn('close', closeClassName), Styles)
 
   return (
     <Fade
@@ -71,7 +70,7 @@ function Alert(props) {
     >
       <div
         className={mapToCssModules(
-          classNames('alert-icon-container', {
+          cn('alert-icon-container', {
             'alert-dismissible': !!toggle,
           }),
           Styles
@@ -79,7 +78,7 @@ function Alert(props) {
       >
         <Icon icon={getIconFromContext(color)} color="white" />
       </div>
-      <div className={mapToCssModules(classNames('alert-body'), Styles)}>
+      <div className={mapToCssModules(cn('alert-body', bodyClassName), Styles)}>
         {toggle ? (
           <button
             type="button"

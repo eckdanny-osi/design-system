@@ -22,6 +22,7 @@ import Modal from '!babel-loader!@mdx-js/loader!./articles/Modal/Modal.mdx'
 import Page from '!babel-loader!@mdx-js/loader!./articles/Page/Page.mdx'
 import CaresProvider from '!babel-loader!@mdx-js/loader!./articles/CaresProvider/CaresProvider.mdx'
 import Tile from '!babel-loader!@mdx-js/loader!./articles/Tile/Tile.mdx'
+import DateTimePicker from '!babel-loader!@mdx-js/loader!./articles/DateTimePicker/DateTimePicker.mdx'
 
 const routes = {
   title: 'Component Library',
@@ -240,6 +241,11 @@ const routes = {
       title: 'CaresProvider',
       path: '/component-provider',
       component: CaresProvider,
+    },
+    {
+      title: 'DateTimePicker',
+      path: '/date-time-picker',
+      component: DateTimePicker,
     },
   ],
 }

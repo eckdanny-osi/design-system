@@ -1,0 +1,14 @@
+.env
+
+# need for babel macros, release scripts, etc
+# .git
+
+node_modules
+*/*/node_modules
+
+package-lock.json
+yarn-error.log
+
+coverage
+
+docker
