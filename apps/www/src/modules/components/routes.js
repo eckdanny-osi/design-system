@@ -246,7 +246,7 @@ const routes = {
       title: 'DateTimePicker',
       path: '/date-time-picker',
       component: DateTimePicker,
-    }
+    },
   ],
 }
 
