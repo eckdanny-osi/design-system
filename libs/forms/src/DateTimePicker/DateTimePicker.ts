@@ -3,6 +3,7 @@ import momentLocalizer from 'react-widgets-moment'
 import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import 'react-widgets/lib/scss/react-widgets.scss'
 
+// Side-Effects
 Moment.locale('en')
 momentLocalizer()
 
