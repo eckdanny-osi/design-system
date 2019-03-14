@@ -1,21 +1,38 @@
-import { DemoCard, PropTable } from "@cwds/docs";
+import { DemoCard, PropTable, ReferenceCard } from "@cwds/docs";
+import { Alert } from "@cwds/components";
 import { DateTimePicker } from "@cwds/forms";
 import Docgen from "../ReactDogenInfo.js";
 
 ## Synopsis
 
-Use an `DateTimePicker` to SOMETHING
+Use an `DateTimePicker` in `Form` contexts for selecting dates or date-times.
 
 <DemoCard>
-  <DateTimePicker defaultValue={new Date()} />
+  <DateTimePicker defaultValue={new Date()} time={false} />
 </DemoCard>
 
 ```jsx
 import { DateTimePicker } from "@cwds/forms";
 ```
 
+<ReferenceCard className="mt-3">
+  <p>
+    Please visit the{" "}
+    <a href="http://jquense.github.io/react-widgets/api/DateTimePicker/">
+      <code>react-widgets</code> api page
+    </a>{" "}
+    for component docs.
+  </p>
+  <p>
+    Library selection for the <code>DateTimePicker</code> component was largely
+    influenced by precedent work in CWDS digital service apps. This may change
+    in the future.
+  </p>
+</ReferenceCard>
+
 ## Props
 
-<PropTable docgen={Docgen.Alert} />
-
-## Usage Guidelines
+<Alert color="warning">
+  <strong className="mr-1">Oh Nos!</strong>
+  We could not generate propDocs from 3rd party module.
+</Alert>
