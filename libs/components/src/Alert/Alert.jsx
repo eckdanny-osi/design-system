@@ -8,7 +8,6 @@ import Styles from './Alert.module.scss'
 const mapToCssModules = Util.mapToCssModules
 
 const propTypes = {
-  bodyClassName: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
   closeClassName: PropTypes.string,
@@ -36,7 +35,6 @@ const defaultProps = {
 
 function Alert(props) {
   const {
-    bodyClassName,
     className,
     closeClassName,
     closeAriaLabel,
@@ -78,7 +76,7 @@ function Alert(props) {
       >
         <Icon icon={getIconFromContext(color)} color="white" />
       </div>
-      <div className={mapToCssModules(cn('alert-body', bodyClassName), Styles)}>
+      <div className={mapToCssModules(cn('alert-body'), Styles)}>
         {toggle ? (
           <button
             type="button"

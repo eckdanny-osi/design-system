@@ -23,7 +23,7 @@ export default class SizeModalExample extends Component {
         <Button color="primary" onClick={this.toggle}>
           Open {label}
         </Button>
-        <Modal size={size} isOpen={this.state.ModalOpen} toggle={this.toggle}>
+        <Modal size={size} isOpen={this.state.ModalOpen}>
           <ModalHeader toggle={this.toggle}>
             <CardTitle>{label} Modal</CardTitle>
           </ModalHeader>

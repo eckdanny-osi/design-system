@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { Alert, Modal, ModalBody, ModalHeader, Button } from '@cwds/components'
+import {
+  Alert,
+  CardTitle,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  Button,
+} from '@cwds/components'
 
 export default class AlertModalExample extends Component {
   state = {
@@ -16,13 +23,16 @@ export default class AlertModalExample extends Component {
         <Button color="primary" onClick={this.toggle}>
           Click me to open modal
         </Button>
-        <Modal isOpen={this.state.ModalOpen} toggle={this.toggle}>
+        <Modal isOpen={this.state.ModalOpen}>
           <ModalHeader toggle={this.toggle}>
-            <Alert bodyClassName="border-0" color="success" className="m-0">
-              Success! Is this how you want to begin the modal?
-            </Alert>
+            <CardTitle>Horay! It worked!</CardTitle>
           </ModalHeader>
-          <ModalBody>Hi, I am an Alert modal!</ModalBody>
+          <ModalBody>
+            <Alert color="success">
+              Success! The operation completed successfully
+            </Alert>
+            Hi, I am an Alert modal!
+          </ModalBody>
           <div className="p-3 text-right">
             <Button className="m-1" onClick={this.toggle}>
               Close

@@ -22,7 +22,7 @@ export default class BasicModalExample extends Component {
         <Button color="primary" onClick={this.toggle}>
           Click me to open modal
         </Button>
-        <Modal isOpen={this.state.ModalOpen} toggle={this.toggle}>
+        <Modal isOpen={this.state.ModalOpen}>
           <ModalHeader toggle={this.toggle}>
             <CardTitle>Modal title</CardTitle>
           </ModalHeader>
