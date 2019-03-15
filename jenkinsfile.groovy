@@ -8,15 +8,17 @@ def GITHUB_CREDENTIALS_ID = '433ac100-b3c2-4519-b4d6-207c029a103b'
 @Field
 def newTag
 
-switch (env.BUILD_JOB_TYPE) {
-  case 'master':
-    // masterPipeline()
-    break
-  case 'release':
-    // releasePipeline()
-    break
-  default:
-    pullRequestPipeline()
+timestamps {
+  switch (env.BUILD_JOB_TYPE) {
+    case 'master':
+      masterPipeline()
+      break
+    case 'release':
+      // releasePipeline()
+      break
+    default:
+      pullRequestPipeline()
+  }
 }
 
 //
@@ -30,7 +32,6 @@ switch (env.BUILD_JOB_TYPE) {
  */
 def pullRequestPipeline() {
   node('linux') {
-    def img
     def triggerProperties = githubPullRequestBuilderTriggerProperties()
     properties([
       githubConfig(),
@@ -57,6 +58,30 @@ def pullRequestPipeline() {
           sh "yarn build:www"
         }
       }
+    } catch (Exception exception) {
+      currentBuild.result = 'FAILURE'
+      throw exception
+    } finally {
+      cleanupStage()
+    }
+  }
+}
+
+/**
+ * Creates master pipeline.
+ *
+ * The master pipeline kicked off by merge into the master branch. There is
+ */
+def masterPipeline() {
+  node('linux') {
+    triggerProperties = pullRequestMergedTriggerProperties('design-system-master')
+    properties([
+      githubConfig(),
+      pipelineTriggers([triggerProperties]),
+      buildDiscarderDefaults('master')
+    ])
+    try {
+      checkoutStage()
     } catch(Exception exception) {
       currentBuild.result = 'FAILURE'
       throw exception
