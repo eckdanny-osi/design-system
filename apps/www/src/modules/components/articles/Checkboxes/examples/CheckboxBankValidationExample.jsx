@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Formik, Form, Field, FieldArray } from 'formik'
 import { Card, CardHeader, CardTitle, CardBody } from '@cwds/components'
 import { Fieldset, Legend, CheckboxControl } from '@cwds/forms'
@@ -64,37 +64,66 @@ const CheckboxBankValidationExample = () => (
         validate={validateBeatles}
       >
         {({ errors, touched, isValidating, values }) => {
-          console.log('Formkik rendering...')
           return (
-            <FieldArray
-              name="beatles"
-              render={({ push, remove }) => (
-                <Fieldset>
-                  <Legend>Favorite Beatle</Legend>
-                  {errors.beatles && touched.beatles && (
-                    <div>{errors.beatles}</div>
-                  )}
-                  {OPTIONS_BEATLES.map(({ label, value }) => (
-                    <CheckboxControl
-                      key={value}
-                      id={`beatles__${label}`}
-                      name="beatles"
-                      label={label}
-                      value={value}
-                      checked={values.beatles.includes(value)}
-                      onChange={e => {
-                        if (e.target.checked) push(value)
-                        else {
-                          const idx = values.beatles.indexOf(value)
-                          remove(idx)
-                        }
-                      }}
-                    />
-                  ))}
-                </Fieldset>
-              )}
-            />
+            <Fieldset>
+              <Legend>Favorite Beatle</Legend>
+              {errors.beatles && touched.beatles && <div>{errors.beatles}</div>}
+              {OPTIONS_BEATLES.map(({ label, value }, i) => (
+                <Field key={value} type="checkbox" name={`beatles[${i}]`} />
+                // <CheckboxControl
+                //   key={value}
+                //   id={`beatles__${label}`}
+                //   name="beatles"
+                //   label={label}
+                //   value={value}
+                //   checked={values.beatles.includes(value)}
+                //   onChange={e => {
+                //     if (e.target.checked) push(value)
+                //     else {
+                //       const idx = values.beatles.indexOf(value)
+                //       remove(idx)
+                //     }
+                //   }}
+                // />
+              ))}
+            </Fieldset>
+
+            // <Fragment>
+            //   <Field name="friends[0]" />
+            //   <Field name="friends[1]" />
+            // </Fragment>
           )
+          // console.log('Formkik rendering...')
+          // return (
+          //   <FieldArray
+          //     name="beatles"
+          //     render={({ push, remove }) => (
+          //       <Fieldset>
+          //         <Legend>Favorite Beatle</Legend>
+          //         {errors.beatles && touched.beatles && (
+          //           <div>{errors.beatles}</div>
+          //         )}
+          //         {OPTIONS_BEATLES.map(({ label, value }) => (
+          //           <CheckboxControl
+          //             key={value}
+          //             id={`beatles__${label}`}
+          //             name="beatles"
+          //             label={label}
+          //             value={value}
+          //             checked={values.beatles.includes(value)}
+          //             onChange={e => {
+          //               if (e.target.checked) push(value)
+          //               else {
+          //                 const idx = values.beatles.indexOf(value)
+          //                 remove(idx)
+          //               }
+          //             }}
+          //           />
+          //         ))}
+          //       </Fieldset>
+          //     )}
+          //   />
+          // )
         }}
       </Formik>
     </CardBody>
