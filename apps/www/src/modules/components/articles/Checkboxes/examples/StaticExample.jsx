@@ -17,20 +17,23 @@ export class Example extends Component {
     },
   }
   handleChangeIsInline = () => {
-    this.setState({
-      isInline: !this.state.isInline,
-    })
+    this.setState({ isInline: !this.state.isInline })
   }
   handleChangeOption = e => {
     const { checked, value } = e.target
-    this.setState({
-      data: {
-        ...this.state.data,
-        options: checked
-          ? [...this.state.data.options, value]
-          : this.state.data.options.filter(d => d !== value),
+    this.setState(
+      state => {
+        return {
+          data: {
+            ...this.state.data,
+            options: checked
+              ? [...this.state.data.options, value]
+              : this.state.data.options.filter(d => d !== value),
+          },
+        }
       },
-    })
+      () => console.log(this.state.data.options)
+    )
   }
   render() {
     return (
@@ -59,48 +62,31 @@ export class Example extends Component {
             <FormText>Example help text that remains unchanged.</FormText>
           </FormGroup>
           <Fieldset>
-            <Legend>Pick Something...</Legend>
-            <FormGroup check inline={this.state.isInline}>
-              <Input
-                className="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox1"
-                value="option1"
-              />
-              <Label className="form-check-label" htmlFor="inlineCheckbox1">
-                1
-              </Label>
-            </FormGroup>
+            <Legend>Pick Some Values</Legend>
             <CheckboxControl
-              id="inlineCheckbox2"
-              value="option2"
-              checked={this.state.data.options.includes('option2')}
+              inline={this.state.isInline}
+              id="rdo__foo"
+              value="foo"
+              label="Foo"
+              checked={this.state.data.options.includes('foo')}
               onChange={this.handleChangeOption}
-              label="Option 2"
             />
-            {/* <FormGroup check inline={this.state.isInline}>
-              <Input
-                className="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox2"
-                value="option2"
-              />
-              <Label className="form-check-label" htmlFor="inlineCheckbox2">
-                2
-              </Label>
-            </FormGroup> */}
-            <FormGroup check inline={this.state.isInline}>
-              <Input
-                className="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox3"
-                value="option3"
-                disabled
-              />
-              <Label className="form-check-label" htmlFor="inlineCheckbox3">
-                3 (disabled)
-              </Label>
-            </FormGroup>
+            <CheckboxControl
+              inline={this.state.isInline}
+              id="rdo__bar"
+              value="bar"
+              label="Bar"
+              checked={this.state.data.options.includes('bar')}
+              onChange={this.handleChangeOption}
+            />
+            <CheckboxControl
+              inline={this.state.isInline}
+              id="rdo__quo"
+              value="quo"
+              label="Quo"
+              checked={this.state.data.options.includes('quo')}
+              onChange={this.handleChangeOption}
+            />
           </Fieldset>
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>

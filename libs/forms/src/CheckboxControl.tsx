@@ -5,6 +5,7 @@ import cn from "classnames";
 
 interface CheckboxControlProps {
   id?: string;
+  className: string;
   inline: boolean;
   label: string;
   value: string | boolean | number;
@@ -15,15 +16,15 @@ interface CheckboxControlProps {
 
 const CheckboxControl = (props: CheckboxControlProps) => {
   return (
-    <FormGroup check inline={props.inline}>
+    <FormGroup check inline={props.inline} className={cn(props.className)}>
       <Input
         type="checkbox"
-        defaultChecked={props.checked}
         id={props.id}
+        checked={props.checked}
         className={cn("form-check-input")}
-        value={String(props.value)}
         disabled={props.disabled}
         onChange={props.onChange}
+        value={String(props.value)}
       />
       <Label className="form-check-label" htmlFor={props.id}>
         {props.label}
