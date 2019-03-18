@@ -1,8 +1,8 @@
-import { IOption } from "./types";
+import { IOption, IListType } from "./types";
 import * as React from "react";
-import { IListType } from "./types";
 import cn from "classnames";
 import { Input, FormGroup, Label } from "@cwds/reactstrap";
+import CheckboxControl from "./CheckboxControl";
 const uniqueId = require("lodash.uniqueid");
 
 export interface CheckboxBankProps<T = any> extends IListType<T> {
@@ -32,28 +32,17 @@ const CheckboxBank = (props: CheckboxBankProps<any>) => {
           <FormGroup
             check
             key={option.value}
-            className={cn("mx-2", "pretty p-default", {
-              "d-inline-block mr-4": props.inline
-            })}
+            className={cn("mx-2")}
+            inline={props.inline}
           >
-            <input
+            <CheckboxControl
               id={id}
-              type="checkbox"
               value={option.value}
               checked={props.value.includes(option.value)}
-              disabled={option.disabled}
+              disabled={Boolean(option.disabled)}
               onChange={props.onChange}
+              label={option.label}
             />
-            <div className="state">
-              <Label
-                htmlFor={id}
-                className={cn({
-                  "text-muted": option.disabled
-                })}
-              >
-                {option.label}
-              </Label>
-            </div>
           </FormGroup>
         );
       })}

@@ -1,8 +1,10 @@
 import { Alert } from "@cwds/components";
 import { CheckboxBank } from "@cwds/forms";
 import { DemoCard, PropTable } from "@cwds/docs";
+import { Form, FormGroup, Label, Input } from "@cwds/reactstrap";
 import Docgen from "../ReactDogenInfo.js";
 import CheckboxBankExample from "./examples/CheckboxBankExample";
+import StaticExample from "./examples/StaticExample";
 
 ## Synopsis
 
@@ -28,3 +30,22 @@ import { CheckboxBank } from "@cwds/forms";
 ## Examples
 
 <CheckboxBankExample />
+
+### Umm....
+
+<Form>
+  <FormGroup check>
+    <Label check>
+      <Input type="checkbox" /> Some input
+    </Label>
+  </FormGroup>
+  <FormGroup check>
+    <Label check>
+      <Input type="checkbox" /> Some other input
+    </Label>
+  </FormGroup>
+</Form>
+
+### More Um...
+
+<StaticExample />

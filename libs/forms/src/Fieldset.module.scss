@@ -1,0 +1,6 @@
+@import "~@cwds/core/scss/base";
+
+.Fieldset {
+  // composes: form-group from "";
+  margin-bottom: $form-group-margin-bottom;
+}

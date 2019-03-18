@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Card, CardHeader, CardBody, CardTitle } from '@cwds/components'
 import { CheckboxBank } from '@cwds/forms'
+import { Form } from '@cwds/reactstrap'
 
 export default class CheckboxBankExample extends Component {
   OPTIONS = [
@@ -25,22 +27,21 @@ export default class CheckboxBankExample extends Component {
 
   render() {
     return (
-      <div className="bg-white">
-        <CheckboxBank
-          options={this.OPTIONS}
-          onChange={this.handleOnChange}
-          value={this.state.value}
-        >
-          alksdjflaksdjf
-        </CheckboxBank>
-        <br />
-        <div className="pretty p-default">
-          <input type="checkbox" />
-          <div className="state">
-            <label>Default</label>
-          </div>
-        </div>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>CheckboxBank Example</CardTitle>
+        </CardHeader>
+        <CardBody>
+          <Form>
+            <CheckboxBank
+              options={this.OPTIONS}
+              onChange={this.handleOnChange}
+              value={this.state.value}
+              inline
+            />
+          </Form>
+        </CardBody>
+      </Card>
     )
   }
 }
