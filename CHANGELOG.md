@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/ca-cwds/design-system/compare/v1.1.0...v1.1.1) (2019-03-18)
+
+
+### Bug Fixes
+
+* **build:** Add master build pipeline ([#469](https://github.com/ca-cwds/design-system/issues/469)) ([8925865](https://github.com/ca-cwds/design-system/commit/8925865))
+* **build:** Externalize style imports in Rollup builds ([#467](https://github.com/ca-cwds/design-system/issues/467)) ([11b80ce](https://github.com/ca-cwds/design-system/commit/11b80ce))
+* **build:** typescript fixes for build pipeline ([#468](https://github.com/ca-cwds/design-system/issues/468)) ([9b1ad10](https://github.com/ca-cwds/design-system/commit/9b1ad10)), closes [#466](https://github.com/ca-cwds/design-system/issues/466)
+* **components:** Better Modal alerts, backdrop clicks ([#470](https://github.com/ca-cwds/design-system/issues/470)) ([05de2bc](https://github.com/ca-cwds/design-system/commit/05de2bc))
+* **datagrid:** omit Pagination for small client-side paginated collections ([#461](https://github.com/ca-cwds/design-system/issues/461)) ([79ff557](https://github.com/ca-cwds/design-system/commit/79ff557))
+* **docs:** fix example src for Menu demo ([#452](https://github.com/ca-cwds/design-system/issues/452)) ([8322a1c](https://github.com/ca-cwds/design-system/commit/8322a1c))
+* **docs:** Update Alert in Modal usage ([#471](https://github.com/ca-cwds/design-system/issues/471)) ([e2c87f7](https://github.com/ca-cwds/design-system/commit/e2c87f7))
+* **icons:** add `list` and `chart-bar` icons ([#472](https://github.com/ca-cwds/design-system/issues/472)) ([e196ca0](https://github.com/ca-cwds/design-system/commit/e196ca0))
+* **modal, www:** Modal update  CL-103 ([#462](https://github.com/ca-cwds/design-system/issues/462)) ([68d621e](https://github.com/ca-cwds/design-system/commit/68d621e)), closes [#1435](https://github.com/ca-cwds/design-system/issues/1435)
+
+
+
+
+
 # [1.1.0](https://github.com/ca-cwds/design-system/compare/v1.0.0...v1.1.0) (2019-03-08)
 
 

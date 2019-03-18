@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/ca-cwds/design-system/compare/v1.1.0...v1.1.1) (2019-03-18)
+
+
+### Bug Fixes
+
+* **components:** Better Modal alerts, backdrop clicks ([#470](https://github.com/ca-cwds/design-system/issues/470)) ([05de2bc](https://github.com/ca-cwds/design-system/commit/05de2bc))
+* **modal, www:** Modal update  CL-103 ([#462](https://github.com/ca-cwds/design-system/issues/462)) ([68d621e](https://github.com/ca-cwds/design-system/commit/68d621e)), closes [#1435](https://github.com/ca-cwds/design-system/issues/1435)
+
+
+
+
+
 # [1.1.0](https://github.com/ca-cwds/design-system/compare/v1.0.0...v1.1.0) (2019-03-08)
 
 
