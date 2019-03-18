@@ -1,4 +1,4 @@
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArrowUp,
   faBell,
@@ -24,9 +24,9 @@ import {
   faTrashAlt,
   faTasks,
   faList,
-  faChartBar
-} from "@fortawesome/free-solid-svg-icons";
-import { faCommentAlt as farFaCommentAlt } from "@fortawesome/free-regular-svg-icons";
+  faChartBar,
+} from '@fortawesome/free-solid-svg-icons'
+import { faCommentAlt as farFaCommentAlt } from '@fortawesome/free-regular-svg-icons'
 
 library.add(
   faArrowUp,
@@ -55,9 +55,9 @@ library.add(
   faTasks,
   faList,
   faChartBar
-);
+)
 
 export const ICON_NAMES = [
-  ...Object.keys(library.definitions.fas).map(name => ["fas", name]),
-  [farFaCommentAlt.prefix, farFaCommentAlt.iconName]
-];
+  ...Object.keys(library.definitions.fas).map(name => ['fas', name]),
+  [farFaCommentAlt.prefix, farFaCommentAlt.iconName],
+]
