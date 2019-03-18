@@ -7,15 +7,29 @@ import {
   FormText,
   FormFeedback,
 } from '@cwds/reactstrap'
-import { Fieldset, Legend } from '@cwds/forms'
+import { Fieldset, Legend, CheckboxControl } from '@cwds/forms'
 
 export class Example extends Component {
   state = {
     isInline: false,
+    data: {
+      options: [],
+    },
   }
   handleChangeIsInline = () => {
     this.setState({
       isInline: !this.state.isInline,
+    })
+  }
+  handleChangeOption = e => {
+    const { checked, value } = e.target
+    this.setState({
+      data: {
+        ...this.state.data,
+        options: checked
+          ? [...this.state.data.options, value]
+          : this.state.data.options.filter(d => d !== value),
+      },
     })
   }
   render() {
@@ -57,7 +71,14 @@ export class Example extends Component {
                 1
               </Label>
             </FormGroup>
-            <FormGroup check inline={this.state.isInline}>
+            <CheckboxControl
+              id="inlineCheckbox2"
+              value="option2"
+              checked={this.state.data.options.includes('option2')}
+              onChange={this.handleChangeOption}
+              label="Option 2"
+            />
+            {/* <FormGroup check inline={this.state.isInline}>
               <Input
                 className="form-check-input"
                 type="checkbox"
@@ -67,7 +88,7 @@ export class Example extends Component {
               <Label className="form-check-label" htmlFor="inlineCheckbox2">
                 2
               </Label>
-            </FormGroup>
+            </FormGroup> */}
             <FormGroup check inline={this.state.isInline}>
               <Input
                 className="form-check-input"

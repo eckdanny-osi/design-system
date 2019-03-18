@@ -20,6 +20,8 @@ export interface CheckboxBankProps<T = any> extends IListType<T> {
   onChange: React.ChangeEventHandler;
   /** Blur handler (traditional callback) */
   onBlur: React.EventHandler<any>;
+  /** Focus event handler */
+  onFocus: React.FocusEventHandler;
 }
 
 const CheckboxBank = (props: CheckboxBankProps<any>) => {
@@ -29,12 +31,7 @@ const CheckboxBank = (props: CheckboxBankProps<any>) => {
       {props.options.map(option => {
         const id = `${props.name}-chk${uniqueId()}-${option.label}`;
         return (
-          <FormGroup
-            check
-            key={option.value}
-            className={cn("mx-2")}
-            inline={props.inline}
-          >
+          <FormGroup check key={option.value} inline={props.inline}>
             <CheckboxControl
               id={id}
               value={option.value}
