@@ -3,7 +3,7 @@ import cn from "classnames";
 import Styles from "./Fieldset.module.scss";
 
 interface FieldsetProps {
-  className: string;
+  className?: string;
 }
 
 export default ({ className, ...props }: FieldsetProps) => {

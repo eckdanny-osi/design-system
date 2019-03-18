@@ -3,7 +3,7 @@ import cn from "classnames";
 import Styles from "./Legend.module.scss";
 
 interface LegendProps {
-  className: string;
+  className?: string;
 }
 
 export default ({ className, ...props }: LegendProps) => {

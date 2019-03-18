@@ -3,6 +3,8 @@ import * as React from "react";
 import cn from "classnames";
 import { Input, FormGroup, Label } from "@cwds/reactstrap";
 import CheckboxControl from "./CheckboxControl";
+import Fieldset from "./Fieldset";
+import Legend from "./Legend";
 const uniqueId = require("lodash.uniqueid");
 
 export interface CheckboxBankProps<T = any> extends IListType<T> {
@@ -27,23 +29,26 @@ export interface CheckboxBankProps<T = any> extends IListType<T> {
 const CheckboxBank = (props: CheckboxBankProps<any>) => {
   if (!props.options || !props.options.length) return null;
   return (
-    <React.Fragment>
-      {props.options.map(option => {
-        const id = `${props.name}-chk${uniqueId()}-${option.label}`;
-        return (
-          <FormGroup check key={option.value} inline={props.inline}>
+    <Fieldset>
+      <Legend>Pick Some Values</Legend>
+      <React.Fragment>
+        {props.options.map(option => {
+          const id = `${props.name}-chk${uniqueId()}-${option.label}`;
+          return (
             <CheckboxControl
               id={id}
+              key={option.value}
+              inline={props.inline}
               value={option.value}
               checked={props.value.includes(option.value)}
               disabled={Boolean(option.disabled)}
               onChange={props.onChange}
               label={option.label}
             />
-          </FormGroup>
-        );
-      })}
-    </React.Fragment>
+          );
+        })}
+      </React.Fragment>
+    </Fieldset>
   );
 };
 

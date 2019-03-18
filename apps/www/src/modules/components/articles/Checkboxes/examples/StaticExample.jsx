@@ -7,13 +7,14 @@ import {
   FormText,
   FormFeedback,
 } from '@cwds/reactstrap'
-import { Fieldset, Legend, CheckboxControl } from '@cwds/forms'
+import { Fieldset, Legend, CheckboxControl, CheckboxBank } from '@cwds/forms'
 
 export class Example extends Component {
   state = {
     isInline: false,
     data: {
       options: [],
+      letters: [],
     },
   }
   handleChangeIsInline = () => {
@@ -21,19 +22,25 @@ export class Example extends Component {
   }
   handleChangeOption = e => {
     const { checked, value } = e.target
-    this.setState(
-      state => {
-        return {
-          data: {
-            ...this.state.data,
-            options: checked
-              ? [...this.state.data.options, value]
-              : this.state.data.options.filter(d => d !== value),
-          },
-        }
+    this.setState({
+      data: {
+        ...this.state.data,
+        options: checked
+          ? [...this.state.data.options, value]
+          : this.state.data.options.filter(d => d !== value),
       },
-      () => console.log(this.state.data.options)
-    )
+    })
+  }
+  handleChangeLetters = e => {
+    const { checked, value } = e.target
+    this.setState({
+      data: {
+        ...this.state.data,
+        letters: checked
+          ? [...this.state.data.letters, value]
+          : this.state.data.letters.filter(d => d !== value),
+      },
+    })
   }
   render() {
     return (
@@ -88,6 +95,19 @@ export class Example extends Component {
               onChange={this.handleChangeOption}
             />
           </Fieldset>
+          <CheckboxBank
+            options={[
+              { label: 'Alpha', value: 'a' },
+              { label: 'Bravo', value: 'b' },
+              { label: 'Charlie', value: 'c' },
+              { label: 'Delta', value: 'd' },
+              { label: 'Echo', value: 'e' },
+              { label: 'Foxtrot', value: 'f' },
+            ]}
+            value={this.state.data.letters}
+            onChange={this.handleChangeLetters}
+            inline={this.state.isInline}
+          />
           <FormGroup>
             <Label for="exampleEmail">Valid input</Label>
             <Input valid />

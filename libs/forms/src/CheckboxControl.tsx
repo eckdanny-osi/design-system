@@ -5,8 +5,8 @@ import cn from "classnames";
 
 interface CheckboxControlProps {
   id?: string;
-  className: string;
-  inline: boolean;
+  className?: string;
+  inline?: boolean;
   label: string;
   value: string | boolean | number;
   checked: boolean;
