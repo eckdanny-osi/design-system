@@ -1,7 +1,13 @@
 import { IOption } from "./types";
 import React, { Fragment } from "react";
-import { FormGroup, Input, Label } from "@cwds/reactstrap";
+import { FormGroup, Input, Label, Util } from "@cwds/reactstrap";
 import cn from "classnames";
+
+const mapToCssModules = Util.mapToCssModules;
+
+// console.log(mapToCssModules())j
+
+console.log(mapToCssModules("form-check-input"));
 
 interface CheckboxControlProps {
   id?: string;
@@ -21,12 +27,15 @@ const CheckboxControl = (props: CheckboxControlProps) => {
         type="checkbox"
         id={props.id}
         checked={props.checked}
-        className={cn("form-check-input")}
+        className={mapToCssModules(cn("form-check-input"))}
         disabled={props.disabled}
         onChange={props.onChange}
         value={String(props.value)}
       />
-      <Label className="form-check-label" htmlFor={props.id}>
+      <Label
+        className={mapToCssModules(cn("form-check-label"))}
+        htmlFor={props.id}
+      >
         {props.label}
       </Label>
     </FormGroup>

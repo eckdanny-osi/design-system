@@ -4,6 +4,7 @@ import Styles from "./Fieldset.module.scss";
 
 interface FieldsetProps {
   className?: string;
+  children: React.ReactNode;
 }
 
 export default ({ className, ...props }: FieldsetProps) => {

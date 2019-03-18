@@ -101,9 +101,10 @@ export class Example extends Component {
               { label: 'Bravo', value: 'b' },
               { label: 'Charlie', value: 'c' },
               { label: 'Delta', value: 'd' },
-              { label: 'Echo', value: 'e' },
+              { label: 'Echo', value: 'e', disabled: true },
               { label: 'Foxtrot', value: 'f' },
             ]}
+            name="letters"
             value={this.state.data.letters}
             onChange={this.handleChangeLetters}
             inline={this.state.isInline}

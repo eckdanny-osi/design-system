@@ -4,6 +4,7 @@ import Styles from "./Legend.module.scss";
 
 interface LegendProps {
   className?: string;
+  children: React.ReactNode;
 }
 
 export default ({ className, ...props }: LegendProps) => {

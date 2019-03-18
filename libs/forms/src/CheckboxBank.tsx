@@ -1,7 +1,7 @@
 import { IOption, IListType } from "./types";
 import * as React from "react";
 import cn from "classnames";
-import { Input, FormGroup, Label } from "@cwds/reactstrap";
+import { Input, FormGroup, Label, FormFeedback } from "@cwds/reactstrap";
 import CheckboxControl from "./CheckboxControl";
 import Fieldset from "./Fieldset";
 import Legend from "./Legend";
@@ -31,9 +31,13 @@ const CheckboxBank = (props: CheckboxBankProps<any>) => {
   return (
     <Fieldset>
       <Legend>Pick Some Values</Legend>
+      <FormFeedback className="d-block" valid={false}>
+        Oh noes! that name is already taken
+      </FormFeedback>
       <React.Fragment>
         {props.options.map(option => {
-          const id = `${props.name}-chk${uniqueId()}-${option.label}`;
+          // const id = `${props.name}-chk${uniqueId()}-${option.label}`;
+          const id = `${props.name}__${option.label}`;
           return (
             <CheckboxControl
               id={id}
