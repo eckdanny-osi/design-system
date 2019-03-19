@@ -23,6 +23,7 @@ import Page from '!babel-loader!@mdx-js/loader!./articles/Page/Page.mdx'
 import CaresProvider from '!babel-loader!@mdx-js/loader!./articles/CaresProvider/CaresProvider.mdx'
 import Tile from '!babel-loader!@mdx-js/loader!./articles/Tile/Tile.mdx'
 import Checkboxes from '!babel-loader!@mdx-js/loader!./articles/Checkboxes/Checkboxes.mdx'
+import Forms from '!babel-loader!@mdx-js/loader!./articles/Forms/Forms.mdx'
 
 const routes = {
   title: 'Component Library',
@@ -246,6 +247,11 @@ const routes = {
       title: 'Checkboxes',
       path: '/checkboxes',
       component: Checkboxes,
+    },
+    {
+      title: 'Forms',
+      path: '/forms',
+      component: Forms,
     },
   ],
 }

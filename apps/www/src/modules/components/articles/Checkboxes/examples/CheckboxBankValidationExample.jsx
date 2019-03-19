@@ -1,10 +1,17 @@
-import React, { Fragment } from 'react'
-import { Formik, Form, Field, FieldArray } from 'formik'
+import React from 'react'
+import { Formik, Form, Field } from 'formik'
 import cn from 'classnames'
-import { Label, Card, CardHeader, CardTitle, CardBody } from '@cwds/components'
+import {
+  Select,
+  Label,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+} from '@cwds/components'
 import { Fieldset, Legend, CheckboxControl } from '@cwds/forms'
-import { Select } from '@cwds/components'
 import { FormGroup, FormFeedback } from '@cwds/reactstrap'
+import { CodeBlock } from '@cwds/docs'
 
 const OPTIONS_BEATLES = [
   {
@@ -33,6 +40,10 @@ function validateBeatles(value) {
     errors.favoriteBeatle = 'You can not choose them all!'
   }
 
+  if (Object.values(value.beatleConfirm).filter(Boolean).length === 4) {
+    errors.beatleConfirm = 'You can not choose them all!'
+  }
+
   return errors
 }
 
@@ -48,6 +59,7 @@ const CheckboxBankValidationExample = () => (
             favoriteBeatle: {
               '2': true,
             },
+            beatleConfirm: {},
             color: '',
             iceCream: 'strawberry',
             favoriteOgreSaying: '',
@@ -63,20 +75,11 @@ const CheckboxBankValidationExample = () => (
             setFieldTouched,
             setFieldValue,
           }) => {
-            // console.log(values)
             return (
               <div>
                 <Field
                   name="favoriteBeatle"
                   render={({ field, form, ...restProps }) => {
-                    const {
-                      onChange,
-                      onBlur,
-                      name: fmkName,
-                      value: fmkValue,
-                    } = field
-                    // console.log('Field#render()', { field })
-                    // console.log(errors)
                     return (
                       <Fieldset>
                         <Legend>Favorite Beatle</Legend>
@@ -95,8 +98,6 @@ const CheckboxBankValidationExample = () => (
                           )}
                           {OPTIONS_BEATLES.map(({ label, value }, i) => {
                             // console.log({ value, label })
-                            // debugger
-                            // console.log({ fmkName, fmkValue, label, value })
                             return (
                               <CheckboxControl
                                 id={`${field.name}__${value}`}
@@ -109,13 +110,6 @@ const CheckboxBankValidationExample = () => (
                                   field.onChange(e)
                                 }}
                                 onBlur={e => setFieldTouched(`${field.name}`)}
-                                // onChange={e => {
-                                //   const { name, value, checked } = e.target
-                                //   console.log({ name, value, checked })
-                                //   // const { value, name, checked } = e.target
-                                //   // console.log({ name, value, checked })
-                                //   field.onChange(e)
-                                // }}
                                 label={label}
                                 labelClassName={
                                   !!errors.favoriteBeatle && 'text-danger'
@@ -128,17 +122,63 @@ const CheckboxBankValidationExample = () => (
                     )
                   }}
                 />
-                {/* <Field
-                name="color"
-                component="select"
-                placeholder="Favorite Color"
-              >
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-              </Field> */}
+                <Field
+                  name="beatleConfirm"
+                  render={({ field, form }) => {
+                    return (
+                      <FormGroup>
+                        <Label>Beatles (Again)</Label>
+                        {errors.beatleConfirm && (
+                          <FormFeedback valid={false} className="d-block mb-3">
+                            {errors.beatleConfirm}
+                          </FormFeedback>
+                        )}
+                        <Select
+                          name={field.name}
+                          isMulti
+                          isClearable
+                          options={OPTIONS_BEATLES}
+                          defaultValue={OPTIONS_BEATLES.find(
+                            d => d.value === field.value
+                          )}
+                          onChange={(opt, evt) => {
+                            const { action, name } = evt
+                            // console.log({ opt, evt })
+                            switch (action) {
+                              case 'select-option':
+                                setFieldValue(
+                                  name,
+                                  opt.reduce(
+                                    (acc, d) => ({ ...acc, [d.value]: true }),
+                                    {}
+                                  )
+                                )
+                                break
+                              case 'remove-value':
+                                setFieldValue(
+                                  name,
+                                  opt.reduce(
+                                    (acc, d) => ({ ...acc, [d.value]: true }),
+                                    {}
+                                  )
+                                )
+                                break
+                              case 'clear':
+                                setFieldValue(name, {})
+                                break
+                              default:
+                                break
+                            }
+                            setFieldTouched(name)
+                          }}
+                        />
+                      </FormGroup>
+                    )
+                  }}
+                />
                 <Field
                   name="iceCream"
+                  isClearable
                   render={({ field, form, ...props }) => {
                     // console.log({ field, props })
                     const options = [
@@ -148,20 +188,26 @@ const CheckboxBankValidationExample = () => (
                     ]
                     return (
                       <FormGroup>
-                        <Label>IceCream</Label>
+                        <Label>Favorite Ice Cream</Label>
                         <Select
-                          // {...field}
                           name={field.name}
-                          // {...props}
+                          {...props}
+                          isClearable={true}
                           options={options}
                           defaultValue={options.find(
                             d => d.value === field.value
                           )}
-                          // value={options.find(d => d.value === field.value)}
-                          onChange={(opt, { name }) => {
-                            // console.log({ one, action })
-                            // field.onChange(action.name, one.value)
-                            setFieldValue(name, opt.value)
+                          onChange={(opt, { action, name }) => {
+                            switch (action) {
+                              case 'select-option':
+                                setFieldValue(name, opt.value)
+                                break
+                              case 'clear':
+                                setFieldValue(name, '')
+                                break
+                              default:
+                                break
+                            }
                             setFieldTouched(name)
                           }}
                         />
@@ -194,9 +240,9 @@ const CheckboxBankValidationExample = () => (
                     }}
                   />
                 </FormGroup>
-                <pre>
+                <CodeBlock language="json">
                   {JSON.stringify({ values, errors, touched }, null, 2)}
-                </pre>
+                </CodeBlock>
               </div>
 
               // <Fragment>
