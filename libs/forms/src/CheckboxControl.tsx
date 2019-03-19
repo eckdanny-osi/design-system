@@ -13,11 +13,13 @@ interface CheckboxControlProps {
   id?: string;
   className?: string;
   inline?: boolean;
+  name: string;
   label: string;
   value: string | boolean | number;
   checked: boolean;
   disabled: boolean;
   onChange?: React.FormEventHandler;
+  onBlur?: React.FormEventHandler;
 }
 
 const CheckboxControl = (props: CheckboxControlProps) => {
@@ -26,11 +28,13 @@ const CheckboxControl = (props: CheckboxControlProps) => {
       <Input
         type="checkbox"
         id={props.id}
+        name={props.name}
         checked={props.checked}
         className={mapToCssModules(cn("form-check-input"))}
         disabled={props.disabled}
-        onChange={props.onChange}
         value={String(props.value)}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
       />
       <Label
         className={mapToCssModules(cn("form-check-label"))}
