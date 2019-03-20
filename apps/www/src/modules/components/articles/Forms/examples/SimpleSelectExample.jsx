@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import { Formik } from 'formik'
+import partial from 'lodash.partial'
+import get from 'lodash.get'
 import { Card, CardBody, Select, FormGroup, Label } from '@cwds/components'
 import { CodeBlock } from '@cwds/docs'
 
@@ -21,18 +24,33 @@ const initialValues = {
 }
 
 class MySelect extends Component {
-  getValues = (vals, options) => {
-    return vals.reduce((acc, id) => {
-      return [...acc, options.find(option => id === option.value)]
+  static propTypes = {
+    options: PropTypes.arrayOf(PropTypes.object).isRequired,
+    value: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onChange: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    formatValue: PropTypes.func,
+    parseValue: PropTypes.func,
+  }
+
+  static defaultProps = {
+    formatValue: x => get(x, 'value'),
+  }
+
+  parseValue = () => {
+    const { value, options, formatValue, parseValue } = this.props
+    if (parseValue) return parseValue(value, options)
+    return value.reduce((acc, val) => {
+      return [...acc, options.find(opt => val === formatValue(opt))]
     }, [])
   }
 
   handleChange = (value, meta) => {
-    this.props.onChange('toppings', value.map(d => d.value))
+    this.props.onChange(value.map(this.props.formatValue))
   }
 
   handleBlur = () => {
-    this.props.onBlur('toppings', true)
+    this.props.onBlur(true)
   }
 
   render() {
@@ -40,7 +58,7 @@ class MySelect extends Component {
       <Select
         isMulti
         options={this.props.options}
-        value={this.getValues(this.props.value, this.props.options)}
+        value={this.parseValue()}
         onChange={this.handleChange}
         onBlur={this.handleBlur}
       />
@@ -51,18 +69,16 @@ class MySelect extends Component {
 const SimpleCheckboxBankExample = ({ noDebug }) => {
   return (
     <Formik initialValues={initialValues}>
-      {({ values, errors, touched, setFieldValue, setFieldTouched }) => (
+      {({ values, setFieldValue, setFieldTouched }) => (
         <Card>
           <CardBody>
             <FormGroup>
               <Label>Toppings</Label>
               <MySelect
                 options={TOPPINGS}
-                value={values.toppings}
-                onChange={setFieldValue}
-                onBlur={setFieldTouched}
-                error={errors.toppings}
-                touched={touched.toppings}
+                value={get(values, 'toppings')}
+                onChange={partial(setFieldValue, 'toppings')}
+                onBlur={partial(setFieldTouched, 'toppings')}
               />
               {!noDebug && (
                 <Fragment>
