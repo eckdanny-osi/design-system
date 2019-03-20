@@ -20,7 +20,7 @@ interface CheckboxControlProps {
   checked: boolean
   defaultChecked: boolean
   disabled: boolean
-  onChange?: React.FormEventHandler
+  onChange?(e: React.ChangeEvent<any>): void //  ?: React.ChangeEvent,
   onBlur?: React.FormEventHandler
 }
 
