@@ -1,6 +1,5 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import cn from 'classnames'
 import {
   AlertUncontrolled as Alert,
   Button,
@@ -63,12 +62,13 @@ function myValidateFn(value) {
 }
 
 function handleSubmit(values, actions) {
+  const DELAY = 1000
   setTimeout(() => {
     console.log(values)
     actions.setSubmitting(false)
     actions.setStatus({ success: true })
     console.log(actions.submitCount)
-  }, 1000)
+  }, DELAY)
 }
 
 const CheckboxBankValidationExample = () => (
