@@ -2,6 +2,7 @@ import { IOption } from './types'
 import React, { Fragment } from 'react'
 import { FormGroup, Input, Label, Util } from '@cwds/reactstrap'
 import cn from 'classnames'
+import Styles from './CheckboxControl.module.scss'
 
 const mapToCssModules = Util.mapToCssModules
 
@@ -32,6 +33,7 @@ const CheckboxControl = (props: CheckboxControlProps) => {
       check
       inline={props.inline}
       // className={cn(props.className)}
+      className={cn(Styles.CheckboxControlFocus)}
     >
       <Input
         type="checkbox"
@@ -40,14 +42,14 @@ const CheckboxControl = (props: CheckboxControlProps) => {
         checked={props.checked}
         defaultChecked={props.defaultChecked}
         // className={mapToCssModules(cn('form-check-input'))}
-        className="form-check-input"
+        // className="form-check-input"
         disabled={props.disabled}
         value={String(props.value)}
         onChange={props.onChange}
         onBlur={props.onBlur}
       />
       <Label
-        className={cn('form-check-label', props.labelClassName)}
+        className={cn('form-check-label d-block', props.labelClassName)}
         htmlFor={props.id}
       >
         {props.label}

@@ -108,36 +108,31 @@ const CheckboxBankValidationExample = () => (
                     return (
                       <Fieldset>
                         <Legend>Favorite Beatle</Legend>
-                        <div className={cn('px-3')}>
-                          {OPTIONS_BEATLES.map(({ label, value }, i) => {
-                            return (
-                              <CheckboxControl
-                                id={`${field.name}__${value}`}
-                                key={`${field.name}__${value}`}
-                                name={`${field.name}[${value}]`}
-                                value={value}
-                                defaultChecked={field.value[value]}
-                                onChange={e => {
-                                  setFieldTouched(`${field.name}`)
-                                  field.onChange(e)
-                                }}
-                                onBlur={e => setFieldTouched(`${field.name}`)}
-                                label={label}
-                                labelClassName={
-                                  !!errors.favoriteBeatle && 'text-danger'
-                                }
-                              />
-                            )
-                          })}
-                          {errors.favoriteBeatle && (
-                            <FormFeedback
-                              valid={false}
-                              className="d-block mt-2"
-                            >
-                              {errors.favoriteBeatle}
-                            </FormFeedback>
-                          )}
-                        </div>
+                        {OPTIONS_BEATLES.map(({ label, value }, i) => {
+                          return (
+                            <CheckboxControl
+                              id={`${field.name}__${value}`}
+                              key={`${field.name}__${value}`}
+                              name={`${field.name}[${value}]`}
+                              value={value}
+                              defaultChecked={field.value[value]}
+                              onChange={e => {
+                                setFieldTouched(`${field.name}`)
+                                field.onChange(e)
+                              }}
+                              onBlur={e => setFieldTouched(`${field.name}`)}
+                              label={label}
+                              labelClassName={
+                                !!errors.favoriteBeatle && 'text-danger'
+                              }
+                            />
+                          )
+                        })}
+                        {errors.favoriteBeatle && (
+                          <FormFeedback valid={false} className="d-block mt-2">
+                            {errors.favoriteBeatle}
+                          </FormFeedback>
+                        )}
                       </Fieldset>
                     )
                   }}
