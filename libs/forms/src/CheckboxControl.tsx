@@ -9,12 +9,11 @@ interface CheckboxControlProps {
   className?: string
   labelClassName?: string
   inline?: boolean
-  name: string
+  name?: string
   label: string
   value: string | boolean | number
   checked: boolean
-  defaultChecked: boolean
-  disabled: boolean
+  disabled?: boolean
   onChange?(e: React.ChangeEvent<any>): void //  ?: React.ChangeEvent,
   onBlur?: React.FormEventHandler
 }
@@ -41,7 +40,6 @@ const CheckboxControl = (props: CheckboxControlProps) => {
         id={id}
         name={props.name}
         checked={props.checked}
-        defaultChecked={props.defaultChecked}
         disabled={props.disabled}
         value={String(props.value)}
         onChange={props.onChange}

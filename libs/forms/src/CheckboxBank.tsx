@@ -1,64 +1,63 @@
-import { IOption, IListType } from "./types";
-import * as React from "react";
-import cn from "classnames";
-import { Input, FormGroup, Label, FormFeedback } from "@cwds/reactstrap";
-import CheckboxControl from "./CheckboxControl";
-import Fieldset from "./Fieldset";
-import Legend from "./Legend";
-const uniqueId = require("lodash.uniqueid");
+import { IOption, IListType } from './types'
+import * as React from 'react'
+import cn from 'classnames'
+import { Input, FormGroup, Label } from '@cwds/reactstrap'
+import CheckboxControl from './CheckboxControl'
+import Fieldset from './Fieldset'
+import Legend from './Legend'
+const uniqueId = require('lodash.uniqueid')
 
 export interface CheckboxBankProps<T = any> extends IListType<T> {
   /** The currently selected choices */
-  value: T[];
+  value: T[]
   /** alksdfj */
-  options: IOption<T>[];
+  options: IOption<T>[]
   /** Name for the field. Used to generate unique id */
-  name: string;
+  name: string
   /** Whether or not to enable the _entire_ field */
-  disabled: boolean;
+  disabled: boolean
   /** Use alternate layout */
-  inline: boolean;
+  inline: boolean
   /** Change handler (traditional callback) */
-  onChange: React.ChangeEventHandler;
+  onChange: (x: string[]) => void | React.ChangeEventHandler
   /** Blur handler (traditional callback) */
-  onBlur: React.EventHandler<any>;
-  /** Focus event handler */
-  onFocus: React.FocusEventHandler;
+  onBlur: React.EventHandler<any>
 }
+class CheckboxBank extends React.Component<CheckboxBankProps> {
+  static propTypes = {}
 
-const CheckboxBank = (props: CheckboxBankProps<any>) => {
-  if (!props.options || !props.options.length) return null;
-  return (
-    <Fieldset>
-      <Legend>Pick Some Values</Legend>
-      <FormFeedback className="d-block" valid={false}>
-        Oh noes! that name is already taken
-      </FormFeedback>
-      <React.Fragment>
-        {props.options.map(option => {
-          // const id = `${props.name}-chk${uniqueId()}-${option.label}`;
-          const id = `${props.name}__${option.label}`;
+  handleChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+    const { value, checked } = e.target
+    if (checked) {
+      this.props.onChange([...this.props.value, value])
+    } else {
+      this.props.onChange(this.props.value.filter(val => val !== value))
+    }
+  }
+
+  handleBlur = () => {
+    this.props.onBlur(true)
+  }
+
+  render() {
+    const { options } = this.props
+    return (
+      <Fieldset>
+        {options.map(opt => {
           return (
             <CheckboxControl
-              id={id}
-              key={option.value}
-              inline={props.inline}
-              value={option.value}
-              checked={props.value.includes(option.value)}
-              disabled={Boolean(option.disabled)}
-              onChange={props.onChange}
-              label={option.label}
+              key={opt.value}
+              value={opt.value}
+              checked={this.props.value.includes(opt.value)}
+              onChange={this.handleChange}
+              onBlur={this.handleBlur}
+              label={opt.label}
             />
-          );
+          )
         })}
-      </React.Fragment>
-    </Fieldset>
-  );
-};
+      </Fieldset>
+    )
+  }
+}
 
-CheckboxBank.defaultProps = {
-  options: [],
-  value: []
-};
-
-export default CheckboxBank;
+export default CheckboxBank
