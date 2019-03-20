@@ -5,33 +5,36 @@ import { CodeBlock } from '@cwds/docs'
 import { CheckboxBank } from '@cwds/forms'
 import get from 'lodash.get'
 import partial from 'lodash.partial'
+import { toppings as options } from './toppings-data'
 
-import { toppings } from './toppings-data'
+const initialValues = ['3', '2', '5', '9']
 
-const initialValues = {
-  toppings: ['3', '2', '5', '9'],
-}
-
-const BasicCheckboxBankExample = ({ noDebug }) => {
+const BasicCheckboxBankExample = ({
+  noDebug,
+  options,
+  initialValues,
+  label,
+  fieldName,
+}) => {
   return (
-    <Formik initialValues={initialValues}>
+    <Formik initialValues={{ [fieldName]: initialValues }}>
       {({ values, errors, touched, setFieldValue, setFieldTouched }) => (
-        <Card>
+        <Card className="mb-0">
           <CardBody>
             <FormGroup>
-              <Label>Toppings</Label>
+              <Label>{label}</Label>
               <CheckboxBank
-                options={toppings}
-                value={get(values, 'toppings')}
-                onChange={partial(setFieldValue, 'toppings')}
-                onBlur={partial(setFieldTouched, 'toppings')}
+                options={options}
+                value={get(values, fieldName)}
+                onChange={partial(setFieldValue, fieldName)}
+                onBlur={partial(setFieldTouched, fieldName)}
               />
             </FormGroup>
             {!noDebug && (
               <Fragment>
                 <hr />
                 <CodeBlock language="json" className="mb-0">
-                  {JSON.stringify(values, null, 2)}
+                  {JSON.stringify({ values, errors, touched }, null, 2)}
                 </CodeBlock>
               </Fragment>
             )}
@@ -40,6 +43,13 @@ const BasicCheckboxBankExample = ({ noDebug }) => {
       )}
     </Formik>
   )
+}
+
+BasicCheckboxBankExample.defaultProps = {
+  options,
+  initialValues,
+  label: 'Toppings',
+  fieldName: 'toppings',
 }
 
 export default BasicCheckboxBankExample

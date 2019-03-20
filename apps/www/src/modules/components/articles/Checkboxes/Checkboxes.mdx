@@ -14,7 +14,19 @@ import BasicCheckboxBankExample from "./examples/BasicCheckboxBankExample";
 Use a `CheckboxBank`s in forms.
 
 <DemoCard>
-  <div>PUT A DEMO HERE</div>
+  <BasicCheckboxBankExample
+    options={[
+      { value: "foo", label: "Foo" },
+      { value: "bar", label: "Bar" },
+      { value: "bazz", label: "Bazz" },
+      { value: "quo", label: "Quo" },
+      { value: "qux", label: "Qux" }
+    ]}
+    initialValues={["quo"]}
+    label="Metasyntactic Variables"
+    fieldName="metaVarNames"
+    noDebug
+  />
 </DemoCard>
 
 ```jsx
@@ -30,19 +42,27 @@ import { CheckboxBank } from "@cwds/forms";
   yet!
 </Alert>
 
+## Usage Guidelines
+
+`CheckboxBank`s are one of the **N-pick-k** family of CARES <tt>FormControl</tt>s.
+
 ## Examples
 
 ### Basic Example
 
 <BasicCheckboxBankExample />
 
-<!-- ### A Simple CheckboxBank
+<!--
+### A Simple CheckboxBank
 
 <SimpleCheckboxBankExample />
+-->
 
+<!--
 ### Another Example
 
 <CheckboxBankExample />
+-->
 
 ### Validation
 
@@ -65,4 +85,4 @@ import { CheckboxBank } from "@cwds/forms";
 
 ### More Um...
 
-<StaticExample /> -->
+<StaticExample />
