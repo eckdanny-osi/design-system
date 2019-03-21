@@ -25,6 +25,7 @@ Use a `CheckboxBank`s in forms.
     initialValues={["quo"]}
     label="Metasyntactic Variables"
     fieldName="metaVarNames"
+    className="mb-0"
     noDebug
   />
 </DemoCard>
@@ -50,7 +51,33 @@ import { CheckboxBank } from "@cwds/forms";
 
 ### Basic Example
 
+Here's a
+
+aslkdfjaklsdfj
+
 <BasicCheckboxBankExample />
+
+### Structure in a `Card`
+
+```jsx
+<Card>
+  <CardBody>
+    <FormGroup>
+      <Label>Toppings</Label>
+      <CheckboxBank
+        options={options}
+        value={value}
+        onChange={handleChange)}
+        onBlur={handleBlur}
+        error={Boolean(error)}
+      />
+      <ErrorMessage errors={error} />
+    </FormGroup>
+```
+
+### Validation
+
+NEED DEMO HERE
 
 <!--
 ### A Simple CheckboxBank
@@ -64,25 +91,12 @@ import { CheckboxBank } from "@cwds/forms";
 <CheckboxBankExample />
 -->
 
+<!--
 ### Validation
 
 <CheckboxBankValidationExample />
+-->
 
-### Umm....
-
-<Form>
-  <FormGroup check>
-    <Label check>
-      <Input type="checkbox" /> Some input
-    </Label>
-  </FormGroup>
-  <FormGroup check>
-    <Label check>
-      <Input type="checkbox" /> Some other input
-    </Label>
-  </FormGroup>
-</Form>
-
-### More Um...
-
+<!--
 <StaticExample />
+-->

@@ -15,15 +15,24 @@ const BasicCheckboxBankExample = ({
   initialValues,
   label,
   fieldName,
+  inline,
 }) => {
   return (
     <Formik initialValues={{ [fieldName]: initialValues }}>
-      {({ values, errors, touched, setFieldValue, setFieldTouched }) => (
-        <Card className="mb-0">
+      {({
+        values,
+        errors,
+        touched,
+        setFieldValue,
+        setFieldTouched,
+        className,
+      }) => (
+        <Card className={className}>
           <CardBody>
             <FormGroup>
               <Label>{label}</Label>
               <CheckboxBank
+                inline
                 options={options}
                 value={get(values, fieldName)}
                 onChange={partial(setFieldValue, fieldName)}
