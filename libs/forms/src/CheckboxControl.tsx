@@ -8,6 +8,7 @@ interface CheckboxControlProps {
   id?: string
   className?: string
   labelClassName?: string
+  error?: boolean
   inline?: boolean
   name?: string
   label: string
@@ -46,7 +47,9 @@ const CheckboxControl = (props: CheckboxControlProps) => {
         onBlur={props.onBlur}
       />
       <Label
-        className={cn('form-check-label d-block', props.labelClassName)}
+        className={cn('form-check-label d-block', props.labelClassName, {
+          'text-danger': !!props.error,
+        })}
         htmlFor={id}
       >
         {props.label}

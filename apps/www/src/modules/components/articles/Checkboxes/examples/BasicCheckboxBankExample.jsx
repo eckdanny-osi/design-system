@@ -13,12 +13,13 @@ const BasicCheckboxBankExample = ({
   noDebug,
   options,
   initialValues,
+  validate,
   label,
   fieldName,
   inline,
 }) => {
   return (
-    <Formik initialValues={{ [fieldName]: initialValues }}>
+    <Formik initialValues={{ [fieldName]: initialValues }} validate={validate}>
       {({
         values,
         errors,

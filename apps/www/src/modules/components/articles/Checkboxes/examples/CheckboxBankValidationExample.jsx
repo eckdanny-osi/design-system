@@ -3,8 +3,8 @@ import { Formik, Form, Field } from 'formik'
 import {
   AlertUncontrolled as Alert,
   Button,
-  Select,
-  Label,
+  // Select,
+  // Label,
   Card,
   CardHeader,
   CardTitle,
@@ -12,7 +12,10 @@ import {
   CardFooter,
 } from '@cwds/components'
 import { Fieldset, Legend, CheckboxControl } from '@cwds/forms'
-import { FormGroup, FormFeedback } from '@cwds/reactstrap'
+import {
+  // FormGroup,
+  FormFeedback,
+} from '@cwds/reactstrap'
 import { CodeBlock } from '@cwds/docs'
 
 const initialValues = {
@@ -22,9 +25,9 @@ const initialValues = {
   beatleConfirm: {
     '3': true,
   },
-  color: '',
-  iceCream: 'strawberry',
-  favoriteOgreSaying: '',
+  // color: '',
+  // iceCream: 'strawberry',
+  // favoriteOgreSaying: '',
 }
 
 const OPTIONS_BEATLES = [
@@ -52,6 +55,9 @@ function myValidateFn(value) {
 
   if (Object.values(value.favoriteBeatle).filter(Boolean).length === 4) {
     errors.favoriteBeatle = 'You can not choose them all!'
+  }
+  if (Object.values(value.favoriteBeatle).filter(Boolean).length === 0) {
+    errors.favoriteBeatle = 'You have to choose atleast 1!'
   }
 
   if (Object.values(value.beatleConfirm).filter(Boolean).length === 4) {
@@ -137,7 +143,7 @@ const CheckboxBankValidationExample = () => (
                     )
                   }}
                 />
-                <Field
+                {/* <Field
                   name="beatleConfirm"
                   render={({ field, form }) => {
                     // field.onChange, field.onBlur, field.name, field.value
@@ -198,8 +204,8 @@ const CheckboxBankValidationExample = () => (
                       </FormGroup>
                     )
                   }}
-                />
-                <Field
+                /> */}
+                {/* <Field
                   name="iceCream"
                   isClearable
                   render={({ field, form, ...props }) => {
@@ -238,8 +244,8 @@ const CheckboxBankValidationExample = () => (
                       </FormGroup>
                     )
                   }}
-                />
-                <br />
+                /> */}
+                {/* <br />
                 <FormGroup>
                   <Label>Ogres Say</Label>
                   <Field
@@ -263,7 +269,7 @@ const CheckboxBankValidationExample = () => (
                       )
                     }}
                   />
-                </FormGroup>
+                </FormGroup> */}
                 <CodeBlock language="json">
                   {JSON.stringify({ values, errors, touched }, null, 2)}
                 </CodeBlock>
