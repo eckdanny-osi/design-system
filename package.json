@@ -19,7 +19,8 @@
     "test:libs": "yarn test --projects libs/*",
     "test:all": "CI=true lerna run --parallel test ",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "start": "cd apps/www && yarn react-scripts start",
+    "start": "yarn --cwd apps/www start",
+    "predev": "lerna run --parallel --scope @cwds/* clean",
     "dev": "lerna run --stream --parallel --scope @cwds/* dev",
     "prerelease": "yarn lint:libs && yarn test:libs && NODE_ENV=production yarn build:libs",
     "release": "lerna publish --conventional-commits --force-publish --exact",
@@ -29,7 +30,7 @@
     "lint:fix": "yarn lint --fix",
     "prebuild": "lerna bootstrap",
     "build:www": "lerna run --stream --scope www build",
-    "build:libs": "lerna run --scope @cwds/* --stream build",
+    "build:libs": "NODE_ENV=production lerna run --scope @cwds/* --stream build",
     "build": "yarn build:libs && yarn build:www"
   },
   "workspaces": {
@@ -59,6 +60,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.0.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "cpx": "^1.5.0",
