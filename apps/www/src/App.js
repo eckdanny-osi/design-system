@@ -16,7 +16,7 @@ import FacilityProfile from './demos/FacilityProfile'
 import ReassessmentForm from './demos/ReassessmentForm'
 import MessageArea from './demos/MesssageArea'
 import PageTemplates from './examples/PageTemplates'
-import CardPrototype from './demos/CardPrototype'
+import CardHeaderDemo from './demos/CardHeaders'
 
 class App extends Component {
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
                   component={ReassessmentForm}
                 />
                 <Route path="/demo/message-area" component={MessageArea} />
-                <Route path="/demo/CardPrototype" component={CardPrototype} />
+                <Route path="/demo/card-header" component={CardHeaderDemo} />
                 <Route
                   path="/__examples__/page-templates"
                   component={PageTemplates}
