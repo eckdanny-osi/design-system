@@ -1,19 +1,50 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import slugify from 'slugify'
-
 import {
-  Button,
-  ButtonGroup,
-  Page,
   Breadcrumb,
   BreadcrumbItem,
-  JumpNav,
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Col,
+  Page,
+  Row,
+  UncontrolledCollapsibleCard as CollapsibleCard,
 } from '@cwds/components'
-import CollapsibleCardDemo from './CollapsibleCardDemo'
-import SimpleCard from './SimpleCard'
 
-class PrototypeCard extends Component {
+const sampleHeaderSnippet = (
+  <Fragment>
+    <CardTitle>Smtih, Sarah</CardTitle>
+    <div>## years old</div>
+    <div>DOB mm/dd/yyyy</div>
+  </Fragment>
+)
+
+const sampleHeaderContent = (
+  <Row>
+    <Col sm={6}>
+      <div className="mb-3 mb-sm-0">
+        <CardTitle>Smtih, Sarah</CardTitle>
+        <div>## years old</div>
+        <div>DOB mm/dd/yyyy</div>
+      </div>
+    </Col>
+    <Col sm={6}>
+      <div className="float-sm-right">
+        <CardTitle>San Joaquin County</CardTitle>
+        <div>Cas/Referral Number</div>
+        <div>6324-344-6524-34636353</div>
+      </div>
+    </Col>
+  </Row>
+)
+
+class Demo extends Component {
+  title = 'Card Headers'
+
   state = {
     layout: 'subroutes',
   }
@@ -22,40 +53,20 @@ class PrototypeCard extends Component {
 
   render() {
     const isSubRoute = this.state.layout === 'subroutes'
-    const namedAnchors = [
-      {
-        title: 'Yet Another Card',
-        path: `#${slugify('Yet Another Card', {
-          replacement: '-',
-          lower: true,
-        })}`,
-      },
-      {
-        title: 'Collapsible Card',
-        path: `#${slugify('Collapsible Card', {
-          replacement: '-',
-          lower: true,
-        })}`,
-      },
-    ]
     return (
       <Page
-        title="Card Prototype"
+        title={this.title}
         layout={this.state.layout}
         Breadcrumb={
           <Breadcrumb>
             <BreadcrumbItem>
               <Link to="/">Dashboard</Link>
             </BreadcrumbItem>
+            <BreadcrumbItem>Demos</BreadcrumbItem>
+            <BreadcrumbItem active>{this.title}</BreadcrumbItem>
           </Breadcrumb>
         }
-        main={
-          <div>
-            <SimpleCard />
-            <CollapsibleCardDemo />
-          </div>
-        }
-        sidenav={<JumpNav routes={namedAnchors} />}
+        sidenav={null}
         PageActions={
           <ButtonGroup>
             <Button
@@ -80,9 +91,26 @@ class PrototypeCard extends Component {
             </Button>
           </ButtonGroup>
         }
-      />
+      >
+        <Card>
+          <CardHeader>{sampleHeaderContent}</CardHeader>
+          <CardBody>NOT collapsible</CardBody>
+        </Card>
+        <CollapsibleCard>
+          <CardHeader>{sampleHeaderContent}</CardHeader>
+          <CardBody>I am collapsible</CardBody>
+        </CollapsibleCard>
+        <Card>
+          <CardHeader>{sampleHeaderSnippet}</CardHeader>
+          <CardBody>NOT collapsible</CardBody>
+        </Card>
+        <CollapsibleCard>
+          <CardHeader>{sampleHeaderSnippet}</CardHeader>
+          <CardBody>I am collapsible</CardBody>
+        </CollapsibleCard>
+      </Page>
     )
   }
 }
 
-export default PrototypeCard
+export default Demo

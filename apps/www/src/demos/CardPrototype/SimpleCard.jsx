@@ -1,20 +1,24 @@
 import React from 'react'
-import { CardBody, CardHeader, CardTitle, Col, Row } from '@cwds/components'
+import { CardBody, CardHeader, CardTitle, Row, Col } from '@cwds/components'
 import { Card } from '@cwds/reactstrap'
 
 const SimpleCard = () => (
   <Card>
     <CardHeader>
       <Row>
-        <Col>
-          <CardTitle>Smtih, Sarah</CardTitle>
-          <div>## years old</div>
-          <div>DOB mm/dd/yyyy</div>
+        <Col sm={6}>
+          <div>
+            <CardTitle>Smtih, Sarah</CardTitle>
+            <div>## years old</div>
+            <div>DOB mm/dd/yyyy</div>
+          </div>
         </Col>
-        <Col className="float-right" xs="auto">
-          <CardTitle>San Joaquin County</CardTitle>
-          <div>Cas/Referral Number</div>
-          <div>6324-344-6524-34636353</div>
+        <Col sm={6}>
+          <div className="float-sm-right">
+            <CardTitle>San Joaquin County</CardTitle>
+            <div>Cas/Referral Number</div>
+            <div>6324-344-6524-34636353</div>
+          </div>
         </Col>
       </Row>
     </CardHeader>
