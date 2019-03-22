@@ -25,11 +25,11 @@ const CollapsibleCard = ({
   return (
     <Card {...props}>
       <CardHeader {...headerProps}>
-        <div className={cn(Styles.HeaderWrapper)}>
+        <div className={cn('align-items-start', Styles.HeaderWrapper)}>
           <div className={cn(Styles.HeaderChildrenWrapper)}>
             {headerChildren}
           </div>
-          <Button className="bg-transparent border-0" onClick={onToggle}>
+          <Button className="bg-transparent border-0 ml-3" onClick={onToggle}>
             <Icon
               name="chevron-down"
               rotation={!isOpen ? undefined : Util.ROTATION.FLIP}
