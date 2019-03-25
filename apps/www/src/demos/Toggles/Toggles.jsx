@@ -88,6 +88,7 @@ class Toggles extends Component {
                       aria-label="search-icon-1"
                       aria-pressed={iSelected === 1}
                       active={iSelected === 1}
+                      color="secondary"
                       onClick={() => this.onIBtnClick(1)}
                       outline
                     />
@@ -96,6 +97,7 @@ class Toggles extends Component {
                       aria-label="search-icon-2"
                       aria-pressed={iSelected === 1}
                       active={iSelected === 2}
+                      color="secondary"
                       onClick={() => this.onIBtnClick(2)}
                       outline
                     />
