@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import pick from 'lodash.pick'
 import {
+  Alert,
   Breadcrumb,
   BreadcrumbItem,
   Button,
@@ -121,6 +122,13 @@ export class ToggleDemos extends Component {
             </CardBody>
           </Card>
         </div>
+        <Alert color="warning">
+          <strong>Note</strong>: Keyboard navigability <em>should</em> depend on
+          whether or not the control behaves as a <code>radio group</code>.
+          Example: There should be a keyboard context and the arrow keys SHOULD
+          work for radio groups... Here, we take a little shortcut. OK for
+          non-forms, but useage as a form field control is NOT recommended.
+        </Alert>
       </Page>
     )
   }
