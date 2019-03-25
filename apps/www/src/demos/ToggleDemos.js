@@ -23,8 +23,8 @@ class ToggleRadios extends Component {
       { value: 'quo', label: 'Quo' },
     ],
     color: 'secondary',
-    size: 'sm',
-    outline: false,
+    size: undefined,
+    outline: undefined,
     onChange: () => {},
   }
 
@@ -55,6 +55,14 @@ class ToggleRadios extends Component {
 }
 
 export class ToggleDemos extends Component {
+  combinations = [
+    ['default', {}],
+    ['outline', { outline: true }],
+    ['color="primary"', { color: 'primary' }],
+    ['color="primary" outline', { color: 'primary', outline: true }],
+    ['color="primary" size="sm"', { color: 'primary', size: 'sm' }],
+    ['color="primary" size="lg"', { color: 'primary', size: 'lg' }],
+  ]
   state = {
     radioValue: undefined,
     value2: undefined,
@@ -79,49 +87,37 @@ export class ToggleDemos extends Component {
         <div>
           <Card>
             <CardHeader>
-              <CardTitle>alksdjf</CardTitle>
+              <CardTitle>Toggles</CardTitle>
             </CardHeader>
             <CardBody>
               <Row className="mb-2">
-                <Col>Defaults</Col>
-                <Col>
-                  <ToggleRadios
-                    value={this.state.radioValue}
-                    onChange={this.handleRadioChange}
-                  />
-                </Col>
+                <Col sm={2}>Props</Col>
+                <Col>Toggle</Col>
+                <Col>Button</Col>
               </Row>
-              <Row className="mb-2">
-                <Col>Outline</Col>
-                <Col>
-                  <ToggleRadios
-                    outline
-                    value={this.state.radioValue}
-                    onChange={this.handleRadioChange}
-                  />
-                </Col>
-              </Row>
-              <Row className="mb-2">
-                <Col>Color</Col>
-                <Col>
-                  <ToggleRadios
-                    color="primary"
-                    value={this.state.radioValue}
-                    onChange={this.handleRadioChange}
-                  />
-                </Col>
-              </Row>
-              <Row className="mb-2">
-                <Col>Outline + Primary</Col>
-                <Col>
-                  <ToggleRadios
-                    outline
-                    color="primary"
-                    value={this.state.radioValue}
-                    onChange={this.handleRadioChange}
-                  />
-                </Col>
-              </Row>
+              {this.combinations.map(([name, props], index) => {
+                return (
+                  <Row key={index} className="mb-2">
+                    <Col sm={2}>{name}</Col>
+                    <Col>
+                      <ToggleRadios
+                        value={this.state.radioValue}
+                        onChange={this.handleRadioChange}
+                        {...props}
+                      />
+                    </Col>
+                    <Col>
+                      <Button {...props}>Button</Button>{' '}
+                      <Button {...props} active>
+                        Active
+                      </Button>{' '}
+                      <Button {...props} disabled>
+                        Disabled
+                      </Button>
+                    </Col>
+                  </Row>
+                )
+              })}
             </CardBody>
           </Card>
         </div>
