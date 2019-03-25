@@ -17,6 +17,7 @@ import ReassessmentForm from './demos/ReassessmentForm'
 import MessageArea from './demos/MesssageArea'
 import PageTemplates from './examples/PageTemplates'
 import CardHeaderDemo from './demos/CardHeaders'
+import Toggles from './demos/Toggles'
 
 class App extends Component {
   render() {
@@ -42,6 +43,7 @@ class App extends Component {
                 />
                 <Route path="/demo/message-area" component={MessageArea} />
                 <Route path="/demo/card-header" component={CardHeaderDemo} />
+                <Route path="/demo/toggles" component={Toggles} />
                 <Route
                   path="/__examples__/page-templates"
                   component={PageTemplates}
