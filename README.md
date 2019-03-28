@@ -8,6 +8,10 @@
 
 Monorepo for CWDS design system
 
+# :skull: ARCHIVED :skull:
+
+> This [psuedo] fork was maintained for reasons which no longer exist. I'm archiving this repo. Please go to [ca-cwds/design-system](https://github.com/ca-cwds/design-system). This repo is no longer maintained. All comments below this one are potentially out of date.
+
 ## Consuming CARES Components
 
 This a multi-package repository. You are reading the `README` for the repository root.
