@@ -1,0 +1,10 @@
+@import "~@cwds/core/scss/base";
+
+.CheckboxControlFocus {
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus-within {
+    background-color: lighten(map-get($map: $theme-colors, $key: "breath"), 2%);
+  }
+}
